@@ -4,6 +4,32 @@
 
 ### Gradle是什么
 
+多渠道打包
+
+compile api implementation区别
+
+gradlew 是什么
+
+```shell
+gradle wrapper
+./gradlew
+./gradlew assemble
+```
+
+### Gradle Task 
+
+```
+task xxx(){
+	doLast{
+		
+	}
+}
+```
+
+### Groovy 语法
+
+### Gradle Plugin
+
 
 
 ### Gradle打包脚本
