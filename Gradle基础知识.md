@@ -4,8 +4,6 @@
 
 ### Gradle是什么
 
-多渠道打包
-
 compile api implementation区别
 
 gradlew 是什么
@@ -15,6 +13,10 @@ gradle wrapper
 ./gradlew
 ./gradlew assemble
 ```
+
+### Gradle多渠道打包
+
+
 
 ### Gradle Task 
 
@@ -30,7 +32,7 @@ task xxx(){
 
 ### Gradle Plugin
 
-
+[passy/build-time-tracker-plugin](https://link.zhihu.com/?target=https%3A//github.com/passy/build-time-tracker-plugin) 
 
 ### Gradle打包脚本
 
