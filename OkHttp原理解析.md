@@ -35,7 +35,7 @@ client.newCall(request).enqueue(new Callback() {
 
   1. Dispatcher dispatcher：调度器，⽤于调度后台发起的⽹络请求，有后台总请求数和单主机总请求数的控制。
 
-  2. List<Protocol> protocols：⽀支持的应⽤用层协议，即 HTTP/1.1、HTTP/2 等。
+  2. List<Protocol> protocols：⽀持的应⽤用层协议，即 HTTP/1.1、HTTP/2 等。
 
   3. List<ConnectionSpec> connectionSpecs：应⽤层⽀持的 Socket 设置，即使⽤明⽂传输(⽤于HTTP)还是某个版本的TLS(⽤于HTTPS)。
 
@@ -45,7 +45,7 @@ client.newCall(request).enqueue(new Callback() {
 
      置到这⾥，例如如果你想查看返回的 301 报⽂或者未解压的 Response Body，需要在这⾥看。
 
-  6. CookieJar cookieJar：管理 Cookie 的控制器。OkHttp 提供了了 Cookie 存取的判断⽀持(即什么时候需要存 Cookie，什么时候需要读取 Cookie，但没有给出具体的存取实现。 如果需要存取 Cookie，你得⾃己写实现，例如用 Map 存在内存⾥，或者⽤别的方式存在本地存储或者数据库。
+  6. CookieJar cookieJar：管理 Cookie 的控制器。OkHttp 提供了 Cookie 存取的判断⽀持(即什么时候需要存 Cookie，什么时候需要读取 Cookie，但没有给出具体的存取实现。 如果需要存取 Cookie，你得⾃己写实现，例如用 Map 存在内存⾥，或者⽤别的方式存在本地存储或者数据库。
 
   7. Cache cache：Cache 存储的配置。默认是没有，如果需要用，得⾃己配置出 Cache 存储的⽂件位置以及存储空间上限。
 
