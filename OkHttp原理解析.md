@@ -1,33 +1,318 @@
 ### OkHttp的简单使用
 
-##### 1. 创建一个 OkHttp 的实例
-
-```groovy
-OkHttpClient client = new OkHttpClient.Builder().build();
-```
-
-##### 2. 创建 Request
-
 ```kotlin
-Request request = new Request.Builder().url("http://hencoder.com").build();
-```
+// 创建一个 OkHttp 的实例
+val client: OkHttpClient = OkHttpClient.Builder()
+  .addInterceptor(HttpLoggingInterceptor())
+  .cache(Cache(cacheDir, cacheSize))
+	.dispatcher(dispatcher)
+  .build()
+// 创建 Request
+val request: Request = Request.Builder().url("http://hencoder.com").build()
+// 创建 Call 并发起网络请求
+client.newCall(request).enqueue(object : Callback {
+  override fun onFailure(call: Call, e: IOException) {}
 
-##### 3. 创建 Call 并发起网络请求
-
-```kotlin
-client.newCall(request).enqueue(new Callback() {
-    @Override
-    public void onResponse(Call call, okhttp3.Response response){
-
-    }
-
-    @Override
-    public void onFailure(Call call, IOException e) {
-    }
-});
+  override fun onResponse(call: Call, response: Response) {}
+})
 ```
 
 ###  OkHttp源码分析
+
+**源码分析流程**
+
+- Dispatcher：分发器就是来调配请求任务的，内部会包含一个线程池。可以在创建 OkHttpClient 时，传递我们自己定义的线程池来创建分发器。
+
+  ```kotlin
+  // 异步请求同时存在的最大请求数
+  var maxRequests = 64
+  // 异步请求同一域名同时存在的最大请求数
+  var maxRequestsPerHost = 5
+  // 闲置任务（没有请求时可执行一些任务，由使用者设置）
+  var idleCallback: Runnable? = null
+  // 异步请求使用的线程池
+  private var executorServiceOrNull: ExecutorService? = null
+  // 异步请求等待执行队列
+  private val readyAsyncCalls = ArrayDeque<AsyncCall>()
+  // 异步请求正在执行队列
+  private val runningAsyncCalls = ArrayDeque<AsyncCall>()
+  // 同步请求正在执行队列
+  private val runningSyncCalls = ArrayDeque<RealCall>()
+  ```
+
+- 同步请求
+
+  ```kotlin
+    @Synchronized internal fun executed(call: RealCall) {
+      runningSyncCalls.add(call)
+    }
+  ```
+
+  因为同步请求不需要线程池，也不存在任何限制，所以分发器仅做一下记录。
+
+- 异步请求
+
+  ```kotlin
+    internal fun enqueue(call: AsyncCall) {
+      synchronized(this) {
+        readyAsyncCalls.add(call)
+        if (!call.call.forWebSocket) {
+          val existingCall = findExistingCallWithHost(call.host)
+          if (existingCall != null) call.reuseCallsPerHostFrom(existingCall)
+        }
+      }
+      promoteAndExecute()
+    }
+  
+    private fun promoteAndExecute(): Boolean {
+      val executableCalls = mutableListOf<AsyncCall>()
+      val isRunning: Boolean
+      synchronized(this) {
+        val i = readyAsyncCalls.iterator()
+        while (i.hasNext()) {
+          val asyncCall = i.next()
+          if (runningAsyncCalls.size >= this.maxRequests) break
+          if (asyncCall.callsPerHost.get() >= this.maxRequestsPerHost) continue
+          i.remove()
+          asyncCall.callsPerHost.incrementAndGet()
+          executableCalls.add(asyncCall)
+          runningAsyncCalls.add(asyncCall)
+        }
+        isRunning = runningCallsCount() > 0
+      }
+  ```
+
+  先加入等待队列，当正在执行的任务未超过最大限制64，同时同一Host的请求不超过5个，则会添加到正在执行队列，同时提交给线程池。
+
+  加入线程池直接执行没啥好说的，但是如果加入等待队列后，就需要等待有空闲名额才开始执行。因此每次执行完 一个请求后，都会调用分发器的 finished 方法。
+
+  ```kotlin
+    // 异步请求调用
+    internal fun finished(call: AsyncCall) {
+      call.callsPerHost.decrementAndGet()
+      finished(runningAsyncCalls, call)
+    }
+  	// 同步请求调用
+    internal fun finished(call: RealCall) {
+      finished(runningSyncCalls, call)
+    }
+    private fun <T> finished(calls: Deque<T>, call: T) {
+      val idleCallback: Runnable?
+      synchronized(this) {
+        // 不管异步还是同步，执行完后都要从队列移除(runningSyncCalls/runningAsyncCalls)
+        if (!calls.remove(call)) throw AssertionError("Call wasn't in-flight!")
+        idleCallback = this.idleCallback
+      }
+      // 重新调配请求
+      val isRunning = promoteAndExecute()
+      // 没有任务执行执行闲置任务
+      if (!isRunning && idleCallback != null) {
+        idleCallback.run()
+      }
+    }
+  ```
+
+**请求流程**
+
+
+
+**分发器线程池**
+
+```kotlin
+val executorService: ExecutorService
+    get() {
+      if (executorServiceOrNull == null) {
+        executorServiceOrNull = ThreadPoolExecutor(
+          0,  									// 核心线程
+          Int.MAX_VALUE,				// 最大线程
+          60, 									// 空闲线程闲置时间
+          TimeUnit.SECONDS,			// 闲置时间单位
+          SynchronousQueue(),		// 线程等待队列
+          threadFactory("$okHttpName Dispatcher", false)	// 线程创建工厂
+        )
+      }
+      return executorServiceOrNull!!
+    }
+```
+
+在OkHttp的分发器中的线程池定义如上，其实就和 Executors.newCachedThreadPool() 创建的线程一样。首先核心线程为0，表示线程池不会一直为我们缓存线程，线程池中所有线程都是在60s内没有工作就会被回收。而最大线程 Integer.MAX_VALUE 与等待队列 SynchronousQueue 的组合能够得到最大的吞吐量。即当需要线程池执行任务时，如果不存在空闲线程不需要等待，马上新建线程执行任务。等待队列的不同指定了线程池的不同排队机制。一 般来说，等待队列 BlockingQueue 有: ArrayBlockingQueue 、 LinkedBlockingQueue 与 SynchronousQueue 。
+
+假设向线程池提交任务时，核心线程都被占用的情况下：
+
+ArrayBlockingQueue：基于数组的阻塞队列，初始化需要指定固定大小。
+
+当使用此队列时，向线程池提交任务，会首先加入到等待队列中，当等待队列满了之后，再次提交任务，尝试加入
+队列就会失败，这时就会检查如果当前线程池中的线程数未达到最大线程，则会新建线程执行新提交的任务。所以
+最终可能出现后提交的任务先执行，而先提交的任务一直在等待。
+
+LinkedBlockingQueue：基于链表实现的阻塞队列，初始化可以指定大小，也可以不指定。
+
+当指定大小后，行为就和 ArrayBlockingQueu 一致。而如果未指定大小，则会使用默认的 Integer.MAX_VALUE 作 为队列大小。这时候就会出现线程池的最大线程数参数无用，因为无论如何，向线程池提交任务加入等待队列都会成功。最终意味着所有任务都是在核心线程执行。如果核心线程一直被占，那就一直等待。
+
+SynchronousQueue：无容量的队列。
+
+使用此队列意味着希望获得最大并发量。因为无论如何，向线程池提交任务，往队列提交任务都会失败。而失败后 如果没有空闲的非核心线程，就会检查如果当前线程池中的线程数未达到最大线程，则会新建线程执行新提交的任 务。完全没有任何等待，唯一制约它的就是最大线程数的个数。因此一般配合 Integer.MAX_VALUE 就实现了真正的无等待。
+
+但是需要注意的是，我们都知道，进程的内存是存在限制的，而每一个线程都需要分配一定的内存。所以线程并不 能无限个数。那么当设置最大线程数为 Integer.MAX_VALUE 时，OkHttp同时还有最大请求任务执行个数: 64的限 制。这样即解决了这个问题同时也能获得最大吞吐。
+
+**RetryAndFollowUpInterceptor**
+
+重试：
+
+```kotlin
+catch (e: RouteException) {
+  // The attempt to connect via a route failed. The request will not have been sent.
+  // 路由异常，连接未成功，请求还没发出去
+  if (!recover(e.lastConnectException, call, request, requestSendStarted = false)) {
+    throw e.firstConnectException.withSuppressed(recoveredFailures)
+  } else {
+    recoveredFailures += e.firstConnectException
+  }
+  newExchangeFinder = false
+  continue
+} catch (e: IOException) {
+  // An attempt to communicate with a server failed. The request may have been sent.
+  // 请求发出去了，但是和服务器通信失败了。
+  if (!recover(e, call, request, requestSendStarted = e !is ConnectionShutdownException)) {
+    throw e.withSuppressed(recoveredFailures)
+  } else {
+    recoveredFailures += e
+  }
+  newExchangeFinder = false
+  continue
+}
+```
+
+两个异常都是根据 recover 方法判断是否能够进行重试，如果返回 true ，则表示允许重试。
+
+```kotlin
+  private fun recover(
+    e: IOException,
+    call: RealCall,
+    userRequest: Request,
+    requestSendStarted: Boolean
+  ): Boolean {
+    // The application layer has forbidden retries.
+    // 配置OkhttpClient设置了不允许重试(默认允许)，则一旦发生请求失败就不再重试
+    if (!client.retryOnConnectionFailure) return false
+    // We can't send the request body again.
+    if (requestSendStarted && requestIsOneShot(e, userRequest)) return false
+    // This exception is fatal.
+    // 判断是不是属于重试的异常
+    if (!isRecoverable(e, requestSendStarted)) return false
+    // No more routes to attempt.
+    if (!call.retryAfterFailure()) return false
+    // For failure recovery, use the same route selector with a new connection.
+    return true
+  }
+```
+
+所以首先使用者在不禁止重试的前提下，如果出现了某些异常，并且存在更多的路由线路，则会尝试换条线路进行 请求的重试。其中某些异常是在 isRecoverable 中进行判断：
+
+经过了异常的判定之后，如果仍然允许进行重试，就会再检查当前有没有可用路由路线来进行连接。简单来说，比 如 DNS 对域名解析后可能会返回多个 IP，在一个IP失败后，尝试另一个IP进行重试。
+
+重定向：
+
+如果请求结束后没有发生异常并不代表当前获得的响应就是最终需要交给用户的，还需要进一步来判断是否需要重 定向的判断。重定向的判断位于 followUpRequest 方法。
+
+```kotlin
+@Throws(IOException::class)
+  private fun followUpRequest(userResponse: Response, exchange: Exchange?): Request? {
+    val route = exchange?.connection?.route()
+    val responseCode = userResponse.code
+    val method = userResponse.request.method
+    when (responseCode) {
+      // 407 客户端使用了HTTP代理服务器，在请求头中添加 “Proxy-Authorization“，让代理服务器授权
+      HTTP_PROXY_AUTH -> {
+        val selectedProxy = route!!.proxy
+        if (selectedProxy.type() != Proxy.Type.HTTP) {
+          throw ProtocolException("Received HTTP_PROXY_AUTH (407) code while not using proxy")
+        }
+        return client.proxyAuthenticator.authenticate(route, userResponse)
+      }
+			// 401 需要身份验证 有些服务器接口需要验证使用者身份 在请求头中添加 “Authorization”
+      HTTP_UNAUTHORIZED -> return client.authenticator.authenticate(route, userResponse)
+
+      // 308 永久重定向
+      HTTP_PERM_REDIRECT, 
+      // 307 临时重定向
+      HTTP_TEMP_REDIRECT, HTTP_MULT_CHOICE, HTTP_MOVED_PERM, HTTP_MOVED_TEMP, HTTP_SEE_OTHER -> {
+        return buildRedirectRequest(userResponse, method)
+      }
+			// 408 客户端请求超时
+      HTTP_CLIENT_TIMEOUT -> {
+        // 408's are rare in practice, but some servers like HAProxy use this response code. The
+        // spec says that we may repeat the request without modifications. Modern browsers also
+        // repeat the request (even non-idempotent ones.)
+        // 408 算是连接失败了，所以判断用户是不是允许重试
+        if (!client.retryOnConnectionFailure) {
+          // The application layer has directed us not to retry the request.
+          return null
+        }
+
+        val requestBody = userResponse.request.body
+        if (requestBody != null && requestBody.isOneShot()) {
+          return null
+        }
+        val priorResponse = userResponse.priorResponse
+        if (priorResponse != null && priorResponse.code == HTTP_CLIENT_TIMEOUT) {
+          // We attempted to retry and got another timeout. Give up.
+          return null
+        }
+
+        if (retryAfter(userResponse, 0) > 0) {
+          return null
+        }
+
+        return userResponse.request
+      }
+			// 503 服务不可用 和408差不多，但是只在服务器告诉你 Retry-After:0(意思就是立即重试) 才重请求
+      HTTP_UNAVAILABLE -> {
+        val priorResponse = userResponse.priorResponse
+        if (priorResponse != null && priorResponse.code == HTTP_UNAVAILABLE) {
+          // We attempted to retry and got another timeout. Give up.
+          return null
+        }
+
+        if (retryAfter(userResponse, Integer.MAX_VALUE) == 0) {
+          // specifically received an instruction to retry without delay
+          return userResponse.request
+        }
+
+        return null
+      }
+
+      HTTP_MISDIRECTED_REQUEST -> {
+        // OkHttp can coalesce HTTP/2 connections even if the domain names are different. See
+        // RealConnection.isEligible(). If we attempted this and the server returned HTTP 421, then
+        // we can retry on a different connection.
+        val requestBody = userResponse.request.body
+        if (requestBody != null && requestBody.isOneShot()) {
+          return null
+        }
+
+        if (exchange == null || !exchange.isCoalescedConnection) {
+          return null
+        }
+
+        exchange.connection.noCoalescedConnections()
+        return userResponse.request
+      }
+
+      else -> return null
+    }
+  }
+```
+
+整个是否需要重定向的判断内容很多，记不住，这很正常，关键在于理解他们的意思。如果此方法返回空，那就表 示不需要再重定向了，直接返回响应;但是如果返回非空，那就要重新请求返回的 Request ，但是需要注意的是， 我们的 followup 在拦截器中定义的最大次数为20次。
+
+**BridgeInterceptor**
+
+**CacheInterceptor**
+
+**ConnectInterceptor**
+
+**CallServerInterceptor**
 
 **源码分析总结**
 
