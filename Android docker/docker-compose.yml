@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo:4
+    container_name: my-mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - /my-mongo/data:/data/db # 本地文件路径:容器内映射路径
+    command: --auth
+    restart: always
+    environment: # admin账号和密码
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: qwer1234
+  mongo-express:
+    links:
+      - mongo
+    image: mongo-express:latest
+    container_name: my-mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: qwer1234
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: qwer1234
