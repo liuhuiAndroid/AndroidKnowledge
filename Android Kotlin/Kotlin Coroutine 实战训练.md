@@ -7,7 +7,7 @@
   - 协程中不存在线程，也不存在并行——并行（Concurrency）不是并发（Parallelism）
 - Kotlin 的协程不需要关心这些
   - 因为 Kotlin for Java 的协程并不属于广义的协程
-- Kotlin 协程是一套由 Kotlin 官方提供的线程框架
+- Kotlin 协程是一套由 Kotlin 官方提供的**线程框架**
 - Kotlin 协程可以用看起来同步的代码写出实质上异步的操作，即非阻塞式挂起，不卡线程就是非阻塞式
 - 关键：线程的自动切回
 
@@ -19,7 +19,7 @@
 
 - 按照一条线写下来，线程会自动切换
 
-  ```
+  ```kotlin
   GlobalScope.launch {
   	println("Coroutines Camp ${Thread.currentThread().name}")
   }
@@ -47,7 +47,7 @@
 - Kotlin 的协程和线程哪个容易使用？——Kotlin 的协程
   - 协程需要和 Executor 比较，而不是线程
 - Kotlin 的协程相比线程的优势和劣势？——好用但是不好上手
-- Kotlin 的协程和 Handler 相比呢？
+- Kotlin 的协程和 Handler 相比呢？——不是一个纬度
   - Handler 是一个只负责Android内切线程的特殊场景化的 Executor
   - 协程在 Android 端底层就用到了Handler，比直接使用 Handler 方便
 
@@ -62,7 +62,7 @@
 
 - Retrofit 可以在接口方法加上 suspend 关键字变成挂起函数
 
-  ```
+  ```kotlin
   @GET("users/{user}/repos")
   suspend fun listRepos(@Path("user") user: String): List<Repo>
   
@@ -78,7 +78,7 @@
 
 - 协程泄露：本质上是线程泄露
 
-  ```
+  ```kotlin
   // 1.防止协程泄露
   private val scope = MainScope()
   scope.lanch(){
@@ -110,7 +110,7 @@
 
 - LiveData
 
-  ```
+  ```kotlin
   class RengViewModel : ViewModel() {
     val repos = liveData {
       emit(loadUsers())
