@@ -135,3 +135,104 @@ Compose 带来自由组合、风格一致、高易读性的UI代码
 
 路由式代码解耦
 
+### 工程思维
+
+##### 如何从工程构建的角度出发，解决问题？
+
+构建过程中，可以通过Gradle做些什么？
+
+- 提升程序安全性
+  - 代码混淆
+  - 包签名
+  - 应用加固、加壳、防破解
+- 降低工程维护成本
+  - 多渠道打包
+  - 多dex打包，解决方法数超限问题
+  - 组件化
+  - 热修复
+  - 注入监控代码
+- 提高代码生产力
+  - 消除样板代码
+  - 提高方式一致性
+
+##### Android工程的构建过程是怎样的？
+
+阅读Gradle源码
+
+Gradle 的启动阶段
+
+1. 执行GradleMain.main()
+2. 创建、注册GlobalScopeService
+3. 注册META-INF/Services下的服务
+4. 注册其他服务
+5. 执行DefaultGradleLauncher.executeTasks()，开始构建
+
+##### Gradle在构建阶段都做了什么？
+
+1. 编译buildSrc
+2. 创建project的实例（root project、sub project）
+3. 解析project参数
+4. 配置projects
+   1. 每个project开始配置前执行beforeEvaluate回调
+   2. 编译执行每个project的build.gradle文件
+   3. 每个project配置完成后执行afterEvaluate回调
+5. 同时给root project apply默认插件，注册默认服务
+6. 调用projectEvaluated回调
+
+##### Gradle中的Task是什么？
+
+TaskGraph：有向无环图
+
+Gradle的TaskGraph阶段
+
+1. 处理要被过滤掉的Task
+2. 确认要执行的默认Task
+3. 解析符合执行条件的EntryTask（入口任务）
+4. 递归找到目标Task的前置、后置Task
+5. 填充TaskGraph，形成有向无环图
+
+Gradle的RunTasks阶段
+
+1. 处理任务过滤逻辑
+2. 创建线程、处理并发逻辑
+3. 执行Task的预处理
+4. 遍历执行Action，Action开始执行之前调用beforeAction回调，执行完成后调用afterAction回调
+
+##### AndroidGradlePlugin的工作原理
+
+1. 环境检查
+   1. 检查gradle版本，是否与AGP版本匹配
+   2. 检查工程路径是否合法
+   3. 检查子工程路径是否重复定义
+2. 初始化
+   1. 初始化BuildSessionImpl单例
+   2. 是否应用了相同版本的AGP
+   3. 初始化Profiler，创建profile文件
+3. 工程配置
+   1. 创建AndroidBuilder实例
+   2. 应用Java插件
+   3. 设置监听器，在构建结束后清理缓存
+4. Extension配置
+5. 创建Task
+   1. 创建不依赖Variant的task
+   2. 在afterEvaluate回调之后，创建以来Variant的task
+
+##### 如何用工程手段，提高写代码的生产力？
+
+代码自动生成技术
+
+JavaPoet
+
+##### 如何用字节码手段，实现热修复？
+
+MultiDex插队法
+
+- QQ空间超级补丁
+- 大众点评
+
+Dex全量替换法
+
+- 微信Tinker
+
+方法插桩法
+
