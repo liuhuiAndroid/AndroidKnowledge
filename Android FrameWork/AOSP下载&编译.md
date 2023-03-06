@@ -83,6 +83,9 @@ cd ~/WORKING_DIRECTORY
 repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest
 # 可以编译 Android 8
 repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest -b android-2.3.1_r1
+# 使用清华源
+repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-2.3.1_r1
+repo init -u https://android.googlesource.com/platform/manifest -b android-2.3.1_r1
 repo sync
 ```
 
@@ -94,7 +97,7 @@ repo sync
 
 如果提示无法进行SSL证书校验，执行：
 
-错误： server certificate verification failed.
+错误：error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
 
 ```shell
 git config --global http.sslverify false
@@ -108,6 +111,15 @@ git config --global https.sslverify false
 ```shell
 git config --global user.email "im.lh@hotmail.com"
 git config --global user.name sec
+```
+
+#### 错误四
+
+ubuntu /usr/bin/env: python : no such file or directory
+
+```shell
+whereis python3
+sudo ln -s /usr/bin/python3 /usr/bin/python
 ```
 
 -----------
