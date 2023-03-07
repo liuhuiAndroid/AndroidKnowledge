@@ -1,3 +1,100 @@
+### Android平台特性
+
+##### 你做过哪些内存治理相关的工作？
+
+1.  堆内存 内存抖动和内存泄漏
+   1. 垃圾回收机制 STW
+   2. 内存分配
+   3. 堆内存OOM
+      1. 虚拟机没有足够的内存为实例分配空间，并且垃圾回收器也没有空间可以回收的情况
+      2. 为什么导致了申请的内存过大？——内存抖动
+         1. 创建了大型实例
+         2. 短时间内创建了非常多的小实例
+2. 线程 线程数超限 OOM 野线程 管理
+3. fd fd数超限 OOM
+   1. 文件未正常关闭
+   2. I/O未正常关闭
+   3. Cursor未正常关闭
+
+##### Android中，如何进行堆内存治理?
+
+1. String 与内存抖动
+
+2. Bitmap 内存治理
+
+   Bitmap 是 Android 中图片在内存里的形态
+
+3. Activity 内存泄漏
+
+   1. 尽量别作为参数传递Activity
+   2. Activity生命周期结束时取消异步状态
+   3. 使用静态内部类，并且不持有或弱引用Activity
+
+##### Android中，如何进行线程和FD治理？
+
+OOM：pthread_create failed
+
+- 系统分配线程栈失败
+
+FD也叫文件句柄，在Linux里，文件、目录、块设备、字符设备、管道等都被抽象成了文件，所以在调用这些文件的时候，都会返回一个FD
+
+- 控制FD的数量
+- 回收
+  - 及时关闭I/O操作
+  - 及时关闭数据库和Cursor
+  - 及时释放HandlerThread
+
+##### 如何实现一个能加载海量数据的列表？
+
+分页，回收复用
+
+Jetpack Paging 3
+
+RecyclerView 缓存复用
+
+##### 当我们点击应用图标时，系统都做了什么？
+
+- 冷启动
+
+  App进程 -> Application -> First Activity
+
+- 热启动
+
+  将已启动过的Activity重新启动，或切到前台
+
+- 温启动
+
+  Application -> First Activity
+
+得分点
+
+- 冷热温启动的基本流程
+- Zygote和APP进程启动
+- AMS的作用
+- Activity任务栈和生命周期
+
+##### AMS，是如何帮助App启动Activity的？
+
+##### 启动Activity之前，是如何为它分配任务栈的？
+
+##### Activity是如何显示在屏幕上的？
+
+##### Android中的屏幕刷新机制是怎样的？
+
+VSync信号
+
+##### 在SQLite中，without rowid的使用场景是什么？
+
+##### Parcelable为什么速度优于 Serializable ？
+
+序列化：将实例的状态转换为可以存储或传输的形式的过程
+
+Parcelable 牺牲易用性换取极致的性能
+
+Serializable：使用了反射获取信息
+
+Parcelable：数据写入共享内存；kotlin 使用简化，编译时生成代码
+
 ### 架构
 
 ##### MVP为什么比MVC更适合Android开发
