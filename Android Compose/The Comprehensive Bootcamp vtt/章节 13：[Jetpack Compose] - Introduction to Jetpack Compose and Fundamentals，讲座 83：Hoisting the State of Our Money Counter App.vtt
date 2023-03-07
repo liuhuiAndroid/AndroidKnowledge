@@ -1,0 +1,670 @@
+WEBVTT
+
+00:00.630 --> 00:08.310
+So back in our code here, we see that this is working perfectly fine and we can see that tap nine or
+
+00:08.310 --> 00:14.220
+tap button is incrementing because we are composing and all the great things are happening now.
+
+00:14.220 --> 00:16.380
+Remember that you have no pun intended.
+
+00:16.650 --> 00:23.030
+You have to pass to remember here because remember, a key word can store immutable or immovable object.
+
+00:23.040 --> 00:29.970
+So if values change right in this state here, it will trigger recomposition, which is the refresh
+
+00:29.970 --> 00:35.190
+of the UI, but not just the whole UI, but more specifically in this case, is going to be targeted
+
+00:35.190 --> 00:35.960
+to this text.
+
+00:36.270 --> 00:37.890
+This is what this is.
+
+00:37.890 --> 00:39.900
+What is changing, right?
+
+00:40.020 --> 00:46.050
+We're changing the user interface in this case by passing in our money counter data.
+
+00:46.770 --> 00:47.000
+OK.
+
+00:47.310 --> 00:49.020
+So got it, password.
+
+00:49.050 --> 00:53.370
+We have to have a remember and then inside a multiple state off to create actual state.
+
+00:53.640 --> 00:55.890
+And remember will remember that state.
+
+00:56.670 --> 01:01.800
+OK, now this is one way of actually creating a remember here, right?
+
+01:02.910 --> 01:08.790
+The other way is as follow, I can save our money, see, just to differentiate.
+
+01:09.300 --> 01:12.750
+And I'm just going to go ahead and say, is equal to remember like this.
+
+01:14.500 --> 01:19.060
+And then just pick the second one and then we can pass our mutable state of.
+
+01:21.440 --> 01:22.880
+And pass in this case, zero.
+
+01:23.420 --> 01:26.960
+Now if I change the whole thing and I just use that one.
+
+01:28.490 --> 01:33.230
+Let's comment out this money counter there, you will see that we have a problem, the reason why is
+
+01:33.230 --> 01:37.170
+because the way we have created this variable here money counter now.
+
+01:37.550 --> 01:40.220
+We're not delegating, we're not using delegate by here.
+
+01:40.610 --> 01:41.120
+It works.
+
+01:41.120 --> 01:43.130
+But we have to change a few things because now it is.
+
+01:43.130 --> 01:47.600
+Money counter is not going to work because are going to say if you have over its money counter, it's
+
+01:47.600 --> 01:49.100
+just a mutable state.
+
+01:49.370 --> 01:51.680
+It's not just an integer, but it's immutable state.
+
+01:51.860 --> 01:54.230
+So we wrapped that interminable state.
+
+01:54.800 --> 01:56.090
+So what is immutable state?
+
+01:56.100 --> 02:00.190
+What so immutable state allows us to hold this state right?
+
+02:00.200 --> 02:03.050
+It's just a wrapper that holds a state.
+
+02:03.440 --> 02:09.350
+But most importantly, these values are going to be able to send information to to send events.
+
+02:09.590 --> 02:14.810
+In this case, the compose function will observe this value.
+
+02:15.770 --> 02:20.300
+So all they have to do now is say that and get the value.
+
+02:20.570 --> 02:25.340
+So it's a little bit more work, a little bit of code, but I'm just going to say get the value of that
+
+02:25.340 --> 02:26.090
+mutable state.
+
+02:27.020 --> 02:27.280
+OK.
+
+02:27.860 --> 02:30.770
+And here too, we're going to have to say that value like this.
+
+02:31.850 --> 02:35.960
+And if we run this, we should see this same thing.
+
+02:36.590 --> 02:39.950
+But it would just change the way we are creating these variables.
+
+02:41.060 --> 02:46.790
+OK, now you can see everything still works the same, which is great now, although everything works
+
+02:46.790 --> 02:47.240
+fine.
+
+02:47.300 --> 02:49.910
+You can tap and you can see the numbers going up.
+
+02:50.270 --> 02:50.750
+That's fine.
+
+02:50.750 --> 02:56.190
+But the whole idea really is to make sure that we update this 100 here.
+
+02:56.210 --> 02:59.060
+We may have a counter here that we want or text.
+
+02:59.060 --> 03:01.940
+In this case, I must update as we tap.
+
+03:02.390 --> 03:08.690
+And if you see all this, clicking is happening inside of Create Circle Composable.
+
+03:09.660 --> 03:17.820
+So how do we then call that somewhere where we can then in this case, be able to attach to this text
+
+03:18.030 --> 03:18.380
+here?
+
+03:18.400 --> 03:26.310
+I meaning this money counter here who want to attach to this text so essentially do exactly what we
+
+03:26.310 --> 03:26.820
+did here.
+
+03:27.060 --> 03:28.320
+Like this was just testing.
+
+03:28.890 --> 03:35.190
+We want to attach money counter to this text and so we can see then money going up.
+
+03:35.850 --> 03:36.510
+How do we do that?
+
+03:37.230 --> 03:43.200
+Well, the first thing we need to understand is that will have then to remove this state here outside
+
+03:43.200 --> 03:44.550
+of our create circle.
+
+03:44.940 --> 03:49.850
+This is another concept called state hosting, which means we are hosting it.
+
+03:49.860 --> 03:51.600
+We are taking up.
+
+03:52.680 --> 04:01.770
+A level from where we are the state, I'm going to cut this and I'm going to call inside of my app of
+
+04:01.770 --> 04:02.670
+my app like this?
+
+04:03.300 --> 04:05.580
+OK, so we have a money counter and there it is.
+
+04:06.570 --> 04:08.370
+But then of course, this is not going to work here.
+
+04:08.520 --> 04:10.800
+You know, a clickable because we have lost that.
+
+04:10.810 --> 04:16.640
+How do we then make it so that we're able to still interact, of course, with our clickable right?
+
+04:16.860 --> 04:24.030
+Make sure that then at this counter is still valid, meaning that we can still click and change this
+
+04:24.030 --> 04:29.340
+value here, because now we have this huge disconnect and you can see things are failing at this point.
+
+04:30.800 --> 04:36.350
+So first, what do we need to do is in our circle circle here, we're going to pass a few parameters.
+
+04:36.890 --> 04:43.760
+So the first one is going to be money count like this is going to be it's just a normal variable.
+
+04:44.450 --> 04:45.340
+This is not going to work.
+
+04:45.350 --> 04:46.290
+So what I'm going to do.
+
+04:46.430 --> 04:50.450
+Let's just for now coming all of that.
+
+04:50.660 --> 04:54.910
+And let's just call it here it is.
+
+04:54.920 --> 04:55.570
+Money count.
+
+04:55.870 --> 05:01.940
+OK, let's go ahead and say alt enter to remove the presses because we don't need those.
+
+05:02.120 --> 05:07.550
+OK, so we're moving things around here and just get rid of this and now have an issue because we need
+
+05:07.550 --> 05:09.590
+to pass an initial value.
+
+05:09.600 --> 05:12.860
+Let's just say zero so that the preview still works.
+
+05:13.100 --> 05:18.230
+OK, so nothing works yet, but at least we have something notice that are clickable.
+
+05:18.230 --> 05:22.640
+It's not going to do anything, but at least we know we've hosted our state up here.
+
+05:23.510 --> 05:23.750
+OK?
+
+05:24.080 --> 05:28.190
+But the next thing we need to do also here, right, we need to pass some sort of a callback.
+
+05:28.580 --> 05:33.370
+So I'm going to say updated or update counter, it's going to be a function.
+
+05:33.380 --> 05:36.830
+Remember, we can pass functions as parameters, which is really amazing.
+
+05:37.730 --> 05:41.570
+The idea here is that we'll need to pass something into this counter.
+
+05:42.050 --> 05:44.060
+This app take money, counter function.
+
+05:44.390 --> 05:46.050
+What is it that we're going to be passing?
+
+05:46.070 --> 05:50.930
+Well, we are going to pass an integer because it's going to be what we're going to be updating using
+
+05:50.930 --> 05:52.700
+to update in this case, the counter.
+
+05:52.940 --> 05:55.190
+And this will return nothing.
+
+05:55.190 --> 05:56.460
+So say Unit I.
+
+05:58.140 --> 06:00.360
+Let's go ahead and close this down, so have more space.
+
+06:01.470 --> 06:03.600
+OK, I hear, and we have an issue here.
+
+06:03.630 --> 06:07.860
+For now, let's go ahead and comment is that we don't need it to show a preview of this.
+
+06:08.970 --> 06:10.380
+OK, so there we go.
+
+06:10.620 --> 06:16.290
+So now this Abdi counter will expect what an end, which is going to be the actual counter.
+
+06:18.090 --> 06:24.000
+That means then if we go back to where this has been called, that means we have to pass a few things
+
+06:24.000 --> 06:24.740
+if you hover over it.
+
+06:25.140 --> 06:30.420
+So it's no value passport for parameters update money counter you can see here.
+
+06:30.870 --> 06:32.940
+Expect money counter, right?
+
+06:32.950 --> 06:38.400
+But because we passed an integer, also a default value, it's not required.
+
+06:38.910 --> 06:40.500
+But update money, it is.
+
+06:40.770 --> 06:44.520
+So that means then I'm going to pass my country.
+
+06:45.270 --> 06:46.290
+What do we call it?
+
+06:46.290 --> 06:50.160
+Seat counter money counter is going to be set to what?
+
+06:50.190 --> 06:53.190
+Well, we're going to set two money counter we created at the top here.
+
+06:54.400 --> 06:55.360
+Say money.
+
+06:57.210 --> 07:02.760
+Money counter now, so it happens that it so happens that I actually named them the.
+
+07:03.210 --> 07:11.700
+It so happens that I name both the parameter name the same name as our variable here, our mutable state.
+
+07:11.850 --> 07:12.360
+That's OK.
+
+07:12.690 --> 07:16.830
+In this case, I'm just going to have to go and say that value because I need to get the value because
+
+07:16.830 --> 07:22.620
+remember, now this is wrapped inside of a miserable state, so we need to get the value, the actual
+
+07:22.620 --> 07:22.890
+it.
+
+07:23.520 --> 07:23.850
+OK.
+
+07:24.300 --> 07:31.410
+Now, if you have over again notice that we pass here, this update money counter, which expects which
+
+07:31.410 --> 07:38.310
+expects an integer also because it's the last parameter that is a function, right, instead of a function.
+
+07:38.520 --> 07:45.630
+That means we can actually treat this as a lambda, which means I can just go outside and say braces,
+
+07:46.080 --> 07:47.100
+curly braces like that.
+
+07:47.370 --> 07:47.880
+And voila!
+
+07:48.150 --> 07:50.100
+Now you can see we have this event.
+
+07:50.220 --> 07:55.080
+Or it should say which is an integer which is going to be the number that's being updated.
+
+07:55.680 --> 08:03.030
+So here then what I need to do is to, of course, update this money counter variable is immutable state.
+
+08:04.270 --> 08:04.610
+Right.
+
+08:04.630 --> 08:08.800
+Each time we click, we are going to receive that value.
+
+08:09.930 --> 08:10.260
+Right.
+
+08:10.380 --> 08:16.170
+So hearing I say money counter, I'm going to say that value, it's going to be equal to the eight we
+
+08:16.170 --> 08:18.720
+are getting plus one like this.
+
+08:19.440 --> 08:24.960
+And now because we understand that this money counter here, it's going to be updated and mutable state.
+
+08:25.110 --> 08:26.520
+So it's listened to states.
+
+08:26.850 --> 08:30.450
+I can change this to something like.
+
+08:32.010 --> 08:32.430
+Money.
+
+08:33.900 --> 08:35.710
+That value like this.
+
+08:36.710 --> 08:37.520
+And see what happens.
+
+08:38.030 --> 08:38.860
+Let's go ahead and run.
+
+08:42.160 --> 08:47.620
+And there you have it, the moment it starts, it looks at the money counter, it knows that the default
+
+08:47.620 --> 08:49.780
+value in this mutable state is zero.
+
+08:50.110 --> 08:52.330
+If we put 10 here, this would show here.
+
+08:52.360 --> 08:54.490
+OK, now let's see a moment of truth if I tap.
+
+08:54.700 --> 08:55.600
+Nothing is happening.
+
+08:55.720 --> 08:56.410
+What's going on?
+
+08:57.340 --> 09:00.490
+It looks like we haven't done anything, you know, a clickable right.
+
+09:00.760 --> 09:02.930
+We just come things out and we still have this log.
+
+09:02.950 --> 09:03.670
+That's not what we want.
+
+09:04.060 --> 09:05.230
+What we want to happen here.
+
+09:05.320 --> 09:06.760
+Well, here's the beauty.
+
+09:06.940 --> 09:08.170
+We have this call back here.
+
+09:08.470 --> 09:11.530
+That means then each time we click, we're going to say Update.
+
+09:11.680 --> 09:14.380
+Call this update to money counter.
+
+09:14.770 --> 09:17.410
+And we're going to do going to pass inside here.
+
+09:17.560 --> 09:20.830
+Our money counter value, right?
+
+09:20.840 --> 09:23.410
+Because that's going to be the value that's been incremented there.
+
+09:23.410 --> 09:24.430
+That's an integer.
+
+09:24.820 --> 09:27.040
+So let's go ahead and run this one once again.
+
+09:28.420 --> 09:37.150
+So now if I tap, while I can see now, says one and keeps growing as such and we still have this attached
+
+09:37.150 --> 09:40.870
+to tap, we can just remove that that was for testing a similar vein again.
+
+09:42.680 --> 09:45.560
+OK, here we go now with Tab C one.
+
+09:45.830 --> 09:47.270
+And it's going to go and increment.
+
+09:47.960 --> 09:48.590
+There we go.
+
+09:49.460 --> 09:54.020
+And even to make it better because we want to separate the concerns here, what I can do in our circle,
+
+09:54.140 --> 10:00.860
+we are passing, of course, my counter, which is going to be set to our money counter, which is inevitable.
+
+10:00.860 --> 10:02.150
+State veterans at state.
+
+10:03.640 --> 10:10.420
+Hear what I can do actually is as follows I can actually change this because I want to change the naming.
+
+10:10.420 --> 10:17.380
+I can say, for instance, new value and give it an arrow like this.
+
+10:17.950 --> 10:22.060
+So now what I can do, I can say our counter.
+
+10:25.000 --> 10:35.260
+Money counter that value is going to be set to our new value as such, which means then the updating
+
+10:35.260 --> 10:40.810
+or the increasing of the money will happen inside of our optic counter.
+
+10:40.840 --> 10:46.390
+So I can say update counter plus one like this.
+
+10:46.810 --> 10:51.970
+So now we have set everything up the way it's supposed to be in this VAR here, it looks like it's complaining
+
+10:51.970 --> 10:54.160
+you can always say alt or option enter.
+
+10:54.490 --> 10:56.860
+It's going to say changes to file and we're going to do that.
+
+10:57.640 --> 10:58.420
+OK, so there we go.
+
+10:58.420 --> 11:06.610
+So we've hosted the state to the calling the composable because my app is calling, in this case, this
+
+11:06.610 --> 11:07.720
+create circle.
+
+11:09.010 --> 11:13.690
+And then what we're doing here is that for a circle, we change a few things, we added.
+
+11:14.140 --> 11:20.500
+We passed the money counter argument, which is going to take care, always go and track what's happening
+
+11:20.500 --> 11:22.870
+with our money, counter their value.
+
+11:23.260 --> 11:30.110
+And then because we have the lambda in our create circle, we have a function that we call the update.
+
+11:30.130 --> 11:31.240
+Let's put this in the new line.
+
+11:31.720 --> 11:33.910
+This app money counter and we're passing it.
+
+11:34.300 --> 11:40.060
+So we call that every time the button is clicked, we're going to call this update money counter.
+
+11:40.120 --> 11:45.010
+We're going to pass the money, counter whatever value we have here and add one to that.
+
+11:45.940 --> 11:47.230
+That's exactly what's happened here.
+
+11:47.350 --> 11:48.280
+So it's going to look at money.
+
+11:48.280 --> 11:49.780
+Counter is going to be zero at first.
+
+11:50.170 --> 11:56.410
+We're going to be passing that value into this, which in turn, we're going to set that value to the
+
+11:56.410 --> 11:59.890
+new value we're getting, which in this case we are updating by one.
+
+12:02.490 --> 12:09.960
+And now, my friends, we have created a very simple application, does not a lot, but it really shows
+
+12:09.960 --> 12:17.640
+us this concept of state, which is very important, but also shows us how do we hoist elevated state
+
+12:17.970 --> 12:20.100
+to the calling composable?
+
+12:20.670 --> 12:23.610
+Now, why is it important to hoist the state?
+
+12:23.940 --> 12:33.660
+The reason why we want to hoist this state from our main composable to the calling composable composable
+
+12:33.660 --> 12:40.830
+functions need to be stateless, relatively stateless, which means they should not hold the state right
+
+12:40.830 --> 12:43.650
+because we want them to be as flexible as possible.
+
+12:43.980 --> 12:48.600
+At this point, I can call this anywhere I want because it doesn't hold any state.
+
+12:48.610 --> 12:52.770
+We don't have this state here holding us up, right?
+
+12:53.370 --> 12:59.850
+So whenever I call or whatever I call the create circle, I'll have to passing the money counter and
+
+12:59.850 --> 13:03.330
+the update money counter function there.
+
+13:03.720 --> 13:12.210
+So we will delegate will send the state to the parent composable, which will hold that state and that
+
+13:12.210 --> 13:13.830
+will be changing itself there.
+
+13:14.190 --> 13:19.760
+And so the state is going to be changing and then it's going to be propagated down to our circle great
+
+13:19.770 --> 13:24.270
+circle, which then is going to go ahead and update the money.
+
+13:24.780 --> 13:30.930
+So there's a lot I threw at you here, and I did take my time to explain this because I want to make
+
+13:30.930 --> 13:33.450
+sure you really get this concept again.
+
+13:33.480 --> 13:38.190
+We will continue to work with this, but I had to go slowly because I really, really, really want
+
+13:38.190 --> 13:39.120
+you to get this concept.
+
+13:39.240 --> 13:42.060
+And also remember, this is just the beginning of our journey here.
+
+13:42.060 --> 13:45.570
+So there will be a lot of opportunities for you to practice this.
+
+13:46.110 --> 13:50.340
+As it is, you can go ahead and practice this concept by creating, for instance, a counter in different
+
+13:50.340 --> 13:53.040
+counters and so forth, and see how this works.
+
+13:53.310 --> 13:58.950
+In fact, one of the things that you see that you can do, you can now because we've hosted a state
+
+13:58.950 --> 14:03.580
+like it's here now, we can do all sorts of things with that state.
+
+14:03.630 --> 14:09.960
+For instance, we can say money counter kind of value is greater.
+
+14:12.620 --> 14:17.030
+Then, 25, I want to show a text.
+
+14:18.760 --> 14:28.300
+That says lots of money like this, right, because we have that state and it's easy for us to do such.
+
+14:29.910 --> 14:34.590
+In a previous example, we wouldn't be able to do that because the state was in sight of our create
+
+14:34.610 --> 14:35.070
+circle.
+
+14:35.130 --> 14:38.100
+Now it's no longer there so we can do all sorts of things.
+
+14:38.610 --> 14:38.850
+All right.
+
+14:39.300 --> 14:40.980
+So let's see if I keep tapping.
+
+14:42.900 --> 14:43.470
+Getting there.
+
+14:45.210 --> 14:45.960
+Lots of money.
+
+14:47.460 --> 14:51.380
+So I hope this was helpful, and I'll see you in the next video.

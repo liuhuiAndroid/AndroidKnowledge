@@ -1,0 +1,448 @@
+WEBVTT
+
+00:00.180 --> 00:05.530
+All right, so so far, we are doing good, so we have our app bar, top bar.
+
+00:05.550 --> 00:10.680
+There we have the sign out, we have the title and of course, it's very strange icon, but you can
+
+00:10.680 --> 00:11.710
+change to whatever you want.
+
+00:11.730 --> 00:12.150
+That's fine.
+
+00:12.640 --> 00:12.870
+Right.
+
+00:12.870 --> 00:19.770
+So now let's go and look at first of all, we can actually change the color to a different color of
+
+00:19.770 --> 00:20.630
+our icon, right?
+
+00:20.640 --> 00:26.700
+Because if you have over no icon here, you can see that we can say tint and pass a different color
+
+00:26.700 --> 00:27.570
+so we can do that.
+
+00:28.320 --> 00:31.140
+It's not going to hurt anything and say tint.
+
+00:33.380 --> 00:36.250
+I say color and say that.
+
+00:38.120 --> 00:48.310
+Light, but say green and then say Coffin Pass and alpha, such about zero point four f like this.
+
+00:48.320 --> 00:52.130
+So that way we can just see that a little nice tent there.
+
+00:53.250 --> 00:58.430
+Something similar to this, we can play around with this, that sort of thing that was just an optional
+
+00:58.430 --> 01:00.950
+thing that actually come to think about it.
+
+01:01.490 --> 01:06.530
+I don't really need to add, we don't really need to add that to color so we can do all sort of things
+
+01:06.620 --> 01:07.760
+once you have our icon.
+
+01:08.060 --> 01:11.930
+You can even a passive modifier and the world is your oyster.
+
+01:12.020 --> 01:12.320
+All right.
+
+01:12.860 --> 01:16.520
+Let's go ahead and move on and put together this structure here.
+
+01:16.730 --> 01:17.720
+OK, so let's see.
+
+01:17.750 --> 01:19.100
+How can we add this?
+
+01:20.330 --> 01:21.620
+OK, so right.
+
+01:21.620 --> 01:22.070
+Of course.
+
+01:22.070 --> 01:23.660
+Still inside here, I'm going to create.
+
+01:26.800 --> 01:27.760
+Another composable.
+
+01:30.640 --> 01:36.130
+And call this fun reading right now.
+
+01:36.520 --> 01:37.040
+Area.
+
+01:37.990 --> 01:42.370
+And of course, here we go to pass books, which is going to be a list
+
+01:45.130 --> 01:48.190
+of banned books like this.
+
+01:48.520 --> 01:48.880
+OK.
+
+01:49.390 --> 01:52.990
+And then of course, when you pass or nav controller like that.
+
+01:53.800 --> 01:56.920
+Now we don't have this book yet.
+
+01:57.940 --> 02:00.800
+So let's go ahead and create this in book class.
+
+02:00.820 --> 02:02.110
+It's going to be a data class.
+
+02:02.860 --> 02:07.180
+So let's go to our models.
+
+02:07.360 --> 02:10.360
+We're going to right click and create.
+
+02:13.310 --> 02:17.450
+Class is going to be a class call and book.
+
+02:18.350 --> 02:19.260
+OK, there we go.
+
+02:19.310 --> 02:21.740
+So for now, I'm going to pass if you.
+
+02:25.180 --> 02:27.820
+Properties into our right here would say.
+
+02:34.420 --> 02:36.460
+I'm going to save for it.
+
+02:37.600 --> 02:44.170
+Now you'll notice, usually when we pass properties or fields into our primary constructor, we say
+
+02:44.170 --> 02:52.030
+foul because we're going to be dealing with forest store database in this class or this data class will
+
+02:52.030 --> 02:58.420
+be, of course, creating a book types that we going be saving in target of these forest or won't work
+
+02:58.420 --> 03:01.710
+properly if you make these variables fouls.
+
+03:02.050 --> 03:08.080
+Right, these properties have to be VAR because they need to be changed as we pass them along into Firestorm.
+
+03:08.740 --> 03:10.420
+So that's something to keep in mind.
+
+03:10.720 --> 03:14.530
+And for now, and we'll change this class quite a bit as we go through.
+
+03:14.560 --> 03:17.440
+So for now, I'm going to create a string here, which could be null.
+
+03:17.980 --> 03:23.500
+And then I'm going to go create another one for the title of the book.
+
+03:24.680 --> 03:28.990
+Make this knowable all over again.
+
+03:29.950 --> 03:40.830
+Authors, it's going to be a string cheese because we know and notes, OK, we are coming back.
+
+03:40.840 --> 03:42.580
+We'll be coming back to do more work.
+
+03:44.170 --> 03:46.720
+And of course, we'll come back to do more work for our book.
+
+03:47.020 --> 03:51.220
+But for now, that's that's fine because we just want to have a structure that we can use.
+
+03:52.060 --> 03:57.760
+OK, so that is going to be actually this area here.
+
+03:57.760 --> 03:58.810
+So we'll get back to that.
+
+04:00.220 --> 04:03.430
+So let's focus again to this area here.
+
+04:03.460 --> 04:05.080
+Your reading activity?
+
+04:05.590 --> 04:08.620
+So first, let's look at this text here.
+
+04:08.650 --> 04:10.750
+Your reading activity right now.
+
+04:11.290 --> 04:14.350
+So I'm going to create yet another composable here.
+
+04:15.100 --> 04:15.900
+Lots of compose.
+
+04:16.460 --> 04:27.640
+Let's just give ourselves some space and then say, Fine, we're going to call this title section and
+
+04:27.640 --> 04:28.660
+I'm going to pass.
+
+04:30.420 --> 04:31.320
+Modifier.
+
+04:38.580 --> 04:43.620
+Label, it's going to be just a text or string, they should say.
+
+04:44.640 --> 04:44.880
+Right?
+
+04:45.120 --> 04:51.150
+The reason why I'm putting in a different modifier again is because we will be using this title section
+
+04:51.870 --> 04:58.290
+here and as well here, so might as well just put in a different in its own composable so we can reuse
+
+04:58.290 --> 04:58.770
+that code.
+
+04:59.640 --> 05:05.880
+OK, so I'm going to create less create a surface such in the pass or modifier.
+
+05:15.190 --> 05:17.750
+Let's keep it padding about.
+
+05:19.940 --> 05:21.110
+Five deep.
+
+05:23.660 --> 05:31.070
+Start top, about one deep and inside here, I'm just going to put it column
+
+05:34.220 --> 05:39.650
+and I'm going to say text and pass a label, of course.
+
+05:40.520 --> 05:43.490
+And let's style this.
+
+05:43.550 --> 05:44.970
+I say font style.
+
+05:45.590 --> 05:47.180
+I'm going to say normal.
+
+05:51.290 --> 05:53.000
+Well, it's so well.
+
+05:53.000 --> 05:54.640
+We should start with font size.
+
+05:54.650 --> 05:55.220
+It's fine.
+
+05:55.310 --> 06:00.950
+19 ESP and font style.
+
+06:01.220 --> 06:02.990
+I want this normal
+
+06:05.720 --> 06:07.370
+text line.
+
+06:07.670 --> 06:10.010
+I want this to be left.
+
+06:14.880 --> 06:16.920
+Oops, it's come back left.
+
+06:17.130 --> 06:20.560
+Text a line like this grey area.
+
+06:21.030 --> 06:28.290
+Now we've created the composable that responsible for creating this as well as this at a later time.
+
+06:29.310 --> 06:32.550
+OK, now let's look at the structure that we have so far.
+
+06:32.550 --> 06:37.080
+So we do have a reader app which has been called inside of our home.
+
+06:37.440 --> 06:37.770
+Right?
+
+06:38.400 --> 06:43.410
+So this homing member is part of our navigation, which means being called our main activity.
+
+06:44.250 --> 06:51.000
+So let me close down some of these because we can have some sort of a better visual of what's going
+
+06:51.000 --> 06:54.430
+on now for our home content here.
+
+06:54.450 --> 06:57.180
+I'm going to yet create another composable here.
+
+06:59.520 --> 06:59.880
+Fine.
+
+07:00.030 --> 07:08.300
+I'm going to call this home content, which is going to be called here.
+
+07:08.370 --> 07:12.510
+So I'm just going to say home content is such.
+
+07:15.460 --> 07:23.230
+And as you know, by now, let's go ahead and also pass the navigation map controller, which means
+
+07:23.230 --> 07:25.870
+here I'm going, yes, go ahead and pass our nav controller.
+
+07:27.730 --> 07:28.030
+OK.
+
+07:28.060 --> 07:31.300
+This also would suffice because they have the same name anyway.
+
+07:31.300 --> 07:33.800
+So nav controller to again from home, we're going to pass along.
+
+07:33.820 --> 07:35.230
+So there we go.
+
+07:35.920 --> 07:36.320
+All right.
+
+07:36.340 --> 07:42.400
+So now our home content here, this is where we are going to create pretty much all of this structure
+
+07:42.400 --> 07:42.700
+here.
+
+07:43.000 --> 07:43.330
+Right?
+
+07:43.540 --> 07:48.820
+So anything from below our app bar there all the way down.
+
+07:49.960 --> 07:54.880
+So if you look at the structure of everything, everything pretty much is laid out top to bottom.
+
+07:54.890 --> 07:57.370
+So which means we need a column.
+
+07:57.760 --> 08:00.760
+So let's do that was add a column right away.
+
+08:02.090 --> 08:05.700
+And this has a modifier here padding.
+
+08:06.020 --> 08:07.490
+It's going to say about two deep,
+
+08:10.490 --> 08:12.260
+and I'd see
+
+08:14.840 --> 08:16.790
+when I add a vertical arrangement.
+
+08:19.170 --> 08:23.790
+I say arrangements, space even evenly.
+
+08:25.200 --> 08:33.210
+OK, so now inside when add a row first because I'm going to structure this now, so I'm going to the
+
+08:33.210 --> 08:36.040
+first row, second row and so forth.
+
+08:36.060 --> 08:36.330
+OK.
+
+08:36.960 --> 08:40.680
+So from my row here, I'm going to also add a modifier.
+
+08:40.920 --> 08:43.350
+Oops and say a line.
+
+08:45.420 --> 08:47.610
+Let's just say modifier.
+
+08:52.900 --> 08:59.110
+Online such and I'm going to say pass an alignment of of alignment.
+
+09:01.780 --> 09:09.850
+I want everything to be at the start, so it starts goes to the left, OK, inside of our row.
+
+09:10.580 --> 09:15.670
+And this is the row where I'm going to first add this title section, which were created.
+
+09:15.670 --> 09:19.330
+I'm going to say title section and passing the label.
+
+09:19.720 --> 09:21.520
+The label's going to say something like this.
+
+09:21.910 --> 09:29.920
+You're reading and then I'm going to put a new line scape there.
+
+09:30.970 --> 09:34.900
+Another text that says Activity right now.
+
+09:35.890 --> 09:40.720
+Let's take a look at at a preview here so we can see how perhaps all of this looks.
+
+09:41.440 --> 09:42.550
+We're going to have issues here.
+
+09:42.580 --> 09:49.660
+Let's just say it's equal to nav controller passing in local context.
+
+09:54.350 --> 09:55.380
+That current like this.
+
+09:55.400 --> 09:58.310
+That way, we can hopefully see something in our preview.
+
+09:58.820 --> 09:59.450
+Let's just see.
+
+10:00.350 --> 10:00.720
+All right.
+
+10:00.740 --> 10:03.740
+So as you see here, we make this like that.
+
+10:04.100 --> 10:08.660
+You can see now it's working perfectly well, not perfectly, but at least you can see that we have,
+
+10:08.660 --> 10:10.760
+of course, the top bar there.
+
+10:11.090 --> 10:16.700
+And we have your reading activity at this moment, which is right below here.
+
+10:16.700 --> 10:18.500
+It's OK as we add other items.
+
+10:18.500 --> 10:19.790
+This is going to be pulled up.
+
+10:20.690 --> 10:21.060
+OK.
+
+10:21.080 --> 10:22.430
+Where it's it belongs.
+
+10:23.620 --> 10:27.800
+All right, so we're making good progress here, this is starting to look, at least we can see the
+
+10:27.800 --> 10:28.970
+pieces coming together.

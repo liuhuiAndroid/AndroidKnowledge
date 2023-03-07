@@ -1,0 +1,328 @@
+WEBVTT
+
+00:00.480 --> 00:05.760
+All right, let's go ahead and look at this section here, where we can show a list of books that we've
+
+00:05.760 --> 00:06.030
+read.
+
+00:06.310 --> 00:16.620
+OK, so right after these two closing remarks there and we put another if statement if if you model
+
+00:17.040 --> 00:17.820
+that data.
+
+00:20.270 --> 00:22.310
+And value loading.
+
+00:23.240 --> 00:29.960
+It's true because I'm going to be loading some books here, then I'm going to say linear progress.
+
+00:31.980 --> 00:40.710
+Indicator show that else, then I'm just going to start putting together the info somewhere, put a
+
+00:40.710 --> 00:49.860
+divider first noticed this is going to be this divider there something nice and I'm going to add a lazy
+
+00:49.950 --> 00:52.400
+column, this lazy column.
+
+00:52.400 --> 01:04.170
+I'm going to play modifier to fight a fire feel max and then that feel height.
+
+01:07.060 --> 01:07.420
+This.
+
+01:09.420 --> 01:17.940
+And then I'm going to pack content padding values there for the content padding and with the padding
+
+01:17.940 --> 01:26.400
+values all about 16, so we're going to have these padding value for all the corners in Saturday's lazy
+
+01:26.400 --> 01:26.790
+column.
+
+01:27.120 --> 01:28.890
+There's one lambda here.
+
+01:28.890 --> 01:33.060
+We are going to filter again the books by finished.
+
+01:33.060 --> 01:39.330
+So I'm going to say filter books by finished ones.
+
+01:40.110 --> 01:44.100
+OK, so I see if I'll read books again.
+
+01:45.030 --> 01:52.770
+It's going to be a list containing am books objects when I do the same thing we did before anything
+
+01:52.770 --> 01:53.030
+new.
+
+01:53.040 --> 02:00.150
+Put it in sort of if statement here I'm going to check if our view model go to data, go through all
+
+02:00.150 --> 02:07.860
+of that value and get actual data is null or empty, if that's the case.
+
+02:15.740 --> 02:16.520
+Snot, no.
+
+02:16.790 --> 02:25.090
+So we have data I'm going to see if you modelled in data value data.
+
+02:25.130 --> 02:29.480
+I'm going to go ahead and filter again, so I and book.
+
+02:35.140 --> 02:43.570
+Like that, so I'm going to say and book check user ID again is equal to the current user.
+
+02:48.000 --> 02:48.480
+Heidi.
+
+02:49.920 --> 02:54.360
+And we're not sure that these are read, they're finished, right?
+
+02:55.770 --> 02:56.490
+It's not, no.
+
+02:58.490 --> 03:04.490
+Like this, so you need on the case, that's not true, then I'm just going to pass an empty list to
+
+03:04.490 --> 03:05.570
+our read books.
+
+03:06.650 --> 03:07.040
+All right.
+
+03:07.610 --> 03:11.930
+So once we have that set up, then I can invoke the items from.
+
+03:13.630 --> 03:18.220
+There and I want a list like this, I can pass items.
+
+03:18.490 --> 03:21.010
+It's going to be read books and we have passed lambda there.
+
+03:21.010 --> 03:24.310
+So this is where we're going to say Book Pro.
+
+03:24.460 --> 03:26.720
+Are we created before this book grow?
+
+03:26.770 --> 03:27.610
+How convenient.
+
+03:28.090 --> 03:30.150
+I'm going to just pass here.
+
+03:30.160 --> 03:35.620
+Our this is going to be, let's just say, book and pass her book.
+
+03:36.130 --> 03:40.060
+Now we're going to have a problem here because our book row expect a different type.
+
+03:40.330 --> 03:45.630
+It requires item book, which is the from our Jason right now.
+
+03:45.670 --> 03:52.840
+One thing I can do just for this one time I'm going to get this book composable.
+
+03:53.230 --> 03:58.930
+I just copy this and just add one here.
+
+03:59.410 --> 04:05.440
+Let's set everything OK instead of item, I'm going to say M book in this case.
+
+04:06.250 --> 04:07.180
+Lots of issues.
+
+04:07.240 --> 04:11.740
+OK, let's copy again and go here and paste it all in there.
+
+04:13.600 --> 04:17.860
+OK, we'll change this to M Book the type.
+
+04:20.230 --> 04:21.070
+Let's make sure we.
+
+04:23.880 --> 04:26.280
+Put all the things that need to be imported, that's fine.
+
+04:26.640 --> 04:27.720
+And this book row.
+
+04:28.080 --> 04:30.070
+This is what I'm going to be calling here.
+
+04:30.090 --> 04:35.090
+I'm going to say, Look, let's change this to stats.
+
+04:35.490 --> 04:37.200
+And where do you give that?
+
+04:40.300 --> 04:41.770
+And it will change all of that information.
+
+04:41.830 --> 04:44.320
+OK, so let's see.
+
+04:45.280 --> 04:46.170
+Copy this.
+
+04:50.280 --> 04:51.960
+OK, this has to be outside, let me.
+
+04:52.560 --> 04:55.830
+Looks like I'm making a mistake here, OK, let's cut all of this out.
+
+05:01.220 --> 05:04.410
+And put outside like that, OK, I think this will work, OK.
+
+05:04.430 --> 05:04.720
+There we go.
+
+05:04.740 --> 05:07.490
+Book starts now is being recognized.
+
+05:07.500 --> 05:15.200
+It can pass the book that book type and for now, let's go back to book stats.
+
+05:16.610 --> 05:17.690
+I don't want to do anything you.
+
+05:17.800 --> 05:19.580
+We're going to change because this is different.
+
+05:19.590 --> 05:25.730
+So book this book now to get images all with you.
+
+05:26.240 --> 05:27.560
+It's a book that.
+
+05:29.070 --> 05:30.250
+Photo URL.
+
+05:30.630 --> 05:31.230
+Like this?
+
+05:32.820 --> 05:37.350
+That to string is empty.
+
+05:37.620 --> 05:42.300
+Then we take that else, we're just going to go ahead and get to that book.
+
+05:42.310 --> 05:44.040
+Look, that photo are out.
+
+05:45.880 --> 05:56.830
+And not to string like that, and it's just going to change the title directly like that.
+
+05:56.900 --> 06:02.410
+And sure, we need to pass a few things so it's to string in the popular state.
+
+06:03.960 --> 06:05.720
+And the categories.
+
+06:07.320 --> 06:08.490
+And there we go.
+
+06:09.750 --> 06:10.260
+OK.
+
+06:10.320 --> 06:13.620
+A lot of restructuring here, that's a fair let's see what else are we missing?
+
+06:14.670 --> 06:21.590
+In this case, I'm not going to pass that because I don't want to go anywhere when these are clicks,
+
+06:21.820 --> 06:23.400
+I guess remove this altogether.
+
+06:25.920 --> 06:32.340
+OK, so let's save this and run should be able to see all the books this.
+
+06:33.850 --> 06:34.720
+User has read.
+
+06:37.970 --> 06:44.780
+OK, let's click, and while this book, this person has read one book, which makes sense if you go
+
+06:44.780 --> 06:51.800
+back and say This matters, read Update, we go back, we should see two books.
+
+06:52.400 --> 06:53.990
+OK, so the more books they read.
+
+06:55.480 --> 06:58.030
+And update.
+
+06:59.560 --> 07:02.890
+We can see now the they're not reading any books, right?
+
+07:03.290 --> 07:04.120
+They're saying they're.
+
+07:04.690 --> 07:08.140
+However, they have read three books and one two three.
+
+07:09.280 --> 07:16.510
+OK, so it is indeed working, this is wonderful, so you can go ahead and add a few books here, something
+
+07:16.510 --> 07:17.290
+is loading.
+
+07:17.770 --> 07:19.160
+David, go what took a little while?
+
+07:19.570 --> 07:20.410
+Get that book!
+
+07:20.500 --> 07:22.870
+Looks like the internet is not the best at this point.
+
+07:23.020 --> 07:27.820
+So the same books that search for something else eating pasta?
+
+07:29.290 --> 07:30.370
+OK, there you go.
+
+07:31.980 --> 07:34.110
+Internet is really slow, but there it is.
+
+07:34.210 --> 07:36.300
+The books are showing an endless load.
+
+07:38.360 --> 07:41.150
+OK, I'm going go ahead and save.
+
+07:41.840 --> 07:42.380
+Go back.
+
+07:43.770 --> 07:44.050
+Voila!
+
+07:44.250 --> 07:47.130
+So books are being added, I can go ahead and add.
+
+07:48.240 --> 07:50.010
+Here, Mark started.
+
+07:51.420 --> 07:55.290
+And he can see we're reading this book and I can go and change.
+
+07:56.430 --> 07:59.500
+Say Mark, updates done.
+
+08:00.420 --> 08:01.080
+And voila!
+
+08:01.350 --> 08:06.570
+So we're able to really get this app to work Friend lives in does exactly what we wanted to do.
+
+08:07.470 --> 08:08.130
+Wonderful.
+
+08:08.370 --> 08:09.460
+Congratulations.

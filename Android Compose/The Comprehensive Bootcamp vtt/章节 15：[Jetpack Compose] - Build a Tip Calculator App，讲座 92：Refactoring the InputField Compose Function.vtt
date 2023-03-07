@@ -1,0 +1,370 @@
+WEBVTT
+
+00:01.140 --> 00:08.070
+So as it is right now, we are able to look here, we can pass our inputs in our entire bill and everything
+
+00:08.070 --> 00:09.220
+is great, right?
+
+00:09.240 --> 00:12.160
+The actions are working and this is will get today.
+
+00:12.180 --> 00:16.260
+There really is that what drives this entire application is this entire bill.
+
+00:16.420 --> 00:16.710
+Right?
+
+00:17.130 --> 00:23.280
+That means we need to get this information and then pass it on the function, right?
+
+00:23.460 --> 00:28.230
+That way, we can get this information in this case, 100 or $2000.
+
+00:28.770 --> 00:33.260
+And then later on, connect to these other pieces here.
+
+00:33.270 --> 00:36.150
+Why the split amount and the tip?
+
+00:36.330 --> 00:40.250
+Of course, the slider and so forth so that we can have a total amount per person.
+
+00:40.980 --> 00:42.270
+That is the idea.
+
+00:43.020 --> 00:47.400
+The way things are right now, we are calling inside of our main content.
+
+00:47.820 --> 00:48.780
+We have all the states.
+
+00:49.170 --> 00:52.080
+It's all OK and we call in their input field.
+
+00:52.090 --> 00:54.030
+So it's working because we see everything working.
+
+00:54.510 --> 01:00.840
+Now how do we get this information that we are adding and pass it on to a different function in this
+
+01:00.840 --> 01:03.480
+case as a callback, so we can use it anywhere we want?
+
+01:04.290 --> 01:08.790
+So to facilitate our lives, really, all of this information needs to be somewhere else.
+
+01:09.240 --> 01:17.310
+What that means is instead of my content here only just have these states as part of the process of
+
+01:17.310 --> 01:18.660
+state hosting, right?
+
+01:18.900 --> 01:27.090
+So remove the state call up so that we have this composable that is relatively stateless.
+
+01:27.930 --> 01:35.100
+So what I'm going to do is create yet another composable yes, you guessed it, it would say at composable
+
+01:36.090 --> 01:40.920
+bill say fine for first bill form a section.
+
+01:42.390 --> 01:45.270
+Now this bill form here is going to host.
+
+01:46.660 --> 01:53.410
+All of this code mainly is going to host this input field because we want to then be able to pass the
+
+01:53.410 --> 02:00.250
+value we get through our bill form so that when we call bill form will then have a trailing lambda,
+
+02:00.400 --> 02:02.890
+which will have the value, which is this value here.
+
+02:03.140 --> 02:04.660
+But if that doesn't make any sense, it's OK.
+
+02:04.690 --> 02:05.830
+It will make sense, I promise you.
+
+02:06.550 --> 02:10.900
+So again, for our bill form here, what I'm going to do for some say modifier.
+
+02:12.990 --> 02:17.460
+And pass here a default modifier, so we don't have to worry about it.
+
+02:18.270 --> 02:18.530
+OK.
+
+02:19.020 --> 02:25.020
+And then there are a few things that need to pass, go ahead and give everybody here and then I'm going
+
+02:25.020 --> 02:26.850
+to pass a few things, but we're going to go slow.
+
+02:27.180 --> 02:29.970
+But what I really want to pass is this.
+
+02:31.350 --> 02:39.420
+Method called on vowel change because this is going to capture the values that we are getting from our
+
+02:39.420 --> 02:40.080
+text field.
+
+02:40.470 --> 02:43.380
+So this will expect a string because that's what I'm getting.
+
+02:43.830 --> 02:47.880
+And then we're going to return nothing in it like this.
+
+02:49.710 --> 02:49.980
+OK.
+
+02:52.040 --> 02:57.620
+And as a default for now, I'm just going to retire, put nothing like that, squarely curly braces
+
+02:57.620 --> 02:58.010
+like that.
+
+02:58.850 --> 03:00.080
+OK, so that's the idea.
+
+03:01.010 --> 03:02.150
+So what so what?
+
+03:02.150 --> 03:03.140
+We want to happen here?
+
+03:03.830 --> 03:05.390
+Well, a lot of things.
+
+03:05.510 --> 03:09.620
+But for now, let's just go ahead and remove some of this code.
+
+03:09.710 --> 03:11.660
+Actually, I'm going to take all of this surface.
+
+03:12.350 --> 03:15.800
+Let's see about here all this code.
+
+03:15.800 --> 03:19.970
+I'm going to remove all of that and put inside here.
+
+03:21.620 --> 03:24.260
+Out of our bill, and we're going to have some issues.
+
+03:24.290 --> 03:24.740
+It's OK.
+
+03:25.040 --> 03:30.230
+And then I'm also going to get these.
+
+03:33.750 --> 03:36.480
+For now, get all of these and add them.
+
+03:48.930 --> 03:49.740
+Put them there.
+
+03:50.760 --> 03:51.060
+OK.
+
+03:52.230 --> 03:54.660
+Of course, we'll have to do what we did before.
+
+03:58.740 --> 04:02.670
+And let's go ahead and add experimental, the first one is fine.
+
+04:03.460 --> 04:04.590
+Tara Composable there.
+
+04:04.650 --> 04:07.350
+OK, so our main concern is is empty right now.
+
+04:07.360 --> 04:07.880
+That's OK.
+
+04:07.890 --> 04:08.730
+We'll get back to that.
+
+04:10.080 --> 04:13.020
+So our bill form here, we pass it modifier.
+
+04:13.650 --> 04:15.090
+That's fine on values.
+
+04:15.090 --> 04:16.980
+And this is where I want us to focus on.
+
+04:17.490 --> 04:18.330
+This is very important.
+
+04:18.550 --> 04:24.780
+And remember, because a composable function, you can pass a functional as a parameter.
+
+04:24.780 --> 04:30.030
+But the beauty is that if it's the last thing that we pass as a parameter, a function, then this can
+
+04:30.030 --> 04:30.450
+be used.
+
+04:30.450 --> 04:32.880
+Then then then what we call bill form.
+
+04:33.150 --> 04:37.950
+This can be transformed into a trailing a lambda, which is really awesome, because then we're going
+
+04:37.950 --> 04:41.490
+to have access to the values that we're passing there.
+
+04:42.510 --> 04:47.430
+So now if we go back to our input field, we have to do here.
+
+04:47.640 --> 04:54.060
+This is where we're going to call the on value changed, which is this guy here and pass in the value
+
+04:54.450 --> 04:58.200
+that we're getting in our input field.
+
+04:59.340 --> 05:00.780
+So I'm going to get rid of this.
+
+05:01.440 --> 05:09.780
+And here I'm going to say on Val change, I'm going to pass the total bill, state that value and I'm
+
+05:09.780 --> 05:11.820
+going to go ahead and trim that value.
+
+05:11.820 --> 05:14.250
+So that way, we'll just get the actual value.
+
+05:14.250 --> 05:20.460
+So you call trim, it just trims off all the fat, as you'd like to call it, everything that is unnecessary.
+
+05:21.180 --> 05:23.100
+Now what do we gain from this?
+
+05:23.460 --> 05:28.140
+It sounds very not glorious, if you will.
+
+05:28.410 --> 05:38.410
+We get a lot because now if I call this bill form inside of our main, it can say here bill form a such.
+
+05:38.430 --> 05:38.940
+Look at this.
+
+05:39.600 --> 05:41.550
+Of course, I can go ahead and pass it, modify it.
+
+05:41.550 --> 05:44.700
+But we're not interested in that now, but I can go ahead and pass it.
+
+05:44.700 --> 05:45.780
+Trailing Lambda.
+
+05:46.320 --> 05:46.710
+Aha.
+
+05:47.160 --> 05:50.370
+If you do that, you can see now we have the information here.
+
+05:50.400 --> 05:54.180
+This case here, I can just change this to bill AMTI amount.
+
+05:54.980 --> 05:55.310
+Thank you.
+
+05:55.680 --> 06:03.000
+And then look at this, I can say log D. Hit enter and then I'm going to pass our bill amount like this.
+
+06:06.600 --> 06:14.130
+Say A. Like that, so now things change, main content still be called if I run this again.
+
+06:16.500 --> 06:23.470
+Look at what's going to happen if I go and add 123 hit enter.
+
+06:24.690 --> 06:30.180
+If I go to Logcat and change this to debug.
+
+06:31.970 --> 06:35.330
+And look for a empty.
+
+06:37.720 --> 06:39.670
+While the 123.
+
+06:41.180 --> 06:46.970
+This is really important because now we're able to get the amount that we want, it means we can do
+
+06:46.970 --> 06:53.030
+all sorts of calculations going back here if I change this to something else and I am using my phone.
+
+06:53.060 --> 06:56.330
+Let's go back and I hit enter again.
+
+06:56.420 --> 06:56.960
+It's fine.
+
+06:57.050 --> 07:03.080
+Let's go back and say 56 hit enter can see the amounts are indeed changing.
+
+07:05.360 --> 07:08.420
+So we are receiving the values that we need.
+
+07:08.720 --> 07:13.280
+So here I can do all sorts of things I can say, for instance, that to Int if I want to to change our
+
+07:13.280 --> 07:16.830
+tune into you and I can multiply that by 100.
+
+07:17.210 --> 07:17.970
+Look, what's going to happen?
+
+07:17.970 --> 07:22.310
+Let's go ahead and run again just to show you right.
+
+07:22.580 --> 07:33.560
+If I put 100 hate, enter now we get 10000 because I'm multiplying any value that I add there by a 100.
+
+07:34.550 --> 07:38.490
+So four five enter forty five hundred and.
+
+07:39.680 --> 07:40.160
+Great.
+
+07:40.700 --> 07:42.170
+This is really, really good.
+
+07:42.920 --> 07:43.190
+OK.
+
+07:44.090 --> 07:49.970
+And the beauty also is, if you look closely, can see that we still have that very nice border which
+
+07:49.970 --> 07:54.140
+is going to grow and look more like this once we're done with this app.
+
+07:54.140 --> 07:59.690
+But at least the most important thing here, the driver of this entire application, we are able to
+
+07:59.960 --> 08:04.950
+we were able to set it up for the most part, and it's ready because it's receiving the information
+
+08:04.950 --> 08:07.010
+that's receiving our data.
+
+08:07.250 --> 08:11.360
+In this case, our value, the bill, and then we're able to do something with that number.
+
+08:11.480 --> 08:16.100
+All of this is because we're able to extract that code and put in a different composable.
+
+08:16.430 --> 08:24.830
+And we have this own value change kind of like a callback, really, when it's used here at the bottom,
+
+08:25.100 --> 08:30.050
+save on value change, we pass the value which is going to be the state and dream everything and get
+
+08:30.050 --> 08:33.440
+the actual value into the string and only pass along.
+
+08:33.470 --> 08:38.630
+So now we can use it and what we want whenever we call bill form just like that.

@@ -1,0 +1,475 @@
+WEBVTT
+
+00:00.990 --> 00:08.430
+So at this point when we click on each one of these lists, right item, we go to details screen and
+
+00:08.880 --> 00:14.190
+nothing is really happening because we don't have information right about what we've just clicked.
+
+00:14.520 --> 00:17.700
+So the idea is when we click, we want to pass some data.
+
+00:18.060 --> 00:23.250
+In this case, I was just going to pass the title of each one of these movies when they are clicked
+
+00:23.610 --> 00:27.270
+to show them here and the details page screen.
+
+00:27.930 --> 00:28.650
+So how do you do that?
+
+00:28.920 --> 00:31.890
+Well, let's go to our movie navigation here.
+
+00:32.730 --> 00:38.940
+So if you look at our composable here, this is the composable that describes the details screen.
+
+00:39.290 --> 00:39.400
+Right.
+
+00:39.450 --> 00:42.520
+So we call this and then we go to detailed screen.
+
+00:42.540 --> 00:46.530
+This easy navigation tree like this is a navigation graph.
+
+00:47.070 --> 00:48.300
+So what do we need to do?
+
+00:48.420 --> 00:49.260
+It's very simple.
+
+00:49.890 --> 00:56.910
+All we have to do is to append, because remember this linking that we have here, this navigation is
+
+00:56.910 --> 00:59.230
+mimicking how we navigate in the web.
+
+00:59.230 --> 01:05.220
+In case we said, pointing to the double double that blue Google Akam.
+
+01:05.220 --> 01:07.410
+And then we go to this route, let's say.
+
+01:09.050 --> 01:16.100
+Person, but now, but now that we are in this rude person or rather details screen.
+
+01:18.440 --> 01:20.350
+All right, just to give an example.
+
+01:20.680 --> 01:24.790
+Now what we want to do is we want to pass some parameters when to pass some information.
+
+01:24.790 --> 01:29.260
+So and the way we would have to have something like this is idea is equal.
+
+01:29.650 --> 01:30.310
+Thirty four.
+
+01:30.610 --> 01:32.400
+So now we're going to pass some data.
+
+01:32.410 --> 01:34.300
+This is part of the data we're going to pass.
+
+01:34.720 --> 01:41.710
+All we do is to append, as you see here, we're going to append, for example, and then the information
+
+01:41.710 --> 01:42.070
+we want.
+
+01:42.940 --> 01:51.010
+So that's eight plus and put double quotes for Slash, and then I'm going to put inside of curly braces.
+
+01:51.260 --> 01:52.090
+It's very important.
+
+01:52.540 --> 01:58.480
+In this case, I'm going to name the value or the variable that's going to be holding the information.
+
+01:59.680 --> 02:00.940
+Let's just say movie for now.
+
+02:01.660 --> 02:07.510
+Now we also can has more information about this argument that we're passing.
+
+02:07.900 --> 02:13.630
+If you hover over in composable, you can see it has the root parameter which would pass.
+
+02:13.900 --> 02:17.050
+And then we have the arguments which you see here.
+
+02:17.050 --> 02:19.060
+It's going to be a list of named arguments.
+
+02:20.230 --> 02:24.220
+Now, if we don't do anything right now, just leave like that.
+
+02:24.220 --> 02:27.220
+So we actually add the arguments, right?
+
+02:27.640 --> 02:32.620
+It's going to be OK because the default argument type is always going to be string.
+
+02:33.190 --> 02:38.320
+However, I'm going to pass it here so that you know how to do, and I will recommend that you do this
+
+02:38.800 --> 02:41.390
+whenever, whenever you wanted to pass arguments.
+
+02:41.410 --> 02:42.400
+So I said arguments.
+
+02:42.670 --> 02:47.050
+In this case, I'm going to make a list of who can pass a list of arguments.
+
+02:47.620 --> 02:49.810
+And here once they have arguments.
+
+02:49.930 --> 02:53.420
+So this is the type function we're going to pass and it's not here.
+
+02:53.420 --> 02:55.050
+I'm going to pass the name of the argument.
+
+02:55.090 --> 03:01.630
+The name is going to be movie has to be exactly the same or passed it, the Senate that we passed there.
+
+03:04.300 --> 03:08.950
+And after that, I'm going to pass the actual type, someone say type.
+
+03:10.800 --> 03:19.260
+Said that two NAF type string type like this and you can see if I say NAF type, you can see if I say
+
+03:19.260 --> 03:20.070
+NAF type.
+
+03:20.680 --> 03:23.520
+Click there are all these different types within pass.
+
+03:24.540 --> 03:24.690
+Right?
+
+03:25.350 --> 03:26.820
+For now, this one string type.
+
+03:27.690 --> 03:31.380
+So what we're saying here again, is that the arguments that we're expecting is going to be a list,
+
+03:31.380 --> 03:33.600
+even though Dallas only has one item that's OK.
+
+03:33.990 --> 03:38.520
+I will pass it NAF argument, which is going to be a movie and then the type is going to be a string
+
+03:38.520 --> 03:38.850
+type.
+
+03:40.370 --> 03:40.720
+OK.
+
+03:40.860 --> 03:41.240
+Target.
+
+03:41.570 --> 03:43.010
+So at this point, here we are.
+
+03:43.040 --> 03:47.780
+We establish this connection, we say we do have the argument we're going to pass, which is going to
+
+03:47.780 --> 03:50.110
+be movie and the type is string.
+
+03:51.620 --> 03:55.730
+Now, once we get there, they are being inside of detailed screen.
+
+03:56.120 --> 04:01.100
+How do we how do we then retrieve that information in this case, the information we're going to be
+
+04:01.100 --> 04:02.840
+passing from this argument?
+
+04:04.010 --> 04:12.800
+If you look at how alarmed to hear this is the composable that we have here, access to this NAF back
+
+04:12.950 --> 04:14.030
+stack entry.
+
+04:15.200 --> 04:23.230
+So I'm going to actually put that in your line and say Max stack entry.
+
+04:23.300 --> 04:30.800
+So what this is, really it's going to be it will what this is is a veritable that contains the information
+
+04:30.800 --> 04:31.310
+we want.
+
+04:31.730 --> 04:35.090
+For instance, we can go and get the arguments, values and so forth.
+
+04:35.510 --> 04:39.920
+And that's handy because then we can pass that into our detailed screen, which is exactly what we want
+
+04:40.310 --> 04:40.790
+in this case.
+
+04:40.790 --> 04:46.610
+Here, I can just go ahead and say something like this pack back, string back, stack entry.
+
+04:47.210 --> 04:48.350
+I'm going to see arguments.
+
+04:48.650 --> 04:53.930
+I have access with arguments and in this case here because it's knowable and just put.
+
+04:54.710 --> 04:58.160
+And then I'm going to get string like this.
+
+04:59.300 --> 05:00.890
+OK, what string?
+
+05:01.130 --> 05:02.450
+I'm going to get the key.
+
+05:02.930 --> 05:05.180
+It's going to be movie.
+
+05:05.930 --> 05:06.280
+OK.
+
+05:06.320 --> 05:06.860
+There it is.
+
+05:07.190 --> 05:12.950
+Now we're going to have an issue here because if you have over, we haven't specified in our details.
+
+05:13.520 --> 05:15.620
+Let's go ahead and click here.
+
+05:16.580 --> 05:22.100
+We need to actually add a parameter to function details screen to say, OK, we are expecting to receive
+
+05:22.100 --> 05:23.780
+something in this case, just going to be a string.
+
+05:24.140 --> 05:25.490
+So, OK, just click that.
+
+05:26.060 --> 05:29.180
+And if you go to details, you can see now that was added there.
+
+05:29.390 --> 05:34.240
+So in this case, instead of just string, let's call this OK, this is knowable.
+
+05:34.250 --> 05:36.350
+That's why we have the exclamation point.
+
+05:37.470 --> 05:37.850
+All right.
+
+05:37.890 --> 05:42.390
+So now I can just pass that movie data.
+
+05:44.320 --> 05:52.690
+Saying all the data such and because it's not a bill, I'll have to probably surround that or let's
+
+05:52.690 --> 05:56.590
+just call to string it, that will solve the problem.
+
+05:59.130 --> 06:09.450
+OK, there we have, but we're not done yet because we've set up the mechanism to pass data from homescreen
+
+06:09.450 --> 06:10.110
+to details.
+
+06:11.250 --> 06:13.380
+Now we have to actually pass the actual data.
+
+06:13.390 --> 06:14.370
+Where do we pass that?
+
+06:14.400 --> 06:19.950
+Well, remember we have inside of our home screen, inside of our lazy column.
+
+06:20.070 --> 06:22.560
+We have more row and we have that lambda.
+
+06:23.100 --> 06:27.000
+Whatever we are clicking this case, this is going to be the name of the movie.
+
+06:27.000 --> 06:29.730
+In fact, they can change this to say.
+
+06:31.190 --> 06:37.520
+Movie night in this case, here I am just going to pass through.
+
+06:38.420 --> 06:41.000
+And now we have this navigate, we're passing the route.
+
+06:41.030 --> 06:43.130
+Look at this detail screen that name.
+
+06:43.520 --> 06:48.290
+That means that I can pass it just like we would do in the web.
+
+06:48.690 --> 06:57.680
+I'm going to say plus to concatenate right and then forward slash like this and pass our movie string
+
+06:57.680 --> 06:57.980
+here.
+
+06:58.880 --> 07:04.160
+Make sure you do add forward slash, because remember, this is almost like a link, right?
+
+07:04.730 --> 07:07.700
+Saying that we're passing this argument into our route.
+
+07:09.960 --> 07:10.330
+Right.
+
+07:10.350 --> 07:10.800
+There it is.
+
+07:11.100 --> 07:12.600
+So now let's go ahead and run this.
+
+07:14.270 --> 07:14.650
+OK.
+
+07:14.720 --> 07:15.500
+Moment of truth.
+
+07:15.630 --> 07:19.220
+If I click Avatar, oops, it looks like we were having some issues.
+
+07:19.850 --> 07:22.520
+Let's go to Iran and see what the problem might be.
+
+07:23.510 --> 07:28.490
+Looks like unsupported exception arrays don't support default values.
+
+07:29.690 --> 07:31.460
+Maybe I passed the wrong.
+
+07:34.950 --> 07:35.400
+You're right.
+
+07:35.430 --> 07:36.220
+This is the problem.
+
+07:36.240 --> 07:39.180
+This is supposed to be string type, not that string array.
+
+07:39.450 --> 07:44.130
+I had it before, but I think I'm I mistyped and I did the wrong type.
+
+07:44.760 --> 07:45.660
+That's the problem, right?
+
+07:45.660 --> 07:48.240
+But says arrays don't support default values.
+
+07:48.420 --> 07:49.230
+There was a problem.
+
+07:49.450 --> 07:50.100
+It would be good.
+
+07:50.550 --> 07:51.600
+Types are very important.
+
+07:51.960 --> 07:53.220
+OK, let's go ahead and run again.
+
+07:53.970 --> 07:57.930
+This time, we should hopefully be able to see good results.
+
+07:58.390 --> 07:59.190
+Click 300.
+
+07:59.400 --> 07:59.940
+There it is.
+
+08:01.290 --> 08:03.150
+And let's click Harry Potter.
+
+08:03.930 --> 08:09.990
+OK, so we are able to pass information through our navigation, which is really exciting.
+
+08:10.320 --> 08:12.270
+Now you can see you can do all sorts of things right.
+
+08:12.270 --> 08:17.400
+The idea is, for instance, if this were an object, a moving object, it would have more than just
+
+08:17.400 --> 08:17.850
+a title.
+
+08:18.240 --> 08:19.410
+Then we would pass to Andy.
+
+08:19.410 --> 08:27.780
+And then when we get here, get ready and get now the object information more fields and we can't populate
+
+08:27.780 --> 08:31.350
+here to create the sense that to create that detailed speech.
+
+08:33.380 --> 08:35.960
+And here what we can do is put that inside of a surface.
+
+08:38.190 --> 08:39.000
+And.
+
+08:41.260 --> 08:42.480
+Put that inside there.
+
+08:44.860 --> 08:46.750
+Remove all of that and.
+
+08:53.880 --> 08:55.190
+Pass the modifier.
+
+08:57.790 --> 08:58.620
+Max height.
+
+09:01.540 --> 09:05.110
+Max width, OK.
+
+09:05.290 --> 09:09.370
+And then we can make this, perhaps, let's say.
+
+09:16.290 --> 09:19.470
+Give her a style, say, material
+
+09:22.200 --> 09:26.460
+theme typography as Page Five, that's fine.
+
+09:29.320 --> 09:32.050
+And if he wanted, we can just put this inside of a column.
+
+09:37.270 --> 09:48.940
+And get all of that and put in the middle there, say horizontal alignment, center, horizontal and
+
+09:49.180 --> 09:51.100
+vertical arrangement.
+
+09:51.940 --> 09:55.110
+I want that to be center, right?
+
+09:55.180 --> 09:59.050
+This is just play at this point to see what we can get here.
+
+10:02.950 --> 10:03.610
+And there you have it.
+
+10:03.730 --> 10:05.530
+So now it's in the middle there.
+
+10:06.400 --> 10:06.920
+All right.
+
+10:06.940 --> 10:07.750
+This is real good.
+
+10:08.660 --> 10:14.020
+Let's go back happiness and we are passing the correct data.

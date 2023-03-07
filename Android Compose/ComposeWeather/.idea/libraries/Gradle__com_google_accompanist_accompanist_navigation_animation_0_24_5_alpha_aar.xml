@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.accompanist:accompanist-navigation-animation:0.24.5-alpha@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dee3f8bbaacc1ca9f92dc2a0916cc504/transformed/accompanist-navigation-animation-0.24.5-alpha/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dee3f8bbaacc1ca9f92dc2a0916cc504/transformed/accompanist-navigation-animation-0.24.5-alpha/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dee3f8bbaacc1ca9f92dc2a0916cc504/transformed/accompanist-navigation-animation-0.24.5-alpha/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-navigation-animation/0.24.5-alpha/1a3b985b5ef5aad8e677b4e0ed99388f98693b87/accompanist-navigation-animation-0.24.5-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.accompanist/accompanist-navigation-animation/0.24.5-alpha/254cda2f4ef16bbfc88a6743c5362fc0625d58c3/accompanist-navigation-animation-0.24.5-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

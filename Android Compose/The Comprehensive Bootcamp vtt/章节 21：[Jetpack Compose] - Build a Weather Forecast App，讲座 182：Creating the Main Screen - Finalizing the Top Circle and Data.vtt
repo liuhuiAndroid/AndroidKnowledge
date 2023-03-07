@@ -1,0 +1,508 @@
+WEBVTT
+
+00:00.300 --> 00:04.470
+So so far, we have dummy data for here to top the date of today.
+
+00:04.870 --> 00:05.100
+Right.
+
+00:05.640 --> 00:12.210
+And we have damning data also for the weather or the temperature, I should say, as well as the description
+
+00:12.210 --> 00:13.740
+of the weather today.
+
+00:14.270 --> 00:15.780
+OK, so let's change that.
+
+00:15.780 --> 00:18.420
+Let's start with the top data there.
+
+00:19.290 --> 00:25.950
+How do we get the date, the data for each one of these days or weather description of the day?
+
+00:26.040 --> 00:26.940
+We have this date.
+
+00:27.120 --> 00:28.750
+So this is timestamp.
+
+00:28.770 --> 00:30.030
+This is Unix timestamp.
+
+00:30.030 --> 00:36.840
+So that means we have to convert this into a date, something that we can see, something that perhaps
+
+00:36.840 --> 00:38.820
+looks like this Monday, November 29th.
+
+00:39.030 --> 00:41.480
+So let's let's let's, first of all, get that information.
+
+00:41.520 --> 00:42.450
+Then we're going to deal with it.
+
+00:43.530 --> 00:49.740
+Our data, which is our weather and we've been using it to get some information we can do so for our
+
+00:50.010 --> 00:50.820
+date here.
+
+00:51.420 --> 00:52.710
+So what do we do?
+
+00:53.610 --> 00:54.570
+We say data.
+
+00:55.050 --> 00:59.640
+I'm going to go to the list, of course, and we know just getting for today at the top here, that's
+
+00:59.910 --> 01:00.750
+what we're going to show.
+
+01:01.020 --> 01:07.320
+So it's OK to just go in and say zero like that, and then I'm going to go to the temp object and then
+
+01:07.320 --> 01:07.980
+get the date.
+
+01:08.640 --> 01:14.820
+So again, what I'm doing going to do list to get the first object, which is today, go to the temp
+
+01:15.060 --> 01:19.320
+object inside and go get the date, the temperature for today.
+
+01:20.190 --> 01:20.490
+All right.
+
+01:20.490 --> 01:25.190
+So this isn't metric, as you can see the Eunice's metric, that's why it says 12.
+
+01:25.200 --> 01:27.730
+So we're going to change that to Imperial.
+
+01:28.440 --> 01:29.700
+So you can see the difference as well.
+
+01:30.480 --> 01:32.970
+So it depends depending on where you live in the world.
+
+01:33.240 --> 01:35.580
+You can change to imperial or metric.
+
+01:35.810 --> 01:38.760
+OK, so 52 degrees for my American friends.
+
+01:39.240 --> 01:39.510
+All right.
+
+01:39.510 --> 01:42.630
+So 52 degrees, that's for during the day.
+
+01:42.840 --> 01:48.120
+So that's what we're going to be using or that's what we're using to show here right now.
+
+01:48.120 --> 01:54.240
+This is going to be problematic because I want to make sure that this is a strong suit to stream like
+
+01:54.240 --> 01:54.930
+that could.
+
+01:54.930 --> 01:55.830
+That's what's needed there.
+
+01:56.640 --> 01:56.910
+All right.
+
+01:56.910 --> 01:57.750
+So let's go ahead and run.
+
+01:59.180 --> 01:59.730
+Well, I'm sorry.
+
+01:59.730 --> 02:01.160
+That is right.
+
+02:01.170 --> 02:03.300
+This is not the date I want to date.
+
+02:03.960 --> 02:04.890
+Not today.
+
+02:05.070 --> 02:05.470
+All right.
+
+02:05.490 --> 02:07.200
+My bet, it's going to run in a way.
+
+02:07.620 --> 02:09.150
+Let's see what's going to show there.
+
+02:10.310 --> 02:10.610
+OK.
+
+02:10.640 --> 02:11.290
+Thirty six.
+
+02:11.300 --> 02:11.730
+88.
+
+02:11.750 --> 02:13.700
+That's not what we want, but we'll get there.
+
+02:14.390 --> 02:17.870
+So I want instead, I want the date.
+
+02:18.170 --> 02:19.510
+So go back.
+
+02:19.520 --> 02:23.030
+I'm going to see list zero and just go and see.
+
+02:23.960 --> 02:24.770
+That's what I want.
+
+02:24.800 --> 02:28.700
+I'm going to say to string so we can see the same in a way.
+
+02:29.030 --> 02:33.200
+So I'm getting this, so I'm just going to get the string representation of our date.
+
+02:33.800 --> 02:34.680
+OK, there we go.
+
+02:34.700 --> 02:36.210
+That's very long.
+
+02:36.230 --> 02:37.910
+No, that makes no sense to us.
+
+02:37.910 --> 02:39.830
+But at least we know we're getting the information now.
+
+02:40.070 --> 02:45.440
+Let's go ahead and format this into something that it's readable, humanly readable, something like
+
+02:45.440 --> 02:45.710
+this.
+
+02:46.010 --> 02:48.320
+Well, for that, let's go to our utils.
+
+02:48.320 --> 02:56.180
+I'm going to create yet another class here or just a file call utils like this, and I'm going to pasting
+
+02:56.180 --> 02:56.910
+some code.
+
+02:56.930 --> 03:02.090
+Now I'm piecing it all of this because it just makes no sense to me to type it all.
+
+03:02.540 --> 03:04.910
+It's something that you will have access to, and it's very simple.
+
+03:04.910 --> 03:05.270
+So they do.
+
+03:05.390 --> 03:06.020
+What are we doing here?
+
+03:06.050 --> 03:10.670
+I'm going to use these other ones later, but many days that we have, for instance, creating this
+
+03:10.670 --> 03:15.610
+format data would pass in the timestamp in integer and we return a string.
+
+03:15.620 --> 03:20.090
+So I'm using this simple data format and passing the pattern right.
+
+03:20.090 --> 03:22.700
+Depending on different patterns, we want to show off our date.
+
+03:22.820 --> 03:23.860
+So that's all I'm doing here.
+
+03:23.870 --> 03:25.790
+Of course, I use the Java you till date.
+
+03:25.790 --> 03:33.020
+I convert everything and blah blah blah, and then I use the format method to format it into these patterns.
+
+03:33.020 --> 03:34.240
+So we show the actual date.
+
+03:34.260 --> 03:40.640
+So now with this format, for instance, you know, I mean, I can wrap all of this into a format,
+
+03:41.080 --> 03:43.880
+a format date.
+
+03:43.920 --> 03:49.020
+I think this is the one and then put it all inside there.
+
+03:49.040 --> 03:50.540
+And of course, I get rid of that.
+
+03:50.660 --> 03:53.720
+I don't want this to be a string asked to come in as it is.
+
+03:54.320 --> 03:57.110
+And now we should get something more readable.
+
+03:58.110 --> 03:58.330
+All right.
+
+03:58.370 --> 04:07.760
+So this should be something hopefully that says Wednesday, November 30, 1st or 30th, something like
+
+04:07.760 --> 04:08.030
+this.
+
+04:08.390 --> 04:10.820
+Let's let's take a look and see if you're run.
+
+04:12.560 --> 04:13.280
+OK, there we go.
+
+04:13.490 --> 04:18.980
+Tuesday, November 30th, which is today when you run this, of course, depending on the day you are
+
+04:19.400 --> 04:20.420
+writing this code.
+
+04:20.550 --> 04:23.540
+Of course, this will change, but it will be the correct date for you as well.
+
+04:23.600 --> 04:25.230
+Don't get too hung up on this.
+
+04:25.250 --> 04:28.000
+This is just some functions that I've created.
+
+04:28.070 --> 04:31.390
+You'll have access to that and you can tweak them and so forth.
+
+04:31.400 --> 04:32.930
+So something to for you to have.
+
+04:33.290 --> 04:37.460
+And we are going to be using these other different functions later.
+
+04:37.670 --> 04:44.120
+Well, next, we're going to add the actual temperature of the day, which is exactly what we accidentally
+
+04:44.120 --> 04:45.260
+did earlier.
+
+04:45.500 --> 04:48.860
+Well, all of that is going to be in here right in this text.
+
+04:49.280 --> 04:53.750
+So I'm going to say data or date data rate data.
+
+04:54.920 --> 04:55.250
+All right.
+
+04:55.310 --> 05:04.580
+List get the first item of the list, which is today and I'm going to say temp and day like the highest
+
+05:04.580 --> 05:05.270
+of the day.
+
+05:06.200 --> 05:08.930
+And in this case here, let's go ahead.
+
+05:09.110 --> 05:13.670
+And what I'm going to do because I don't want to have let's go back here.
+
+05:15.170 --> 05:18.080
+I don't want this temp to have decimal points.
+
+05:18.320 --> 05:20.540
+What I'm going to do, I'm going to use again.
+
+05:21.290 --> 05:23.750
+Let's go back to our util.
+
+05:25.460 --> 05:27.650
+We're going to use the format to decimal.
+
+05:27.690 --> 05:32.630
+So what this does is it takes in a double and then returns a string formatted.
+
+05:32.810 --> 05:34.540
+So this is how we're going to format it.
+
+05:34.550 --> 05:37.520
+We just say we want to zero decimal places, right?
+
+05:37.820 --> 05:40.490
+That's how we do it and we pass the item, which is a dipole.
+
+05:41.120 --> 05:43.340
+So we're going to use that format decimals.
+
+05:44.390 --> 05:45.350
+So go back.
+
+05:45.620 --> 05:51.020
+I can't wrap all of this again into format decimals like this.
+
+05:51.410 --> 05:52.000
+OK.
+
+05:52.080 --> 05:52.820
+Which should be good.
+
+05:54.680 --> 06:02.030
+And while I'm here this snow, where do we get that snow, which is a description of what's going on
+
+06:02.960 --> 06:03.560
+that day?
+
+06:15.370 --> 06:19.930
+Well, we do the same thing when I say data analyst.
+
+06:23.270 --> 06:30.560
+First item, I'm going to go to, whether I get the first again and then main.
+
+06:31.430 --> 06:35.840
+So looking at our data, I got to list get the first one.
+
+06:36.560 --> 06:41.840
+I go all the way to whether it's indeed a list or an array.
+
+06:41.870 --> 06:43.430
+I get the first object right?
+
+06:43.760 --> 06:44.660
+And then I go to mine.
+
+06:44.660 --> 06:48.230
+So I'm going to get this small description, not the main description.
+
+06:54.510 --> 06:55.920
+One thing I can do.
+
+06:56.670 --> 07:04.230
+Actually, it's notice that I see a lot of data lists zero, so I can actually refactor this right click,
+
+07:04.740 --> 07:05.080
+right?
+
+07:05.130 --> 07:13.350
+Maybe it's a little bit extreme, but it's OK when I introduce whatever, replace all occurrences.
+
+07:15.090 --> 07:15.510
+There we go.
+
+07:15.600 --> 07:17.400
+So this is just makes it a little bit easier.
+
+07:18.000 --> 07:22.470
+Well, the weather item, which just pass in there and just a little bit of refactoring.
+
+07:22.530 --> 07:22.980
+Nothing.
+
+07:23.880 --> 07:24.840
+Nothing out of this world.
+
+07:25.650 --> 07:27.960
+OK, let's go ahead and re1 this real quick.
+
+07:32.080 --> 07:41.080
+Now, let me add the degree, as you see here, we have this degree similar now to type a degree symbol.
+
+07:41.260 --> 07:42.400
+What do you need to do?
+
+07:42.430 --> 07:45.520
+Let's go back to where I want this to show.
+
+07:47.440 --> 07:54.110
+This ad plus here, so on Mac, all I do out and hit the zero, and there we go.
+
+07:54.770 --> 07:58.760
+And I believe that also that would work on.
+
+07:59.720 --> 08:07.460
+P.C. Now, one thing you can do is you can just Google how to type degree symbol right on a Mac or on
+
+08:07.920 --> 08:09.950
+a window, and that should work, right?
+
+08:09.980 --> 08:16.190
+So this will just help a little bit and let's finalize and give a final version for now so we can move
+
+08:16.190 --> 08:16.480
+on.
+
+08:18.530 --> 08:19.220
+OK, there we go.
+
+08:19.400 --> 08:21.260
+37 degrees and.
+
+08:22.480 --> 08:24.250
+If we change this city, we should.
+
+08:24.400 --> 08:25.840
+Of course, this should work.
+
+08:26.440 --> 08:27.370
+I'm going to say.
+
+08:29.070 --> 08:29.820
+Lisbon.
+
+08:33.580 --> 08:41.200
+OK, looks like Lisbon is pretty cloudy, 58 degrees, let's say Istanbul.
+
+08:41.800 --> 08:43.420
+I think that's how you spell it.
+
+08:45.460 --> 08:46.330
+OK, there we go.
+
+08:46.630 --> 08:50.200
+57 And it's kind of sunny and rainy and cloudy.
+
+08:51.310 --> 08:51.670
+All right.
+
+08:51.700 --> 08:53.170
+So it's working.
+
+08:53.440 --> 09:00.280
+This is really great because you can see as we change the city, we automatically changing the App Bar
+
+09:00.640 --> 09:01.240
+title.
+
+09:01.690 --> 09:05.650
+We also getting the date of today, the weather data of today.
+
+09:06.010 --> 09:06.880
+We're getting the image.
+
+09:07.210 --> 09:11.090
+We're getting the degrees, the temperature and the description right.
+
+09:11.110 --> 09:13.270
+It's rain, snow and so forth.
+
+09:14.720 --> 09:15.140
+Very good.
+
+09:15.170 --> 09:17.240
+So we're making progress now.
+
+09:17.270 --> 09:20.570
+Our top here, it's all working perfectly.
+
+09:21.110 --> 09:24.230
+Max, what are we going to do is look at this structure here.
+
+09:25.550 --> 09:26.630
+OK, I'll see you next.

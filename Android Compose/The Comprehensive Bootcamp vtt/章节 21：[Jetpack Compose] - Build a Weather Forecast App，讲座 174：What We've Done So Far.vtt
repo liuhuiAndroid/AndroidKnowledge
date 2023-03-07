@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.600 --> 00:07.140
+So far, we've created this structure we needed, which is to have a splash screen, so if you run,
+
+00:07.560 --> 00:11.640
+we've put this structure where we have the animation for a nice animation there.
+
+00:12.000 --> 00:15.030
+And then after a few seconds, it goes to main screen, which is really, really good.
+
+00:15.210 --> 00:16.380
+That's exactly what we want.
+
+00:17.600 --> 00:22.200
+Now, before we move forward, I would like to restructure a few things here.
+
+00:22.500 --> 00:23.850
+First of all, there were screens here.
+
+00:23.940 --> 00:26.670
+I don't like to have all the screens inside of screens.
+
+00:26.670 --> 00:34.440
+So because later, as you will see, each screen may need to have its own classes, such as view models
+
+00:34.440 --> 00:34.950
+and so forth.
+
+00:35.340 --> 00:42.510
+So it's always important to divide of subdivided the screens into their own packages.
+
+00:43.260 --> 00:43.860
+What do you mean by that?
+
+00:43.860 --> 00:46.710
+Is as follows I'm going to right click here and add a new package.
+
+00:48.240 --> 00:55.410
+So let's say main, and then I'm going to take this main and add inside of main package there.
+
+00:56.580 --> 00:58.140
+And make sure that we factor everything.
+
+00:58.950 --> 01:02.260
+And then for our splash screen, I can do the same thing, right?
+
+01:02.280 --> 01:04.650
+So that creates yet another package.
+
+01:08.150 --> 01:13.370
+Called Splash that ad inside their.
+
+01:15.080 --> 01:15.470
+Forget.
+
+01:17.330 --> 01:21.380
+So it looks like we can change a few things inside of this.
+
+01:24.700 --> 01:27.730
+I would go I was necessary, but that works fine.
+
+01:28.120 --> 01:28.450
+OK.
+
+01:29.140 --> 01:30.940
+That's what we have so far.
+
+01:31.980 --> 01:37.470
+So far, we've put together our navigation, so we're able to put together the splash screen where animation
+
+01:37.830 --> 01:44.040
+and after a few seconds user were able to then, of course, go to the main screen, although the main
+
+01:44.040 --> 01:46.160
+screen doesn't look anything like What do you see there?
+
+01:46.170 --> 01:47.140
+But we're going to work on that.
+
+01:47.160 --> 01:49.560
+That's the beauty we're trying to put together.
+
+01:49.830 --> 01:53.010
+The infrastructure is slowly so we can see the whole picture.
+
+01:53.640 --> 01:59.660
+So that means now we are ready to look at putting together this infrastructure, which is the main screen
+
+01:59.670 --> 01:59.940
+now.
+
+02:00.210 --> 02:03.780
+There are a lot of things here, and so we will take our time.
+
+02:04.680 --> 02:10.590
+Most importantly, we are going to go and look at the data because the idea is to pass data from our
+
+02:10.590 --> 02:11.430
+weather API.
+
+02:12.800 --> 02:15.920
+And then make sure that your dad is waiting for the user interface.
+
+02:16.040 --> 02:21.590
+So that's very important because once we have the data, we know the data is is there for us to work
+
+02:21.590 --> 02:27.230
+with, then it's much easier to go and you look at the user interface, which is to put the user interface
+
+02:27.230 --> 02:27.620
+together.
+
+02:28.400 --> 02:29.900
+OK, so that's what we're going to be doing.
+
+02:30.230 --> 02:38.180
+We are going to go back to the back end and start focusing on retrieving data, using retrofit and other
+
+02:38.180 --> 02:39.830
+libraries along the way, of course.
+
+02:39.980 --> 02:41.420
+But that's what I'm going to be doing.

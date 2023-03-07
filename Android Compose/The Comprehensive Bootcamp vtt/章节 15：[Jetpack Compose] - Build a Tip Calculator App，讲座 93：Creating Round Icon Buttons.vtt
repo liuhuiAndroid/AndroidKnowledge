@@ -1,0 +1,1012 @@
+WEBVTT
+
+00:01.990 --> 00:08.530
+OK, so continuing here, still, instead of a bill form, we can continue putting together the other
+
+00:08.530 --> 00:10.170
+part of the user interface, right?
+
+00:10.280 --> 00:11.830
+You put all of these other things here.
+
+00:11.980 --> 00:20.200
+So but the main idea really is that we want to make sure that all of this is shown if this value or
+
+00:20.200 --> 00:26.920
+if there's something right inside of our interview field, that's why we also have that's why we have
+
+00:26.920 --> 00:35.110
+this is valid or valid state, which is being used right here to retain whatever the keyboard functions
+
+00:35.110 --> 00:36.100
+we have at this point.
+
+00:36.700 --> 00:37.540
+If it's not valid.
+
+00:39.010 --> 00:41.770
+So we can use that as well to our advantage.
+
+00:42.310 --> 00:47.980
+So if you click in our field here, let me put this in the no line field and all this ends here.
+
+00:48.460 --> 00:55.660
+What it can do, I can also say something like this here and say, if valid, state that value.
+
+00:56.840 --> 01:01.810
+Well, actually, this fairly say that's fine, if you state.
+
+01:04.250 --> 01:11.840
+Then we're going to show all of this, which we haven't created yet, else we're just going to go ahead
+
+01:11.840 --> 01:13.330
+and show a box.
+
+01:15.110 --> 01:16.490
+Very sad, empty box.
+
+01:18.040 --> 01:23.650
+So here is just for experimenting, we say text and add a valid.
+
+01:25.290 --> 01:26.160
+Let's go ahead and run.
+
+01:29.250 --> 01:35.830
+You can see nothing it's showing there, right, because we have entered there's nothing, so it's invalid,
+
+01:35.840 --> 01:37.010
+that's why it's hidden.
+
+01:37.010 --> 01:38.900
+We just have a box empty box.
+
+01:39.500 --> 01:44.630
+But if I add 12 valid is showing, all right.
+
+01:44.720 --> 01:45.150
+There we go.
+
+01:45.170 --> 01:46.190
+That's that's very helpful.
+
+01:46.370 --> 01:47.360
+That's exactly what we want.
+
+01:47.870 --> 01:51.650
+Obviously, we want to add more than just the text that says, file it right.
+
+01:51.950 --> 01:53.930
+That's why we put all these things together.
+
+01:54.350 --> 01:55.620
+So what is that we're going to add here?
+
+01:55.640 --> 02:00.020
+Well, we want to add a lot of things, but first, let's go ahead and put a row.
+
+02:01.280 --> 02:08.480
+They say row, because I see here that I have this structure here that contains split and then we have
+
+02:08.480 --> 02:10.670
+button, then text and then another button.
+
+02:12.080 --> 02:13.290
+So this will be a row.
+
+02:13.310 --> 02:14.720
+So I'm going to go ahead and add a row.
+
+02:15.860 --> 02:23.300
+Let's go ahead and pass a modifier real quick here, padding overall padding here of about three dpi.
+
+02:24.590 --> 02:30.190
+And then let's look at horizontal arrangement of the same arrangement.
+
+02:30.200 --> 02:33.550
+I want this to be from the start, right?
+
+02:33.570 --> 02:34.630
+So everything's going to be.
+
+02:34.640 --> 02:35.180
+Let's see.
+
+02:39.730 --> 02:42.190
+Start like this, everything is going to be, too.
+
+02:43.320 --> 02:46.870
+They left, they start right then.
+
+02:46.890 --> 02:54.990
+I'm going to add a text that says, split in wrong here, I'm going to modify this text as well.
+
+02:55.000 --> 02:56.160
+So that's a modifier.
+
+02:58.720 --> 03:10.320
+A modifier as such, and then I can use a line or a line is another way for us to align the current
+
+03:10.680 --> 03:11.410
+function here.
+
+03:11.430 --> 03:12.750
+The current tax in this case?
+
+03:13.180 --> 03:13.410
+Right.
+
+03:14.130 --> 03:15.120
+So what I want to happen?
+
+03:15.150 --> 03:17.760
+Well, I want alignment of this text.
+
+03:18.060 --> 03:20.640
+Let's say alignment, right?
+
+03:21.420 --> 03:22.970
+Android compose there.
+
+03:23.010 --> 03:27.660
+There, I'm going to make it to make it to be center vertically.
+
+03:29.280 --> 03:29.640
+OK.
+
+03:33.180 --> 03:40.740
+And then next, I'm going to put a spacer and then I'm going to give and modify and it's a modifier.
+
+03:44.350 --> 03:49.560
+That width of about 120 deep.
+
+03:49.720 --> 03:51.910
+So what are we doing here is that I'm creating this text.
+
+03:52.180 --> 03:56.470
+And then because I know I'm inside of a row, I want this text.
+
+03:57.890 --> 04:05.780
+Because I know I'm inside of row, that means then I will need some spacing between the split and whatever
+
+04:05.780 --> 04:11.660
+else I'm going to add, which is going to be this section of buttons, some adding that space to the
+
+04:11.660 --> 04:11.960
+right.
+
+04:13.690 --> 04:19.010
+Because it's invalid state and that they see nothing happens, there was a 23 and well, I can see a
+
+04:19.040 --> 04:20.710
+split and things are good.
+
+04:20.950 --> 04:25.840
+The other thing I notice is that our Enter Bill text field here doesn't take the entire space and sat
+
+04:25.840 --> 04:26.320
+in the middle.
+
+04:26.680 --> 04:30.130
+So let's check where this is all being called.
+
+04:32.560 --> 04:34.000
+We have this column here, right?
+
+04:34.030 --> 04:38.800
+This column is enclosing the text field, so let's change a few things in this column.
+
+04:40.150 --> 04:41.980
+So we have it all work.
+
+04:43.490 --> 04:44.180
+The way we want.
+
+04:44.300 --> 04:46.820
+So let's add a modifier here.
+
+04:49.720 --> 04:58.150
+The power of modifiers, as you see now and the skipper padding all about 60p.
+
+04:59.020 --> 05:06.730
+And also, let's align things around a vertical alignment arrangement, I should say, and I want this
+
+05:06.730 --> 05:09.010
+to be the top.
+
+05:09.700 --> 05:10.090
+OK.
+
+05:10.240 --> 05:11.890
+Everything inside of his column.
+
+05:12.370 --> 05:17.590
+And then I'm going to put horizontal alignment when, say, alignments?
+
+05:18.190 --> 05:19.750
+We want to start.
+
+05:20.750 --> 05:22.270
+OK, let's go ahead and run real quick.
+
+05:23.110 --> 05:24.240
+OK, that's not bad.
+
+05:24.310 --> 05:27.100
+And later, we'll deal with the sizes and everything Regulus we see.
+
+05:27.100 --> 05:27.850
+Everything is good.
+
+05:28.630 --> 05:31.180
+You notice here the next thing we have, we have split.
+
+05:31.480 --> 05:35.410
+It's showing there, but we want to also have this structure here.
+
+05:35.980 --> 05:37.870
+So again, there's different ways to do this.
+
+05:38.200 --> 05:41.380
+What I'm going to do because I know it's going to be a row, right?
+
+05:41.430 --> 05:43.390
+These are side by side horizontally.
+
+05:43.780 --> 05:46.720
+So I'm going to create this structure inside of a row.
+
+05:47.050 --> 05:50.440
+So I'm going to create all of these buttons in this text inside of a row.
+
+05:50.740 --> 05:52.600
+So it's going to be a row inside of a row.
+
+05:52.630 --> 05:53.360
+That's totally fine.
+
+05:53.380 --> 05:58.000
+So after our space are there, I'm going to create another row passing the modifier.
+
+06:01.750 --> 06:03.220
+Modifiers such.
+
+06:10.230 --> 06:11.580
+Padding all.
+
+06:12.940 --> 06:15.220
+So for the padding here, I'm going to be strategic.
+
+06:17.210 --> 06:24.770
+So I'm just going to add the horizontal padding to the horizontal, and I want to see three dpi instead
+
+06:24.770 --> 06:29.660
+of all this two and a horizontal padding, so it's going to be left to right.
+
+06:30.170 --> 06:30.440
+OK.
+
+06:33.200 --> 06:39.410
+And the next thing I'm going to do also, it's still inside of our row.
+
+06:39.710 --> 06:41.960
+I'm going to say horizontal.
+
+06:43.390 --> 06:45.190
+Arrangement, I say arrangement.
+
+06:45.220 --> 06:50.830
+I want this to be to the end, because all of this is going to be to the end of the structure of this
+
+06:50.830 --> 06:51.100
+row.
+
+06:51.680 --> 06:52.010
+Right.
+
+06:52.030 --> 06:53.110
+Whatever, it's inside there.
+
+06:55.000 --> 07:01.720
+OK, so inside here, this is where then I'm going to add these buttons in this text now because we
+
+07:01.720 --> 07:02.590
+have two buttons here.
+
+07:02.920 --> 07:05.290
+If we think about it, that means that they're were very similar.
+
+07:05.320 --> 07:08.470
+The only difference is that this button here is minus.
+
+07:08.770 --> 07:09.730
+This is plus.
+
+07:10.660 --> 07:14.920
+So what I'm going to do, I'm going to create a structure that resembles this.
+
+07:15.280 --> 07:19.330
+If you think back, you remember that we can create anything that is clickable, right?
+
+07:19.630 --> 07:24.640
+There are buttons, actually buttons that we can use directly and we can change those.
+
+07:24.820 --> 07:32.410
+But we are going to modify just a circle and make it a button and add plus or minus and so forth.
+
+07:32.440 --> 07:33.910
+So we're going to create this structure.
+
+07:34.300 --> 07:40.570
+So to make this even better, I'm going to create a new file actually when to create a new package inside
+
+07:40.570 --> 07:41.640
+of the main package.
+
+07:43.360 --> 07:44.850
+Call this widget's.
+
+07:45.100 --> 07:51.880
+This is good so that we can divide things up, we can separate classes that do so, we can separate
+
+07:51.880 --> 07:53.560
+similar classes into one place.
+
+07:53.560 --> 07:56.350
+So we just we just going to add all the widgets.
+
+07:57.700 --> 08:01.300
+So instead of a widget here, we can add all the functions that present a widget.
+
+08:01.570 --> 08:07.000
+OK, so I'm going to right click again, create a cuddling class and just a file.
+
+08:07.000 --> 08:07.720
+That's fine.
+
+08:08.230 --> 08:13.550
+And this one, I'm going to call round icon button or such enter.
+
+08:13.570 --> 08:14.200
+And there we go.
+
+08:14.650 --> 08:16.720
+So these is what are we going to call inside here?
+
+08:16.750 --> 08:22.000
+So now when I come here, get rid of everything else that does not need to be there.
+
+08:22.420 --> 08:22.750
+All right.
+
+08:22.750 --> 08:30.130
+So here I'm going to create a composable function as such, and I'm going to say fun round
+
+08:32.770 --> 08:36.310
+round round icon button as such.
+
+08:36.850 --> 08:40.360
+And we're going to pass a few things right to create this pattern.
+
+08:40.360 --> 08:41.830
+A few parameters here.
+
+08:42.700 --> 08:49.120
+So the first one is going to be image vector because we need some sort of vector image here.
+
+08:49.120 --> 08:56.860
+Since the image vector is a type and which compose you are, graphics could be an icon.
+
+08:56.860 --> 08:58.780
+Could it be even be our own image?
+
+08:59.770 --> 09:05.980
+And then I'm going to obviously have on click event click method function here that we're going to be
+
+09:05.980 --> 09:07.510
+call or pass.
+
+09:08.290 --> 09:12.880
+You don't have to pass any parameters there, and it's going to be unit.
+
+09:14.470 --> 09:23.710
+I'm going to pass a modifier, and it's always customary to have modifiers as the first parameters we
+
+09:23.710 --> 09:24.070
+pass.
+
+09:24.070 --> 09:24.790
+So it's followed.
+
+09:24.790 --> 09:28.600
+That convention doesn't really matter, but I think it's better that way.
+
+09:29.260 --> 09:31.390
+And in this case, I'm going to pass a tent.
+
+09:31.990 --> 09:42.760
+Also, when I say color and I'm going to put a value or add a default value here and say color dot black.
+
+09:43.980 --> 09:49.710
+And I'm going to actually convert customize this to say Alpha pass in alpha.
+
+09:49.740 --> 09:57.480
+So how deemed how visible the color is to I said this to zero point eight.
+
+09:58.320 --> 09:58.550
+OK.
+
+10:00.210 --> 10:00.690
+There we go.
+
+10:03.030 --> 10:06.320
+And then I'm going to add the background color.
+
+10:07.050 --> 10:11.160
+This case also is going to be a color, but I'm going to pass a default one.
+
+10:11.160 --> 10:14.630
+I'm just going to use material theme.
+
+10:15.810 --> 10:20.640
+Scholars not on background color again, this is going to be more apparent later.
+
+10:20.820 --> 10:22.020
+Why are we using material?
+
+10:22.020 --> 10:28.710
+Theme on background color is because if we were changing our device, for instance, it is on dark mode,
+
+10:28.710 --> 10:35.490
+then the background is going to adapt to that mode without making everything look terrible.
+
+10:36.870 --> 10:40.320
+OK, let's also pass elevation variable here.
+
+10:40.320 --> 10:43.020
+It's going to be a DPI type.
+
+10:43.440 --> 10:47.310
+And as a default, I'm going to pass a four dot dpi.
+
+10:48.540 --> 10:49.360
+That's important.
+
+10:49.420 --> 10:51.000
+What do we need to import in this case?
+
+10:51.000 --> 10:53.190
+Is dpi density independent?
+
+10:53.910 --> 10:54.360
+There.
+
+10:57.410 --> 11:01.970
+So deep is an Android, you know, this stands for density independent pixel.
+
+11:02.150 --> 11:05.780
+So what he does is that he is independent of the device.
+
+11:05.780 --> 11:14.870
+So if I say for DP, if this app is running on a larger device, so the Android system, the Android
+
+11:14.870 --> 11:20.930
+compiler will be able to pick that and adapt to the pixels of that device.
+
+11:21.500 --> 11:21.800
+OK.
+
+11:22.370 --> 11:23.000
+That's what it is.
+
+11:23.480 --> 11:23.840
+All right.
+
+11:24.170 --> 11:29.180
+So again, all we're doing here was just passing all of these parameters so that we can customize our
+
+11:29.330 --> 11:30.410
+round icon button.
+
+11:31.280 --> 11:36.110
+And if you look at this, we've seen this many times all the composable, even the composable that happen
+
+11:36.260 --> 11:42.790
+to even the composable that we get from the framework from this toolkit, I should say the co-composed
+
+11:42.800 --> 11:45.720
+tool kit, they follow the same idea.
+
+11:45.770 --> 11:46.730
+That's the beauty here.
+
+11:47.240 --> 11:47.640
+All right.
+
+11:47.660 --> 11:51.710
+So what is that I want to show inside of these around I can button.
+
+11:52.160 --> 11:54.230
+Well, first I'm going to add a card.
+
+11:55.940 --> 11:57.530
+OK, so composable there.
+
+11:58.700 --> 11:59.480
+What's new?
+
+11:59.960 --> 12:05.420
+And then I'm going to pass it modifier and for the modifier and then see modifier that we're passing.
+
+12:05.600 --> 12:06.020
+OK?
+
+12:06.560 --> 12:11.920
+And say that padding all and say all again.
+
+12:13.900 --> 12:16.090
+Let's see, it looks like something is now right?
+
+12:16.570 --> 12:19.810
+Did I not get the right padding modifier?
+
+12:20.650 --> 12:21.220
+I can.
+
+12:21.340 --> 12:22.660
+This happens all the time.
+
+12:22.780 --> 12:26.350
+It's very important that we get the correct modifier, so get rid of that.
+
+12:26.800 --> 12:28.420
+And we can't import it.
+
+12:28.420 --> 12:34.210
+So alt or option enter and we need to get the Android X compose UI.
+
+12:34.750 --> 12:36.370
+OK, that's that's very crucial.
+
+12:36.730 --> 12:40.090
+Otherwise, you get the problems that you saw me getting.
+
+12:40.540 --> 12:40.810
+All right.
+
+12:40.810 --> 12:44.230
+So now I can say modify modifier padding and passing all here.
+
+12:44.530 --> 12:46.090
+I want for deep.
+
+12:48.080 --> 12:50.210
+And most importantly, I want to make this clickable.
+
+12:50.430 --> 12:53.510
+So I say clickable, so clickable here.
+
+12:53.510 --> 13:02.210
+Instead of going to the lambda, I'm actually going to pass as a parameter here on click right a function.
+
+13:02.220 --> 13:03.920
+I'm going to pass the function that I have.
+
+13:04.250 --> 13:13.640
+Now, if I had chosen to just use the lambda function or lambda trailing lambda here, I could still
+
+13:13.640 --> 13:18.830
+say, but I would have to say something like this click or click that invoke.
+
+13:19.810 --> 13:26.620
+OK, so this will just go ahead and invoke this on click whatever we pass there for them to finish like
+
+13:26.620 --> 13:27.760
+this, OK?
+
+13:27.850 --> 13:28.780
+Either way, works.
+
+13:29.440 --> 13:30.850
+Now the other thing we want to do.
+
+13:31.000 --> 13:36.880
+We can actually change our or concatenate this modifier with another.
+
+13:37.570 --> 13:42.730
+What that means is so I want to be able to make it so that when the button or in this kind of the card,
+
+13:43.480 --> 13:45.910
+which is going to be something like this, we'll get to that.
+
+13:46.450 --> 13:49.330
+When that's clicked, we want to change the behavior as well.
+
+13:49.690 --> 13:56.670
+So what I'm going to do after a clickable here, it's end white about there, right about there.
+
+13:56.680 --> 14:02.470
+So what I'm going to say and when I say that, then when that happens, I can't pass another modifier
+
+14:02.470 --> 14:02.980
+to it.
+
+14:03.580 --> 14:04.790
+What modifier I want to pass?
+
+14:04.930 --> 14:06.550
+Well, I want something to happen.
+
+14:06.880 --> 14:09.610
+I want to just say an icon.
+
+14:11.380 --> 14:18.610
+Button size modifier, which we haven't created, so let's go ahead and create that at the top here.
+
+14:19.090 --> 14:27.760
+So I'm going to create another file here, and it's going to be a modifier that padding actually size
+
+14:28.660 --> 14:31.210
+and it would have has 40+ dpi.
+
+14:31.570 --> 14:33.970
+Let's go ahead and import that.
+
+14:34.540 --> 14:35.290
+What are we doing here?
+
+14:35.470 --> 14:39.160
+Who's saying, OK, the moment this is clickable, we're going to attach yet another.
+
+14:39.160 --> 14:43.150
+If you have over this, then it says, concatenate this modifier with another.
+
+14:43.450 --> 14:48.030
+So it's going to return a modifier representing this modified followed by other in sequence.
+
+14:49.540 --> 14:55.930
+So when this is clicked, we're going to change the size a little bit, so to get that sort of animation
+
+14:56.200 --> 14:58.000
+that they can see that this has been clicked.
+
+14:58.120 --> 14:58.990
+Very nice trick.
+
+14:59.110 --> 14:59.860
+Let's continue.
+
+15:00.430 --> 15:00.700
+All right.
+
+15:00.700 --> 15:05.980
+So stealing our card here, if we were to take a look at this, it wouldn't look that great because
+
+15:06.250 --> 15:09.640
+we don't have this circle circular shape that we want.
+
+15:09.880 --> 15:10.660
+We can change that.
+
+15:11.020 --> 15:17.620
+So after this modifier, we've added, I can go ahead and say shape and pass the shape.
+
+15:17.740 --> 15:21.160
+Just going to say circle a shape and call it good.
+
+15:21.350 --> 15:22.810
+I have to go any further.
+
+15:23.260 --> 15:25.480
+And then I'm going to put in background color.
+
+15:26.140 --> 15:31.510
+In this case, I'm going to see background color, so I'm passing whatever, whatever.
+
+15:31.510 --> 15:35.620
+It's going to be passed as an argument here if nothing is passed to us as an argument.
+
+15:35.860 --> 15:39.550
+We're just going to get the on background for my two from material theme.
+
+15:40.860 --> 15:41.180
+All right.
+
+15:41.730 --> 15:44.070
+Let's go ahead and put elevation here.
+
+15:44.430 --> 15:48.120
+I'm going to just put the elevation that we're getting from our parameters.
+
+15:48.150 --> 15:48.810
+Let's see.
+
+15:49.970 --> 15:50.890
+Elevation.
+
+15:51.210 --> 15:51.720
+There we go.
+
+15:52.530 --> 15:55.950
+And inside of this card here, I'm going to add an icon.
+
+15:57.280 --> 16:00.730
+Right, because I want an icon, something minus or plus.
+
+16:01.240 --> 16:03.220
+So what how do we get our icon?
+
+16:03.250 --> 16:06.760
+Well, I'm going to say Icon invoked the icon image vector.
+
+16:06.760 --> 16:07.630
+That's the one we want.
+
+16:08.230 --> 16:10.900
+And in this case, I'm going to pass our icon.
+
+16:12.150 --> 16:14.820
+In fact, what we called we call this image vector.
+
+16:14.970 --> 16:21.060
+OK, I'm just going to pass that image vector, we're passing there in description, I'm going to say.
+
+16:23.330 --> 16:25.010
+Plus or minus?
+
+16:27.160 --> 16:27.700
+Icon.
+
+16:30.680 --> 16:30.980
+OK.
+
+16:31.610 --> 16:39.080
+And the beauty also is that for our icon, we can pass another property parameter here called tint.
+
+16:40.040 --> 16:40.880
+So it's a color.
+
+16:40.880 --> 16:43.960
+Essentially, I'm going to pass the color that we wanted to show.
+
+16:43.970 --> 16:46.250
+So this tint we created there.
+
+16:49.160 --> 16:49.940
+So it looks like.
+
+16:51.370 --> 16:53.800
+Let's rename this to elevation.
+
+16:56.200 --> 16:56.460
+There.
+
+16:57.790 --> 16:58.120
+All right.
+
+16:58.960 --> 16:59.320
+Oops.
+
+17:02.450 --> 17:03.440
+That's the name again.
+
+17:04.820 --> 17:05.870
+When elevation.
+
+17:06.710 --> 17:08.930
+OK, let's just say continue.
+
+17:09.560 --> 17:13.820
+OK, let's go see elevation again and pass.
+
+17:14.920 --> 17:19.450
+Elevation like this, and we should be good.
+
+17:21.970 --> 17:23.680
+Never mind, this is not supposed to be here.
+
+17:23.890 --> 17:24.520
+Let's see.
+
+17:29.150 --> 17:31.790
+And looks like something is not.
+
+17:32.480 --> 17:33.520
+This is tent.
+
+17:34.760 --> 17:35.640
+Something broke.
+
+17:35.690 --> 17:36.510
+OK, there we go.
+
+17:36.530 --> 17:38.990
+I think I made a little mistake, but it's all fixed now.
+
+17:39.950 --> 17:46.130
+OK, so now that we have this separate button here, we can call it anywhere we want.
+
+17:46.460 --> 17:51.830
+In fact, if I come here, if I call, say, round.
+
+17:55.070 --> 18:00.350
+Icon button as such, then it requires me to pass a few.
+
+18:02.310 --> 18:05.880
+As you see here, so for modifier, it can say modifier.
+
+18:07.760 --> 18:10.580
+So in this case here, I don't want to pass my fire.
+
+18:11.030 --> 18:17.330
+I can do that because the because the default is going to be passed, but an image icon, it's very
+
+18:17.330 --> 18:21.170
+important someone say icons again, go to default.
+
+18:21.410 --> 18:21.970
+Look at this.
+
+18:21.980 --> 18:26.120
+All of this is provided for us when I say remove white.
+
+18:29.330 --> 18:29.860
+Like this.
+
+18:31.090 --> 18:37.300
+And for the to do, let's go back to around icon just to make sure I yes, I need to pass.
+
+18:37.600 --> 18:39.580
+Let's just put a modifier.
+
+18:42.560 --> 18:46.080
+Like this so that we don't need that force to pass that modifier.
+
+18:46.100 --> 18:48.020
+OK, now there we go, much better.
+
+18:48.440 --> 18:48.810
+All right.
+
+18:48.830 --> 18:54.260
+And so now I can remove, I can go ahead and create another one.
+
+18:55.940 --> 19:01.010
+Just close like this, and I'm going to say add, right?
+
+19:01.040 --> 19:03.920
+So it's going to be add and remove its import.
+
+19:05.410 --> 19:08.980
+Take this now, if I run this, if all goes well.
+
+19:09.250 --> 19:10.870
+OK, so we have to add something.
+
+19:11.980 --> 19:14.020
+And you can see we have split.
+
+19:14.230 --> 19:19.540
+I have these nice looking buttons here.
+
+19:19.550 --> 19:20.470
+They don't look that great.
+
+19:20.860 --> 19:21.860
+OK, what's going on?
+
+19:21.880 --> 19:23.860
+Let's go back to our code.
+
+19:25.290 --> 19:26.160
+Let's go back to.
+
+19:27.820 --> 19:35.020
+On background, tint colour black are the problem here, says I said on background.
+
+19:35.050 --> 19:41.050
+What I want is just say background because on background will give that black colour, which we don't
+
+19:41.050 --> 19:41.520
+want this.
+
+19:41.550 --> 19:42.640
+Find this one more time.
+
+19:43.250 --> 19:45.340
+OK, let's add the valid number.
+
+19:45.340 --> 19:45.850
+And voila!
+
+19:46.360 --> 19:50.470
+I can see now we have this very nice buttons, and I apologize.
+
+19:50.800 --> 19:53.610
+The quality of my screen here.
+
+19:53.620 --> 20:01.510
+The reason why is because I'm running my phone and I have this mirroring visor software that allows
+
+20:01.510 --> 20:03.010
+me to mirror my phone.
+
+20:03.010 --> 20:06.940
+But the qualities that I create on your and it should be seeing something better.
+
+20:06.940 --> 20:09.360
+But as you see here, it's working.
+
+20:09.370 --> 20:10.450
+The buttons are there.
+
+20:10.840 --> 20:11.920
+They look like this.
+
+20:13.350 --> 20:19.950
+The beauty here you've noticed is that this round icon button, we can use it anywhere we want, right?
+
+20:20.370 --> 20:26.130
+Because we realized that we needed more than one instead of repeating the code, we put all of that
+
+20:26.130 --> 20:30.960
+into its one composable and then we made a composable passing parameter.
+
+20:30.960 --> 20:36.320
+So we made it more customizable which era, which allows us to go back and use it wherever we want.
+
+20:36.330 --> 20:41.310
+As you see here, I just call the same round icon button and change just the icons.
+
+20:41.790 --> 20:42.360
+And voila!
+
+20:42.720 --> 20:46.410
+And here, of course, on Click, I can put whatever I want to happen.
+
+20:46.410 --> 20:50.370
+When this button is clicked, I can say loudly and pass.
+
+20:51.510 --> 20:53.640
+So here you can see that I have.
+
+20:53.940 --> 20:57.180
+So now we have this on click buttons, I can say something like this.
+
+20:58.500 --> 21:01.920
+Logged, just so we see it removed.
+
+21:02.460 --> 21:06.180
+I'm sorry, I can't, for instance, I can copy all of this.
+
+21:10.420 --> 21:12.510
+And there's, let's say, add.
+
+21:12.940 --> 21:14.110
+OK, let's go ahead and run.
+
+21:16.100 --> 21:16.670
+Test.
+
+21:17.210 --> 21:21.950
+There we go, say, man, minus let's go to LOLCat.
+
+21:23.750 --> 21:26.360
+And you can see removed, if I say.
+
+21:28.080 --> 21:31.710
+Plus, add so it's working perfectly, all right.
+
+21:32.670 --> 21:37.650
+So this is how you should think about creating these composable functions.
+
+21:37.680 --> 21:37.980
+All right.
+
+21:37.980 --> 21:44.880
+So this video is real long, but I hope you're able to follow along and see how I think about creating
+
+21:45.090 --> 21:49.530
+these composable functions so that then we can reuse the code.
+
+21:50.190 --> 21:53.700
+OK, so we still have some work to do, but we'll get there.

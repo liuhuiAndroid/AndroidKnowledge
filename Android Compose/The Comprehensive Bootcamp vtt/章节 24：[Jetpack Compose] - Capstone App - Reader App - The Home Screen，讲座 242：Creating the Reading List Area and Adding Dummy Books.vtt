@@ -1,0 +1,616 @@
+WEBVTT
+
+00:02.390 --> 00:05.810
+So now that we have this centerpiece here, because as you see, this is used.
+
+00:07.290 --> 00:08.520
+I brought him here as well.
+
+00:08.850 --> 00:15.540
+Let's go ahead and finish this structuring of this, the main screen here onto actually getting the
+
+00:15.540 --> 00:18.780
+data in this case, books and do all sort of things that we need to do.
+
+00:18.840 --> 00:22.740
+OK, so let's go ahead and finish the structure here.
+
+00:23.370 --> 00:26.760
+So first, let's go ahead and add this reading list, right?
+
+00:26.760 --> 00:27.240
+And then.
+
+00:28.510 --> 00:31.390
+This structure at the bottom there, which is going to be a list of books as well.
+
+00:32.140 --> 00:32.530
+All right.
+
+00:32.800 --> 00:33.970
+Let's close this down.
+
+00:34.420 --> 00:39.790
+So we're still before we move forward, let's move things around here because some of these are not
+
+00:40.420 --> 00:42.640
+needed in the home.
+
+00:42.640 --> 00:46.840
+So I'm going to cut this and go to our component.
+
+00:46.840 --> 00:55.570
+In fact, I can just be smarter about this by just say, Command E or control e for windows and look
+
+00:55.570 --> 00:56.220
+for components.
+
+00:56.230 --> 00:57.610
+Looks like it's right there.
+
+00:58.570 --> 01:03.880
+And I'm just going to add that here as well, which means now.
+
+01:05.910 --> 01:06.630
+Back in our.
+
+01:08.570 --> 01:09.620
+We need to call that.
+
+01:09.990 --> 01:11.120
+OK, let's go ahead and.
+
+01:14.790 --> 01:21.900
+Import cat, OK, and we can also get rid of our list card and get rid of it, make it better, move
+
+01:21.900 --> 01:23.250
+it somewhere else.
+
+01:26.970 --> 01:27.780
+In this case.
+
+01:36.840 --> 01:37.200
+Here.
+
+01:42.510 --> 01:45.570
+OK, looks like we need to do something important here.
+
+01:47.130 --> 01:49.380
+And, OK, everything should be good.
+
+01:52.870 --> 01:55.930
+Back, we need to also import driverless card.
+
+01:56.440 --> 01:56.770
+OK.
+
+01:58.050 --> 01:58.410
+Very good.
+
+01:59.580 --> 02:03.900
+So let's go ahead and run just to make sure that everything is still working perfectly.
+
+02:05.130 --> 02:06.750
+OK, so everything's so great, that's great.
+
+02:07.110 --> 02:13.470
+All right, let's go ahead and add the this structure here reading list, so I know it's going to be
+
+02:13.470 --> 02:14.280
+really easy.
+
+02:14.310 --> 02:16.620
+First of all, we have to figure out where we're going to add that.
+
+02:18.030 --> 02:20.280
+And also, let's move this guy here.
+
+02:20.310 --> 02:22.800
+I don't think it needs to be here.
+
+02:25.940 --> 02:26.870
+Let's go back.
+
+02:29.070 --> 02:30.060
+And added there.
+
+02:40.420 --> 02:46.150
+Let's get rid of some imports here that are no longer needed since we added that class, they're OK.
+
+02:47.350 --> 02:47.670
+All right.
+
+02:47.690 --> 02:50.440
+It's very good, very good.
+
+02:50.890 --> 02:55.450
+So we have this reading right now, area, so what are we going to do, actually?
+
+02:56.170 --> 03:01.450
+We're going to call this reading right now inside here.
+
+03:02.230 --> 03:09.640
+And then after our row, I'm going to call here reading right now.
+
+03:11.120 --> 03:18.830
+The say list of they and just snap controller, because we're going to we are going to change a few
+
+03:18.830 --> 03:19.760
+things later anyway.
+
+03:20.000 --> 03:24.920
+So let's go ahead and rerun this to make sure we can still see what we need to see.
+
+03:31.280 --> 03:32.010
+OK, that's good.
+
+03:32.030 --> 03:36.620
+So we just we just restructured a few things because we want separate everything.
+
+03:36.630 --> 03:39.800
+That way, we can add more things inside of our Rigney right now.
+
+03:39.800 --> 03:43.310
+So so far we're just going to pass this list card so we can see things working.
+
+03:43.820 --> 03:44.120
+All right.
+
+03:44.780 --> 03:47.990
+So let's go to where this is being called there.
+
+03:48.260 --> 03:57.410
+What do we do next is I'm going to pass the title section again and label this time is going to be reading
+
+03:58.220 --> 03:58.740
+list.
+
+03:58.820 --> 04:03.680
+So what I'm doing, I'm really using that composable, which we used earlier, and now I'm going to
+
+04:03.680 --> 04:06.410
+pass it down here to have this reading list like this.
+
+04:06.980 --> 04:07.400
+All right.
+
+04:08.780 --> 04:11.510
+And then here I'm going to put another.
+
+04:15.140 --> 04:20.840
+And then here is where I'm going to put this other section here, which is going to contain this, so
+
+04:20.840 --> 04:24.500
+I'm going to say book list area.
+
+04:25.520 --> 04:29.690
+Getting my say list of books you say.
+
+04:31.040 --> 04:32.570
+Empty list for now.
+
+04:33.350 --> 04:38.840
+It's going to be an empty list of books because these are the types that we need and they don't pass
+
+04:38.840 --> 04:41.750
+if you model which you will see later, I say view model.
+
+04:44.250 --> 04:47.700
+All right, and then let's pass it NAF controller here as well.
+
+04:50.550 --> 04:55.520
+All right, let's go ahead and create this composable at the bottom here.
+
+04:56.540 --> 04:58.460
+OK, so there we have it.
+
+04:58.610 --> 05:00.410
+So what is going to happen here?
+
+05:00.920 --> 05:03.590
+So we're going to have, of course, a list of books shown there.
+
+05:04.130 --> 05:10.280
+What I'm going to do here, I'm going to actually call a horizontal scrollable.
+
+05:13.460 --> 05:15.890
+Component that we will create in a second here.
+
+05:18.310 --> 05:20.650
+So for this, I'm just going to pass books.
+
+05:23.070 --> 05:26.580
+Might just list of books as such and.
+
+05:30.830 --> 05:35.750
+And that's it for now, let's go ahead and actually create this other composable as well there.
+
+05:36.200 --> 05:36.500
+All right.
+
+05:36.920 --> 05:40.380
+So here is the component.
+
+05:40.760 --> 05:41.780
+Let me go ahead and.
+
+05:44.710 --> 05:46.780
+Refactor this component.
+
+05:47.440 --> 05:48.610
+So what am I going to do here?
+
+05:48.640 --> 05:51.510
+Well, first of all, I'm going to create a scrollable view.
+
+05:51.520 --> 06:01.270
+So when I say foul scrollable or scroll scroll state like, say like such and let's say, remember scroll
+
+06:01.360 --> 06:01.960
+state.
+
+06:03.550 --> 06:04.060
+Like this?
+
+06:05.240 --> 06:05.530
+OK.
+
+06:06.380 --> 06:11.660
+And then I'm going to say row, because all of this is going to be inside of a row.
+
+06:12.060 --> 06:12.340
+OK.
+
+06:14.970 --> 06:27.780
+Add a modifier fail Max with and then I'm going to give it a height of about 280 DB, so I'm creating
+
+06:27.780 --> 06:34.210
+this structure here where we're going to have scrollable view, OK, once I have that.
+
+06:34.230 --> 06:35.040
+Let's see what else.
+
+06:35.340 --> 06:35.750
+Right?
+
+06:35.760 --> 06:42.120
+Because it's a row, I want to make sure that also I pass the horizontal scroll state, which I'm going
+
+06:42.120 --> 06:44.580
+to pass the scroll state as such.
+
+06:45.240 --> 06:48.630
+Well, for now, what I'm going to do, we're going to do a lot of other things later.
+
+06:48.630 --> 06:55.170
+But for now, I'm just going to create a for here, I'm going to say book in books.
+
+06:55.530 --> 07:00.690
+I think the list of books, that's what we called it, and I'm going to just go ahead and create that
+
+07:00.690 --> 07:01.680
+list card.
+
+07:04.160 --> 07:06.650
+And pass that book.
+
+07:08.530 --> 07:09.070
+Like this?
+
+07:10.850 --> 07:11.070
+Right?
+
+07:11.650 --> 07:18.250
+And for each one of these cards, remember this card has if you have over it, we have that on press
+
+07:18.250 --> 07:18.790
+detail.
+
+07:18.800 --> 07:22.180
+So we want to make sure that when that is clicked, we do something right.
+
+07:22.190 --> 07:24.170
+So I can't say on card press.
+
+07:24.190 --> 07:27.340
+In fact, I can add this right here.
+
+07:30.390 --> 07:39.330
+On hard pressed, it's going to be expecting a string of some type later and it's going to just be a
+
+07:39.330 --> 07:40.260
+unit like this.
+
+07:41.580 --> 07:41.880
+All right.
+
+07:41.880 --> 07:45.510
+So now I'm going to pass delegate that event.
+
+07:45.510 --> 07:47.970
+So on Card pressed.
+
+07:49.220 --> 07:54.290
+I'm going to pass that it like that and we'll get there later.
+
+07:54.440 --> 07:55.400
+This is not the end.
+
+07:55.400 --> 07:56.900
+We will have more to do later.
+
+07:57.830 --> 08:02.630
+OK, so this on card now in our Always-On tool.
+
+08:03.200 --> 08:08.740
+So now in our book list area, I add it is horizontal scrollable component here.
+
+08:08.750 --> 08:19.220
+Of course, I can go ahead later, do something, say to do one, click on card clicked.
+
+08:20.180 --> 08:23.840
+Go to details OK, or navigate.
+
+08:28.490 --> 08:32.930
+OK, so just for testing, let's go ahead and see where this is being called right about here.
+
+08:33.500 --> 08:34.820
+Just remove that.
+
+08:34.820 --> 08:37.280
+I guess what I'm going to do.
+
+08:37.280 --> 08:39.470
+I did tap here in our home content.
+
+08:39.530 --> 08:41.480
+Let's go ahead and say something like this off.
+
+08:41.480 --> 08:49.760
+Our list of books can be a list of books, and I'm going to be equal to say he's equal to a list of
+
+08:50.270 --> 08:51.620
+well past few books here.
+
+08:52.220 --> 08:55.040
+So first one, I'm going to say am book.
+
+08:58.580 --> 08:59.360
+Let's keep in it.
+
+09:02.090 --> 09:02.990
+Some gibberish
+
+09:05.690 --> 09:07.550
+and title.
+
+09:09.770 --> 09:11.030
+Hello again.
+
+09:13.190 --> 09:22.970
+Sirs, all of us and notes, we know we don't need anything, just put it all like this.
+
+09:23.070 --> 09:26.520
+OK, let's copy and a few.
+
+09:28.220 --> 09:29.610
+So that doesn't matter.
+
+09:29.820 --> 09:33.050
+There's going to be again, it's going to be hello.
+
+09:34.340 --> 09:34.970
+And that's fine.
+
+09:35.000 --> 09:39.170
+So now we have a list of books and then we can pass this list of books.
+
+09:42.310 --> 09:50.830
+Here sort of empty list, just past that list of books, and that is indeed what's going to be received
+
+09:50.830 --> 09:51.940
+in our book list.
+
+09:52.060 --> 09:52.810
+List of books.
+
+09:52.810 --> 09:59.830
+And then we're going to go past that into horizontal scroll view component, which is going to go and
+
+09:59.980 --> 10:01.780
+look through and create a cart.
+
+10:01.990 --> 10:07.570
+OK, a lot of moving parts, but essentially what we're doing here is that we added, or let's make
+
+10:07.570 --> 10:08.500
+sure I open this.
+
+10:08.920 --> 10:12.850
+Essentially, we're going to do here is that we are adding this structure at the bottom here, and we
+
+10:12.850 --> 10:17.860
+just want to see a list of books, even though there are the same books want to see them showing here.
+
+10:18.400 --> 10:20.890
+All right, let's go ahead and run this real quick and see.
+
+10:21.550 --> 10:22.270
+Hopefully it works.
+
+10:23.620 --> 10:24.310
+And there you have it.
+
+10:24.730 --> 10:28.600
+So now you have a few books that are showing at the bottom there.
+
+10:29.890 --> 10:31.360
+Oh, this is so great.
+
+10:33.520 --> 10:39.610
+All right, just like that, we have something, in fact that looks exactly like what we have here and
+
+10:39.610 --> 10:40.600
+we have that functionality.
+
+10:40.990 --> 10:47.260
+The beauty now is that since we have this all set up, it will be way easier than because all we need
+
+10:47.260 --> 10:50.080
+to do now is look for data and the data will come later.
+
+10:50.080 --> 10:56.610
+But at least we have the infrastructure set up so that once we are able to search for books and add
+
+10:56.610 --> 11:01.690
+the books in the ribs and retrieve them, then they can just all have to do, of course, is to get
+
+11:01.690 --> 11:08.170
+that information, the data of our books and populate passing it through, just like we did passing
+
+11:08.170 --> 11:10.570
+through this list of books in our code.
+
+11:11.140 --> 11:11.890
+And then we're done.
+
+11:12.040 --> 11:14.260
+And then we should see reflected here.
+
+11:14.620 --> 11:17.260
+And if I click, nothing will happen.
+
+11:17.260 --> 11:19.820
+But at least we all know that we're clicking the right book.
+
+11:19.900 --> 11:20.740
+And let's see.
+
+11:20.770 --> 11:21.190
+Let's see.
+
+11:21.190 --> 11:27.520
+We want to make sure that when that book is clicked, we pass that item of whatever that book has been
+
+11:27.520 --> 11:27.910
+clicked.
+
+11:27.940 --> 11:29.170
+What is I want to pass here?
+
+11:29.220 --> 11:29.770
+This is it.
+
+11:29.910 --> 11:34.300
+It's going to be the strength of the book and see what is it?
+
+11:34.330 --> 11:35.110
+Let's go.
+
+11:35.120 --> 11:35.830
+I had.
+
+11:37.090 --> 11:39.910
+And where this is called right here.
+
+11:40.390 --> 11:43.510
+Let's see if we can say log I logged like this.
+
+11:47.340 --> 11:48.210
+And passed it.
+
+11:51.620 --> 11:54.560
+In this case, it's let's run this real quick.
+
+11:56.090 --> 11:58.700
+OK, let's click this book of couple of times.
+
+11:58.700 --> 12:01.880
+It's slow to look at this one again.
+
+12:01.880 --> 12:03.950
+Looks like something is not right here.
+
+12:04.370 --> 12:04.700
+OK?
+
+12:06.270 --> 12:07.050
+There we go.
+
+12:07.800 --> 12:13.860
+Let's click says hello again, so it's getting the title of the book that we're clicking, clicking,
+
+12:13.860 --> 12:17.340
+so I was click on my phone there to say this book title.
+
+12:17.610 --> 12:19.410
+Click it says book title.
+
+12:19.410 --> 12:20.970
+But we didn't change something.
+
+12:21.000 --> 12:22.390
+Let's go back to work hard.
+
+12:22.410 --> 12:25.890
+That's why it's not reflecting the actual titles of the book.
+
+12:26.190 --> 12:29.190
+So if you go back to our card?
+
+12:30.550 --> 12:31.480
+Liscard.
+
+12:34.990 --> 12:37.810
+Right here, of course, we're going to just pass the book object.
+
+12:38.050 --> 12:38.410
+There we go.
+
+12:38.750 --> 12:48.460
+It's a book that title like that, and for authors, we need to make this an olive oil and wrap that
+
+12:49.240 --> 12:50.770
+just say to string, that's fine.
+
+12:51.250 --> 12:53.860
+And for our authors, say book.
+
+12:55.740 --> 13:05.840
+Authors to screen and which should be good now actually reflect the objects that we're passing.
+
+13:05.880 --> 13:07.110
+All the books are passing.
+
+13:07.260 --> 13:09.360
+You can see the change now in our books.
+
+13:10.680 --> 13:12.100
+But now we got all this.
+
+13:12.120 --> 13:13.320
+Hello, everything, it's great.
+
+13:13.830 --> 13:17.040
+If you click any of these, you can see LOLCat.
+
+13:17.040 --> 13:20.800
+We're going to get the corrected reflection here.
+
+13:20.820 --> 13:23.550
+Let's show you just look at the bottom here.
+
+13:25.630 --> 13:26.800
+But hello again.
+
+13:27.550 --> 13:28.600
+How about this one?
+
+13:29.770 --> 13:34.690
+It's not doing anything because we didn't wrap it with the new component.
+
+13:35.140 --> 13:36.550
+It's OK, but there we go.
+
+13:37.270 --> 13:38.740
+It's indeed working.

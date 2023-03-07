@@ -1,0 +1,292 @@
+WEBVTT
+
+00:00.850 --> 00:02.230
+All right, so now we have.
+
+00:02.530 --> 00:10.420
+All right, so we've put together all the dependencies to use hilt the dependency injection tool that
+
+00:10.420 --> 00:11.110
+we're going to be using.
+
+00:11.380 --> 00:14.920
+Everything is set up and now it's time for us to look at a room database.
+
+00:15.340 --> 00:20.440
+So the reason why we were setting everything up is so that we it will be easier for us to set up from
+
+00:20.440 --> 00:20.860
+database.
+
+00:21.160 --> 00:27.580
+Now keep in mind, as I said earlier, and I keep in mind that dependency injection is a huge topic
+
+00:27.640 --> 00:30.860
+in Android development and in development in general.
+
+00:31.180 --> 00:37.090
+And so if you are not grasping these ideas right away again, don't worry, it may take a little while
+
+00:37.090 --> 00:40.660
+for you to really understand everything, right?
+
+00:40.930 --> 00:45.910
+But also remember, you have to understand everything when it comes to dependency injection, but you
+
+00:45.910 --> 00:52.840
+have to understand the advantages that we get from using dependency injection, especially using a library
+
+00:52.840 --> 00:57.610
+such as a dagger and hilt as we are going to be, as we we've been setting it up.
+
+00:58.060 --> 01:00.910
+That is the most important thing I want you to take away.
+
+01:01.150 --> 01:07.840
+It's not about understanding exactly what install and means, but at least understanding how to put
+
+01:07.840 --> 01:14.500
+together the infrastructure, because this is the way you should always look at building your Android
+
+01:14.500 --> 01:15.190
+applications.
+
+01:15.670 --> 01:22.630
+Again, remember, one database is just a layer abstraction layer, as they call it, which means we
+
+01:22.630 --> 01:30.970
+are abstracting out all of the work that needs to be done on all of the classes and the objects that
+
+01:31.090 --> 01:35.360
+that needed to be created and used in order for us to create database.
+
+01:35.380 --> 01:38.560
+In the old days, I would call the quote unquote great old days.
+
+01:38.890 --> 01:44.620
+So, so like with anything in development, there are many ways to do one thing, but there's always
+
+01:44.620 --> 01:46.990
+a better way of doing things.
+
+01:47.410 --> 01:56.620
+So when it comes to databases, we have a plethora of architecture that we can use to kind of guide
+
+01:56.620 --> 02:03.820
+us or give us a map how we conceptualize the database in our applications.
+
+02:04.810 --> 02:11.080
+So I'm going to show you this diagram here, which I got from Android developer site.
+
+02:12.250 --> 02:18.010
+So there's lots going on in this diagram, and at first, we will look at this and feel very overwhelmed
+
+02:18.010 --> 02:19.440
+and confused and so forth.
+
+02:19.450 --> 02:21.820
+Or you can look at this and understand at least parts of it.
+
+02:22.630 --> 02:30.700
+But the idea here is we have this architecture that will help us deal with databases because databases
+
+02:30.700 --> 02:34.720
+can be very complicated, large and complex as our applications grow.
+
+02:34.900 --> 02:42.460
+So again, having a structure right in architecture that helps us conceptualize these ideas put together
+
+02:42.640 --> 02:43.420
+these pieces.
+
+02:43.720 --> 02:48.130
+It will really help us as the application grows in complexity.
+
+02:48.970 --> 02:54.370
+So if you look at this diagram, you'll see that we have this entity at the bottom, which is room database,
+
+02:54.370 --> 02:55.060
+a room database.
+
+02:55.210 --> 03:02.080
+What he does is encapsulates the SQL eight so where the data actually is going to be stored and it has
+
+03:02.080 --> 03:07.330
+all the complications, the classes and everything that we don't even need to go into, right?
+
+03:07.930 --> 03:09.550
+And also encloses the entities.
+
+03:09.550 --> 03:12.040
+Entities here are just tables of our database, right?
+
+03:12.040 --> 03:20.020
+So we can say I can create a database and I have a person table, I have a department table and so forth.
+
+03:20.280 --> 03:20.510
+Right.
+
+03:21.400 --> 03:28.150
+But now we need to think of a structure that will allow us to communicate with SQLite, which is which
+
+03:28.150 --> 03:34.690
+connects two entities, which has our database, which means it has all of the tables and so forth.
+
+03:35.170 --> 03:41.320
+We need a way to connect to all of this underlining system here or architecture, right?
+
+03:41.740 --> 03:45.040
+All of these memories inside of a room database, that's what it encapsulates.
+
+03:45.550 --> 03:50.260
+What need to be able to access that information so that the application.
+
+03:50.740 --> 03:57.460
+So if we go upwards in our diagram here, the last thing we have at the top of the green is the actual
+
+03:57.670 --> 04:00.370
+application, the UI controller, it says, actively fragment.
+
+04:00.610 --> 04:04.420
+But in this case could be anything or it could be possible and so forth.
+
+04:04.660 --> 04:11.280
+So internally, you see here we have this Dow Down stands for data access object, as the name implies,
+
+04:11.410 --> 04:17.770
+is the object that all he does is responsible for directly accessing our database.
+
+04:18.790 --> 04:24.190
+OK, so that is what connects to the outer world, to the outside world, if you will.
+
+04:25.390 --> 04:33.130
+So this layer here, our room, their base layer, it's where the management of local database is created
+
+04:33.310 --> 04:34.270
+and is set up.
+
+04:35.170 --> 04:42.340
+So we are creating objects that can connect to our database and then expose that information to.
+
+04:42.340 --> 04:48.160
+In this case, we have a repository and then we have a view model, which we've talked about, which
+
+04:48.160 --> 04:50.710
+holds all of the data needed for the UI.
+
+04:51.170 --> 04:54.250
+So this is the one place where all the data is now.
+
+04:54.490 --> 04:59.260
+Repository here is seen as the single source of truth for all app data.
+
+04:59.380 --> 04:59.710
+Right?
+
+04:59.810 --> 05:03.090
+And all this stuff, the repository is optional, right?
+
+05:03.100 --> 05:07.320
+Because repositories of them imply this is where we can put all of the data.
+
+05:07.330 --> 05:10.570
+So the data comes from through our DAO.
+
+05:10.900 --> 05:11.250
+Right.
+
+05:11.260 --> 05:13.240
+Because it connects to our database and everything.
+
+05:13.720 --> 05:19.930
+And then we put everything in our repository and then repository is the intermediary between the lower
+
+05:19.960 --> 05:24.700
+part of this diagram, which is to a base down and equalize entities in all that.
+
+05:25.150 --> 05:28.960
+And the new model and of course, the user interface at the top.
+
+05:29.800 --> 05:33.780
+So in the few modules we've seen, this is where we can use like data, right?
+
+05:33.820 --> 05:35.470
+Which we haven't talked about, but life data.
+
+05:35.740 --> 05:43.810
+It's just like immutable state or flow or anything that can observe the state of our data.
+
+05:43.840 --> 05:50.350
+So if state changes right, then it's going to notify our user interface that the state has changed.
+
+05:50.620 --> 05:54.850
+So do what you need to do, which in this case would be to recompose or update that user interface.
+
+05:55.360 --> 05:58.900
+This is how we would structure our entire room database.
+
+05:59.110 --> 06:04.690
+So that way we have a base structure we can always follow and have these pieces that work together.
+
+06:06.300 --> 06:11.460
+Now, the question is always, especially as a beginner, you could always ask, why go through all
+
+06:11.460 --> 06:18.740
+of this work if we could easily just go and get the data directly from Dow and go straight to your controller
+
+06:18.840 --> 06:20.310
+or mix and match and everything?
+
+06:20.670 --> 06:22.800
+Yes, it would work right?
+
+06:23.070 --> 06:27.000
+But the problem happens when your applications get larger.
+
+06:27.760 --> 06:28.140
+Right?
+
+06:28.350 --> 06:31.470
+And now we have problems because everything is mismatched.
+
+06:31.740 --> 06:33.280
+The state is being lost.
+
+06:33.300 --> 06:36.390
+You don't know where the new model is or you don't have that.
+
+06:36.600 --> 06:40.050
+And it just creates a lot, a lot, a lot of troubles.
+
+06:40.710 --> 06:44.910
+And we always want to start out by following certain structure, right?
+
+06:45.060 --> 06:50.040
+A structure that is proven to work and get used to that structure.
+
+06:50.370 --> 06:53.720
+Yes, it requires a little bit more of setting things up.
+
+06:53.730 --> 06:58.500
+It requires a little bit of understanding the pieces.
+
+06:58.980 --> 07:03.600
+But in overall, this is how we need to get used to thinking that way.
+
+07:03.840 --> 07:05.610
+We don't run into a lot of issues.
+
+07:05.880 --> 07:08.100
+Later, I say our applications get complex.
+
+07:08.970 --> 07:14.880
+And of course, it gives us a lot of flexibility because then we can extend each part of the structure.
+
+07:15.660 --> 07:18.000
+We can modify one part and not affect the other.
+
+07:18.210 --> 07:22.770
+Because everything is separated, everything is decoupled as much as possible.
+
+07:23.680 --> 07:30.520
+So these are good practices we should always follow in structuring our room, their base.

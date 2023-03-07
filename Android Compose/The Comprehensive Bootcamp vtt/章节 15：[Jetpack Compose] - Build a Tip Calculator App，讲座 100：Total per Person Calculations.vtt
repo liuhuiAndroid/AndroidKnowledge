@@ -1,0 +1,436 @@
+WEBVTT
+
+00:00.660 --> 00:04.020
+So now let's go ahead and look at the total per person calculation.
+
+00:04.530 --> 00:07.860
+Let's go to you two might as well just create function here right away.
+
+00:11.960 --> 00:14.870
+Let's go ahead and say fun calculate.
+
+00:22.540 --> 00:23.710
+So what are we going to need here?
+
+00:23.740 --> 00:25.660
+We're going to need the total bill.
+
+00:28.830 --> 00:33.150
+Which is going to be a double and going to need a split by.
+
+00:35.500 --> 00:41.770
+Such was going to be an end, right, and we don't need to tip percentage, which is also going to be
+
+00:41.770 --> 00:48.370
+an event and we're going to return a double life.
+
+00:49.510 --> 00:51.610
+OK, so the calculations?
+
+00:52.180 --> 00:53.560
+Let me put that in that line.
+
+00:54.170 --> 01:02.950
+Well, so here I'm going to just create a vowel called bill and this I'm going to pass call bill.
+
+01:02.950 --> 01:09.250
+And what I'm going to do is I'm going to actually call the calculate total created at the top here,
+
+01:09.520 --> 01:09.780
+OK?
+
+01:10.420 --> 01:14.350
+And then I'm going to pass all the parameters or arguments that are needed.
+
+01:14.710 --> 01:21.160
+This case is going to be total bill and then tip percentage.
+
+01:21.190 --> 01:25.240
+It's going to be TYP percent pay percentage as such.
+
+01:25.750 --> 01:31.630
+And then let's see, split by split by, it's going to be equal to split by.
+
+01:32.290 --> 01:36.430
+So at this point here, the value we have is to calculate total tip.
+
+01:37.000 --> 01:38.140
+It's not a bill yet.
+
+01:38.170 --> 01:44.950
+It's just a tip, right to make it a bill, a total bill going to add our total bill value that we can
+
+01:44.960 --> 01:52.840
+be passing in like this one because we used inside here to calculate or tip as we have created at the
+
+01:52.840 --> 01:53.290
+top here.
+
+01:54.500 --> 02:00.620
+Is that until we add the total bill again to the tip that we calculated, that's going to be the entire
+
+02:00.620 --> 02:01.040
+tip.
+
+02:01.370 --> 02:03.890
+That's going to be the entire bill for the meal.
+
+02:04.850 --> 02:07.730
+OK, so what we wanted to return is going to be.
+
+02:10.570 --> 02:16.220
+In this case, it's our bill, and we're going to divide this by split by makes sense.
+
+02:16.220 --> 02:21.850
+So once we have a true bill, we divided by split by which is going to be what could be one, two,
+
+02:21.850 --> 02:23.560
+three, 10 or 100 and so forth.
+
+02:24.680 --> 02:26.990
+So this is what we're going to use and our main activity.
+
+02:27.260 --> 02:28.580
+But where are we going to use that?
+
+02:29.760 --> 02:36.210
+Well, still inside of our slider, where we calculate total tip, why this is happening every time
+
+02:36.210 --> 02:38.250
+we slide left and right.
+
+02:38.550 --> 02:44.190
+Increasing or decreasing the total tip percentage or the tip percentage, you can see we're calculating
+
+02:44.190 --> 02:45.870
+the actual total tip.
+
+02:46.230 --> 02:49.260
+So at the same time, we will have that value.
+
+02:49.380 --> 02:50.220
+We can use that.
+
+02:50.230 --> 02:52.080
+Of course, we can just say something like this.
+
+02:52.080 --> 02:55.200
+I'm going to see total per.
+
+02:57.650 --> 03:06.410
+Person state, not value, having created this when I said that to our calculate total per person,
+
+03:07.520 --> 03:09.260
+so total bill in this case.
+
+03:11.750 --> 03:19.850
+Tomorrow, build out of value, Bill state that it value and then hope to make this to a double right
+
+03:19.850 --> 03:25.490
+to double check and then split by.
+
+03:27.480 --> 03:33.870
+Say split by state at value, we're getting this value here would created one earlier, right?
+
+03:36.280 --> 03:38.590
+And then we're going to pass a tip percentage.
+
+03:41.830 --> 03:44.440
+Which is tip percentage like this?
+
+03:48.360 --> 03:48.750
+All right.
+
+03:53.250 --> 03:55.860
+And again, we're going to have to create this state.
+
+03:57.450 --> 03:58.110
+At the top.
+
+04:04.490 --> 04:05.150
+Remember?
+
+04:07.620 --> 04:15.330
+And this is going to be a double someone's immutable state of doubles or 0.0 to start with.
+
+04:16.570 --> 04:19.820
+Let's go back to where this is being called, which is down here.
+
+04:19.900 --> 04:20.200
+OK.
+
+04:21.070 --> 04:23.620
+So total per person now is going to be called wear.
+
+04:23.980 --> 04:29.200
+Well, if you're a member, totem pole person is going to be here on the top tomorrow, a person.
+
+04:29.320 --> 04:35.980
+Now let's go up and we can see where are we calling total per person, right?
+
+04:36.400 --> 04:38.830
+Terrible person is actually inside of a top hat.
+
+04:39.280 --> 04:43.510
+And the reason why, if you have over can see we have that total per person, which is a double with
+
+04:43.510 --> 04:45.610
+just passing a default value.
+
+04:45.610 --> 04:46.300
+134.
+
+04:46.420 --> 04:55.690
+So now I can say total per person is going to be equal to total for a person that value just like that.
+
+04:56.020 --> 05:04.990
+So I'm passing this argument and passing our total per person state the value as the argument for total
+
+05:04.990 --> 05:09.940
+per person and top header, which is going to change this value.
+
+05:10.530 --> 05:13.060
+Mike, let's go ahead and run this to see if this is true.
+
+05:19.320 --> 05:22.560
+OK, so in the beginning, everything is zero to 100.
+
+05:22.620 --> 05:23.550
+It's a nice number.
+
+05:24.060 --> 05:28.140
+And let's go ahead and change this to two.
+
+05:28.320 --> 05:33.780
+If I start doing like this right, sliding can see now the value is changing.
+
+05:34.260 --> 05:47.040
+So if I go to, let's say, 16 percent of $116 and we have two people, so 116 divide by two people
+
+05:47.040 --> 05:48.520
+is going to be five to eight each.
+
+05:48.540 --> 05:55.080
+I believe if we go ahead and increase this, nothing has changed yet because we haven't created that
+
+05:55.080 --> 06:00.240
+function or we're not calling the function to calculate to recalculate, as you see here.
+
+06:00.420 --> 06:02.430
+They told a person in which we will do in a second.
+
+06:02.730 --> 06:05.550
+But if I move around, you can see everything is working fine.
+
+06:06.140 --> 06:06.690
+OK, if I.
+
+06:07.900 --> 06:11.650
+Increase the number and see the number is also changing there.
+
+06:12.830 --> 06:13.050
+OK.
+
+06:13.970 --> 06:18.950
+So now let's go ahead and tie this together with Split, because we want to also be able since we have
+
+06:19.140 --> 06:23.780
+her bill and we have a percentage, of course, as we change, we want to be able to dynamically change
+
+06:23.780 --> 06:26.570
+a dollar per person top hat here this value.
+
+06:27.820 --> 06:36.220
+So that means if we want this to also calculate, right, let's go to where our buttons are created
+
+06:36.310 --> 06:38.980
+rounded round icon button is here.
+
+06:39.370 --> 06:42.370
+So on click we have this if statement here.
+
+06:42.940 --> 06:49.000
+So we say the split that value is going to be equal to either incrementing or decremental.
+
+06:49.000 --> 06:51.070
+And in this case, we are discriminating.
+
+06:51.550 --> 06:55.090
+Only if the value is split by state is greater than one.
+
+06:55.100 --> 06:55.630
+It makes sense.
+
+06:55.630 --> 06:56.440
+We've talked about this.
+
+06:56.440 --> 06:59.740
+We don't want to zero split hair that would make no sense, right?
+
+07:00.460 --> 07:02.620
+In fact, they can put all of this in one line.
+
+07:03.010 --> 07:08.770
+It's kind of hard to see, but it works next inside, on inside of our own.
+
+07:08.770 --> 07:09.300
+Click here.
+
+07:09.310 --> 07:15.010
+We want it to also calculate or call the calculate portal per person, which in this case is going to
+
+07:15.010 --> 07:17.250
+be exactly what we have here.
+
+07:17.260 --> 07:18.190
+What do we have here, right?
+
+07:20.380 --> 07:24.490
+We're just calling everything once again, so I'm just going to cut this.
+
+07:26.960 --> 07:27.860
+Copy that.
+
+07:31.310 --> 07:33.410
+And go right afterwards here.
+
+07:33.980 --> 07:34.730
+He it all in.
+
+07:35.120 --> 07:35.870
+And we should be good.
+
+07:36.620 --> 07:39.590
+And the same goes to if we are discriminating.
+
+07:40.250 --> 07:41.030
+So there it is.
+
+07:41.630 --> 07:43.490
+Now if we go ahead and run this.
+
+07:44.700 --> 07:45.000
+OK.
+
+07:46.190 --> 07:49.820
+Let's go ahead and put 100 again, our favorite number.
+
+07:50.330 --> 07:56.870
+OK, so let's see if I start adding people can see it straight right away starts calculating type of
+
+07:56.870 --> 08:04.700
+person I think makes sense of two people are not paying or not adding a tip to people total per person
+
+08:04.700 --> 08:05.270
+per person.
+
+08:05.270 --> 08:07.180
+Here is total per person.
+
+08:07.190 --> 08:09.350
+Give me $50 on a $100 bill.
+
+08:10.160 --> 08:11.960
+Come back to 100.
+
+08:12.530 --> 08:14.600
+The more you add and voila!
+
+08:16.010 --> 08:16.820
+OK, very good.
+
+08:17.090 --> 08:21.650
+Now, in this case here, if I start moving this too, it's going to recalculate everything.
+
+08:21.650 --> 08:27.260
+As you can see, we adding a tip, which means the value should increase right for a person.
+
+08:28.330 --> 08:29.500
+And there you have it.
+
+08:30.370 --> 08:30.650
+OK.
+
+08:34.260 --> 08:38.820
+I go to one person just to make sure everything is working, it's going to be 150 per person, this
+
+08:38.820 --> 08:45.390
+person in this case, just one person at $50 get at $50 tip amount.
+
+08:45.900 --> 08:49.470
+And then if I increase, he's going to go and reduce as well.
+
+08:49.560 --> 08:53.520
+And of course, if I decrease the amount, it's still working.
+
+08:54.060 --> 08:58.560
+So now you've seen how to put together the user interface and of course, the logic behind it.
+
+08:59.110 --> 09:04.290
+Again, there are many different ways in which we can actually abstract out these calculations to make
+
+09:04.290 --> 09:05.250
+it even better.
+
+09:05.370 --> 09:11.430
+But the main idea here it was to show you how to integrate the user interface, how to create the user
+
+09:11.430 --> 09:15.770
+interface, using composable pieces and so forth, and then add the value.
+
+09:15.780 --> 09:18.360
+And then, of course, use the mutable states.
+
+09:18.810 --> 09:22.950
+The remember to give and maintain this state of the values are changing.
+
+09:23.220 --> 09:23.490
+OK.
+
+09:24.090 --> 09:27.400
+That's an important concept and compose as we will continue to see.
+
+09:27.840 --> 09:31.020
+So the thing I would like you to do is to make this even better.
+
+09:31.440 --> 09:35.420
+Go ahead and look at ways to perhaps change the way this all looks.
+
+09:35.490 --> 09:39.720
+Or you can create different kinds of calculators so you can practice at least how to put together a
+
+09:39.720 --> 09:45.930
+user interface, how to connect things through variables, in this case, the mutable state and so forth.
+
+09:46.320 --> 09:52.170
+So now that we have the calculation working what we can do, let's go back to our invalidate state or
+
+09:52.170 --> 09:53.150
+validate state there.
+
+09:53.160 --> 09:55.680
+We had comment that out because we are just testing things out.
+
+09:56.430 --> 09:57.990
+So go down here.
+
+09:58.590 --> 10:05.790
+Let's go ahead and oncoming this such and we should have the complete a complete picture if you run.
+
+10:08.370 --> 10:13.260
+All right, you can see the first time around, there's nothing there, so that until we add something
+
+10:13.260 --> 10:15.270
+again, one hundred seems to be the best number.
+
+10:15.780 --> 10:27.720
+And I can start playing this and change if 50 percent reduce the amount of people and go from there.
+
+10:28.960 --> 10:33.130
+OK, now, if I remove all of that value, let's see.
+
+10:35.810 --> 10:39.320
+And you can see everything is hidden until I put something.
+
+10:40.620 --> 10:40.920
+OK.

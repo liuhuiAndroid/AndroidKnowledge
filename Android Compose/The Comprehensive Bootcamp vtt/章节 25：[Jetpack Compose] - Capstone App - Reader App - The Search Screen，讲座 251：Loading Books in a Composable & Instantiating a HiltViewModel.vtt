@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00.270 --> 00:04.650
+So we've tested the app, and we know that we're getting data, which is wonderful.
+
+00:05.100 --> 00:10.650
+But how do we then get the data into our composable so we can work with it?
+
+00:11.770 --> 00:17.160
+What we do is, of course, we have search screen here and can pass the full model by saying book search
+
+00:17.160 --> 00:19.530
+view models and say illed of your model, OK?
+
+00:20.250 --> 00:23.160
+And then of course, that means the data that we want.
+
+00:23.280 --> 00:27.810
+It's going to be added or it has to be retrieved instead of book lists.
+
+00:28.440 --> 00:35.220
+So that means in our book lists here, we can also pass something like this or the model, and we're
+
+00:35.220 --> 00:42.630
+going to have an issue there because we have to say that book list needs to have if you model book search
+
+00:42.630 --> 00:43.170
+like this.
+
+00:45.270 --> 00:49.800
+And at this point, here will hope that and this point here, hopefully we can just say something like,
+
+00:50.550 --> 00:52.830
+Hi, go, let's say log.
+
+00:54.470 --> 00:57.740
+The right here, and I can say.
+
+00:59.680 --> 01:00.460
+View model.
+
+01:01.210 --> 01:03.940
+Go to a list of books, mutable state.
+
+01:04.090 --> 01:07.300
+Then go to value and then let's go ahead.
+
+01:07.610 --> 01:09.490
+Data like they see what happens.
+
+01:09.670 --> 01:12.910
+Let's add call is.
+
+01:14.980 --> 01:15.860
+Tag like this.
+
+01:15.880 --> 01:16.870
+Let's see what's going to happen.
+
+01:16.900 --> 01:21.160
+So you can see here now that in the beginning, we still have this book list book list.
+
+01:21.430 --> 01:26.650
+Tag is still empty and then we have this tag search books, not list change.
+
+01:27.220 --> 01:30.700
+I'm going to show you here something that's changed this tag to something different.
+
+01:32.140 --> 01:37.360
+Let's say search like this, so it's different, so we can see what I'm about to show you here.
+
+01:39.250 --> 01:39.910
+It's run again.
+
+01:42.360 --> 01:42.640
+OK.
+
+01:42.670 --> 01:43.040
+Click.
+
+01:43.920 --> 01:44.350
+All right.
+
+01:44.370 --> 01:51.480
+We see that we have Booklist Booklist still empty, and then we go to search this one here and shows
+
+01:51.480 --> 01:51.810
+that.
+
+01:52.710 --> 01:57.760
+But if we go back, let me actually search for Booklist.
+
+01:57.780 --> 01:59.250
+You'll see what will happen here.
+
+01:59.430 --> 02:00.840
+I actually add Booklist.
+
+02:01.320 --> 02:06.960
+You'll see that indeed, we start with empty, empty and then at some point, do we get that information?
+
+02:07.560 --> 02:14.160
+So this is very normal because remember, it takes a few milliseconds to go and get that data and pass
+
+02:14.160 --> 02:16.560
+it through our model for us to receive it.
+
+02:17.220 --> 02:20.400
+So it may seem that it's empty forever, but it's not really.
+
+02:20.400 --> 02:28.050
+So this is why we have added this list of books into a wrapper class.
+
+02:28.230 --> 02:34.440
+We can now to do something like this and can say if it's does test things we say, if you model, we're
+
+02:34.440 --> 02:38.640
+going to call and see dot list of books, right?
+
+02:39.360 --> 02:48.120
+And then or go to value to get actually the data or exception and say loading is true.
+
+02:48.300 --> 02:49.320
+If it's loading.
+
+02:49.920 --> 02:56.280
+I'm going to go ahead and say, show me a circle progress bar indicator like this.
+
+02:57.300 --> 03:04.890
+And what I can do also, I can say loading or log D. Let's see serial tag.
+
+03:04.890 --> 03:06.480
+Let's just say Boom.
+
+03:06.510 --> 03:07.290
+Like this, OK?
+
+03:07.980 --> 03:10.650
+And I'm going to say loading.
+
+03:11.460 --> 03:12.210
+Give it a time.
+
+03:13.150 --> 03:19.890
+Else we're just going to say log D. And let's just go ahead and get the list.
+
+03:20.160 --> 03:23.910
+In fact, it's actually, let's just take this.
+
+03:25.850 --> 03:28.360
+And put inside there, OK?
+
+03:29.210 --> 03:34.880
+And I'm going to do the same tag, so we're not confused like this will get the actual data.
+
+03:34.910 --> 03:35.960
+Let's see what's going to happen now.
+
+03:36.540 --> 03:37.670
+But right now?
+
+03:40.720 --> 03:41.200
+All right.
+
+03:41.260 --> 03:45.940
+Let's clear up, it's clear nicely, let's say Blue.
+
+03:48.110 --> 03:52.160
+That's the tag we added there, OK, so let's go.
+
+03:53.680 --> 03:55.000
+Aha, you saw there.
+
+03:55.300 --> 03:56.260
+It's hard for a bit.
+
+03:57.840 --> 03:58.530
+Let's go back.
+
+03:58.950 --> 04:05.220
+I'm going to click again and see it flat for a bit because it takes time and then we should see in our
+
+04:05.220 --> 04:06.960
+log blue.
+
+04:08.050 --> 04:10.420
+Where it started, let's see, there we go.
+
+04:10.480 --> 04:12.670
+Pool is loading.
+
+04:13.240 --> 04:14.380
+Who is loading?
+
+04:14.680 --> 04:17.220
+And then we ran search, so went ahead.
+
+04:17.230 --> 04:23.080
+Of course, first is going to show what we have here because this makes sense in our field model directly
+
+04:23.710 --> 04:27.550
+and then we'll see that scroll down.
+
+04:28.910 --> 04:32.600
+Let's just look for booklets, I think this is going to be better.
+
+04:33.980 --> 04:37.670
+Let's just look at a book list and you can see at some point, right?
+
+04:37.700 --> 04:40.250
+Loading, loading and then book lists to get information.
+
+04:42.090 --> 04:42.360
+All right.
+
+04:42.630 --> 04:46.890
+So that's one of the things that he can be very frustrating, especially when he debugging and because
+
+04:46.890 --> 04:53.040
+you're going to look at the logs and will say, well, nothing is coming in well, it just takes a little
+
+04:53.040 --> 04:53.250
+bit.
+
+04:53.250 --> 04:55.470
+Wait list is going to be empty in the beginning.
+
+04:55.920 --> 04:58.710
+Few milliseconds later, it will probably.
+
+04:59.690 --> 05:07.940
+So this is one of the reasons, again, that we have added, we wrapped our book list here mutable list,
+
+05:08.660 --> 05:14.000
+mutable state, that is who wrapped it around this data or exception because we are going to pass bullion
+
+05:14.180 --> 05:15.290
+an exception as well.
+
+05:15.500 --> 05:19.700
+But most important, now we have this bullion that we are setting up as we get the data right.
+
+05:20.090 --> 05:20.510
+We're safe.
+
+05:20.720 --> 05:23.780
+We're getting today, and I'm going to say loading to true such.
+
+05:24.230 --> 05:31.850
+And then we load our list of books of value by going to repository and get all the books passing the
+
+05:31.850 --> 05:32.270
+query.
+
+05:32.450 --> 05:38.960
+And there we have it, that the data may not be right away available because remember, we are going
+
+05:39.170 --> 05:43.490
+somewhere in a network that we have no control over and it takes time.
+
+05:43.880 --> 05:44.210
+All right.
+
+05:45.050 --> 05:51.170
+Make sure also, because we are in the nav where navigation here we need to instantiate our view model
+
+05:51.170 --> 05:51.920
+on hilt.
+
+05:51.920 --> 05:59.480
+If you model like this and pass the type in this case or book social model and then we pass it along
+
+06:00.200 --> 06:06.470
+as our review model there and in our search in this case, then we can instantiate just by saying view
+
+06:06.470 --> 06:06.620
+more.
+
+06:06.830 --> 06:12.200
+And once you have that in the root screen, in the root composable, then you can pass it along.
+
+06:13.460 --> 06:19.670
+And inside of the where you are going to call it, then you we have their few models already instantiated
+
+06:19.670 --> 06:23.480
+will be passing along and then we can just check for that data.

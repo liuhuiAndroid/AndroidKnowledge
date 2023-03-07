@@ -1,0 +1,445 @@
+WEBVTT
+
+00:01.950 --> 00:07.710
+So we know that this is working, that's really exciting, so we can get out of there by tapping anywhere
+
+00:07.710 --> 00:10.320
+outside the dropdown.
+
+00:10.740 --> 00:18.750
+OK, I get it is that when we click on about favorites or settings, we need to be taken to those respective
+
+00:18.750 --> 00:19.230
+screens.
+
+00:20.040 --> 00:21.930
+So where does that happen?
+
+00:21.960 --> 00:27.420
+Well, all of that happens inside of this clickable because that's the clickable of the text.
+
+00:27.420 --> 00:29.100
+Click ability of this text here, right?
+
+00:29.850 --> 00:33.450
+So for that to work, really, I'm going to have to say nav controller.
+
+00:34.180 --> 00:35.000
+All right, there we go.
+
+00:35.040 --> 00:38.430
+Beautiful nav controller and say, navigate.
+
+00:40.430 --> 00:45.500
+Make sure you get the correct right to string like this and then inside here.
+
+00:45.560 --> 00:53.630
+We are going to check to see which one has been tapped and I'm going to use the when statement again
+
+00:53.630 --> 00:54.830
+because it's just so helpful.
+
+00:54.840 --> 00:56.510
+I'm going to pass the text.
+
+00:56.840 --> 00:59.410
+So essentially, it's going to be exactly what we had here.
+
+00:59.420 --> 01:00.170
+So let's be.
+
+01:01.580 --> 01:02.630
+Just get.
+
+01:03.730 --> 01:13.360
+That but instead of doing this, what I want to do is if we are if a powder has been leaked, we're
+
+01:13.360 --> 01:21.400
+going to say whether screens and I'm going to about screen that name like this.
+
+01:23.710 --> 01:24.070
+OK.
+
+01:24.880 --> 01:25.870
+If favorites.
+
+01:26.230 --> 01:35.770
+It's going to be the same thing, except we will change the route that we favor its screen.
+
+01:37.000 --> 01:40.680
+Now, the case, we know it's going to be our settings screen.
+
+01:40.690 --> 01:41.200
+So
+
+01:43.990 --> 01:48.910
+now we don't have about screen, we don't have favorite screen, we don't have settings screen.
+
+01:48.910 --> 01:49.660
+I don't think so.
+
+01:49.660 --> 01:52.660
+Let's go and create the actual screen.
+
+01:52.660 --> 01:55.570
+First of all, let's go to our navigation.
+
+01:59.170 --> 02:04.090
+Make sure that we have those no, we have searched, we have everything else, but we don't have the
+
+02:04.450 --> 02:08.140
+other ones, it's OK to eat first.
+
+02:08.320 --> 02:09.040
+They about.
+
+02:21.840 --> 02:24.090
+Let's go to our screens we're going to create.
+
+02:28.990 --> 02:36.400
+A new package, even though about it's very simple, but I'm going to do again about an.
+
+02:42.910 --> 02:44.860
+OK, it's going to be a composable.
+
+02:57.290 --> 03:03.140
+OK, pass a knife controller in case this text.
+
+03:05.290 --> 03:06.040
+For now
+
+03:08.770 --> 03:09.220
+about.
+
+03:10.450 --> 03:12.950
+OK, that's good.
+
+03:13.090 --> 03:14.160
+And then.
+
+03:28.460 --> 03:29.750
+And let's get settings.
+
+03:47.710 --> 03:50.110
+Let's go and create another package.
+
+04:08.690 --> 04:11.630
+Setting the screen composable.
+
+04:17.970 --> 04:21.180
+It's always important to pass enough controller because we never know.
+
+04:21.480 --> 04:22.410
+And then text.
+
+04:30.030 --> 04:30.390
+That.
+
+04:33.160 --> 04:34.510
+Let's import that.
+
+04:37.030 --> 04:39.730
+And favorite screens, I believe.
+
+04:41.200 --> 04:45.670
+Now you can see how easy things get because we we've set up the infrastructure before.
+
+04:48.140 --> 04:51.470
+And now we don't have to suffer per se.
+
+04:56.330 --> 04:57.080
+To get things.
+
+04:58.380 --> 04:58.830
+Added.
+
+04:59.040 --> 05:01.080
+OK, much simpler.
+
+05:02.370 --> 05:04.110
+Another package for favorites.
+
+05:17.220 --> 05:18.690
+Critic Composable.
+
+05:33.630 --> 05:36.330
+Pass our nav controller.
+
+05:49.370 --> 05:50.000
+Favourites.
+
+05:50.510 --> 05:50.960
+There we go.
+
+05:51.590 --> 06:00.460
+And let's go to Maine actually to navigation, important, our favorite screen record.
+
+06:01.940 --> 06:03.830
+Now we are back in business.
+
+06:04.300 --> 06:06.440
+Let's get rid of these for now.
+
+06:07.280 --> 06:09.380
+And I believe if we run.
+
+06:12.800 --> 06:13.520
+You know, let's see.
+
+06:13.940 --> 06:14.960
+Quick, let's go about.
+
+06:16.120 --> 06:25.840
+We go to about very good can just move this back if I click on settings, that settings are good, if
+
+06:25.840 --> 06:27.340
+I go to favorites.
+
+06:28.450 --> 06:28.840
+Nice.
+
+06:29.590 --> 06:29.950
+OK.
+
+06:30.040 --> 06:30.580
+It works.
+
+06:31.870 --> 06:34.440
+OK, let's start with about because I think that is the simplest one.
+
+06:34.450 --> 06:37.930
+So let's go open about screen.
+
+06:39.670 --> 06:45.190
+And instead of that, we are going to add a let's see.
+
+06:46.750 --> 06:48.850
+This is how about looks and it's very simple.
+
+06:48.850 --> 06:50.470
+Nothing really out of this world.
+
+06:50.470 --> 06:53.980
+So I'm just going to create, of course, add the app bar, which we already have.
+
+06:54.280 --> 06:56.470
+And then some text very simple.
+
+06:57.400 --> 06:58.730
+And let's do that.
+
+06:58.750 --> 07:02.260
+So first, we are going to put a scaffold.
+
+07:08.350 --> 07:10.870
+Such an added top bar.
+
+07:14.770 --> 07:21.580
+Of course, then I'm going to put a surface here as a placeholder for now, and we get there, so let's
+
+07:21.580 --> 07:23.470
+look at at a bar or top bar.
+
+07:23.560 --> 07:27.550
+So I'm going to use the weather bar.
+
+07:28.390 --> 07:30.160
+We have our nav controller that we need.
+
+07:30.340 --> 07:31.660
+That's why we pass it around.
+
+07:33.550 --> 07:38.200
+And before that, let's add a title.
+
+07:45.790 --> 07:52.150
+And it's going to be about in the analyst pass and icon.
+
+07:56.370 --> 08:04.860
+Which is why I say icons, defaults, arrow back and then is main screen.
+
+08:08.280 --> 08:10.350
+Safe Falls is not my screen.
+
+08:11.700 --> 08:17.820
+And now controllers there, OK, that's all good.
+
+08:19.650 --> 08:26.970
+Then, of course, when the back arrows clicked and when I say NAF controller pop back stack like this?
+
+08:27.840 --> 08:28.830
+OK, very good.
+
+08:29.910 --> 08:32.940
+And now, you know, a surface here.
+
+08:32.970 --> 08:36.480
+Nothing really much less safe feel.
+
+08:36.540 --> 08:41.610
+Max, we'll have to pass modifier first.
+
+08:45.490 --> 08:46.480
+Phil Max with.
+
+08:49.520 --> 08:50.600
+And.
+
+08:53.330 --> 08:55.670
+You know, Max Height.
+
+09:00.830 --> 09:02.360
+And then we're going to add.
+
+09:07.610 --> 09:10.230
+They call them just to organize things.
+
+09:11.280 --> 09:18.690
+I would say horizontal alignment center or his is only.
+
+09:23.640 --> 09:28.640
+The vertical arrangement also center.
+
+09:30.340 --> 09:31.990
+And it was going to have a text.
+
+09:40.740 --> 09:50.820
+And for this case, I'm going to actually say string resource like this, and I'm going to say are not.
+
+09:52.670 --> 09:53.250
+Strain.
+
+09:55.140 --> 09:57.170
+And let's go ahead and import this are.
+
+10:04.620 --> 10:10.000
+And let's get half name, but actually, I'm going to use something else.
+
+10:10.020 --> 10:10.560
+Let's see.
+
+10:13.980 --> 10:17.330
+Say about half, right?
+
+10:17.460 --> 10:22.090
+So I'm creating a string in our string resources.
+
+10:22.120 --> 10:27.630
+Actually, I haven't created it, but it's always a good idea to add all your strings in our, you know,
+
+10:27.630 --> 10:29.400
+values, strings like that.
+
+10:29.730 --> 10:30.000
+OK.
+
+10:30.630 --> 10:34.460
+So in this case, we don't have anything, but we can create it from here.
+
+10:34.460 --> 10:36.060
+If I say option, enter.
+
+10:37.140 --> 10:38.100
+Let's try again.
+
+10:41.010 --> 10:46.620
+So create strong value resources, very good I can create from here, and this is going to be.
+
+10:47.700 --> 10:49.710
+Weather app version zero.
+
+10:56.440 --> 10:57.680
+Let's see where to see.
+
+11:02.200 --> 11:02.770
+That one.
+
+11:03.070 --> 11:03.830
+That's fine.
+
+11:04.000 --> 11:04.540
+Say, OK.
+
+11:06.410 --> 11:07.250
+They would go.
+
+11:09.550 --> 11:12.370
+And while I hear, can you give us a little bit of style?
+
+11:18.760 --> 11:20.740
+Biography subtitle.
+
+11:22.930 --> 11:25.330
+And font weight.
+
+11:27.050 --> 11:30.130
+Say bold like that.
+
+11:31.740 --> 11:32.340
+OK.
+
+11:37.110 --> 11:40.560
+And next, I'm going create this structure here.
+
+11:45.240 --> 11:55.080
+And now you're going to be API used for having created this create a screen resource.
+
+11:55.470 --> 11:57.200
+I have that resource there.
+
+11:57.380 --> 11:59.560
+Just copy like this.
+
+11:59.580 --> 11:59.910
+OK.
+
+12:00.270 --> 12:04.360
+So really nothing worth talking about, really.
+
+12:04.360 --> 12:05.340
+It's just very simple.
+
+12:06.950 --> 12:07.460
+That's right.
+
+12:10.420 --> 12:15.670
+And let's see what seems to be a problem in the experimental likely to change.
+
+12:15.910 --> 12:18.400
+It looks like now it's complaining.
+
+12:18.880 --> 12:27.850
+We need to add the experimental API now compose as well as here.
+
+12:28.090 --> 12:29.860
+That's something that you just have to do.
+
+12:30.790 --> 12:35.170
+Let's actually add this human activity like that.
+
+12:36.380 --> 12:37.420
+OK, so we run.
+
+12:42.930 --> 12:43.860
+All right, let's see.
+
+12:46.520 --> 12:48.770
+Let's go to a boat and there we go.
+
+12:49.520 --> 12:54.200
+Nothing too crazy, but it's working now.
+
+12:54.380 --> 13:01.040
+All I can do, I can change instead of bold and say light.
+
+13:04.800 --> 13:05.610
+Maybe that's better.
+
+13:08.460 --> 13:08.730
+OK.
+
+13:09.340 --> 13:11.370
+Hi, works, all right, very good.
+
+13:13.730 --> 13:16.100
+And that is our about.

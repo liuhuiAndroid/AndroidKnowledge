@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.480 --> 00:03.000
+Scotland has a lot of great libraries.
+
+00:03.180 --> 00:05.550
+You can also create empty collections.
+
+00:05.800 --> 00:06.010
+Right.
+
+00:06.030 --> 00:07.320
+This is really, really important.
+
+00:07.320 --> 00:10.290
+So for instance, if I want to create an empty collection, I could save.
+
+00:10.320 --> 00:11.640
+I'll call empty.
+
+00:11.820 --> 00:18.360
+And I can say in this case, empty array list, map sequence and so many other collections, some of
+
+00:18.360 --> 00:19.380
+them we haven't talked about.
+
+00:19.410 --> 00:21.540
+So in this case, I want an empty list.
+
+00:21.540 --> 00:24.860
+If I want to create an empty list, I can do like this list.
+
+00:24.870 --> 00:29.850
+And whenever you want to create an empty collection of any sort, we need to pass the types on this
+
+00:29.850 --> 00:32.730
+case against a empty list of strings.
+
+00:33.240 --> 00:42.360
+There is an amber list and I can do the same for a set to file empty set so empty set such a into,
+
+00:42.400 --> 00:47.970
+for instance, and then file empty, empty map.
+
+00:48.270 --> 00:52.860
+This is going to be Boolean if I need to differentiate things like that.
+
+00:53.430 --> 01:00.030
+OK, now for an empty map is different because I can't just say, for instance, string just only string,
+
+01:00.030 --> 01:00.270
+right?
+
+01:00.270 --> 01:03.330
+Because we need to specify as well the value.
+
+01:03.660 --> 01:10.170
+If you have always going to say two types are the ones expected for function K.V. on empty map.
+
+01:10.440 --> 01:12.930
+So for the key, I'm going to have string.
+
+01:13.260 --> 01:18.540
+And for the value, we can have anything we want to say into, for instance.
+
+01:19.020 --> 01:19.650
+And there you have it.
+
+01:19.950 --> 01:21.510
+So the moral of the story here.
+
+01:22.110 --> 01:26.760
+It's very intuitive the way the libraries in collection especially work, right?
+
+01:27.000 --> 01:34.530
+So always think in terms of, OK, if something that I want to create is a list of if I see a list of
+
+01:34.530 --> 01:36.960
+as we see first here, this is going to be immutable.
+
+01:36.960 --> 01:37.830
+We can't mutate.
+
+01:38.160 --> 01:41.550
+Mutable list of then can be mutated, right?
+
+01:41.700 --> 01:47.580
+Same thing goes with set as well with maps as we saw earlier, and also to initialize immutable lists.
+
+01:47.580 --> 01:50.220
+You submit a list of and you must pass the type.
+
+01:50.400 --> 01:56.610
+I just use a string because as a simple type, but it could be Boolean could be anything that is the
+
+01:56.650 --> 01:57.420
+thought process.
+
+01:57.420 --> 02:00.450
+You always have to keep in mind whenever you feel lost.
+
+02:00.550 --> 02:03.070
+OK, just think in terms of, OK, is it mutable?
+
+02:03.070 --> 02:09.330
+This is a set of lists or a collection that I wanted to add to it later, or it's just a set one, meaning
+
+02:09.570 --> 02:10.410
+it doesn't change.
+
+02:10.770 --> 02:15.990
+OK, if the values that you are creating and putting in that collection will never change, you need
+
+02:15.990 --> 02:16.620
+to add them.
+
+02:16.620 --> 02:17.580
+We're going to do anything.
+
+02:17.580 --> 02:20.250
+It's a set amount of values, set elements.
+
+02:20.580 --> 02:26.430
+Then of course, you always use an immutable collection, otherwise use mutable collection.
+
+02:26.970 --> 02:33.270
+So I hope that what I have shown you here will give you the motivation to go out and start learning
+
+02:33.270 --> 02:36.250
+more about collections in cut lines really fine.
+
+02:36.270 --> 02:39.120
+And as you do that, I will encourage you to actually go.
+
+02:39.120 --> 02:45.540
+And so learning how to implement this thing is by building very small programs that do something useful.
+
+02:45.750 --> 02:51.590
+Now, you know how to do control flow for loops if statements and wins and so forth.
+
+02:51.600 --> 02:54.630
+So you are ready to start getting a little bit dangerous.
+
+02:54.630 --> 03:01.020
+So go ahead and explore more by doing small exercises here and there, creating small programs that
+
+03:01.020 --> 03:01.920
+do something fun.

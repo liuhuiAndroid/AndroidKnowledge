@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.060 --> 00:05.470
+So now we're going to embark on a different journey here in order to build a full fledged application.
+
+00:05.500 --> 00:10.470
+I mean, I'm talking about a loaded app with the back end and all sort of things.
+
+00:10.500 --> 00:14.130
+OK, so here are some screenshots of this application.
+
+00:14.310 --> 00:14.670
+All right.
+
+00:15.180 --> 00:20.550
+So the idea of this app is going to be to allow users to log in and then users are going to be able
+
+00:20.550 --> 00:25.530
+to search an API, the Google Books API, for any books they want to read.
+
+00:25.950 --> 00:31.140
+They can then add those books to their library, save them to their library, to the back end, and
+
+00:31.140 --> 00:33.420
+then they can start reading those books.
+
+00:33.480 --> 00:33.860
+Right.
+
+00:33.870 --> 00:39.120
+And so they will tag the books are reading and the books that they've just added right in their reading
+
+00:39.120 --> 00:45.690
+list and the books that are currently reading add thoughts or notes on the book that they are reading,
+
+00:45.690 --> 00:50.250
+as well as reading and marking as read, leading and updating and so forth.
+
+00:50.370 --> 00:56.220
+So we are going to be putting together this very extensive using many libraries are going to be using
+
+00:56.790 --> 00:59.910
+clean architecture to build this app the right way.
+
+01:00.420 --> 01:00.810
+All right.
+
+01:00.960 --> 01:01.920
+It's going to be very exciting.
+
+01:02.220 --> 01:05.880
+Let's go next and give you a little demo of the full app.
+
+01:07.350 --> 01:08.910
+OK, I'm going to start this demo.
+
+01:08.910 --> 01:09.390
+Happy.
+
+01:09.390 --> 01:12.240
+We'll see when the first runs.
+
+01:12.240 --> 01:19.960
+There's that very animation, a very nice animation, a reader and then go straight to the log in screen.
+
+01:19.980 --> 01:22.320
+Now we can log in or we can sign up.
+
+01:22.500 --> 01:23.760
+Let's go ahead and click a sign up.
+
+01:24.780 --> 01:27.330
+James James dot com.
+
+01:31.050 --> 01:36.210
+And then here I'm going to say, and then and let's choose a password.
+
+01:36.840 --> 01:37.110
+OK.
+
+01:40.030 --> 01:41.320
+I guess it's very good.
+
+01:43.360 --> 01:47.600
+And voila, the moment we say enter, it's going to go ahead and create James.
+
+01:47.950 --> 01:52.480
+You can see we have this icon there and there is James there.
+
+01:52.690 --> 01:53.040
+All right.
+
+01:53.050 --> 02:00.040
+So this point, nothing much is going on here, but we have the icon for the app will have a title and
+
+02:00.040 --> 02:01.720
+we can sign out if we need to.
+
+02:02.230 --> 02:04.120
+So what happens first?
+
+02:04.150 --> 02:06.420
+Well, we're going to go ahead and add James.
+
+02:06.430 --> 02:08.290
+In this case, we'll go ahead and add some books.
+
+02:08.650 --> 02:14.020
+And right when we go to the search books screen, we are able to search the books, but also we can
+
+02:14.020 --> 02:16.180
+see that we already can use.
+
+02:16.180 --> 02:17.650
+I'm using my phone right now.
+
+02:18.040 --> 02:23.500
+Go ahead and choose some of the books that have been selected for us, so I can add this one and it
+
+02:23.500 --> 02:27.520
+goes to the details book and I can read about it.
+
+02:27.580 --> 02:28.420
+What's going on?
+
+02:28.450 --> 02:29.320
+Let's go ahead and save it.
+
+02:30.100 --> 02:33.790
+OK, so you want me to save it, to go back and see now, you know, a reading list.
+
+02:33.790 --> 02:34.800
+We have our book.
+
+02:35.450 --> 02:38.020
+OK, I can go back in search now.
+
+02:38.020 --> 02:44.170
+I'm going to search for some books about money and enter and voila.
+
+02:44.620 --> 02:48.580
+So there are a few books here, and let's click on that one.
+
+02:49.220 --> 02:50.050
+When I save.
+
+02:51.060 --> 02:57.120
+And I go back and see now I still I'm still adding those books inside of my reading list.
+
+02:57.500 --> 02:57.960
+It's very good.
+
+02:58.350 --> 03:05.040
+So let's say now I have added a couple of books and I want to add to my reading now, right?
+
+03:05.700 --> 03:08.910
+So let's say that James wants to start reading a book.
+
+03:09.040 --> 03:11.760
+So clicking one book, and there we go.
+
+03:11.790 --> 03:14.280
+Now we go to the update book here.
+
+03:14.280 --> 03:19.980
+And in this case, here we can start reading the book by clicking to start reading and now is tackled
+
+03:19.980 --> 03:20.370
+there.
+
+03:20.460 --> 03:23.460
+And I can just give it an initial reading of that.
+
+03:23.460 --> 03:25.340
+And there's no that so far would say update.
+
+03:25.470 --> 03:30.810
+And once you do that, then the book is now added to the reading list right now, right?
+
+03:30.840 --> 03:32.010
+What we are reading right now.
+
+03:32.800 --> 03:33.060
+Right.
+
+03:33.210 --> 03:37.050
+And you can see now is was removed from our reading list at the bottom.
+
+03:38.440 --> 03:38.790
+All right.
+
+03:39.040 --> 03:45.190
+So let's say then after a few moments, we are fast readers, we want to add a few thoughts here.
+
+03:46.210 --> 03:52.180
+All you like this and I'm going to change the rating to about four and then I'm going to mark this as
+
+03:52.180 --> 03:53.860
+read when I say update.
+
+03:54.430 --> 04:00.400
+Once you do that, you can see that the book is now removed from our view reading activity right now,
+
+04:00.670 --> 04:01.640
+but we can find it.
+
+04:01.660 --> 04:05.010
+If you go to our profile, click there.
+
+04:05.010 --> 04:09.880
+Can see now we have we are reading zero books at this point because you remember if you go back, there
+
+04:09.880 --> 04:10.990
+is no books that we're reading.
+
+04:11.190 --> 04:14.680
+OK, but it shows here that we have read this book.
+
+04:14.690 --> 04:18.130
+So we have read one book so far and there is the title.
+
+04:18.970 --> 04:21.130
+It's very nice and I can continue.
+
+04:21.130 --> 04:23.500
+Of course, this one is going to be reading.
+
+04:23.500 --> 04:24.640
+I'm going to give it a rating.
+
+04:24.640 --> 04:30.100
+Start reading and update right now was updated successfully.
+
+04:30.100 --> 04:30.880
+I go to James.
+
+04:31.240 --> 04:33.880
+It's going to see that now I'm reading one book.
+
+04:33.880 --> 04:35.290
+I haven't finished that book, right?
+
+04:35.710 --> 04:36.250
+So.
+
+04:37.180 --> 04:38.350
+And you can see also.
+
+04:38.350 --> 04:39.820
+It says there started.
+
+04:40.900 --> 04:41.710
+And you can see here.
+
+04:41.840 --> 04:44.380
+I started November 2nd, finished November 2nd.
+
+04:44.380 --> 04:48.730
+So it gives us the date when we started and when we ended or finished the book.
+
+04:49.300 --> 04:51.120
+All right, so I'm still reading one book.
+
+04:51.130 --> 04:51.880
+I'm going to go back.
+
+04:52.750 --> 04:53.500
+Let's see.
+
+04:53.530 --> 04:59.590
+I want to say, yep, this was five star markers read and I can change my thoughts here.
+
+05:01.530 --> 05:02.310
+The best.
+
+05:04.280 --> 05:08.540
+And finished and done so the book now it's done.
+
+05:08.630 --> 05:13.730
+I've read all of the books and noticed that no books found for each one of these categories here, but
+
+05:13.730 --> 05:16.490
+I can always go back to see my status now.
+
+05:16.490 --> 05:24.410
+I have read two books, which is wonderful, and you can see, of course, that I have zero books reading
+
+05:25.100 --> 05:25.580
+right now.
+
+05:26.630 --> 05:26.930
+All right.
+
+05:26.990 --> 05:33.020
+So this is what we're going to be building, all of this is actually being backed up in Firestorm in
+
+05:33.020 --> 05:39.950
+Firebase, which means we have the log in, which means we also have the authentication log in, creating
+
+05:39.950 --> 05:44.270
+users, authenticating users, and all of that is being done in the background.
+
+05:44.390 --> 05:47.600
+So there's a lot to learn, and I hope you are excited.
+
+05:47.810 --> 05:55.460
+In fact, you can go ahead and click here to log out, and I can't either sign up or I can log in again.
+
+05:55.610 --> 05:56.810
+I believe was James.
+
+05:58.190 --> 05:59.570
+I, James.
+
+06:01.040 --> 06:01.750
+Dot com.
+
+06:03.350 --> 06:05.270
+And let's add his password.
+
+06:06.660 --> 06:08.490
+Log in and voila!
+
+06:08.550 --> 06:10.320
+He's going to show James there.
+
+06:10.980 --> 06:11.240
+All right.
+
+06:11.700 --> 06:14.820
+I'm going to log log out, log in as myself.
+
+06:25.800 --> 06:31.020
+And log in while so this is a different account to see.
+
+06:31.500 --> 06:34.350
+Let's see how many books has Paul Apollo?
+
+06:34.890 --> 06:35.940
+How many books is he read?
+
+06:35.970 --> 06:39.030
+Well, he's read a lot of books and is willing to right now.
+
+06:39.840 --> 06:40.200
+All right.
+
+06:40.320 --> 06:40.710
+Very good.
+
+06:41.160 --> 06:42.900
+So this is what we're going to be building.
+
+06:42.930 --> 06:44.700
+I'm very excited to share this with you.
+
+06:44.850 --> 06:46.830
+And let's get started.

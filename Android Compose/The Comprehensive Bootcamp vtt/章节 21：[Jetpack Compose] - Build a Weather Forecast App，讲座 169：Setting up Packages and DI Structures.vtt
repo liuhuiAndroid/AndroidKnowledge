@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00.450 --> 00:04.740
+Next, let's go back to our project and the first thing I want to do because it's easy to forget.
+
+00:04.770 --> 00:07.050
+Let's go to our Android Manifest file.
+
+00:07.470 --> 00:14.430
+And here I'm going to add the internet permissions and it uses like smart uses permission and I'm just
+
+00:14.430 --> 00:19.530
+going to type internet like this hit enter or it's too close.
+
+00:19.530 --> 00:21.690
+So this is something easy to forget.
+
+00:22.020 --> 00:25.530
+I like to add that permission before we move forward.
+
+00:25.650 --> 00:33.150
+So this will allow us to be able to use the internet in order to get information from the eyes and so
+
+00:33.150 --> 00:33.390
+forth.
+
+00:33.390 --> 00:34.350
+So very important.
+
+00:34.890 --> 00:35.130
+All right.
+
+00:35.760 --> 00:37.560
+So once we then, that's fine.
+
+00:38.130 --> 00:42.270
+And the next thing I want to do here is I want to structure, of course, create all the packages that
+
+00:42.270 --> 00:44.030
+we may need in our project.
+
+00:44.040 --> 00:45.540
+That way we can organize our code.
+
+00:45.900 --> 00:52.020
+Remember, we're trying to create applications that are following the clean architecture.
+
+00:52.170 --> 00:58.230
+It really helps to put together the structure of our files of our classes and packages and so forth.
+
+00:58.440 --> 01:04.060
+That way, we have that structure in place like let's go inside of our main.
+
+01:04.680 --> 01:09.990
+So inside of our main package here and we're right click or command and.
+
+01:11.660 --> 01:13.940
+Think this and I can go say package.
+
+01:14.570 --> 01:16.040
+I'm going to start by.
+
+01:19.650 --> 01:25.410
+Creating the package, going through the same thing, create a few other.
+
+01:28.240 --> 01:29.050
+Called data.
+
+01:34.820 --> 01:37.460
+And this one called this model.
+
+01:46.020 --> 01:47.520
+This is going to be navigation.
+
+01:54.890 --> 01:55.730
+Network.
+
+02:05.020 --> 02:06.280
+Repository.
+
+02:20.180 --> 02:24.890
+Utils for utility classes or functions and so forth.
+
+02:28.170 --> 02:34.230
+And we're going to add components now, some of these we may not use, but it's always nice to have
+
+02:34.230 --> 02:35.460
+them in place if we need to.
+
+02:35.490 --> 02:44.250
+So and let's add another one called widgets, so we can add small pieces of code that represent a widget.
+
+02:48.520 --> 02:48.870
+OK.
+
+02:49.010 --> 02:49.630
+They're very good.
+
+02:49.900 --> 02:59.020
+And before I forget, let's also add another one called screens or screens such now because we are again
+
+02:59.290 --> 03:07.060
+looking to put a very strong structure using dagger and hilt for dependency injection, which facilitates
+
+03:07.390 --> 03:09.190
+our development in general.
+
+03:10.330 --> 03:14.920
+And this is also something that you should always keep in mind when developing Android apps.
+
+03:15.070 --> 03:20.610
+I understand that the setting up can be a little bit cumbersome or a little bit.
+
+03:20.620 --> 03:27.820
+It takes a little bit of time, but it's really worth the time to do this because it's easier to create
+
+03:27.820 --> 03:33.970
+applications that are easy to maintain, easy to extend as the complexity grows in her apps.
+
+03:34.450 --> 03:38.710
+So all this setting up, especially for I put it together, the dependency injection.
+
+03:39.090 --> 03:40.900
+It's it's really important.
+
+03:40.930 --> 03:44.920
+So that's how you should think about putting together your projects.
+
+03:45.640 --> 03:45.880
+Right.
+
+03:45.880 --> 03:53.740
+So in that spirit, I'm going to create a class at the main package level here, and I'm going to call
+
+03:53.740 --> 03:55.720
+this the weather application.
+
+03:55.720 --> 04:01.360
+So I'm going to say come and to create a new kind of in class, this is going to be just a simple class,
+
+04:01.720 --> 04:01.970
+OK?
+
+04:02.410 --> 04:07.000
+And I'm going to call this weather application OK.
+
+04:07.450 --> 04:12.010
+And because this weather application is going to be the one that ties everything together in terms of
+
+04:12.310 --> 04:18.520
+the dependency injection, so it will allow for this to be recognized overall, we'll have access to
+
+04:18.520 --> 04:22.870
+the top level class called the application class for Android.
+
+04:22.930 --> 04:30.160
+So I'm going to say make sure that make sure that I'm going to make sure that this inherits from application.
+
+04:30.700 --> 04:33.370
+You can see this is going to be application Android application.
+
+04:33.370 --> 04:35.800
+There is and like this?
+
+04:36.500 --> 04:37.330
+Well, OK.
+
+04:37.990 --> 04:44.020
+But now I need to make sure that this is also confirming to the hilt to make sure that this is a hilt
+
+04:44.260 --> 04:46.870
+dependency project in this case.
+
+04:46.870 --> 04:51.580
+And for point, I'm going to say at Helt Android like this.
+
+04:51.670 --> 04:56.410
+So this ties everything together to say, OK, we're creating this weather application class, which
+
+04:56.890 --> 05:03.010
+implements or in this case, inherits from application the Android application class, the class that
+
+05:03.010 --> 05:07.180
+knows everything about all the assets and everything, you know, project.
+
+05:07.420 --> 05:13.540
+We are also saying that we are going to make sure that this is not just any weather application class
+
+05:13.540 --> 05:18.880
+here, it's also a hilt Android app so that in the background, Hilda will know what to do to set everything
+
+05:18.880 --> 05:25.660
+up to make this application able to use the dependency injection and so forth.
+
+05:26.710 --> 05:29.740
+And that's all they're going to do for our weather application.
+
+05:30.100 --> 05:31.210
+What do we need to do next?
+
+05:31.270 --> 05:38.950
+Of course, is go to Maine and manifest, and we need to register this weather application right so
+
+05:38.950 --> 05:45.910
+that the entire project recognize it as the main class that needs to be propagated throughout the entire
+
+05:46.120 --> 05:46.630
+project.
+
+05:47.170 --> 05:48.910
+So for that, know we're here.
+
+05:48.910 --> 05:55.390
+If I start typing name like this enter and right away, you can see that Android Studio helps us to
+
+05:55.390 --> 05:58.960
+say, OK, you want to register this weather application here?
+
+05:58.960 --> 06:00.190
+You know my Android manifest.
+
+06:00.550 --> 06:01.420
+So we need to do that.
+
+06:01.990 --> 06:02.330
+OK.
+
+06:02.350 --> 06:04.150
+And while I'm here, let's go to our guy here.
+
+06:04.150 --> 06:12.010
+I'm going to add a new app module class here, and it's going to be an interface.
+
+06:12.130 --> 06:19.510
+I'm going to call this app module like this actually just a class, like a class like that, just app
+
+06:19.510 --> 06:19.990
+module.
+
+06:19.990 --> 06:22.600
+And we'll get back to that, but at least is there for now.
+
+06:23.020 --> 06:25.300
+And before we forget, let's go to our main activity.
+
+06:26.380 --> 06:32.740
+So in this class here, I'm going to say at Android entry point like this, this is for a dagger to
+
+06:32.740 --> 06:39.880
+know that this is the where we can actually start using and connecting all the dependencies that this
+
+06:39.880 --> 06:42.190
+application, this project may have.
+
+06:42.310 --> 06:43.610
+So we're just setting everything up.
+
+06:43.630 --> 06:48.490
+So we are able to use dependency injection for this and we'll see how all of that works.

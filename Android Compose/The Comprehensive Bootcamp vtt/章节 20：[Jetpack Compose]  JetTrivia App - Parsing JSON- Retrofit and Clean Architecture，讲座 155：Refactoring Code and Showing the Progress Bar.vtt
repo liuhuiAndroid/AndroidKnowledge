@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00.570 --> 00:06.210
+So we know that our testing went successfully, so we were able to get the information in this case.
+
+00:07.080 --> 00:10.500
+All of the questions from our from our Jason, which is really exciting.
+
+00:11.070 --> 00:11.390
+All right.
+
+00:11.400 --> 00:14.550
+So let's now go back and focus on the user interface.
+
+00:14.670 --> 00:16.170
+So again, this was just testing.
+
+00:16.170 --> 00:21.750
+What I'm going to do now is remove or at least extract all of these, some of these classes here onto
+
+00:21.750 --> 00:23.250
+their own home.
+
+00:23.730 --> 00:30.090
+I just want to make sure that we have separated pieces of code or pieces of user interface.
+
+00:30.630 --> 00:37.010
+So instead of, let's say, screens here, I'm going to create a new court ruling class could be just
+
+00:37.020 --> 00:37.560
+a file.
+
+00:38.310 --> 00:45.480
+And let's call this trivia home, and this is where I'm going to.
+
+00:45.510 --> 00:48.630
+We have a lot of things open to us, close all of these down.
+
+00:51.530 --> 00:56.060
+So I'm going to just call cut all of this and put right there.
+
+00:57.170 --> 00:57.640
+Very good.
+
+00:57.650 --> 00:58.670
+Everything is imported.
+
+00:59.720 --> 01:06.740
+And instead of a components here, this is where I'm going to add another class of file called these
+
+01:07.610 --> 01:08.450
+questions.
+
+01:09.350 --> 01:10.670
+And so this is where.
+
+01:12.310 --> 01:13.990
+This composable will live.
+
+01:19.430 --> 01:19.750
+OK.
+
+01:21.810 --> 01:22.320
+Very good.
+
+01:22.890 --> 01:29.310
+So that means then coming here, we'll probably have to obviously go and import all of those dependencies.
+
+01:30.210 --> 01:33.450
+And our trivia here will also have to import that.
+
+01:34.170 --> 01:34.460
+OK.
+
+01:37.530 --> 01:38.940
+Let's go ahead and run once again.
+
+01:39.240 --> 01:44.040
+Of course, if you were running, she'd probably you will see a blank window like this.
+
+01:44.820 --> 01:46.580
+And of course, go to Logcat.
+
+01:46.590 --> 01:47.940
+You can see that we have the result.
+
+01:48.000 --> 01:55.380
+Real quick here inside of our questions, what I can do is with this is a composable I can put here
+
+01:55.380 --> 01:57.560
+a circle progress indicator.
+
+01:57.570 --> 01:59.310
+I search when it's loading.
+
+02:00.780 --> 02:04.110
+You may be too fast for it to show, but nonetheless.
+
+02:04.320 --> 02:05.940
+OK, lest we run this.
+
+02:07.750 --> 02:09.550
+Voila, you saw that briefly.
+
+02:09.570 --> 02:10.290
+Real quick.
+
+02:10.410 --> 02:10.840
+There we go.
+
+02:10.840 --> 02:13.880
+We saw that running real quick, it was really fast.
+
+02:14.220 --> 02:15.180
+Put your eyes here.
+
+02:16.260 --> 02:17.370
+OK, there we go, it's loading.
+
+02:17.460 --> 02:21.870
+This is well, it was really fast, which is a good thing in a way, but it's always important to add
+
+02:21.870 --> 02:25.620
+this recall progress indicators to indicate that something is happening in the background.
+
+02:25.620 --> 02:28.230
+So the user knows indeed that they can wait for a bit.
+
+02:28.600 --> 02:28.820
+All right.
+
+02:28.830 --> 02:34.170
+So I just want to show you the importance of what we've just done, which is to allow to pass this metadata
+
+02:34.470 --> 02:39.540
+in this case, the loading state, so we can use that to do something like what we just saw.

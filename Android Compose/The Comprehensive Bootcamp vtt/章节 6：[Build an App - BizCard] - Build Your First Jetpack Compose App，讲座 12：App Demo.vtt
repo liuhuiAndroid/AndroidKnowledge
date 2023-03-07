@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.420 --> 00:05.820
+All right, so I know we are very excited and we want to get to it right, so before we move forward
+
+00:05.880 --> 00:12.810
+to do other things like, for instance, learning about Caitlin or go dive right into compose whichever
+
+00:12.810 --> 00:13.800
+path you choose.
+
+00:13.830 --> 00:14.820
+This is what we're going to be doing.
+
+00:14.830 --> 00:17.340
+We're going to build a simple app called Business Card.
+
+00:17.790 --> 00:18.780
+At Basic Card.
+
+00:18.810 --> 00:20.420
+It's essentially it's a very simple app.
+
+00:20.430 --> 00:25.380
+As I said, we will have, as you see there, a picture at the top and then we're going to have a name.
+
+00:25.620 --> 00:29.720
+And of course, the profession of this person of Twitter account handle.
+
+00:29.730 --> 00:35.970
+And of course, about once that portfolio button is clicked, we are going to show a list of their projects.
+
+00:36.240 --> 00:39.600
+Let me show you now the actual app working on them later.
+
+00:39.690 --> 00:40.770
+Before we start building it.
+
+00:40.950 --> 00:44.070
+So here is a little demo of what we are going to be building.
+
+00:44.100 --> 00:50.010
+It's very simple, like I said, but it will showcase the power of Android Jetpack compose.
+
+00:50.280 --> 00:51.240
+The app is running.
+
+00:51.240 --> 00:55.500
+As you can see here we have a profile picture and in the background, if you can see we can make this
+
+00:55.500 --> 00:59.820
+a little bit bigger, perhaps you to be able to see, you can see we have this very nice background
+
+00:59.820 --> 01:04.380
+rounded corners and you have a profile picture divider in your name.
+
+01:04.440 --> 01:10.860
+And of course, Android compose program or the title of this person and then their Twitter account handle
+
+01:10.860 --> 01:11.180
+there.
+
+01:11.190 --> 01:12.300
+And of course, the button.
+
+01:12.600 --> 01:18.270
+The beauty here is that the portfolio button when you click, it's going to show a list course of all
+
+01:18.270 --> 01:19.630
+of the project of this person.
+
+01:19.650 --> 01:24.680
+All of this Islamic data can see it's a list you can scroll up and down the click back.
+
+01:24.690 --> 01:30.450
+It's going to go ahead and of course, toggle the contents of our projects really nice.
+
+01:30.570 --> 01:32.160
+So this is what I'm going to be building.
+
+01:32.400 --> 01:34.080
+And we're going to have a lot of fun.
+
+01:34.320 --> 01:35.310
+Let's go ahead and get started.

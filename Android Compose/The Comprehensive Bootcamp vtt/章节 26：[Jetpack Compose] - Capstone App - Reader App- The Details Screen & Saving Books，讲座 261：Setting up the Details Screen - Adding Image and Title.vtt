@@ -1,0 +1,391 @@
+WEBVTT
+
+00:00.900 --> 00:08.700
+So we can even make this even better by putting a column here or rather a row like that.
+
+00:09.120 --> 00:20.310
+And I'm going to take this into that, OK, and I have that linear and then here I'm going to say text.
+
+00:20.910 --> 00:27.990
+I would say loading like that just to play around with what's going on here.
+
+00:27.990 --> 00:30.480
+Let's save this and give it a run.
+
+00:32.310 --> 00:33.220
+Very good, quick.
+
+00:33.790 --> 00:36.220
+So he's loading, he saw that briefly.
+
+00:38.410 --> 00:39.130
+OK, very good.
+
+00:40.480 --> 00:48.730
+So we can do the same thing actually inside of our search, I believe, right here.
+
+00:53.370 --> 00:54.830
+A horizontal arrangement.
+
+00:58.380 --> 00:59.560
+Space in between.
+
+01:03.910 --> 01:04.970
+OK, that's fine.
+
+01:05.080 --> 01:07.370
+Just playing around with a few things.
+
+01:07.420 --> 01:08.260
+Two concepts here.
+
+01:08.860 --> 01:09.730
+Let's run, Nancy.
+
+01:15.630 --> 01:15.870
+OK.
+
+01:17.620 --> 01:18.280
+Very nice.
+
+01:18.290 --> 01:18.970
+It's loading.
+
+01:19.210 --> 01:19.750
+That's fine.
+
+01:19.960 --> 01:22.510
+We can play with this forever, but that's totally fine.
+
+01:22.540 --> 01:27.670
+So by the way, if you look at linear progress indicator, there are a few things you can add or pass
+
+01:27.670 --> 01:28.270
+around, right?
+
+01:28.270 --> 01:34.390
+So can you pass the modifier, of course, and pass a background color or even the color as well?
+
+01:34.600 --> 01:35.860
+There are a lot of things you can do.
+
+01:36.950 --> 01:37.210
+OK.
+
+01:38.120 --> 01:41.030
+All right, we're not going to spend too much time on that because that's something you can do yourself,
+
+01:41.030 --> 01:46.400
+but at least we know now we were able to get the information about at least to get the book.
+
+01:46.400 --> 01:50.780
+So if we can get the book, we can extract all sort of things.
+
+01:51.740 --> 01:54.470
+OK, so what we really want to do.
+
+01:54.530 --> 01:57.340
+Obviously, it's not just to show the book like this.
+
+01:57.350 --> 02:00.810
+We want to show something a little bit more concrete like this.
+
+02:00.840 --> 02:03.790
+OK, so we're going to have an image of that book.
+
+02:03.830 --> 02:06.500
+We're going to have the title of the book and a lot of information.
+
+02:06.500 --> 02:12.440
+Now I do realize that there's a lot of information and probably there would be a best way to construct
+
+02:12.500 --> 02:12.920
+this user.
+
+02:12.920 --> 02:17.600
+You are this user interface, but we just want to get the data in that way.
+
+02:17.780 --> 02:20.780
+You also get a chance to make this more beautiful.
+
+02:21.440 --> 02:21.770
+All right.
+
+02:22.160 --> 02:22.550
+Very good.
+
+02:22.580 --> 02:23.780
+So let's go ahead and do that.
+
+02:24.560 --> 02:28.460
+First of all, we're going to get the image in the, you know, how to do that by now.
+
+02:28.460 --> 02:30.830
+So can parses feed you and go ahead and do that.
+
+02:31.220 --> 02:35.780
+And maybe you can just do this entire create this entire screen here.
+
+02:35.810 --> 02:36.470
+It's very simple.
+
+02:36.470 --> 02:41.330
+So we just adding all of this information into our screen here.
+
+02:42.110 --> 02:46.090
+One thing to know exactly where we are getting this information from.
+
+02:46.100 --> 02:53.390
+So let's go back to and find book API or books API that is noticed that we can pass the idea of the
+
+02:53.390 --> 02:54.860
+book after volume.
+
+02:54.870 --> 03:00.680
+So if you go back to our Google API, here you see we have volumes and in this case we're acquiring.
+
+03:00.680 --> 03:03.710
+So we have a question mark and queue is equal to Android.
+
+03:03.710 --> 03:11.630
+So whatever we add here, let's say dancing like this, it's going to go ahead and pass it around and
+
+03:11.630 --> 03:14.810
+get the information about dancing books on dancing.
+
+03:15.200 --> 03:15.470
+OK.
+
+03:15.980 --> 03:18.290
+But let me get this ad copy this.
+
+03:18.620 --> 03:27.680
+So if I change this set of volumes like this point for a slash and did hit enter, then we hit somewhere
+
+03:27.680 --> 03:34.610
+else so we can see now we're just going to see the information about that book that has this ad.
+
+03:35.570 --> 03:39.470
+So, you know, this is going to be the same thing that we had before, which is going to be volume
+
+03:39.470 --> 03:40.070
+info.
+
+03:40.280 --> 03:44.330
+It's just that now it's very much specialized for this book.
+
+03:44.390 --> 03:45.770
+The fields are all the same.
+
+03:46.070 --> 03:53.180
+So you see that you can get title authors and publish data and everything description and so forth.
+
+03:53.510 --> 03:54.920
+So that's where it's all coming from.
+
+03:55.070 --> 03:56.550
+Just want to show you that let's go back.
+
+03:56.990 --> 03:57.290
+Right?
+
+03:57.920 --> 03:59.870
+Well, like I said, this is not what we want.
+
+04:00.170 --> 04:04.940
+We actually want to pass here details like this.
+
+04:05.180 --> 04:07.730
+So I'm going to pass a book, ebook info such.
+
+04:09.650 --> 04:13.280
+And then we're passing enough controller like this.
+
+04:13.370 --> 04:15.080
+Let's go ahead and create that real quick.
+
+04:15.390 --> 04:16.250
+It's composable.
+
+04:16.820 --> 04:18.400
+We have everything.
+
+04:18.410 --> 04:23.840
+So first I'm going to just extract a few things for my say book data.
+
+04:24.770 --> 04:31.220
+When I say book info in this case, that data, I'm going to say volume info.
+
+04:31.580 --> 04:40.850
+It's just to get the root of our note and then foul Google Book ID.
+
+04:41.060 --> 04:42.170
+We're going to use that later.
+
+04:42.680 --> 04:46.850
+Let's say book data, a book info that is.
+
+04:48.180 --> 04:51.120
+That data actually just go directly to.
+
+04:52.390 --> 04:59.560
+Yes, data, no book I info, OK, the wrong one and get the I.D. I S..
+
+05:00.220 --> 05:01.900
+So next claim credit card.
+
+05:02.170 --> 05:03.550
+Give it modifier here.
+
+05:10.880 --> 05:12.560
+Give about 34 dpi.
+
+05:14.150 --> 05:18.680
+And let's also give a shape.
+
+05:20.050 --> 05:27.700
+I'm going to circle shaped like this or pass an elevation of about four deep.
+
+05:29.080 --> 05:29.380
+All right.
+
+05:30.070 --> 05:32.270
+So the first thing I'm going to add, of course, is the events.
+
+05:32.290 --> 05:38.200
+The book image is very simple now it's almost like repeating ourselves here.
+
+05:38.290 --> 05:42.520
+So image painter and former painter, I'm going to use Coyle.
+
+05:42.580 --> 05:45.250
+Remember image painter?
+
+05:46.420 --> 05:47.080
+It's going to be.
+
+05:47.320 --> 05:48.250
+It's going to be data.
+
+05:49.000 --> 05:50.740
+And how do I get that data?
+
+05:50.770 --> 05:59.740
+Well, I'm going to get that data from our book data and get to image links and get your thumbnail.
+
+06:01.150 --> 06:01.480
+OK?
+
+06:02.410 --> 06:10.510
+And so two string looks like it needs more than not, necessarily.
+
+06:10.820 --> 06:12.880
+You no longer need that string.
+
+06:13.030 --> 06:13.390
+All right.
+
+06:14.270 --> 06:16.060
+And description, it's going to be.
+
+06:17.550 --> 06:18.840
+I say book image.
+
+06:23.570 --> 06:23.750
+Thank.
+
+06:27.110 --> 06:32.270
+Let's pass a modifier gave a width of about 90 dpi.
+
+06:34.780 --> 06:44.450
+And a height of about 90 dpi and padding of one dpi such weight.
+
+06:44.530 --> 06:45.640
+So that is our card.
+
+06:45.640 --> 06:49.300
+If we run this over, we're going to see an image.
+
+06:49.930 --> 06:50.890
+Let's pick any book.
+
+06:52.210 --> 06:56.260
+Well, you, sir, it's happening by this guy.
+
+06:56.500 --> 06:58.160
+And there we go running.
+
+06:58.570 --> 07:00.490
+There's books about running about that one.
+
+07:01.030 --> 07:02.890
+And well, looks good.
+
+07:03.250 --> 07:05.890
+Now let's go ahead and add this text here.
+
+07:05.890 --> 07:06.490
+The title.
+
+07:06.820 --> 07:10.710
+I'm going to go outside of that card round card there.
+
+07:10.720 --> 07:11.740
+Let's say text.
+
+07:13.720 --> 07:19.720
+And this is just about taking data in putting inside their data title.
+
+07:21.310 --> 07:23.680
+Such I'm going to give a style.
+
+07:29.300 --> 07:32.180
+Age four, about age six.
+
+07:34.550 --> 07:40.910
+Make sure that overflow, I'm going to say I want this to be ellipses in cases that we have a lot of
+
+07:41.340 --> 07:43.490
+long title like needs more.
+
+07:44.930 --> 07:46.160
+The string, OK, there we go.
+
+07:48.260 --> 07:49.850
+And the Max line.
+
+07:53.020 --> 07:58.000
+My lines, I'm going to say 19, because some books have very long titles.
+
+07:58.030 --> 07:58.540
+Who knows?
+
+07:59.140 --> 08:01.090
+And the rest, I'm just going to get.
+
+08:01.990 --> 08:08.350
+And you're going to pause this video and get all of the other texts here because it makes no sense.
+
+08:08.710 --> 08:10.540
+Let you watch me type all of that.
+
+08:10.840 --> 08:11.470
+And there we go.
+
+08:11.500 --> 08:15.970
+So we have Arthur's page count and everything is there in what I'm going to do next.
+
+08:15.980 --> 08:21.790
+I'm going to add an spacer to give some space between where we're going to add indeed the description.
+
+08:34.540 --> 08:35.230
+Let's give it a run.
+
+08:39.390 --> 08:39.720
+All right.
+
+08:39.990 --> 08:43.110
+It looks it looks good, a little bit cramped, but that's OK.
+
+08:44.110 --> 08:44.590
+That's OK.

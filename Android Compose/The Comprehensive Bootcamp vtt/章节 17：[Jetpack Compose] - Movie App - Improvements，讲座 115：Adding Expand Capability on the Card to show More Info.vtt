@@ -1,0 +1,553 @@
+WEBVTT
+
+00:01.090 --> 00:04.250
+All right, so our user interface is starting to look very good.
+
+00:05.630 --> 00:12.230
+The next thing we want to do is we know that our movie may have has potential, has a lot of information,
+
+00:13.010 --> 00:15.350
+so I'm going to show you something really interesting.
+
+00:15.680 --> 00:21.290
+So what I want to do next is to add a little arrow down arrow.
+
+00:21.290 --> 00:26.840
+So so when it clicked, it's going to expand this card to show more information.
+
+00:27.500 --> 00:35.810
+So down here after these released, they're outside actually has to be outside this row here.
+
+00:36.200 --> 00:45.920
+Let's go ahead and add a an icon and say icon like this, and let's use icons.
+
+00:46.290 --> 00:51.740
+I want to say field, and I want the keyboard arrow up.
+
+00:54.210 --> 00:59.610
+This case narrowed down first, and content is going to be
+
+01:02.370 --> 01:04.560
+down Arrow like that.
+
+01:06.510 --> 01:06.800
+OK.
+
+01:08.580 --> 01:12.240
+And let's go ahead and add put this in a line.
+
+01:13.380 --> 01:15.660
+Let's go ahead and add a modifier here.
+
+01:18.690 --> 01:24.900
+So modifier and a one size to be about 25 deep.
+
+01:26.990 --> 01:30.350
+While I'm here, I'm also going to say that.
+
+01:33.420 --> 01:38.100
+And I want this to be also clickable, as you will see, say, clickable like this, OK?
+
+01:38.850 --> 01:45.420
+And I'm also going to change the tint color, the color of this to dark gray.
+
+01:45.420 --> 01:45.840
+Like this?
+
+01:46.500 --> 01:48.690
+OK, let's look at our split code.
+
+01:49.440 --> 01:50.130
+Let's refresh.
+
+01:51.570 --> 01:52.020
+All right.
+
+01:52.080 --> 01:53.860
+That's really, really large.
+
+01:53.880 --> 01:55.620
+That means I am not.
+
+01:56.440 --> 01:58.220
+See, that's not the right place.
+
+01:58.230 --> 01:58.590
+So.
+
+01:59.260 --> 02:03.900
+You're right, this has to be kept this out of here.
+
+02:08.180 --> 02:09.640
+Right, this I can actually.
+
+02:10.600 --> 02:13.420
+We need to be inside of our column.
+
+02:16.320 --> 02:18.780
+Just there to refresh.
+
+02:23.230 --> 02:26.960
+OK, this needs to be inside here.
+
+02:28.550 --> 02:30.140
+OK, just right below there.
+
+02:30.560 --> 02:30.860
+OK.
+
+02:32.860 --> 02:37.690
+Now, now that we have that arrow, what do we want to do is as follows, we want to make sure that
+
+02:37.690 --> 02:41.570
+when this is clicked, we drop or we increase.
+
+02:41.590 --> 02:48.490
+In this case, the size we expand the size of this, of this rope so we can see more information.
+
+02:49.120 --> 02:50.970
+Now this information is going to be where.
+
+02:50.980 --> 02:55.520
+So first of all, let's go up here right after we have a release.
+
+02:55.530 --> 03:01.720
+So, so on top of this arrow, we're going to add a column, yet another column, yes, instead of a
+
+03:01.720 --> 03:02.140
+column.
+
+03:02.800 --> 03:03.210
+All right.
+
+03:03.220 --> 03:06.100
+So this is what we're going to have the information that's going to be hidden.
+
+03:06.700 --> 03:08.080
+The idea here is very simple.
+
+03:08.080 --> 03:13.960
+We want to make sure that, of course, like I said, when this is clicked, we'll have to have a variable
+
+03:13.980 --> 03:18.460
+estate right there will know whether this is clicked on right or not.
+
+03:19.330 --> 03:22.420
+If it's clicked, if it's on, we're going to show something.
+
+03:22.420 --> 03:23.980
+If not, we're going to collapse it.
+
+03:25.390 --> 03:32.860
+So what we need is actually, yes, you guessed it, at the top here, we're going to create a foul
+
+03:33.460 --> 03:41.200
+called this expanded right, analysts say by use delegation here by remember Mike, that it's going
+
+03:41.200 --> 03:45.010
+to be mutable state of, say, false.
+
+03:45.160 --> 03:48.010
+First, this is going to be a.
+
+03:48.750 --> 03:49.720
+This is going to be.
+
+03:52.790 --> 03:58.730
+So it's going to be a Boolean, let's go ahead and see what we can do, right, this has to be mutable
+
+03:58.730 --> 04:04.790
+state, not immutable, least mutable state of and false in the beginning.
+
+04:06.460 --> 04:10.420
+And let's see if we can go ahead and import of what we need.
+
+04:10.840 --> 04:11.440
+And there we go.
+
+04:12.280 --> 04:15.370
+So now we have our state here that will control everything.
+
+04:15.820 --> 04:17.590
+So where is it going to be called?
+
+04:17.620 --> 04:21.790
+Well, we're going to call that instead of the icon one click here clickable.
+
+04:21.790 --> 04:25.540
+So I'm going to say here or simply expanded in this case.
+
+04:27.180 --> 04:32.820
+It's going to be equal to the opposite, so we're going to toggle it to the expanded of expanded.
+
+04:37.720 --> 04:38.900
+Let's change that to VAR.
+
+04:38.920 --> 04:42.700
+Yes, because we're changing it, OK, so this is going to allow us to toggle.
+
+04:42.940 --> 04:45.850
+So if it's true, then click, it's going to be false.
+
+04:46.390 --> 04:48.790
+Click again is going to be true, is going to toggle back and forth.
+
+04:49.810 --> 04:51.460
+Like when we click this icon.
+
+04:52.180 --> 04:53.570
+So what do we want to show?
+
+04:53.590 --> 05:02.710
+I'm going to put a text here real quick, hello there, so we can see this in action, but how do we
+
+05:02.710 --> 05:06.090
+then toggle that visibility right?
+
+05:06.100 --> 05:12.670
+Because we want this to be visible or expand itself if it's clicked and retract itself?
+
+05:12.970 --> 05:14.860
+Also, if it's clicked, if it's false.
+
+05:15.340 --> 05:21.340
+So we're going to wrap this inside of this animated visibility.
+
+05:21.730 --> 05:22.140
+Look at that.
+
+05:22.150 --> 05:27.490
+There is indeed a function or a composable function that is called animated visibility.
+
+05:27.850 --> 05:32.900
+And here are going to pass the expanded Boolean state.
+
+05:33.820 --> 05:40.480
+So all of this, then when you put that inside a such now you see we have a problem here.
+
+05:40.480 --> 05:44.800
+If you have over is going to say this is an experimental animation API.
+
+05:45.970 --> 05:52.700
+To solve this, we have to add this ad experimental animation API annotation to with you to Movie Row.
+
+05:52.720 --> 05:53.230
+What is this?
+
+05:53.710 --> 05:58.690
+Well, as the name imply experimental, that means it's still being worked on.
+
+05:59.080 --> 06:07.030
+They're not sure if this is going to be forever in the APIs in the compose APIs for us to use.
+
+06:07.330 --> 06:13.090
+But as it is right now, we can't actually use it, but we have to annotate this with an experimental
+
+06:13.090 --> 06:13.660
+animation.
+
+06:14.170 --> 06:14.500
+OK.
+
+06:15.760 --> 06:18.160
+So we're going to annotate that and then we should be good.
+
+06:18.730 --> 06:20.080
+Looks like I have a problem.
+
+06:21.370 --> 06:23.620
+I see all too often enter again.
+
+06:24.100 --> 06:24.940
+And voila!
+
+06:25.210 --> 06:30.160
+So whenever you have issues, make sure, especially with remember to make sure to import because there
+
+06:30.160 --> 06:32.710
+are a lot of imports that have to happen in order for this work.
+
+06:33.670 --> 06:34.120
+All right.
+
+06:34.720 --> 06:37.120
+So now let's go ahead and refresh this real quick.
+
+06:37.990 --> 06:38.380
+OK.
+
+06:38.650 --> 06:44.140
+What I can do instead of actually writing these directly on an emulator, I'm going to start interactive
+
+06:44.140 --> 06:44.590
+mode.
+
+06:45.160 --> 06:47.350
+So we are able to click and see if this works.
+
+06:50.230 --> 06:50.550
+OK.
+
+06:50.590 --> 06:52.810
+Let's see if I click this button there.
+
+06:53.000 --> 06:54.910
+Well, you see hello there is showing.
+
+06:56.630 --> 06:56.940
+Right.
+
+06:57.210 --> 06:59.100
+If I click back is going to hide.
+
+06:59.610 --> 07:00.120
+Very good.
+
+07:00.210 --> 07:03.260
+Just like that, we have this very nice animation now.
+
+07:03.270 --> 07:08.190
+The one thing I want to make sure to happen is that this arrow has to change directions, right?
+
+07:08.640 --> 07:13.530
+If it's collapsed, when we click, we're going to show whatever we need to show and then we're going
+
+07:13.530 --> 07:15.750
+to change the direction to show up.
+
+07:16.080 --> 07:16.380
+Right?
+
+07:17.010 --> 07:17.670
+How do we do that?
+
+07:17.880 --> 07:20.460
+Well, you should know how to do this at this point.
+
+07:20.790 --> 07:21.500
+It's very simple.
+
+07:21.510 --> 07:26.100
+It's go back to code where we have the icon here.
+
+07:26.580 --> 07:33.240
+So instead of image vector here, I can put an if statement in line, if statement here and say if in
+
+07:33.240 --> 07:41.060
+this case expanded is true, then the icon is going to be up arrow up, right?
+
+07:41.070 --> 07:50.370
+Because we want to make sure to say, Yeah, you can, then the icon is going to be arrow up else the
+
+07:50.370 --> 07:51.600
+icon in this case.
+
+07:52.020 --> 07:58.470
+When you say icons that field dot keyboard down just like that.
+
+07:59.220 --> 07:59.850
+Let's take a look.
+
+08:01.670 --> 08:02.300
+So refresh.
+
+08:04.880 --> 08:05.220
+OK.
+
+08:05.300 --> 08:05.810
+Let's see.
+
+08:06.320 --> 08:06.710
+Click.
+
+08:07.010 --> 08:07.520
+Voila!
+
+08:08.760 --> 08:12.030
+Click and we are toggling back and forth.
+
+08:13.260 --> 08:21.870
+The other thing I need to do here, just make sure, is to change the size of the whole card because
+
+08:21.870 --> 08:24.510
+as you see here, if you look at our card.
+
+08:26.160 --> 08:32.370
+I am I have this fixed height that's not going to help because we want to make sure that the expansion,
+
+08:32.520 --> 08:37.380
+if we have a lot of tax that we're going to show, which is actually the case in a second here, we
+
+08:37.380 --> 08:38.720
+want it to be dynamic.
+
+08:38.730 --> 08:43.500
+Winning the expansion is going to expand it to the max to height that he needs.
+
+08:44.010 --> 08:46.380
+So we're going to just coming out the height.
+
+08:47.520 --> 08:47.840
+All right.
+
+08:47.850 --> 08:53.520
+So now, instead of our animated visibility here, we have a column over the text.
+
+08:53.970 --> 08:56.610
+I'm going to add the actual information I want to add.
+
+08:57.450 --> 09:00.090
+So here I'm going to get rid of that for a text.
+
+09:00.420 --> 09:05.430
+Now you notice here there's two kinds of text functions overload it.
+
+09:05.430 --> 09:07.440
+There's a text symbol that we've been using.
+
+09:07.800 --> 09:10.500
+There's this other one called annotated string.
+
+09:10.830 --> 09:12.510
+So let's use that annotated string.
+
+09:13.380 --> 09:19.080
+So for our annotated string, we can actually pass for a text here and let's go to move all of this.
+
+09:19.500 --> 09:26.150
+We can pass the build annotation or annotated string lambda as such.
+
+09:26.640 --> 09:33.740
+What this allows us to do is to actually change individual strings that we want to show, right?
+
+09:34.410 --> 09:42.840
+For instance, if I have a string that says hello, they're OK with annotated string, I can separate
+
+09:42.840 --> 09:44.310
+to say this hello here.
+
+09:44.310 --> 09:49.320
+I want to have color read and be bold and italic and so forth.
+
+09:49.560 --> 09:56.970
+However, this there I can change that to something else to light so we can annotate each string that
+
+09:56.970 --> 09:57.450
+we want.
+
+09:57.540 --> 10:00.360
+In fact, we can even annotate each character.
+
+10:00.360 --> 10:03.960
+Meaning if I want to change this T to a different color, I can do so.
+
+10:04.230 --> 10:06.270
+So this gives us more flexibility.
+
+10:06.900 --> 10:07.250
+OK?
+
+10:07.440 --> 10:10.920
+So we have two paths to build annotated string as such.
+
+10:10.980 --> 10:17.730
+So inside here we can then say something like this with style like that and we can pass a style.
+
+10:18.300 --> 10:24.960
+So we see here with style take so we can pass it, d style the paragraph and so forth, and we can pass
+
+10:24.960 --> 10:27.600
+the block, which is the actual annotated string.
+
+10:27.690 --> 10:28.140
+We'll see.
+
+10:28.350 --> 10:34.410
+So in this case, and we just pass style in for the style, I'm going to pass a span style so I can
+
+10:34.650 --> 10:39.470
+then see for the color of these spam here span.
+
+10:39.480 --> 10:45.000
+That is, it's going to be color dot, dark gray like this.
+
+10:46.610 --> 10:52.460
+And I can continue, I can say it's the font size is going to be about 13 at SB.
+
+10:53.610 --> 10:53.880
+All right.
+
+10:54.840 --> 11:01.560
+Let's go ahead and import ESP, and then I also have a block in this with here.
+
+11:02.270 --> 11:06.510
+If I have over, I can see we have this annotated string builder.
+
+11:06.630 --> 11:08.430
+So now we're building the actual strings.
+
+11:08.430 --> 11:15.270
+In this case, I'm going to pin you say append to append to add could be a string could be a char in
+
+11:15.270 --> 11:16.830
+this case of text string, right?
+
+11:17.100 --> 11:22.530
+So I'm going to say something like this plot and then space.
+
+11:23.460 --> 11:27.840
+And then outside here, I'm going to create yet another with style.
+
+11:31.130 --> 11:31.310
+Right.
+
+11:32.060 --> 11:38.990
+And do the same thing in, say, style span style past the color.
+
+11:42.850 --> 11:46.080
+Dark grey, and then I'm going to pass.
+
+11:46.210 --> 11:47.440
+Font size
+
+11:50.170 --> 11:51.430
+13 SB.
+
+11:53.960 --> 11:56.780
+And for this one, also font weight.
+
+11:57.800 --> 12:00.020
+I want this to be bold.
+
+12:00.080 --> 12:03.980
+Then, of course, in our blog here, I have to pass the actual annotated string.
+
+12:04.000 --> 12:10.130
+So I'm going to say I penned in this case, I'm going to say movie and get the plot.
+
+12:11.450 --> 12:15.860
+OK, so I'm just changing each part of my text.
+
+12:15.860 --> 12:20.450
+So this plot here is going to have this style that we pass.
+
+12:20.960 --> 12:27.100
+And then I'm going to put inside of another block here and at the compose function with style.
+
+12:27.110 --> 12:34.220
+I passed this style and I append in the trailing lambda in the past movie that plot.
+
+12:36.800 --> 12:38.290
+All right, let's go ahead and see real quick.
+
+12:40.850 --> 12:42.710
+OK, let's go ahead and click and see.
+
+12:43.190 --> 12:46.160
+And while I can see this style is looking, will it good?
+
+12:47.280 --> 12:50.140
+I said plot and you see there.
+
+12:51.240 --> 12:54.240
+It's looking descent and the animation is working.

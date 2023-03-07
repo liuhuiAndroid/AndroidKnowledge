@@ -1,0 +1,796 @@
+WEBVTT
+
+00:01.230 --> 00:08.880
+So we've created the Dow, so we still looking at the lower part of this entire architecture here structure.
+
+00:09.510 --> 00:18.210
+So now we are going to instantiate or create the actual class that will implement or rather the abstract
+
+00:18.210 --> 00:23.220
+class in this case that will be implementing our room database.
+
+00:23.220 --> 00:29.940
+But there is such room there based class that is out there, which will allow us to then create the
+
+00:29.940 --> 00:33.780
+database or at least set up the database entities and all the things that we need.
+
+00:34.920 --> 00:35.910
+So let's go ahead and do that.
+
+00:38.010 --> 00:40.670
+Let's get rid of that for now favored as well.
+
+00:40.680 --> 00:41.940
+And this too.
+
+00:41.970 --> 00:46.170
+So let's go back to our project and it's still inside of our data here.
+
+00:46.170 --> 00:50.750
+I'm going to create a new file codling file.
+
+00:50.760 --> 00:55.880
+This is going to be an abstract class, but I don't have access to an abstract class.
+
+00:55.910 --> 00:56.760
+I don't think here.
+
+00:56.760 --> 00:57.240
+So it's OK.
+
+00:57.240 --> 00:59.130
+I'm just going to use the interface.
+
+00:59.190 --> 00:59.910
+I'm going to change that.
+
+01:00.060 --> 01:05.020
+So let's call this weather database section.
+
+01:06.000 --> 01:14.010
+And I said, it's going to be an abstract class one change that right away from here and in this case
+
+01:14.010 --> 01:14.370
+here.
+
+01:14.970 --> 01:16.980
+And so this what he does.
+
+01:17.280 --> 01:18.810
+Well, first of all, this will.
+
+01:20.920 --> 01:30.670
+So this weather data, so our database here is going to inherit from room database surveys.
+
+01:30.720 --> 01:36.100
+Of course, the class that has all the things that we need in order to create the actual at least to
+
+01:36.100 --> 01:39.690
+set up the structure, the form database structure, right?
+
+01:40.000 --> 01:44.110
+This structure here, which is included around with everything.
+
+01:45.170 --> 01:45.440
+OK.
+
+01:46.800 --> 01:51.750
+So we need to also make sure that the compiler will know what this is all about, and once a database
+
+01:51.810 --> 01:55.320
+like this, remember it's going to be Android X Room database.
+
+01:55.770 --> 02:00.600
+And here is where we set up the skeleton of our database, which will create in a bit.
+
+02:00.900 --> 02:04.230
+So in this case, here we need to pass the entities entities again or just tables.
+
+02:04.680 --> 02:10.290
+Notice it says entities in its array or list of entities classes.
+
+02:10.470 --> 02:10.770
+Right?
+
+02:11.250 --> 02:16.020
+Because in most databases, you usually have more than one entity.
+
+02:16.440 --> 02:19.110
+So that's why allows us to pass a list.
+
+02:19.350 --> 02:20.310
+So what say entities?
+
+02:21.450 --> 02:21.750
+Right?
+
+02:22.020 --> 02:29.250
+In this case, the list is put inside of square brackets like this, and we will have two tables.
+
+02:29.250 --> 02:31.440
+But for now, we're just talking about one, which is favorites.
+
+02:31.920 --> 02:37.740
+So I'm going to say favorite, I would go and I'm going to make sure that it's a class that we what
+
+02:37.740 --> 02:38.720
+we are calling, right?
+
+02:38.730 --> 02:39.840
+That's what we are setting up.
+
+02:41.160 --> 02:45.480
+And then when need passed the version of Oracle base or just a number, so one, it's fine.
+
+02:45.750 --> 02:49.050
+And I'm going to say export schema falls like this.
+
+02:50.320 --> 02:51.850
+OK, forget.
+
+02:52.260 --> 02:57.760
+So now we're saying whenever this is called, it's going to create an actual he's going to have the
+
+02:57.760 --> 03:03.460
+entity, all the entities, all the information, all the metadata that will be needed to create those
+
+03:03.460 --> 03:05.380
+tables in this case, just one table for now.
+
+03:06.920 --> 03:07.330
+All right.
+
+03:07.690 --> 03:12.340
+And, of course, an abstract class that means it also has to have abstract functions.
+
+03:12.640 --> 03:13.750
+In this case, we're going to have one.
+
+03:14.170 --> 03:15.730
+This abstract function.
+
+03:15.970 --> 03:23.970
+It's going to be called whether Dow, which in this case is going to extend our weather now.
+
+03:23.980 --> 03:30.040
+So the idea is that this is going to be something that will need to be implemented at the class level
+
+03:30.040 --> 03:31.090
+when we call this function.
+
+03:31.180 --> 03:36.940
+It's going to return whether Dow, which is what we created earlier and whether Dow will know how to
+
+03:36.940 --> 03:41.200
+access the database, the SEC will light, meaning it will know how to.
+
+03:42.610 --> 03:47.410
+Cried or perform all the operations in our secret like database.
+
+03:48.840 --> 03:49.270
+Oh.
+
+03:49.410 --> 03:49.860
+Very good.
+
+03:49.950 --> 03:51.420
+So that's what reconstructing here.
+
+03:51.750 --> 03:55.200
+So that's it for our weather database, right?
+
+03:55.470 --> 03:57.430
+So we created this structure.
+
+03:58.590 --> 03:59.130
+It's set up.
+
+03:59.370 --> 04:01.260
+Now we haven't created the database yet.
+
+04:01.590 --> 04:02.630
+How do we create a database?
+
+04:02.640 --> 04:06.510
+No different ways now because we are using dependency injection here.
+
+04:06.520 --> 04:13.020
+We are going to still use dependent injection, which means we're going to use the class that we created
+
+04:13.020 --> 04:13.410
+earlier.
+
+04:13.410 --> 04:16.200
+If you go back to die here, the app module.
+
+04:16.680 --> 04:20.060
+Remember, this is where we earlier use for weather API.
+
+04:20.070 --> 04:27.150
+This is where we created this provider function per se that provides this weather API, which creates
+
+04:27.420 --> 04:34.530
+a retrofit instance that in this case, we pass the weather API class to do all the magic in the background.
+
+04:34.530 --> 04:39.360
+We don't need to really worry too much about so that we are able to get data from the internet.
+
+04:40.320 --> 04:41.850
+So again, we're going to do the same thing here.
+
+04:41.880 --> 04:48.300
+Number one, we need a way for us to have a provider for our Dow because our Dow is very important.
+
+04:48.300 --> 04:55.470
+As you will see as if illustrative here, the Dow is what allows us to access the data directly, which
+
+04:55.470 --> 04:57.390
+is encapsulated in our group database.
+
+04:58.140 --> 05:01.360
+So we need to provide that as well through our app module.
+
+05:01.890 --> 05:07.770
+So I'm going to say at first of all, we make sure there's a singleton like that and then it's going
+
+05:07.770 --> 05:10.200
+to be providers would provide something right.
+
+05:10.650 --> 05:13.290
+And was a fun provide.
+
+05:15.820 --> 05:17.480
+Weather now.
+
+05:17.880 --> 05:23.730
+So its function here, first of all, is going to return a weather Dow type.
+
+05:24.760 --> 05:25.210
+All right.
+
+05:25.780 --> 05:27.920
+And then we're just going to go ahead and see whether Dow.
+
+05:27.940 --> 05:29.650
+But how do I get that weather down?
+
+05:29.890 --> 05:35.500
+Well, we need to pass around here saying weather actually and to pass a weather database, you should
+
+05:35.500 --> 05:43.450
+say, right when the database type and inside of this, I put a new line.
+
+05:43.810 --> 05:50.440
+This is where I'm going to use our weather database and invoke the weather now to get the actual Dow.
+
+05:50.590 --> 05:55.180
+So what are we doing here, which I think when provide weather that was called is just going to go ahead
+
+05:55.180 --> 06:02.830
+and get the Dow object, which incidentally, will allow us to go around and get heat data.
+
+06:03.130 --> 06:05.410
+You know, a single light entities or tables.
+
+06:08.040 --> 06:08.430
+All right.
+
+06:08.790 --> 06:13.530
+Again, we're not going to be using this directly, this is for our dependency injection, as you will
+
+06:13.530 --> 06:14.040
+see later.
+
+06:15.340 --> 06:15.670
+Very good.
+
+06:16.060 --> 06:21.400
+And next here, what I'm going to do is we need to create or provide the actual database.
+
+06:21.580 --> 06:23.650
+This is where we create the actual everybody.
+
+06:23.890 --> 06:29.530
+So we created this skeleton of what needs all the metadata that it's needed to create a database.
+
+06:29.830 --> 06:35.110
+Now we need to create the actual database and we're going to do all in our app module because that's
+
+06:35.110 --> 06:37.810
+the setup we have for dependency injection and so forth.
+
+06:38.470 --> 06:38.710
+OK.
+
+06:39.430 --> 06:41.200
+So the same thing at Singleton.
+
+06:42.790 --> 06:48.220
+And then it provides like this and then fine provide a notice to naming.
+
+06:48.220 --> 06:49.060
+It's very important.
+
+06:49.120 --> 06:50.210
+This is not random.
+
+06:50.260 --> 06:57.910
+So I'm using to provide and then say app database so that we know if we need to get back here, what's
+
+06:57.910 --> 06:58.360
+going on?
+
+06:59.140 --> 06:59.440
+All right.
+
+07:00.460 --> 07:02.950
+So this will return a weather DAO.
+
+07:05.320 --> 07:11.080
+So this so this will return a weather database, obviously.
+
+07:16.570 --> 07:22.480
+And I said it to something before I even said it to something or to pass a few things you see in order
+
+07:22.480 --> 07:26.350
+for us to instantiate Arabs, we need an application context.
+
+07:26.890 --> 07:33.340
+So an application context to just think of one of those classes that have access to everything in our
+
+07:33.340 --> 07:42.670
+project in an Android project like this name plays a context or has context of everything from resources
+
+07:42.670 --> 07:49.780
+from other classes around the realm, around the tree of everything that composes everything that that
+
+07:50.770 --> 07:53.470
+constructs an actual Android app.
+
+07:53.980 --> 08:00.010
+So we need that context in order to pass it around into our room database builder, as you will see
+
+08:00.010 --> 08:00.430
+in a second.
+
+08:00.970 --> 08:01.730
+So how do we do that?
+
+08:01.750 --> 08:09.310
+Well, I can say at application context, this is beautiful because this comes from hilt dagger hilt.
+
+08:09.970 --> 08:10.330
+All right.
+
+08:10.780 --> 08:13.750
+And it's going to be context, application, context like this.
+
+08:15.850 --> 08:17.370
+Closes down, so we have more space.
+
+08:17.940 --> 08:21.690
+So now these provide apt, anybody can provide a weather database.
+
+08:21.840 --> 08:22.560
+What do we do?
+
+08:22.740 --> 08:26.460
+Well, they said, I'm going to say room, look at that room there.
+
+08:26.670 --> 08:30.360
+Like this database builder, right?
+
+08:30.840 --> 08:32.040
+How do we build a database?
+
+08:32.070 --> 08:33.600
+Well, they need to pass the context.
+
+08:34.470 --> 08:36.520
+We've got that next.
+
+08:36.570 --> 08:43.350
+We need to pass the actual class that we need to model after in order to create the actual air base,
+
+08:43.350 --> 08:45.540
+which is, yes, the weather database.
+
+08:46.500 --> 08:46.860
+Remember?
+
+08:47.370 --> 08:54.270
+And I'm just going to get the class the wrong class per say, and we need to pass the name for our database.
+
+08:54.360 --> 08:55.410
+This casing was called this.
+
+08:58.480 --> 09:03.040
+Whether that a base like that is a string could be anything.
+
+09:03.940 --> 09:04.390
+All right.
+
+09:08.450 --> 09:13.040
+We're not done yet, because then I'm going to go and invoke a few other functions.
+
+09:13.400 --> 09:17.330
+First of all, I'm going to call this fall back to destructive migration.
+
+09:17.480 --> 09:20.870
+It's just for migration stuff that we don't need to care about this point.
+
+09:20.870 --> 09:21.320
+It's fine.
+
+09:21.740 --> 09:26.360
+And then we're just called built to build in this case, our.
+
+09:27.850 --> 09:28.330
+Database.
+
+09:33.930 --> 09:38.010
+It looks like a context is having a problem that because I'm passing an application context, I just
+
+09:38.010 --> 09:41.310
+have to pass the actual Android context like that, that's what's needed.
+
+09:41.550 --> 09:41.930
+There we go.
+
+09:42.780 --> 09:43.590
+And there we have it.
+
+09:44.040 --> 09:46.280
+So all of this is happening inside of a module.
+
+09:46.290 --> 09:50.190
+Remember, we're not going to directly invoke these functions there.
+
+09:50.220 --> 09:58.830
+This is for hilts and dagger and held so that we can get this, all of these provided to us when we
+
+09:58.830 --> 10:02.250
+need them via injection dependency injection.
+
+10:08.180 --> 10:08.560
+All right.
+
+10:09.230 --> 10:10.280
+So that's it, really.
+
+10:10.300 --> 10:12.940
+So now we've pretty much done with all of this.
+
+10:14.420 --> 10:19.730
+We've created this Dow Access Data Access object before we created that one entity.
+
+10:19.760 --> 10:21.620
+There's one more we're going to create later, but that's fine.
+
+10:21.950 --> 10:27.320
+And we've created this structure of our own database, as you saw earlier with our database.
+
+10:27.320 --> 10:34.220
+And then we even were able to use the app module from our dependency injection with dagger and hilt
+
+10:34.790 --> 10:42.110
+to actually instantiate that database, as well as our DAO to have those singletons whenever we need
+
+10:42.110 --> 10:43.850
+them, as you will see in a second.
+
+10:44.480 --> 10:49.040
+So now we're going to move up and create, of course, a repository because we need a repository that
+
+10:49.040 --> 10:55.820
+will connect to our DAO reflected now so we can get that information right to get or update or delete
+
+10:55.820 --> 10:57.200
+to do the operations.
+
+10:58.400 --> 10:58.640
+All right.
+
+10:59.180 --> 11:00.420
+So let's go to do that.
+
+11:00.440 --> 11:01.280
+Let's go ahead and do that.
+
+11:01.580 --> 11:01.940
+All right.
+
+11:02.330 --> 11:03.470
+Creating a process here.
+
+11:03.860 --> 11:08.900
+So let's go back to our project, and what I'm going to do is inside of a repository.
+
+11:08.900 --> 11:15.500
+We already have this where the repository this is for our other kind of data like, but we're going
+
+11:15.500 --> 11:16.640
+to do something else now.
+
+11:16.730 --> 11:21.620
+In fact, if we wanted to do this, we could have put everything inside of this one repository.
+
+11:22.080 --> 11:22.370
+Right.
+
+11:22.400 --> 11:23.240
+But I'm not going to do that.
+
+11:23.240 --> 11:25.280
+I'm going to put in a different repository.
+
+11:25.550 --> 11:31.880
+But the whole idea is that a repository is the single source of truth for all app data, but just for
+
+11:31.880 --> 11:32.420
+simplicity.
+
+11:32.420 --> 11:37.490
+I'm going to separate the concerns a little bit and create a new repository instead of a repository
+
+11:37.580 --> 11:38.060
+package.
+
+11:42.650 --> 11:44.450
+So let's go ahead and say new.
+
+11:50.860 --> 11:54.580
+Call this weather DB repository.
+
+11:57.860 --> 11:58.220
+That.
+
+12:00.470 --> 12:05.570
+And because it's just a repository, you notice, we don't need to add anything in terms of annotation
+
+12:05.570 --> 12:06.200
+and so forth.
+
+12:06.920 --> 12:10.580
+However, what we're going to do, we need to inject what we need.
+
+12:10.700 --> 12:14.900
+We need the Dow stocks to inject constructeur.
+
+12:15.050 --> 12:20.210
+I'm going to put here our private foul weather Dow.
+
+12:21.860 --> 12:22.280
+Like this?
+
+12:23.510 --> 12:25.270
+Now let's look at the picture again.
+
+12:25.280 --> 12:31.450
+That's exactly what we need because this Dow is the one interface that allows us to access our skylight.
+
+12:31.640 --> 12:35.140
+So we need to inject it in our repository in order to be able to do so.
+
+12:36.590 --> 12:43.680
+Injection, we're not recreating or in this case, we are not instantiating a new object.
+
+12:43.700 --> 12:44.960
+We are injecting it.
+
+12:46.070 --> 12:46.580
+Very cool.
+
+12:47.120 --> 12:50.330
+So now inside here I can do all sort of things right.
+
+12:50.330 --> 12:58.040
+I can do what we want to do in this case, which is to mirror what we've done with Dow.
+
+12:58.970 --> 13:05.570
+If you remember correctly in our Dow, we have all these functions, so we're going to mirror that.
+
+13:05.600 --> 13:08.390
+This is where we actually are going to get that information and so forth.
+
+13:08.720 --> 13:11.180
+So I'm going to say fun.
+
+13:11.210 --> 13:17.450
+This start with get favorites and usually the names are similar just to mirror everything.
+
+13:18.020 --> 13:19.760
+And it's going to be a flow.
+
+13:19.790 --> 13:23.600
+That's the types that we are going to wrap this around.
+
+13:24.700 --> 13:26.030
+Caitlin Cortines Flow.
+
+13:26.060 --> 13:26.930
+Make sure that's it.
+
+13:27.420 --> 13:31.460
+A list of favorites object like that.
+
+13:31.460 --> 13:32.720
+And we're going to say that to what?
+
+13:32.990 --> 13:36.620
+Well, we're going to use whether Dow Dot and get favorites.
+
+13:37.190 --> 13:38.240
+Look, how convenient is it?
+
+13:38.240 --> 13:44.540
+So now when we use our weather DB repository, we know we have access to Dow, which is great because
+
+13:44.540 --> 13:45.080
+we need that.
+
+13:45.380 --> 13:51.380
+And so we create a function that returns a list of my favorites and wrapped into flow, just a type
+
+13:51.650 --> 13:56.030
+like a sequential type, courtin and all that great stuff.
+
+13:56.480 --> 13:58.850
+And we call the weather Dow again.
+
+13:58.910 --> 14:01.080
+Remember, we are accessing through our Dow.
+
+14:01.100 --> 14:02.780
+That's the whole objective, right?
+
+14:03.020 --> 14:06.110
+Data access, object access object.
+
+14:06.950 --> 14:09.680
+OK, through our Dow, we get favorites.
+
+14:10.130 --> 14:10.550
+And then.
+
+14:15.250 --> 14:22.900
+OK, we can continue here, I'm going to create another function, let's say, insert favorite.
+
+14:26.800 --> 14:28.960
+So in sort of favor, we need a favorite object.
+
+14:29.830 --> 14:30.310
+Of course.
+
+14:33.840 --> 14:39.630
+And then I'm going to also use Dow, of course, and then insert and insert that favorite object.
+
+14:40.260 --> 14:41.850
+I can just pass favored like this.
+
+14:42.780 --> 14:43.590
+Let's see.
+
+14:47.400 --> 14:48.450
+Right, I need to make this.
+
+14:51.560 --> 14:52.100
+Suspend.
+
+14:52.880 --> 14:53.360
+There we go.
+
+14:54.380 --> 14:54.640
+Right.
+
+14:54.850 --> 14:56.530
+It's our favorite, impassive favorite.
+
+14:57.790 --> 15:01.720
+You get the gist, I guess, suspend function, let's say.
+
+15:02.380 --> 15:06.400
+Update favorite, which was not going to use, but it's OK.
+
+15:07.400 --> 15:09.400
+The passive favorite object we want to update.
+
+15:09.550 --> 15:16.270
+And then we call whether that update favorite and past that favorite look of that.
+
+15:22.160 --> 15:24.180
+All right, I can suspend again.
+
+15:24.600 --> 15:25.320
+Let's see.
+
+15:28.940 --> 15:38.900
+So delete all favorites in this case, I don't have to do much, but just saying whether dial, delete
+
+15:38.900 --> 15:45.560
+old favorites and there we go again, suspend function, let's say you want to delete one favorite,
+
+15:45.560 --> 15:49.350
+which we're going to use actually delete favorite.
+
+15:50.480 --> 15:54.380
+We passed the favorite object I want to delete, and we call whether Dow.
+
+15:55.830 --> 15:57.690
+Delete a favorite and pass that favor.
+
+15:59.100 --> 16:10.170
+And again, just because I can do the get save by I.D., which is going to be a city.
+
+16:12.390 --> 16:20.930
+Think that's just a strain, and I'm going to expect a favorite type in this case, and we're going
+
+16:20.930 --> 16:25.540
+to set all of that weather down that gets by faith or faith by it.
+
+16:25.730 --> 16:27.470
+That is impasse the city.
+
+16:30.240 --> 16:30.840
+And there you have it.
+
+16:33.060 --> 16:37.650
+So now again, I think this helps, we've created the repository.
+
+16:38.310 --> 16:43.590
+So the next thing we need to do, it's going to be our view model, which in turn will.
+
+16:44.720 --> 16:52.430
+Have repository as its dependency injection dependency there, so that we can then use the repository
+
+16:52.430 --> 16:58.280
+and say, get favorites and then return old favorites in certain past favorite and so forth.
+
+16:59.510 --> 16:59.800
+OK.
+
+17:00.320 --> 17:04.040
+So as you see, this is a structure that is simpler to follow.
+
+17:04.070 --> 17:09.290
+I hope you can see how simple this is and is simpler to also digest.
+
+17:09.290 --> 17:15.050
+I think once you pull things into separate classes into a cluster of classes and you understand, OK,
+
+17:15.050 --> 17:20.600
+this level is this, and then you have this level, that level and that level, this hierarchy is really
+
+17:20.600 --> 17:21.080
+important.
+
+17:21.500 --> 17:26.090
+If so, if you're a beginner and this may seem like, oh my gosh, this is just too much to bear, but
+
+17:26.330 --> 17:31.250
+remember doing this even though it takes a little bit of time, you have to think a little bit about
+
+17:31.250 --> 17:34.790
+things about if you do like this than you doing it the right way.
+
+17:34.790 --> 17:37.640
+And that's what we want to do when it comes to software development.
+
+17:38.420 --> 17:39.260
+OK, there we go.
+
+17:39.410 --> 17:41.600
+So now we're done with our weather repository.
+
+17:41.780 --> 17:43.070
+Next, we're getting close.
+
+17:43.100 --> 17:48.680
+Ladies and gentlemen, next, we are going to move on to the model where we're going to deal with holding
+
+17:48.680 --> 17:52.160
+all the data needed for our user interface in this case, our convertibles.
+
+17:52.490 --> 17:54.080
+We're getting there, and I'll see you next.

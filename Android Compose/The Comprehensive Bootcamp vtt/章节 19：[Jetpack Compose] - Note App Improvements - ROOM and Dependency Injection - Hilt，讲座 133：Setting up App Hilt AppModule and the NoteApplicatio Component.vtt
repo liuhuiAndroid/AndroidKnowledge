@@ -1,0 +1,283 @@
+WEBVTT
+
+00:00.510 --> 00:05.700
+So I have to apologize because the audio they're going to be hearing in this lecture is not that great.
+
+00:05.940 --> 00:12.600
+It was my fault I did pick the wrong audio settings when I before I recorded this video.
+
+00:12.900 --> 00:16.560
+And so I picked the built in microphone, which is not good, as you will see.
+
+00:16.560 --> 00:23.850
+So I apologize again in advance for the bad audio who still grasp the ideas that I'm trying to convey
+
+00:23.850 --> 00:24.210
+to you.
+
+00:24.840 --> 00:26.040
+But the audio is not that great.
+
+00:26.550 --> 00:27.330
+My apologies.
+
+00:27.480 --> 00:33.810
+And let's continue now that we have all dependencies added to our project to start using Helt.
+
+00:34.170 --> 00:36.900
+We need to continue and create another entity.
+
+00:36.900 --> 00:37.620
+That's very important.
+
+00:38.220 --> 00:39.960
+So let's go to our package.
+
+00:39.960 --> 00:43.650
+I'm going to right click and create a new class link.
+
+00:44.940 --> 00:45.210
+All right.
+
+00:45.660 --> 00:51.120
+So this is going to be a general class, however, we are going to see Jet.
+
+00:51.960 --> 00:54.420
+However, we're going to say, however, we going to call this.
+
+00:55.920 --> 00:58.400
+Note application.
+
+00:59.430 --> 01:01.090
+So this is a banner.
+
+01:02.100 --> 01:07.200
+This is not a simple class or say this is actually a very important class because it's going to extend
+
+01:07.410 --> 01:09.030
+application as such.
+
+01:09.510 --> 01:11.400
+Notice this has to be the Android app.
+
+01:12.120 --> 01:12.750
+What is this?
+
+01:12.780 --> 01:15.180
+Well, let's not forget the contractor there.
+
+01:15.840 --> 01:19.620
+So this class here extends application, which is the top level.
+
+01:20.690 --> 01:29.270
+Class project can hold this application is the entire applications of extending the entire Android ecosystem
+
+01:29.720 --> 01:31.400
+say so.
+
+01:31.400 --> 01:34.340
+To make this even better, we are going to append.
+
+01:34.400 --> 01:40.940
+We are going to add an annotation here, let's say at Helt Android app like that.
+
+01:41.060 --> 01:44.420
+So then we'll then need to, of course, import that.
+
+01:45.710 --> 01:47.030
+So what what's happening here?
+
+01:47.060 --> 01:53.240
+Well, this gives Helt access to the entire application, hence we are extending application class.
+
+01:53.750 --> 02:00.680
+So what this does, it creates a dependency container as it's called at the top level, at the application
+
+02:00.680 --> 02:01.040
+level.
+
+02:01.280 --> 02:06.740
+In other words, health care now supplying dependencies to any part of the act, which is exactly what
+
+02:06.740 --> 02:07.040
+we want.
+
+02:07.940 --> 02:08.870
+So we must.
+
+02:09.870 --> 02:16.550
+I paint adult Android as such, and this class will have to extend application like that.
+
+02:18.050 --> 02:20.810
+Right, but we're not done yet because we have to make this official.
+
+02:21.320 --> 02:25.730
+We have to go to our manifesto here and or fast and inside of the application tag.
+
+02:25.940 --> 02:32.600
+This is where we register everything application related, top level application level Android application
+
+02:32.600 --> 02:32.990
+level.
+
+02:33.530 --> 02:39.530
+This is where we are going to register to say that this node application here is recognized as such.
+
+02:40.310 --> 02:40.580
+Right.
+
+02:41.090 --> 02:48.290
+So I'm going to say inside start typing Android like I can see, we'll see Android showing actually
+
+02:48.320 --> 02:48.980
+just hit enter.
+
+02:49.190 --> 02:53.960
+And then you can see right away also that it goes and picks up the note application right away because
+
+02:53.960 --> 02:57.290
+it knows right away that this is what's needed to be added here.
+
+02:58.190 --> 03:04.310
+So now we've registered our node application to be recognized as a dependency container at the application
+
+03:04.310 --> 03:05.780
+level, mixing we need to do.
+
+03:05.810 --> 03:07.250
+Let's go to our main activity here.
+
+03:07.580 --> 03:13.700
+We need to also add another annotation inside here, right at the top of main activity.
+
+03:13.700 --> 03:20.930
+We're going to say at and we're going to say, we're going to say at Android stock Android entry point
+
+03:20.930 --> 03:23.510
+like that you enter and voila.
+
+03:24.080 --> 03:26.780
+So Android enter entry point annotation.
+
+03:26.780 --> 03:27.500
+What does that do?
+
+03:27.830 --> 03:35.540
+Well, this will identify that this is a dependency container, which means we are able to get the dependencies
+
+03:36.350 --> 03:36.710
+here.
+
+03:37.550 --> 03:39.470
+OK, that's a very important step to do.
+
+03:39.770 --> 03:42.350
+First, we had to create this note application.
+
+03:43.710 --> 03:51.540
+And I think and then at the hilt and make sure that we're inheriting application top level up and then
+
+03:51.540 --> 03:57.570
+we had to register in our entry manifest file that court application and then we had to, of course,
+
+03:57.570 --> 04:03.240
+finally say Andrew Anthropoid to say that this is where we are going to get the care access to all those
+
+04:03.240 --> 04:03.810
+dependencies.
+
+04:06.110 --> 04:10.790
+If you had an upper class entry point that you could use that main activity, that's the main entry.
+
+04:10.790 --> 04:15.850
+That's why and or entry point to the next thing we're going to do is let's go to our package carrying
+
+04:15.860 --> 04:16.430
+the right click.
+
+04:16.910 --> 04:18.620
+I'm going to create another package here.
+
+04:18.740 --> 04:20.120
+I call D-R.I.
+
+04:20.210 --> 04:23.020
+That's the usual name.
+
+04:23.240 --> 04:26.960
+That security, I sense, will depend on injection dependency injection.
+
+04:27.290 --> 04:33.980
+Inside of this new package, I click create a new card in the class, but this is going to be a special
+
+04:33.980 --> 04:34.130
+one.
+
+04:34.130 --> 04:35.300
+It's going to be an object type.
+
+04:35.430 --> 04:43.130
+So I'm going to call this add modules and I create a module that goes with our dependencies there that
+
+04:43.130 --> 04:44.150
+goes with our hilt.
+
+04:45.050 --> 04:51.980
+Why would we need this module thing that we see here, while modules are used to add bindings to help?
+
+04:52.130 --> 04:59.120
+So in other words, to tell Helt how to provide instances of different types to create a room database,
+
+04:59.210 --> 05:04.850
+we would need to use a builder to create an instance of the database because we don't want a database
+
+05:04.850 --> 05:07.580
+be created every time the app starts.
+
+05:08.840 --> 05:15.380
+So think of this module like this is going to be a place that will add all of those bindings to Helt,
+
+05:15.710 --> 05:22.250
+which means we can add a mechanism that will allow us to instantiate or to create certain dependencies,
+
+05:22.250 --> 05:24.860
+such as creating database and provide all of that.
+
+05:25.430 --> 05:30.380
+So the first thing we need to do is we can add in annotation, of course.
+
+05:30.400 --> 05:35.390
+So forces module such and you can see that that was added.
+
+05:36.370 --> 05:43.720
+That's an import, and that's what we do is let's add install in such.
+
+05:43.810 --> 05:45.010
+Let's go ahead and put that.
+
+05:46.240 --> 05:53.810
+And then inside here, we're going to say a single ton component class like this.
+
+05:54.190 --> 05:55.000
+It's a mouthful.
+
+05:55.720 --> 05:56.830
+Let's see what this is.
+
+05:57.250 --> 06:01.630
+So if you have a over here, it's going to say it's a guilt component for singleton bindings.
+
+06:02.650 --> 06:05.440
+So here we just specify the requirement.
+
+06:05.440 --> 06:12.610
+In this case, we say install and just specifying the requirement annotation by passing the class of
+
+06:12.610 --> 06:17.170
+the old component associated with it in this case is going to be just a single time component, which
+
+06:17.170 --> 06:23.740
+means this is going to be one source of truth and we don't want this to be recreated in two different
+
+06:23.740 --> 06:24.370
+instances.

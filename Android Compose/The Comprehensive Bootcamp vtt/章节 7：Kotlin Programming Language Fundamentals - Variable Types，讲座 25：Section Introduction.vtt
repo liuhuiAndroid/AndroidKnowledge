@@ -1,0 +1,67 @@
+WEBVTT
+
+00:00.180 --> 00:04.740
+Well, welcome to this section and the next section, so what are we going to do now is we're going
+
+00:04.740 --> 00:07.780
+to start by learning fundamentals of cuddling.
+
+00:07.830 --> 00:12.120
+So if you chose to continue on this sections, congratulations, it's wonderful.
+
+00:12.120 --> 00:12.450
+It's not.
+
+00:12.450 --> 00:13.440
+That's totally fine.
+
+00:13.920 --> 00:16.350
+But I'm happy that you're here starting now.
+
+00:16.350 --> 00:22.680
+So in these sections, continuing for a few sections, I'm going to assume that you either know very
+
+00:22.680 --> 00:28.410
+little of cuddling or programming in general to knowing some programming, some cuddling.
+
+00:28.560 --> 00:30.940
+Maybe not so much, right for some of you.
+
+00:30.960 --> 00:37.500
+Some of these lectures may be really simplistic, and if that's the case, feel free to gloss over or
+
+00:37.500 --> 00:38.820
+even skip those lectures.
+
+00:39.150 --> 00:45.090
+So there's no need for you to sit on a lecture that you feel like, OK, I already know what this is
+
+00:45.090 --> 00:47.400
+all about, and you don't have to spend time there.
+
+00:47.460 --> 00:52.980
+I would rather you to go and find sections or lectures where you feel like, OK, I will learn something
+
+00:52.980 --> 00:53.370
+from there.
+
+00:53.400 --> 00:57.960
+If you had some experience now, if you a total beginner, I would still recommend you to go through
+
+00:58.050 --> 00:59.040
+all of these sections.
+
+00:59.040 --> 01:03.310
+All of these lectures of Kotlin weren't really showing you how Kotlin works.
+
+01:03.330 --> 01:05.340
+That's what we are going to be doing.
+
+01:05.460 --> 01:11.130
+And you are free to do what fits your schedule, what fits your level of knowledge.
+
+01:11.400 --> 01:14.820
+OK, now that we are all hopefully on the same page.
+
+01:15.120 --> 01:15.840
+Let's get started.

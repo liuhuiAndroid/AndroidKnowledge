@@ -1,0 +1,712 @@
+WEBVTT
+
+00:00.330 --> 00:04.480
+Let's go ahead and get started by creating a new project, so have Android Studio open.
+
+00:04.530 --> 00:10.380
+I say file new project such and it's going to be an empty compose activity.
+
+00:10.410 --> 00:11.240
+Say next.
+
+00:11.250 --> 00:17.460
+And in this case here, I'm actually going to go to a folder that I've already created where this will
+
+00:17.460 --> 00:20.370
+live and you can just pick whatever you want.
+
+00:20.370 --> 00:25.320
+But for me, I'm going to go to a special place called Jet Base Card like that.
+
+00:25.710 --> 00:26.460
+There you go.
+
+00:26.600 --> 00:29.340
+And I say open when I say finish going to start.
+
+00:29.730 --> 00:35.050
+So the Gradle is building everything in the background so we can create a new project.
+
+00:35.070 --> 00:40.340
+Now, the reason why you see all of this is because this is actually connected to GitHub repo.
+
+00:40.350 --> 00:41.820
+So that's why we have all this.
+
+00:42.000 --> 00:43.140
+They rig me and so forth.
+
+00:43.230 --> 00:44.670
+OK, so you won't see any of this.
+
+00:44.750 --> 00:45.780
+So that's totally fine.
+
+00:46.050 --> 00:49.740
+After a few moments, should be able to see a project like this.
+
+00:50.250 --> 00:54.930
+There's a lot of code that comes with these preconfigured project, as you see here.
+
+00:55.230 --> 00:59.250
+So there's a few things that may be shaky at this moment because we've never seen it.
+
+00:59.670 --> 01:04.170
+But I also want to remind you that this small app we're going to be building, it's just going to be
+
+01:04.170 --> 01:06.000
+something to show off per se.
+
+01:06.030 --> 01:09.270
+What can be done with Android Compose, Jetpack Compose?
+
+01:09.270 --> 01:15.150
+OK, so at this point, I'm just assuming that you knew and we just want to get something to go right
+
+01:15.150 --> 01:15.570
+away.
+
+01:15.630 --> 01:20.610
+OK, so if you don't understand a few things here, in fact, it is expected that you want to understand
+
+01:20.610 --> 01:22.720
+everything that is OK.
+
+01:22.740 --> 01:27.070
+Again, I repeat that Estoril, OK, just go along with the ride.
+
+01:27.090 --> 01:31.950
+I'm just going to show you how to build a business card to show off, as I said, what can be done with
+
+01:31.950 --> 01:32.410
+compose?
+
+01:32.460 --> 01:38.400
+So don't worry, if you don't understand everything, we will have plenty of time to actually dig into
+
+01:38.640 --> 01:41.070
+this whole Android jetpack composting.
+
+01:41.340 --> 01:41.670
+OK.
+
+01:41.910 --> 01:42.210
+All right.
+
+01:42.410 --> 01:42.490
+Good.
+
+01:42.960 --> 01:44.460
+OK, so what are we going to be building?
+
+01:44.610 --> 01:48.240
+As I mentioned earlier, this is what we're going to be putting together.
+
+01:48.570 --> 01:54.850
+So I would say it's a business card probably should call it more of an EE business card, right?
+
+01:54.870 --> 01:58.860
+So it kind of shows you a few things that we're going to put together.
+
+01:58.860 --> 01:59.490
+So it's going to be.
+
+01:59.940 --> 02:06.390
+First of all, we're going to have some sort of a nice layout at the back ground and then we're going
+
+02:06.390 --> 02:07.230
+to have an image.
+
+02:07.440 --> 02:11.310
+Of course, we're going to have the name and then the profession.
+
+02:11.640 --> 02:14.540
+And then, of course, the Twitter handle and then button.
+
+02:14.550 --> 02:16.760
+So this button portfolio was once clicked.
+
+02:17.010 --> 02:23.400
+We're going to show off some sort of a list containing projects then on this programmer has worked on,
+
+02:23.610 --> 02:23.880
+right?
+
+02:23.910 --> 02:24.780
+So very simplistic.
+
+02:25.020 --> 02:27.660
+But nevertheless, it's going to hopefully get you going.
+
+02:28.050 --> 02:29.550
+OK, let's go ahead and get started.
+
+02:30.150 --> 02:34.740
+OK, so one thing we need to look at real quick here is what is going on.
+
+02:34.800 --> 02:40.800
+So first of all, we have this main activity class, which in this case inherits from component activity
+
+02:41.130 --> 02:43.570
+and we have the override on create.
+
+02:43.590 --> 02:47.190
+So this is where essentially the entry point of an Android application.
+
+02:47.400 --> 02:47.700
+OK.
+
+02:47.820 --> 02:52.840
+So the thing you notice also here is that we have this set content method, if you will.
+
+02:52.860 --> 02:53.940
+This is actually lambda.
+
+02:53.940 --> 02:55.710
+But don't worry, we never talked about Lambda.
+
+02:55.710 --> 02:57.270
+We haven't talked about lambda before.
+
+02:57.300 --> 02:58.690
+So this is this is fine.
+
+02:58.710 --> 03:04.950
+So just think of a block of code where we can actually pass another block of code, which we can also
+
+03:04.950 --> 03:06.830
+pass on a block of code, as you can see.
+
+03:06.840 --> 03:07.170
+OK?
+
+03:07.560 --> 03:12.510
+So we to set content, as the name implies, this is we are going to set any kind of the view of the
+
+03:12.510 --> 03:16.130
+activity and then we pass here this based card theme.
+
+03:16.140 --> 03:17.320
+So this is all created.
+
+03:17.330 --> 03:21.370
+Remember, this is not something that we have written ourselves.
+
+03:21.390 --> 03:26.040
+This comes when we use the wizard to create a compose application.
+
+03:26.040 --> 03:28.320
+So all of this is given so small pieces here.
+
+03:28.470 --> 03:32.820
+And then we have this surface thing looks like a class looks like method.
+
+03:32.970 --> 03:36.450
+We don't know what this is yet, but what we know is the surface.
+
+03:36.450 --> 03:38.730
+What he does is we are able to pass in a color.
+
+03:39.000 --> 03:40.050
+So it goes to material.
+
+03:40.050 --> 03:43.440
+Themes go, it gets colors and then get the background color, OK?
+
+03:43.950 --> 03:48.630
+And then of course, there is a block of code that we can pass inside of the surface.
+
+03:48.750 --> 03:52.570
+So if you think about this, this surface is going to be some sort of a canvas.
+
+03:52.590 --> 03:53.440
+It makes sense, right?
+
+03:53.460 --> 03:56.070
+So instead of like canvas, we're saying we're going to pass something else.
+
+03:56.070 --> 04:01.140
+In this case, it's going to be greeting, which if you click and highlighted, you can see that it
+
+04:01.140 --> 04:05.640
+is indeed here a function which has this at composable and we get into that.
+
+04:05.670 --> 04:06.570
+So what are we saying here?
+
+04:06.570 --> 04:13.080
+Is that this greeting we pass in a string as you see there's a string and then it's going to do something
+
+04:13.260 --> 04:13.600
+right?
+
+04:13.620 --> 04:14.880
+We're going to have this text.
+
+04:15.090 --> 04:19.920
+This text is going to have a text, obviously, and we're going to pass this name that's being passed
+
+04:20.250 --> 04:21.690
+through our greeting function.
+
+04:22.230 --> 04:25.380
+So that's why you say when you pass greeting, we pass Android.
+
+04:25.380 --> 04:27.270
+We see he says, Hello, Android.
+
+04:27.450 --> 04:30.000
+So what do we have to do right here now if you don't see this?
+
+04:30.240 --> 04:34.410
+That probably means you have this toggle the code only toggle.
+
+04:34.410 --> 04:40.140
+So I'll have to do is just go to split mode to be able to preview what we have here.
+
+04:40.230 --> 04:43.590
+In fact, you can also move to the right to make it smaller or larger.
+
+04:43.710 --> 04:49.050
+What's actually happening here is that if you scroll back down here, you'll see that we have another
+
+04:49.050 --> 04:51.370
+function called default preview again.
+
+04:51.390 --> 04:56.220
+All of these was created by our Wizard of Android Studio, and they're all for that so that we have
+
+04:56.280 --> 04:59.640
+some sort of a basic skeleton of a composer.
+
+05:00.010 --> 05:05.050
+So this default preview here is what's being called, in fact, if you make this a little bit bigger
+
+05:05.050 --> 05:06.670
+again, in fact you can't quite.
+
+05:06.850 --> 05:10.660
+But if you have over here, you will see it's calling default preview, right?
+
+05:10.870 --> 05:14.230
+So this is what it's being called to render here.
+
+05:14.560 --> 05:14.920
+All right.
+
+05:15.070 --> 05:16.480
+So that means then notice.
+
+05:16.480 --> 05:18.960
+We also call in the greeting and passing the android.
+
+05:19.030 --> 05:21.640
+So what's happening here, this greeting that's been passed?
+
+05:21.730 --> 05:23.350
+It's not what we are seeing here.
+
+05:23.530 --> 05:29.180
+This will be seen if we run this application right to push that onto an aim later.
+
+05:29.380 --> 05:29.710
+All right.
+
+05:29.950 --> 05:36.370
+So if I come here and say and I change this to something very issue, you'll notice I come up here now
+
+05:36.370 --> 05:36.910
+at the top.
+
+05:36.940 --> 05:37.690
+I'm going to refresh.
+
+05:37.700 --> 05:44.020
+In fact, I didn't have to because I went directly to this default preview and it changed there.
+
+05:44.290 --> 05:49.930
+So it's really nice because we're able then to change things or create what they call composable.
+
+05:49.930 --> 05:55.080
+So essentially, these functions that we can actually preview pieces of code to create a user interface,
+
+05:55.090 --> 06:00.100
+and we can see that preview here as opposed to having to run the application onto the emulator and so
+
+06:00.100 --> 06:00.340
+forth.
+
+06:00.790 --> 06:01.060
+All right.
+
+06:01.210 --> 06:02.590
+So just a few basics here.
+
+06:02.590 --> 06:04.450
+And remember, this is just the beginning.
+
+06:04.720 --> 06:08.080
+We will go through all these things that we have many hours coming up.
+
+06:08.350 --> 06:09.010
+What are we going through?
+
+06:09.010 --> 06:10.360
+All of this in more detail?
+
+06:10.390 --> 06:15.310
+Again, I just want to get you going real quick here, but I thought I will just give you a small preview
+
+06:15.310 --> 06:16.170
+of what's going on.
+
+06:16.180 --> 06:17.440
+No pun intended, of course.
+
+06:17.620 --> 06:17.920
+All right.
+
+06:18.160 --> 06:18.470
+Very good.
+
+06:18.640 --> 06:22.720
+So what are we going to do is I'm going to get rid of this.
+
+06:23.170 --> 06:28.750
+That, of course, is going to have a problem because the function that we just got rid of, it's been
+
+06:28.750 --> 06:30.340
+called in two places.
+
+06:30.490 --> 06:31.450
+So that's not a problem.
+
+06:31.750 --> 06:35.070
+And I'm going to also get rid of that, OK, and get rid of that.
+
+06:35.090 --> 06:36.130
+And that would having a problem.
+
+06:36.250 --> 06:42.330
+And what I'm going to do, then I'm going to go ahead and say at start typing composable like that.
+
+06:42.340 --> 06:48.010
+So this is needed to tell the compiler that this is a composable function, which means it's part of
+
+06:48.010 --> 06:54.790
+the compose library, which allows us to create functions that we then are able to pass on and see the
+
+06:54.790 --> 06:58.000
+default here, but also pass on onto our emulator.
+
+06:58.090 --> 07:04.120
+All right, so just follow along when you say fun to say function and when it called is create like
+
+07:04.120 --> 07:07.780
+this, create this card like that.
+
+07:08.180 --> 07:12.460
+OK, so this is going to be our composable function that we can call anywhere we want.
+
+07:12.640 --> 07:17.760
+But most importantly, we're going to call inside here or default view default preview should say this
+
+07:17.770 --> 07:21.070
+when I say, create this card like that.
+
+07:21.400 --> 07:24.150
+And of course, I'm just going to call instead of this surface here.
+
+07:24.160 --> 07:25.420
+Let me make this a little smaller.
+
+07:25.420 --> 07:27.380
+So perhaps we have more space here.
+
+07:27.460 --> 07:29.800
+This is card in error.
+
+07:29.980 --> 07:30.250
+All right.
+
+07:30.250 --> 07:34.300
+So now if I refresh, you'll see that we're not going to have much.
+
+07:34.300 --> 07:38.500
+In fact, we won't see anything which is a good thing because we haven't done anything inside of our
+
+07:38.650 --> 07:40.750
+composable create base card.
+
+07:41.110 --> 07:46.180
+Now, this may take a little while and we can always continue working on what we were doing here until
+
+07:46.660 --> 07:48.880
+this Runescape because we're refreshing everything.
+
+07:49.210 --> 07:52.780
+It's rendering, previewing and it may take a little bit of time.
+
+07:52.780 --> 07:54.100
+So just be a little patient.
+
+07:54.400 --> 07:55.600
+OK, and there we go.
+
+07:55.750 --> 08:01.180
+As you see, we see nothing really is just a little blip of a white dot there.
+
+08:01.510 --> 08:03.190
+We haven't done anything instead of a great base.
+
+08:03.460 --> 08:04.240
+So let's do something.
+
+08:04.390 --> 08:05.770
+I'm going to say Tex, right?
+
+08:05.770 --> 08:06.790
+We want to show text.
+
+08:06.790 --> 08:08.530
+If you start typing text again.
+
+08:08.530 --> 08:12.010
+See, now we have this possibility of things that we can pass in, right?
+
+08:12.130 --> 08:18.970
+Again, these are functions that come with compose library, so they are available for us to use.
+
+08:19.330 --> 08:21.490
+So if I hit enter it, notice that I can pass text.
+
+08:21.500 --> 08:22.930
+This is the same thing we had before.
+
+08:23.260 --> 08:23.650
+OK.
+
+08:23.830 --> 08:29.200
+But I'm just going to show you how all of this is created, so I'm going to say this card as such and
+
+08:29.200 --> 08:30.340
+go ahead and refresh again.
+
+08:30.610 --> 08:32.290
+We should now see something, hopefully.
+
+08:32.560 --> 08:33.010
+Aha.
+
+08:33.340 --> 08:35.530
+And there we go now we can see, says base card.
+
+08:35.530 --> 08:41.740
+So we created a text, right, which is actually another composable that will get to that and will pass
+
+08:41.740 --> 08:43.750
+in this card as the text will want to see.
+
+08:43.750 --> 08:44.800
+And you can see there it is.
+
+08:44.800 --> 08:45.280
+Based card.
+
+08:45.400 --> 08:45.820
+Very good.
+
+08:45.880 --> 08:47.110
+Now that's not what we want.
+
+08:47.410 --> 08:53.170
+What we want to do is to start putting together a user interface, which means this right, this whole
+
+08:53.170 --> 08:54.220
+enterprise, if you will.
+
+08:54.460 --> 08:56.230
+So we're going to start really small here.
+
+08:56.410 --> 09:00.940
+And what are we going to do is we're going to create this outer layer, as you see there.
+
+09:01.330 --> 09:06.100
+It's it's just like a card that looks really nice with nice corner borders there.
+
+09:06.460 --> 09:06.760
+All right.
+
+09:07.150 --> 09:07.660
+Let's do that.
+
+09:07.670 --> 09:08.260
+How do we do that?
+
+09:08.680 --> 09:14.440
+Well, what we can do is we can, of course, use what compose already gives to us.
+
+09:14.560 --> 09:16.960
+So the first thing I'm going to do, I'm going to put it inside of a surface.
+
+09:17.230 --> 09:21.730
+Yes, and its surface, so it's surface in this case is just a canvas whenever we want to create something
+
+09:21.730 --> 09:23.200
+that will be shown on the screen.
+
+09:23.350 --> 09:24.340
+We use a surface.
+
+09:24.370 --> 09:29.770
+There are other surfaces or other subtypes of surface, but we're going to start with the surface because
+
+09:29.770 --> 09:32.080
+this is going to be the main background, if you will.
+
+09:32.440 --> 09:34.810
+So I'm going to get enter and this may happen.
+
+09:34.810 --> 09:38.200
+So it's just importing the whole namespace, if you will.
+
+09:38.200 --> 09:39.160
+So or package.
+
+09:39.190 --> 09:42.460
+So here, as you can see, a lot of things are showing here.
+
+09:42.460 --> 09:45.550
+So we have Andrew X composed material that's not interesting to us.
+
+09:45.760 --> 09:47.260
+We can actually just get rid of that.
+
+09:47.530 --> 09:50.320
+Or I'll show you later how to automatically get rid of that.
+
+09:50.350 --> 09:50.800
+That's fine.
+
+09:51.040 --> 09:55.960
+So our surface here allows us to pass a few parameters so things that we can pass here to say, OK,
+
+09:55.960 --> 09:58.870
+how is this surface going to appear on this week?
+
+09:59.020 --> 09:59.530
+So what I'm going to.
+
+09:59.590 --> 10:02.640
+You hear I'm going to take with me, I'm going to say modifier, right?
+
+10:03.010 --> 10:09.310
+And he cannot say modifier, as the name implies, allows us to modify this entire surface so we can
+
+10:09.310 --> 10:11.500
+actually customize it, make it look good.
+
+10:11.800 --> 10:12.160
+All right.
+
+10:12.370 --> 10:15.670
+So there are a lot of properties we can pass with a modifier.
+
+10:16.000 --> 10:21.580
+So the first thing we want to do want to make sure that we make this whole surface, this whole canvas,
+
+10:21.730 --> 10:23.230
+to feel max width.
+
+10:23.380 --> 10:29.350
+So when I started typing feel like this and you can see I have options so it can go up and down until
+
+10:29.350 --> 10:33.460
+you find the right option right to the max width like that.
+
+10:33.640 --> 10:34.030
+OK.
+
+10:34.180 --> 10:37.060
+And then still is sort of this modifier, right?
+
+10:37.060 --> 10:41.470
+So I'm going to go ahead and say, Dad, we're going to access another property, which is the fill
+
+10:41.770 --> 10:43.600
+max height like that?
+
+10:43.780 --> 10:44.890
+OK, very good.
+
+10:45.040 --> 10:48.550
+And you can see now we have this block that blocks here.
+
+10:48.550 --> 10:51.730
+That means then what is it that we want to do inside of this surface?
+
+10:51.940 --> 10:58.450
+What are we saying right now here is that we have created a second something like this that will take
+
+10:58.450 --> 11:00.190
+up the entire space of the screen.
+
+11:00.340 --> 11:03.520
+Now we want to say, OK, what is that we're going to put inside of this thing?
+
+11:03.670 --> 11:04.210
+All right.
+
+11:04.390 --> 11:06.460
+Well, let's go ahead and refresh.
+
+11:06.580 --> 11:10.120
+First of all, the entire surface to see what's going to happen.
+
+11:10.420 --> 11:10.850
+And voila!
+
+11:11.170 --> 11:15.520
+And as you do that, you can see now we have the surface, it's a little bit bigger.
+
+11:15.790 --> 11:17.080
+So you can see there it is.
+
+11:17.080 --> 11:18.970
+Our surface is taking up all this space.
+
+11:18.970 --> 11:24.880
+In fact, make this a better site so you can toggle here to Zoom to fit the screen, or you can make
+
+11:24.880 --> 11:27.730
+it larger by zooming in or zooming out.
+
+11:27.760 --> 11:28.270
+OK, there we go.
+
+11:28.360 --> 11:29.950
+So now you see, we have a surface.
+
+11:30.220 --> 11:30.730
+This is good.
+
+11:30.740 --> 11:35.260
+So we have an android lining canvas where we can work in.
+
+11:35.380 --> 11:40.330
+So that's all we did inside of it to create be card surface there.
+
+11:40.540 --> 11:44.110
+So now inside here we can do the work we want, right?
+
+11:44.560 --> 11:48.400
+So inside of our surface now inside of this block here, right?
+
+11:48.790 --> 11:54.460
+This is where we can start putting things into our user interface, namely something like this.
+
+11:54.820 --> 11:55.150
+All right.
+
+11:55.150 --> 11:56.530
+We're going to continue in the next video.

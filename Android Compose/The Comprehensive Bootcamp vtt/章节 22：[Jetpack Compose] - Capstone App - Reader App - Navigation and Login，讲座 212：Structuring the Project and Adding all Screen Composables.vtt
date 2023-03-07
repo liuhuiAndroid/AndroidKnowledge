@@ -1,0 +1,322 @@
+WEBVTT
+
+00:00.480 --> 00:03.840
+In a nutshell, this is what we're going to be building.
+
+00:06.750 --> 00:07.030
+Right.
+
+00:07.150 --> 00:13.150
+So as you see, here is a jumble of a lot of different screens, which mean this application is a little
+
+00:13.150 --> 00:17.950
+bit complex because there was a lot of screens, which means a lot of moving parts, which means we
+
+00:17.950 --> 00:20.980
+have to really think about how we're going to structure this.
+
+00:21.310 --> 00:24.400
+That way, it's not too overwhelming.
+
+00:24.490 --> 00:31.360
+In fact, I would say that whenever we want to put together an application, it's important to sit down
+
+00:31.360 --> 00:34.960
+and figure out how how many screens are going to have.
+
+00:35.290 --> 00:39.050
+What are the functionalities, the basic functionalities and so forth.
+
+00:39.050 --> 00:40.990
+So it's really important to have a main idea.
+
+00:41.000 --> 00:46.900
+In fact, sometimes you can just take a pen and paper to and start to jot down these ideas at these
+
+00:46.900 --> 00:47.350
+screens.
+
+00:47.490 --> 00:50.940
+So right that way, you have a map per se.
+
+00:52.030 --> 00:57.070
+If you look at all of the screens at once, of course it's overwhelming because there's too much, right?
+
+00:57.520 --> 00:59.440
+But let's start small.
+
+00:59.890 --> 01:01.420
+So what is there we want to do for it?
+
+01:01.540 --> 01:07.420
+Well, first of all, we understand that this app will have a splash screen, which means is the first
+
+01:07.420 --> 01:11.380
+screen that users will see usually has a fast animation.
+
+01:11.620 --> 01:14.950
+And then it takes you to one of these screens.
+
+01:14.950 --> 01:19.990
+So the idea is that once we are done with splash screen, we're going to go to the login screen.
+
+01:20.110 --> 01:24.340
+If the user has never logged in before, they can go to the create account.
+
+01:24.850 --> 01:30.820
+And once all of that is done, either way they will take it, they will be taken to the main screen.
+
+01:31.090 --> 01:33.730
+That is the first part, right from the main screen.
+
+01:33.730 --> 01:37.480
+That's where we can take users to other places over our application.
+
+01:38.050 --> 01:38.290
+Right?
+
+01:38.560 --> 01:44.830
+But having this structure here in separate things and think in this terms really, really helps.
+
+01:45.700 --> 01:51.790
+Now, of course, I have the benefit that I have created this app already, so I know that we have these
+
+01:51.790 --> 01:54.010
+screens, hence we have the screenshots.
+
+01:54.220 --> 02:01.060
+So now, because we know there's some complexity to the application because there are different screens,
+
+02:01.060 --> 02:05.280
+many different screens, now we have to structure the navigation.
+
+02:05.290 --> 02:07.360
+I think that is the first thing that we need to look at.
+
+02:07.660 --> 02:12.220
+So that way, we have that structure set up for us.
+
+02:12.590 --> 02:15.580
+Okay, let's go ahead and take a look back in our code, our project.
+
+02:15.820 --> 02:18.580
+First of all, let's go to our navigation.
+
+02:18.670 --> 02:19.550
+We have our navigation.
+
+02:19.550 --> 02:20.290
+There's never anything.
+
+02:20.710 --> 02:23.020
+Let's add a few things here.
+
+02:23.020 --> 02:27.040
+So let's create a Kotlin class, the first class I'm going to create.
+
+02:27.040 --> 02:30.680
+Let's call this reader navigation.
+
+02:30.700 --> 02:31.780
+We're going to get back to it.
+
+02:32.230 --> 02:33.160
+Leave it as it is.
+
+02:34.060 --> 02:38.890
+And the next class I'm going to create here, it's going to be an enum class.
+
+02:38.890 --> 02:45.820
+So she's going to be a list of items and screens as such.
+
+02:46.030 --> 02:50.680
+We'll get back to that, OK, once we have those two classes.
+
+02:51.040 --> 02:52.330
+Again, we're going to get back to those.
+
+02:52.570 --> 02:56.650
+Let's go to our screens because I want to create those composable first.
+
+02:57.100 --> 03:03.280
+First of all, I am going to create a file called reader splash screen such.
+
+03:05.300 --> 03:05.850
+There it is.
+
+03:06.320 --> 03:11.240
+And then inside here, I'm going to start creating all of other screens that I will have.
+
+03:11.270 --> 03:12.590
+So let's start with a few.
+
+03:12.950 --> 03:18.530
+And usually what happens is for each screen I like, I like to put inside of a package.
+
+03:18.680 --> 03:26.420
+The reason being is because a screen can have multiple files you could have just screen composable could
+
+03:26.420 --> 03:30.090
+also have the view models attached to that screen.
+
+03:30.110 --> 03:37.670
+So it's just a good idea to create a for each screen that will contain more than one file.
+
+03:38.180 --> 03:43.270
+To put that all, to put them inside of their own package.
+
+03:43.880 --> 03:51.440
+So let's start by saying home, OK, we have home package when right click create a new one.
+
+03:55.680 --> 03:56.850
+I'm going to say search.
+
+03:58.620 --> 04:00.000
+We will need that later.
+
+04:02.230 --> 04:04.000
+And update.
+
+04:09.320 --> 04:10.070
+Stats.
+
+04:14.300 --> 04:15.200
+Log in.
+
+04:17.760 --> 04:20.760
+Details, if we need more, we'll get there.
+
+04:21.030 --> 04:26.160
+Right, so now we're going to create inside of details for you, since you say command and or right
+
+04:26.160 --> 04:28.770
+click as I have been doing and create another class.
+
+04:29.130 --> 04:30.330
+It's going to be just a file.
+
+04:30.330 --> 04:31.080
+That's fine.
+
+04:31.090 --> 04:31.710
+Let's start.
+
+04:32.430 --> 04:33.630
+Let's call this reader.
+
+04:34.980 --> 04:36.360
+Book details,
+
+04:39.210 --> 04:41.760
+screen along name.
+
+04:42.870 --> 04:45.390
+And here I'm just going to create a composable.
+
+04:51.310 --> 04:55.390
+Function called book details.
+
+04:57.390 --> 04:58.950
+Screen like this.
+
+05:01.410 --> 05:02.670
+And who can live at that?
+
+05:03.540 --> 05:05.160
+All right, we're going to get back to that.
+
+05:06.500 --> 05:07.640
+And then for a home.
+
+05:12.060 --> 05:16.230
+Reader, look at the naming here, naming convention.
+
+05:17.010 --> 05:24.810
+Home screen at composable called IS.
+
+05:28.670 --> 05:29.240
+Home.
+
+05:32.060 --> 05:34.430
+And then do the same again in.
+
+05:49.660 --> 05:50.680
+All right, there you go.
+
+05:51.490 --> 05:55.240
+And for search, it's a book.
+
+06:01.270 --> 06:01.840
+Reader.
+
+06:03.360 --> 06:07.410
+Book search screen.
+
+06:09.450 --> 06:12.550
+And such for stats.
+
+06:12.770 --> 06:13.580
+Same thing.
+
+06:28.470 --> 06:29.820
+And we're getting there.
+
+06:31.300 --> 06:32.100
+Update.
+
+06:54.990 --> 06:56.100
+And there we have it.
+
+06:57.080 --> 06:57.470
+All right.
+
+06:58.280 --> 07:05.360
+So now we have a structure at least, to have all the screens, right, but we divided all of them into
+
+07:05.360 --> 07:07.430
+their separate packages.
+
+07:07.670 --> 07:07.940
+OK.
+
+07:08.690 --> 07:14.870
+And as your app grows in complexity, this will make more sense and you will be thankful that you have
+
+07:14.870 --> 07:19.910
+something like this, a structure like this, because it will be easier to say, OK, I have issues
+
+07:19.910 --> 07:21.080
+in home screen.
+
+07:21.350 --> 07:27.440
+Then you can come to screens, you go to home right and open up and you can see what's going on.
+
+07:29.130 --> 07:29.510
+All right.
+
+07:29.540 --> 07:34.730
+So we were putting obviously these are just empty structures at this point.
+
+07:35.330 --> 07:37.940
+Looks like our readers splash screen doesn't have anything here.
+
+07:37.940 --> 07:38.960
+We can change that.
+
+07:38.960 --> 07:40.160
+So at composable,
+
+07:43.520 --> 07:46.670
+we are splash.
+
+07:49.560 --> 07:57.630
+Screen like this, so everything is now set up, and like I said, all of these screens are empty at
+
+07:57.630 --> 08:02.850
+this point, at all composable, they're empty, but we have some sort of a canvas that we can start
+
+08:02.850 --> 08:07.950
+putting together that we can start using, especially setting up the navigation in our application.
+
+08:09.030 --> 08:10.410
+OK, I'll see you next.

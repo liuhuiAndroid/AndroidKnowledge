@@ -1,0 +1,157 @@
+WEBVTT
+
+00:01.530 --> 00:07.890
+Now, one thing to realize is that whenever we are fetching data from somewhere, they somewhere could
+
+00:07.890 --> 00:11.760
+be remotely in an API somewhere or even from a database.
+
+00:12.180 --> 00:18.510
+We have to be careful of these computations of what's going on through fetching, deleting and doing
+
+00:18.510 --> 00:24.360
+all these things, because remember, all of that is happening while the application is working while
+
+00:24.360 --> 00:26.670
+the users are actually interacting with the application.
+
+00:27.060 --> 00:34.080
+So it's really easy to end up polluting the UI thread, right?
+
+00:34.080 --> 00:41.040
+Which is what's reserved by the operating system, the Android operating system to show, to show the
+
+00:41.040 --> 00:42.180
+UI to the user.
+
+00:42.420 --> 00:49.110
+Imagine you are creating or building an app that goes and fetch data from a database fetches a lot of
+
+00:49.110 --> 00:51.090
+data, like thousands and thousands of rows.
+
+00:52.360 --> 00:53.230
+Of information.
+
+00:53.650 --> 00:58.210
+And so the user is entering data, for instance, to get to their base and then they are fetching it.
+
+00:58.780 --> 01:05.110
+So the problem arises when perhaps the writing to a database or trying to fetch something that is taking
+
+01:05.110 --> 01:11.320
+longer or there are some problems and that ends up blocking the UI thread.
+
+01:11.560 --> 01:18.220
+In this case, the user interface, what ends up happening is that the operating system may then stall,
+
+01:18.700 --> 01:25.480
+maybe stop, which means whatever the users are actually interacting with on the screen, you may end
+
+01:25.480 --> 01:28.960
+up stopping in the operating system may end up shutting down.
+
+01:29.710 --> 01:32.590
+So there are a lot of problems that can happen.
+
+01:32.710 --> 01:36.700
+This takes us to a topic of quarantines and sustainable functions.
+
+01:37.600 --> 01:42.310
+Now there is a lot written about Cortines and sustainable function and so forth, so I'm not going to
+
+01:42.310 --> 01:44.430
+go into that into greater details.
+
+01:44.440 --> 01:50.620
+You can't always look into that topic, but a quarantine essentially is an instance of a sustainable
+
+01:50.620 --> 01:56.470
+computation, which means sustainable means that it can be suspended if need be and can start somewhere
+
+01:56.470 --> 01:57.730
+else if also need to be.
+
+01:58.240 --> 02:03.880
+So there's a synchronicity that happens in computing is part of quarantining.
+
+02:03.880 --> 02:04.840
+It's really important.
+
+02:05.560 --> 02:13.540
+And so Kotlin gives us that advantage to where we can create conditions, where we can launch certain
+
+02:14.380 --> 02:19.300
+block of code that should run a synchronously or asynchronously with other processes.
+
+02:19.570 --> 02:25.180
+And whenever there are problem or something is to change, those processes can also be suspended or
+
+02:25.660 --> 02:29.020
+stopped or relaunched and so forth.
+
+02:29.470 --> 02:32.000
+So that is what are we talking about when we talk about quarantines?
+
+02:32.020 --> 02:35.050
+Obviously, there is more to the story, but that's the fact.
+
+02:35.440 --> 02:41.590
+So because we want to make sure that these functions, right, are sustainable, right?
+
+02:41.950 --> 02:48.970
+If something happens, if they're waiting for too long, we are able to suspend them or do things with
+
+02:48.970 --> 02:49.570
+them, right?
+
+02:49.570 --> 02:55.270
+Stop them and relaunch them and fetch data and not, you know, all those things safely.
+
+02:55.270 --> 02:55.950
+That's important.
+
+02:55.960 --> 03:02.830
+When we say safely, we're talking about a way from abstracting the user interface or the user experience,
+
+03:03.100 --> 03:04.220
+then what do we need to do?
+
+03:04.240 --> 03:14.620
+We're going to pass, suspend, say, suspend like this to delete, suspend to delete all passes, suspend
+
+03:15.100 --> 03:25.120
+to function, to update that is indefinitely suspend to insert, as well as suspend for get not buy
+
+03:25.120 --> 03:25.360
+it.
+
+03:26.800 --> 03:32.590
+Now, the reason why we don't really need to add suspend for this kept notes is because we were talking
+
+03:32.590 --> 03:34.780
+about the concept here of A-type type.
+
+03:34.780 --> 03:41.380
+We're going to wrap this notes list around so that we're actually able to get this work, to get this
+
+03:41.380 --> 03:42.290
+to work on his time.
+
+03:42.310 --> 03:44.020
+But for now, it's OK, we'll get there.
+
+03:44.590 --> 03:44.860
+All right.
+
+03:45.700 --> 03:52.390
+So this is what we need to do so that these guys can actually run inside of a quarantine, which allows
+
+03:52.390 --> 03:56.140
+us to have a synchronicity as we do things in the background.
+
+03:56.140 --> 04:03.190
+In this case, getting data from the database and displaying it so to not to obstruct the main threat
+
+04:03.190 --> 04:04.210
+or the user interface.

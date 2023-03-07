@@ -1,0 +1,496 @@
+WEBVTT
+
+00:00.590 --> 00:03.630
+So now let's go ahead and put together this profile image.
+
+00:03.650 --> 00:06.020
+First, we'll have to add that image.
+
+00:06.140 --> 00:07.040
+So what do we need to do?
+
+00:07.130 --> 00:10.070
+Let's go to our friends folder there instead of troubles.
+
+00:10.220 --> 00:12.200
+And you should have access to this image.
+
+00:12.300 --> 00:14.100
+We can find any image on the internet.
+
+00:14.150 --> 00:14.930
+That's fine.
+
+00:15.200 --> 00:16.100
+What do we need to do?
+
+00:16.100 --> 00:19.730
+Is once you get that image, you need to drag that image onto drabble.
+
+00:20.180 --> 00:21.670
+So have the image here.
+
+00:21.680 --> 00:25.940
+We just copy that and paste inside there.
+
+00:26.120 --> 00:28.070
+You can drag or you can just paste it all in.
+
+00:28.430 --> 00:28.940
+And there we go.
+
+00:28.950 --> 00:31.700
+You can see there is the profile image that JPEG.
+
+00:31.910 --> 00:36.230
+Make sure if you're getting an image file is exactly this naming convention here.
+
+00:36.230 --> 00:41.510
+So lowercase and underscore if you have more than one word, it's very important for Android.
+
+00:41.720 --> 00:42.560
+OK, there we go.
+
+00:42.560 --> 00:48.470
+We have that image there, so we are going to create this entity, so we are now going to create this.
+
+00:49.010 --> 00:57.260
+Now the concept behind Compose is that we are using smaller, composable functions to create a bigger
+
+00:57.290 --> 00:58.250
+user interface.
+
+00:58.580 --> 01:02.720
+Declaratively, again, we're going to go through all of that at a later time who just going through
+
+01:02.720 --> 01:05.510
+this process, the motions of this just to get started, really.
+
+01:05.660 --> 01:07.850
+So you get excited about this course, OK?
+
+01:08.240 --> 01:14.150
+So the idea again, is to create the smaller pieces that we can view them and then put them on top of
+
+01:14.150 --> 01:17.930
+other pieces so we can create the fuller user interface.
+
+01:18.260 --> 01:24.440
+With that, we are going to think about a different way to create these design phases and then add them
+
+01:24.440 --> 01:29.450
+on top of each other so we could obviously go up here or inside of our card because it's going to be
+
+01:29.450 --> 01:34.400
+inside of this card here and start pulling together the code to create our profile.
+
+01:34.820 --> 01:39.410
+So what I'm going to do is I'm going to create another surface here because again, surface can be anything
+
+01:39.500 --> 01:40.790
+that could make just the background.
+
+01:40.790 --> 01:43.070
+We can bend it, we can do whatever we want with it.
+
+01:43.490 --> 01:43.790
+All right.
+
+01:44.000 --> 01:45.320
+So we have a surface here.
+
+01:45.380 --> 01:49.870
+You can get rid of all of that, of course, and it's not needed in makes inside of a surface.
+
+01:49.880 --> 01:51.860
+We want to bend it, we want to customize it.
+
+01:51.860 --> 01:54.290
+So it looks exactly like this.
+
+01:54.710 --> 01:58.940
+And at this point here, you should think about, OK, what would be the parameter we're going to be
+
+01:58.940 --> 02:05.990
+passing inside here so that we can bend or customize our surface so that it looks circular and we can
+
+02:05.990 --> 02:06.770
+add an image to it?
+
+02:07.130 --> 02:13.910
+Well, Modifier Modifier is our friend, so I'm going to say modifier am going to pass the same modifier
+
+02:14.030 --> 02:20.330
+as such and I'm going to go and first of all, create a size or not create invoke this size and set
+
+02:20.330 --> 02:22.010
+it up the size here again.
+
+02:22.040 --> 02:28.190
+It allows us to pass either width and height or just the size in general to say that whatever we pass
+
+02:28.190 --> 02:30.560
+here, it's going to apply for width and height.
+
+02:31.010 --> 02:36.110
+So I'm going to say for width and height, and you can just pass it like that deep, of course.
+
+02:36.860 --> 02:37.130
+OK.
+
+02:37.520 --> 02:37.850
+All right.
+
+02:38.060 --> 02:41.090
+And the next thing I want to do, I'm going to put a new line, say Dot again.
+
+02:41.090 --> 02:46.670
+And still, instead of a modifier game, let's say padding one padding around all is going to be about
+
+02:46.670 --> 02:49.100
+five dpi like this?
+
+02:49.430 --> 02:49.850
+Very good.
+
+02:49.970 --> 02:53.200
+And the next parameter, I'm going to pass inside of a surface.
+
+02:53.220 --> 02:54.890
+Make sure we're inside of our surface.
+
+02:54.890 --> 02:56.360
+Here is the border.
+
+02:56.480 --> 03:01.070
+If you have her over, in fact, to know what parameters we can pass, you can just hover over and we'll
+
+03:01.070 --> 03:04.460
+give you exactly all the parameters you can pass right past.
+
+03:04.460 --> 03:10.250
+Modifier can also pass that layers fine shape, color, border content, elevation, so forth.
+
+03:10.260 --> 03:13.310
+In fact, let's just follow the order here, right?
+
+03:13.320 --> 03:14.660
+Let's go to shape first.
+
+03:14.960 --> 03:20.390
+So I'm going to say shape, and I'm going to say I want to circle shape like that.
+
+03:20.540 --> 03:25.100
+If you just want to have a circle shape you don't have, you don't want to do anything to it.
+
+03:25.760 --> 03:27.830
+You can just call it circle shape of this.
+
+03:27.950 --> 03:33.320
+If you have over, you going to see that this is just a circle shape with all the corner sized as the
+
+03:33.320 --> 03:35.180
+50 percent of the shape size.
+
+03:35.630 --> 03:38.870
+So it's all going to be round, which is exactly what we want.
+
+03:39.470 --> 03:39.770
+All right.
+
+03:40.250 --> 03:44.270
+And the next thing we're going to do is let's go ahead and pass the color.
+
+03:44.570 --> 03:47.060
+Actually, let's go ahead and pass the border thing tomorrow of great.
+
+03:47.360 --> 03:51.710
+And the moment you start typing, you can see the border property requires a border stroke.
+
+03:51.710 --> 03:58.100
+So Mercedes equal hit enter and we're invoke the border stroke and you can see the border stroke here
+
+03:58.100 --> 04:02.960
+requires width and color or width and brush, but we'll get into that more.
+
+04:03.080 --> 04:05.240
+So what is the width of this border?
+
+04:05.450 --> 04:11.600
+Well, I'm going to say it's going to be zero point five dpi, so not even one very, very small.
+
+04:11.960 --> 04:17.840
+And for the color, I'm going to use the color that we can get from Android Compose UI like this or
+
+04:17.850 --> 04:19.850
+colors that come with compose.
+
+04:20.240 --> 04:26.270
+And I'm going to say, I want this to be light gray again, and I'm going to get out of that and continue.
+
+04:26.270 --> 04:32.000
+I want to say elevation of about four dpi to be a little bit higher than the background.
+
+04:32.090 --> 04:35.420
+So it has that very nice material theme look.
+
+04:35.750 --> 04:36.070
+All right.
+
+04:36.080 --> 04:39.290
+Let's see if if this looks anything like we want.
+
+04:39.830 --> 04:40.610
+And there you have.
+
+04:40.610 --> 04:45.560
+It doesn't look quite like what we want, but at least we can see there is a skeleton here.
+
+04:45.950 --> 04:50.330
+OK, so it's very round, but it's more like a pill than what we want.
+
+04:50.450 --> 04:50.870
+It's OK.
+
+04:50.880 --> 04:52.610
+We're going to get there, but at least we can see something.
+
+04:52.610 --> 04:53.660
+It's working, right?
+
+04:53.810 --> 04:57.860
+The next thing after elevation, what we can do can also pass the color.
+
+04:58.070 --> 04:59.040
+I won't say color.
+
+04:59.300 --> 04:59.610
+Now for.
+
+05:00.010 --> 05:06.520
+As you saw earlier, I can go ahead and just invoke color object, if you will, and then get white,
+
+05:06.520 --> 05:11.920
+light gray, whatever color, but I can also say something like this in the same material theme.
+
+05:12.220 --> 05:16.630
+So this is part of, Of course, material theme that comes with compose.
+
+05:16.930 --> 05:23.760
+So if I just go into material theme, I can say, Dad, I can go to colors and you can see on surface,
+
+05:24.220 --> 05:25.450
+OK, like this.
+
+05:25.750 --> 05:31.210
+And then I can do other things I can say, for instance, copy to say that I'm going to modify this
+
+05:31.210 --> 05:36.760
+a little bit in this case, the alpha meaning how visible this color is going to be.
+
+05:36.940 --> 05:40.660
+And where has that zero point five f like this?
+
+05:40.870 --> 05:47.230
+OK, so not to go into a lot of details here because again, we will take the time to go into all the
+
+05:47.230 --> 05:48.190
+details later, OK?
+
+05:48.580 --> 05:54.910
+But what we're doing here is just actually evoking the material theme that comes with our project already.
+
+05:55.480 --> 05:56.680
+We're going to go and say colors.
+
+05:56.950 --> 06:01.900
+And in fact, if you open our project, you will go to white theme.
+
+06:02.580 --> 06:02.950
+There we go.
+
+06:02.950 --> 06:05.280
+We have color, shape, theme and so forth.
+
+06:05.290 --> 06:05.800
+Like Double.
+
+06:06.220 --> 06:09.670
+There's all of these colors are be invoked here and we'll get to that.
+
+06:10.210 --> 06:15.790
+But what we're saying here, we want to take the material theme of the project, get the colors on the
+
+06:15.790 --> 06:21.130
+surface here if you have over it, says color used to text and icons displayed on top of this surface
+
+06:21.130 --> 06:21.550
+color.
+
+06:22.600 --> 06:29.110
+And then we are just saying, OK, we want to actually make the alpha property of this little bit dimmer.
+
+06:29.110 --> 06:30.670
+Not too bright, if you will.
+
+06:31.510 --> 06:32.530
+The visibility of that.
+
+06:33.040 --> 06:33.270
+All right.
+
+06:33.280 --> 06:34.660
+So now do we have this code?
+
+06:34.660 --> 06:35.770
+We have a surface.
+
+06:36.130 --> 06:40.760
+What we want to do really is to have that image we added inside of this, right?
+
+06:40.780 --> 06:43.360
+So it looks again something like this.
+
+06:43.630 --> 06:45.670
+Well, how do we do that to do that?
+
+06:45.730 --> 06:46.270
+Of course.
+
+06:46.280 --> 06:50.320
+Remember inside of our surface, here we pass all these parameters, right?
+
+06:50.530 --> 06:55.960
+But then we have this block, which means now we can add something inside of the surface.
+
+06:56.320 --> 06:56.620
+All right.
+
+06:57.160 --> 06:58.240
+So what is it we want to add?
+
+06:58.540 --> 07:02.230
+Well, first I'm going to say image because that's what what going to add image.
+
+07:02.230 --> 07:05.890
+There's different overloaded image functions here, right?
+
+07:06.250 --> 07:09.580
+We're going to use the first one, which is we need to pass a painter.
+
+07:09.610 --> 07:15.550
+So painter is going to be the object that will go and get what is it exactly that we want to paint onto
+
+07:15.550 --> 07:16.060
+the screen?
+
+07:16.090 --> 07:18.070
+Meaning what image we want to show?
+
+07:18.490 --> 07:25.180
+So I'm going to say Painter is a painter, a such resource because we want to go through our resource
+
+07:25.630 --> 07:28.000
+and get our image so he can enter.
+
+07:28.420 --> 07:35.110
+And then I'm going to say in this case, are Dot Draw able to go to our troubles and get the profile
+
+07:35.110 --> 07:35.470
+image?
+
+07:35.890 --> 07:40.960
+So what we're doing here, we're going to art through our resource class that is hidden somewhere and
+
+07:40.960 --> 07:42.820
+we're invoking the tribal folder.
+
+07:43.090 --> 07:49.540
+So we go into our tribal folder and get our profile image, JPEG or whatever name you added.
+
+07:49.720 --> 07:55.230
+And you can see here in the gutter, there is indeed that image showing very good at everything.
+
+07:55.240 --> 07:59.980
+Also you notice here is that we must pass something else right in our image.
+
+08:00.130 --> 08:02.230
+We must pass the content description.
+
+08:02.560 --> 08:03.100
+What is this?
+
+08:03.310 --> 08:09.970
+This will allow for our visually impaired folks to be able to know exactly what this image is supposed
+
+08:09.970 --> 08:10.960
+to represent.
+
+08:10.990 --> 08:11.290
+Right.
+
+08:11.500 --> 08:17.470
+So we're going to say here profile image like this description of the image?
+
+08:18.250 --> 08:20.630
+OK, so in after that, we're going to pass a modifier.
+
+08:20.660 --> 08:26.860
+Notice the theme here is that modifier allows us to then modify as a name, imply our function, right?
+
+08:26.920 --> 08:32.380
+How it's going to relay the information we passing can say modify or die size and then just give it
+
+08:32.390 --> 08:36.400
+one big size of 135 dpi as such.
+
+08:36.820 --> 08:37.060
+OK.
+
+08:37.480 --> 08:38.050
+And there we go.
+
+08:38.320 --> 08:40.690
+It doesn't look that great, but we're going to fix that.
+
+08:41.020 --> 08:46.300
+So next thing we're going to do for our image here, we are going to pass a content scale because we
+
+08:46.300 --> 08:48.820
+want to scale this to a better size other than this.
+
+08:49.270 --> 08:50.320
+So and so here.
+
+08:50.320 --> 08:56.600
+And when I say content scale and I want to crop it, let's see something is not right.
+
+08:56.620 --> 09:00.250
+Obviously, we don't want this to take the whole space.
+
+09:00.550 --> 09:06.220
+As you see here, I because the image now is taking this whole entire view, which is, of course,
+
+09:06.220 --> 09:08.560
+our surface here inside of our card.
+
+09:09.010 --> 09:14.320
+But I also have to remember something that the contents of this whole card will have something like
+
+09:14.320 --> 09:17.380
+this because we are not just going to have the image right.
+
+09:17.470 --> 09:20.770
+We are also going to have other elements here.
+
+09:20.800 --> 09:23.530
+Going to have this divider and name and all this stuff.
+
+09:23.620 --> 09:31.540
+So we need to figure out a way to subdivide this whole view so that all of these can be accommodated
+
+09:31.540 --> 09:32.200
+accordingly.
+
+09:32.410 --> 09:34.510
+And that's what we're going to be doing in the next video.

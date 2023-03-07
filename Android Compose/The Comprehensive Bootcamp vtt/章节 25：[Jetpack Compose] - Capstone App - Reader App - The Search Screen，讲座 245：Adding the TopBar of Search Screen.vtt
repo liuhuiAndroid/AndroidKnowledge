@@ -1,0 +1,310 @@
+WEBVTT
+
+00:01.180 --> 00:05.710
+All right, let's go ahead and put together the search screen, as you see here, so it's going to be
+
+00:05.710 --> 00:06.490
+pretty simple.
+
+00:07.390 --> 00:12.010
+Let's add, of course, this top bar there and we're going to have a search.
+
+00:12.950 --> 00:16.400
+Text field, and then we're going to have a list of the searched items.
+
+00:16.760 --> 00:17.030
+All right.
+
+00:17.630 --> 00:19.420
+So let's go back first.
+
+00:19.430 --> 00:27.130
+Let's look to see if we have that added.
+
+00:27.140 --> 00:28.640
+So have the search screen.
+
+00:28.880 --> 00:31.490
+We have read your book search screen as such.
+
+00:32.030 --> 00:35.770
+And of course, we always pass our NAF controller site here.
+
+00:35.780 --> 00:40.910
+I'm going to go ahead and add first a scaffold because I want to have this structure.
+
+00:41.390 --> 00:42.710
+So I say scaffold.
+
+00:45.780 --> 00:47.040
+And top bar.
+
+00:49.320 --> 00:50.970
+And then let's get rid of this
+
+00:54.390 --> 00:56.580
+and then let's say.
+
+01:00.710 --> 01:01.370
+That's about it.
+
+01:01.520 --> 01:02.270
+What we would want.
+
+01:02.690 --> 01:04.310
+OK, there we go.
+
+01:06.560 --> 01:06.870
+All right.
+
+01:06.890 --> 01:15.980
+So for a top bar here, I'm going to reuse some code that would say, and let's say reader at the bar.
+
+01:16.010 --> 01:19.820
+Remember this one here, this one, I'm going to say search.
+
+01:24.670 --> 01:30.030
+Books like this controller is going to be enough controller to be passing there, I said.
+
+01:30.180 --> 01:35.760
+Now the other thing I want to add is that I want to be able to add this back icon icon.
+
+01:35.770 --> 01:42.670
+So let's change a little bit our reader at bar to add a few other parameters here.
+
+01:42.700 --> 01:47.140
+So the next I'm going to add is going to be an icon like such.
+
+01:47.140 --> 01:51.410
+It's just going to be an image vector that one there.
+
+01:51.430 --> 01:56.260
+And I'm going to make this Nullarbor, because some cases we don't want to add that here.
+
+01:56.320 --> 02:03.430
+Let me add, I'm going to add a on back arrow clicked.
+
+02:05.080 --> 02:06.250
+I was just going to be.
+
+02:09.930 --> 02:15.270
+Empty, that returns unit, and we're just going to say it's going to be.
+
+02:18.090 --> 02:22.140
+We're not going to have anything like that, right?
+
+02:23.160 --> 02:26.790
+So it's going to be optional as well as I contend, you know.
+
+02:27.180 --> 02:27.500
+All right.
+
+02:27.510 --> 02:34.920
+So this will allow us to then right here to add the icon and of course, the back arrow things on there
+
+02:34.920 --> 02:36.120
+say icon.
+
+02:36.660 --> 02:40.890
+Let's see what is the order title and then icon?
+
+02:40.920 --> 02:42.030
+Yes, this would work.
+
+02:42.330 --> 02:44.280
+Icon image there.
+
+02:44.820 --> 02:47.940
+You might say icons dot default.
+
+02:48.210 --> 02:50.940
+And I want the arrow back.
+
+02:52.320 --> 02:56.630
+OK, and we're past the show profile right after that one.
+
+02:56.640 --> 03:01.870
+I'm going to pass to show profile in this case is going to be false because this is not for the profile.
+
+03:01.890 --> 03:05.250
+So again, I'm just customizing our reader app.
+
+03:05.250 --> 03:05.760
+That way.
+
+03:06.210 --> 03:11.070
+You can just remove some of the items that we would have in our home screen.
+
+03:11.380 --> 03:11.610
+OK.
+
+03:12.300 --> 03:18.810
+I can also go ahead and pass the optional lambada here, which will allow us to say something like this
+
+03:18.810 --> 03:27.180
+now controller that I want to navigate to a route which is string and say reader screens.
+
+03:29.100 --> 03:32.010
+I want to go back to our reader home screen.
+
+03:32.610 --> 03:39.300
+Now I'm able to do this because remember, I've added this optional on back arrow clicked.
+
+03:39.540 --> 03:46.530
+And then I'm going to add another if statement here that will say it fallings and say if the icon is
+
+03:46.530 --> 03:49.320
+not null, right?
+
+03:49.320 --> 03:53.160
+That means we need to added if an icon here, I'm going to just add that icon.
+
+03:53.160 --> 04:03.390
+So when I say icon image vector, I'm going to pass the icon and that this is going to be arrow back
+
+04:04.050 --> 04:04.590
+like this.
+
+04:06.240 --> 04:08.850
+And if we want, we can give a tent color.
+
+04:13.150 --> 04:17.440
+Red and say can't be passing the alpha.
+
+04:18.430 --> 04:21.100
+They will say 0.7 F.
+
+04:21.160 --> 04:21.760
+Like this
+
+04:24.730 --> 04:25.840
+passive modifier?
+
+04:28.280 --> 04:31.110
+And, Mike, this clickable because when do you click that?
+
+04:31.230 --> 04:38.970
+And so here is where are we going to pass the on back arrow clicked and I'm going to invoke that function.
+
+04:39.880 --> 04:46.080
+OK, so what we're doing here is that if icon is not null, meaning that, yeah, so let's go to reader
+
+04:46.080 --> 04:46.680
+search here.
+
+04:46.690 --> 04:53.430
+So this icon is not null because we're passing something, then we know that we need this case will
+
+04:53.430 --> 04:56.420
+know that we need to pass this icon the arrow back.
+
+04:56.430 --> 04:58.500
+So we have this structure here.
+
+04:59.070 --> 04:59.300
+All right.
+
+04:59.310 --> 05:06.480
+Let's see if we can perhaps make this preview of all a preview.
+
+05:07.650 --> 05:09.420
+Let's just create a new.
+
+05:10.650 --> 05:12.600
+Or knife controller?
+
+05:18.610 --> 05:22.540
+Local context current like this, so we can see something.
+
+05:23.200 --> 05:24.320
+All right, very good.
+
+05:24.400 --> 05:29.670
+So this is why we are able to see and we still have this item here.
+
+05:29.680 --> 05:33.820
+So let's go ahead and remove this as well, because that's not helpful.
+
+05:34.240 --> 05:37.690
+So let's go back to our component in our radar app.
+
+05:38.770 --> 05:47.500
+So for this icon there, I'm going to put in if statement here check if show profile is true, then
+
+05:48.220 --> 05:49.210
+this should happen.
+
+05:51.430 --> 05:58.180
+I put together a row here so we can put everything in one place and I'm going to cut all of this and
+
+05:58.180 --> 06:00.760
+put inside of that row like that.
+
+06:01.060 --> 06:02.950
+OK, this shows else.
+
+06:02.950 --> 06:09.040
+We're just going to let's just return a box and refresh.
+
+06:11.930 --> 06:12.720
+OK, there we go.
+
+06:12.740 --> 06:20.030
+So now you can see all we have now is what we want to see, which is we have the search book's title.
+
+06:20.210 --> 06:21.440
+And we have the back button.
+
+06:22.370 --> 06:22.710
+Very good.
+
+06:22.730 --> 06:25.490
+So that is working.
+
+06:27.020 --> 06:30.200
+And let's give it some space around there.
+
+06:31.310 --> 06:37.520
+Let's get this and put it on the top there because this is the text.
+
+06:38.480 --> 06:42.260
+So essentially, we can give some space between the arrow and the title.
+
+06:43.670 --> 06:45.710
+Maybe just about.
+
+06:47.630 --> 06:49.970
+40 for 40 like this.
+
+06:50.000 --> 06:51.170
+Let's see if that will work.
+
+06:52.940 --> 06:53.930
+OK, there we go.
+
+06:54.150 --> 06:54.710
+That looks good.
+
+06:54.980 --> 06:58.490
+Now this is great because, as you see, we put that somewhere else.
+
+06:58.880 --> 07:03.980
+Our readable or reader app and we can pass variables or pass parameters here.
+
+07:04.250 --> 07:06.860
+Well, then customize our top bar.
+
+07:06.890 --> 07:13.820
+So it's really handy because now we can see with minimal work or able to use the same composable into
+
+07:13.820 --> 07:14.750
+two different screens.
+
+07:14.780 --> 07:20.180
+We have the home and we have the reader, ebook reader book social screen.
+
+07:20.630 --> 07:26.810
+So for both of them, we want the capability of having, of course, this top bar, but also want to
+
+07:27.170 --> 07:28.880
+customize it depending on the screen.

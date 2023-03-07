@@ -1,0 +1,337 @@
+WEBVTT
+
+00:00.690 --> 00:02.580
+All right, so all is working well.
+
+00:02.730 --> 00:04.290
+And the other thing we can do.
+
+00:04.320 --> 00:07.620
+Let me put this in a different line here.
+
+00:08.280 --> 00:15.420
+And so obviously, we can add more parameters into our function here, but usually want to minimize
+
+00:15.420 --> 00:21.770
+the number of parameters because you don't want to end up with a function that has 200 parameters.
+
+00:21.780 --> 00:25.940
+That's exaggerating, of course, but it could very well happen.
+
+00:25.950 --> 00:28.840
+So we need to minimize the number of parameters with that.
+
+00:28.860 --> 00:31.710
+But in this case, I'm just going to pass at least another one here.
+
+00:32.130 --> 00:37.020
+Let's call this a message, and it's going to be strength as expected.
+
+00:37.470 --> 00:44.220
+And you can see at the top now we have a problem and it's expecting a message to be added there.
+
+00:44.220 --> 00:45.840
+So that means right there going.
+
+00:45.860 --> 00:46.710
+That's a message.
+
+00:50.180 --> 00:58.100
+Right here, A.J. is multiple of a section that make this a little bit smaller.
+
+01:04.500 --> 01:11.550
+Like that, put this property in the line, so we can't see everything better, and he can see that
+
+01:11.620 --> 01:15.810
+we have a message in our parameter in the calculate function here.
+
+01:16.110 --> 01:18.360
+It's great out to say that hasn't been used.
+
+01:18.570 --> 01:23.490
+In fact, if you have over is going to say remove parameter message because it's never used, but we're
+
+01:23.490 --> 01:24.080
+going to use that.
+
+01:24.090 --> 01:31.380
+So we're going to just remove all of that and pass it that message parameter, etc. OK, just go ahead
+
+01:31.380 --> 01:32.550
+and give it a run.
+
+01:33.030 --> 01:35.730
+Again, we can run from here, but let's just go ahead and run from here.
+
+01:40.660 --> 01:45.440
+So nothing really has changed much, but we know that we've restructured our function here.
+
+01:45.470 --> 01:52.210
+OK, now we're passing this message string and we passed something into it, a message so you can see
+
+01:52.210 --> 01:57.970
+the flexibility we get with functions, passing parameters because we can change any of these arguments
+
+01:57.970 --> 02:00.220
+that we're passing here to whatever we want.
+
+02:00.820 --> 02:04.180
+And of course, the function itself will be fed all of these parameters.
+
+02:04.360 --> 02:10.510
+And we can use those parameters inside of the function to do whatever we want to get a certain result.
+
+02:11.080 --> 02:18.670
+And that is indeed the the whole existence of a function, which is to take the values and do some work
+
+02:18.670 --> 02:20.860
+and retain or show a result.
+
+02:22.030 --> 02:29.050
+Now, another concept we want to get at in this video is the concept of a default argument.
+
+02:29.260 --> 02:30.070
+What does that mean?
+
+02:30.100 --> 02:37.390
+Well, it means that we can actually add default values to some of these parameters here to say that
+
+02:37.390 --> 02:41.500
+when we call, we can skip those arguments.
+
+02:41.530 --> 02:42.030
+We can't.
+
+02:42.040 --> 02:44.980
+We can actually skip meaning we don't have to add anything.
+
+02:44.980 --> 02:50.620
+If nothing is found for that parameter or argument, then the default value be used.
+
+02:51.190 --> 02:57.130
+For example, here for first, there I can just say is equal in past, let's say, 11.
+
+02:57.740 --> 02:58.570
+OK, that's fine.
+
+02:58.900 --> 03:03.760
+And for a second, I can also say is equal to 1000.
+
+03:04.000 --> 03:04.750
+What do we have there?
+
+03:05.320 --> 03:05.590
+OK.
+
+03:06.010 --> 03:06.940
+So I'm going to run this.
+
+03:06.950 --> 03:09.850
+Obviously, everything should run as before.
+
+03:11.480 --> 03:13.800
+But then I'm going to change a few things, so everything is great.
+
+03:13.820 --> 03:14.600
+Life is great.
+
+03:14.600 --> 03:17.060
+We're all happy and that's wonderful.
+
+03:17.690 --> 03:23.390
+So now I'm just going to go ahead and comment this one out now so we can invoke a new function the same.
+
+03:23.720 --> 03:29.690
+But the new expression here, when they calculate and you can see I go like this enter.
+
+03:29.960 --> 03:34.100
+And now you can see at the top here that it says first it is 11.
+
+03:34.310 --> 03:42.170
+The reason why is because they're saying, well, the first argument has a default value of 11 second
+
+03:42.170 --> 03:43.880
+default value of 100.
+
+03:45.260 --> 03:51.590
+So in this case here, if I just go straight and pass, let's see a message, say.
+
+03:53.530 --> 04:01.900
+Is multiple of and then go to of and then add multiple of which is 11 like that.
+
+04:02.440 --> 04:07.250
+You notice that we have a problem because since we said that once we have the default values, we can
+
+04:07.630 --> 04:09.710
+skip those those arguments.
+
+04:09.730 --> 04:15.610
+We don't have to call it because the compiler will know if there's nothing for first or second is going
+
+04:15.610 --> 04:19.510
+to go ahead and add our or our default values right.
+
+04:19.960 --> 04:24.670
+But we have a problem here, and you can see right away the problem is very apparent because if you
+
+04:24.670 --> 04:28.330
+see here, it says first is multiple of and second is 11.
+
+04:28.810 --> 04:34.360
+So what's happening here is we must add to something else in order for this to work whenever we are
+
+04:34.360 --> 04:37.480
+passing default values, which is named argument.
+
+04:37.990 --> 04:43.120
+So what happens if we don't add in name argument to say actually first or in this case, this is multiple
+
+04:43.120 --> 04:47.920
+of it's going to be a message, as you will see in a second here, the compiler will assume that whatever
+
+04:47.920 --> 04:51.970
+you passing is going to follow the order in which we've added this parameter.
+
+04:52.480 --> 04:58.720
+As you can see, it's thinking that this is our first parameter we're passing, which is not true.
+
+04:59.850 --> 05:00.570
+So how to fix that?
+
+05:00.810 --> 05:05.580
+The fix that we actually use named parameters, which means in this case, one saved message like that
+
+05:05.610 --> 05:10.290
+and while it works and for 11 here we know it's going to be multiple of.
+
+05:11.340 --> 05:12.960
+And you can see it now works.
+
+05:13.170 --> 05:15.990
+If I run this right from here, it's fine.
+
+05:16.920 --> 05:22.380
+We'll see the same results, but we know that something has changed, which means we didn't have to
+
+05:22.380 --> 05:29.040
+pass in the first or the second arguments because they have indeed their default values.
+
+05:29.700 --> 05:37.620
+If I change this to one, for instance, and run, it will take one and one thousand for the second
+
+05:38.010 --> 05:38.550
+arguments.
+
+05:39.910 --> 05:41.350
+Let's see what the results are going to be.
+
+05:42.840 --> 05:43.260
+And while.
+
+05:44.660 --> 05:48.420
+OK, so now you see, it's working now.
+
+05:48.440 --> 05:54.680
+It doesn't mean that once I have default values, you know, arguments here, actual parameters.
+
+05:55.250 --> 06:00.440
+Doesn't mean that we can't override those values because the idea, of course, is to give a chance
+
+06:00.440 --> 06:03.410
+or is to make our functions customizable.
+
+06:03.470 --> 06:03.740
+Right.
+
+06:04.220 --> 06:07.730
+So we can override them, meaning that we can actually pass the values.
+
+06:07.730 --> 06:11.600
+But remember, in order for this to work, you have to add the named parameters.
+
+06:12.110 --> 06:19.640
+So I have to say first such and give it a value of eleven and then with the second.
+
+06:21.230 --> 06:25.280
+And give it a value of one thousand, just using the same numbers, so we don't get confused, but you
+
+06:25.280 --> 06:26.840
+can add any number you want.
+
+06:27.590 --> 06:27.860
+Right?
+
+06:28.840 --> 06:38.620
+So now you actually just to show you, let's say this is 20 and this is 100 like that, so to to show
+
+06:38.620 --> 06:40.900
+you that indeed it's going to override the default values.
+
+06:41.540 --> 06:41.920
+That's right.
+
+06:45.450 --> 06:49.380
+You can see and I went ahead and overrode the default values.
+
+06:49.740 --> 06:53.690
+In fact, I can't even make it further by saying 12, so you can see the difference.
+
+06:53.930 --> 06:54.180
+Reality reality?
+
+06:55.470 --> 06:55.950
+That's right.
+
+06:57.910 --> 06:58.200
+OK.
+
+06:58.270 --> 07:02.710
+You see, 12 guitar is the value we passed for multiple of.
+
+07:04.440 --> 07:13.170
+And you can see, beyond just the apparent advantages of having default values to our arguments.
+
+07:13.590 --> 07:18.900
+Also, we get to be forced to add the actual arguments, the names of these arguments.
+
+07:19.260 --> 07:21.060
+And you can see it's really nice.
+
+07:21.060 --> 07:26.610
+It looks better, especially once you start adding more and more arguments or parameters in this case
+
+07:26.730 --> 07:28.600
+for the function call.
+
+07:28.620 --> 07:35.010
+There, you can see that it's much easier for you or any other programmer that may be using your function
+
+07:35.010 --> 07:37.320
+to know exactly what's expected to pass.
+
+07:37.890 --> 07:43.440
+Because now I know for the first name argument, it's going to be whatever I want to add for the second
+
+07:43.440 --> 07:44.160
+and so forth.
+
+07:44.400 --> 07:49.650
+Now, obviously, you see at this point because we have second and everything is laid out, I can remove
+
+07:50.640 --> 07:52.500
+these named arguments, right?
+
+07:53.160 --> 07:55.530
+And everything will work just fine.
+
+07:55.920 --> 07:59.190
+In some cases, but it's always a good idea, as you can see.
+
+07:59.190 --> 08:05.490
+Also, the I.D. gives us this visual representation of each one of these arguments, saying this is
+
+08:05.490 --> 08:12.330
+the first, second message, but it's always nice to actually type them out so that you have that eight
+
+08:12.480 --> 08:13.110
+visual aid.

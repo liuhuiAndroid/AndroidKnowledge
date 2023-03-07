@@ -1,0 +1,466 @@
+WEBVTT
+
+00:01.470 --> 00:08.790
+So we have our sign in with email and password with passing the email password, and then we used us,
+
+00:09.060 --> 00:11.910
+which is our Firebase authentication.
+
+00:11.940 --> 00:18.360
+Their object that allows us to then invoke this signing with email and password to the email password
+
+00:18.660 --> 00:20.950
+and then we can attach the incomplete listener.
+
+00:20.970 --> 00:27.430
+We have this task object, which just has this auth results or the result that we get from asking our
+
+00:27.570 --> 00:36.600
+user firebase to log in this user so we can look at that and say, OK, if this happens, then in this
+
+00:36.600 --> 00:39.270
+case, if it's successful, then we'll do something else.
+
+00:39.420 --> 00:40.860
+Well, we don't do anything.
+
+00:41.880 --> 00:42.120
+OK?
+
+00:42.690 --> 00:45.590
+And later, of course, we're going to take the users to the home screen.
+
+00:45.870 --> 00:48.540
+But OK, this also had a long day here.
+
+00:51.720 --> 00:56.130
+Let's go ahead and add Log D. So we know that all is good.
+
+00:58.420 --> 01:01.360
+When you say task.
+
+01:04.150 --> 01:08.320
+Resolved all to string like this, so we can get the result.
+
+01:09.190 --> 01:10.540
+This is going to be FBI.
+
+01:13.270 --> 01:19.150
+So, yeah, so we see that we are celebrating and life is good.
+
+01:19.840 --> 01:23.560
+All right now, how do we then invoke our view model here?
+
+01:23.590 --> 01:26.440
+That way we can then, you know, sign the users.
+
+01:27.010 --> 01:33.790
+Let's go to our reader login screen in what I'm going to do inside of a reader login screen.
+
+01:33.820 --> 01:34.540
+Let's see.
+
+01:35.110 --> 01:41.890
+Besides of our NAF controller, I'm also going to pass our view models with a view model.
+
+01:43.060 --> 01:44.410
+Log in screen for your model.
+
+01:44.440 --> 01:49.210
+Very smart of you and or studio to know exactly what object I need.
+
+01:49.660 --> 01:57.640
+And I'm going to shake it right away, say if you model like this view, let's get that view model.
+
+01:59.620 --> 02:04.660
+OK, so we're getting the view model from Android X, the American posts like this, so usually does
+
+02:04.660 --> 02:07.420
+that and it's OK, we can leave it as it is.
+
+02:08.380 --> 02:11.380
+OK, so now we should have our review model so we can work with.
+
+02:12.400 --> 02:14.070
+So where is that going to happen?
+
+02:14.080 --> 02:15.790
+Where do we use our view model to log in?
+
+02:15.820 --> 02:19.650
+Well, you see this to do all we have to do here.
+
+02:19.660 --> 02:25.800
+So a few model, I can say, died and invoke this sign in with email and password.
+
+02:25.810 --> 02:27.670
+And where do we get that email and password?
+
+02:28.150 --> 02:29.170
+I look at that.
+
+02:30.250 --> 02:35.560
+We have the email and password because this is coming from our user form.
+
+02:36.430 --> 02:37.150
+How convenient.
+
+02:37.450 --> 02:39.220
+So I can pass email.
+
+02:39.610 --> 02:40.720
+It's going to be email.
+
+02:41.370 --> 02:42.730
+I say email as such.
+
+02:42.730 --> 02:46.600
+So I'm going to get this email there and pass the password.
+
+02:47.620 --> 02:49.870
+It's going to be our password as such.
+
+02:50.440 --> 02:51.940
+And of course, we they all have the same name.
+
+02:51.940 --> 02:57.310
+I can just simplify and just call with one name, email and password.
+
+02:58.480 --> 02:59.380
+Let's see if this works.
+
+02:59.830 --> 03:04.120
+Remember, if we go back to sign in, this is being called from here.
+
+03:04.120 --> 03:06.580
+We're going to have some logs that are being coming up.
+
+03:07.030 --> 03:12.070
+So I'm going to open our log debug here and passing SB.
+
+03:12.070 --> 03:15.640
+So that way we're ready to see results.
+
+03:15.990 --> 03:18.160
+Let's make sure all is good is go ahead and run.
+
+03:20.900 --> 03:21.860
+OK, have it.
+
+03:23.450 --> 03:23.780
+OK.
+
+03:23.930 --> 03:25.080
+Time of truth.
+
+03:25.100 --> 03:29.100
+So I'm going to log in because remember, we created a log in.
+
+03:29.540 --> 03:31.640
+We have this person, me, me.
+
+03:32.270 --> 03:33.320
+Let's see if we can log in.
+
+03:33.710 --> 03:39.230
+So I'm going to see me at mi.com and tester.
+
+03:39.230 --> 03:40.190
+What's the password?
+
+03:41.150 --> 03:45.770
+OK, if I click log in, I should be able to log in this user log in.
+
+03:47.380 --> 03:55.540
+And as you see, he says, Yay, Google.com authorized, and we are indeed logged in, and he even gives
+
+03:55.540 --> 03:58.600
+us the I.D. of this user.
+
+03:58.690 --> 04:07.480
+This zero w nine k, you'll see it is indeed the same person 0W, nine K and three and so forth.
+
+04:08.790 --> 04:09.150
+All right.
+
+04:09.330 --> 04:15.660
+And of course, we lost our app, something happens, they're not sure what, but we'll get to that.
+
+04:16.350 --> 04:17.950
+So it's good, right?
+
+04:18.000 --> 04:22.800
+We were able to log a user in and successfully.
+
+04:23.460 --> 04:24.020
+Let's see why.
+
+04:24.030 --> 04:24.650
+What's the problem?
+
+04:24.660 --> 04:25.760
+Let's go to run.
+
+04:28.830 --> 04:30.900
+OK, says operations are implemented, right?
+
+04:30.930 --> 04:32.040
+We have I added that.
+
+04:32.190 --> 04:33.570
+So here I have this to do.
+
+04:33.690 --> 04:34.440
+Doesn't like that.
+
+04:34.440 --> 04:37.920
+So that's why it says that I should have just said something like this to do.
+
+04:39.180 --> 04:43.350
+Take them home like this because that is a different implementation.
+
+04:43.350 --> 04:46.440
+If I say to do as I did anyway, that should be good.
+
+04:46.470 --> 04:48.900
+Now, if I run again, I shouldn't have this problem.
+
+04:48.930 --> 04:51.060
+You want my app won't crash.
+
+04:52.320 --> 04:55.860
+Let's log this user again me at
+
+05:00.580 --> 05:05.730
+to either say log in or just done like this.
+
+05:06.090 --> 05:08.090
+And you see, it's happening.
+
+05:08.100 --> 05:09.240
+We have the same person.
+
+05:09.930 --> 05:10.310
+OK.
+
+05:10.410 --> 05:11.100
+Yay.
+
+05:13.230 --> 05:16.110
+Signing works as intended.
+
+05:16.800 --> 05:17.910
+Now let's think about this.
+
+05:18.840 --> 05:22.950
+The idea here is as follows the moment the user is signed in.
+
+05:23.460 --> 05:27.520
+We don't want to just stay here, right?
+
+05:27.540 --> 05:29.730
+We want to take them to the home screen.
+
+05:29.740 --> 05:30.660
+That's why we have this.
+
+05:30.900 --> 05:31.800
+Take them home.
+
+05:32.100 --> 05:33.000
+Now, how do I do that?
+
+05:33.000 --> 05:40.980
+Because at this point here, as I'm listening to for this to complete this sign in with email and password
+
+05:41.490 --> 05:46.490
+to complete when that is successful, then I need to go home.
+
+05:46.500 --> 05:47.950
+I need to go to the home screen.
+
+05:47.970 --> 05:48.900
+How do I do that?
+
+05:49.770 --> 05:50.760
+Now here's the beauty.
+
+05:51.330 --> 05:56.270
+If you look at this function, this whole function here, sign in with email.
+
+05:56.280 --> 05:57.540
+This is what we created, right?
+
+05:57.540 --> 05:59.760
+And then we call sign in with emailing password.
+
+06:00.120 --> 06:05.280
+I tried to mimic the same names as the Firebase function name, right?
+
+06:05.850 --> 06:07.980
+It just makes sense what we can do.
+
+06:08.010 --> 06:15.540
+Remember, this is our function that we created, which means we can pass here a function that will
+
+06:15.540 --> 06:22.440
+be called as a lambda right so I can see whom I don't need to pass anything.
+
+06:23.160 --> 06:26.730
+Look at this and it's just going to return unit I section.
+
+06:29.440 --> 06:33.520
+Right now, this home, because it's going to be a lambada.
+
+06:34.030 --> 06:34.750
+Does that make sense?
+
+06:34.780 --> 06:38.890
+So here I can just say home like this.
+
+06:40.740 --> 06:45.930
+That means then where we are actually calling this, which is now a reader log in.
+
+06:46.440 --> 06:48.060
+It will detect that, OK.
+
+06:48.390 --> 06:50.850
+Aha, we need to pass another.
+
+06:51.860 --> 06:59.930
+Parameter here at home, and I know it was the last parameter added, which is a function, I can take
+
+06:59.930 --> 07:08.330
+care of the business by actually adding a trailing lambda, which is awesome because now yes, remember
+
+07:08.480 --> 07:15.230
+we are inside of our reader log in screen and our reader login screen has enough controller, which
+
+07:15.230 --> 07:24.860
+means, ladies and gentlemen, we can go ahead and say something like this nav controller that navigate.
+
+07:25.850 --> 07:28.940
+I want to add the root, pick the correct one.
+
+07:29.300 --> 07:32.030
+And what route do I want to go to?
+
+07:32.420 --> 07:34.070
+Well, I want go to.
+
+07:34.430 --> 07:39.010
+I want to say readers screen, right?
+
+07:39.020 --> 07:41.270
+This is just going to help us dot.
+
+07:41.690 --> 07:46.370
+I want to go to the home screen that name.
+
+07:47.120 --> 07:47.840
+And done.
+
+07:48.740 --> 07:49.800
+Let's go to our read.
+
+07:49.910 --> 07:56.940
+Let's go to our nav navigation to make sure we have that reader reader navigation created that composable.
+
+07:56.960 --> 07:58.060
+Yes, we have.
+
+07:58.630 --> 07:59.570
+If we do it at home.
+
+07:59.600 --> 08:00.290
+Very good.
+
+08:01.370 --> 08:06.620
+Now, if I go home with see that we have something, at least they're just going to say text
+
+08:09.470 --> 08:10.460
+on home.
+
+08:12.410 --> 08:14.980
+To me, that or import that library.
+
+08:15.790 --> 08:16.180
+Yes.
+
+08:16.390 --> 08:16.840
+You.
+
+08:18.540 --> 08:19.080
+Look at this.
+
+08:20.640 --> 08:21.720
+And now I should be good.
+
+08:24.130 --> 08:24.500
+All right.
+
+08:25.620 --> 08:27.600
+All of that started here.
+
+08:28.020 --> 08:34.950
+We passed this function, which we can pass anything, and this is just going to be a lambda eight and
+
+08:34.950 --> 08:36.150
+a composable, of course.
+
+08:36.750 --> 08:42.390
+And then we call that the moment that everything is successful, which means then when we actually invoke
+
+08:42.390 --> 08:47.550
+or when we call this function, whatever we call it, in this case, in our reader home, actually reader
+
+08:47.550 --> 08:50.700
+log in screen, we can pass that as a lambda.
+
+08:51.360 --> 08:54.660
+And then that's going to be called, which is going to be this knife controller.
+
+08:54.930 --> 08:55.980
+Navigate to a home screen.
+
+08:58.490 --> 09:04.880
+Now, look at this, if I run this, okay, I'm going to log in again.
+
+09:12.460 --> 09:13.180
+So log in.
+
+09:14.020 --> 09:14.530
+I'm home.
+
+09:15.760 --> 09:16.450
+Yes.
+
+09:17.800 --> 09:18.270
+All right.
+
+09:18.310 --> 09:20.500
+It's working, it's working.
+
+09:20.620 --> 09:23.140
+And if you go back here and go, let's refresh.
+
+09:23.470 --> 09:29.310
+You can see it's going to even tell us when was the last time this person has logged in November 3rd
+
+09:29.560 --> 09:30.280
+and everything?
+
+09:30.280 --> 09:31.660
+OK, so this is really good.
+
+09:32.020 --> 09:32.800
+It's working.
+
+09:33.070 --> 09:33.550
+All right.
+
+09:33.820 --> 09:34.620
+I'm too excited.
+
+09:34.630 --> 09:37.150
+So let's take a little break here and I'll see you in the next video.

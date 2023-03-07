@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.510 --> 00:07.050
+All right, let's get started open up and our studio in which they file new new project.
+
+00:07.590 --> 00:10.420
+And I'm going to go to empty compose activity.
+
+00:11.760 --> 00:16.250
+And in this case, I already have, of course, the place where this app will live.
+
+00:16.260 --> 00:21.840
+So I'm going to add a name here, the name, whatever you want, but I'm going to name this jet weather
+
+00:22.650 --> 00:26.600
+forecast like this and I'll go to the OK.
+
+00:26.610 --> 00:30.150
+And then so finish and the project is being created.
+
+00:30.220 --> 00:35.520
+Android Studio is provisioning all the things that it needs to do in the background, and it may take
+
+00:35.520 --> 00:36.210
+a few seconds.
+
+00:36.210 --> 00:37.230
+So let it be.
+
+00:37.380 --> 00:42.420
+And after a few moments, once everything is done, you will see that everything is good.
+
+00:42.600 --> 00:45.180
+So we have created our project.
+
+00:45.630 --> 00:48.810
+Next, we're going to set up our dependencies because that's very important.
+
+00:49.260 --> 00:54.900
+We need to add all those dependencies, all those libraries we're going to need in order for us to be
+
+00:54.900 --> 00:56.280
+able to create this app.
+
+00:57.240 --> 01:03.120
+Now, when it comes to adding all of these dependencies to our project, it can be a cumbersome endeavor.
+
+01:03.270 --> 01:10.650
+But I will make this easier for you and that all of these code, this project, you can find it at the
+
+01:10.650 --> 01:11.090
+link.
+
+01:11.100 --> 01:13.320
+I'm going to show you below that link.
+
+01:13.410 --> 01:19.890
+That's where you can find this kid app repo, where you can just go there and get the build that Gradle.
+
+01:20.100 --> 01:27.990
+All of these build a great old project level, as well as the module, the app level that we're going
+
+01:27.990 --> 01:33.620
+to be able to get all of the dependencies that I'm going to add here and add them to your project.
+
+01:33.630 --> 01:38.100
+So I think it's the best way to do this in the book because as you will see, I'm going to add a lot
+
+01:38.100 --> 01:39.030
+of different dependencies.
+
+01:39.810 --> 01:45.060
+But before we even move forward, you can see that some things are not right, meaning that we have
+
+01:45.060 --> 01:50.190
+here some squiggly lines that says that certain dependencies are outdated.
+
+01:51.120 --> 01:56.940
+This is very common because you have to remember compose is a moving train, which means they're still
+
+01:56.940 --> 01:57.690
+working on it.
+
+01:57.930 --> 02:03.900
+Actually, not just compose in general software development tools that are in building or tools that
+
+02:03.900 --> 02:06.120
+have been built or are being built for us.
+
+02:06.360 --> 02:11.280
+They are moving trains, which means we always have to be aware the fact that they are.
+
+02:12.370 --> 02:18.250
+Being updated constantly, and we should also follow those updates, right, so you can hover over and
+
+02:18.250 --> 02:22.420
+out, can see here, says the there is a newer version of Android Compose.
+
+02:23.230 --> 02:31.090
+So what this project it's using as we created it is using one zero one and there is one zero five available.
+
+02:31.630 --> 02:36.220
+So what we can do in this compose version here with, let's find where that is.
+
+02:37.650 --> 02:43.260
+Declares, Let's go to build compose, there we go, so this is composed version we can change from
+
+02:43.260 --> 02:51.580
+here so that five like that, you know, also let's change the class path through our build Gradle.
+
+02:51.600 --> 02:56.130
+So seven three, that could be a different number by the time you watched this video.
+
+02:56.520 --> 03:02.430
+And the other thing I'm going to do here, I'm going to change is two three one one five three one,
+
+03:02.430 --> 03:07.680
+I s. I know this because I've been doing this for a while, but just trust me now, if you have some
+
+03:07.680 --> 03:12.870
+issues, if you need to add or upgrade this value, there's the version you can do so as well.
+
+03:13.650 --> 03:16.290
+So one, five three one.
+
+03:16.680 --> 03:20.190
+That is what works with these current version of COMPOSE.
+
+03:20.910 --> 03:21.270
+All right.
+
+03:21.630 --> 03:26.190
+So I'm not going to sync yet because there is something else we need to do, obviously.
+
+03:26.220 --> 03:31.350
+Let's go back to our bill that Gradle and I'm going to add all of the dependencies again.
+
+03:31.350 --> 03:37.410
+Remember all these dependencies, you won't need to type them out yourself because I will have all of
+
+03:37.410 --> 03:40.850
+that available to you first, actually.
+
+03:41.100 --> 03:47.160
+Let's make sure that we have the correct plugins added here.
+
+03:47.160 --> 03:51.480
+So I have the ones I'm going to show you and add them for you.
+
+03:51.750 --> 03:59.620
+So I'm going to just go here and paste this coupling capped and at dagger, we're going to use dagger
+
+03:59.620 --> 04:01.830
+hilt for dependency injection.
+
+04:02.400 --> 04:02.710
+All right.
+
+04:02.730 --> 04:03.150
+That's good.
+
+04:04.230 --> 04:05.010
+Close it down.
+
+04:05.010 --> 04:07.440
+Let's go to where everything is.
+
+04:08.460 --> 04:10.830
+OK, so I'm going to add all these dependencies.
+
+04:11.310 --> 04:17.220
+It's a lot of dependencies, and you'll see that I like to add this comments so that we know what dependencies
+
+04:17.220 --> 04:19.320
+we have added and so forth.
+
+04:19.520 --> 04:21.490
+So it's just a good habit to get into.
+
+04:21.930 --> 04:27.000
+So first of all, I can see that I added this Dagger Hill to dependency there as of recording this video
+
+04:27.000 --> 04:27.930
+to that 8:57.
+
+04:27.930 --> 04:31.290
+That's the variable or that is indeed the version that is needed.
+
+04:31.710 --> 04:36.210
+But each time you watching this video could be higher and remember that Android Studio will let you
+
+04:36.210 --> 04:41.430
+know if you need to upgrade that right because it will have something like this.
+
+04:42.330 --> 04:45.600
+So if that's the case, then you just go and upgrade.
+
+04:46.050 --> 04:49.700
+So we have dagger hilt that we added here again, dagger.
+
+04:50.310 --> 04:53.970
+This is what we're going to be using for dependency injection in our project.
+
+04:54.690 --> 04:58.800
+I also have these other implementation of Hild Life for View model.
+
+04:59.250 --> 05:04.410
+This is actually capped Kotlin processing that we can add to our dependency.
+
+05:04.410 --> 05:10.530
+That way, we can get the full help that we need as we start using dagger and held in this case for
+
+05:10.530 --> 05:11.400
+dependency injection.
+
+05:11.850 --> 05:12.960
+So you need these.
+
+05:13.830 --> 05:20.070
+Of course, here you can see that I have these Kotlin core routines, core core routines, Android and
+
+05:20.070 --> 05:21.540
+all security in place service.
+
+05:21.720 --> 05:22.020
+OK.
+
+05:22.350 --> 05:28.200
+I have also lifecycle core routines that we need to add here for a few models and the implementation
+
+05:28.200 --> 05:29.820
+also for runtime.
+
+05:30.240 --> 05:30.510
+OK.
+
+05:30.870 --> 05:36.270
+We're going to use Croyle, which is a library that allows us to download images from the internet,
+
+05:36.270 --> 05:39.210
+which makes the process much, much easier, as you will see.
+
+05:39.450 --> 05:40.470
+So we need that.
+
+05:40.920 --> 05:45.690
+And of course, we have retrofit and OK, two piece of these libraries work together in the background,
+
+05:45.990 --> 05:54.360
+as well as with the JSON converter to allow us to be able to download or to download and past Jason
+
+05:54.360 --> 05:55.710
+from the internet.
+
+05:55.960 --> 05:58.110
+So and we'll see how all of that comes together.
+
+05:58.410 --> 06:04.590
+And we're going to use room database in this project to save data into a database score like database.
+
+06:04.770 --> 06:11.160
+So Graham is very important because it allows us to create databases and save data into their base using
+
+06:11.160 --> 06:13.200
+a very simplistic approach.
+
+06:13.520 --> 06:13.820
+Right.
+
+06:13.830 --> 06:20.430
+So room abstracts out all of the things that we had to do before in order to save pieces of data into
+
+06:20.430 --> 06:25.410
+our database could have this Crosling annotation processing tool capped.
+
+06:25.500 --> 06:27.980
+It's a must have, as I noted there and so forth.
+
+06:27.990 --> 06:33.510
+So this is important to have again that you don't have to go and write this all of these yourself.
+
+06:33.540 --> 06:36.030
+You can, if you want, but that's not good use of your time.
+
+06:36.540 --> 06:38.670
+That's why you can go to the repo.
+
+06:38.670 --> 06:44.250
+Get rid of this project and you can go there and download great of files and you should be good to go.
+
+06:44.760 --> 06:45.100
+OK.
+
+06:45.120 --> 06:47.490
+Let's not forget, of course, to sync everything.
+
+06:51.130 --> 06:57.760
+And we have a problem here, it looks like the plug in says that plug in ID Hilton was not found in
+
+06:57.760 --> 07:02.120
+any of the following sources, so that means then it was my mistake.
+
+07:02.140 --> 07:03.790
+We have to go to the build out cradle.
+
+07:04.090 --> 07:07.030
+This next one there close this down.
+
+07:07.510 --> 07:14.170
+So where we actually added this compose version, we need to also add those other versions for hilt
+
+07:14.170 --> 07:14.680
+and room.
+
+07:14.860 --> 07:15.940
+That's that's very important.
+
+07:16.510 --> 07:17.560
+So I have all of that.
+
+07:18.400 --> 07:23.610
+I'm just going to get from my secret place and added there, right?
+
+07:24.340 --> 07:26.020
+And that's not the end of it.
+
+07:26.290 --> 07:31.150
+That means then in our dependency class path here, we need to add those as well.
+
+07:32.680 --> 07:35.890
+So first, let's go ahead and get to the health class path.
+
+07:36.070 --> 07:39.130
+I'm going to just add there, put that in line.
+
+07:39.400 --> 07:39.630
+All right.
+
+07:39.670 --> 07:40.450
+So that looks good.
+
+07:40.990 --> 07:42.760
+Let's go ahead now and try again.
+
+07:44.440 --> 07:48.490
+Well, it looks like everything went well, which is always a good thing, and we should be good.
+
+07:49.270 --> 07:49.540
+All right.
+
+07:49.540 --> 07:55.000
+So we should be good for now, at least in terms of our build.gradle, all the dependencies.
+
+07:55.480 --> 07:59.020
+Again, I have to emphasize, make sure you go to the repo.
+
+07:59.650 --> 08:02.950
+Get rid of this project to get all of these information.

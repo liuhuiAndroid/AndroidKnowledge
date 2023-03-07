@@ -1,0 +1,67 @@
+WEBVTT
+
+00:00.720 --> 00:06.210
+One of the thing about LAMDA expression is that there's a lot of simplifications that we can do, especially
+
+00:06.480 --> 00:10.940
+if you only have one parameter is passing, you notice here what we do here.
+
+00:10.950 --> 00:16.530
+We have this parameter and we're saying the return type is integer and then we have our lambda there
+
+00:16.530 --> 00:17.910
+and the body is there, OK?
+
+00:18.120 --> 00:20.780
+And this is the actual argument that we're passing.
+
+00:20.790 --> 00:26.400
+So we're using that and multiply by seven to get the cat result or Cat H in this case now, because
+
+00:26.400 --> 00:29.270
+we only have one parameter here, we can simplify this.
+
+00:29.280 --> 00:34.470
+If I remove this and remove the latter like this, all of a sudden, you can see that, of course,
+
+00:34.470 --> 00:38.610
+we no longer have age, but we do have access to this it right.
+
+00:38.640 --> 00:48.480
+It is implicitly given in our lambada to say there is a value we can use right ours, our argument to
+
+00:48.690 --> 00:49.920
+do our calculation here.
+
+00:50.040 --> 00:54.240
+So instead of age, I can just say it like this, it will know exactly what it is.
+
+00:54.390 --> 00:57.010
+In fact, if you have it over is going to say value parameter.
+
+00:57.030 --> 01:02.550
+It is an into type because indeed, that is what we passed along as a parameter.
+
+01:02.880 --> 01:03.210
+OK.
+
+01:03.420 --> 01:10.440
+And as it is right now, this will still work because we have one parameter only that's passed and so
+
+01:10.440 --> 01:16.260
+we can just omit right away the age or get rid of all of that and even the arrow as well.
+
+01:16.740 --> 01:19.350
+And just get that int in this case, going to be it.
+
+01:19.500 --> 01:25.460
+And we can go ahead and multiply by seven and we'll get still 21 when we call it here, let's say thirty
+
+01:25.470 --> 01:25.800
+three.
+
+01:26.010 --> 01:27.810
+There's also still good.
+
+01:28.230 --> 01:33.270
+So that is another aspect of landers that only have one parameter.

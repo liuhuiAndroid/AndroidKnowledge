@@ -1,0 +1,397 @@
+WEBVTT
+
+00:01.290 --> 00:05.850
+So next in know utils, I'm going to create a new util class.
+
+00:09.280 --> 00:10.450
+And it's going to be an object.
+
+00:13.310 --> 00:21.300
+It's called these constants that are good, and I'm going to create a few constants here, so the first
+
+00:21.300 --> 00:25.740
+constant is going to be a base URL.
+
+00:26.400 --> 00:27.690
+So what is the base URL?
+
+00:27.960 --> 00:34.050
+So this is important because we are going to use this with our HTP client, which is retrofit.
+
+00:34.620 --> 00:37.380
+So our base, your ours is going to be anything from.
+
+00:38.790 --> 00:39.170
+Oops!
+
+00:39.210 --> 00:40.980
+Let's go back from there.
+
+00:41.280 --> 00:45.510
+Used to pass all the way to our arc like this?
+
+00:47.150 --> 00:49.010
+We're going to add the forward slash as well.
+
+00:50.660 --> 00:53.570
+So I it gets added there like that.
+
+00:55.150 --> 00:58.880
+That's our base, we're going to need that and then I'm going to create Const. Val.
+
+01:03.610 --> 01:05.920
+And this is going to be our API.
+
+01:08.240 --> 01:14.000
+Key now, this should be your API key, so you will added there.
+
+01:15.140 --> 01:15.440
+OK.
+
+01:16.220 --> 01:16.640
+Very good.
+
+01:18.890 --> 01:20.900
+All right, so next, what are we going to do next?
+
+01:20.930 --> 01:24.790
+We are going to set up the actual weather API.
+
+01:24.800 --> 01:26.360
+So what is this?
+
+01:26.420 --> 01:29.530
+So let's go to our network and our network here.
+
+01:29.540 --> 01:33.140
+I'm going to create a new class codling class.
+
+01:33.710 --> 01:35.510
+And this is going to be an interface.
+
+01:39.040 --> 01:49.570
+Call this weather API, so as an interface, I want to make sure that this is indeed a singleton because
+
+01:49.570 --> 01:56.260
+I don't want this to be creating different objects or different instances of itself.
+
+01:56.290 --> 02:00.820
+This one should suffice and inside here I'm going to create.
+
+02:01.270 --> 02:03.790
+Of course, I want to use our retrofit.
+
+02:04.030 --> 02:07.030
+This is the beauty retrofit allows us to do certain things.
+
+02:07.180 --> 02:14.440
+So retrofit because we've already added retrofit in our project to this project here as a form of dependency.
+
+02:14.890 --> 02:16.030
+I can do something like this.
+
+02:16.150 --> 02:19.450
+I'm going to say at say, get, look at this.
+
+02:19.450 --> 02:22.150
+You can see this get is from retrofit to actually.
+
+02:22.870 --> 02:23.290
+Very good.
+
+02:23.890 --> 02:28.420
+So what this allows us to do is, as follow, we can pass certain values, certain parameters.
+
+02:28.750 --> 02:29.660
+So retrofit.
+
+02:29.660 --> 02:30.190
+10.
+
+02:31.410 --> 02:36.750
+Pick up those value to score screamers and do what needs to be done in this case to go fetch data,
+
+02:37.410 --> 02:37.680
+right?
+
+02:37.980 --> 02:42.660
+All of that is done in the background without us having to do anything manually.
+
+02:43.940 --> 02:44.200
+OK.
+
+02:44.600 --> 02:47.180
+So for the value here, it's a value.
+
+02:48.770 --> 02:50.920
+I'm going to pass what?
+
+02:50.930 --> 02:54.260
+Well, I'm going to pass the rest of our.
+
+02:55.010 --> 03:01.700
+If you look closely here, we said that the base URL is all the way up to Oracle like that and then
+
+03:01.910 --> 03:03.950
+the value going to pass is going to be all the way.
+
+03:04.310 --> 03:04.940
+All of this.
+
+03:06.790 --> 03:12.550
+Right, in fact, way before the exclamation point there, so all of that.
+
+03:13.660 --> 03:15.130
+It's going to be what we're going to pass there.
+
+03:15.490 --> 03:21.370
+So it's a rout per se they were retrofit will know to hit in order to get the information.
+
+03:22.780 --> 03:24.190
+OK, there we go.
+
+03:25.300 --> 03:31.720
+And then, of course, is going to be set inside of us, suspend or not inside, underneath or on top
+
+03:31.720 --> 03:33.700
+of underneath it suspend.
+
+03:34.270 --> 03:40.000
+This is going to be on top of suspend function, which is going to be get weather like this.
+
+03:40.900 --> 03:48.700
+This function will need to receive something right or in this case, it needs to return something right.
+
+03:49.030 --> 03:50.590
+What is there is going to be returning?
+
+03:50.860 --> 03:57.520
+Well, it's going to be returning this entire payload, as we saw earlier, which is all of this.
+
+03:58.990 --> 04:01.720
+And what is all of this quote unquote.
+
+04:01.750 --> 04:08.920
+All of this is represented by this object, which we renamed just a few minutes ago.
+
+04:09.490 --> 04:14.530
+If we go back to our models or model, they will go whether object.
+
+04:15.610 --> 04:20.470
+So this weather object encapsulates all of this.
+
+04:22.390 --> 04:27.700
+In fact, to make things even better, I'm going to rename a few things here, so instead of whether
+
+04:27.700 --> 04:33.760
+X, this is going to be, let's call this actually a let's change the name here.
+
+04:33.770 --> 04:35.500
+So this is going to be.
+
+04:38.290 --> 04:39.990
+Let's rename a refactor.
+
+04:43.450 --> 04:45.640
+That's going to be whether.
+
+04:48.270 --> 04:48.840
+Item.
+
+04:50.870 --> 04:51.280
+OK.
+
+04:52.340 --> 04:56.090
+And this is going to be whether object this is just.
+
+04:57.250 --> 05:04.480
+Renaming everything that way, we don't have issues of whether object, I think this is probably the
+
+05:04.480 --> 05:07.540
+best way to mimic everything, OK?
+
+05:08.980 --> 05:09.550
+Should be good.
+
+05:09.940 --> 05:12.280
+So now what are we saying?
+
+05:12.310 --> 05:19.420
+Our whether object it's going to be this, which means it's now going to mimic this whole payload.
+
+05:20.200 --> 05:21.790
+That's what we're going to be returning.
+
+05:22.990 --> 05:23.290
+Right.
+
+05:23.560 --> 05:26.530
+So that means then, OK, let's go back.
+
+05:27.280 --> 05:32.950
+Quick of all this, you know, whether API, I'm going to say that this is going to be tiny, whether
+
+05:32.950 --> 05:41.140
+object now in order for us to be able to go get something using retrofit in this case, this get whether
+
+05:41.140 --> 05:43.150
+it will need to have a few parameters.
+
+05:43.540 --> 05:45.110
+What are those parameters?
+
+05:45.130 --> 05:48.610
+Well, those are going to be the query types and say at query.
+
+05:48.610 --> 05:54.250
+Remember, all of this is retrofit, so make sure you get the query from retrofit like this and going
+
+05:54.250 --> 05:54.670
+to pass.
+
+05:54.670 --> 05:57.760
+The values that I want to query in this case is going to be a string.
+
+05:57.790 --> 05:59.560
+Q What is that coming from?
+
+05:59.570 --> 06:07.450
+If you look at when we are looking to pass in a query, there is an exclamation point there and then
+
+06:07.450 --> 06:09.910
+Q So that's exactly what will be happening here.
+
+06:09.910 --> 06:16.480
+So we say the Q, the query, the Q, well, what is the name going to be?
+
+06:16.660 --> 06:20.560
+Well, this is going to be query look, and that's going to be a retrofit query.
+
+06:20.890 --> 06:27.290
+And we know it's going to be a string type that we're going to be passing, which is going to be, I
+
+06:27.340 --> 06:29.770
+can't remember, it's going to be whatever we pass here.
+
+06:30.900 --> 06:32.640
+To query Portland.
+
+06:32.670 --> 06:33.330
+Moscow.
+
+06:33.990 --> 06:35.070
+Any city you want.
+
+06:37.230 --> 06:38.760
+So that is the setting up we're doing here.
+
+06:38.940 --> 06:42.840
+So in that case, then what do we need to do next?
+
+06:42.840 --> 06:50.460
+Is pass another query at query such remember retrofit query.
+
+06:50.880 --> 06:56.250
+And in this case, I'm going to pass the units, which means I want to look at the end here.
+
+06:56.670 --> 07:00.440
+The units has to be the same name that has to be passed along, right?
+
+07:00.450 --> 07:01.230
+This is very important.
+
+07:02.400 --> 07:08.190
+And so for units in this case here, I'm going to say it's going to be what units
+
+07:12.000 --> 07:13.980
+and is a string as well.
+
+07:14.670 --> 07:19.950
+And because I want to make sure that there is default value here, I'm going to say I want to be imperial
+
+07:20.610 --> 07:21.900
+as the default unit.
+
+07:22.620 --> 07:23.100
+OK.
+
+07:23.250 --> 07:24.770
+We need to pass something else.
+
+07:24.840 --> 07:27.400
+Yes, we need to pass the actual app.
+
+07:27.900 --> 07:36.090
+So I say query again, retrofit and remember its app ID has to be exactly the same here, app I.D. exactly
+
+07:36.090 --> 07:37.260
+as it is there.
+
+07:38.080 --> 07:38.340
+Right?
+
+07:38.940 --> 07:43.230
+So for query, they're going to say App ID.
+
+07:44.100 --> 07:44.730
+Exactly.
+
+07:44.730 --> 07:46.470
+Same App ID.
+
+07:46.800 --> 07:48.630
+Again, it's going to be a string.
+
+07:48.900 --> 07:54.980
+And in this case here, I'm just going to go ahead and pass our constant, which was our API key.
+
+07:54.990 --> 07:57.060
+And I believe I think it's say Constance.
+
+08:02.270 --> 08:07.180
+They would go or wonderful, Constance, from our app Utils.
+
+08:07.490 --> 08:08.570
+Make sure you get that one.
+
+08:09.320 --> 08:10.730
+To say API key like this?
+
+08:13.850 --> 08:21.050
+OK, so this weather API interface is going to be used with retrofit to be able to know exactly how
+
+08:21.050 --> 08:23.600
+to get the information when the get weather is called.
+
+08:23.900 --> 08:29.480
+It's going to know that the base URL we created earlier, it's going to be called that.
+
+08:29.780 --> 08:34.190
+And then we are going, in fact, that basically we haven't created yet.
+
+08:34.220 --> 08:37.540
+But this is the the second structure that is needed to function, right?
+
+08:37.580 --> 08:45.350
+So we have this path, if you will, daily and then we pass the cue for the actual city they want to
+
+08:45.350 --> 08:45.740
+add.
+
+08:45.980 --> 08:49.910
+And then it's going to be retrieved as a variable opacity unit in this case.
+
+08:50.050 --> 08:52.610
+Imperial is going to be the default in APD.
+
+08:52.850 --> 08:55.580
+Of course, we're going to be API key that we add in all constants.
+
+08:56.830 --> 09:01.660
+And of course, it's going to return a weather object, which indeed is all of this.
+
+09:04.310 --> 09:04.760
+All right.
+
+09:05.990 --> 09:09.230
+OK, so we're not done yet, but at least we're making good progress.

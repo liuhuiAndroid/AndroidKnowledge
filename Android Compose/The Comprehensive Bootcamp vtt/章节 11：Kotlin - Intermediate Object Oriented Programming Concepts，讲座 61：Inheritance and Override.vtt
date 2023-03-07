@@ -1,0 +1,613 @@
+WEBVTT
+
+00:00.090 --> 00:05.710
+One of the greatest things about object oriented programming is that we can leverage our objects or
+
+00:05.730 --> 00:06.780
+classes that way.
+
+00:06.960 --> 00:10.890
+We don't have to repeat the same classes to create other classes.
+
+00:11.340 --> 00:19.170
+So there is this concept called inheritance, which allows us to inherit or mirror other classes right
+
+00:19.440 --> 00:19.910
+that way.
+
+00:19.920 --> 00:26.500
+For instance, if I know that one class has the base properties as well as behaviors as the one class
+
+00:26.500 --> 00:34.770
+that I want to create next, I can't inherit those properties behaviors and still add my own behaviors
+
+00:34.770 --> 00:35.970
+and properties if need be.
+
+00:36.390 --> 00:38.070
+So let's look at this class, right?
+
+00:38.340 --> 00:41.820
+Very similar to what we have created car class.
+
+00:42.150 --> 00:49.290
+We pass in our first constructor here, primary constructor column and model and pass as many as we
+
+00:49.290 --> 00:49.980
+want, right?
+
+00:50.130 --> 00:54.360
+We have some functions, some class functions, speed and have drive.
+
+00:55.400 --> 01:03.110
+Now, imagine that we want to create a truck, if you think of a truck, a truck in a real world is
+
+01:03.110 --> 01:04.820
+a car in a way.
+
+01:04.940 --> 01:10.130
+So if I see a truck, truck has common attributes and behaviors.
+
+01:10.430 --> 01:13.130
+So in this case, truck could inherit from car.
+
+01:14.330 --> 01:19.290
+I think this as an example, this concept in program, it's called inheritance, so we're going to inherit
+
+01:19.500 --> 01:23.730
+properties and behaviors of our parent class in this case.
+
+01:23.910 --> 01:28.260
+Car would be the parent class in truck, the child class.
+
+01:28.440 --> 01:31.590
+Let's go ahead and take a look and coat how this would work.
+
+01:32.720 --> 01:36.380
+Now, before we move forward, I still have our class car here.
+
+01:36.770 --> 01:43.160
+I want to show you something every class that we create in codling actually inherits from a class called
+
+01:43.160 --> 01:47.180
+any vehicle like this, unless they're calling to say that inherits.
+
+01:47.420 --> 01:53.150
+And I can say any what is any well, any is a root of Kotlin class hierarchy.
+
+01:53.390 --> 01:59.540
+So every class has any as its super class, as it as its parent class.
+
+01:59.840 --> 02:04.620
+But because as it says here, every class has inherited from any.
+
+02:05.000 --> 02:09.560
+We don't have to specify any whenever we create a class because it is already implied.
+
+02:09.560 --> 02:11.720
+I have something that you may have observed.
+
+02:12.380 --> 02:19.790
+So you notice that before we said something like this, whenever we wanted to create, let's say a variable
+
+02:19.790 --> 02:21.160
+would say foul over.
+
+02:21.170 --> 02:26.720
+I'm going to just use vowel because that's usually the recommended way and I'm going to say name.
+
+02:27.560 --> 02:28.130
+What do we do?
+
+02:28.130 --> 02:31.040
+Is in fact a C here says name a string hit.
+
+02:31.040 --> 02:31.430
+Enter.
+
+02:31.910 --> 02:34.100
+I can say call in string.
+
+02:34.340 --> 02:35.210
+What does that mean?
+
+02:36.400 --> 02:37.540
+Huh, interesting.
+
+02:38.080 --> 02:40.960
+This, you may have imagined, could mean.
+
+02:41.260 --> 02:43.990
+I'm not sure that's just speculation here.
+
+02:44.110 --> 02:47.890
+So to get you thinking it could mean that name as a type.
+
+02:47.920 --> 02:50.770
+It's actually going to be inheriting from this string.
+
+02:51.730 --> 02:55.240
+Class is a true if you hover over, you see.
+
+02:55.990 --> 02:59.680
+This is a public final class string.
+
+03:01.190 --> 03:01.820
+Interesting.
+
+03:02.150 --> 03:07.850
+That means then when we creating all when we are creating variables and creating the types of those
+
+03:07.850 --> 03:12.920
+variables string, in this case, that means they were inheriting from string.
+
+03:12.920 --> 03:15.050
+So name now is indeed a string.
+
+03:15.080 --> 03:19.700
+That's why we can say name a search in that and we can access all of these methods.
+
+03:19.760 --> 03:23.690
+These are methods that come from our string class.
+
+03:24.740 --> 03:30.770
+Now, let's say command click or in this case, control be for Windows or Linux.
+
+03:30.780 --> 03:32.300
+You can see that's what you know.
+
+03:32.330 --> 03:34.340
+This can sound very daunting.
+
+03:34.340 --> 03:36.370
+It's a lot of code that we may not understand.
+
+03:36.740 --> 03:41.510
+But one thing I want you to look at it says public class string, of course, inherits some other classes
+
+03:41.510 --> 03:42.650
+there, but that's not a problem.
+
+03:42.950 --> 03:44.060
+But look what we have here.
+
+03:44.210 --> 03:48.740
+We have a few methods or functions in this case, right?
+
+03:49.190 --> 03:54.920
+Public operator fun plus all of these functions and overrides and so forth.
+
+03:54.950 --> 03:55.730
+We'll talk about those.
+
+03:56.120 --> 04:01.370
+All of these are available to us because these is a class.
+
+04:01.380 --> 04:06.890
+And if we inherit from this class, it means we have access to that plus length.
+
+04:07.310 --> 04:15.050
+Get some sequence compared to we can access those if I say name because a string, as we said, say
+
+04:15.050 --> 04:18.050
+plus c there is plus there is to string.
+
+04:18.320 --> 04:21.020
+There's length there's get in many others.
+
+04:22.640 --> 04:24.320
+OK, compared to and so forth.
+
+04:24.620 --> 04:29.450
+So these are methods that come, of course, with our string class.
+
+04:30.050 --> 04:32.510
+That was something that I want you to think about.
+
+04:33.620 --> 04:33.980
+All right.
+
+04:34.850 --> 04:37.190
+So let's go ahead and create yet another class here.
+
+04:38.660 --> 04:42.110
+Class, call this truck like this.
+
+04:42.560 --> 04:49.640
+Now, if I want truck to inherit from car, I would have to say, call in, say, car like that.
+
+04:51.080 --> 04:56.090
+Now we're going to have an issue you have over is going to say, well, changed constructor invocation
+
+04:56.300 --> 04:57.200
+and also make.
+
+04:57.200 --> 05:01.370
+So there's a lot of things here, say to add constructor and make heart open.
+
+05:01.580 --> 05:09.230
+The first thing we need to do is all classes in Kotlin are closed quote, meaning we can't really inherit
+
+05:09.230 --> 05:09.740
+from them.
+
+05:09.980 --> 05:17.060
+So we'll have to say open like that for it to be able to for anybody to be able to inherit from that
+
+05:17.060 --> 05:17.450
+class.
+
+05:17.840 --> 05:23.960
+If you have over, you will see that we no longer have that issue because the class is open.
+
+05:24.110 --> 05:29.480
+However, we have other problems because here it says we need to change the constructor invocation.
+
+05:30.950 --> 05:32.570
+Let's click here and see what happens.
+
+05:33.200 --> 05:33.650
+Aha.
+
+05:34.040 --> 05:34.790
+And there we go.
+
+05:36.280 --> 05:40.930
+We still have a problem, however, over what's going to happen here at constructor parameter color.
+
+05:41.110 --> 05:42.340
+And we continue doing that.
+
+05:42.800 --> 05:45.220
+But let's go back to what we really want to make sure to do.
+
+05:45.460 --> 05:48.340
+So track, we're going to create a constructor, right?
+
+05:48.460 --> 05:49.360
+A primary constructor.
+
+05:49.450 --> 05:55.450
+Such and then we're going to just say, inherits Colin from car like this.
+
+05:55.900 --> 06:00.250
+But the problem here is that will inherit the truck from car.
+
+06:00.250 --> 06:02.230
+As you see here, this click here.
+
+06:02.470 --> 06:08.350
+We're going to say we will have to add constructor parameters for from car string because we are inheriting
+
+06:08.350 --> 06:12.280
+from this class car, which contains these two parameters.
+
+06:12.980 --> 06:16.810
+OK, so I'm going to click there and there you have it.
+
+06:17.110 --> 06:20.650
+So now truck will inherit from car, but he will have to.
+
+06:20.680 --> 06:26.140
+When we inherited from car, that means we have to, of course, have to get in, pass along the color
+
+06:26.140 --> 06:26.710
+and model.
+
+06:26.920 --> 06:38.140
+So check this out when you come here, take truck found truck is equal to a truck like this, and you
+
+06:38.140 --> 06:42.160
+can see, of course, that we have to pass color magenta.
+
+06:42.250 --> 06:44.500
+What a beautiful color and a model.
+
+06:44.710 --> 06:46.750
+I'm going to say if.
+
+06:48.240 --> 06:52.530
+16, I think something like that, I don't know a lot about trucks or cars, but that's fine.
+
+06:52.560 --> 06:54.150
+We're just trying to figure things out here.
+
+06:54.630 --> 06:54.920
+All right.
+
+06:55.110 --> 06:55.800
+One, they print.
+
+06:56.070 --> 07:02.730
+Now that I have my truck, I can say, truck like this dot and I can invoke drive and the speed, as
+
+07:02.730 --> 07:10.560
+well as model and color because we have inherited from car notice in our truck class here closes down.
+
+07:12.040 --> 07:13.210
+We don't even have a body.
+
+07:14.230 --> 07:15.320
+We don't have a body.
+
+07:15.340 --> 07:19.480
+We could put something, but because we are inheriting we could just not have a body.
+
+07:19.480 --> 07:25.000
+In fact, actually a class could just not have a body, and that's totally fine and we'll talk about
+
+07:25.000 --> 07:26.260
+data classes and so forth.
+
+07:26.410 --> 07:31.630
+But in this case here, notice that I don't have a body where I'm actually creating or have created
+
+07:31.630 --> 07:32.830
+speed or drive.
+
+07:33.160 --> 07:39.580
+Yet I have access to drive, speed, model color, all the properties and the behaviors.
+
+07:41.100 --> 07:42.010
+OK, that's real good.
+
+07:42.030 --> 07:44.580
+So if I say drive, for instance.
+
+07:45.780 --> 07:46.530
+What's going to happen?
+
+07:46.590 --> 07:47.970
+I'm going to run.
+
+07:48.390 --> 07:52.190
+OK, so we have magenta is not green, right?
+
+07:52.200 --> 07:56.820
+Because we have this initial it to block that was just comedy.
+
+07:56.870 --> 07:57.630
+So that's fine.
+
+07:57.630 --> 07:58.470
+It works fine.
+
+07:59.040 --> 08:01.380
+And Excelsior Drive, vroom.
+
+08:01.680 --> 08:07.830
+However, this drive room here is indeed drive from the same drive room from our car.
+
+08:08.340 --> 08:14.160
+What if you wanted to make the drive to be a little bit different in this case, because the way a track
+
+08:14.190 --> 08:19.260
+would drive, we can assume it's going to be different than the way a car would drive.
+
+08:20.310 --> 08:20.990
+How do we do that?
+
+08:21.000 --> 08:23.270
+How do we customize this truck?
+
+08:23.280 --> 08:29.970
+So it actually becomes its own entity, even though it inherited all of the properties from our car
+
+08:29.970 --> 08:30.360
+class?
+
+08:31.050 --> 08:33.990
+Well, there's this concept called overwriting.
+
+08:34.290 --> 08:36.370
+So I'm going to put a body here.
+
+08:36.900 --> 08:39.390
+I'm going to override like this.
+
+08:40.100 --> 08:41.790
+OK, what is there going to be overwriting?
+
+08:42.180 --> 08:44.910
+I'm going to override the speed function.
+
+08:44.940 --> 08:46.230
+Now we have a problem here.
+
+08:46.350 --> 08:53.550
+When we override, we should be overwriting what already is there, but we have no access to speed to
+
+08:53.550 --> 09:00.900
+override it because when we inherit, we actually have to also stay open to make sure that this is accessible
+
+09:01.020 --> 09:02.010
+for us to override.
+
+09:02.220 --> 09:03.280
+So let's go back here.
+
+09:03.310 --> 09:08.340
+I'm going to say override fun speed like this.
+
+09:08.520 --> 09:12.450
+If you hover over is going to say change function signature to find the speed, right?
+
+09:12.450 --> 09:16.150
+Because that's what we are supposed to pass, OK?
+
+09:16.470 --> 09:17.640
+Speed, mach speed.
+
+09:18.090 --> 09:20.790
+And I can also go and override another function.
+
+09:21.090 --> 09:22.440
+But is that going to be possible?
+
+09:22.470 --> 09:24.810
+This drive, which is the one that I really want to override?
+
+09:25.020 --> 09:31.020
+We're not going to be able to override this because yes, you guessed it will stay open for us to be
+
+09:31.020 --> 09:31.770
+able to override.
+
+09:31.770 --> 09:34.170
+So I'm going to say it can override.
+
+09:35.340 --> 09:39.630
+Now we have options there to just click override like that.
+
+09:40.440 --> 09:41.670
+Now something happened here.
+
+09:41.790 --> 09:46.260
+When we use our code suggestion here, it's called super to drive.
+
+09:46.260 --> 09:47.670
+What is this Super R?
+
+09:47.850 --> 09:52.550
+If you highlight super, it's highlighting what car super.
+
+09:52.560 --> 09:56.910
+In this case, it's calling the super class, which is the parent class.
+
+09:57.300 --> 10:02.220
+It's saying here initially, if we don't change the behavior here, it's going to go and call this super
+
+10:02.220 --> 10:07.770
+to drive the method from our car, the parent class, which in this case is not what we want.
+
+10:08.160 --> 10:16.830
+What we want is to have our own unless it print, end and say vroom and like this like a truck.
+
+10:17.340 --> 10:19.560
+Look what's going to happen if we run this time?
+
+10:19.560 --> 10:26.640
+Remember before we just had drive from drive from this last one is indeed from our truck object.
+
+10:27.210 --> 10:27.570
+OK.
+
+10:29.200 --> 10:30.940
+I'm going to run this once again.
+
+10:31.000 --> 10:31.900
+You'll see the difference.
+
+10:32.180 --> 10:32.720
+Aha.
+
+10:33.200 --> 10:37.600
+Now when we say truck, we create the object truck.
+
+10:37.810 --> 10:40.600
+We invoke the drive method or function.
+
+10:40.900 --> 10:41.620
+What's going to happen?
+
+10:41.620 --> 10:45.970
+It's not going to go ahead and call this drive method.
+
+10:47.260 --> 10:48.010
+Function here.
+
+10:48.950 --> 10:54.740
+We are going to override it, that's why we have this keyboard override the function, and it's going
+
+10:54.740 --> 10:58.130
+to call its own track function inside here.
+
+10:58.890 --> 11:00.620
+Can I call this from like a truck?
+
+11:01.310 --> 11:09.560
+And this, my friends, is that revolutionary because now we have a lot of flexibility of what we can
+
+11:09.560 --> 11:09.830
+do.
+
+11:10.130 --> 11:12.110
+In fact, we did that with drive.
+
+11:12.110 --> 11:13.370
+We can do the same thing with speed.
+
+11:13.760 --> 11:17.510
+I can just say something like this print, Elon.
+
+11:17.750 --> 11:20.840
+Full speed is equal to men.
+
+11:20.840 --> 11:24.170
+Speed times, max speed.
+
+11:24.450 --> 11:26.840
+I'm like, There's just to be a little bit dramatic.
+
+11:28.820 --> 11:31.760
+Truck full speed.
+
+11:32.300 --> 11:35.760
+And I'm going to say full speed as such.
+
+11:36.410 --> 11:42.860
+Now if I go off here and say truck that full speed or I said speed, right?
+
+11:44.330 --> 11:53.110
+The minimum speed like that of 20 OK and max speed of 90.
+
+11:54.110 --> 11:55.790
+What's going to happen is go ahead and run.
+
+11:58.990 --> 12:03.490
+It's going to say vroom like a truck truck, full speed 18:00.
+
+12:04.860 --> 12:08.280
+And of course, we still have car information and everything.
+
+12:08.520 --> 12:09.190
+And there you have it.
+
+12:09.210 --> 12:16.710
+So we in this case, we inherited from car, but most importantly, we've changed a few things.
+
+12:16.740 --> 12:23.430
+The behaviors of our truck should obviously be different from the behaviors of our parent or superclass
+
+12:23.640 --> 12:24.060
+car.
+
+12:24.360 --> 12:24.680
+OK?
+
+12:24.850 --> 12:30.690
+As another exercise it, think of a Real-World example that you can use to create this inheritance,
+
+12:30.690 --> 12:31.600
+this connection.
+
+12:31.620 --> 12:31.920
+Right?
+
+12:32.310 --> 12:34.710
+So always think in terms of nouns.
+
+12:35.040 --> 12:35.350
+Right?
+
+12:35.700 --> 12:41.790
+So you could create a class called book, have properties and behaviors, and then you can have a magazine
+
+12:41.790 --> 12:46.860
+inherit from book is really a magazine is a type of book, if you will.
+
+12:47.190 --> 12:47.490
+All right.
+
+12:47.490 --> 12:50.610
+Go ahead and give that a try and I'll see you next.

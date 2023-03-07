@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.840 --> 00:07.980
+Another important concept here is when we get notes, as it is just a list of notes, that's fine,
+
+00:07.980 --> 00:13.920
+but we're going to have a lot of issues because remember we are in compose, so we need a way in which
+
+00:13.920 --> 00:16.740
+we can have some sort of state, right?
+
+00:17.040 --> 00:21.530
+Remember mutable state so we could go and say something like this?
+
+00:21.960 --> 00:24.430
+Wrap all of this into a mutable state.
+
+00:24.510 --> 00:26.250
+Mutable what's immutable list?
+
+00:26.910 --> 00:28.410
+Now this has to be mutable.
+
+00:30.090 --> 00:38.220
+State such and then put it all inside there and call it good.
+
+00:38.310 --> 00:43.680
+That means then whenever we say get notes, the list is going to be state because if we put in inside
+
+00:43.680 --> 00:44.490
+of a political state.
+
+00:45.610 --> 00:54.040
+Now, it would work in any other case, however, since we are talking about room so far, this will
+
+00:54.040 --> 00:56.050
+give us a lot of headaches, so this wouldn't work.
+
+00:56.710 --> 01:02.710
+So we need another data structure or another structure that will help us get what we need in this case.
+
+01:02.950 --> 01:11.860
+Give us the state right to the ability to have other functions or other classes to listen to the changes
+
+01:11.860 --> 01:13.510
+that we have here in our data.
+
+01:14.020 --> 01:20.170
+So what we can do actually going to use the flow flow, as you can see here, we need to go get this
+
+01:20.170 --> 01:20.570
+flow.
+
+01:20.920 --> 01:24.490
+And interesting here is flow and pass any type.
+
+01:24.610 --> 01:28.550
+In this case, the list of notes is a x XCOR routines flow.
+
+01:29.170 --> 01:30.370
+We just talked about Cortines.
+
+01:30.380 --> 01:31.450
+Let's read a little bit more.
+
+01:31.600 --> 01:32.670
+So is an async.
+
+01:32.680 --> 01:34.960
+You can't see everything, but let's see.
+
+01:36.810 --> 01:38.880
+First of all, let's go ahead and import it.
+
+01:39.010 --> 01:41.250
+It has to be it in flow.
+
+01:42.520 --> 01:44.260
+They put this in your line, so hopefully.
+
+01:45.650 --> 01:52.640
+If I have over here, you can see I have a lot of information again, because this is a topic that it's
+
+01:52.940 --> 01:56.750
+it's complex in nature, but the idea is the same.
+
+01:57.170 --> 02:04.430
+It says here that flu as a class, as a protein is in a synchronous data stream that is sequentially
+
+02:04.430 --> 02:08.030
+emits values and completes normally or with exceptions, right?
+
+02:08.330 --> 02:14.540
+And goes on in to talk about everything there's called flow and all sorts of things, so it can always
+
+02:14.540 --> 02:16.100
+go ahead and learn more about it.
+
+02:16.610 --> 02:24.170
+What this means, really is that we can use this data structure, this structure to sequentially pass
+
+02:24.170 --> 02:29.990
+data that can be listened to, just like mutable state and so forth, but with a little bit more information,
+
+02:30.440 --> 02:32.900
+with a little bit more things that we can do with it.
+
+02:33.320 --> 02:38.240
+But most importantly, the key word here is asynchronous, which means it's not synchronized.
+
+02:38.390 --> 02:44.090
+This processes the streams that are sending, which means it's not synchronized a synchronously.
+
+02:44.990 --> 02:50.000
+It's really important because now we can have two processes going and passing data here, and this is
+
+02:50.000 --> 02:53.750
+waiting, and then this goes first and then this waits and goes second.
+
+02:53.750 --> 02:59.180
+And we have this a synchronicity that's important, especially when you talk about the UI thread because
+
+02:59.180 --> 03:01.310
+we don't want to obstruct the UI thread ever.
+
+03:01.550 --> 03:06.680
+And so flow this data structure here is what are we going to be using?
+
+03:06.680 --> 03:12.770
+And in fact, it's what is recommended to use, especially when it comes to war room database.
+
+03:13.430 --> 03:13.910
+It makes sense.
+
+03:13.940 --> 03:14.210
+OK.
+
+03:14.300 --> 03:18.230
+So instead of mutable list, you can make it work or life data, the other ones.
+
+03:18.230 --> 03:22.460
+But flow seems to work perfectly, especially working with compose.

@@ -1,0 +1,364 @@
+WEBVTT
+
+00:00.360 --> 00:03.780
+So back to our my first compose, which we created before.
+
+00:03.810 --> 00:10.590
+If you've been following us, so it is indeed a composed project, and then we attached a houghtaling
+
+00:10.830 --> 00:11.550
+module.
+
+00:11.610 --> 00:17.760
+So if you are shaky on how to create a control module, just go back to the previous videos where we're
+
+00:17.760 --> 00:18.690
+setting things happen.
+
+00:18.990 --> 00:24.190
+I show you how to create a codling module inside of a compose or Android application.
+
+00:24.210 --> 00:30.150
+It's just the easy way for us to learn cuddling separately, but still inside of the main Android project,
+
+00:30.180 --> 00:31.290
+OK in Android Studio.
+
+00:31.650 --> 00:37.380
+And if you also think following us, you recognize that we also have another options to run cuddling
+
+00:37.380 --> 00:39.420
+code, which is cuddling playground.
+
+00:39.420 --> 00:45.000
+So if you go to Google and type in cuddling playground, you will have playground as name and play where
+
+00:45.000 --> 00:48.030
+you can start typing code and run on the browser.
+
+00:48.180 --> 00:54.750
+So those are two options, and I chose this option for now, which is to use Android Studio, but you
+
+00:54.750 --> 00:57.960
+could very well just use Kaleen Playground.
+
+00:58.050 --> 00:59.430
+Whichever way works fine.
+
+00:59.760 --> 01:01.050
+OK, so here we are.
+
+01:01.260 --> 01:03.150
+As you can see here we have the main entry point.
+
+01:03.190 --> 01:04.460
+Fun main.
+
+01:04.470 --> 01:10.320
+And then we have this print, which if we run, is going to print, which if we run this one again,
+
+01:10.860 --> 01:12.690
+it should print hello cuddling.
+
+01:12.900 --> 01:17.790
+Now the other thing what I'm going to do, I'm just going to pin this console here to the right.
+
+01:17.790 --> 01:19.410
+So it's much easier for us.
+
+01:19.680 --> 01:20.580
+So I'm going to move.
+
+01:21.070 --> 01:23.610
+I say right top like this.
+
+01:23.610 --> 01:25.080
+So it's side by side.
+
+01:25.410 --> 01:26.310
+Let's close it down.
+
+01:26.310 --> 01:29.700
+So have more space and maybe make this little smaller.
+
+01:30.260 --> 01:31.810
+It doesn't really need that much.
+
+01:31.830 --> 01:35.550
+OK, we can adjust as we go at the center of any programming language.
+
+01:35.760 --> 01:37.530
+There is what we call variables.
+
+01:37.980 --> 01:42.270
+So variable essentially is a container that holds a value at certain point in time.
+
+01:42.480 --> 01:43.710
+So how do we create a variable?
+
+01:43.740 --> 01:46.320
+Well, there are two ways to create variables in Kotlin.
+
+01:46.320 --> 01:51.210
+In fact, there are many different ways when you look into types and so forth, but a basic variable
+
+01:51.420 --> 01:52.550
+that can hold something.
+
+01:52.560 --> 01:57.300
+We start by saying far and you can see as a type look back and say VAR.
+
+01:57.300 --> 02:01.740
+You can see that the Edee and or studio knows exactly what you trying to do.
+
+02:01.740 --> 02:05.640
+At least it looks at what you're trying to do and gives you some suggestions.
+
+02:06.030 --> 02:12.780
+So we say VAR in in this case, let's say name, and then we assign this variable to something.
+
+02:13.040 --> 02:13.300
+OK.
+
+02:13.320 --> 02:15.850
+In this case, we can assign cuddling.
+
+02:16.290 --> 02:17.520
+I such as I.
+
+02:18.270 --> 02:23.850
+So what we're saying now is that name the variable name, a bucket contains codling string.
+
+02:23.890 --> 02:27.060
+Now we know this is a string because we have double quotes inside.
+
+02:27.060 --> 02:29.430
+We have characters, which is a string in this case.
+
+02:29.910 --> 02:34.440
+Now, to invoke this variable so that we can print the content of this variable.
+
+02:34.470 --> 02:37.060
+Very simply, we can just get rid of all of that.
+
+02:37.110 --> 02:38.300
+Now it's very simple.
+
+02:38.310 --> 02:41.730
+All we do, we just give it all that and say name as such.
+
+02:41.730 --> 02:47.190
+And you can see it even gives us the suggestion of the variable in this case where we were in a run.
+
+02:47.340 --> 02:49.800
+We should see Kotlin works fine.
+
+02:50.070 --> 02:55.440
+Now, if we wanted to do something more extravagant, meaning we want to interpolate or concatenate
+
+02:55.440 --> 03:00.600
+or kind of have a variable instead of a string, let's say we want to say hello and then pass in the
+
+03:00.600 --> 03:02.280
+values of this name variable.
+
+03:02.400 --> 03:09.030
+To do that in Coughlan, you have to use the dollar sign to say, now I am interpolating or I want to
+
+03:09.030 --> 03:14.340
+invoke an external variable that is going to be run instead of this string.
+
+03:14.610 --> 03:17.360
+So if I type name, then what's going to happen?
+
+03:17.370 --> 03:18.450
+It's going to run again.
+
+03:18.720 --> 03:21.130
+We should see now say hello, codling.
+
+03:21.360 --> 03:21.700
+Right?
+
+03:21.720 --> 03:27.960
+So whenever you want to invoke a variable that has something we must interpolate, or you must add the
+
+03:27.960 --> 03:31.580
+dollar sign and the variable name, you will notice something.
+
+03:31.840 --> 03:33.910
+We have this yellow squiggly line.
+
+03:33.930 --> 03:35.400
+What does that mean if you have over?
+
+03:35.520 --> 03:40.110
+It will say that variable is never modified and can be declared immutable using Val.
+
+03:40.290 --> 03:41.130
+What's all about?
+
+03:41.340 --> 03:46.230
+Well, the compiler is trying to help us out is saying, Well, OK, so this variable here you said
+
+03:46.230 --> 03:52.350
+its name and passed in a value that's being held inside of this packet, this variable.
+
+03:52.680 --> 03:53.940
+But he never really changed it.
+
+03:53.940 --> 03:55.620
+So this is kind of redundant.
+
+03:55.620 --> 03:58.920
+Make it variable or far we should change it.
+
+03:59.070 --> 03:59.420
+File.
+
+03:59.670 --> 04:06.480
+This tells us there's another type of variable in this case that we can use that is not mutable, which
+
+04:06.480 --> 04:09.050
+means cannot be changed because that's what is saying here.
+
+04:09.060 --> 04:10.920
+It's like, well, this you never changed it.
+
+04:11.070 --> 04:17.940
+Meaning I never came here and said, name is equal to something else, such as John or something like
+
+04:17.940 --> 04:18.180
+that.
+
+04:18.540 --> 04:25.520
+If you do that notice now the Squiggly Line is gone because you say, OK, you are OK because it says
+
+04:25.530 --> 04:25.610
+it.
+
+04:25.630 --> 04:26.790
+OK, that makes sense.
+
+04:26.790 --> 04:28.980
+You created this variable, right?
+
+04:29.220 --> 04:30.900
+And you modified it.
+
+04:30.900 --> 04:32.580
+So that's fine to use VAR.
+
+04:32.880 --> 04:40.470
+Now, if you run this, what's going to happen is the compiler takes the last assigned item or contents
+
+04:40.470 --> 04:42.620
+of that variable, so it's no longer Kotlin.
+
+04:42.630 --> 04:48.470
+In fact, that's how you can see here in this case that Kotlin is great out because it says is redundant
+
+04:48.690 --> 04:51.360
+because we actually changed it right after that.
+
+04:51.810 --> 04:52.110
+OK.
+
+04:52.320 --> 04:56.760
+So whenever you're creating variables that you know you're not going to change them, you should.
+
+04:56.940 --> 04:59.610
+Instead of using VAR, you should use a vowel.
+
+04:59.880 --> 05:04.950
+So in this case, I'm going to get rid of this would say foul my name, just, for instance, just to
+
+05:05.280 --> 05:08.400
+change a few things, and I'm going to say John.
+
+05:08.760 --> 05:12.720
+So now Val will have no problem fact if I comma this out.
+
+05:13.170 --> 05:15.090
+Forward slash like that notice.
+
+05:15.090 --> 05:17.090
+We have a problem because naming is no longer available.
+
+05:17.100 --> 05:20.310
+So let's change that what we call a hue to my name.
+
+05:20.520 --> 05:27.060
+And then all this good vowel is fine, and we don't see that squiggly line to say this should be vowel
+
+05:27.150 --> 05:28.430
+because it isn't in a vowel.
+
+05:28.440 --> 05:29.250
+We never change now.
+
+05:29.520 --> 05:33.480
+This way, this is the mutable variable type.
+
+05:33.570 --> 05:36.090
+This is a mutable meaning you can change.
+
+05:36.090 --> 05:43.290
+And I'll show you if I tried to say my name and set it to something notice right away, the compiler
+
+05:43.290 --> 05:45.790
+is going to say, Well, well, well, well, well, you can.
+
+05:45.790 --> 05:46.920
+I do that right?
+
+05:46.920 --> 05:49.440
+You can't reassign something that is immutable.
+
+05:49.650 --> 05:50.830
+You cannot change them.
+
+05:50.860 --> 05:52.170
+They cannot be changed.
+
+05:52.500 --> 05:55.380
+So in this case, you hover over is going to say change 2FA.
+
+05:55.620 --> 05:59.910
+If you click Change 2FA, then it's changed 2FA, which means then we are allowed to do this.
+
+06:00.150 --> 06:02.580
+OK, I'm going to just go back to what we had before.
+
+06:02.760 --> 06:08.040
+OK, so these are the two main types that we need to be aware of.
+
+06:08.280 --> 06:08.920
+Oh, OK.
+
+06:08.940 --> 06:10.410
+This is mutable.
+
+06:10.800 --> 06:17.160
+And you when I say file when we use vowel, that is immutable as such.
+
+06:17.500 --> 06:20.580
+In fact, I'm just going to get rid of those because that's going to give us an error.
+
+06:20.850 --> 06:21.360
+And there you have it.
+
+06:21.360 --> 06:26.520
+So you learn two things here mutable and immutable ways to create variables.
+
+06:26.610 --> 06:33.150
+And the Kotlin documentation says, whenever in doubt, just use vowel like immutable.
+
+06:33.600 --> 06:35.640
+That's what they recommended to always use.
+
+06:35.640 --> 06:37.800
+But there are times you want to change them right away.
+
+06:38.040 --> 06:42.330
+Those variables, then in those cases, of course, you want to use a far.

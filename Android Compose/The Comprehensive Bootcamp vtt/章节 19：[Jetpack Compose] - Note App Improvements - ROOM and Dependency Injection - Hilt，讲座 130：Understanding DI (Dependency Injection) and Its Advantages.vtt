@@ -1,0 +1,445 @@
+WEBVTT
+
+00:00.510 --> 00:06.510
+To illustrate a dependence injection and coddling, I'm going to create a few a couple classes here
+
+00:06.510 --> 00:07.560
+so we can take a look.
+
+00:07.870 --> 00:13.050
+OK, so we're going to use the same example of car, an engine that we talked about in previous video.
+
+00:13.140 --> 00:16.830
+So you will also notice that I'm using codling playground here.
+
+00:17.340 --> 00:24.330
+It's an online calling text editor that allows you to write some code and compile and right now in real
+
+00:24.330 --> 00:26.010
+time that this case here can click here.
+
+00:26.370 --> 00:28.120
+You can see hello.
+
+00:28.350 --> 00:34.680
+It's printing there instead of using an ID, such an Android studio or any IDs or a text editor was
+
+00:34.680 --> 00:34.950
+there.
+
+00:34.980 --> 00:37.740
+This is simple and quick to get to.
+
+00:37.980 --> 00:40.820
+You're free to use any other text editor is there.
+
+00:41.130 --> 00:41.940
+What are we going to do here?
+
+00:41.940 --> 00:48.150
+So I'm going to get rid of this first and right below here, I'm going to create a class called car.
+
+00:48.370 --> 00:49.230
+OK, it's very simple.
+
+00:49.650 --> 00:55.020
+In this class, we're going to have a function, this function, I'm going to call start car.
+
+00:55.290 --> 00:57.750
+And this one would say print l end.
+
+01:00.010 --> 01:00.370
+There we go.
+
+01:00.590 --> 01:09.050
+It's a first class, and then we understand that a car needs an engine engine as such an hourglass here.
+
+01:09.070 --> 01:12.640
+I'm going to say start Chris.
+
+01:13.180 --> 01:16.390
+We understand also that car depends on engine.
+
+01:17.200 --> 01:22.480
+So in this case here, because we know before we instantiate a car, we will need to have that engine.
+
+01:23.200 --> 01:31.210
+So of course, what we could do is inside of our car class would create a vowel, write a property that
+
+01:31.210 --> 01:32.710
+is going to be our engine.
+
+01:33.040 --> 01:42.130
+So in this case, here I am injecting a dependency into our car, in this case, the engine to satiate
+
+01:42.130 --> 01:46.030
+our engine section inside of our star car.
+
+01:46.060 --> 01:47.060
+I can even append.
+
+01:47.080 --> 01:57.010
+I can say something like this engine dot start because I have an engine object in our car that we inject
+
+01:57.030 --> 02:00.130
+injected that dependency so we can invoke the actual engine.
+
+02:00.400 --> 02:04.870
+I'm going to say, for instance, Engine X like that.
+
+02:05.320 --> 02:05.590
+All right.
+
+02:05.710 --> 02:14.170
+So we can go up here and say, for instance, vowel car sequel to Car Right instantiated and it can
+
+02:14.170 --> 02:16.540
+just go ahead and car start.
+
+02:18.220 --> 02:19.030
+Car like this?
+
+02:19.320 --> 02:23.700
+Actually put a body so that we don't end up with shoes.
+
+02:24.640 --> 02:25.810
+Our functions here.
+
+02:26.140 --> 02:26.440
+All right.
+
+02:26.450 --> 02:37.270
+So now in main here I can go ahead and say vall car and instantiate a car object and I can say car dot
+
+02:37.720 --> 02:38.350
+start.
+
+02:40.130 --> 02:47.210
+Like this, or I'm or start card, it is start car, so I'm invoking this function here, which is,
+
+02:47.210 --> 02:53.000
+you remember it gets the engine injected right object and starts with that engine.
+
+02:53.460 --> 02:54.470
+So if I go ahead and run.
+
+02:55.930 --> 03:03.130
+I say print and print out and like this, making sure everything is good if I run, you can see that
+
+03:03.130 --> 03:05.760
+we are going to have Engine X started started.
+
+03:05.770 --> 03:11.860
+Car, of course, is giving us coddling that unit here because we know that it's out of print and an
+
+03:11.860 --> 03:15.410
+engine that star also passes in a print l.
+
+03:15.940 --> 03:18.070
+So that's that's that's not a problem.
+
+03:18.070 --> 03:18.550
+That's OK.
+
+03:18.730 --> 03:19.840
+But what's important here?
+
+03:19.870 --> 03:26.530
+See, the engine started because the engine here you notice that we have injected this dependency here
+
+03:26.860 --> 03:27.490
+as an object.
+
+03:28.450 --> 03:29.910
+And you can see Engine X started.
+
+03:29.920 --> 03:32.820
+It's called because it's part of our car class, right?
+
+03:33.220 --> 03:35.350
+And of course, we invoked it starting the car.
+
+03:35.680 --> 03:37.060
+You can see that this is wonderful.
+
+03:37.070 --> 03:37.840
+It works great.
+
+03:38.140 --> 03:41.370
+We're able to add that dependency.
+
+03:41.380 --> 03:46.510
+So a car now, every time we invoke the car, we know that we have the engine and we can do all sorts
+
+03:46.510 --> 03:46.840
+of things.
+
+03:46.840 --> 03:47.320
+In this case.
+
+03:47.320 --> 03:50.830
+In the start, we I'm passing in the engine that start.
+
+03:51.250 --> 03:56.470
+I could have also created another function here that takes this engine and deserve everything because
+
+03:56.470 --> 03:59.740
+we have access to this engine object as a property of this car.
+
+03:59.920 --> 04:01.180
+Now what are the problems here?
+
+04:01.270 --> 04:07.510
+Problem number one is that this engine is always attached to this car glass, which means every time
+
+04:07.810 --> 04:12.280
+we invoke or we essentially don't recall it, we're going to have a piece of this engine.
+
+04:12.400 --> 04:18.640
+This is not good because it violates this single responsibility principle that says each class needs
+
+04:18.640 --> 04:20.440
+to have a single responsibility.
+
+04:20.770 --> 04:26.680
+Now, our car doesn't have a single responsibility at all because we have yet another object there.
+
+04:26.950 --> 04:28.360
+So it's not loose per se.
+
+04:28.690 --> 04:33.850
+It's connected forever with this engine object inside of this car.
+
+04:34.060 --> 04:39.700
+This makes it really hard to write code that is testable to write code that is flexible even right,
+
+04:39.730 --> 04:45.220
+because it's because of these coupling, this attachment that we have with our engine.
+
+04:45.520 --> 04:52.780
+Now, the better way to do this is by doing dependency injection, but by forcing this injection through
+
+04:53.050 --> 04:54.280
+the constructor.
+
+04:54.520 --> 04:59.140
+While this means instead of doing this, I'm going to say not good.
+
+05:00.280 --> 05:02.920
+Instead of doing this way, what are we going to do instead?
+
+05:02.950 --> 05:05.050
+We're going to inject this dependency.
+
+05:05.440 --> 05:07.780
+The the constructor.
+
+05:08.530 --> 05:11.110
+So you would say something like this foul engine.
+
+05:12.320 --> 05:16.250
+It's going to be engine type like this.
+
+05:16.760 --> 05:22.280
+So now things are a little bit different because that means the car expects to receive an engine.
+
+05:23.600 --> 05:30.410
+Type, because we are directly injecting right this engine type into our constructor.
+
+05:30.530 --> 05:32.360
+Look, what happens now instead of main?
+
+05:32.360 --> 05:36.080
+Here, I can create another valve called engine.
+
+05:36.720 --> 05:39.150
+It's going to be an engine object, right?
+
+05:39.170 --> 05:41.990
+We instantiating that in the for our car here.
+
+05:42.060 --> 05:44.450
+Look, we can pass that engine like this.
+
+05:44.870 --> 05:49.490
+That's what we need to complete our dependency injection here now that we have this engine because we're
+
+05:49.490 --> 05:56.120
+passing it along, not as attached like this inside of this class, right?
+
+05:56.420 --> 06:02.830
+All we do now is just create an engine can create as many engines as we want and just inject them in
+
+06:02.870 --> 06:03.430
+the constructor.
+
+06:04.340 --> 06:05.990
+Let's go ahead and see if run.
+
+06:07.340 --> 06:14.030
+Right, engine started starting car, same thing that we've seen before, the results, however, we've
+
+06:14.030 --> 06:19.310
+gained a lot of things, one of which is that we no longer are violating this single responsibility
+
+06:19.310 --> 06:25.670
+principle because the car is not attached to the engine as we had before.
+
+06:26.780 --> 06:32.330
+So every time we create a car previously, we would have to also go ahead and create this engine, which
+
+06:32.450 --> 06:36.260
+gets its attached inside as a property inside of this class.
+
+06:37.070 --> 06:43.850
+Now that is no longer the case, because now what happens that we're passing the engine object, the
+
+06:43.850 --> 06:48.980
+engine type as a primary in our construct, for instance, let's say I want to create another kind of
+
+06:48.980 --> 06:50.360
+engine that can say class.
+
+06:50.390 --> 06:56.450
+Let's call this turbo engine and turbo engine here.
+
+06:56.450 --> 06:58.880
+I'm going to have this fun start.
+
+06:59.640 --> 07:05.420
+This function here will just say print out and say Turbo in our car here.
+
+07:05.420 --> 07:11.450
+I can just go ahead and say something like, Guess I can now inject another one, several turbo and
+
+07:11.450 --> 07:21.290
+it's going to be a turbo engine type of such, which means, you know, our main here, we can instantiate
+
+07:21.290 --> 07:29.660
+a new engine and say Turbo, and then I'm going to pass our turbo engine like this, OK?
+
+07:30.080 --> 07:32.440
+And look what I can do for a car.
+
+07:32.450 --> 07:39.830
+I can say car that I can use the engine and invoke this start like this.
+
+07:39.980 --> 07:49.550
+Or I can say car got turbo that start like this because we were able to pass the engine normal engine
+
+07:49.820 --> 07:54.650
+and it can come here and change for our turbo Truex on normal engine.
+
+07:54.770 --> 08:00.350
+I'm going to say changes to that with normal engine is start turbo engine.
+
+08:01.430 --> 08:06.070
+And then here in our car, I'm going to just say can just delete all of this?
+
+08:06.110 --> 08:06.740
+That's fine.
+
+08:07.430 --> 08:13.730
+And now if I go ahead and run, I can see I have start with normal engine and start turbo engine.
+
+08:13.850 --> 08:19.820
+All of this is happening because we were able to inject that dependency via the constructor.
+
+08:20.630 --> 08:26.840
+And as you can see here, you can inject as many engines as we want and we won't need to come and change
+
+08:26.840 --> 08:29.020
+anything inside of our class here.
+
+08:29.030 --> 08:30.590
+The main class car class.
+
+08:31.850 --> 08:37.080
+OK, because the way things were before, ever time would have to come inside of our car and create
+
+08:37.380 --> 08:43.170
+another VAR department here as a property of this new engine, which would be in this case, the turbo
+
+08:43.170 --> 08:49.890
+engine, which means then we'll end up with a lot of different classes that are being passed in as properties
+
+08:49.890 --> 08:52.770
+in this car, which is not a good thing, as we said before.
+
+08:54.120 --> 08:57.480
+So this is the power of the penis injection.
+
+08:57.660 --> 09:01.380
+Again, this is a simple example, but I hope you'll start giving you some ideas.
+
+09:01.980 --> 09:09.270
+The reason why we want to use dependency injection, especially as we build our apps, because it gives
+
+09:09.270 --> 09:15.750
+us this flexibility to have our code that is decoupled from other parts, from other objects.
+
+09:15.870 --> 09:18.520
+And it's a very important concept in the programming.
+
+09:18.540 --> 09:23.460
+This can get a little bit complicated and cumbersome, especially when we start adding more and more
+
+09:23.460 --> 09:27.210
+classes to your to your project and your project gets larger.
+
+09:27.300 --> 09:30.960
+So to manage all of these dependency injections can be can be hard.
+
+09:30.990 --> 09:36.810
+So there is a library called Helt and Dagger that facilitates this whole process for us.
+
+09:36.840 --> 09:41.280
+Now I have to say these libraries are very complex in nature.
+
+09:41.640 --> 09:47.400
+There are a lot of articles are being written just for them to cover them and the setting up of these
+
+09:47.400 --> 09:48.630
+projects into a project.
+
+09:48.630 --> 09:53.280
+It takes a little bit right because there's a lot of different moving parts and different things that
+
+09:53.280 --> 09:55.140
+we have to do to get it all set up.
+
+09:55.380 --> 10:01.950
+But it is worth the time because you will get the full benefit of dependency injection and you now know
+
+10:02.520 --> 10:03.930
+how advantageous that is.
+
+10:04.710 --> 10:06.360
+All right, so that's what we're going to be doing.
+
+10:06.600 --> 10:12.900
+That means we're going to be using room, of course, to add that persistence layer to our app.
+
+10:13.320 --> 10:19.500
+And with that, to simplify everything, we're going to use this dependency injection like not ourselves,
+
+10:19.500 --> 10:21.330
+but we're going to use this library called hilt.
+
+10:21.660 --> 10:27.420
+So but I want you to keep in mind that what I just showed you about dependency injection, that is the
+
+10:27.420 --> 10:32.400
+basis of these libraries, even though this libraries require a little bit more work to put things together.
+
+10:32.610 --> 10:35.440
+But the idea is the same in the background.
+
+10:35.440 --> 10:41.250
+These libraries help us to abstract out this process of controlling these dependencies that we need
+
+10:41.520 --> 10:42.450
+with our objects.
+
+10:42.720 --> 10:44.010
+All right, let's go ahead and get started.

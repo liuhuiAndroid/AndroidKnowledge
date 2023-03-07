@@ -1,0 +1,100 @@
+WEBVTT
+
+00:01.390 --> 00:06.250
+All right, so let's see what we have done so far, we've done a lot of things, you know, thought
+
+00:06.250 --> 00:12.340
+it would be a good idea to stop it a little bit and look at what we've done, how far we've come.
+
+00:12.460 --> 00:19.440
+So we've looked at the whole application from the splash screen to the main screen.
+
+00:19.450 --> 00:26.380
+So we created a splash screen, which also allowed us to create the navigation to be able to navigate
+
+00:26.380 --> 00:27.190
+between screens.
+
+00:27.730 --> 00:34.540
+And then we worked on our main screen, so there were different parts that we had to work on, such
+
+00:34.540 --> 00:35.950
+as the App Bar at the top.
+
+00:36.850 --> 00:44.380
+And then we dive through and worked on the main screen where we can see all of these different pieces
+
+00:44.380 --> 00:44.860
+of data.
+
+00:45.190 --> 00:46.990
+So that's what we've been doing.
+
+00:47.320 --> 00:51.640
+So in a nutshell, we learned how to pass data from the weather API.
+
+00:52.030 --> 00:58.900
+We've learned how to make sure the data is ready for the user interface and we learn how to reproduce.
+
+00:58.900 --> 01:07.960
+The state will learn how to separate the concerns, how to create the structure using dependency injection,
+
+01:07.990 --> 01:09.940
+hilt and dagger.
+
+01:10.300 --> 01:14.560
+That way, our code can grow as needed if need be.
+
+01:14.920 --> 01:17.770
+And also, we put together the top app bar.
+
+01:17.770 --> 01:24.970
+But most importantly, we made sure that the tapas bar can be reusable, can be reused whenever we want.
+
+01:25.000 --> 01:32.590
+So if there's a screen that needs to use that top bar, we can use it and pass certain arguments that
+
+01:32.590 --> 01:35.770
+will customize the top bar even further.
+
+01:36.100 --> 01:41.050
+And you should always think in those terms, especially when you put together these composable functions,
+
+01:41.050 --> 01:45.510
+because the idea is to have reusable code in this case, reusable, composable.
+
+01:46.180 --> 01:48.010
+So next, what are we going to be doing?
+
+01:48.040 --> 01:55.870
+Well, we are going to make sure that when users click on search, they are going to be taken to a search
+
+01:55.870 --> 01:59.130
+screen where they're going to be able to search for a city, right?
+
+01:59.140 --> 02:05.590
+So they say Spokane or Seattle or San Diego or so forth, then there will be taken back to the main
+
+02:05.590 --> 02:05.950
+screen.
+
+02:05.950 --> 02:10.450
+So to reflect the weather forecast for that city.
+
+02:11.590 --> 02:13.750
+So that's what we're going to be tackling next.
+
+02:14.200 --> 02:20.470
+But for now, I would ask you to go and relax a little bit, go drink some water or get coffee or go
+
+02:20.470 --> 02:20.970
+for a walk.
+
+02:20.980 --> 02:24.820
+Whatever it is that you do to relax, go ahead and do that because we have done a lot of work.
+
+02:24.880 --> 02:26.380
+You should be very proud of yourself.
+
+02:27.820 --> 02:29.110
+Yeah, you deserve it.

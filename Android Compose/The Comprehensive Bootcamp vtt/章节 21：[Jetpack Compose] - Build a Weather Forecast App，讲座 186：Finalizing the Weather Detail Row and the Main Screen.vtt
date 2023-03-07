@@ -1,0 +1,379 @@
+WEBVTT
+
+00:00.240 --> 00:06.720
+So next, let's add this here, which is going to be the description of the weather that day.
+
+00:07.350 --> 00:13.460
+But he also noticed we have something here, we have this background kind of pill like widget.
+
+00:13.470 --> 00:15.930
+And then on top of that, we have the text.
+
+00:16.230 --> 00:19.980
+So how do we get that to work right to make it look like this?
+
+00:20.760 --> 00:21.960
+Well, it's a symbol.
+
+00:21.960 --> 00:26.430
+Again, we're going to use our good friend surface are wonderful.
+
+00:26.790 --> 00:33.780
+It's always it's always the best canvas or the best widget really to use because it allows us to do
+
+00:33.780 --> 00:35.100
+all sorts of things, as you see here.
+
+00:35.490 --> 00:35.760
+All right.
+
+00:35.760 --> 00:40.200
+So I'm going to say surface, and let's put a modifier real quick.
+
+00:40.650 --> 00:42.990
+Of course, what's new out of padding here?
+
+00:44.130 --> 00:45.820
+And let's see.
+
+00:45.840 --> 00:47.940
+Well, I just want to zero dpi for now.
+
+00:48.210 --> 00:48.870
+OK, that's OK.
+
+00:48.880 --> 00:52.050
+We can change that, of course, whenever we need to.
+
+00:53.070 --> 00:56.850
+OK, let's put a shape, because that is the central centerpiece.
+
+00:57.900 --> 00:59.480
+Just add a circle shape.
+
+00:59.490 --> 01:00.870
+I don't need to modify anything.
+
+01:01.530 --> 01:02.580
+Kind to give it a color.
+
+01:04.980 --> 01:10.050
+And for Carla, I'm going to use a hex again, my favorite like that.
+
+01:10.110 --> 01:10.830
+It looks good.
+
+01:13.050 --> 01:19.650
+And that's about it, all I need to do now is put a text inside of it and I'm going to use the whether
+
+01:19.680 --> 01:20.340
+object.
+
+01:25.350 --> 01:31.830
+Go to weather and then get the first that I get and go to get description.
+
+01:32.950 --> 01:33.180
+Right.
+
+01:34.110 --> 01:35.610
+And pass a modifier.
+
+01:38.430 --> 01:46.560
+When he gives a padding by for deep and let's add his style while we here as well.
+
+01:46.650 --> 01:53.160
+Good material, theme typography and ad caption like this?
+
+01:54.060 --> 01:54.410
+OK.
+
+01:56.540 --> 01:57.020
+Let's see.
+
+01:59.290 --> 02:00.280
+OK, there we go.
+
+02:00.970 --> 02:06.740
+All right, we see we have a Wednesday, we have the icon there, the image.
+
+02:07.090 --> 02:08.920
+And we have scattered clouds.
+
+02:08.980 --> 02:10.840
+Very good, depending on where we are.
+
+02:11.110 --> 02:16.250
+And remember, we can always go back and change the city.
+
+02:16.540 --> 02:17.470
+Let's say.
+
+02:19.360 --> 02:22.480
+Maputo, hopefully that works.
+
+02:23.650 --> 02:25.120
+All right, Maputo, Mozambique.
+
+02:25.300 --> 02:27.100
+Look at that 86 degrees.
+
+02:28.450 --> 02:31.000
+That's really nice and well looking.
+
+02:31.000 --> 02:31.480
+Really good.
+
+02:32.020 --> 02:33.280
+Just like what we have here.
+
+02:33.730 --> 02:34.480
+All right.
+
+02:34.480 --> 02:35.410
+What's next?
+
+02:35.650 --> 02:36.160
+Yes.
+
+02:36.190 --> 02:39.280
+Next, we're going to add these highs and lows.
+
+02:39.850 --> 02:42.340
+OK, let's go ahead and do that.
+
+02:44.100 --> 02:51.050
+Now, for our highs and lows here, we could have done just add, you know, two separate techs.
+
+02:51.630 --> 02:52.530
+That's sort of fine.
+
+02:53.010 --> 03:01.230
+But because we know the power of compose, there is this text that we can pass a an annotated string,
+
+03:01.230 --> 03:08.420
+which allows us to create annotated strings, which means pieces of strings that we can change independently,
+
+03:08.610 --> 03:10.710
+the color, the sizes and so forth.
+
+03:10.800 --> 03:11.100
+Right.
+
+03:11.160 --> 03:12.030
+So that's what we're going to do.
+
+03:12.210 --> 03:17.790
+And it's really convenient for us because notice here for the high, we have a different color, for
+
+03:17.790 --> 03:18.070
+the low.
+
+03:18.090 --> 03:24.960
+We also have different colors, so to kill two birds with one stone, and that is a very aggressive
+
+03:24.960 --> 03:25.800
+way of putting it.
+
+03:25.800 --> 03:27.030
+But it works.
+
+03:27.450 --> 03:31.110
+We're just going to use that annotated string because it's just easier.
+
+03:31.470 --> 03:31.800
+All right.
+
+03:31.800 --> 03:36.900
+So that means after our text there, I'm going to say text.
+
+03:38.940 --> 03:44.190
+And you can see the difference here, we have the normal tax and we have the text that says annotated
+
+03:44.190 --> 03:46.500
+string, which is exactly what we're going to be using.
+
+03:46.920 --> 03:50.560
+So I'm going to use the build annotated string.
+
+03:51.360 --> 03:53.460
+There's a lambda there, very convenient.
+
+03:54.330 --> 03:54.960
+And they're inside.
+
+03:54.960 --> 03:56.190
+I'm going to start annotating it.
+
+03:56.370 --> 04:01.220
+So I use the width style passing this style for the first string.
+
+04:01.230 --> 04:07.110
+So when I say style, I'm going to expand style, which allows us to do all sorts of things.
+
+04:07.380 --> 04:10.170
+First one is going to be the color I'm going to pass.
+
+04:13.120 --> 04:19.050
+Would say color, I want blue, and I'm going to tweak it a little bit.
+
+04:19.620 --> 04:26.100
+Change the alpha to be 0.75 seven seven f like this?
+
+04:26.100 --> 04:26.400
+OK?
+
+04:27.630 --> 04:31.630
+And next, let's say font weight.
+
+04:33.660 --> 04:34.950
+Say, say my bold.
+
+04:36.660 --> 04:37.200
+That's fine.
+
+04:39.720 --> 04:40.110
+All right.
+
+04:40.200 --> 04:47.700
+This is also a lambda trailing lambda, this is where we actually add the the text well, in this case,
+
+04:47.820 --> 04:49.740
+the data that we wanted to.
+
+04:50.680 --> 04:52.820
+Annotate, so I'm going to say Append.
+
+04:53.380 --> 04:53.890
+Look at that.
+
+04:53.980 --> 04:56.080
+Can I paint a char text and so forth?
+
+04:56.350 --> 04:58.270
+I can even a paint another annotated string.
+
+04:58.540 --> 04:59.380
+How convenient?
+
+04:59.940 --> 05:00.220
+Right?
+
+05:00.310 --> 05:02.270
+In this case, here I'm going to annotate white.
+
+05:02.290 --> 05:06.390
+Well, I need to go and get the max temp right.
+
+05:06.400 --> 05:07.240
+How do I do that?
+
+05:07.720 --> 05:11.540
+If you look at the object, you see, we have temp de minimax.
+
+05:11.560 --> 05:14.710
+I want to go and get Max, so it's under the temp object.
+
+05:15.760 --> 05:21.580
+OK, so as you can see, once you have data, you can do whatever you want with the user interface.
+
+05:22.240 --> 05:27.340
+So I'm going to use the format decimal because I need that and I'm going to pass the weather.
+
+05:31.860 --> 05:34.650
+Go to temp object and get the Max.
+
+05:35.520 --> 05:38.040
+And as always, I'm going to append.
+
+05:39.210 --> 05:41.130
+I believe it was shift to zero.
+
+05:41.640 --> 05:42.960
+No, that's not all.
+
+05:43.170 --> 05:43.650
+There we go.
+
+05:44.130 --> 05:44.850
+Zero like that.
+
+05:44.850 --> 05:45.660
+The degree.
+
+05:46.290 --> 05:46.800
+All right.
+
+05:48.600 --> 05:52.360
+Very well, and I'm going to do the same thing right after our lambada here.
+
+05:52.380 --> 05:58.120
+I'm going to use the with style again has this style.
+
+05:59.190 --> 06:00.960
+It's going to be a spann's style.
+
+06:02.370 --> 06:03.780
+I say collar.
+
+06:05.770 --> 06:09.400
+Well, this case is going to be color
+
+06:12.010 --> 06:13.890
+and then forget Lambda.
+
+06:13.960 --> 06:16.150
+This is what I'm going to hand the text.
+
+06:16.810 --> 06:22.360
+I'm going to format decimals and I'm going to pass a weather temp.
+
+06:23.020 --> 06:24.820
+Men like this?
+
+06:26.040 --> 06:27.210
+And do the same thing.
+
+06:32.130 --> 06:35.100
+Well, option zero, there we go.
+
+06:38.140 --> 06:38.530
+All right.
+
+06:38.590 --> 06:39.700
+Let's go ahead and take a look.
+
+06:42.680 --> 06:43.940
+And there you have it.
+
+06:44.480 --> 06:44.990
+All right.
+
+06:45.140 --> 06:49.160
+It's looking pretty much exactly like what we have here.
+
+06:50.150 --> 06:50.840
+All right.
+
+06:50.990 --> 06:59.210
+So as it is right now, we could stop here and call it good because it looks great and we get all the
+
+06:59.210 --> 07:00.170
+information we need.
+
+07:00.320 --> 07:05.830
+Although everything is mechanical here, meaning that we always have to go and change manually.
+
+07:05.840 --> 07:12.140
+The city, which is not convenient, especially if you are shipping this app right?
+
+07:12.590 --> 07:18.470
+People don't have the code to come in and change the city, so we need to find ways in which we can
+
+07:18.470 --> 07:20.600
+actually allow users to add in the text.
+
+07:20.840 --> 07:22.220
+In this case, the city.
+
+07:22.940 --> 07:25.940
+But nonetheless, it's working perfectly and it's great.

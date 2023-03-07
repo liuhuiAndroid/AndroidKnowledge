@@ -1,0 +1,472 @@
+WEBVTT
+
+00:00.330 --> 00:05.580
+So now we want to make it so that when we click on this floating action button, we are taking to the
+
+00:05.580 --> 00:06.150
+search screen.
+
+00:06.180 --> 00:06.810
+Let's do that.
+
+00:08.130 --> 00:14.750
+So let's go to our bigger home and let's find f a b.
+
+00:15.240 --> 00:15.780
+There we go.
+
+00:16.140 --> 00:19.170
+So here is our floating action button there.
+
+00:19.170 --> 00:25.650
+So what we need to do here is to say, well, yes, nav controller, because we have access to that
+
+00:26.130 --> 00:35.210
+water navigate to make sure we get the correct one, which is the root string there and RIRs screen.
+
+00:36.130 --> 00:43.650
+I say reader screens like this, the ENAM gonna go to search screen like that.
+
+00:44.190 --> 00:50.910
+Now, as always, let's go to our navigate here navigation reader navigation to make sure we have that
+
+00:50.910 --> 00:52.590
+composable that route.
+
+00:53.650 --> 01:03.420
+We have home readers start stats, see, we don't have the one we want, so I'm going to copy this out
+
+01:03.430 --> 01:04.030
+here.
+
+01:04.090 --> 01:06.210
+This case is going to be search.
+
+01:07.770 --> 01:08.710
+It's a reader.
+
+01:11.210 --> 01:14.410
+Think just called search screen, right, are good.
+
+01:15.220 --> 01:17.260
+And there's going to be a search screen.
+
+01:17.800 --> 01:18.680
+What is the difference here?
+
+01:18.700 --> 01:21.850
+This is going to be, of course, a composable so we passing here.
+
+01:22.180 --> 01:23.530
+And we have enough controller.
+
+01:23.890 --> 01:24.460
+Life is good.
+
+01:25.000 --> 01:26.440
+So now this should work.
+
+01:27.010 --> 01:28.090
+Go back to.
+
+01:28.940 --> 01:33.490
+And that means we can actually go to search screen as intended.
+
+01:33.990 --> 01:35.350
+See if this works when I run.
+
+01:36.840 --> 01:37.990
+OK, so here we go.
+
+01:38.010 --> 01:39.570
+I can go and click and voila.
+
+01:40.260 --> 01:45.990
+And if I click this back, Arrow should go back to the main screen.
+
+01:46.410 --> 01:46.740
+Why?
+
+01:46.740 --> 01:54.300
+Because we've set that up in our search screen to say when that is clicked, we navigate back to return
+
+01:54.300 --> 01:55.560
+home screen like that.
+
+01:55.770 --> 02:01.240
+Now we could have also said something like this nav controller, pop back stack like this.
+
+02:01.260 --> 02:02.750
+This would have worked as well.
+
+02:02.760 --> 02:06.270
+So I go like this so I can show you that this works.
+
+02:07.270 --> 02:08.600
+OK, let's see if that's true.
+
+02:08.630 --> 02:11.280
+Let's go and back, Lola.
+
+02:11.490 --> 02:16.620
+Different options of doing the same thing, but I will keep using this because we have nav controller
+
+02:16.620 --> 02:17.460
+might as well do that.
+
+02:17.870 --> 02:18.180
+All right.
+
+02:18.180 --> 02:24.660
+So now let's go and put together these whole this structure here that we have of our search screen.
+
+02:25.290 --> 02:26.910
+OK, so search screen, there it is.
+
+02:26.970 --> 02:30.150
+Let's give it a few of these items that we don't no longer need.
+
+02:30.960 --> 02:31.280
+All right.
+
+02:31.290 --> 02:35.580
+So inside I'm going to add a surface like this.
+
+02:36.850 --> 02:39.220
+And I need to pass anything so far.
+
+02:39.280 --> 02:40.990
+Let's go ahead and get rid of that.
+
+02:42.760 --> 02:43.010
+All right.
+
+02:43.010 --> 02:44.950
+So I'm going to put together a column here.
+
+02:45.850 --> 02:49.090
+So here is where we began to add all of this content.
+
+02:49.240 --> 02:52.270
+So let's start with this search text field there.
+
+02:52.360 --> 02:57.970
+So what I'm going to do, actually, I'm going to create at the bottom here the actual composable.
+
+02:58.240 --> 02:58.540
+OK.
+
+02:58.640 --> 02:59.470
+Two separate things.
+
+03:00.040 --> 03:02.350
+Say composable search.
+
+03:03.010 --> 03:09.970
+And it's going to be pretty much the same as we've done before with our with our logging and so forth,
+
+03:09.970 --> 03:10.870
+so on and say fine.
+
+03:11.300 --> 03:13.720
+Just call this search form.
+
+03:15.880 --> 03:16.130
+OK.
+
+03:16.600 --> 03:22.570
+And when it has a few parameters here that we need to get this to work to look like what we want.
+
+03:23.320 --> 03:32.140
+So the first parameter is going to be, of course, the modifier and make those optional bypassing a
+
+03:32.140 --> 03:33.220
+modifier like this.
+
+03:33.310 --> 03:33.730
+Let's see.
+
+03:33.730 --> 03:42.940
+Let's get the correct modifier because we might modify your we have to get Android X compose modifier.
+
+03:43.780 --> 03:45.090
+Why is that doing that?
+
+03:45.100 --> 03:48.040
+Let's just get rid of this because we got the wrong one first.
+
+03:49.120 --> 03:51.850
+So let's start over what's important.
+
+03:52.930 --> 03:53.800
+That's the one we want.
+
+03:54.010 --> 03:59.110
+OK, let's get rid of the unnecessary, redundant qualifier there.
+
+03:59.800 --> 04:00.130
+All right.
+
+04:00.130 --> 04:02.770
+So and then I'm going to pass a loading again.
+
+04:02.770 --> 04:12.040
+You remember this so that we can set it up correctly and say Boolean and let's say falls first.
+
+04:12.520 --> 04:19.180
+And we're past a hint that's going to go inside of our text field, be a string, and it's going to
+
+04:19.180 --> 04:22.570
+just say search, right?
+
+04:22.600 --> 04:29.140
+And then of course, on search, we are going to then pass the search query.
+
+04:29.550 --> 04:31.000
+It's just a string.
+
+04:33.160 --> 04:40.930
+And then we going to say unit and for now, just kind of put nothing like search.
+
+04:41.380 --> 04:45.940
+And then here I'm going to add a column and let's go inside here.
+
+04:46.270 --> 04:47.470
+This is what I'm going to add.
+
+04:47.470 --> 04:49.090
+Some, actually, let's go.
+
+04:49.660 --> 04:55.360
+Let's go ahead and create a few variables that we're going to need for into the search query.
+
+04:56.890 --> 04:57.760
+It's going to be a state.
+
+04:57.760 --> 04:59.500
+I can just append a state as well.
+
+05:00.020 --> 05:06.310
+I said, Remember, I can just choose to remember, but I'm going to use the remember save just so that
+
+05:07.050 --> 05:09.790
+or savable should say that way.
+
+05:10.750 --> 05:14.020
+This is saved beyond configuration changes.
+
+05:14.650 --> 05:15.580
+Just another option.
+
+05:16.000 --> 05:21.940
+And it's going to be mutable state of me to all state.
+
+05:22.020 --> 05:27.520
+I always get the wrong one state of like this.
+
+05:31.240 --> 05:33.790
+And it's going to just be an empty string section.
+
+05:34.180 --> 05:38.290
+Let's go ahead and put that single line lambda.
+
+05:39.010 --> 05:39.910
+OK, very good.
+
+05:39.910 --> 05:42.790
+I'm going to create and then keyboard controller here.
+
+05:43.210 --> 05:50.560
+So we are able to hide our keyboard when I say local soft keyboard controller.
+
+05:51.130 --> 05:52.840
+Get the current eye.
+
+05:52.910 --> 05:55.810
+Such and of course, this will make us.
+
+05:56.410 --> 05:59.840
+Will make us added the experimental compose UI.
+
+06:00.190 --> 06:03.860
+Think this is important because this can change at any time.
+
+06:04.740 --> 06:06.280
+Val, I'm going to say valid.
+
+06:06.430 --> 06:08.380
+This is going to check whether something is valid.
+
+06:08.380 --> 06:13.840
+And I say, remember in this case and we're past what I need to calculate here, which is going to be
+
+06:14.110 --> 06:17.440
+the search query state that value.
+
+06:17.890 --> 06:28.240
+OK, so going to check to see if search query say that value, when to frame it and if it's not empty,
+
+06:29.350 --> 06:30.400
+then this is true.
+
+06:30.400 --> 06:31.210
+That means valid.
+
+06:31.210 --> 06:34.210
+If it's empty, then it's going to be false, which is going to be invalid.
+
+06:34.510 --> 06:34.810
+All right.
+
+06:34.870 --> 06:38.830
+So we set up all of those for us so we can have everything set up.
+
+06:39.940 --> 06:41.770
+All right, there we have it now.
+
+06:41.770 --> 06:45.940
+We can put out here our input fields on the input field.
+
+06:45.970 --> 06:51.130
+Remember, this input field is what we have created before as part of our library.
+
+06:51.370 --> 06:54.490
+Little library containing all of the components we want to use.
+
+06:54.880 --> 06:56.260
+So we were using things now.
+
+06:56.680 --> 07:00.430
+And what are we going to pass for our input or value state?
+
+07:00.490 --> 07:03.010
+Well, we're going to pass or search query.
+
+07:03.010 --> 07:10.330
+State for label ID is going to be search like this enabled.
+
+07:11.170 --> 07:12.280
+It's going to be true.
+
+07:13.150 --> 07:15.220
+And I'm going to pass on action.
+
+07:15.520 --> 07:18.340
+I'm going to pass keyboard actions.
+
+07:18.340 --> 07:20.200
+Let's see, is just a lambda here.
+
+07:20.620 --> 07:30.520
+So what I want to happen is that if valid or it's not valid and not true, then I'm just returning the
+
+07:30.580 --> 07:34.690
+add keyboard to such action to just really do nothing at this point.
+
+07:35.080 --> 07:38.540
+And then I'm going to pass the on search in any other cases on search.
+
+07:38.950 --> 07:42.460
+Of course, I'm going to pass our search query state.
+
+07:42.790 --> 07:44.890
+So we're getting the value of our text field.
+
+07:45.490 --> 07:50.830
+Let's go ahead and trim that, of course, just get rid of all of the necessary spaces and so forth.
+
+07:51.790 --> 07:55.660
+And then what I'm going to do, we're going to use that state again, and we're going to set the value
+
+07:56.140 --> 07:58.480
+to nothing to an empty string.
+
+07:58.630 --> 07:59.560
+So to clear it?
+
+08:00.010 --> 08:00.280
+OK.
+
+08:00.670 --> 08:02.830
+And then let's go ahead and close our keyboard.
+
+08:02.950 --> 08:05.620
+So keyboard controller, let's go ahead and hide.
+
+08:06.220 --> 08:09.700
+We'll have to pass this safe.
+
+08:10.390 --> 08:11.320
+Notable there.
+
+08:13.280 --> 08:16.430
+It's way easier now to use what we have created earlier.
+
+08:17.030 --> 08:18.610
+So let's see.
+
+08:19.340 --> 08:20.680
+We can call that here.
+
+08:20.810 --> 08:21.530
+I say search.
+
+08:22.580 --> 08:23.540
+Search form.
+
+08:24.590 --> 08:25.790
+Get past a few things.
+
+08:26.850 --> 08:32.220
+And one thing we just want to pass here is going to be a modifier, a modifier.
+
+08:33.990 --> 08:44.430
+Phil Max, width and let's go ahead and give it padding, which is going to be about 16 deep like this.
+
+08:45.390 --> 08:48.590
+OK, we need to add experimental again because that's been used.
+
+08:48.600 --> 08:49.980
+So let's add it there.
+
+08:50.730 --> 08:53.070
+Let's see if this is going to show something here.
+
+08:53.150 --> 08:54.030
+Let's refresh.
+
+08:56.030 --> 08:56.660
+OK, nice.
+
+08:56.720 --> 08:57.830
+This is looking real good.
+
+08:58.130 --> 09:00.380
+Let's run and see if we can see something.
+
+09:01.160 --> 09:07.100
+So it's nice to see things on device because we have the real representation of what should be the sleek
+
+09:07.610 --> 09:09.140
+and nice click.
+
+09:09.830 --> 09:10.400
+Very good.
+
+09:10.430 --> 09:11.740
+So we're able to do so.
+
+09:11.740 --> 09:16.760
+So when you click there, you know this, it's going to hide and clears up our search.
+
+09:17.300 --> 09:18.060
+OK, very good.
+
+09:18.080 --> 09:22.280
+So at this point, we created this, which is really awesome.
+
+09:22.580 --> 09:28.160
+Next, we are going to put together this structure here so that we are going to be ready to then start
+
+09:28.160 --> 09:30.320
+pulling data from our API.

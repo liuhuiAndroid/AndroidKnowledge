@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.390 --> 00:06.690
+We've just finished with an example where we found ourselves with a problem where we would have to create
+
+00:06.690 --> 00:14.760
+another finder class with another find item inside of it as a function to accommodate the types that
+
+00:14.760 --> 00:17.480
+we're passing in as parameters, right?
+
+00:17.700 --> 00:19.230
+List of strings.
+
+00:19.560 --> 00:26.160
+If we want to do list of objects in general or list of integers of bullying, we'll have to duplicate
+
+00:26.160 --> 00:26.640
+that code.
+
+00:27.180 --> 00:30.120
+And I'd say that there is something that will save our lives.
+
+00:30.120 --> 00:37.620
+It will make us less make us having less code or less code reputation, which is real good.
+
+00:37.980 --> 00:40.150
+And I said that type is generic type.
+
+00:40.170 --> 00:41.430
+What is a generic type?
+
+00:41.820 --> 00:45.270
+Well, as the name implies, a generic means something generic.
+
+00:45.270 --> 00:46.260
+It's not specific.
+
+00:46.620 --> 00:46.860
+OK?
+
+00:47.220 --> 00:51.510
+And in many cases, being unspecific is not a good thing.
+
+00:52.050 --> 00:57.780
+But in this case, it's great because it gives us this flexibility of passing in any type that can be
+
+00:57.780 --> 01:03.770
+received within the function or, in this case, a class and still work.
+
+01:04.110 --> 01:10.230
+So a generic type is a flexible class or interface that is parameterized over tight.
+
+01:10.710 --> 01:16.320
+So what this means is instead, for instance, if we were to create, create a class write that we know
+
+01:16.320 --> 01:21.480
+that we need to pass a parameter that it accepts in this case would say box, and it would put it inside
+
+01:21.480 --> 01:29.460
+of angler brackets or angle brackets like this string to say this box is going to contain this box has
+
+01:29.460 --> 01:32.070
+a parameter of string in this case, right?
+
+01:32.640 --> 01:39.300
+And of course, we have a constructor, premier constructor, and we have also a parameter that we're
+
+01:39.310 --> 01:40.830
+passing of time string.
+
+01:41.070 --> 01:45.450
+So this box here will only contain will only accept string types.
+
+01:45.630 --> 01:48.180
+That's how we parameterized this box.
+
+01:49.390 --> 01:54.790
+Which is not very helpful, because if we want to create a box with integers, for instance, then is
+
+01:54.790 --> 01:55.420
+that going to work?
+
+01:55.810 --> 02:01.660
+It will work, but it will have to create another box glass and pass a prime tries integer, which is
+
+02:01.660 --> 02:02.650
+not a good thing.
+
+02:03.160 --> 02:07.830
+So instead, with generic types coddling, we can do this.
+
+02:07.840 --> 02:13.110
+We can say box and inside of angled brackets that we can put it right.
+
+02:13.360 --> 02:21.250
+And we can also pass as in our constructor here as a type T, also for our property.
+
+02:21.910 --> 02:26.210
+So what this tease 10:40 is just a type, so it's a generic type.
+
+02:26.210 --> 02:31.660
+It could be a string, could be a person, data class or object could be a car.
+
+02:31.660 --> 02:33.610
+It could be whatever we want it to be.
+
+02:34.090 --> 02:39.070
+Of course, sometimes you can have some restrictions, but in general you will accept whatever you want
+
+02:39.250 --> 02:40.180
+to be.
+
+02:40.780 --> 02:42.760
+OK, so that is our saving grace.
+
+02:43.930 --> 02:45.550
+Let's take a look in code.
+
+02:45.560 --> 02:51.550
+How do we transform our Finder class so that they can accept either types as well and still work?
+
+02:51.820 --> 02:53.200
+That is the key point.
+
+02:54.230 --> 02:55.310
+OK, let's go and take a look.
+
+02:57.260 --> 03:00.630
+So back here, see what we have that problem, right?
+
+03:00.650 --> 03:05.780
+Because I tried to create lists, list of numbers in passing some numbers and when I pass it and sort
+
+03:05.780 --> 03:08.030
+of find her, then we have this issue here.
+
+03:08.190 --> 03:11.180
+It's not very helpful because they're saying, Well, find out.
+
+03:11.210 --> 03:18.080
+I don't know what are you talking about because I can only accept a list of strengths because that's
+
+03:18.080 --> 03:20.510
+the contract we have in our final class here.
+
+03:22.260 --> 03:23.490
+To change this is very simple.
+
+03:23.670 --> 03:31.410
+So what we can do in our finder, we're going to add the angle brackets and say T and then going to
+
+03:31.410 --> 03:39.720
+change this as well to T a such changed element to T and change this element instead of a found item
+
+03:39.720 --> 03:41.340
+function to T as well.
+
+03:42.690 --> 03:42.960
+All right.
+
+03:43.110 --> 03:48.180
+Of course, we have a little problem here because it's saying find out that item element here.
+
+03:48.750 --> 03:52.110
+It's not understanding because we passed the list of numbers.
+
+03:52.680 --> 03:58.230
+This makes no sense because this is a string, so we need to pass our in this case here.
+
+03:58.830 --> 04:03.600
+Let's say we want to pass twenty three because that's b the integer we're trying to find.
+
+04:04.620 --> 04:07.410
+Just like that, we didn't do have to do much, really.
+
+04:07.590 --> 04:13.020
+If I go ahead and run this, we found 23 and it works.
+
+04:13.380 --> 04:19.430
+If I try to find two hundred thirty three, which it's not part of our list, we should see.
+
+04:19.740 --> 04:21.030
+And no, hopefully.
+
+04:22.260 --> 04:23.760
+And voila, found no.
+
+04:25.510 --> 04:26.020
+Very good.
+
+04:26.710 --> 04:32.110
+And we've solved our problem just like that because we understand how generics work.
+
+04:32.290 --> 04:37.000
+We're passing a T to say this T can be anything, any type, right?
+
+04:37.600 --> 04:40.210
+And now at least here, we also have to pass that to you.
+
+04:40.210 --> 04:43.840
+Say yes, we're accepting the type T.
+
+04:43.840 --> 04:48.220
+Whatever we pass here obviously has to be uniform everywhere else, right?
+
+04:49.090 --> 04:56.470
+And in our element find item here, we're also passing T and for our found item function here, which
+
+04:56.470 --> 05:01.240
+ends up being a Lampeter later might see him into.
+
+05:02.770 --> 05:06.370
+With exclamation point, which means it's going to be an olive oil.
+
+05:07.090 --> 05:12.550
+And if we can pass and get that it like that there, we didn't have to change much.
+
+05:13.450 --> 05:14.020
+We could.
+
+05:14.020 --> 05:18.300
+Also, I'm going to go and find our old friend here.
+
+05:18.310 --> 05:24.160
+Let me get this list of people.
+
+05:26.340 --> 05:33.240
+Just to show you here that this still works, so I'm going to put this back there, so we created a
+
+05:33.240 --> 05:40.110
+person person, this is a previous lesson where we create a data class right there, data class and
+
+05:40.110 --> 05:42.270
+then put that on the this list of people.
+
+05:42.510 --> 05:47.280
+I'm going to use that list of people to pass instead of a finder here.
+
+05:47.820 --> 05:51.540
+I'm can have a little problem because it's going to say this is makes no sense.
+
+05:52.890 --> 05:57.540
+So in this case, let's go ahead and say Ruti, because that's one of the people that we have there.
+
+05:58.680 --> 05:59.490
+Let's go ahead and run.
+
+06:00.990 --> 06:04.350
+See said found a person named Rudy.
+
+06:04.380 --> 06:06.300
+Last name Ashafa, age 54.
+
+06:08.260 --> 06:13.450
+And he will say, OK, why is this still working, even though we didn't come here and say something
+
+06:13.450 --> 06:15.640
+like this, right?
+
+06:15.730 --> 06:17.770
+We want person types.
+
+06:18.580 --> 06:25.990
+Well, the reason being is because the moment we pass these types inside of this function here or class,
+
+06:25.990 --> 06:32.350
+that is it will be inferred that indeed, that is the types that we were looking for because these types
+
+06:32.350 --> 06:38.050
+are the ones that are being propagated inside of a find item to look for something.
+
+06:38.560 --> 06:41.920
+But as I said here, that we should, we can remove these.
+
+06:41.920 --> 06:47.860
+In fact, we should just to make our code cleaner because it is explicit type arguments so we can just
+
+06:47.950 --> 06:48.580
+remove that.
+
+06:48.580 --> 06:49.270
+And that's fine.
+
+06:50.530 --> 06:51.850
+OK, so there you have it.
+
+06:51.940 --> 07:00.190
+So whenever you want to avoid code duplication in this sense, consider using generics because they
+
+07:00.190 --> 07:01.180
+will save your life.
+
+07:01.300 --> 07:04.570
+So this was the basic entry level of generics.
+
+07:04.600 --> 07:06.670
+Of course, there is more to learn about generics.
+
+07:06.880 --> 07:12.370
+And I would encourage you to do some research the generics cuddling so you can learn more.
+
+07:12.700 --> 07:18.430
+The idea of what generics are and what else can you do with generics?
+
+07:18.520 --> 07:22.510
+One thing to keep in mind is that he can pass different types here, right?
+
+07:22.960 --> 07:28.450
+It's not just that we can pass this one, you could put the X, Y and so forth.
+
+07:28.570 --> 07:34.060
+And of course, accordingly, you will have to change things around so that these new types do.
+
+07:34.390 --> 07:37.060
+There's no parameters that we're passing can actually be used.
+
+07:37.660 --> 07:41.800
+But the main idea is that you're not limited to just passing one type at all.

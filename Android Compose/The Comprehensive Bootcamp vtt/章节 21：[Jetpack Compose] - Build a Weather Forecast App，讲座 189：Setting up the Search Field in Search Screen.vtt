@@ -1,0 +1,832 @@
+WEBVTT
+
+00:00.670 --> 00:05.980
+What are we going to do next is to make it so that when you click on this action icon there, we want
+
+00:05.980 --> 00:10.030
+to be taken to a screen such as this, which is this search screen.
+
+00:10.660 --> 00:11.980
+When does that happen?
+
+00:12.670 --> 00:14.560
+Well, back to our main.
+
+00:15.100 --> 00:16.240
+Let's get rid of this widgets.
+
+00:17.320 --> 00:20.280
+Back to our main screen in our weather app.
+
+00:20.290 --> 00:21.910
+This is where all of that is happening.
+
+00:22.270 --> 00:27.280
+So you remember earlier, I think I had added that callback, right?
+
+00:27.280 --> 00:29.680
+Which was the on add.
+
+00:29.830 --> 00:30.550
+I believe.
+
+00:30.550 --> 00:31.150
+Let's see.
+
+00:33.080 --> 00:34.190
+That's the icon.
+
+00:34.460 --> 00:35.360
+We don't need that.
+
+00:35.390 --> 00:38.030
+Let's see, make sure I get the right thing.
+
+00:39.920 --> 00:43.250
+After the knife controller, I'm going to say on an action.
+
+00:47.450 --> 00:48.530
+Action clicked.
+
+00:48.650 --> 00:50.390
+I think that's the name of it.
+
+00:52.250 --> 00:53.670
+And in this case, right?
+
+00:53.690 --> 00:55.100
+That's the one, right?
+
+00:55.100 --> 00:57.260
+In this case here, it's a slam dunk can pass.
+
+00:57.440 --> 01:00.950
+Of course, the event that needs to happen.
+
+01:01.430 --> 01:01.940
+What is that?
+
+01:01.940 --> 01:02.900
+I want to happen here.
+
+01:03.170 --> 01:05.090
+Well, let's go back to our weather app.
+
+01:05.300 --> 01:08.480
+First of all, OK, so weather app on action.
+
+01:10.700 --> 01:13.550
+Clicked, I don't think I have that anything with it.
+
+01:13.640 --> 01:14.360
+Let's see.
+
+01:17.130 --> 01:18.120
+That's the search icon.
+
+01:18.390 --> 01:18.780
+Great.
+
+01:18.810 --> 01:23.810
+So this is where I need to call it so on, add action quick.
+
+01:23.820 --> 01:26.490
+I'm going to just go say, invoke like that.
+
+01:28.230 --> 01:29.520
+And one more.
+
+01:31.710 --> 01:36.060
+I think it's going to be let's see, it's going to be the on button clicked.
+
+01:39.460 --> 01:40.210
+We'll get to that.
+
+01:40.300 --> 01:42.550
+It's OK, let's focus on one thing at a time.
+
+01:42.580 --> 01:43.600
+All right, there we go.
+
+01:44.020 --> 01:48.580
+And so now here what I want to happen is very simple.
+
+01:48.610 --> 01:56.020
+All I want to happen is, say, nav controller, and I'm going to say, navigate and make sure we get
+
+01:56.020 --> 01:59.680
+the correct one, which is this one, the route string like this.
+
+02:00.070 --> 02:03.400
+And I'm going to say whether screens right?
+
+02:05.050 --> 02:07.240
+I'm going to go to our search.
+
+02:09.740 --> 02:11.540
+Screen, right, name like this.
+
+02:12.290 --> 02:16.160
+Now, I'm not sure if we have a search screen created.
+
+02:16.250 --> 02:17.540
+Let's see if that's true.
+
+02:18.290 --> 02:19.310
+Nope, I don't have it.
+
+02:19.410 --> 02:22.280
+Let's, first of all, create a new package here.
+
+02:25.250 --> 02:27.620
+Call this search very good.
+
+02:28.010 --> 02:34.250
+And inside there, I'm going to create a new cuddling class.
+
+02:34.910 --> 02:36.020
+It's just going to be a file.
+
+02:40.280 --> 02:46.010
+Called the search screen like this at composable.
+
+02:51.210 --> 02:54.840
+Search screen and say, no, I like to pass out knife controller.
+
+02:58.030 --> 03:00.730
+Let's make sure I function fun.
+
+03:02.830 --> 03:04.270
+I guess Kathleen is fun.
+
+03:08.850 --> 03:10.990
+Such a.
+
+03:11.580 --> 03:13.050
+And what I'm going to do while I'm here.
+
+03:13.080 --> 03:13.890
+Let's go ahead and close.
+
+03:13.890 --> 03:20.460
+That is I'm going to right away and scaffold is very handy, as you know, I'm going to put a top bar
+
+03:22.260 --> 03:22.830
+like this.
+
+03:25.860 --> 03:32.460
+And then here I'm going to put a surface, I'm recording, you say hello.
+
+03:33.060 --> 03:36.000
+Oh no, that was my beautiful wife.
+
+03:36.450 --> 03:38.920
+All right, moving on surface.
+
+03:38.970 --> 03:42.060
+I'm going to add a column real quick here.
+
+03:42.840 --> 03:44.580
+And for now, this is a text.
+
+03:45.360 --> 03:47.400
+OK, that should be OK.
+
+03:47.430 --> 03:49.440
+Let's remove those qualifiers.
+
+03:50.310 --> 03:50.820
+That's very good.
+
+03:50.850 --> 03:52.920
+Now, we're not done yet because we need to go back.
+
+03:52.920 --> 03:58.470
+Remember to our navigator for navigation, whatever we call it, weather navigation.
+
+03:58.470 --> 03:58.860
+There is.
+
+03:59.280 --> 04:02.940
+And we need to create that composable right inside of our nav host.
+
+04:03.180 --> 04:04.650
+That is the contract.
+
+04:05.040 --> 04:05.340
+All right.
+
+04:05.370 --> 04:06.360
+Very simple, really.
+
+04:06.750 --> 04:09.030
+And so far, I'm going to get rid of that.
+
+04:10.870 --> 04:13.750
+And we'll have to add a new one later, but it's fine.
+
+04:13.780 --> 04:21.070
+And this is going to be a search screen and seeing that the search screen, the actual search screen
+
+04:21.070 --> 04:23.170
+like that and we should be good.
+
+04:24.460 --> 04:28.150
+So now that we have all the pieces together.
+
+04:30.740 --> 04:31.680
+Can get rid of that.
+
+04:31.700 --> 04:32.330
+Let's see.
+
+04:35.750 --> 04:39.680
+Navigate to a screen, will know exactly what to do.
+
+04:40.280 --> 04:41.030
+Let's go and see.
+
+04:44.390 --> 04:45.550
+OK, wonderful.
+
+04:45.770 --> 04:48.230
+Click on Search and voila!
+
+04:48.260 --> 04:49.520
+We went to search screen.
+
+04:50.210 --> 04:50.630
+Very good.
+
+04:51.080 --> 04:52.270
+But that's not what we want.
+
+04:52.280 --> 04:53.740
+We want something like this first.
+
+04:54.050 --> 04:55.850
+We're going to look at the app bar.
+
+04:56.840 --> 04:57.220
+All right.
+
+04:57.230 --> 05:02.710
+So our top bar there doesn't have anything, but we can change that.
+
+05:02.720 --> 05:04.250
+In fact, we will change that.
+
+05:04.880 --> 05:09.220
+I'm going to use the weather app bar we created.
+
+05:09.800 --> 05:11.240
+I'm going to pass our nav controller.
+
+05:11.380 --> 05:12.560
+I'm very good friend.
+
+05:13.160 --> 05:14.750
+And then I'm going to make it.
+
+05:14.750 --> 05:22.880
+So that is customize, meaning I'm going to pass in new icons and say, icon like this is going to be
+
+05:22.880 --> 05:23.720
+icons.
+
+05:24.470 --> 05:28.880
+Default, arrow back like that.
+
+05:31.590 --> 05:40.650
+And that is Maine is going to be false, could be not in Maine, and we passed enough controller.
+
+05:41.490 --> 05:42.560
+That's totally fine.
+
+05:42.570 --> 05:50.330
+And then of course, this has a lot more than the last function when that is clicked.
+
+05:50.340 --> 05:54.240
+And once they now have controller, I'm going to pop back stock.
+
+05:55.380 --> 05:57.780
+So that means now if I run this, you will see.
+
+05:59.630 --> 06:07.250
+OK, I go y la very nice, I can go back and it's working for the title just saying title, because
+
+06:07.250 --> 06:09.590
+that's the default because we didn't add anything here.
+
+06:10.100 --> 06:13.880
+That is fine, ladies and gentlemen, because we can go ahead and say title.
+
+06:15.850 --> 06:18.310
+Let's see, I think title has to be the first one.
+
+06:20.030 --> 06:20.800
+It's a title.
+
+06:27.540 --> 06:30.170
+I just say search.
+
+06:32.070 --> 06:32.420
+OK.
+
+06:33.150 --> 06:35.480
+Quick search, very good.
+
+06:35.530 --> 06:37.590
+I can go back and forth.
+
+06:38.720 --> 06:39.170
+Nice.
+
+06:40.580 --> 06:43.880
+Now what we want to do, of course, is to have, of course, this.
+
+06:46.000 --> 06:53.890
+Farm, in this case is just a text field so that users can add a CD and enter and then be taken back
+
+06:54.130 --> 06:59.400
+to our main screen and show the actual forecast, the weather forecast for that city.
+
+07:00.040 --> 07:02.650
+OK, so instead of text here, we don't need that.
+
+07:03.100 --> 07:03.280
+What?
+
+07:03.280 --> 07:04.060
+I'm going to pass.
+
+07:04.840 --> 07:07.120
+In fact, let's go back to our surface here.
+
+07:07.810 --> 07:07.970
+Know.
+
+07:08.200 --> 07:10.270
+Let's see how actually our column?
+
+07:11.050 --> 07:13.770
+I'm going to say vertical alignment.
+
+07:15.690 --> 07:25.830
+Arrangement that is I want to be senator and horizontal alignment center horizontally as such.
+
+07:26.880 --> 07:27.030
+OK.
+
+07:27.150 --> 07:32.550
+And so inside here is where I'm going to add the form or in this case, the text field, but I'm going
+
+07:32.550 --> 07:33.630
+to call it form.
+
+07:34.260 --> 07:36.720
+So the bottom I'm going to.
+
+07:42.250 --> 07:46.210
+So at the bottom here, I'm going to create a composable, say fun.
+
+07:47.230 --> 07:49.690
+Actually, first it's going to be a composable.
+
+07:51.860 --> 07:54.140
+Create this called search.
+
+07:55.790 --> 07:56.900
+Called this search bar.
+
+07:56.930 --> 07:58.190
+I think that works fine.
+
+07:59.570 --> 08:04.400
+OK, so I'm going to pass the on search
+
+08:06.890 --> 08:14.420
+function here as a parameter, and I'm going to pass in a string as its own parameter, right, and
+
+08:14.420 --> 08:16.940
+is going to return a unit like this.
+
+08:18.210 --> 08:23.370
+OK, now what's going on now, what's going to happen here?
+
+08:23.880 --> 08:28.140
+Well, inside here, I'm going to create a column just to organize things, really.
+
+08:28.440 --> 08:29.730
+There's no other reason.
+
+08:30.870 --> 08:36.000
+And then I'm going to call yet another composable.
+
+08:36.240 --> 08:41.130
+This composable is called common text field.
+
+08:42.570 --> 08:46.320
+Now this common text field we haven't created yet, but you will see in a second here.
+
+08:46.320 --> 08:51.510
+So I'm going to pass a few values here or parameters or arguments state.
+
+08:51.660 --> 08:54.150
+It's going to be a search query.
+
+08:58.540 --> 09:01.090
+State and we a pass it place holder.
+
+09:04.440 --> 09:05.460
+Called Seattle.
+
+09:10.310 --> 09:12.410
+And then on action.
+
+09:14.970 --> 09:23.730
+I'm just going broke the keyboard actions, which is a lambda and inside here, I'm going to put if
+
+09:24.120 --> 09:28.200
+and if statement to say, OK, this is too much.
+
+09:30.280 --> 09:30.610
+OK.
+
+09:31.180 --> 09:31.420
+Right.
+
+09:31.720 --> 09:32.770
+That's OK for now.
+
+09:33.490 --> 09:35.620
+Let's go ahead and create this puppy here.
+
+09:36.790 --> 09:37.930
+Great as composable.
+
+09:39.040 --> 09:39.280
+All right.
+
+09:39.280 --> 09:43.030
+So this composable has a few things we need to pass.
+
+09:43.040 --> 09:43.680
+That's OK.
+
+09:43.690 --> 09:48.910
+So value state for a value state here, it's going to be a mutable state.
+
+09:49.000 --> 09:54.220
+You'll see in a second here of type string like this.
+
+09:55.700 --> 09:57.440
+And placeholder, that's fine.
+
+09:58.310 --> 10:07.550
+And then I'm going to pass a few others here, such as keyboard type that I need when this is invoked
+
+10:08.390 --> 10:11.390
+and I'm just going to set it right away to keyboard
+
+10:13.880 --> 10:15.830
+type guy text.
+
+10:18.030 --> 10:22.050
+Like this, I am a actions.
+
+10:27.220 --> 10:35.860
+We just set it to default that next, so it shows that next action, if you click on next, then it's
+
+10:35.860 --> 10:41.290
+going to retrieve the information from the keyboard that was entered into the field.
+
+10:41.650 --> 10:41.980
+Right?
+
+10:47.510 --> 10:50.540
+And for keyboard actions here, I'm also going to add.
+
+10:52.870 --> 10:54.790
+Keyboard actions.
+
+10:57.400 --> 11:01.780
+Default like this as default values for own action.
+
+11:02.710 --> 11:08.710
+OK, so inside here is where I'm going to then create this field.
+
+11:09.400 --> 11:16.120
+There are different kinds of fields we can create, but I'm going to use the outlined outlined text
+
+11:16.900 --> 11:19.570
+field such.
+
+11:21.130 --> 11:25.780
+And for the valley, I'm going to pass the values state that value.
+
+11:29.210 --> 11:37.880
+And on value changed right to lambda and say values state that value may set that to the changes that
+
+11:37.880 --> 11:39.740
+are coming from our text.
+
+11:39.770 --> 11:46.160
+This is what are we doing here is that whatever we getting or users have added in our tax field, we
+
+11:46.160 --> 11:49.700
+are setting that into a valley state, which is the state of these.
+
+11:50.270 --> 11:57.710
+We're setting that into our values, state value in this case, so that we have what is inside here
+
+11:57.710 --> 11:58.430
+so we can use it.
+
+11:59.150 --> 12:01.700
+So we have more parameters we need to pass.
+
+12:01.940 --> 12:07.430
+We could pass for our outlying text field and we're going to pass a few just to complete the picture.
+
+12:07.880 --> 12:08.990
+So we have value.
+
+12:09.000 --> 12:10.790
+We have really changed.
+
+12:11.840 --> 12:14.360
+Let's continue and add something more.
+
+12:18.420 --> 12:20.310
+I want to pass in a label.
+
+12:21.030 --> 12:29.400
+It's a landmark, you can pass a text and this text will just have a placeholder, right?
+
+12:32.160 --> 12:36.480
+And I'm going to say max lines, just going to say one.
+
+12:37.980 --> 12:40.430
+I want to make this a single line to true.
+
+12:40.440 --> 12:44.160
+That means our field will only allow one line.
+
+12:45.700 --> 12:47.320
+And for keyboard types.
+
+12:48.830 --> 12:53.090
+Options in this case, I'm going to say keyboard options.
+
+12:55.940 --> 12:57.620
+And I'm going to pass.
+
+12:59.560 --> 13:05.620
+The keyboard type to be the keyboard type that we are passing along as a parameter.
+
+13:06.970 --> 13:11.530
+Let's see, it looks like something is not quite right in here and if I changed.
+
+13:12.570 --> 13:13.920
+All right, let's continue.
+
+13:14.190 --> 13:16.120
+That will change later.
+
+13:16.800 --> 13:20.970
+The I am action, I'm going to pass the enemy action as such.
+
+13:22.170 --> 13:25.880
+All right, this should be keyboard options, not actions.
+
+13:28.010 --> 13:28.400
+OK.
+
+13:28.610 --> 13:29.300
+That's why.
+
+13:30.950 --> 13:33.970
+OK, now we're going to add the keyboard options.
+
+13:35.100 --> 13:36.150
+Actions, that is.
+
+13:38.160 --> 13:42.720
+And we just passed on action keyboard that we passed along in our parameters.
+
+13:45.010 --> 13:49.180
+And let's go and give some color is going to change a few things here.
+
+13:49.600 --> 13:59.140
+Now we are going to have to override the text field defaults right like this and say, outlined field
+
+13:59.350 --> 14:02.050
+colors and we'll pass our own colors.
+
+14:02.860 --> 14:04.330
+It looks like it always does this.
+
+14:05.410 --> 14:06.910
+Let's get rid of all that.
+
+14:08.370 --> 14:09.150
+All right.
+
+14:09.160 --> 14:17.410
+So I'm going to say for focused border color is going to be colored dark blue so we can change it to
+
+14:17.410 --> 14:18.460
+whatever we want, of course.
+
+14:18.460 --> 14:19.510
+But blue is fine.
+
+14:20.230 --> 14:24.490
+I want to change the cursor color to color that black again.
+
+14:24.730 --> 14:25.660
+It's just my choice.
+
+14:25.670 --> 14:26.770
+You can change to whatever you want.
+
+14:27.790 --> 14:40.630
+Keep in mind that this is part of compose how easy it is for us to actually update or customize our
+
+14:40.630 --> 14:40.990
+views.
+
+14:41.710 --> 14:41.970
+Right?
+
+14:44.280 --> 14:45.930
+OK, so what else do we need here?
+
+14:45.960 --> 14:46.920
+Let's see.
+
+14:52.200 --> 14:53.520
+Let's finalize that one.
+
+14:53.610 --> 15:01.320
+And then I'm going to pass a shape around this is going to be a rounded corners shape and I'm going
+
+15:01.320 --> 15:06.030
+to just pass it 15 dpi percentage for all sides.
+
+15:06.600 --> 15:07.980
+Yes, I know a lot of things.
+
+15:07.980 --> 15:10.080
+Are we typing here, modifier?
+
+15:10.680 --> 15:16.320
+But he will see, let's say, Phil Max width.
+
+15:21.080 --> 15:22.490
+And I'm going to padding.
+
+15:22.610 --> 15:34.010
+I'm going to give a start pairing of about 10 deep and end of about also 10 deep such.
+
+15:35.440 --> 15:35.920
+OK.
+
+15:39.890 --> 15:44.000
+And let's finalize everything that's good.
+
+15:44.300 --> 15:48.530
+Now we have a problem here for a search query state which we haven't created, it's OK.
+
+15:48.890 --> 15:50.270
+We're going to create right now.
+
+15:50.900 --> 15:55.940
+So back to a search bar where the common text field has been called.
+
+15:56.750 --> 15:58.520
+I'm going to create a few variables here.
+
+15:59.990 --> 16:03.860
+So the first one is going to be the search query state.
+
+16:04.310 --> 16:06.320
+As the name implies, it's going to be state.
+
+16:06.540 --> 16:06.860
+Right?
+
+16:07.340 --> 16:16.610
+So I'm going to use the remember savable because I want this to retain its state, even if we end up
+
+16:16.610 --> 16:18.750
+having rotation configuration changes.
+
+16:18.770 --> 16:25.580
+So that is a different flavor of just remember, remember when you rotate the phone, the state is going
+
+16:25.580 --> 16:28.070
+to be recreate, the state is going to be lost.
+
+16:28.070 --> 16:31.730
+But we remember savable that won't be lost.
+
+16:31.790 --> 16:36.830
+So it's always nice to do that, especially when we are dealing with forms or text fields.
+
+16:38.820 --> 16:45.840
+Because we don't want to lose this state, wanted to lose what users have entered, if there is some
+
+16:45.840 --> 16:49.950
+sort of configuration rotation changes there, that makes sense.
+
+16:51.180 --> 16:54.660
+OK, so what's it lambda?
+
+16:54.780 --> 17:03.690
+And we can go ahead and put mutable state of empty value at first.
+
+17:05.470 --> 17:08.470
+OK, the next one, I'm going to let's put that in one line.
+
+17:10.670 --> 17:10.990
+Good.
+
+17:12.920 --> 17:16.430
+Next, I'm going to create a keyboard controller because we need that.
+
+17:20.810 --> 17:22.220
+And this needs to.
+
+17:24.840 --> 17:33.510
+And for that, we have to say local software, keyboard controller, get current like this.
+
+17:33.840 --> 17:41.280
+Now you see that we have a problem here because this is an experimental API, which means it's likely
+
+17:41.280 --> 17:42.270
+to change in the future.
+
+17:42.570 --> 17:49.680
+We must we we need we have to add this experimental compose UI annotation for this work.
+
+17:50.790 --> 17:56.070
+So we do that and I'm going to invalidate our field.
+
+17:56.340 --> 18:00.780
+So I'm going to put that inside of yet another state called valid.
+
+18:01.140 --> 18:02.310
+Someone say, remember?
+
+18:04.130 --> 18:07.820
+It just used to remember like this, and I'm going to pass.
+
+18:08.120 --> 18:11.690
+Also what calculations I want to make.
+
+18:11.750 --> 18:17.990
+So the variable that we want to operate on it for our valid state in this case is going to be our search
+
+18:17.990 --> 18:20.180
+query state that value.
+
+18:20.500 --> 18:20.720
+OK.
+
+18:20.810 --> 18:29.060
+It's almost like the input that we're going to use to check whether whatever users enter here is valid
+
+18:29.060 --> 18:29.540
+or not.
+
+18:29.930 --> 18:34.580
+So inside here, I'm going to say search query that value.
+
+18:35.150 --> 18:42.650
+I'm going to trim that and then is not empty, so I'm going to return true.
+
+18:42.650 --> 18:46.460
+If it's not empty, if it's empty, it's going to be false, which is not invalidated.
+
+18:47.600 --> 18:47.960
+All right.
+
+18:48.650 --> 18:49.820
+Yes, a little trick there.
+
+18:50.870 --> 18:53.270
+Now you can see search query state is looking good.
+
+18:54.260 --> 18:54.530
+All right.
+
+18:54.530 --> 18:56.060
+So this feed is getting really long.
+
+18:56.060 --> 18:57.830
+So we're going to stop here and next.
+
+18:57.920 --> 19:04.580
+We are going to continue working on our search bar and then hopefully see something in our screen.

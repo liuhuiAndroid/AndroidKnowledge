@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.210 --> 00:04.530
+So here's the app we're going to be building, and it's going to be a fun app because we all want to
+
+00:04.530 --> 00:06.030
+know what's the weather.
+
+00:06.600 --> 00:12.030
+So first of all, you're going to see that the app looks pretty slick.
+
+00:12.120 --> 00:15.030
+It's very simplistic, but nice, I think.
+
+00:15.540 --> 00:18.210
+And you can see the first time you open the app.
+
+00:18.240 --> 00:21.870
+There is the city default city in this case, Spokane, Washington and so forth.
+
+00:21.870 --> 00:24.390
+But the beauty here is that we can do a few things.
+
+00:24.390 --> 00:27.240
+First of all, I can go ahead and tap there to go and search.
+
+00:27.390 --> 00:33.720
+I'm actually using my phone here and I can say, I want to look at Moscow.
+
+00:33.960 --> 00:35.850
+What's the weather in Moscow?
+
+00:36.060 --> 00:39.960
+And it goes and finds Moscow in this case, Russia.
+
+00:40.230 --> 00:48.030
+OK, so right away, you can see it gives us the this week the seven day forecast gives us we have their
+
+00:48.030 --> 00:48.950
+four degree.
+
+00:48.960 --> 00:49.680
+It's rainy.
+
+00:49.980 --> 00:57.590
+And you can see that this is also a metric unit, meaning that this is all in Celsius four degree.
+
+00:57.930 --> 00:58.890
+Now we can change that.
+
+00:59.130 --> 01:02.760
+First of all, before we change anything, think we can actually add a top left?
+
+01:02.910 --> 01:04.170
+There we see that height.
+
+01:04.230 --> 01:05.910
+That's your favorite if you tap on that.
+
+01:06.210 --> 01:09.900
+You can see that we are going to save it added to favorites.
+
+01:10.240 --> 01:14.460
+OK, so that way, if I also click there, I could go to favorites.
+
+01:14.730 --> 01:19.870
+It's going to show all of the favorite cities that I wanted to know the weather for.
+
+01:20.580 --> 01:25.590
+It's really good and we can also go ahead and delete some of these favorites, for instance, and so
+
+01:25.590 --> 01:28.770
+forth, and then go back in Moscow is the last thing, we added.
+
+01:28.770 --> 01:29.970
+So it shows that.
+
+01:30.840 --> 01:40.290
+And we think also you this is that I can tap there and I can go to about let's go back, say about like
+
+01:40.290 --> 01:43.230
+this just gives us this screen about this app.
+
+01:44.280 --> 01:45.390
+And it can go back.
+
+01:45.390 --> 01:51.040
+I want to go to settings, so here's where I can change the units of measurement.
+
+01:51.060 --> 01:55.770
+So there are Celsius and there's Fahrenheit, so metric and imperial.
+
+01:56.040 --> 01:58.500
+So I'm going to change that Fahrenheit save.
+
+01:59.160 --> 02:02.640
+If I go back in, I can see everything is in Fahrenheit.
+
+02:03.360 --> 02:04.530
+OK, good.
+
+02:04.950 --> 02:11.190
+So it can continue here and look, for instance, real and heat enter.
+
+02:11.250 --> 02:14.520
+This will give them a real g G.R..
+
+02:14.550 --> 02:17.370
+I don't even know what that is, but it can go ahead and save that.
+
+02:17.580 --> 02:24.600
+And while I go back to my favorites, you can see we have Mario there and of course, I can delete that
+
+02:25.050 --> 02:25.680
+and go back.
+
+02:25.860 --> 02:31.620
+It will show real, but since we delete it from our favorites, it's going to give me the option to
+
+02:31.620 --> 02:33.570
+save into my favorites.
+
+02:34.110 --> 02:38.520
+So this is the app we're going to be building and we're going to take small steps each time.
+
+02:38.740 --> 02:43.920
+There is a lot that we need to take care of in order to have such an application.
+
+02:44.410 --> 02:47.490
+OK, so I hope you're ready for this awesome journey.
+
+02:47.700 --> 02:48.360
+I'll see you next.

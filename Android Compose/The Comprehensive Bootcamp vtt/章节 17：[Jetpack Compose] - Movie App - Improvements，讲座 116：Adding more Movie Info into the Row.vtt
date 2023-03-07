@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00.600 --> 00:05.070
+So as it is, I don't really like this bold instead of bold here, let's say just light.
+
+00:05.940 --> 00:07.230
+I think this it's better.
+
+00:07.770 --> 00:08.700
+This refresh or quick.
+
+00:10.600 --> 00:11.350
+It's much better.
+
+00:11.380 --> 00:12.580
+OK, very good.
+
+00:12.670 --> 00:19.090
+So the other thing we can do, of course, to remember, was still inside of just a text.
+
+00:19.270 --> 00:19.600
+Right?
+
+00:20.440 --> 00:26.620
+So if you click here, the text ends here, it means here we can still pass, say, a modifier if you
+
+00:26.620 --> 00:33.820
+wanted to and say modifier padding one two padding of about six TATP.
+
+00:34.150 --> 00:37.150
+So all around, it's going to be 60p padding.
+
+00:38.230 --> 00:38.530
+All right.
+
+00:39.190 --> 00:39.610
+Very good.
+
+00:39.880 --> 00:47.950
+So once we've done this with adding the text, that first text here still inside here, it can add a
+
+00:47.950 --> 00:48.580
+divider.
+
+00:50.530 --> 00:50.800
+OK.
+
+00:51.130 --> 00:53.170
+And then I'm going to add another text.
+
+00:53.740 --> 01:01.750
+In this case, I'm just going to add director and it's going to be a movie.
+
+01:03.850 --> 01:04.540
+Director.
+
+01:09.630 --> 01:10.620
+Give us style.
+
+01:19.400 --> 01:27.620
+Caption, a search going to copy that a few times over and the next is going to be.
+
+01:29.440 --> 01:30.250
+Actors.
+
+01:32.680 --> 01:33.700
+Get actors.
+
+01:36.280 --> 01:39.640
+And then last one for now.
+
+01:40.720 --> 01:44.290
+You know, pass rating and we're going to get the rating in such.
+
+01:46.430 --> 01:48.120
+All right, let's see it, click.
+
+01:49.100 --> 01:49.610
+Voila!
+
+01:49.640 --> 01:51.260
+He can see there is the plot.
+
+01:51.270 --> 01:55.070
+We have that fighter there and director and so forth.
+
+01:55.070 --> 01:56.380
+So it's really, really nice.
+
+01:56.390 --> 02:01.500
+And of course, you can spend more time making it look more beautiful, but this looks really good.
+
+02:01.520 --> 02:02.500
+So I can what I can do.
+
+02:02.510 --> 02:07.910
+Also, it's gave a little bit of space padding at the top there, so you now are divider.
+
+02:07.940 --> 02:10.550
+If I have over, let's put a modifier here.
+
+02:14.810 --> 02:17.990
+They say padding.
+
+02:21.190 --> 02:22.420
+Much, much better, I like that.
+
+02:23.930 --> 02:28.070
+OK, let's see if we can run this on a device or emulator.
+
+02:33.680 --> 02:33.980
+OK.
+
+02:34.010 --> 02:34.580
+Let's see.
+
+02:35.240 --> 02:35.660
+Click.
+
+02:36.350 --> 02:38.150
+My line looks really good.
+
+02:40.130 --> 02:42.680
+And I can't go to another movie.
+
+02:43.970 --> 02:45.920
+And it's looking really good.
+
+02:47.750 --> 02:48.800
+So what we want to do next?
+
+02:48.860 --> 02:52.550
+Well, we're going to work on the details screen here.
+
+02:52.760 --> 03:00.350
+So as an exercise, I want you to see how can we then get all of the information about this movie?
+
+03:01.100 --> 03:03.980
+Click we're getting the idea of the movie.
+
+03:04.400 --> 03:05.690
+So what do you need to do?
+
+03:05.750 --> 03:10.100
+I'll give you a hint here is to filter through the movie.
+
+03:10.520 --> 03:15.530
+This list of movie get movies filter through until you find something.
+
+03:15.830 --> 03:21.380
+Until you find a movie from release that contains that ad, which, Heidi, it's going to be this ID
+
+03:21.740 --> 03:22.610
+that we see.
+
+03:24.120 --> 03:25.680
+Actually, that we see here.
+
+03:27.070 --> 03:34.690
+Because that's been passed onto the screen so you can use the filter to filter through the list of movies
+
+03:34.960 --> 03:39.670
+to find this particular movie and then get information about that movie.
+
+03:40.910 --> 03:44.410
+I had to spend some time trying to figure that out, and I'll see you in a nice video.

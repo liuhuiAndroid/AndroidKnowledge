@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.270 --> 00:03.510
+Let's go ahead and set up a room database in our project.
+
+00:03.870 --> 00:06.920
+First thing, of course, we need to do is to go to our dependencies again.
+
+00:07.110 --> 00:13.830
+This is where we get all the dependencies are needed so we can access the library room oak room database.
+
+00:15.600 --> 00:25.410
+I'm going to start with the project are Gradle, and here I'm going to add version I such and the recording
+
+00:26.250 --> 00:26.850
+of this.
+
+00:27.420 --> 00:33.330
+And at this point, the version is two three two zero.
+
+00:33.540 --> 00:36.840
+Remember these change, and so be aware of that.
+
+00:37.470 --> 00:41.040
+Let's go back to our app module second one.
+
+00:41.490 --> 00:48.260
+And what I usually like to do is, again, I'm going to say a room like this just so I know where we
+
+00:48.260 --> 00:50.190
+are putting all of its dependencies for room.
+
+00:51.090 --> 00:56.040
+Now how do I know where to start or what dependencies do I need for a room?
+
+00:56.220 --> 00:58.730
+Well, we go back to our developer that Andrew.
+
+00:58.900 --> 01:00.500
+Com And he can go.
+
+01:00.510 --> 01:02.480
+I already have these from previous, right?
+
+01:02.880 --> 01:08.070
+So we're putting together the hilt injection dependency injection.
+
+01:08.430 --> 01:10.230
+You can actually go here and search.
+
+01:10.320 --> 01:15.990
+I'm going to say room database just because that one.
+
+01:18.090 --> 01:19.170
+OK, there we go.
+
+01:19.470 --> 01:27.330
+And usually here you can see it tells us as of as of this date to that 3.0, that is the current stable
+
+01:27.330 --> 01:29.210
+release, OK?
+
+01:29.520 --> 01:36.030
+And here it will give you exactly what we need, which indeed is is a dependency for room.
+
+01:36.450 --> 01:40.520
+So the first thing we need to add here is going to be the implementation these two.
+
+01:40.530 --> 01:41.760
+So I'm going to copy these.
+
+01:44.750 --> 01:49.470
+Go back now, remember, we go to our module build.gradle at there.
+
+01:49.580 --> 01:52.220
+I'm going to paste all of that there, OK?
+
+01:53.870 --> 01:58.490
+And it all works out because we have room version that I've created or earlier.
+
+01:58.520 --> 02:01.490
+Let me get rid of all of these below grade or that app.
+
+02:01.760 --> 02:04.460
+We said room version and to that 3.0.
+
+02:04.850 --> 02:09.170
+OK, so we have this variable per se that it's being used here.
+
+02:09.500 --> 02:10.190
+OK, there we go.
+
+02:10.910 --> 02:12.590
+Let's see if there's anything else we need.
+
+02:13.520 --> 02:14.660
+OK, so there we go.
+
+02:15.210 --> 02:16.040
+That should be good.
+
+02:16.880 --> 02:22.220
+Now there are a few other dependencies that I'm going to paste and add them here.
+
+02:22.250 --> 02:23.310
+These are co-writing.
+
+02:23.360 --> 02:26.050
+We'll talk about quarantines and we'll see the power of quarantine.
+
+02:26.070 --> 02:32.810
+So these will allow us to do things like running processes outside of main thread, creating different
+
+02:32.810 --> 02:33.730
+threads and so forth.
+
+02:33.740 --> 02:35.660
+So this is going to be very helpful.
+
+02:35.990 --> 02:37.070
+So all what these are.
+
+02:37.100 --> 02:40.580
+And by the way, you're going to have access to all of these because this code is going to be hosted.
+
+02:41.030 --> 02:45.620
+You have access to this code and I will encourage you to actually go to the code and open the building
+
+02:45.620 --> 02:46.040
+Gradle.
+
+02:46.310 --> 02:48.020
+So you have exactly what I have here.
+
+02:48.020 --> 02:52.820
+So it's essentially here, as you can see six core proteins core for Kotlin.
+
+02:53.960 --> 02:55.280
+Well, so let's go ahead and sync.
+
+02:55.760 --> 02:56.180
+All right.
+
+02:56.270 --> 02:57.710
+It looks like everything went well.
+
+02:57.920 --> 03:03.170
+And again, please remember, by the time you're watching this video, these versions will be different,
+
+03:03.650 --> 03:04.390
+most likely.
+
+03:04.400 --> 03:07.700
+And so you will probably get something like a yellow squiggly line.
+
+03:07.700 --> 03:10.580
+If you click on that, you can see you have this light bulb.
+
+03:11.030 --> 03:14.090
+That means you can change to the newer version.
+
+03:14.420 --> 03:19.850
+OK, it's going to be with all of this, so be aware of that and change to that newer version.
+
+03:20.540 --> 03:20.890
+All right.
+
+03:20.900 --> 03:22.670
+So everything seems to be fine.

@@ -1,0 +1,58 @@
+WEBVTT
+
+00:00.270 --> 00:05.850
+So the navigation of our application is pretty much going well at this point because we were able to
+
+00:05.850 --> 00:11.370
+have this part, at least of our whole app done right.
+
+00:11.370 --> 00:15.900
+So we have the splash screen, we have a wonderful animation.
+
+00:15.900 --> 00:23.940
+And then once the splash screen is done and playing and we go to our logging or create account screens,
+
+00:23.940 --> 00:30.780
+and we saw that we could also reuse our composable because we're talking about text fields and so forth.
+
+00:30.780 --> 00:37.500
+So we created something clever here where we can toggle to see whether it be logging, whether the user
+
+00:37.500 --> 00:40.650
+is going to be logging in or creating an account.
+
+00:40.980 --> 00:41.250
+OK.
+
+00:41.430 --> 00:47.280
+So this is really good to know because you can use this strategy in your own applications.
+
+00:47.310 --> 00:55.110
+In fact, I recommend you do so to foster the reusability of composable functions.
+
+00:55.620 --> 00:57.510
+OK, so we've done this first part.
+
+00:57.720 --> 01:02.610
+There's still more to do, but at least we should be happy that we have that infrastructure set up for
+
+01:02.610 --> 01:02.790
+us.
+
+01:03.240 --> 01:09.210
+The next thing we need to do, of course, you would think it would be to go straight and look at the
+
+01:09.240 --> 01:13.140
+homescreen, but instead we are now going to implement a few things.
+
+01:13.140 --> 01:19.590
+First of all, we're going to create accounts using, of course, Firebase and also log in.
+
+01:19.920 --> 01:26.070
+So we're going to log in users if we have them and create or create account or should say those same
+
+01:26.070 --> 01:26.430
+users.
+
+01:26.610 --> 01:29.250
+So this is what I'm going to do next using Firebase.

@@ -1,0 +1,271 @@
+WEBVTT
+
+00:00.660 --> 00:05.820
+So now that we have a readers screen class who knows how to route everything.
+
+00:06.600 --> 00:12.900
+Let's go ahead and look at creating the navigation so this go ahead to read on navigation.
+
+00:13.590 --> 00:14.160
+So we do.
+
+00:14.160 --> 00:20.010
+Navigation will allow, of course, for us to be able to put together the screens and innovations so
+
+00:20.010 --> 00:23.130
+that we're able to then go from one screen to the next.
+
+00:23.610 --> 00:23.820
+Right.
+
+00:24.810 --> 00:25.890
+So what do we need to do here?
+
+00:26.010 --> 00:28.620
+Well, first of all, this has to be a composable.
+
+00:29.100 --> 00:30.650
+In fact, this is not a class.
+
+00:30.670 --> 00:33.720
+It's going to be fun like this function.
+
+00:34.230 --> 00:40.170
+And let's say composable such a. function.
+
+00:40.170 --> 00:43.350
+We have to put the parentheses there.
+
+00:43.950 --> 00:44.250
+OK.
+
+00:44.760 --> 00:48.330
+The first thing we need is to add a nav controller.
+
+00:48.330 --> 00:58.770
+So say foul nav controller, such if Hey NAV controller, and then I'm going to use the Remember NAV
+
+00:58.830 --> 01:05.010
+controller like this because we need to have control over this nav controller will be able to direct
+
+01:05.190 --> 01:11.240
+where we need to go so we can say enough controller that go to X Root, right?
+
+01:11.910 --> 01:12.600
+So we need that.
+
+01:13.860 --> 01:20.160
+But for all of that, we also need a place where we can host all of the composable in this case, all
+
+01:20.160 --> 01:21.120
+of the screens.
+
+01:21.720 --> 01:28.830
+Well, for that will need a nav hosts on there, say nav host such and we need to pass the nav controller,
+
+01:28.830 --> 01:33.690
+which is created right because it needs and then we need to create the graph here that will contain
+
+01:33.690 --> 01:35.310
+all of the screens, all the composable.
+
+01:35.310 --> 01:39.180
+So we are building here the actual screens.
+
+01:39.330 --> 01:41.430
+Now I'm not going to put graphs like this.
+
+01:42.000 --> 01:46.380
+I'm actually going to add a start, say start destination.
+
+01:46.680 --> 01:48.810
+OK, so we need to have a starting point.
+
+01:49.170 --> 01:55.440
+Here is the beauty why we went through the trouble to create this reader screen.
+
+01:55.440 --> 02:01.650
+So let's see, go back to our readers screens there because we can have one place where we add all of
+
+02:01.650 --> 02:09.180
+our screens and the connections in the paths right for our screens so we can use that here.
+
+02:10.050 --> 02:15.780
+So starting this nation, I could have just put something like Hello world or.
+
+02:17.670 --> 02:20.040
+Log in screen like this.
+
+02:20.170 --> 02:21.840
+But this is not very scalable.
+
+02:22.080 --> 02:24.180
+That's why we have the rear screens.
+
+02:24.600 --> 02:25.290
+Look what I can do.
+
+02:25.290 --> 02:31.410
+I can say readers screens, right, and I can go to splash screen.
+
+02:32.790 --> 02:36.300
+That's what I want to get to that name, right?
+
+02:36.840 --> 02:41.880
+So I'm passing the name of my destination, that has to be the starting point.
+
+02:43.530 --> 02:43.920
+All right.
+
+02:44.130 --> 02:48.690
+And of course, this is a lambda, I can go ahead and do that.
+
+02:49.290 --> 02:52.410
+And now I have inside here the nav graph builder.
+
+02:52.410 --> 02:59.880
+So this is where I build the graph, meaning the actual composable or the actual screens that I want
+
+02:59.880 --> 03:00.780
+to show you the user.
+
+03:01.080 --> 03:05.340
+So how do we create that composable destination or screen composable?
+
+03:05.340 --> 03:05.820
+That is.
+
+03:06.390 --> 03:07.860
+And let's start again.
+
+03:07.860 --> 03:08.820
+I just want to show you something.
+
+03:08.820 --> 03:11.180
+So I say composable notice here.
+
+03:11.190 --> 03:13.860
+It says we need to pass a route and arguments.
+
+03:13.890 --> 03:14.810
+We'll see that later.
+
+03:14.820 --> 03:18.180
+OK, so there we go for a composable here, I need to pass the route.
+
+03:18.480 --> 03:19.650
+Well, what is the route?
+
+03:19.840 --> 03:22.380
+Meaning where is it that I want to go?
+
+03:22.890 --> 03:31.440
+Well, I want to go to a screen which I can get from a reader again, screens right that I'm going to
+
+03:31.440 --> 03:33.240
+go to a splash screen.
+
+03:35.100 --> 03:37.800
+OK, that name like this.
+
+03:38.190 --> 03:40.590
+And then, of course, I do have the.
+
+03:41.630 --> 03:45.110
+Nap backs, snack entry, which an object that we will talk about.
+
+03:45.440 --> 03:51.290
+So in this case here, then inside of these composable, you know, a lambda here, this is where I
+
+03:51.290 --> 03:53.780
+pass the actual screen.
+
+03:54.560 --> 03:58.970
+In this case, I'm going to say reader splash screen.
+
+03:59.120 --> 03:59.920
+Notice the difference here.
+
+03:59.930 --> 04:04.220
+Now I'm actually invoking the screen, the composable screen we created earlier.
+
+04:04.760 --> 04:10.790
+And for this, I'm going to pass along the NAF controller because I want to make sure that I'm able
+
+04:10.940 --> 04:17.900
+to invoke or get the INAF controller and get the user the opportunity to if they wish to.
+
+04:17.900 --> 04:20.450
+So to go to a different screen if they want to.
+
+04:20.720 --> 04:24.890
+That's why I'm going to pass along this NAF controller that I created up here.
+
+04:25.370 --> 04:32.360
+Now this is read here because if we go to our readers splash screen command, click See that we don't
+
+04:32.750 --> 04:34.520
+pass the nav controller.
+
+04:34.790 --> 04:35.570
+So I need here.
+
+04:35.570 --> 04:41.300
+I'm going to say nav controller like that and pass that along.
+
+04:41.870 --> 04:47.050
+All of these composable look at them as the screens are going to be inside of nav host and that we have
+
+04:47.060 --> 04:52.010
+the director we still have, which is the nav controller, because we can then say now have control
+
+04:52.100 --> 04:53.990
+dot, go to X and so forth.
+
+04:54.230 --> 04:57.530
+So it makes it really easy to conceptualize this idea of navigation here.
+
+04:57.770 --> 05:02.390
+So I can do the same, of course, to others do a couple more.
+
+05:02.390 --> 05:08.450
+In this case, I'm going to go create another one for reader home screen like this and of course, on,
+
+05:08.450 --> 05:09.920
+let's say, reader home.
+
+05:12.670 --> 05:15.100
+Or I think I call it home screen.
+
+05:16.210 --> 05:16.670
+Very good.
+
+05:16.750 --> 05:23.470
+It's going to have the same issue because I need to pass that knife controller, which we can do now,
+
+05:23.470 --> 05:24.580
+have controller.
+
+05:26.400 --> 05:27.730
+There we go and go back.
+
+05:28.630 --> 05:30.310
+And the problem is over.
+
+05:30.640 --> 05:37.120
+So as a little exercise, I want you to do the same for the search screen.
+
+05:37.570 --> 05:42.820
+Do the same for all other screens that we are going to have or we have created earlier here.
+
+05:42.820 --> 05:43.630
+So it's really simple.
+
+05:43.900 --> 05:45.850
+Just want to make sure that you get the hang of it.
+
+05:46.360 --> 05:46.630
+OK.
+
+05:47.170 --> 05:50.020
+Go ahead and do that and I'll see you next.

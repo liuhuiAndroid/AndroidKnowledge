@@ -1,0 +1,46 @@
+WEBVTT
+
+00:00.210 --> 00:08.350
+So as we have it now, the Jet Note app is working great so it can add items and save them.
+
+00:08.370 --> 00:09.910
+They are all being saved.
+
+00:09.910 --> 00:13.030
+We can click and we can also click.
+
+00:13.050 --> 00:16.050
+We can delete those items so everything is good.
+
+00:16.440 --> 00:22.170
+However, we're not able to persist this data, these notes into a database or somewhere.
+
+00:22.380 --> 00:25.320
+So that is something that we need to do.
+
+00:25.380 --> 00:31.470
+Next, we are going to be putting together the infrastructure needed to be able to persist data to save
+
+00:31.590 --> 00:32.190
+this data.
+
+00:32.670 --> 00:35.450
+OK, because now we just have, you know, cache memory here.
+
+00:35.700 --> 00:37.270
+And that's not scalable.
+
+00:37.290 --> 00:42.580
+That's not what we want, want to be able to actually have an app that when we get out of this app,
+
+00:42.660 --> 00:43.190
+come back.
+
+00:43.210 --> 00:46.440
+Next time, we'll have persisted the data we've entered.
+
+00:46.470 --> 00:51.390
+So this will take us to a different realm of development, which is databases.
+
+00:51.540 --> 00:55.680
+Let's go ahead and take a look at how can we persist or save data in Android?

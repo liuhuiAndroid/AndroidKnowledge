@@ -1,0 +1,382 @@
+WEBVTT
+
+00:00.210 --> 00:06.390
+So it created a new project called Movie App, so we are going to emulate some sort of a movie application.
+
+00:06.420 --> 00:11.880
+The idea here is to keep learning more about composed layouts, compose functions in so many other things
+
+00:12.210 --> 00:18.420
+that will help us get to where we want to get, which is to build modern, scalable and clean applications.
+
+00:18.630 --> 00:19.950
+We are going to restructure everything.
+
+00:19.980 --> 00:21.720
+Let's go back to code for now.
+
+00:21.900 --> 00:26.700
+Let's create a composable function here to organize everything at composable.
+
+00:27.090 --> 00:28.830
+And then this is going to be fun.
+
+00:29.730 --> 00:31.080
+My app as such.
+
+00:31.500 --> 00:40.200
+OK, so this my app here, I'm going to pass a content at composable here and is going to return in
+
+00:40.200 --> 00:41.610
+this case, a unit.
+
+00:41.610 --> 00:42.870
+So it returns nothing.
+
+00:42.900 --> 00:44.910
+This is what we call container functions.
+
+00:44.910 --> 00:49.580
+As you can see, it's a function we're passing here, annotated at composable returns, something we
+
+00:49.590 --> 00:54.570
+pass nothing also, which will allow us then to call my app and pass and accomplish what we want.
+
+00:54.960 --> 01:02.200
+So just since we're here, I'm going to just take all of this inside of a our said content and put inside
+
+01:02.220 --> 01:02.690
+there.
+
+01:03.330 --> 01:12.270
+And for now, I'm just going to get rid of this entirely, as well as that as well as everything inside
+
+01:12.270 --> 01:12.470
+here.
+
+01:12.480 --> 01:13.770
+Let's just get rid of all of this.
+
+01:13.980 --> 01:17.190
+And so inside here, we're just going to call content as such.
+
+01:17.370 --> 01:24.270
+So somewhere else, I can create another function compose function that composable and then when I say
+
+01:24.270 --> 01:24.750
+fun.
+
+01:26.750 --> 01:37.520
+And say my let's just say, main content as such, then we can also pass something and then here I can
+
+01:37.520 --> 01:42.290
+just say text, for instance, that says hello.
+
+01:43.280 --> 01:52.070
+And now we have our content there so I can literally call my app such and pass the content, the content
+
+01:52.070 --> 01:52.670
+I want to pass.
+
+01:52.880 --> 01:58.250
+Is this in this case, let's say main main content as such, and we can do the same thing so we can
+
+01:58.250 --> 02:00.800
+have a default preview here.
+
+02:01.430 --> 02:02.310
+Get rid of all that.
+
+02:02.330 --> 02:05.420
+Just call my app.
+
+02:08.340 --> 02:10.910
+It's a main content, right?
+
+02:11.180 --> 02:15.120
+We switch back here and refresh, hopefully going to see.
+
+02:16.670 --> 02:19.190
+The same thing, let's get rid of all of this, we don't need that.
+
+02:19.730 --> 02:24.110
+And hello, it's showing there, so nothing really out of this world, but we can see everything is
+
+02:24.110 --> 02:24.290
+good.
+
+02:24.950 --> 02:31.130
+So since the inside of main content, they can actually pass a surface as we had before.
+
+02:31.280 --> 02:38.900
+Get all of that, just the text put inside there, and it's a background, colour or color.
+
+02:38.900 --> 02:48.650
+In this case, I'm going to say material, theme color, and I'm going to get background color like
+
+02:48.650 --> 02:48.810
+that.
+
+02:48.810 --> 02:53.750
+So this is what we had before, and I can't get rid of all that import because we don't need that.
+
+02:54.330 --> 02:55.910
+Okay, let's go ahead and refresh again.
+
+02:57.170 --> 02:57.470
+All right.
+
+02:57.470 --> 02:59.630
+So we don't see a lot of difference, but there we go.
+
+02:59.630 --> 03:02.810
+We can now create the sizes for a surface and whatever we want.
+
+03:02.960 --> 03:08.840
+So now that we have a simple structure of the project, we can start playing with a few concepts.
+
+03:08.900 --> 03:15.500
+So Android applications, they tend to have a certain look that is advisable by Google that allows us
+
+03:15.500 --> 03:18.830
+to create more or less uniform user interfaces.
+
+03:18.890 --> 03:20.570
+So I'm talking about material design.
+
+03:20.570 --> 03:27.590
+Material design is a new paradigm UI or a user interface design that allows us to create a very clean
+
+03:27.590 --> 03:28.220
+structure.
+
+03:28.340 --> 03:34.670
+There is this one structure called scaffold, which is part of material design layout, which implements
+
+03:34.670 --> 03:38.060
+the basic material design visual layout structure.
+
+03:38.540 --> 03:39.620
+So what is a scaffold?
+
+03:39.620 --> 03:40.220
+So scaffold?
+
+03:40.220 --> 03:41.840
+Let's go back to our my app here.
+
+03:41.840 --> 03:42.890
+I'm going to show you real quick.
+
+03:43.520 --> 03:48.680
+So we started my app, which has been called inside of a set content, which means we will have this
+
+03:48.680 --> 03:55.730
+trailing lamp to there and we can pass any other function, composable function that is that will create
+
+03:55.730 --> 03:56.510
+a user interface.
+
+03:57.110 --> 03:57.380
+OK.
+
+03:58.700 --> 04:01.460
+So inside here, I'm going to get rid of this content for now.
+
+04:01.880 --> 04:06.230
+So instead of all the material app theme, I'm going to say something like this.
+
+04:06.290 --> 04:08.370
+Let's write a sketch.
+
+04:08.840 --> 04:11.330
+You can see we have this function.
+
+04:11.720 --> 04:17.510
+If you have over and scroll up, you can see the scaffold composable.
+
+04:18.450 --> 04:24.000
+Function, in fact, you can pass modifier and all sorts of things, so let's click like that and we
+
+04:24.000 --> 04:24.300
+have.
+
+04:25.640 --> 04:28.850
+And you see you can Pat and you see you have the lambada there.
+
+04:29.540 --> 04:31.100
+Let's pass a few parameters again.
+
+04:31.100 --> 04:36.530
+If you have over ill-conceived scuffled with pass, modify or scaffold state of top bar, we have a
+
+04:36.530 --> 04:39.860
+lot of parameters or arguments in this case that we can pass.
+
+04:40.610 --> 04:41.540
+Let's start with a few.
+
+04:41.840 --> 04:43.730
+The first one let's have over again.
+
+04:43.970 --> 04:45.560
+We're going to pass the top bar.
+
+04:46.030 --> 04:48.470
+OK, I see top bar as such.
+
+04:49.040 --> 04:51.610
+Notice that it accepts a lambda as well.
+
+04:51.620 --> 04:53.780
+So I'm going to just go ahead and put a lambda section.
+
+04:54.470 --> 04:56.900
+So what happens inside of a top bar?
+
+04:56.960 --> 04:58.940
+Well, so inside here.
+
+04:59.180 --> 05:02.510
+So inside of a tab bar, we can pass another.
+
+05:02.870 --> 05:06.890
+Another function, another composable function that it's provided to us.
+
+05:07.310 --> 05:11.960
+So it's called the top bar or top up bar.
+
+05:12.650 --> 05:13.100
+All right.
+
+05:13.430 --> 05:17.660
+As the name implies, this allows us to create a top says here.
+
+05:17.660 --> 05:23.660
+Material design top app bar The top app bar displays information and actions related to the current
+
+05:23.660 --> 05:24.170
+screen.
+
+05:24.770 --> 05:25.400
+Very handy.
+
+05:25.400 --> 05:27.560
+We don't have to do all of that from scratch.
+
+05:28.250 --> 05:32.420
+So in our top app bar, we can pass a few parameters, right?
+
+05:32.420 --> 05:34.690
+Scrap over and pass modifier.
+
+05:34.700 --> 05:35.360
+What's new?
+
+05:35.360 --> 05:41.660
+Background, color, content, color and of course, we can pass the contents of this top bar as well.
+
+05:42.950 --> 05:43.360
+OK.
+
+05:43.430 --> 05:44.030
+Very handy.
+
+05:44.150 --> 05:51.230
+So I'm going to start with background color and they say colors, let's use magenta for now, and let's
+
+05:51.230 --> 05:53.480
+pass something else here.
+
+05:53.540 --> 05:55.280
+Let's see elevation.
+
+05:56.150 --> 05:57.390
+Say five deep.
+
+05:59.210 --> 06:02.600
+Let's import deep and inside of these top bar.
+
+06:02.660 --> 06:10.100
+I'm going to for now, I'm just going to go ahead and just pass a text that see movies like that.
+
+06:13.700 --> 06:14.720
+Let's go ahead and refresh.
+
+06:16.960 --> 06:17.680
+And you can see.
+
+06:18.950 --> 06:21.860
+We have this nice top bar that.
+
+06:23.760 --> 06:25.740
+We were given for free, pretty much.
+
+06:26.190 --> 06:27.720
+I can go ahead and pass content.
+
+06:27.960 --> 06:34.080
+However, because we know content, if you have over scaffold, we know that scaffold content argument
+
+06:34.080 --> 06:37.770
+here is Celeste and its last parameter and is a composable.
+
+06:38.010 --> 06:41.430
+That means it's also can be also called as such.
+
+06:41.970 --> 06:48.510
+OK, so here I can just go ahead and say content, whatever we are passing through our my app compose,
+
+06:48.510 --> 06:53.970
+which of course they've been called here and we are passing my content, which is all of this.
+
+06:54.330 --> 06:55.620
+Not much, but that.
+
+06:56.950 --> 06:58.480
+So now if I refresh this.
+
+06:59.940 --> 07:06.720
+We can see we have hello, which is inside of our very nice scaffold there.
+
+07:09.220 --> 07:15.100
+Scaffold is very important, as you see it gives us the structure, the skeleton that we need to start
+
+07:15.100 --> 07:17.290
+building material design focused.
+
+07:17.920 --> 07:20.230
+And if you have over again, this is really important.
+
+07:20.230 --> 07:24.160
+Whenever in doubt, you will notice that there are a lot of things we can pass as arguments.
+
+07:24.670 --> 07:31.690
+You can pass content, color, background, color draw, you can pass the draw, background, color
+
+07:31.900 --> 07:34.090
+or shape and so many, so many other things.
+
+07:34.360 --> 07:37.420
+Most importantly, you can also pass floating actions buttons.
+
+07:37.660 --> 07:39.370
+These are the buttons that you can see.
+
+07:39.520 --> 07:43.060
+As the name implies, we can pass them around here, usually at sea.
+
+07:43.330 --> 07:44.800
+So it's usually a circle.
+
+07:45.100 --> 07:50.230
+You can, of course, change the shape, but it's usually a circle you'll see and it's floating, meaning
+
+07:50.230 --> 07:52.480
+it's at the top of the view.
+
+07:53.140 --> 07:58.480
+So a lot of things we can do here, but at least so far, I can see that we have this structure that
+
+07:58.480 --> 08:02.230
+allows us to have a skeleton where we can put together the application.

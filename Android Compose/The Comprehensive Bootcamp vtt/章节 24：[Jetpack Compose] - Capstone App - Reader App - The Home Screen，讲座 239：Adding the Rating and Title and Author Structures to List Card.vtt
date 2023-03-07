@@ -1,0 +1,331 @@
+WEBVTT
+
+00:00.900 --> 00:06.600
+So let's go ahead and start putting together the structure here, so we're going to start with the icon
+
+00:06.600 --> 00:10.560
+first and then this star and the rating.
+
+00:11.250 --> 00:14.470
+OK, so all of that's going to be, of course, inside of our column here.
+
+00:14.490 --> 00:18.330
+So first of all, for our column, I'm going to change a few things here.
+
+00:19.630 --> 00:21.550
+So I'm going to say.
+
+00:23.940 --> 00:24.990
+How did my fire?
+
+00:29.100 --> 00:33.090
+And I want the padding, the top padding.
+
+00:36.940 --> 00:48.310
+To be about twenty five deep and then vertical arrangement, I want us to be center and horizontal arrangement.
+
+00:49.090 --> 00:51.430
+I want center horizontally like this.
+
+00:52.630 --> 00:59.570
+And now inside here, that's where I'm going to add the icon this heart first.
+
+00:59.590 --> 01:04.360
+So let's go ahead and say icon going to use the image factor.
+
+01:04.900 --> 01:06.370
+When to use our icons.
+
+01:06.940 --> 01:08.140
+Just use default.
+
+01:10.330 --> 01:11.010
+Well rounded.
+
+01:11.020 --> 01:11.740
+That's fine.
+
+01:12.160 --> 01:15.550
+And where he used a favorite border like this.
+
+01:16.600 --> 01:18.460
+And of course, we need to pass a description.
+
+01:23.250 --> 01:24.360
+They've icon
+
+01:27.540 --> 01:35.070
+and passing modifiers to just modify a few things here and say, mighty fire, just keep it padding
+
+01:35.340 --> 01:37.650
+bottom padding that is of about one dpi.
+
+01:38.200 --> 01:40.080
+OK, pretty good.
+
+01:40.170 --> 01:44.910
+So now if you look at our code, you can see we have that very nice.
+
+01:46.130 --> 01:50.930
+Heart there next to let's go ahead and create and look at this structure here.
+
+01:51.470 --> 01:53.150
+It's going to be its own structure per se.
+
+01:53.690 --> 01:56.810
+That means this is going to be right after a hurricane.
+
+01:56.840 --> 02:07.190
+I'm going to call book rating, which is going to expect a score of, let's say, three that five to
+
+02:07.190 --> 02:07.760
+begin with.
+
+02:08.690 --> 02:10.610
+And let's go ahead and create this composable.
+
+02:11.510 --> 02:11.970
+There we go.
+
+02:11.990 --> 02:19.790
+So I'm just going to have 4.5 as a default and in our book rating here, what we want to do.
+
+02:19.790 --> 02:25.130
+First of all, we're going to create a surface like that and add a modifier
+
+02:27.530 --> 02:30.110
+height in this case of about 70
+
+02:32.570 --> 02:35.810
+and padding overall padding about four dpi.
+
+02:37.490 --> 02:43.820
+And let's go ahead and add a a shape, right?
+
+02:43.910 --> 02:47.720
+Because we want a shape like this and let's get rid of that.
+
+02:47.800 --> 02:49.490
+You can see the exact shape there.
+
+02:50.210 --> 02:59.510
+So rounded corners shape and I'm going to give a fifty six dpi percentage so really well rounded as
+
+02:59.510 --> 03:00.050
+you see there.
+
+03:00.290 --> 03:00.620
+OK.
+
+03:04.150 --> 03:12.190
+I'm going to give an elevation of about six deep and the civic color, they color dark white.
+
+03:13.300 --> 03:17.070
+So if you look at this, you'll see that indeed, we have two items inside.
+
+03:17.080 --> 03:21.490
+We have to star and then they sort out zero or in this case, the rating.
+
+03:22.010 --> 03:26.110
+So let's create a column pass a modifier again.
+
+03:29.210 --> 03:37.220
+Overall pattern of buy for deep, and that should be OK for now, and we're going to pass an icon again.
+
+03:37.730 --> 03:39.380
+And it's going to be icons.
+
+03:39.530 --> 03:40.490
+I say default.
+
+03:42.050 --> 03:45.530
+Let's say field if you want.
+
+03:45.840 --> 03:47.720
+Doesn't matter really when I say star.
+
+03:50.180 --> 03:51.140
+And how about.
+
+03:54.190 --> 04:00.640
+Start a border like this one night and I can say start for a content description.
+
+04:03.100 --> 04:05.380
+Let's pass in modifier internally.
+
+04:07.540 --> 04:11.740
+Let's keep the padding of about three deep.
+
+04:14.150 --> 04:20.930
+And then we're going to add a text right below it, which is going to be our scores going to this score
+
+04:22.130 --> 04:24.170
+that to string like that.
+
+04:24.350 --> 04:28.400
+This style it a little bit using material theme.
+
+04:31.800 --> 04:35.550
+And typography subtitle one like this.
+
+04:36.360 --> 04:37.590
+All right, let's go and split.
+
+04:38.640 --> 04:40.680
+It's refresh real quick.
+
+04:44.120 --> 04:49.800
+And just like that, you see, we have this nice structure there.
+
+04:49.820 --> 04:50.540
+It looks really good.
+
+04:50.780 --> 04:51.530
+I love it.
+
+04:51.770 --> 04:52.160
+OK.
+
+04:52.310 --> 04:53.630
+So it is indeed working.
+
+04:53.840 --> 04:55.640
+So it looks pretty much something like this.
+
+04:55.970 --> 04:56.750
+That's really good.
+
+04:57.170 --> 04:57.620
+All right.
+
+04:59.030 --> 04:59.990
+OK, so what's next?
+
+05:00.050 --> 05:03.560
+Well, next, we need to look at this section here.
+
+05:03.560 --> 05:05.300
+Where are we going to have the title of the book?
+
+05:05.660 --> 05:08.840
+And, of course, potential writers.
+
+05:09.320 --> 05:14.750
+So very simply, let's go back to code where we call.
+
+05:15.050 --> 05:17.390
+So now we're back into our card.
+
+05:17.900 --> 05:18.230
+OK.
+
+05:19.400 --> 05:25.220
+So after a book reading, we've added that and outside of our role because it has to be still inside
+
+05:25.220 --> 05:26.780
+of a column, right?
+
+05:27.710 --> 05:28.940
+So this is.
+
+05:30.480 --> 05:37.380
+There were no or we have to book and the structure now we're going to go outside still in this column
+
+05:37.380 --> 05:39.900
+and create yet this structure there.
+
+05:41.130 --> 05:45.150
+So let's see, that's our role outside of that role.
+
+05:45.760 --> 05:46.770
+I want to create a text.
+
+05:47.790 --> 05:50.400
+This is going to say book title.
+
+05:53.310 --> 05:54.510
+Passing modifier.
+
+06:01.420 --> 06:02.530
+Overall padding.
+
+06:06.620 --> 06:08.150
+Let's say font weight.
+
+06:08.600 --> 06:10.940
+And I want this to be bold.
+
+06:14.210 --> 06:24.050
+Max lines, I want this to be at least two lines, OK, because the book title could be long and overflow.
+
+06:24.080 --> 06:28.830
+I'm going to add an overflow here because we don't have a lot because we don't have a lot of space,
+
+06:28.840 --> 06:32.440
+something I just see text overflow ellipses.
+
+06:33.050 --> 06:40.250
+I see ellipses like this so we can have something like dot dot if the text is too long.
+
+06:42.170 --> 06:42.490
+OK.
+
+06:42.800 --> 06:43.910
+That's should be good.
+
+06:45.170 --> 06:46.700
+And then let's create another text.
+
+06:47.300 --> 06:50.990
+And this one is going to be authors like this.
+
+06:51.350 --> 06:53.680
+And are you going to say modifier?
+
+06:53.690 --> 06:54.560
+Of course.
+
+06:58.050 --> 07:07.520
+Padding by four deep and give it a style material theme.
+
+07:09.860 --> 07:10.980
+Let's go back.
+
+07:19.470 --> 07:23.190
+Typography, and I'm going to make it caption, OK.
+
+07:23.310 --> 07:23.760
+All right, good.
+
+07:24.240 --> 07:25.200
+Let's take a look.
+
+07:27.860 --> 07:29.180
+Very nice, so there it is.
+
+07:29.990 --> 07:33.650
+We have the book title goes here and authors will go here.
+
+07:34.130 --> 07:34.640
+Very good.
+
+07:34.650 --> 07:35.660
+So making good progress.
+
+07:36.950 --> 07:37.280
+All right.
+
+07:37.280 --> 07:40.970
+So the next thing we need to do is to create this nice structure there.
+
+07:41.090 --> 07:41.300
+Right.
+
+07:41.330 --> 07:42.380
+So it's really nice.
+
+07:42.620 --> 07:50.160
+So it looks like it's a rounded corners shape there and it's going to be on top of our main structure.
+
+07:50.180 --> 07:53.300
+Main card OK, so we're going to do that in the next video.

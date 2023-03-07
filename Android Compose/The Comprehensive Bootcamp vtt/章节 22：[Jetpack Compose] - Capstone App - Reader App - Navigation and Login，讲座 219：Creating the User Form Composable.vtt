@@ -1,0 +1,535 @@
+WEBVTT
+
+00:00.810 --> 00:03.750
+Now we're ready to put together the login screen.
+
+00:04.240 --> 00:05.850
+OK, so it's going to look something like this.
+
+00:06.420 --> 00:11.970
+Now there's one thing that you will notice that we have this a reader that seems like something that
+
+00:11.970 --> 00:12.870
+we've done before.
+
+00:12.930 --> 00:19.940
+So if we go back to our splash screen, you can see that we have this is what I call my logo.
+
+00:19.950 --> 00:23.580
+So this structure here is what shows.
+
+00:23.580 --> 00:27.920
+At least I should say this text here breathes this right.
+
+00:27.930 --> 00:30.930
+It's what outputs this logo.
+
+00:31.410 --> 00:37.890
+What I can do I can refactor this because I want to reuse that can right click and say what factor?
+
+00:40.810 --> 00:44.290
+And let's say into a function.
+
+00:46.210 --> 00:53.280
+This list naming that function, I'm going to say Wheater logo, and this is going to be a composable.
+
+00:53.340 --> 00:54.870
+Of course, like this.
+
+00:55.800 --> 00:56.040
+All right.
+
+00:56.040 --> 00:58.650
+So we have this readable logo there.
+
+00:59.290 --> 01:00.840
+I see that it's down here.
+
+01:01.140 --> 01:07.440
+And what I can do also a quick passing modifier just in case I want to modify my cellphone and pass
+
+01:07.440 --> 01:14.970
+a modifier to say we have a default modifier sign required if we don't add it and I'm going to pass
+
+01:14.970 --> 01:17.640
+an actual modifier modifier.
+
+01:19.020 --> 01:22.650
+It's going to be our modifier that we're passing their modifier, les.
+
+01:22.650 --> 01:23.700
+Such not.
+
+01:24.210 --> 01:34.800
+What are you padding of bottom padding of about six dpi to give that nice space at the bottom?
+
+01:35.640 --> 01:36.000
+OK.
+
+01:37.550 --> 01:41.760
+In this case here, I don't need to pass where we're calling it read a logo.
+
+01:41.790 --> 01:48.480
+I don't need to pass anything, but in other cases, I may want to add or passing a modifier to change
+
+01:48.480 --> 01:50.310
+the look of our logo.
+
+01:50.700 --> 01:51.870
+So this is a good idea.
+
+01:52.590 --> 01:58.170
+And so instead of our reader logging screen here, this is what I'm going to use that.
+
+01:59.670 --> 02:04.290
+Reader, right, a reader this logo and add other elements as well.
+
+02:05.100 --> 02:07.070
+OK, so back to our reader screen here.
+
+02:07.080 --> 02:14.850
+We no longer need the just the text ahead and optimize the imports.
+
+02:16.860 --> 02:22.890
+OK, so first thing, first put a surface there and I'm going to pass a modifier.
+
+02:25.900 --> 02:30.180
+I feel, Max, say Phil.
+
+02:30.190 --> 02:36.160
+Max sighs, it's not adding the modifier, OK, modifier.
+
+02:39.450 --> 02:45.330
+So I'm going to say fuel excise that will include the will that will include the height and the width
+
+02:45.840 --> 02:46.080
+just.
+
+02:49.220 --> 02:54.170
+OK, and then inside, let's just get rid of unnecessary redundancy there.
+
+02:57.050 --> 03:06.020
+That's a column and this column here, I'm going to make sure that horizontally we are center, horizontally
+
+03:06.020 --> 03:12.500
+aligned and we'll say vertically arrangement, just start at the top.
+
+03:14.870 --> 03:19.970
+Well, the first thing we want to add, of course, you see, I'm going to add the logo so conveniently
+
+03:19.970 --> 03:24.680
+it can just go ahead and say her logo or such.
+
+03:25.580 --> 03:26.450
+This is private.
+
+03:26.460 --> 03:34.130
+Let's just say fun so that we can access anywhere else we want now to make things even better.
+
+03:34.160 --> 03:45.350
+We can remove it from here and add it into our components like so that it's its own entity and we can
+
+03:45.890 --> 03:47.360
+always get that.
+
+03:47.360 --> 03:49.360
+And I say components.
+
+03:53.120 --> 03:56.390
+It's the file and then pass and that composable there.
+
+03:57.020 --> 04:04.250
+So now I can just go ahead and of course, we need to import that to make it work and let's get rid
+
+04:04.250 --> 04:11.000
+of components and here as well, we have to do the same separating all the concerns.
+
+04:11.570 --> 04:12.050
+So it's good.
+
+04:12.350 --> 04:13.830
+OK, this is no longer needed.
+
+04:13.850 --> 04:19.760
+Let's remove the by optimizing our imports.
+
+04:19.910 --> 04:21.860
+OK, let's go.
+
+04:23.140 --> 04:25.780
+And run, the app might as well.
+
+04:26.350 --> 04:28.490
+OK, two seconds and we should go to.
+
+04:28.750 --> 04:30.010
+Wonderful a reader.
+
+04:30.700 --> 04:30.970
+All right.
+
+04:30.980 --> 04:34.930
+So the idea now is to continue, of course, and add other elements here.
+
+04:35.680 --> 04:41.860
+So let's start with putting together this structure at the top here, which is the fields text fields
+
+04:42.580 --> 04:46.660
+now because I know that I will need two fields here.
+
+04:47.140 --> 04:53.890
+I think it would be helpful if I created a structure or in this case, a composable that will create
+
+04:53.890 --> 05:00.310
+that will allow me to actually create one field and then I can multiply or I can reuse that I compose
+
+05:00.310 --> 05:01.510
+wall to create the next field.
+
+05:02.050 --> 05:02.340
+OK.
+
+05:02.770 --> 05:05.020
+I think that will be kind of helpful.
+
+05:05.260 --> 05:10.570
+And most importantly, what I'm going to do, actually, I'm going to combine these two into one composable.
+
+05:11.050 --> 05:11.740
+We'll see why.
+
+05:12.040 --> 05:16.060
+The reason why is because you see here I have this other option.
+
+05:16.060 --> 05:19.600
+If you are a new user, then you will have to sign up.
+
+05:20.050 --> 05:28.660
+So instead of having to create a new set of fields, right in this case, text field, I'll just have
+
+05:28.660 --> 05:35.530
+to reuse these text fields to create that new to create or sign up the new user.
+
+05:36.520 --> 05:37.630
+All right, you'll see that in action.
+
+05:38.470 --> 05:46.450
+So outside of our reader logic outside of a reader log in screen there, what I'm going to do is.
+
+05:49.040 --> 05:55.730
+I'm going to create a another function composable here, and it's going to be fun.
+
+05:55.760 --> 05:57.560
+Call this user form.
+
+05:58.190 --> 06:00.680
+OK, very good.
+
+06:04.520 --> 06:04.880
+All right.
+
+06:05.000 --> 06:11.480
+So let's add a preview here, so we're able to hopefully get to see what we are working with.
+
+06:12.590 --> 06:12.920
+All right.
+
+06:12.920 --> 06:14.990
+So let's construct our user form.
+
+06:15.380 --> 06:19.940
+So first, we are going to pass in a few variables here, few properties there we need.
+
+06:20.240 --> 06:24.800
+Some say, well, email why this is going to be this state.
+
+06:25.190 --> 06:32.480
+Remember savable when I say, remember here now there's one topic that we haven't talked about.
+
+06:32.510 --> 06:35.390
+Now we've just used remember as such and it works fine.
+
+06:35.750 --> 06:41.180
+But there is another version of Remember Posé called Remember Savable?
+
+06:41.420 --> 06:42.110
+What is this?
+
+06:42.710 --> 06:44.290
+Well, the Remember savable.
+
+06:45.230 --> 06:52.930
+It actually remembers this value that we have here beyond the configuration changes.
+
+06:52.940 --> 06:59.450
+So imagine imagine that your user is typing something and then somehow they decide they're interrupted,
+
+06:59.450 --> 06:59.710
+right?
+
+06:59.720 --> 07:04.370
+Or they decided to turn the phone or they decide to rotate the phone.
+
+07:04.730 --> 07:07.580
+And then that means then this data will be lost.
+
+07:07.830 --> 07:12.240
+Now, if you say, remember a savable, the state is going to be lost, which means the values that
+
+07:12.240 --> 07:18.920
+they are entering it, it's going to be recomposed along and it will stay there beyond rotation.
+
+07:19.700 --> 07:20.810
+That is something to keep in mind.
+
+07:20.810 --> 07:22.160
+So I'm going to use remember receivable.
+
+07:22.340 --> 07:22.910
+So we know.
+
+07:24.320 --> 07:24.670
+All right.
+
+07:24.680 --> 07:26.990
+So in this case, it's going to be a mutable state.
+
+07:28.360 --> 07:31.360
+Of and going to be just a string like this.
+
+07:31.810 --> 07:43.000
+First of all, you put that all in hopes that we can go ahead and convert a single lambda line lambda
+
+07:43.000 --> 07:45.730
+there to the same thing with password
+
+07:48.580 --> 07:49.780
+mutable state.
+
+07:51.050 --> 07:55.550
+All of them, they're going to just restructure this to.
+
+07:58.310 --> 08:05.870
+And then going to create another one for password visibility because I want to be able to toggle the
+
+08:05.870 --> 08:07.630
+visibility of password, right?
+
+08:08.930 --> 08:09.410
+This.
+
+08:12.140 --> 08:19.460
+Remember, savable again, keeps adding this should probably get a different one.
+
+08:19.580 --> 08:19.910
+OK.
+
+08:20.720 --> 08:27.320
+Mutable state of, I'm going to say, false in the beginning, and then I'm going to say Val, say password
+
+08:29.570 --> 08:32.420
+focus request like this.
+
+08:32.810 --> 08:35.750
+It's going to be a focus
+
+08:38.300 --> 08:39.080
+request.
+
+08:41.360 --> 08:42.320
+That default?
+
+08:42.680 --> 08:42.890
+Yeah.
+
+08:44.300 --> 08:46.760
+And then I'm going to pass the keyboard controller.
+
+08:48.890 --> 08:56.120
+There's just going to be the local software keyboard controller because we want to be able to say one,
+
+08:56.120 --> 08:59.540
+be able to get control over the keyboard so it can do things like.
+
+09:01.070 --> 09:09.470
+Hiding it and so forth, so I say that current and foul, I'm going to put a valid let's just say,
+
+09:09.470 --> 09:16.010
+remember in this case and in this case, we want to validate these two fields.
+
+09:16.010 --> 09:19.950
+So I'm going to put that in sort of remember value here.
+
+09:19.970 --> 09:22.920
+That way, we are able to check that.
+
+09:22.940 --> 09:23.810
+So what is that?
+
+09:23.820 --> 09:28.800
+We want to validate what we can pass inside of these constructor?
+
+09:29.030 --> 09:39.020
+Remember the email that value and the password that value goes are the values we want to validate how
+
+09:39.020 --> 09:40.160
+well I'm going to say email.
+
+09:40.790 --> 09:45.500
+That value is going to go ahead and invoke the trim method.
+
+09:45.980 --> 09:59.720
+And if it's not empty like this and password value trim that to get the pure item, it's not empty as
+
+09:59.720 --> 10:00.110
+well.
+
+10:00.710 --> 10:08.810
+If that's true, then we know that this is going to be valid, which means which means which means we're
+
+10:08.810 --> 10:09.290
+good to go.
+
+10:09.930 --> 10:11.810
+Right now, we're having an issue here.
+
+10:11.810 --> 10:17.510
+If you have over going to say this API is experimental, OK, and is likely to change in the future.
+
+10:17.540 --> 10:19.820
+Now this is the beauty.
+
+10:19.820 --> 10:26.780
+Or guess the ugly side of is because it's still being worked on, which means a few of these APIs we're
+
+10:26.780 --> 10:30.050
+using maybe change or removed later.
+
+10:30.170 --> 10:30.500
+OK.
+
+10:30.830 --> 10:37.100
+And so we need to acknowledge that indeed, this is something that we are willing to live with by adding
+
+10:37.220 --> 10:40.790
+these experimental compose UI annotation to the form like this?
+
+10:41.510 --> 10:41.780
+OK.
+
+10:42.710 --> 10:43.160
+There we go.
+
+10:43.190 --> 10:45.620
+Once you do that, then that goes away.
+
+10:46.920 --> 10:52.710
+OK, so we really haven't put together the the structure here, which has put in together the infrastructure,
+
+10:52.710 --> 10:53.850
+the variables that we need.
+
+10:54.600 --> 11:00.780
+So what we want to do is see all of these are laid out vertically as a see, so we want to make sure
+
+11:00.780 --> 11:03.400
+that we put inside of a column.
+
+11:03.930 --> 11:06.960
+That's the layout element that we've seen and we love.
+
+11:08.140 --> 11:13.150
+So right outside here, let's create a column.
+
+11:14.880 --> 11:20.370
+Now in our column here, just remember something every time you adding some sort of place where you
+
+11:20.370 --> 11:25.730
+can add data in this case text field, it's important to have some sort of squirrel ability if need
+
+11:25.750 --> 11:30.870
+be, because remember what will happen special with text field whenever you click on the text field,
+
+11:31.230 --> 11:37.770
+the focus change everything, which means then the keyboard appears, which may bump this entire view
+
+11:37.770 --> 11:42.300
+upward and kind of obscure out part of the user interface.
+
+11:42.300 --> 11:46.500
+So having some sort of scroll ability is always a good idea.
+
+11:47.010 --> 11:51.050
+We can do that by saying following I'm going to create another variable here.
+
+11:51.060 --> 11:52.740
+Say Foul call is modifier.
+
+11:53.160 --> 11:56.010
+It's going to be a modifier type someone say is equal to modifier.
+
+11:56.640 --> 12:02.760
+And then I'm going to add versus add a height of about 250 dpi.
+
+12:03.540 --> 12:06.050
+Let's import the dpi there.
+
+12:07.960 --> 12:08.310
+OK.
+
+12:08.800 --> 12:17.050
+And then I'm going to add a background color and just material theme that colors background.
+
+12:17.530 --> 12:17.860
+OK?
+
+12:18.430 --> 12:21.280
+And then I'm going to add the vertical scroll state.
+
+12:21.670 --> 12:23.430
+So in this case, and I say, remember?
+
+12:26.340 --> 12:27.690
+Scroll state.
+
+12:28.620 --> 12:30.190
+Just use that as such.
+
+12:31.170 --> 12:35.700
+OK, and that modifier, I'm going to pass inside here, say modifier.
+
+12:37.080 --> 12:38.340
+Just pass this modified there.
+
+12:38.370 --> 12:41.910
+It's easier that way instead of polluting this entire constructor there.
+
+12:43.010 --> 12:43.270
+All right.
+
+12:44.380 --> 12:44.680
+All right.
+
+12:44.830 --> 12:48.520
+So we can continue, of course, and say horizontal alignment.
+
+12:49.030 --> 12:55.930
+I want this to be centered horizontally and vertical alignment or arrangement difference in language
+
+12:55.930 --> 12:56.230
+there.
+
+12:56.560 --> 12:58.230
+In fact, I don't need anything vertically.
+
+12:58.240 --> 12:59.800
+I think there should be good for now.
+
+13:00.460 --> 13:03.340
+OK, so let's go inside of our column here.
+
+13:03.340 --> 13:05.740
+This is where we can start putting together this structure.
+
+13:06.040 --> 13:07.840
+And that's what we're going to be doing in the next video.

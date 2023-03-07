@@ -1,0 +1,511 @@
+WEBVTT
+
+00:00.660 --> 00:03.150
+So our question repository is ready for us to use it.
+
+00:03.510 --> 00:09.540
+And next, we need to look at the view model, but before you even do that, remember we have to go
+
+00:09.540 --> 00:16.110
+back to our app module because this is where we register things and we create the providers we need
+
+00:16.110 --> 00:17.010
+to provide for us.
+
+00:17.040 --> 00:19.140
+We provided the question API, which is important.
+
+00:19.380 --> 00:23.070
+So now the entire application has will have access to this.
+
+00:23.080 --> 00:26.250
+There is this dependency that we can get from anywhere, really.
+
+00:26.610 --> 00:29.190
+But we also have to provide another dependency here.
+
+00:29.340 --> 00:37.530
+We have to provide a single sun and that provides like sites just like we did before another function.
+
+00:38.040 --> 00:39.290
+What this function will be?
+
+00:39.330 --> 00:43.770
+Well, it was going to provide the question.
+
+00:46.380 --> 00:47.400
+Repository.
+
+00:51.000 --> 00:51.450
+Like that?
+
+00:51.960 --> 00:54.930
+So what do we need for the question repository to work?
+
+00:55.080 --> 00:58.230
+Well, we need to pass the actual API, right?
+
+00:59.220 --> 01:03.480
+Because if you go back to a question repository here, we have to have this question API.
+
+01:04.200 --> 01:05.070
+We injected it.
+
+01:05.310 --> 01:07.320
+So that needs to be passed along.
+
+01:07.980 --> 01:08.430
+All right.
+
+01:08.430 --> 01:15.330
+So this API question API and I'm going to just go ahead and set it to and then this will then return
+
+01:15.780 --> 01:16.620
+a question.
+
+01:19.850 --> 01:23.990
+Repository in pass the API as such.
+
+01:25.010 --> 01:29.300
+So whenever this provide question repository is called, by the way, we're not going to call these
+
+01:29.300 --> 01:29.810
+directly.
+
+01:30.170 --> 01:35.360
+This all is going to be done in the back, ground by hilt and dagger.
+
+01:35.360 --> 01:36.170
+That is the beauty.
+
+01:36.180 --> 01:42.950
+All these dependency, this app module will be connected when we run this application, when we build
+
+01:43.010 --> 01:44.060
+this application, right?
+
+01:44.120 --> 01:48.890
+It's going to create all the classes that it needs to connect all of these pieces together.
+
+01:50.340 --> 01:51.640
+All of that done for us.
+
+01:51.660 --> 01:55.470
+We don't have to do too much work now that we have created this provider here.
+
+01:55.830 --> 02:03.240
+We can now go to create the best view model is where we have the state of the application, all the
+
+02:03.240 --> 02:09.060
+variables, all of the data that is square is converted into state so that the user interface can then
+
+02:09.060 --> 02:09.840
+react to it.
+
+02:09.940 --> 02:11.310
+The comparables and so forth.
+
+02:12.700 --> 02:13.000
+All right.
+
+02:13.150 --> 02:18.100
+So let's go ahead, create the actual view model, let's go get rid of all of these guys.
+
+02:19.150 --> 02:20.380
+We no longer need them.
+
+02:20.590 --> 02:21.940
+We may come back to them, of course.
+
+02:22.870 --> 02:27.580
+So the new model is going to be I like to put the inside of our screens because this is where I add
+
+02:27.880 --> 02:28.610
+different screens.
+
+02:28.630 --> 02:34.120
+OK, so let's create a court ruling class questions view model.
+
+02:35.290 --> 02:42.670
+So let us not forget in that, first of all, this ad, the hilt view model annotation.
+
+02:42.670 --> 02:49.060
+They're OK to signal that this is a to view model, which means we can also go ahead and inject in our
+
+02:49.060 --> 02:50.140
+constructor here.
+
+02:51.430 --> 02:52.060
+What do we need?
+
+02:52.120 --> 02:53.740
+Well, we're going to need the repository.
+
+02:53.990 --> 02:57.010
+I hope you're seeing the trend here.
+
+02:57.430 --> 03:00.730
+Someone say private val repository.
+
+03:01.660 --> 03:04.510
+We call this question repository.
+
+03:05.140 --> 03:05.590
+Very good.
+
+03:07.080 --> 03:10.530
+And, you know, a body class body here, this is where we do the work.
+
+03:11.010 --> 03:16.080
+I need access to our data, which is our data section there, which is this guy.
+
+03:16.590 --> 03:22.590
+Well, but the difference here is that we are inside of a question view model, which means the idea
+
+03:22.590 --> 03:29.820
+is that this view model will be used directly in our user interface, in our composable and our composable
+
+03:29.820 --> 03:32.580
+is needed to compose themselves, which means they need.
+
+03:33.150 --> 03:34.830
+Yes, you guessed it, they need a state.
+
+03:35.820 --> 03:42.180
+So what that means, we have to wrap things again, which means here and we say, Val, our data now
+
+03:42.180 --> 03:47.130
+is going to be a mutable state type.
+
+03:47.610 --> 03:49.050
+And then I'm when to pass again.
+
+03:49.050 --> 03:59.460
+The data or exception, just like we did before a list of long, I know very long classes here.
+
+03:59.650 --> 04:02.130
+So, OK, question item.
+
+04:04.160 --> 04:11.690
+And then we're going to pass a Boolean and then an exception as such, and in the beginning, this is
+
+04:11.690 --> 04:13.010
+going to be an empty.
+
+04:13.730 --> 04:17.000
+And then I'm going to set up to say it's going to be a mutable state.
+
+04:18.080 --> 04:18.450
+Ha.
+
+04:18.470 --> 04:21.080
+And then here I'm going to pass two types that is expecting.
+
+04:21.380 --> 04:27.680
+Well, it's going to be data or exception where passing all in the beginning for the data because we
+
+04:27.680 --> 04:30.110
+don't have anything right and no list of napping.
+
+04:30.260 --> 04:31.910
+We just instantiating this data.
+
+04:32.880 --> 04:38.160
+Object here and four is loading, because we know that's the bullying we're going to pass for these
+
+04:38.250 --> 04:43.890
+there terror exception in the beginning, I'm going to say true, it's loading an exception which is
+
+04:43.890 --> 04:47.520
+going to create an empty constructor exception here that says.
+
+04:49.310 --> 04:52.980
+Nothing like that, close it all.
+
+04:53.000 --> 04:55.760
+I think I'm making a few mistakes here.
+
+04:56.180 --> 05:00.770
+I don't need to pass the angler because I'm actually passing the object, satiating the actual object
+
+05:00.770 --> 05:01.850
+here on my bed.
+
+05:02.630 --> 05:03.020
+OK.
+
+05:03.320 --> 05:04.550
+I think there you go.
+
+05:05.390 --> 05:06.310
+It's finalize.
+
+05:07.730 --> 05:08.750
+This is not mutable.
+
+05:08.750 --> 05:10.970
+Set has to be mutable state.
+
+05:11.120 --> 05:12.080
+That was the problem.
+
+05:12.680 --> 05:13.490
+OK, there we go.
+
+05:14.510 --> 05:14.990
+All right.
+
+05:15.110 --> 05:15.450
+There we go.
+
+05:15.470 --> 05:16.520
+So what are we doing here again?
+
+05:16.520 --> 05:17.570
+Just to revise?
+
+05:17.840 --> 05:22.760
+We're creating a variable data which is going to hold a mutable state because remember, we are going
+
+05:22.760 --> 05:27.170
+to be using here composable also possible state to state.
+
+05:27.440 --> 05:33.890
+So we're wrapping our data exception, which whomever has a real question, boolean an exception.
+
+05:33.920 --> 05:35.150
+We're wrapping it around.
+
+05:35.480 --> 05:40.610
+We were wrapping it with a mutable state because we need that state right so our composable can react
+
+05:40.610 --> 05:42.080
+to it and do what they need to do.
+
+05:42.500 --> 05:47.060
+And of course, you just setting it to an empty object of data or exception here.
+
+05:47.060 --> 05:48.700
+So null for the data.
+
+05:48.710 --> 05:53.000
+The array list is going to be null and beginning and approved for loading and exceptions.
+
+05:53.000 --> 05:55.760
+Can going to be just an empty string exception like that?
+
+05:56.310 --> 05:56.600
+Right.
+
+05:56.780 --> 05:57.250
+There we go.
+
+05:57.260 --> 05:58.850
+So now we need to set up this data.
+
+05:58.850 --> 06:00.260
+We need to actually feed it.
+
+06:00.560 --> 06:02.360
+The information, the data.
+
+06:02.810 --> 06:12.180
+So I'm going to create here a private function, and I'm going to say, get all questions and what this
+
+06:12.200 --> 06:12.820
+will do.
+
+06:12.830 --> 06:19.100
+First of all, we're going to pass a few model scope, scope like this.
+
+06:19.720 --> 06:22.820
+It looks like we don't have a store view, model scope.
+
+06:23.360 --> 06:27.050
+It may be because we are not there we go.
+
+06:27.080 --> 06:36.590
+So my problem here was that I created a question of the model, but I didn't actually extend the view
+
+06:36.590 --> 06:37.100
+model.
+
+06:37.130 --> 06:37.820
+That's why.
+
+06:38.030 --> 06:43.730
+So we need to extend a view model like that in the past, nothing into the constructor that is very
+
+06:43.730 --> 06:44.180
+important.
+
+06:44.540 --> 06:49.030
+That's what was giving out that issue because it makes sense.
+
+06:49.050 --> 06:51.830
+We want this question to model to be of type of view model.
+
+06:52.250 --> 06:52.550
+OK.
+
+06:53.510 --> 06:58.640
+So now if we come here, we're going to be able to say few model scope.
+
+07:00.610 --> 07:03.730
+And then say launch, we're launching our core team here.
+
+07:03.940 --> 07:08.320
+So first, I'm going to go ahead and set the data that value.
+
+07:08.800 --> 07:15.960
+So we going to go into our data loading and said that the troop is now at this point, we are loading,
+
+07:16.330 --> 07:16.600
+right?
+
+07:16.990 --> 07:25.360
+And then I can say data that value again and invoke the and then I can say data that value this guy
+
+07:25.360 --> 07:25.590
+here.
+
+07:25.600 --> 07:31.870
+Of course, we're going through this guy and going to set that to what we say, repository dot.
+
+07:32.170 --> 07:33.490
+Get all questions.
+
+07:34.390 --> 07:40.020
+So I'm setting up our data here to just get all the information that we may be getting from our get
+
+07:40.060 --> 07:45.980
+all question, which knows how to go and get the information from our Jason API, right?
+
+07:46.000 --> 07:51.070
+And then I'm going to check here if data that value and dot data.
+
+07:51.070 --> 07:54.850
+So I'm going into my data or exception, right?
+
+07:54.850 --> 08:02.140
+ArrayList check there if to string it to string and is not empty.
+
+08:02.560 --> 08:13.750
+If that's true, then that means then I can say data that value that loading and set that to false because
+
+08:13.750 --> 08:20.380
+we know that there is nothing happening because now we know that the data, which means whatever we
+
+08:20.380 --> 08:28.280
+have inside of a direct section here, this list of question items, if it's not empty, that means
+
+08:28.280 --> 08:29.080
+that we have something.
+
+08:29.080 --> 08:31.120
+So we're going to set the loading to false.
+
+08:32.420 --> 08:37.940
+So we are adding information to our metadata of our data exception object.
+
+08:38.570 --> 08:42.890
+All right, looks like we want to make this private because it's been used inside here.
+
+08:42.890 --> 08:46.280
+That's fine for now, at least.
+
+08:47.240 --> 08:53.990
+So because here we know that the question view model is going to be called inside of a composable could
+
+08:53.990 --> 09:00.890
+be an activity as well as a matter, because this is just a data section, a data layer we can pass
+
+09:00.890 --> 09:01.130
+here.
+
+09:01.130 --> 09:05.220
+And it blocked to say OK to initialize this question of your model.
+
+09:05.220 --> 09:08.510
+When this first called, what is that we want to happen?
+
+09:08.810 --> 09:10.910
+Well, I'm just going to call it get all questions.
+
+09:13.070 --> 09:17.810
+OK, so when this happens, we're just going to go ahead and call all, get all questions and then we
+
+09:17.810 --> 09:23.090
+should have that information, which means calls this and sets everything up as we went through.
+
+09:23.960 --> 09:24.470
+There we go.
+
+09:24.480 --> 09:28.910
+We have questions for you, model set up and it should be all good.
+
+09:30.210 --> 09:36.510
+So now we have our view model set up, that means we're ready to go up again to look at the user interface.
+
+09:36.780 --> 09:43.560
+So because we have our question view model, he knows how to get that data from our repository in our
+
+09:43.560 --> 09:52.560
+repository knows how to get our data from our Questions API or just a Dow data access object, really?
+
+09:53.160 --> 09:53.850
+And we're set.
+
+09:54.150 --> 09:55.840
+So we have this hierarchy here.
+
+09:55.860 --> 09:56.700
+That's very important.
+
+09:56.700 --> 10:02.160
+And most importantly, we made sure to add metadata to our class, right?
+
+10:02.160 --> 10:09.270
+So we created this data, all exception and wrap it around the array list, which is the really the
+
+10:09.840 --> 10:11.340
+the data that we really want.
+
+10:11.340 --> 10:14.790
+But we also understand that we want to pass something else like, is it loading?
+
+10:14.790 --> 10:16.980
+If it's yes, then we're going to say that's true.
+
+10:17.190 --> 10:20.460
+So that later can get this metadata to check.
+
+10:20.510 --> 10:21.430
+OK, is it loading?
+
+10:21.450 --> 10:22.170
+Is it true?
+
+10:22.290 --> 10:26.240
+Dana, I'm going to show to the user that something is happening if we choose to do so make.
+
+10:26.340 --> 10:28.680
+But at least we have that infrastructure set up.
+
+10:31.930 --> 10:33.580
+Very well, so we're getting there.
+
+10:33.610 --> 10:38.920
+I know it's been a lot of sitting up, but we don't see anything in the user interface, but this is
+
+10:38.920 --> 10:40.140
+what I wanted to show you.
+
+10:40.150 --> 10:48.430
+This is what I wanted to impart to you how to really build a clean kind of architecture style application
+
+10:48.430 --> 10:48.640
+here.
+
+10:49.510 --> 10:51.070
+OK, I'll see you in the next video.

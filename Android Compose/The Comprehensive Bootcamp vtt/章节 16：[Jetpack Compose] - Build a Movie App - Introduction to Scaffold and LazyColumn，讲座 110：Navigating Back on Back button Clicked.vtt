@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00.150 --> 00:07.350
+So we're very happy that we able to pass data, so we click we go to the details page or screen, and
+
+00:07.350 --> 00:11.520
+we're passing the avatar with this case, the movie title, so it can go back.
+
+00:11.940 --> 00:14.730
+Now this going back here can see this is a button in.
+
+00:14.730 --> 00:19.590
+Some of your phones may have a back button, but it can see newer phones.
+
+00:19.590 --> 00:22.810
+Nowadays, they don't really have this physical back button.
+
+00:22.950 --> 00:24.660
+In fact, mine doesn't really have that.
+
+00:24.900 --> 00:32.100
+The reason why I have it here is because I'm running this software that is mirroring my phone, so it
+
+00:32.100 --> 00:34.290
+just gives this back home buttons.
+
+00:34.740 --> 00:41.040
+So and also on top of that, you can see that we have this top bar here, which allows us to put all
+
+00:41.040 --> 00:41.580
+sorts of things.
+
+00:41.850 --> 00:44.220
+So if you click here, I notice we don't have that there.
+
+00:44.580 --> 00:47.370
+It will be nice to have our top bar there as well.
+
+00:47.820 --> 00:55.440
+But before that, let's understand how do we go back to the main screen this case home without hitting
+
+00:55.440 --> 00:56.160
+the back button?
+
+00:56.520 --> 00:57.840
+So let's start small.
+
+00:58.710 --> 01:06.270
+So inside of our detailed screen right after the text, I can just go ahead and say, Button, just
+
+01:06.270 --> 01:08.120
+create a simple button, right?
+
+01:08.520 --> 01:09.930
+And then we have the one click.
+
+01:10.350 --> 01:17.280
+Given that and then inside here, instead of a button, we're going to put a text white kind of some
+
+01:17.280 --> 01:21.540
+kind of a label to say what this button is supposed to do, right?
+
+01:21.840 --> 01:24.110
+So some kind of a label.
+
+01:24.120 --> 01:27.360
+So I'm going to say here, go back like this.
+
+01:28.110 --> 01:31.020
+Let's just put some space or a are here.
+
+01:31.050 --> 01:35.130
+I want the modifier height.
+
+01:36.600 --> 01:39.180
+Such let's give it about twenty three dpi.
+
+01:40.650 --> 01:43.320
+Let's go ahead and put dpi my section.
+
+01:43.350 --> 01:44.280
+OK, very good.
+
+01:44.310 --> 01:45.480
+So let's go ahead and run again.
+
+01:49.280 --> 01:51.950
+OK, let's go to 300, you can see there is a back button.
+
+01:52.580 --> 01:53.210
+All right, nice.
+
+01:53.240 --> 01:54.650
+Now what is they want to do?
+
+01:54.680 --> 02:01.040
+Well, we just want to go back to the previous screen in this case, his previous composable now because
+
+02:01.430 --> 02:06.440
+the way navigation works is that we do have a stack that happens as we navigate.
+
+02:06.830 --> 02:16.250
+So when we go from our main screen here, our home screen, this is the first item on the stack and
+
+02:16.250 --> 02:17.990
+we click, we go to this one.
+
+02:18.350 --> 02:25.550
+Then we now this is the one on top of the first stack, right on top of the first item in our stack.
+
+02:26.610 --> 02:31.800
+To go back at that means we have to pop the screen, which is on top of the stack right now, that way,
+
+02:31.800 --> 02:34.170
+then we can go to the previous item on the stack.
+
+02:34.560 --> 02:35.790
+So what do we do in our own?
+
+02:35.790 --> 02:36.270
+Click here?
+
+02:36.300 --> 02:36.990
+It's very simple.
+
+02:36.990 --> 02:38.790
+Now, remember, this is the beauty.
+
+02:38.970 --> 02:41.760
+That's why we passed the NAF controller all along.
+
+02:42.720 --> 02:45.360
+Ah, so the Snap controller here I can use it.
+
+02:45.360 --> 02:51.450
+I can say nav controller because again, it controls everything, knows what needs to be done, and
+
+02:51.450 --> 02:52.920
+it directs everything right.
+
+02:53.020 --> 02:54.000
+It gets enough controller.
+
+02:54.390 --> 02:59.280
+Look at this again that can say pop back or it can navigate again.
+
+02:59.760 --> 03:00.420
+Remember this?
+
+03:00.540 --> 03:00.840
+Right?
+
+03:01.410 --> 03:04.950
+So what I want, I just want to say, I'm just going to pop back stack.
+
+03:06.170 --> 03:06.620
+That's all.
+
+03:07.790 --> 03:12.710
+If I run a reporter, go back, not go back.
+
+03:13.730 --> 03:14.180
+All right.
+
+03:14.390 --> 03:14.870
+Very good.

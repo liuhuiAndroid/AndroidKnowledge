@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00.330 --> 00:06.700
+So we've seen here that there is a simple way to initialize a collection, so the simplest way to initialize
+
+00:06.700 --> 00:12.360
+the collection is to create, in this case, an immutable collection and say, list of and pass items.
+
+00:12.360 --> 00:19.080
+So the compiler will know, depending on which items we've added here, that what types are inserted
+
+00:19.080 --> 00:21.000
+into this list of right.
+
+00:21.060 --> 00:22.410
+In this case, we're going to be strings.
+
+00:22.560 --> 00:23.490
+In this other case.
+
+00:23.490 --> 00:27.060
+Here we have immutable list of we have types integers.
+
+00:27.210 --> 00:33.360
+And of course, I'm giving smaller examples here, but you may infer that we can add any type we want,
+
+00:33.510 --> 00:35.760
+even custom tags such as object and so forth.
+
+00:35.790 --> 00:41.730
+So we haven't talked about custom or our own objects classes, but that's fine so we can put any type
+
+00:41.730 --> 00:46.170
+really of items or variables we want to add into the collections.
+
+00:46.590 --> 00:51.810
+So this is one way of initializing it, but there are times we won't initialize it explicitly, meaning
+
+00:51.810 --> 00:58.350
+we want to show exactly what are the types that are supposed to be associated with the variable or in
+
+00:58.350 --> 00:59.280
+this case, the list.
+
+00:59.910 --> 01:00.690
+How do we do that?
+
+01:01.260 --> 01:04.500
+OK, so back here, what I can do, I might create another variable.
+
+01:05.100 --> 01:06.360
+Let's get rid of that real quick.
+
+01:06.360 --> 01:17.220
+So I can say something like Val, my new list and I can say this is equal to a either immutable list
+
+01:17.280 --> 01:18.480
+of like that.
+
+01:18.810 --> 01:25.950
+In the moment you hit enter, you can see these angular brackets is less than greater than sine.
+
+01:26.130 --> 01:26.790
+What is that?
+
+01:26.880 --> 01:32.730
+Well, that means here is where we are going to tell the compiler the types that we're expecting for
+
+01:32.740 --> 01:34.620
+these mutable list to hold.
+
+01:34.980 --> 01:35.280
+All right.
+
+01:35.670 --> 01:42.600
+So if I say strings, that just tells the compiler it's going to be ready anytime we want to add things
+
+01:42.600 --> 01:47.070
+or immutable list, my new list here is we'll expect you to pass strings.
+
+01:47.520 --> 01:53.820
+Look at this if I say my new list, OK and say, add it knows exactly that element, it has to be string
+
+01:53.820 --> 01:55.500
+because we have specified it.
+
+01:55.620 --> 01:58.450
+So this is explicitly being set.
+
+01:58.470 --> 02:03.540
+So we're telling that explicitly that this mutable list is going to be holding type strings.
+
+02:03.810 --> 02:07.620
+If I try to add an integer, we can have an issue.
+
+02:07.650 --> 02:12.480
+If you have a over is going to say the integer literal does not conform to the expected type string.
+
+02:12.870 --> 02:19.050
+And of course, it gives us this two string call, which is going to convert this one to a string value.
+
+02:19.050 --> 02:21.420
+In this case, it will work, but that's not what we want.
+
+02:21.840 --> 02:22.230
+OK.
+
+02:22.830 --> 02:26.700
+So that just gives you an idea of how the compiler works.
+
+02:27.000 --> 02:29.400
+So now we can add strings and say, Hey.
+
+02:30.820 --> 02:32.790
+Fair view.
+
+02:33.100 --> 02:36.730
+Something like that doesn't work, right, because we just had to add one.
+
+02:36.910 --> 02:37.390
+There we go.
+
+02:37.660 --> 02:38.530
+I got carried away.
+
+02:38.680 --> 02:39.160
+So there we go.
+
+02:39.370 --> 02:41.530
+And we can continue like this.
+
+02:42.310 --> 02:42.820
+Hey, there.
+
+02:43.390 --> 02:45.760
+Now we can also do a full loop, right?
+
+02:46.060 --> 02:55.780
+We can say, for instance, for in this case, I can say I am one through 10.
+
+02:57.100 --> 03:00.280
+I can just go ahead and see my new list.
+
+03:00.640 --> 03:01.510
+That ad.
+
+03:01.990 --> 03:09.450
+In this case, I can say that each index in the past, I and I'm going to add element of string.
+
+03:09.450 --> 03:16.570
+In this case, I can just go ahead and say, for instance, hey, and pass the index.
+
+03:16.570 --> 03:17.290
+I like that.
+
+03:17.830 --> 03:18.120
+OK.
+
+03:18.370 --> 03:21.670
+And at the bottom, I can go ahead and print out land like this.
+
+03:21.970 --> 03:24.400
+My new list like this?
+
+03:24.790 --> 03:27.790
+Let's see what's going to happen when I run this a little bigger.
+
+03:27.790 --> 03:28.510
+So you can see.
+
+03:28.720 --> 03:34.930
+So now we have a list that says, Hey, hey, one two eight three all the way to hey, tally, there's
+
+03:34.930 --> 03:35.310
+there.
+
+03:35.560 --> 03:36.990
+So that's what's happening here.
+
+03:37.000 --> 03:39.790
+Let's go down to where I am supposed to be.
+
+03:40.210 --> 03:42.220
+OK, so these were added first.
+
+03:42.640 --> 03:46.540
+Hey, then there that's was added last.
+
+03:46.870 --> 03:49.600
+So what's happening with this there that is outside?
+
+03:49.750 --> 03:56.830
+It could be because this was skipped or even in the last two, because the for loop here quickly was
+
+03:56.830 --> 03:57.370
+executed.
+
+03:57.700 --> 03:59.250
+OK, so there we go.
+
+03:59.260 --> 04:03.580
+So we were able to add elements in a full loop, as you see here.
+
+04:03.850 --> 04:04.150
+OK.
+
+04:04.480 --> 04:09.790
+But the beauty here when I was trying to show you is that we were able to first create, instantiate
+
+04:09.790 --> 04:15.260
+or initialize an emptiness case in empty, mutable list of light.
+
+04:15.550 --> 04:19.600
+We specify the type that this is going to hold string types.
+
+04:19.930 --> 04:21.760
+That is what I wanted to show you.
+
+04:21.910 --> 04:27.010
+So if we can do this, obviously we can do with immutable lists, right?
+
+04:27.010 --> 04:29.920
+And I won't do that because it's something that you can do yourself.
+
+04:30.040 --> 04:36.970
+So if we can initialize or construct a collection such as this, like this, we can do, of course,
+
+04:36.980 --> 04:39.460
+with an immutable list of right.
+
+04:39.670 --> 04:48.370
+In fact, if we come down here and do the same thing when I say file my new immutable list like that
+
+04:48.670 --> 04:55.390
+says equal list of hit enter, the same thing is going to happen and then have to pass a type that this
+
+04:55.390 --> 04:58.330
+list will contain and continue doing the same thing.
+
+04:58.600 --> 05:06.760
+Obviously, I cannot say my new list immutable ad because that's not going to work, but I can come
+
+05:06.760 --> 05:09.080
+here and initialize it right away as well.
+
+05:09.080 --> 05:12.100
+We can see one something like this that would work.
+
+05:12.490 --> 05:15.460
+But notice, if you do that, that defeats the purpose, right?
+
+05:15.460 --> 05:21.700
+Because again, once we start passing the items of know our list, the compiler will know exactly that.
+
+05:21.820 --> 05:25.390
+This list will contain integers because we're passing integers.
+
+05:25.720 --> 05:30.980
+So it defeats the purpose really in this case, in this case, we just get rid of that and call it good.
+
+05:31.030 --> 05:34.900
+So we go back to what we had before, but I just want to show you the possibilities.
+
+05:36.480 --> 05:42.240
+So with that, I think you can figure out how to do the same with sets and as well with maps.
+
+05:42.670 --> 05:47.280
+OK, so go ahead and do that as an exercise and I'll see you later.

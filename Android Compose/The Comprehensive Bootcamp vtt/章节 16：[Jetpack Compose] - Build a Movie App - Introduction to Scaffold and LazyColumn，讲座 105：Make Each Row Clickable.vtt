@@ -1,0 +1,181 @@
+WEBVTT
+
+00:01.010 --> 00:03.410
+So let's make each one of these rules clickable.
+
+00:03.800 --> 00:11.270
+Now you see the growth itself contains a few other items, so we have the image and we have the title.
+
+00:11.930 --> 00:15.920
+We can make each one of these either one of these clickable.
+
+00:16.160 --> 00:20.960
+But the idea is that we want to make the entire row in this case, the card clickable.
+
+00:22.210 --> 00:23.410
+So how do we do this?
+
+00:23.470 --> 00:29.950
+Well, so you should know by now that anything that we can put on the screen, we can make it clickable
+
+00:30.220 --> 00:38.020
+even though it's at a button, even though it's not a an extended form of a button, composable can
+
+00:38.020 --> 00:39.460
+be attached to anything.
+
+00:40.510 --> 00:43.240
+So instead of a modifier here, this is a card.
+
+00:44.670 --> 00:51.150
+After we've added a height, I can say that click a boy such and in this case, what is that I want
+
+00:51.150 --> 00:55.440
+to happen when this card is clickable or it clicked?
+
+00:56.160 --> 01:02.160
+Well, the best thing we can think of here is that first we can only pass a some sort of a callback
+
+01:02.160 --> 01:02.790
+function.
+
+01:02.970 --> 01:03.330
+OK.
+
+01:03.960 --> 01:09.810
+Remember, instead of this function, we can pass, you guess another function which can be, call it,
+
+01:09.810 --> 01:15.600
+as a trailing lambda because it's the last parameter, which is a function that returns nothing.
+
+01:16.170 --> 01:19.170
+What I mean by that here is, I can say on item.
+
+01:19.830 --> 01:22.400
+Click like this again.
+
+01:22.410 --> 01:29.760
+I can say I want to pass as a parameter strength and I want to return nothing from this.
+
+01:29.850 --> 01:35.250
+So I say unit and the moment we do this, you will see, let's just make it quote first.
+
+01:35.250 --> 01:41.070
+You'll see that our movie role, if you have over is going to say, well, is expecting this on item,
+
+01:41.070 --> 01:41.550
+click.
+
+01:41.910 --> 01:43.860
+Now there are two things to take care of this.
+
+01:44.100 --> 01:50.970
+As you know, we can just say equal to curly braces like this to say we're just passing nothing as default.
+
+01:51.360 --> 01:55.660
+That doesn't mean we are not able to pass this on item and click here.
+
+01:55.680 --> 02:00.150
+We can still do that, but it just tells the compiler that it's OK.
+
+02:00.150 --> 02:02.520
+If that's not passed, the item clicked.
+
+02:03.000 --> 02:03.240
+OK.
+
+02:03.720 --> 02:07.110
+But we want to pass it so we know we can actually use the lambda.
+
+02:07.320 --> 02:14.040
+And you can see we have this implicit eity variable being thrown here.
+
+02:14.280 --> 02:16.710
+So you can actually change this name against a movie.
+
+02:19.800 --> 02:24.750
+And then here I can do for now look d and just pass our movie.
+
+02:27.480 --> 02:27.640
+OK.
+
+02:29.520 --> 02:30.930
+Put that inside of.
+
+02:32.590 --> 02:33.340
+Double quotes.
+
+02:33.940 --> 02:34.450
+That's fine.
+
+02:36.130 --> 02:38.090
+OK, so now what would want?
+
+02:38.330 --> 02:40.010
+So now what is it we want to happen?
+
+02:40.040 --> 02:46.850
+Well, we want to call instead of clickable whenever we click the roll, the card one to call the on
+
+02:46.850 --> 02:50.270
+item click and we need to pass the string.
+
+02:50.270 --> 02:51.230
+What string when a pass?
+
+02:51.260 --> 02:54.830
+In this case, I'm was going to pass the movie, which is this string here.
+
+02:56.130 --> 03:00.150
+So now let's go ahead and run this and let's open.
+
+03:02.130 --> 03:06.390
+Logcat, make this debug, OK?
+
+03:06.750 --> 03:07.140
+Click.
+
+03:09.120 --> 03:14.700
+Clicking each one of these now seem content looks like a lot's happening, and let's try again, because
+
+03:14.700 --> 03:16.140
+Harry Potter.
+
+03:16.560 --> 03:20.070
+Let's just say tag, so we can get exactly what we want.
+
+03:21.270 --> 03:23.130
+OK, let's give it a try again.
+
+03:23.850 --> 03:29.400
+Avatar was clicked and you see each showing the movie that was clicked, scroll up.
+
+03:31.080 --> 03:36.060
+And there you have it, so of course, you can see that I've added a few more movies.
+
+03:36.330 --> 03:37.590
+And you could do the same.
+
+03:37.860 --> 03:39.510
+Doesn't really matter, but there you go.
+
+03:39.720 --> 03:40.440
+So it's working.
+
+03:40.440 --> 03:44.040
+So as we click, we are indeed getting that movie.
+
+03:44.580 --> 03:44.930
+OK.
+
+03:45.060 --> 03:49.470
+And pass it along so we can show it as you see there.
+
+03:51.140 --> 03:57.980
+So with this, we can do all sorts of things we can, for instance, pass this along onto a different.
+
+03:59.220 --> 04:03.390
+Function, a different, different composable that could do something else with it.
+
+04:03.660 --> 04:07.650
+Some of the things we can do now that we have this handle here of our movie.

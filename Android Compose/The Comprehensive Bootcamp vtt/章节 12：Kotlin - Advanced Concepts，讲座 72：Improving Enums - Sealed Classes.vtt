@@ -1,0 +1,640 @@
+WEBVTT
+
+00:00.910 --> 00:05.860
+OK, let's clean things up a little bit here, because we probably won't need the failure because that
+
+00:05.860 --> 00:06.910
+same thing as error.
+
+00:07.810 --> 00:09.040
+Besides, it's too harsh.
+
+00:09.160 --> 00:11.170
+Let's get rid of failure altogether.
+
+00:11.590 --> 00:14.020
+And also noticed because I.
+
+00:15.010 --> 00:20.290
+Copy and paste, this is a good lesson for loading here I sit idle, so this should be.
+
+00:20.530 --> 00:21.220
+Loading.
+
+00:21.610 --> 00:26.860
+Yes, OK, of course, that should change some of our results here.
+
+00:26.860 --> 00:27.940
+Let's run one more time.
+
+00:29.100 --> 00:29.420
+OK.
+
+00:29.800 --> 00:33.870
+C went straight to loading and then success in error.
+
+00:34.140 --> 00:36.510
+This is the correct thing that should work.
+
+00:36.720 --> 00:38.520
+This is the correct order as well.
+
+00:39.090 --> 00:45.330
+So as we see here using this enum class, it's really powerful in so many ways because we're able to
+
+00:45.330 --> 00:49.110
+create some sort of state, create this state handling.
+
+00:49.890 --> 00:50.910
+And it works fine.
+
+00:51.690 --> 00:58.740
+But what if you wanted to say, print unique success messages, depending on the data fetched?
+
+00:59.280 --> 01:06.300
+That means if it's success, we want to be able to pass along more information to success if we need
+
+01:06.300 --> 01:13.260
+to to make this more flexible, say if the message we are receiving from the network is X, we want
+
+01:13.260 --> 01:19.680
+to pass that X and more information about that X or about that data we're receiving.
+
+01:20.010 --> 01:23.550
+Same goes to our idol loading and so forth.
+
+01:23.760 --> 01:29.940
+The way things are right now with enum classes, in order for us to be able to pass metadata or data
+
+01:30.420 --> 01:35.220
+into our inner arms here, we would have to have something like this, a structure like this.
+
+01:35.220 --> 01:41.250
+We can say file data and then say we want a string type or into whatever we want.
+
+01:42.090 --> 01:49.020
+But as you see here, we have a compilation error because this enum class, it won't allow us to do
+
+01:49.020 --> 01:49.380
+so.
+
+01:50.280 --> 01:51.490
+That's one limitation.
+
+01:51.750 --> 01:55.290
+So we're limited to only pass these one types.
+
+01:55.290 --> 01:59.730
+There are specific like this success error idle in loading.
+
+02:00.830 --> 02:06.350
+That's the limit we have we can't attach anything to any of these types like this, but we want to be
+
+02:06.350 --> 02:12.890
+able to do something like this because that will make our state more flexible and we can add more data
+
+02:13.010 --> 02:14.870
+for each one of these types.
+
+02:14.990 --> 02:17.420
+Each one of these stages, each one of these states.
+
+02:17.780 --> 02:19.490
+So how do we get that result?
+
+02:19.520 --> 02:21.350
+How are we able to accomplish that?
+
+02:22.570 --> 02:28.000
+Well, to solve this problem, we can't inherit from an abstract class.
+
+02:28.570 --> 02:30.990
+What is this call this thing called abstract class?
+
+02:31.010 --> 02:31.930
+We'll get to that.
+
+02:32.680 --> 02:38.350
+So an abstract class, as the name implies, is more of an abstraction of what something is supposed
+
+02:38.350 --> 02:38.740
+to be.
+
+02:38.920 --> 02:42.610
+For instance, if I say something like this, this is just a conversation.
+
+02:42.610 --> 02:45.460
+If I say Here is a chair.
+
+02:46.530 --> 02:48.930
+Conceptually, you understand what a charity is.
+
+02:49.410 --> 02:56.340
+You can grasp that, and it's something that is that exists in the real world right now.
+
+02:56.520 --> 03:01.450
+If I say again a triangle, OK, you understand he has a triangle, has three sides.
+
+03:01.530 --> 03:02.040
+There we go.
+
+03:02.050 --> 03:08.130
+You understand that you can grasp that there are forms of a triangle that you can go by or create and
+
+03:08.130 --> 03:09.750
+you can hold it a triangle.
+
+03:09.870 --> 03:10.530
+OK, very good.
+
+03:11.070 --> 03:13.200
+What if I say shape?
+
+03:13.560 --> 03:17.040
+When I talk about shape, you conceptually understand what a shape is.
+
+03:17.040 --> 03:21.210
+A triangle is a shape, but a shape is not a triangle.
+
+03:21.750 --> 03:25.560
+That means the shape is very abstract shape.
+
+03:25.560 --> 03:29.370
+We don't we can't really touch shape as it is.
+
+03:29.730 --> 03:37.170
+We can touch a triangle, a rectangle circle, which is a form of a shape, but shape itself.
+
+03:37.620 --> 03:41.340
+It's not really anything that we can grasp or that we can hold.
+
+03:41.760 --> 03:43.260
+It's just an abstract idea.
+
+03:43.650 --> 03:44.250
+Does that make sense?
+
+03:44.820 --> 03:49.670
+So an abstract class really represents those abstract ideas.
+
+03:49.690 --> 03:53.850
+In this case, it's a class whose functionality has not yet been implemented.
+
+03:54.060 --> 03:59.250
+A shape in this case would be a class whose functionality has not yet been implemented.
+
+03:59.880 --> 04:06.180
+We only implement it shape if we have a triangle, rectangle circle and so forth.
+
+04:06.510 --> 04:15.150
+So this abstract class can be used to create specific object that conform to its protocol to its rules.
+
+04:15.750 --> 04:22.530
+So we're going to use an abstract class for state management instead of using the Enum class here because
+
+04:22.530 --> 04:25.110
+it will give us that flexibility that we need.
+
+04:25.890 --> 04:26.560
+So let's go ahead.
+
+04:26.580 --> 04:29.790
+I'm going to go ahead and comment this out and right away.
+
+04:29.790 --> 04:30.810
+I'm going to say abstract.
+
+04:31.110 --> 04:35.400
+There we go, and I'm going to say class, and I'm going to say a result.
+
+04:37.110 --> 04:37.350
+OK.
+
+04:37.650 --> 04:38.120
+And that's it.
+
+04:38.130 --> 04:39.150
+We don't have to do anything.
+
+04:39.480 --> 04:46.620
+And then for each one of these types we had inside of our inner, I'm here, I'm going to create a data
+
+04:46.620 --> 04:47.700
+class for each one of those.
+
+04:48.750 --> 04:53.820
+Remember, a data glass allows us to just hold data, which is exactly what we want at this point.
+
+04:54.810 --> 05:01.110
+We'll say data class and I'm going to say success and now look at this.
+
+05:01.140 --> 05:10.080
+Now I can actually pass something like this foul data fetched attached to the success data class.
+
+05:10.470 --> 05:14.880
+Remember, this is the constructor primer constructor, which means these whatever we're passing right
+
+05:14.880 --> 05:16.710
+now, here is going to be what?
+
+05:16.980 --> 05:18.630
+Well, that's the property of this class.
+
+05:19.500 --> 05:23.070
+And I'm going to say types going to be string, and I want these to be knowledgeable.
+
+05:23.070 --> 05:27.810
+That's why I'm going to attach to it a an exclamation point.
+
+05:28.020 --> 05:32.850
+The beauty here is that, of course, we have this data class, but the whole idea is that what we want
+
+05:32.850 --> 05:39.480
+to be able to do to get that flexibility we want, we want to make it so that this one, this access
+
+05:39.480 --> 05:46.050
+data will conform to the result abstract class to implement it.
+
+05:46.440 --> 05:50.460
+So I'm going to say this case inherits all right.
+
+05:50.460 --> 05:54.180
+And then I'm going to say, result like this.
+
+05:54.390 --> 05:56.780
+And of course, we're going to have to put inside it.
+
+05:57.180 --> 05:59.940
+We have to put those parentheses there.
+
+06:00.270 --> 06:06.510
+What we're saying here is that success now can now emit a unique string, which is this dead effect
+
+06:06.510 --> 06:08.370
+here could be anything you could call.
+
+06:08.370 --> 06:09.810
+Message data doesn't matter.
+
+06:10.170 --> 06:12.060
+And we can do the same thing for others.
+
+06:12.450 --> 06:15.810
+We're going to copy paste into success.
+
+06:15.870 --> 06:19.380
+This is going to be error in this case here.
+
+06:19.390 --> 06:21.760
+I'm going to just say error.
+
+06:21.870 --> 06:22.590
+It's fine.
+
+06:23.130 --> 06:30.510
+And actually, let's make it an exception like this, and it's going to be an exception type cuddling
+
+06:30.510 --> 06:31.350
+type like that.
+
+06:33.030 --> 06:33.450
+OK.
+
+06:33.840 --> 06:37.440
+And of course, we are still going to extend result.
+
+06:37.560 --> 06:41.700
+So again, we're saying here now because it's a data class error.
+
+06:42.120 --> 06:45.660
+We're passing this exception, which means we can emit.
+
+06:47.010 --> 06:55.080
+Unique exception of values as we go through the states now, if we don't want to admit anything really
+
+06:55.110 --> 07:02.580
+meaning we don't want to pass any data when we are at that state, we can just use objects like this
+
+07:02.580 --> 07:07.220
+to say this is not going to meet anything when, say, for instance, not loading, right?
+
+07:07.950 --> 07:10.110
+This will just not too much, really.
+
+07:10.110 --> 07:17.550
+But we still are going to adhere to our abstract class conform to result abstract class that you can
+
+07:17.550 --> 07:20.910
+see the same thing with another one here, for instance.
+
+07:20.910 --> 07:21.480
+Loading.
+
+07:22.200 --> 07:24.030
+And just say, result like this.
+
+07:24.930 --> 07:28.800
+Now, when we have this creator at this point, obviously we're not using it.
+
+07:29.130 --> 07:31.950
+We're not using any of these data classes or object classes there.
+
+07:32.880 --> 07:34.040
+We have a problem here.
+
+07:34.050 --> 07:40.350
+So it makes sense because we're no longer using the ENAM, so we have to change a few things.
+
+07:40.440 --> 07:42.960
+So in our repository here for load state.
+
+07:44.160 --> 07:50.040
+First of all, instead of idle, I'm just going to use what we have not loading, right?
+
+07:50.580 --> 07:54.960
+And then this stays the same now for load state.
+
+07:55.470 --> 07:57.300
+I'm just going to go ahead and say, Loading.
+
+07:58.170 --> 07:58.470
+Right.
+
+07:59.100 --> 07:59.970
+That's all we need.
+
+08:00.000 --> 08:01.980
+We're not going to emit really anything.
+
+08:02.670 --> 08:07.260
+And then that stays the same now finished here for success.
+
+08:07.650 --> 08:09.180
+I'm going to just say success.
+
+08:09.600 --> 08:12.220
+I this is the beauty success.
+
+08:12.270 --> 08:13.620
+Now I can pass data.
+
+08:13.950 --> 08:23.040
+Look at this for data fetched can emit something in this case, and I see that effect now because these
+
+08:23.040 --> 08:24.840
+two have the same name.
+
+08:24.840 --> 08:30.630
+I can just omit one of them so I can just get rid of this and pass suggested of fetched like that.
+
+08:30.900 --> 08:31.350
+Look at this.
+
+08:31.380 --> 08:32.940
+Now I'm meeting messages.
+
+08:34.100 --> 08:41.180
+Through my state machine system, here are now when there's an error, what it can do, I can just say
+
+08:41.660 --> 08:46.820
+error, think of creating that and then in this case, I'm going to pass an exception.
+
+08:48.390 --> 08:49.770
+And it's going to pass.
+
+08:51.090 --> 08:55.320
+Exception, this has to be codling exception.
+
+08:55.830 --> 08:57.040
+Look, there's a difference here.
+
+08:57.060 --> 08:58.470
+One coddling exception.
+
+08:58.740 --> 09:04.980
+And then we can pass a message hearsay exception and everything else stays the same.
+
+09:06.480 --> 09:11.820
+Now we also have to go change, of course, the results here now because we using data classes, we're
+
+09:11.820 --> 09:12.720
+using abstract.
+
+09:13.350 --> 09:14.730
+Now we can change this.
+
+09:14.790 --> 09:17.010
+In fact, if you see all option, enter.
+
+09:18.610 --> 09:25.410
+First of all, it's going to ask us to use the else branch because it's necessary because we're using
+
+09:25.420 --> 09:29.170
+a class per say now, first of all, let's go ahead and change.
+
+09:29.170 --> 09:31.960
+All of this can be to follow this altogether.
+
+09:32.200 --> 09:35.860
+And now I'm going to use is OK error.
+
+09:36.850 --> 09:37.720
+There's an error.
+
+09:37.810 --> 09:40.660
+Let's make sure we're getting our error and not anybody else, right?
+
+09:40.990 --> 09:48.340
+If there's an error, then I am going to say we can put in of curly braces there.
+
+09:48.850 --> 09:50.320
+Print, I learned.
+
+09:52.960 --> 10:02.170
+When I say load result in this case, that exception I want to string, so we're going to take the exception.
+
+10:02.260 --> 10:07.900
+So we're going to take the immediate value, which is an exception and just make it to string so we
+
+10:07.900 --> 10:08.950
+can see it.
+
+10:09.880 --> 10:16.600
+In other case, is success like that in this case?
+
+10:18.050 --> 10:20.000
+I'm going to print and.
+
+10:21.970 --> 10:24.710
+I'm going to say load actually said result.
+
+10:25.300 --> 10:27.330
+Look at this dot data fetched.
+
+10:27.540 --> 10:33.370
+I'm invoking those properties or immediate values, and then I'm going to just go ahead and make sure
+
+10:34.000 --> 10:38.080
+that if, if, if something happens, we can pass.
+
+10:38.080 --> 10:45.730
+This message just says, ensure you start the fetch function first.
+
+10:45.850 --> 10:50.190
+Something like this and then is loading.
+
+10:51.280 --> 10:56.060
+That's the case, then print or land.
+
+10:56.080 --> 11:02.560
+In this case, we don't emit anything really because we just passed object in this case for loading.
+
+11:02.620 --> 11:07.690
+Remember, we are not emitting anything, just object to object there, and it's fine.
+
+11:08.320 --> 11:10.450
+But we can still pass a message here that says.
+
+11:11.940 --> 11:12.650
+Loading.
+
+11:12.970 --> 11:15.760
+Now the case for stock not loading.
+
+11:15.780 --> 11:22.500
+We have some issues when I can see something like print L.A. idle like this.
+
+11:22.770 --> 11:29.130
+Now we must add and else here it's expected because we've changed the types.
+
+11:29.490 --> 11:35.850
+The moment we have data classes and abstract classes involved or any class for that matter, then this
+
+11:35.970 --> 11:40.500
+has to change, which means return when will require us to pass an ounce.
+
+11:40.740 --> 11:43.980
+In this case, I'm going to say print a message, it says.
+
+11:48.530 --> 11:50.090
+Not available something like this.
+
+11:50.600 --> 11:59.180
+So let's go ahead and get rid of some of these issues there just imports that are not welcome.
+
+11:59.660 --> 12:01.640
+All right, so let's go ahead and run this real quick.
+
+12:02.410 --> 12:02.810
+Aha.
+
+12:03.040 --> 12:03.620
+And there we go!
+
+12:03.830 --> 12:05.420
+It says loading data.
+
+12:05.420 --> 12:06.740
+Javelin exception.
+
+12:06.890 --> 12:07.830
+So there we go.
+
+12:07.850 --> 12:08.590
+So loading.
+
+12:08.600 --> 12:11.180
+We got data and we called exception.
+
+12:11.570 --> 12:15.260
+Now the important thing here is that we're able to emit messages.
+
+12:15.500 --> 12:22.070
+This is very powerful because this data here can be anything that we set up and we can omit information
+
+12:22.250 --> 12:25.340
+as the states, as the state machine goes through its process.
+
+12:25.850 --> 12:30.620
+It's really, really, really important concept, especially when we go and start actually creating
+
+12:30.620 --> 12:35.150
+applications that need the system together so that we can actually have data.
+
+12:35.300 --> 12:38.390
+We know what data we're getting and we can work with that data.
+
+12:38.390 --> 12:42.320
+We can wrap that data around that state and can use it whenever we need to.
+
+12:42.980 --> 12:45.800
+It may seem kind of like overkill, I understand.
+
+12:46.070 --> 12:50.570
+But believe me, this is a very important concept and you need to master this concept.
+
+12:50.570 --> 12:52.100
+You have to understand what's going on.
+
+12:52.110 --> 12:55.040
+You have to understand how to use state in this case.
+
+12:56.180 --> 13:03.410
+OK, now you notice that we are doing really well at this point, but as you see here, we lost something
+
+13:03.410 --> 13:09.270
+that's really important, which is the restricted set of types of enemies was really great, right?
+
+13:09.320 --> 13:11.930
+That was essential because we didn't have to pass this out here.
+
+13:12.260 --> 13:18.410
+Now, with creating in this case, our abstract class result here because we are implementing result
+
+13:19.280 --> 13:24.800
+class now, the compiler is going to complain if we don't add this else here, OK?
+
+13:25.280 --> 13:26.480
+This else branch.
+
+13:26.810 --> 13:31.610
+The reason why is because the compiler cannot tell whether the when statement.
+
+13:32.790 --> 13:34.500
+Is exhaustive or not.
+
+13:34.830 --> 13:41.640
+Meaning that he doesn't know if this is the end, because we could have more other more than just these
+
+13:41.640 --> 13:42.190
+states.
+
+13:42.690 --> 13:43.020
+Right?
+
+13:43.500 --> 13:50.460
+So that's one thing we lost when we got rid of it now because enemies is exhaustive, it knows exactly
+
+13:50.460 --> 13:53.190
+these are the types that we were passing, and that's all.
+
+13:53.400 --> 13:58.680
+But when we start creating, I've started classes like we did here, creating our SIG machine where
+
+13:58.680 --> 14:06.480
+we were able to pass data along, emit data then that we lose that because the compiler assumes that
+
+14:06.480 --> 14:12.470
+it can have many, many other types, hundreds and hundreds of types, of course, if you need to hear.
+
+14:12.510 --> 14:13.950
+So that's why it has to.
+
+14:14.160 --> 14:15.570
+We have to pass an Alciere.
+
+14:15.660 --> 14:19.080
+Now there's a way to fix this shortcoming.
+
+14:19.590 --> 14:24.130
+It's a small, but it's very important, and we're going to learn about that in the next few.

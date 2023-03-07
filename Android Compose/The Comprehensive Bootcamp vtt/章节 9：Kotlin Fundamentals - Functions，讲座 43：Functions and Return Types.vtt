@@ -1,0 +1,313 @@
+WEBVTT
+
+00:00.360 --> 00:03.450
+Functions can also return a value.
+
+00:03.480 --> 00:08.190
+This is a very important concept, as you will see, because it allows us to further our agenda, which
+
+00:08.190 --> 00:13.140
+is to make sure that these entities are functions are able to do all the work they need to do and then
+
+00:13.230 --> 00:14.490
+send out the result.
+
+00:14.610 --> 00:17.640
+In fact, ultimately, that's exactly what functions are supposed to do.
+
+00:17.650 --> 00:22.200
+They actually send out or create a result that we can use to do something else.
+
+00:22.290 --> 00:23.750
+What do you mean by that is as follows.
+
+00:23.760 --> 00:30.060
+I'm going to comment this out quick there, and let's create another function by the bottom here.
+
+00:30.180 --> 00:30.990
+Give us some space.
+
+00:31.350 --> 00:33.270
+OK, so like a bottom here, I'm going to say fun.
+
+00:33.480 --> 00:37.620
+Let's call this calculate cat age like this.
+
+00:37.800 --> 00:42.870
+So I'm going to pass here a parameter say cat age.
+
+00:43.110 --> 00:44.250
+It's going to be an integer.
+
+00:44.700 --> 00:45.720
+And voila!
+
+00:45.960 --> 00:48.390
+So what we can do right away, you can see as well.
+
+00:48.390 --> 00:54.510
+We just want to print a message here that says, fact this shouldn't be cat aging and say just age.
+
+00:54.750 --> 00:58.760
+And then we're going to use that and multiply by seven, I think, to get cat age.
+
+00:58.950 --> 00:59.280
+OK.
+
+00:59.520 --> 01:04.870
+So if the cat is five, that means then we have to multiply it by seven to get the cat eight.
+
+01:04.890 --> 01:07.230
+So that's that's just a number I picked.
+
+01:07.290 --> 01:07.530
+OK.
+
+01:08.070 --> 01:08.350
+All right.
+
+01:08.370 --> 01:15.660
+So in this case, here you can say this cat is so I'm going to create a vowel here that says cat age
+
+01:15.930 --> 01:20.580
+is equal to what age times seven like this?
+
+01:21.000 --> 01:24.030
+And so here and just going to head past the cat age like that.
+
+01:24.270 --> 01:33.000
+So if we call this when I say age is seven, let's go ahead and run can see the cat is 49 years old.
+
+01:33.360 --> 01:37.590
+I'm going to say years old, cat is 49 years old.
+
+01:37.740 --> 01:38.880
+OK, it's working perfectly.
+
+01:39.150 --> 01:46.260
+But the one thing that this function here doesn't do is return the age of the cat.
+
+01:46.290 --> 01:51.720
+It's not returning anything because all we do in here is actually we're printing this here, right?
+
+01:51.780 --> 01:53.910
+The cat age years old and so forth.
+
+01:54.120 --> 01:58.110
+So what we want to be able to do is just to return a value which is an integer.
+
+01:58.110 --> 02:02.130
+And then I can do all sorts of things because imagine if I wanted to be able to.
+
+02:02.160 --> 02:02.580
+I don't know.
+
+02:02.580 --> 02:10.290
+When I get the cat's age, I want to subtract it by two and then multiply by 200 and then get the exponential
+
+02:10.290 --> 02:14.460
+power divide by 400 and do all these calculations.
+
+02:14.760 --> 02:19.320
+At this point, I cannot do it because of this function is not returning a value that I want.
+
+02:19.450 --> 02:20.730
+Cat age, right?
+
+02:20.910 --> 02:23.610
+It's just printing something out to a screen, which is fine.
+
+02:23.820 --> 02:25.560
+So how do we return something from function?
+
+02:25.590 --> 02:32.340
+Well, we return something from a function by saying, call in and say, in this case I'm saying, OK,
+
+02:32.370 --> 02:38.250
+this cat age or calculate cat age is going to be a function that will have parameters, right?
+
+02:38.490 --> 02:41.310
+But also, it's going to return an integer.
+
+02:41.580 --> 02:46.620
+And you can see this is the syntax, say Colin, and then pass the type that we expect to return.
+
+02:46.740 --> 02:50.490
+And you can see that we have an issue here because if you have it always going to say, well, he has
+
+02:50.490 --> 02:51.800
+to return something right?
+
+02:51.810 --> 02:54.140
+Because we said, here, that's the contract.
+
+02:54.210 --> 02:55.260
+This has to return something.
+
+02:55.410 --> 03:02.040
+So now I can get rid of this altogether and just go ahead and say, return like that.
+
+03:02.370 --> 03:06.350
+Now, if I run this, you will see that nothing will show it ran fine.
+
+03:06.360 --> 03:07.190
+There were no errors.
+
+03:07.200 --> 03:07.560
+Nothing.
+
+03:07.710 --> 03:09.410
+Why is it that nothing's showing?
+
+03:09.420 --> 03:12.990
+Well, we call calculate age, but is returning an integer.
+
+03:13.230 --> 03:13.850
+It's in memory.
+
+03:13.860 --> 03:17.310
+We have that integer is just that is not showing here because we do not printing it.
+
+03:17.400 --> 03:22.650
+So now I can just say print like that and enclose all of this just like we did before and we going to
+
+03:22.650 --> 03:23.490
+see the result.
+
+03:23.500 --> 03:24.030
+49.
+
+03:24.270 --> 03:31.470
+And the beauty is because this is returning the age, which is an event that means I can do all sorts
+
+03:31.470 --> 03:32.100
+of things with it.
+
+03:32.280 --> 03:41.550
+I can create a vowel here called Cat Age and assign it to calculate age and past age and say This cat
+
+03:41.550 --> 03:42.750
+is 12 at this point.
+
+03:42.810 --> 03:43.110
+Right.
+
+03:43.470 --> 03:45.990
+And now I can just use that cat again.
+
+03:45.990 --> 03:48.050
+Cat age like this one?
+
+03:48.240 --> 03:53.910
+We're going to get the result is 84 years old, and because we're printing, I can concatenate everything
+
+03:53.910 --> 03:54.180
+right.
+
+03:54.180 --> 03:55.290
+I can interpolate it.
+
+03:55.440 --> 04:03.390
+I should say so I can say here this cat is cat age years old, right?
+
+04:03.960 --> 04:09.450
+And while I know the beauty of these is that I can do all sorts of things with this value, this result,
+
+04:10.050 --> 04:11.250
+right, is an integer.
+
+04:11.520 --> 04:16.020
+If I want it, I can straight away and say, I want to multiply this by 10.
+
+04:16.890 --> 04:21.390
+And if I run this, you can see now this card is 840 years old.
+
+04:21.810 --> 04:27.180
+So there's advantages of getting the value or returning a value because it simplifies our lives and
+
+04:27.180 --> 04:30.300
+makes it much easier for us to do other things with the results that we get.
+
+04:30.600 --> 04:36.690
+So this is a very simplistic way of showcasing this return type that we have for this function.
+
+04:37.020 --> 04:42.570
+But you can imagine if this function is in this very secretive and it does a lot of heavy lifting for
+
+04:42.570 --> 04:47.910
+something we don't care whoever is going to call this cat age, they don't really necessarily want to
+
+04:47.910 --> 04:48.960
+know how you calculate it.
+
+04:48.960 --> 04:49.830
+You just want the result.
+
+04:50.070 --> 04:51.990
+So this is how we would do it.
+
+04:52.080 --> 04:58.470
+We have an E-Type that's been retained and we have to use the return key word in the eight time seven.
+
+04:58.710 --> 04:59.910
+And of course, if we wanted, we could have.
+
+04:59.990 --> 05:02.310
+Created a value say, foul.
+
+05:02.730 --> 05:10.490
+Age is equal to that age, in fact, let's just change this vowel cut age and equal to age that we're
+
+05:10.500 --> 05:18.840
+receiving times seven in this case and then return that that age that works as well.
+
+05:18.930 --> 05:23.880
+But you can see, because Catling tries to be succinct, it says, just make this inline variable.
+
+05:23.880 --> 05:26.460
+So click here you can see returns that.
+
+05:26.790 --> 05:31.620
+The other thing is, in Scotland, there's usually more than one way to write the code right.
+
+05:31.620 --> 05:36.090
+And so the idea is to make Scotland very succinct, so easy to read.
+
+05:36.360 --> 05:36.960
+Compact.
+
+05:37.200 --> 05:41.550
+It's in this case here, since we have just we were turning one value, we can actually make this way
+
+05:41.550 --> 05:49.440
+easier to write or make it more succinct so I can get rid of these, can get rid of return altogether
+
+05:49.710 --> 05:55.620
+and get rid of that braces that curly brace there and then it gets to equal.
+
+05:55.710 --> 05:58.890
+So this is the same thing what we had before, we have a return.
+
+05:58.900 --> 06:06.720
+So this is saying return these eight times seven, essentially saying whatever we get from this operation
+
+06:06.720 --> 06:13.140
+here, we're going to set it to our calculate cat age, which indeed is supposed to hold an integer.
+
+06:13.140 --> 06:14.340
+So this will work as well.
+
+06:14.520 --> 06:16.830
+So we can see from what we had before to this.
+
+06:17.040 --> 06:20.340
+It's very 16 to the point, and it's easy to read and maintain.
+
+06:20.430 --> 06:28.050
+If we run again, we should see that the cat is a 140 years old because we added multiply it by 10 just
+
+06:28.050 --> 06:28.860
+to prove a point.
+
+06:29.190 --> 06:31.560
+And now it's more manageable, 84 years old.

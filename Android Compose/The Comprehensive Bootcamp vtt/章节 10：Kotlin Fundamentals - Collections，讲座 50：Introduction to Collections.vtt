@@ -1,0 +1,634 @@
+WEBVTT
+
+00:00.470 --> 00:06.910
+So far, we've looked at variables, so we looked far and Val, VAR being something that we can change
+
+00:06.920 --> 00:12.500
+to create a variable and we attach far and we can always change that variable like a later time.
+
+00:12.890 --> 00:16.580
+Val, on the other hand, we cannot change, so it is immutable.
+
+00:16.790 --> 00:21.830
+The great thing about variables is that they allow us to store pieces of data.
+
+00:22.190 --> 00:27.590
+But the other side of variable is that it only allows us to hold one item at a time.
+
+00:28.100 --> 00:34.010
+Now, although this is OK for most of the things that we've been doing, but as you learn more about
+
+00:34.010 --> 00:41.570
+programming, as you learn more about the power of Coughlan and you start pulling together more complex
+
+00:42.020 --> 00:46.940
+programs, you will find yourself needing something that can hold more items.
+
+00:47.450 --> 00:50.660
+That's when collections come to light.
+
+00:50.990 --> 00:51.970
+What is a collection?
+
+00:51.980 --> 00:56.930
+Well, collection, first of all, allow us to hold a collection of items.
+
+00:57.470 --> 00:58.280
+So let's take a look.
+
+00:58.550 --> 01:05.150
+A collection, by definition, usually contains a number of objects or items in a certain order of the
+
+01:05.150 --> 01:05.900
+same type.
+
+01:06.590 --> 01:11.900
+You can think about of a collection that you may have of, let's say, dolls or a CD.
+
+01:12.330 --> 01:12.580
+Right?
+
+01:12.920 --> 01:18.440
+And usually what you want to do or what you usually do, you organize your collection into different
+
+01:18.440 --> 01:24.750
+kinds of items so you can have a collection of CDs and then can have a collection of dolls.
+
+01:24.770 --> 01:26.270
+You can have a collection of car.
+
+01:26.750 --> 01:32.520
+So you notice that each time I say a collection, I'm saying that you have a collection of X Collection,
+
+01:32.630 --> 01:34.490
+Y collection of Z.
+
+01:34.640 --> 01:38.240
+So those are the types that we will have in one collection.
+
+01:38.240 --> 01:43.490
+So you have CD, that's one type, you have cars and other type and dolls and other types.
+
+01:43.850 --> 01:44.150
+OK.
+
+01:44.390 --> 01:45.140
+So that's the idea.
+
+01:45.350 --> 01:52.180
+But when we talk about collection now, here is a visual representation of what a collection in memory
+
+01:52.190 --> 01:53.000
+would look like.
+
+01:53.330 --> 01:56.660
+You know, there are different kinds of collections and we see those who talk about those.
+
+01:56.960 --> 02:01.490
+But in a nutshell, in memory, you will have something like these four.
+
+02:01.660 --> 02:05.600
+You have 23, 123, 39, eight, six and so forth.
+
+02:05.900 --> 02:09.530
+So this is collection in this case of integers numbers.
+
+02:09.800 --> 02:14.090
+So in memory, each one of these items, we call them elements life.
+
+02:14.090 --> 02:19.760
+So if I say, what is the first element or first item in this collection, we would say 23.
+
+02:20.020 --> 02:22.070
+And what is the last one is going to be number four.
+
+02:22.430 --> 02:23.930
+These are called elements.
+
+02:24.350 --> 02:33.040
+And the great thing about having a collection of some sort is that each seat, if I may call it right.
+
+02:33.230 --> 02:34.640
+Each slot, if you will.
+
+02:34.970 --> 02:36.320
+It's called an index.
+
+02:36.920 --> 02:41.660
+So index is the slot where the element sits in a memory.
+
+02:42.020 --> 02:45.890
+So the first index starts at zero, so that will be index zero.
+
+02:45.890 --> 02:48.590
+If I say, what do we have in index zero?
+
+02:48.710 --> 02:53.150
+We will have 23, index one will have 123 and so forth.
+
+02:53.480 --> 03:00.110
+So that is, the visual representation of a collection could be a list released in the list and so forth.
+
+03:00.580 --> 03:05.060
+I like I say, there are different kinds of collections, but this is the base of collections where
+
+03:05.060 --> 03:11.370
+we have elements inside of slots that are numbered into index that are numbered as indices.
+
+03:11.370 --> 03:12.500
+So Index zero.
+
+03:12.680 --> 03:17.240
+It's going to be the first slot and one the second slot and so forth.
+
+03:17.570 --> 03:23.300
+Let's go ahead and see how can we create a list or a collection, a basic collection so we can start
+
+03:23.300 --> 03:25.800
+adding things to it and look through.
+
+03:26.300 --> 03:30.110
+But before we go forward also, you will notice something that's very interesting.
+
+03:30.320 --> 03:33.890
+The collection will have what you call a length or a size.
+
+03:34.370 --> 03:36.700
+What is that length or size?
+
+03:36.710 --> 03:42.560
+In this case, it's going to be six or length or size is the number of elements in the collection not
+
+03:42.560 --> 03:44.780
+to be confused with the index.
+
+03:45.050 --> 03:50.150
+This is just how many slides we have inside of our collection.
+
+03:50.170 --> 03:54.260
+Like in this case, we have one two three four five six.
+
+03:54.560 --> 03:58.760
+That is indeed the length or the size of this collection.
+
+03:59.120 --> 03:59.330
+All right.
+
+03:59.330 --> 04:05.180
+So now let's go and go back to our code and see how can we put together a simple collection so we can
+
+04:05.180 --> 04:06.020
+see how this works?
+
+04:06.710 --> 04:10.250
+So how do we create a list of items?
+
+04:10.520 --> 04:12.140
+OK, let's go ahead and get started here.
+
+04:12.470 --> 04:15.230
+The first the most simple collection type.
+
+04:15.470 --> 04:18.500
+In this case, I'm going to create a read only collection type.
+
+04:18.530 --> 04:26.690
+So what you do is, let's say, file, say my list of names, and then I'm going to just say is equal
+
+04:26.690 --> 04:29.180
+to a list of just like that.
+
+04:29.510 --> 04:31.580
+And of course, you can see there are different options here.
+
+04:31.610 --> 04:35.600
+Notice these are all functions that we get from cuddling.
+
+04:35.990 --> 04:37.970
+So we want the second one.
+
+04:37.970 --> 04:43.010
+Either one would work, of course, but let's just get the second one there and inside here we can has
+
+04:43.610 --> 04:44.780
+elements, right?
+
+04:44.810 --> 04:45.920
+We talked about elements.
+
+04:46.070 --> 04:47.810
+Those are items that we can pass inside.
+
+04:48.350 --> 04:53.870
+Now here I want to pass a string type string types inside of this.
+
+04:54.110 --> 04:59.840
+So I'm going to say James, Paul, Rafael and.
+
+05:00.130 --> 05:00.610
+Gina.
+
+05:01.180 --> 05:05.200
+OK, so there we go, so we've created a collection list here.
+
+05:05.830 --> 05:13.990
+And one thing you notice is each element or each item is eliminated by a comma to say now this is index
+
+05:13.990 --> 05:17.920
+zero, index one, two and three.
+
+05:18.370 --> 05:22.060
+Now, quick question what is this size or length of this list?
+
+05:22.960 --> 05:27.280
+Yes, it's going to be four because of one two three four.
+
+05:28.060 --> 05:34.150
+OK, so let's see what if we wanted to, let's say, show the contents of this list?
+
+05:34.540 --> 05:37.240
+What do we do, what we can go ahead and say print?
+
+05:37.390 --> 05:41.450
+We'll show you real quick when I just go ahead and print out my list of names.
+
+05:41.860 --> 05:48.040
+And if we run this, OK, so a few moments later can see that we have indeed James, Paul, Rafael and
+
+05:48.040 --> 05:48.330
+Gina.
+
+05:48.340 --> 05:51.460
+So this is the internal representation of this.
+
+05:52.060 --> 05:57.580
+Now, if you are coming from a different programming language or other programming languages, you'll
+
+05:57.580 --> 06:01.450
+see that this is very familiar because we have this square brackets here.
+
+06:01.510 --> 06:05.970
+This tells you that this is actually saved as an array, right?
+
+06:05.980 --> 06:10.330
+So an array is another implementation of a list, if you will.
+
+06:10.600 --> 06:12.280
+Anyway, so there you have it.
+
+06:12.520 --> 06:18.130
+Now we can actually loop through all of these names and spit out each one of them.
+
+06:18.490 --> 06:19.150
+How do we do that?
+
+06:19.180 --> 06:22.270
+Well, we could go ahead and use a full loop.
+
+06:22.300 --> 06:25.060
+Let me go ahead and put this back like they sort of space.
+
+06:25.390 --> 06:27.040
+I can say a few things.
+
+06:27.070 --> 06:29.640
+First of all, I can just say a for loop like this.
+
+06:29.650 --> 06:38.170
+I'm going to say item in my list of names as such and what we're doing here now, we are seeing for
+
+06:38.170 --> 06:41.950
+each item that we get inside of my list of names.
+
+06:42.080 --> 06:45.010
+What's going to be added to this item variable?
+
+06:45.310 --> 06:47.230
+So now this item variables you have over.
+
+06:47.620 --> 06:54.400
+It's actually going to be of type string because it knows that this list of names contains strings.
+
+06:55.060 --> 06:57.930
+So now I can say print item.
+
+06:58.330 --> 07:03.220
+I say print l'an so that we can have a line break that's going right.
+
+07:04.420 --> 07:10.690
+And you can see now we are going through and getting each item of our list of collection there.
+
+07:11.970 --> 07:16.340
+And, of course, because we know it's a print airline, we can also interpolate a few things here,
+
+07:16.350 --> 07:20.700
+I'm going to say names and pass item as such.
+
+07:21.060 --> 07:22.170
+You can say the same thing.
+
+07:22.650 --> 07:23.850
+Let's go ahead and run from here.
+
+07:24.270 --> 07:25.500
+Same thing, run.
+
+07:26.250 --> 07:31.980
+And you can say names are showing there another way we can loop through a list.
+
+07:32.010 --> 07:33.510
+We can use a for each.
+
+07:33.990 --> 07:38.880
+This is very special because we can actually use this on my list of names by the top here.
+
+07:38.880 --> 07:47.460
+And when I say my list of names and because is a collection, I can't invoke a method that say for each
+
+07:47.460 --> 07:48.700
+and one light you can see now.
+
+07:49.260 --> 07:50.040
+Look at the beauty here.
+
+07:50.400 --> 07:51.630
+We have a few options.
+
+07:52.350 --> 07:54.840
+What does this look like, right?
+
+07:55.170 --> 07:58.290
+If you said LAMDA, you are completely right.
+
+07:58.410 --> 08:01.050
+We do have a lambda form for each.
+
+08:01.650 --> 08:02.350
+Let's try it out.
+
+08:02.350 --> 08:03.360
+So click like that.
+
+08:03.600 --> 08:04.140
+You enter.
+
+08:04.390 --> 08:04.980
+Aha.
+
+08:05.010 --> 08:12.150
+Look at this the moment we hit enter to remember we have the I.T, the IT type variable argument that
+
+08:12.150 --> 08:13.350
+we are receiving there.
+
+08:13.800 --> 08:17.310
+This is equivalent to this item, which means as wide as string.
+
+08:17.550 --> 08:23.550
+So now we're saying for each item as we go through this, my list of name, right?
+
+08:24.030 --> 08:30.240
+We are going to receive an item or a string item, one string element in this case in the form of it.
+
+08:30.780 --> 08:36.360
+So if I just go ahead and then print it like that, what do you think is going to happen?
+
+08:36.780 --> 08:38.820
+Let's go and comment that one out.
+
+08:38.820 --> 08:44.310
+So we don't have duplicates and you can see James Cole, Rafael, let's say, print L.A. and again.
+
+08:44.700 --> 08:47.850
+That way we actually get something that it's readable.
+
+08:48.390 --> 08:48.680
+OK?
+
+08:48.690 --> 08:50.370
+James, Paul, Rafael and Gina.
+
+08:50.640 --> 08:51.120
+Very good.
+
+08:51.360 --> 08:56.910
+So we have two ways to loop through or iterate through our list stuff.
+
+08:57.330 --> 09:01.980
+Now you may say, OK, how do I add dynamically to a list of, well, you can't.
+
+09:02.400 --> 09:08.100
+The reason why is because there are two types of lists in this case or two types of collection.
+
+09:08.490 --> 09:12.780
+There is the mutable type, which means just like a foul or Anvar.
+
+09:12.870 --> 09:14.760
+So far in this case is mutable.
+
+09:15.630 --> 09:18.810
+List of is immutable, meaning you can't change it.
+
+09:18.810 --> 09:27.060
+You can add anything to it unless we go up here and add manually because the size of this is set right
+
+09:27.060 --> 09:27.480
+away.
+
+09:27.630 --> 09:33.390
+As we add each item so we can't see my list of items and not add.
+
+09:33.900 --> 09:37.620
+That's not going to work because it is indeed immutable.
+
+09:38.040 --> 09:46.140
+If we want to create a mutable list, then we'll have to say something like this without my mutable
+
+09:46.800 --> 09:48.090
+list items.
+
+09:48.780 --> 09:50.850
+Oh my, just my immutable list.
+
+09:51.300 --> 09:57.990
+And I'm going to say it's equal to mutable list of the same concepts here.
+
+09:58.000 --> 09:59.730
+When want pass elements?
+
+10:00.400 --> 10:05.400
+Going to say in this case, I'm actually going to change this instead of having string types right in
+
+10:05.400 --> 10:07.530
+our list for its items?
+
+10:07.980 --> 10:12.270
+I can put numbers well for something like this.
+
+10:13.050 --> 10:15.780
+Now for this mutable one, let's get rid of this.
+
+10:16.650 --> 10:18.390
+I can do something else, right?
+
+10:18.390 --> 10:25.090
+I can save my mutable list dot and I can't invoke the add right, so I'm using the wrong one.
+
+10:25.110 --> 10:28.290
+That's why I can't access the add on my bed.
+
+10:28.650 --> 10:30.310
+So this has to be my mutable.
+
+10:30.310 --> 10:35.520
+At least a year ago that ad, then I have access to add and you can see here I have a few options.
+
+10:35.520 --> 10:37.200
+I can pass the index add.
+
+10:37.200 --> 10:44.100
+Remember the index, which is this slot where we want this element to live right to be used to sit in
+
+10:44.100 --> 10:44.340
+a way.
+
+10:44.820 --> 10:52.560
+So in this case, if we just put the actual element, the item or this element will be put at the end
+
+10:52.770 --> 10:53.610
+of the list.
+
+10:53.910 --> 10:54.180
+OK.
+
+10:54.510 --> 11:02.310
+So because it's expecting integer can see element has to be entered because it knows that we have integer
+
+11:02.310 --> 11:03.000
+that we've added.
+
+11:03.400 --> 11:09.900
+So in this case, let's say something like this, and let's go ahead and print my mutable list like
+
+11:09.900 --> 11:11.130
+this so quick to see.
+
+11:11.700 --> 11:17.460
+And you can see, like I said, the 124 or 214 that is, it was added at the end.
+
+11:18.030 --> 11:19.080
+OK, there we go.
+
+11:19.380 --> 11:25.710
+And of course, we can also say something my mutable list don't remove at.
+
+11:26.340 --> 11:27.630
+If I say just remove.
+
+11:27.720 --> 11:30.250
+I'll have to pass the element to remove.
+
+11:30.270 --> 11:31.860
+So if I say remove, I have to pass.
+
+11:31.860 --> 11:34.020
+For instance, remove 214.
+
+11:34.560 --> 11:36.180
+OK, and that element will remove.
+
+11:36.630 --> 11:37.260
+Let's run.
+
+11:38.460 --> 11:41.370
+And you can see we no longer have to 14.
+
+11:41.610 --> 11:47.640
+However, if I want to remove by passing the index, I can say remove that index.
+
+11:48.000 --> 11:53.730
+I want to remove the first item, which will be at index zero, which mean, is this case going to be
+
+11:53.730 --> 11:54.320
+this 12?
+
+11:54.570 --> 11:57.300
+My case, if you run again, you can see we will no longer see.
+
+11:57.300 --> 11:57.720
+12.
+
+11:58.180 --> 11:59.850
+OK, no longer do we see 12.
+
+12:00.270 --> 12:00.780
+Very good.
+
+12:01.230 --> 12:04.200
+So you've learned about two types of collections here.
+
+12:04.200 --> 12:06.210
+We have the mutable collection.
+
+12:06.210 --> 12:11.970
+Or actually we have the immutable collection, which is just a list of and we have the immutable collection,
+
+12:11.970 --> 12:15.330
+which allows us to add items to the collection.
+
+12:16.050 --> 12:19.560
+And you also learned how to loop through a collection.
+
+12:19.950 --> 12:23.880
+So there's two ways to look through there is this for each, which actually is a lambda.
+
+12:24.120 --> 12:24.900
+Very cool.
+
+12:25.140 --> 12:30.060
+Actually, it gives us the possibility of using a lambda out of many other possibilities, which is
+
+12:30.060 --> 12:30.660
+very nice.
+
+12:30.840 --> 12:34.250
+You see this it or it string type here, right?
+
+12:34.260 --> 12:39.630
+It can pass, you know, a print line or do whatever else we want and or we can use that for a loop
+
+12:39.630 --> 12:45.750
+that I showed you earlier, which is this for here can say item in and passing the list.
+
+12:46.020 --> 12:52.320
+Let's do with my mutable list in this case, and now I'm going to just say Print Ellen, all the items
+
+12:52.320 --> 12:54.570
+inside of a mutable list.
+
+12:54.750 --> 12:57.060
+If you run this, you're going to see the numbers.
+
+12:57.480 --> 13:00.390
+They would go forty five point three to 14.
+
+13:00.810 --> 13:05.190
+Actually, we also have that 30 for the reason why is not showing like that?
+
+13:05.700 --> 13:06.840
+I see.
+
+13:07.380 --> 13:09.720
+Yes, because I have print inadequate deadline here.
+
+13:09.720 --> 13:13.530
+Was it point in so that way you can see the whole picture.
+
+13:14.460 --> 13:15.300
+OK, there we go now.
+
+13:15.300 --> 13:15.870
+Thirty four.
+
+13:16.170 --> 13:20.940
+So just printing these numbers that we have inside of our immutable list.

@@ -1,0 +1,502 @@
+WEBVTT
+
+00:00.210 --> 00:05.190
+Next, what are we going to do is let's add a few model to our.
+
+00:06.200 --> 00:12.110
+Screen, which is going to be our book details, screen details is close this down, so distracted.
+
+00:12.530 --> 00:16.520
+So details command new class and.
+
+00:18.640 --> 00:22.920
+Details the model like this.
+
+00:23.450 --> 00:34.900
+OK, let's not forget to add the at hilt view model search, and we are going to inject here
+
+00:37.750 --> 00:47.320
+a constructor with our repository because we need again the repository by storybook repository to go
+
+00:47.320 --> 00:48.700
+to book repository.
+
+00:48.700 --> 00:56.110
+Remember, we have this get book info function there, which again gets the information about the book.
+
+00:56.260 --> 00:57.880
+So get the book info.
+
+00:57.880 --> 00:58.730
+We have that path.
+
+00:58.750 --> 01:03.430
+This is books API, which is connected to our retrofit.
+
+01:03.730 --> 01:10.750
+And of course, let's not forget that this is a field model like that.
+
+01:13.170 --> 01:19.110
+OK, it's going to be very simple, really, because all we're going to do has to suspend function,
+
+01:19.110 --> 01:28.710
+they're called this get book info and we're going to pass a book ID as a strain and we're going to return
+
+01:28.710 --> 01:33.330
+in this case, a resource and use our resource that we use before to wrap things around.
+
+01:34.230 --> 01:35.460
+Item by section.
+
+01:35.770 --> 01:35.980
+OK.
+
+01:36.000 --> 01:40.950
+Make sure we get our item or not and content clip or any other item, so it's important to always get
+
+01:41.190 --> 01:42.240
+the one that we created.
+
+01:42.630 --> 01:43.740
+So what are we going to do?
+
+01:44.080 --> 01:50.270
+First, we turn our repository dad cat book and pass our book idea.
+
+01:50.550 --> 01:55.650
+OK, so we are now going to see how to use that, you know, rather book details.
+
+01:56.040 --> 01:58.050
+Now, let's test something simple here.
+
+01:58.080 --> 02:02.040
+Obviously, we need to pass after a book.
+
+02:03.390 --> 02:05.220
+Is there that we're receiving?
+
+02:05.340 --> 02:09.450
+We are going to also pass a few models if the model details of your model.
+
+02:09.900 --> 02:13.690
+And I'm just going to say hilt the Model S..
+
+02:14.040 --> 02:18.390
+OK, so let's see if we can get some data.
+
+02:18.790 --> 02:19.030
+Right.
+
+02:19.050 --> 02:20.670
+So right about here.
+
+02:22.290 --> 02:30.450
+And once they view model, well, let's say final data, say that a view model and get the book and
+
+02:30.450 --> 02:33.660
+I'm going to pass the book ID, which is going to be the book ID.
+
+02:34.680 --> 02:40.740
+We should have passed right there so you can see that we have a problem here because they suspend function.
+
+02:40.740 --> 02:45.930
+That book should be called only from a call routine or another suspension function.
+
+02:46.650 --> 02:54.510
+That makes sense because if we go back to to our view model, which which I've lost, somehow, if we
+
+02:54.510 --> 02:57.210
+go back here, you can see this is a suspend function.
+
+02:57.570 --> 03:06.630
+And instead are going to say the view model scope would launch such and then and then have some sort
+
+03:06.630 --> 03:07.620
+of variable.
+
+03:07.860 --> 03:13.920
+But if we do that, that means then we have to have a variable at the top here, for instance, a type
+
+03:14.730 --> 03:21.900
+of resource item that would then inside here we can see that item and then set that to our repository
+
+03:22.440 --> 03:24.080
+that we get to book in full pass.
+
+03:24.090 --> 03:26.660
+Of course, her book ID S.K..
+
+03:27.510 --> 03:28.620
+And that would work, of course.
+
+03:28.620 --> 03:30.690
+Then we're going to take that item and return it.
+
+03:30.820 --> 03:31.930
+And that's totally fine.
+
+03:31.950 --> 03:33.880
+But this is a different way of doing things.
+
+03:33.880 --> 03:36.660
+So I'm going to show you something here, so let's get rid of that altogether.
+
+03:37.230 --> 03:43.200
+The other way we're going to make this work is as follow, we can actually invoke another mechanism
+
+03:43.200 --> 03:50.790
+here that will produce a state that we need so that we can bypass this issue we have in here.
+
+03:51.600 --> 03:56.520
+What I mean by that is as follows Look at this a safe owl book info.
+
+03:57.540 --> 04:03.420
+And then when I say produce state, look at that, just take that first one, OK?
+
+04:03.690 --> 04:08.910
+So when you produce a state, we have to be mindful of the types because we're producing this state
+
+04:08.910 --> 04:15.720
+for what we're producing the state for, in this case, our resource item type that is being returned
+
+04:16.170 --> 04:17.400
+from our cookbook info.
+
+04:18.090 --> 04:23.620
+That means then for our initial value here, I'm going to say resource because that's the type.
+
+04:23.700 --> 04:26.270
+Make sure we're getting our tag resource type there.
+
+04:26.280 --> 04:27.000
+It's very important.
+
+04:27.810 --> 04:33.060
+And when I say that loading in this case, just pass nothing.
+
+04:35.060 --> 04:41.360
+And then for a producer, because it's going to be a I can just get rid of all of that and go like this.
+
+04:42.110 --> 04:47.480
+But this is going to be problematic still because we still have to add the type of this producer here.
+
+04:47.780 --> 04:48.040
+Right?
+
+04:48.500 --> 04:55.340
+So I'm going to have to put inside of angle brackets when I say it's going to be a resource type again,
+
+04:55.730 --> 05:00.470
+that ours is going to be just of item again.
+
+05:00.500 --> 05:03.410
+Make sure we get our item on a model item like this.
+
+05:03.950 --> 05:10.160
+OK, so the type has to be attached to say, what types are we expecting to produce this date for?
+
+05:11.580 --> 05:14.640
+OK, so initial value, I'm going to say we source is going to be loading.
+
+05:16.760 --> 05:22.880
+And then inside here, you can see that this is where it says this produce state scope.
+
+05:23.330 --> 05:26.900
+So this is where the state is being produced per se.
+
+05:27.290 --> 05:31.580
+So we can then get a value there is like this.
+
+05:31.730 --> 05:33.170
+So the value is going to be what?
+
+05:33.320 --> 05:35.240
+Well, it's going to be the resource item.
+
+05:36.580 --> 05:40.300
+So that's being passed implicitly inside of this lambda.
+
+05:41.700 --> 05:44.190
+And you can see value resource item like this.
+
+05:45.000 --> 05:45.330
+Good.
+
+05:45.810 --> 05:46.860
+So what we want to do with that?
+
+05:47.010 --> 05:51.570
+Well, we're going to set it to what I'm going to say a few model, right?
+
+05:52.200 --> 05:55.050
+Get book and pass or a book ID.
+
+05:59.610 --> 06:03.540
+Like that, and once we get that book info, you have over.
+
+06:03.890 --> 06:04.150
+Right?
+
+06:04.200 --> 06:06.520
+This is going to be a state because that's what I'm saying.
+
+06:06.520 --> 06:07.890
+We want to produce a state.
+
+06:08.310 --> 06:12.900
+So we need to go and get a value just like we do with the mutable state or any other state.
+
+06:13.140 --> 06:13.440
+Right.
+
+06:13.680 --> 06:19.350
+If we don't use the by delegation, then we have to go and get that that state per se or the value of
+
+06:19.350 --> 06:19.770
+that state.
+
+06:20.400 --> 06:21.810
+So in this case, I would say that value.
+
+06:21.870 --> 06:25.380
+So as you see here, I want to get the actual resource item.
+
+06:26.610 --> 06:33.810
+So now this book info have over now is a resource item, which we can use to get the information we
+
+06:33.810 --> 06:34.080
+want.
+
+06:35.300 --> 06:35.650
+All right.
+
+06:35.860 --> 06:45.010
+So this bypasses us having to go and do what we have done before, which was to put a scope here, a
+
+06:45.010 --> 06:50.590
+few more scope and invoked at launch time so that we can do things in the back ground.
+
+06:50.980 --> 06:54.360
+I could say something like this if we have that resource.
+
+06:54.370 --> 06:57.580
+When I say book info is a resource item, right?
+
+06:57.880 --> 06:58.540
+It's wrapped.
+
+06:58.990 --> 07:06.340
+I can say DOD to get the data and it can go and say, maybe to string like this or I guess, let's see,
+
+07:06.970 --> 07:07.750
+what else can I do?
+
+07:07.780 --> 07:08.260
+All right.
+
+07:08.470 --> 07:11.740
+Because it is going to be a book object, an item object of war.
+
+07:11.740 --> 07:16.090
+So we have all of these variables, like volume.
+
+07:16.090 --> 07:16.990
+We can see volume.
+
+07:17.740 --> 07:22.750
+And then I'm going to say, title like this.
+
+07:26.400 --> 07:33.090
+See, I need to go further to make sure those are knowable and proper those.
+
+07:33.630 --> 07:34.050
+OK.
+
+07:34.650 --> 07:36.150
+Let's see if this works.
+
+07:40.940 --> 07:41.840
+OK, let's see.
+
+07:42.030 --> 07:45.410
+Click Whyalla, the search for something different.
+
+07:50.450 --> 07:51.440
+OK, let's.
+
+07:52.800 --> 07:53.130
+Clique.
+
+07:53.490 --> 07:55.450
+And we have an issue.
+
+07:55.470 --> 07:56.660
+What is the problem?
+
+07:56.670 --> 07:59.820
+Let's look at the problem that we're having here.
+
+07:59.970 --> 08:00.900
+This is always.
+
+08:02.470 --> 08:03.740
+Nerve wracking, OK?
+
+08:03.760 --> 08:04.510
+No point.
+
+08:05.420 --> 08:07.780
+Read a book details invoke.
+
+08:09.900 --> 08:14.340
+Let's see what the problem is, let's go ahead and comment this out before we do anything, let's go
+
+08:14.340 --> 08:20.370
+ahead and say log t just to see and I'm going to pass just the book info.
+
+08:20.700 --> 08:21.180
+It's not.
+
+08:22.780 --> 08:29.590
+Notebook info, Notebook ID Bank, book info and get the data OK and set to a string, that's fine.
+
+08:30.610 --> 08:32.770
+And here I'm just going to say.
+
+08:34.660 --> 08:38.950
+These days for details, and it's run once.
+
+08:39.250 --> 08:40.780
+One more time to see what will happen.
+
+08:42.300 --> 08:47.670
+It's open on Logcat when add to that there, so we can check it out.
+
+08:48.120 --> 08:49.260
+OK, let's start again.
+
+08:50.570 --> 08:51.540
+Can I just click anywhere?
+
+08:52.080 --> 08:54.240
+OK, so it looks like.
+
+08:55.540 --> 08:56.680
+Something happened.
+
+08:57.910 --> 09:01.340
+Well, we see that details is no all right.
+
+09:01.360 --> 09:05.560
+So we hear now, says Dietz, can see its forces know.
+
+09:05.800 --> 09:09.610
+And then it's no, and then it gets something right.
+
+09:09.620 --> 09:11.110
+We actually get a book.
+
+09:12.740 --> 09:19.640
+So that tells me that we are running into the same thing that we ran into before that, the process
+
+09:19.640 --> 09:21.830
+of getting information may take a little bit.
+
+09:22.250 --> 09:30.410
+So the moment we ran this and we took that book in full right away and we want to add it to into a composable,
+
+09:31.130 --> 09:35.450
+the composable is not going to get anything because it's going to read this first say, well, it's
+
+09:35.450 --> 09:37.040
+no, there's nothing and give up.
+
+09:37.160 --> 09:41.510
+It's not going to continue trying to recompose itself until it finds it that data.
+
+09:42.260 --> 09:44.600
+So the smart thing in this case will change.
+
+09:44.600 --> 09:54.560
+Everything anyway would be to check if the there is data right or going to say if that data is not all.
+
+09:56.340 --> 10:00.720
+Or if it's no actually, we could just play around a little bit here.
+
+10:01.080 --> 10:05.040
+I going to put linear progress indicator else.
+
+10:07.390 --> 10:16.430
+You know, the case, I can just cut this and put it there and then get that information that I need.
+
+10:17.360 --> 10:19.320
+It looks like we're having some issues there.
+
+10:19.340 --> 10:24.440
+Let's replace with the DOT because it doesn't want at this point, it's not going to be all in the way.
+
+10:24.470 --> 10:26.270
+That's why it doesn't need those.
+
+10:27.200 --> 10:27.590
+All right.
+
+10:28.010 --> 10:29.150
+Let's see if this works now.
+
+10:29.270 --> 10:29.780
+That's right.
+
+10:34.610 --> 10:34.910
+OK.
+
+10:36.360 --> 10:38.610
+Hala, you can see it ran a little bit.
+
+10:38.910 --> 10:40.890
+The linear progress indicator showed.
+
+10:41.800 --> 10:47.920
+And then it went back, they start again, this one book, Flutter, go back, let's find, so let's
+
+10:47.920 --> 10:51.160
+look for something else dancing like we did before.
+
+10:53.320 --> 10:54.250
+Taylor, well.
+
+10:56.020 --> 10:57.700
+OK, there's the title you saw that.
+
+10:58.030 --> 11:00.620
+Let's get this one.
+
+11:00.640 --> 11:01.210
+And voila!
+
+11:01.240 --> 11:04.900
+So now things are working because we're giving it time with checking to see.
+
+11:05.590 --> 11:11.380
+There's that delay that happens whenever you're getting something from the internet or getting data
+
+11:11.680 --> 11:12.400
+from anywhere.
+
+11:13.580 --> 11:18.760
+Something to keep in mind, always because if you were to do that right away, you saw what would have
+
+11:18.760 --> 11:22.260
+that issue and be very confusing as to what's going on.
+
+11:22.270 --> 11:29.200
+So that's the reason why it's always nice to put it logged here to log out to see exactly what the problem
+
+11:29.200 --> 11:32.410
+is or the data, how it's coming in, as we saw earlier.
+
+11:33.840 --> 11:38.790
+OK, forget, so this is not how are we going to do it, but at least it gives you some idea of how
+
+11:38.790 --> 11:39.660
+to proceed.

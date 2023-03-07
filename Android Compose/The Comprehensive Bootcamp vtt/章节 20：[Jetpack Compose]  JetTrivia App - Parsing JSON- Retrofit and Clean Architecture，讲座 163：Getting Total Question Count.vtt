@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.210 --> 00:04.100
+The other thing I notice here is that we still have this 100, right?
+
+00:04.200 --> 00:07.250
+12 out of 100 question that is shown here.
+
+00:07.260 --> 00:11.910
+So this is a hard coded number that we added earlier.
+
+00:12.390 --> 00:13.400
+That's not what we want.
+
+00:13.470 --> 00:13.840
+Let's see.
+
+00:13.890 --> 00:14.490
+Go back.
+
+00:14.850 --> 00:17.160
+This is out of 100.
+
+00:17.310 --> 00:23.490
+This is what we added earlier, which is not what we want when we want to get in this case.
+
+00:24.340 --> 00:29.700
+Want to get out of all questions that we have in our JASON payload.
+
+00:30.450 --> 00:31.110
+How do we do that?
+
+00:31.260 --> 00:32.670
+Of course, I know you can do this.
+
+00:33.630 --> 00:36.840
+In fact, you can pause this video and try to do that.
+
+00:37.770 --> 00:38.130
+All right.
+
+00:38.220 --> 00:39.810
+So I hope you were able to do it.
+
+00:40.320 --> 00:41.820
+Now, let's think a little bit about this.
+
+00:41.820 --> 00:51.570
+So we understand in order for us to get the data in this case, the how many questions we have, how
+
+00:51.570 --> 00:55.410
+many questions we have is just the size of our list.
+
+00:55.620 --> 00:57.690
+So there are few ways to do this.
+
+00:57.840 --> 01:00.810
+One of ways I'm going to do, I'm going to use our view model.
+
+01:01.500 --> 01:04.740
+So can I go and save you moral questions if you model?
+
+01:05.250 --> 01:10.390
+And here, because we have our data, we should have received our data at this point here because it
+
+01:10.410 --> 01:13.500
+would initially go ahead and factually data and everything.
+
+01:13.800 --> 01:19.290
+So this data here is a mutable state, but also contains these data or exception, which contains our
+
+01:19.440 --> 01:20.340
+list of questions.
+
+01:20.650 --> 01:20.920
+Right.
+
+01:21.660 --> 01:24.510
+So I'm going to create a function at the bottom here.
+
+01:25.470 --> 01:29.580
+Call get total question.
+
+01:33.720 --> 01:34.170
+Count.
+
+01:37.420 --> 01:40.210
+So this will just return and end, right?
+
+01:40.870 --> 01:44.760
+And so I'm going to say return data and value.
+
+01:46.030 --> 01:53.110
+I'm going to go invoke the actual data entry list and get to mutable list.
+
+01:53.110 --> 01:55.660
+I need to do that and then get the site.
+
+01:55.930 --> 02:06.400
+We're going to have some issues here because we need to make these nhlapo such that we go, there we
+
+02:06.400 --> 02:06.550
+go.
+
+02:06.550 --> 02:10.840
+So now, because we have our question, the model, we can go to our questions.
+
+02:11.080 --> 02:18.280
+And you'll remember that we are also passing the view model into our question here.
+
+02:18.730 --> 02:23.290
+This place that we have access, not a few models, so we can do that now can use it.
+
+02:23.710 --> 02:31.780
+So inside of a final question tracker, here I have the counter move past that already now against a
+
+02:31.780 --> 02:32.830
+say view model.
+
+02:34.840 --> 02:35.130
+OK.
+
+02:35.740 --> 02:36.630
+That get.
+
+02:38.080 --> 02:40.630
+Tomorrow, question count like this.
+
+02:41.860 --> 02:48.700
+And if you go ahead and run, we should get this will now change to a total question count.
+
+02:49.690 --> 02:50.230
+And there we go.
+
+02:51.460 --> 02:56.420
+We have zero out of four thousand eight hundred and seventy five questions.
+
+02:56.440 --> 02:56.740
+Wow.
+
+02:56.860 --> 02:59.830
+I will take you a little while to go through that.
+
+02:59.880 --> 03:00.490
+Well, so.

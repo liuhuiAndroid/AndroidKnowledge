@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.210 --> 00:06.480
+Imagine that you were asked by your boss, or maybe you're such a smart developer and so motivated that
+
+00:06.480 --> 00:10.710
+you want to create a few classes that would present present a button.
+
+00:11.190 --> 00:17.160
+So you would go ahead and create button glass with all the properties and all of the functions.
+
+00:17.280 --> 00:23.160
+And then you decided that, OK, if I create a class called button, I may also want to create another
+
+00:23.160 --> 00:26.490
+class that is another version of a button.
+
+00:26.490 --> 00:31.920
+In this case, an icon button, which in this case will be a button, will have all the properties of
+
+00:31.920 --> 00:37.800
+a button, but will also have its own property, which is being able to add an icon attached to that
+
+00:37.800 --> 00:38.160
+button.
+
+00:38.400 --> 00:42.540
+And then he decided, OK, maybe I also will need to have a text to view.
+
+00:42.780 --> 00:47.610
+But since this takes view, it's a simple text view, meaning we're just going to have a text showing
+
+00:47.610 --> 00:48.210
+on the screen.
+
+00:48.780 --> 00:55.770
+I will make it inherit from I can button mainly because I want to make sure to inherit or override the
+
+00:55.770 --> 00:58.440
+functionality of the click event.
+
+00:58.980 --> 01:00.180
+So that's that's OK.
+
+01:00.270 --> 01:01.170
+That's very possible.
+
+01:01.230 --> 01:08.850
+But then time goes by and then your boss or yourself who have graduated from building small applications.
+
+01:08.850 --> 01:12.890
+Now you want to create a game and then you decide to create another structure, right?
+
+01:12.900 --> 01:14.030
+Tree like structure.
+
+01:14.070 --> 01:20.280
+So you create a character in a game and this character is perhaps inheriting from game actor.
+
+01:21.000 --> 01:22.200
+So it doesn't really matter.
+
+01:22.980 --> 01:30.660
+But now you start thinking, OK, I have this whole system of classes that are doing something different.
+
+01:30.780 --> 01:38.460
+However, there is one thing that they all do, which is there is this one click event that needs to
+
+01:38.460 --> 01:40.560
+be attached to each one of these classes.
+
+01:40.800 --> 01:46.560
+So you may start thinking, I wonder if there's a structure in cartilage that will help me think through
+
+01:46.560 --> 01:55.020
+this process where I do have this one event that is common to all of these classes independent of the
+
+01:55.020 --> 01:58.800
+types of classes, because in this case, we have buttons inheriting to the left here.
+
+01:59.010 --> 02:04.470
+And then we have this character actor here that is from a game class.
+
+02:05.040 --> 02:07.350
+And that's what it's inheriting from, right?
+
+02:08.130 --> 02:14.730
+So we start thinking, is there a way I could create an entity that can stand on its own?
+
+02:15.300 --> 02:22.110
+All this entity will do is to have specific behaviors that can be used in other classes.
+
+02:22.350 --> 02:24.600
+Yes, we have such structure.
+
+02:24.600 --> 02:27.750
+It's called interface or interfaces in codling.
+
+02:28.260 --> 02:33.090
+So in this case here, when we have an interface, we could say, OK, we understand that a button icon,
+
+02:33.090 --> 02:39.060
+button, text, view, character, all of these classes have one thing that they want to implement,
+
+02:39.060 --> 02:40.770
+which is a click event.
+
+02:41.550 --> 02:45.390
+So we would create, in this case, an interface called click event.
+
+02:45.840 --> 02:54.210
+All this will do, it will have specified event in this case, one click event right or function or
+
+02:54.210 --> 02:54.840
+a property.
+
+02:55.230 --> 03:02.280
+It will have those behaviors encapsulated in one place so that anybody else by that anybody, I mean
+
+03:02.310 --> 03:08.940
+any other guys, they can actually implement this class and they will be able to override or will need
+
+03:09.240 --> 03:11.550
+to implement the actual function.
+
+03:11.850 --> 03:16.110
+What I mean by that is as follows so character now could implement click event.
+
+03:16.260 --> 03:19.020
+So could text view I can button.
+
+03:20.090 --> 03:26.090
+And the button itself, if we had some strange class somewhere else that does something totally different,
+
+03:26.420 --> 03:29.690
+it could potentially also implement this interface.
+
+03:30.410 --> 03:38.810
+So in a nutshell, an interface specifies what a class can implement regardless of inheritance status.
+
+03:38.960 --> 03:44.720
+Now I added that just to show you that it doesn't matter if we're talking about buttons to the left
+
+03:45.170 --> 03:50.000
+or we're talking about some sort of some different characters from a different game actor or from a
+
+03:50.000 --> 03:53.960
+different system or different classes that we happen to be using as well.
+
+03:54.900 --> 04:02.430
+So this is a very important concept in programming in general, going back to our diagram here.
+
+04:02.640 --> 04:08.010
+What we would do with our click event here interface, we would create a functioning site called on
+
+04:08.010 --> 04:08.430
+Click.
+
+04:08.940 --> 04:13.610
+This function will be implemented at the class level.
+
+04:13.620 --> 04:18.570
+What that means is that on click function would not have a body.
+
+04:20.050 --> 04:20.320
+Right.
+
+04:20.680 --> 04:25.600
+Because the idea is not that the click event will implement or do something.
+
+04:25.900 --> 04:28.080
+All this will do the click event.
+
+04:28.090 --> 04:29.470
+It would be as an interface.
+
+04:29.740 --> 04:36.520
+It would have the signature, if you will, of that function so that any class that would implement
+
+04:36.970 --> 04:37.930
+this click event.
+
+04:38.260 --> 04:44.410
+They would have to actually also implement their own click method or function on their own.
+
+04:45.070 --> 04:52.330
+And this creates a lot of flexibility because not only can a button implement its own own, click an
+
+04:52.330 --> 04:59.860
+icon Biden can do can implement its own on click as well, like customize itself a text view, and so
+
+04:59.860 --> 05:02.500
+would a character or a robot or whatever it is.
+
+05:02.770 --> 05:08.440
+So that's what an interface is, and that's the reason why having an interface is very powerful.
+
+05:08.590 --> 05:10.450
+OK, let's go ahead and take a look in code.

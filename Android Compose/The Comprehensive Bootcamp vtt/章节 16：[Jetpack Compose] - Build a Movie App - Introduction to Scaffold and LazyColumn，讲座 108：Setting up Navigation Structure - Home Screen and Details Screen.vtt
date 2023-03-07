@@ -1,0 +1,592 @@
+WEBVTT
+
+00:00.950 --> 00:08.720
+All right, so now we are going to create the actual composable, but the actual screen where this destination
+
+00:08.720 --> 00:09.500
+is going to represent.
+
+00:10.460 --> 00:14.870
+So like I said, we have everything set up, but not really because the way things are right now, we
+
+00:14.870 --> 00:15.810
+have everything in mind.
+
+00:15.830 --> 00:17.930
+So we're going to separate concerns here.
+
+00:18.140 --> 00:22.730
+What this means is that instead of a screens here, I'm going to create yet another package.
+
+00:23.270 --> 00:23.600
+OK?
+
+00:24.140 --> 00:26.690
+The first package here is going to be home.
+
+00:27.290 --> 00:30.500
+This is another way of creating this and it's out of home.
+
+00:31.050 --> 00:35.760
+Want to create another file called this home screen i section?
+
+00:37.420 --> 00:39.550
+OK, what do we want to happen here?
+
+00:39.580 --> 00:45.240
+I'm going to say at composable and this is going to be function home screen.
+
+00:46.390 --> 00:49.330
+Now here's another important thing to remember.
+
+00:50.200 --> 00:51.250
+What are we going to do here?
+
+00:51.260 --> 00:57.250
+We actually going to pass a knife controller type because it didn't have controller member will allow
+
+00:57.250 --> 01:01.180
+us to say NAF controller that navigate and we can go to whatever we want to go.
+
+01:01.420 --> 01:05.590
+So we always want to pass enough controller in this home screen.
+
+01:06.560 --> 01:13.580
+OK, now that means we go back to our movie navigation, I can see home screen like this, it's going
+
+01:13.580 --> 01:18.050
+in Portlaoise, go ahead and import this second one to function like this.
+
+01:18.080 --> 01:23.050
+And while we say that this expects enough controller, we're going to pass in the controller.
+
+01:23.060 --> 01:24.500
+Where do we get our traffic controller?
+
+01:24.530 --> 01:26.000
+Well, we've created it already.
+
+01:26.120 --> 01:27.680
+And voila, we're passing it there.
+
+01:28.160 --> 01:28.910
+What I'm going to do?
+
+01:28.940 --> 01:32.060
+Let's go to home and I'm going to read a few.
+
+01:32.070 --> 01:38.220
+I'm going to remove this scaffold content here.
+
+01:39.230 --> 01:44.510
+So all of this was cut all of that and go to home.
+
+01:46.410 --> 01:52.260
+And pass it all, they're going to have problems, no problems, and let's take this as well.
+
+01:52.290 --> 01:57.360
+All of this main content, and we're going to add at the bottom because it's your own function, so
+
+01:57.360 --> 02:00.030
+we need to put at the bottom there for our content here.
+
+02:00.060 --> 02:01.890
+I'm actually going to do the following.
+
+02:01.980 --> 02:07.020
+Let's go ahead and just call our main content.
+
+02:07.710 --> 02:14.940
+Also, this past INAF controller like such, which means we have to pass enough controller type like
+
+02:14.940 --> 02:15.240
+this.
+
+02:16.770 --> 02:19.260
+It will make more sense once we actually use that controller.
+
+02:19.290 --> 02:20.550
+Now where is this cold?
+
+02:20.580 --> 02:25.440
+Well, remember that this is actually called inside of a movie navigation.
+
+02:27.220 --> 02:32.110
+Which is really good because we are going to use movie navigation, because that is what it's going
+
+02:32.110 --> 02:34.480
+to govern the entire application, white household navigation.
+
+02:34.660 --> 02:39.280
+And it will know exactly what is the first item or what is the first screen that needs to be shown.
+
+02:40.000 --> 02:42.790
+So, you know, our main activity now, things have changed.
+
+02:43.660 --> 02:44.230
+Correct?
+
+02:44.260 --> 02:45.340
+Yes, they have changed.
+
+02:45.610 --> 02:47.710
+That means here I'm going to still pass.
+
+02:47.710 --> 02:50.140
+The content was what we had before.
+
+02:50.650 --> 02:52.690
+And this is just this.
+
+02:52.690 --> 02:58.660
+My app is being called here, but inside of my app here, I'm going to pass now.
+
+02:58.660 --> 03:03.100
+Movie navigation, because again, movie navigation.
+
+03:03.100 --> 03:04.000
+Click like this.
+
+03:04.420 --> 03:10.180
+It has all the information it needs to know where to go, which in this case, the first thing that's
+
+03:10.180 --> 03:13.250
+going to happen because it is indeed the start of this nation.
+
+03:13.270 --> 03:14.260
+We have to have a start.
+
+03:14.260 --> 03:18.070
+This nation is going to be the home screen pass the composable.
+
+03:18.310 --> 03:22.840
+The actual possible is this, which is what we have extracted and put it here.
+
+03:23.380 --> 03:28.600
+It's because at the bottom here, we are still not doing what we need to do, which means we have to
+
+03:28.600 --> 03:29.920
+pass our navigation.
+
+03:31.770 --> 03:35.310
+Movie navigation, we're not using it, but it's OK to pass it there.
+
+03:35.730 --> 03:37.200
+All right, so we should be good.
+
+03:37.770 --> 03:40.590
+OK, let's go ahead and do a quick who clear close this down.
+
+03:40.980 --> 03:42.900
+Another quick recap here.
+
+03:44.880 --> 03:50.360
+So we created a home screen, all we did here, just remove some of the code from our home screen,
+
+03:50.360 --> 03:57.240
+the main activity that is because now we know that in our movie navigation, we have this knife controller
+
+03:57.240 --> 04:02.420
+which created this movie navigation function composable and we have the nav host.
+
+04:02.430 --> 04:08.940
+This is where we're going to host all of our destinations, our composable to our screens, and we have
+
+04:08.940 --> 04:10.140
+to start with a destination.
+
+04:10.140 --> 04:11.100
+Where do we start?
+
+04:11.730 --> 04:12.060
+Right?
+
+04:12.690 --> 04:17.550
+Well, we start at home screen and we're passing that controller along.
+
+04:18.740 --> 04:25.760
+Because from here home screen, we may need to click a button or click each one of those lists.
+
+04:25.790 --> 04:30.050
+It's one of those movies, so we can't be taken somewhere else to a different destination.
+
+04:30.950 --> 04:31.550
+Does that make sense?
+
+04:32.060 --> 04:37.160
+And so our main activity now all we have to do it our main set content here.
+
+04:37.850 --> 04:40.940
+We no longer have to pass directly home.
+
+04:41.920 --> 04:49.630
+We pass the movie navigation because it has all the navigation, it knows all of the nodes, all of
+
+04:49.630 --> 04:54.370
+the composable that we put inside here, we may put as many as we want because remember, this is just
+
+04:54.370 --> 04:56.830
+enough host and we pass it all inside there.
+
+04:57.700 --> 04:59.290
+We're building again.
+
+05:00.310 --> 05:06.640
+We're building this nav graph in this graph and that right now we only have one item which is this home
+
+05:06.640 --> 05:12.730
+screen inside of nav host, which is what we have there and we have enough controller which is out there
+
+05:12.880 --> 05:14.980
+and we're passing along very nice.
+
+05:15.430 --> 05:19.270
+Now let's go ahead and run and see how this works.
+
+05:21.860 --> 05:27.230
+And voila, you can see everything is working as if nothing ever happened, right?
+
+05:27.680 --> 05:34.490
+We have our main screen, our home screen, and we still have everything like this.
+
+05:35.660 --> 05:36.350
+Very good.
+
+05:36.530 --> 05:37.310
+Very good indeed.
+
+05:37.670 --> 05:41.720
+So now that we understand that our navigation is working, this is really great.
+
+05:41.720 --> 05:46.880
+We want to be able to text next, want to be able to when we click this item, for instance, to go
+
+05:47.240 --> 05:49.630
+to a details page, let's see how that will work.
+
+05:49.670 --> 05:53.870
+Well, it's very simple now because, as I said, all we have to do now.
+
+05:53.900 --> 05:54.860
+Let's get rid of these.
+
+05:55.490 --> 06:02.720
+All they have to do is go back to a moving navigation and create another composable inside of our nav
+
+06:02.720 --> 06:08.000
+host because this is where we put all of our nodes, all of our composable, all of our screens.
+
+06:08.420 --> 06:13.010
+So at the end of this composable, the home composable, this is indeed a home composable.
+
+06:13.010 --> 06:20.180
+As you can see, I can go ahead and say another composable like this passenger route, you see movie
+
+06:20.180 --> 06:21.770
+screens way easier.
+
+06:22.070 --> 06:24.590
+And one of the details at this point to name.
+
+06:25.460 --> 06:27.020
+And then I'm going to do what?
+
+06:27.110 --> 06:33.940
+Well, I'm going to see details screen and I'm going to do the same thing and have controller passing
+
+06:34.100 --> 06:34.790
+the knife control.
+
+06:34.790 --> 06:38.660
+And now he's going to want to get the details screen from navigation.
+
+06:38.660 --> 06:39.440
+That's how we want.
+
+06:39.450 --> 06:43.280
+We want to create another screen here, so I'm going to create another package.
+
+06:45.080 --> 06:52.820
+This is going to be details like this, which means now instead of details, I can add another file
+
+06:52.820 --> 06:53.930
+just like we did see.
+
+06:53.990 --> 06:56.570
+Now it's simple because we just repeat the process.
+
+06:57.200 --> 07:00.230
+So this is going to be details screen.
+
+07:00.800 --> 07:10.430
+I'm going to make it a composable fun details screen and purpose nav controller.
+
+07:12.500 --> 07:23.540
+If you want to and for now, I'm just going to say text just to show you details screen.
+
+07:25.460 --> 07:25.820
+All right.
+
+07:26.270 --> 07:27.560
+So go back here.
+
+07:29.270 --> 07:30.320
+Let's go ahead and report.
+
+07:30.590 --> 07:33.500
+We want a detailed screen function, and voila.
+
+07:33.800 --> 07:39.590
+So now if we go to our let's go back to our home, looks like I put this in the wrong place.
+
+07:39.590 --> 07:40.520
+This has to go.
+
+07:43.190 --> 07:46.940
+OK, let's restructure this looks like this home is not working.
+
+07:48.050 --> 07:50.390
+Let's create another package there.
+
+07:57.320 --> 08:03.680
+I say home, just to differentiate, this should be outside.
+
+08:06.300 --> 08:11.970
+So a factor that I think he didn't just restructuring things here, homescreen.
+
+08:16.960 --> 08:20.110
+OK, now it's all working, so I don't need this, let's delete that.
+
+08:20.980 --> 08:23.170
+Not sure why that didn't work, but that's fine.
+
+08:23.200 --> 08:28.870
+OK, so we have details, folder or packaging, we have home, so it's sort of a home screen.
+
+08:28.900 --> 08:29.890
+Let's go back to here.
+
+08:30.250 --> 08:33.770
+We remember that in our main contact, we are passing the traffic controller.
+
+08:33.790 --> 08:37.900
+The reason why we passing never control because we want to be able to click and go somewhere.
+
+08:38.230 --> 08:42.130
+So right now, because we have enough control, look how easy this is.
+
+08:42.880 --> 08:49.660
+Instead of a movie row, we're passing that movie and we're just saying Log D to see that movie, right?
+
+08:49.930 --> 08:50.560
+That's fine.
+
+08:50.710 --> 08:51.760
+But now look what you can do.
+
+08:51.760 --> 08:55.390
+I can say nav controller, dot, navigate.
+
+08:55.390 --> 08:57.040
+I have a lot of methods here.
+
+08:57.040 --> 08:58.930
+Navigate what we want.
+
+08:59.500 --> 09:00.880
+We want the one that says Root.
+
+09:01.060 --> 09:05.200
+It's very important, the root one, because if you get the wrong one, you're going to have some errors.
+
+09:05.410 --> 09:09.250
+Let's make sure you get to the root like this and where we want to go.
+
+09:10.550 --> 09:14.720
+Well, for Root, I'm going to pass a strength, but I know I can just go and see movies.
+
+09:16.160 --> 09:20.810
+See movies, screens, I'm going to get Dot.
+
+09:21.230 --> 09:27.050
+I won't go to details my name to get the actual value of our DNA.
+
+09:27.440 --> 09:28.100
+And that's it.
+
+09:29.210 --> 09:30.290
+Look how easy this is.
+
+09:30.290 --> 09:35.300
+All we had to do was pass that knife controller because remember, it didn't have controller controls
+
+09:35.570 --> 09:37.580
+tells what to do.
+
+09:38.270 --> 09:40.970
+That's why I was a controller controller.
+
+09:41.360 --> 09:42.050
+Navigate.
+
+09:42.140 --> 09:42.840
+Do something.
+
+09:42.890 --> 09:43.880
+What is a landing gear?
+
+09:43.890 --> 09:46.100
+Navigate where to this route here?
+
+09:47.390 --> 09:49.280
+And how do I know this is the correct one?
+
+09:49.280 --> 09:54.380
+Because it's just a string that we added in our main screen or movie screen.
+
+09:54.390 --> 09:59.120
+This would say that, you know, so it knows exactly it's here, right?
+
+09:59.540 --> 10:01.640
+So it knows exactly where to go the route.
+
+10:02.030 --> 10:03.590
+Now, if I run this again.
+
+10:07.090 --> 10:10.630
+If I click any of this, I go to detail screen.
+
+10:12.100 --> 10:12.790
+Let's go back.
+
+10:15.390 --> 10:16.430
+You can see it's working.
+
+10:17.630 --> 10:21.740
+We have navigation working guys, just do a quick recap here.
+
+10:22.190 --> 10:26.000
+So what we did, we did the same thing as we did before, right?
+
+10:26.060 --> 10:30.980
+We created in this case, our detailed screen doesn't have much and we passive it that controller.
+
+10:31.550 --> 10:33.080
+We're not using it, but that's fine.
+
+10:33.110 --> 10:34.850
+We just passing it because we may.
+
+10:34.880 --> 10:38.000
+Who knows, we may also want to use the controller later.
+
+10:38.510 --> 10:39.100
+We'll never know.
+
+10:39.110 --> 10:40.370
+So we'll just pass that controller.
+
+10:40.730 --> 10:42.170
+We have access to it, and that's fine.
+
+10:42.950 --> 10:48.830
+But most importantly, when we had to do in our movie navigation here in our nav host, right, it is
+
+10:48.830 --> 10:51.260
+where this is, where we create the actual graph.
+
+10:51.500 --> 10:54.350
+In fact, you can see it, says this nav graph builder.
+
+10:54.350 --> 10:55.730
+So we're building our graph here.
+
+10:55.760 --> 10:58.160
+Visually, we're building all those pieces.
+
+10:58.670 --> 11:01.100
+All of those nodes of our tree.
+
+11:01.430 --> 11:06.920
+In our case here, the first one is our movie screen, and we made sure that the star destination is
+
+11:06.920 --> 11:10.040
+going to be it in this case, movie screen home like that.
+
+11:10.610 --> 11:14.840
+But still, we have to have that composable to say, where is it that movie screen?
+
+11:15.170 --> 11:19.970
+Well, the composable is home screen and we pass that nav controller that we create at the top here
+
+11:20.510 --> 11:22.610
+and we instantiated through our nav host.
+
+11:23.060 --> 11:25.160
+And we know that we want to go to details.
+
+11:25.190 --> 11:29.860
+We have to create that composable or in this case, detailed screen passing that didn't have control
+
+11:29.910 --> 11:31.370
+again because we just want to.
+
+11:31.550 --> 11:38.210
+And most importantly, now we have that route, OK to say this is where when we click, we can just
+
+11:38.210 --> 11:43.430
+invoke nav controller that navigate to this place and then we're done.
+
+11:44.130 --> 11:45.650
+And that's exactly what we've done.
+
+11:46.830 --> 11:47.190
+Here.
+
+11:50.010 --> 11:51.420
+That controller then navigate.
+
+11:52.650 --> 12:00.080
+Movie screen details name the navigation component and enough controller and have hosted enough craft,
+
+12:00.300 --> 12:04.980
+so keep this diagram in mind as you navigate through OK?
+
+12:05.010 --> 12:10.830
+Make sure to understand the navigation component contains enough controller nav hosts enough graph nav
+
+12:10.830 --> 12:11.120
+graph.
+
+12:11.130 --> 12:13.980
+Just think of a bunch of composable that are connected.
+
+12:14.430 --> 12:16.230
+It's a graph nav host.
+
+12:16.500 --> 12:21.090
+Well, he's hosting all of those composable, all of those screens, nav controller.
+
+12:21.090 --> 12:22.410
+It controls all of this.
+
+12:22.410 --> 12:27.390
+It says OK, it says nav controller that navigate to X Composable.
+
+12:27.930 --> 12:32.160
+So there are more things that we're going to do, of course, to learn more about navigation, especially
+
+12:32.280 --> 12:35.340
+being able to click and go to detail screen.
+
+12:35.580 --> 12:39.960
+But instead of just seeing details screen, we want to be able to pass along some information that makes
+
+12:39.960 --> 12:40.290
+sense.
+
+12:40.740 --> 12:46.020
+Detailed screen We want to see details whenever we tapped here, and that's what are we going to be
+
+12:46.020 --> 12:47.960
+looking at in the next few years?

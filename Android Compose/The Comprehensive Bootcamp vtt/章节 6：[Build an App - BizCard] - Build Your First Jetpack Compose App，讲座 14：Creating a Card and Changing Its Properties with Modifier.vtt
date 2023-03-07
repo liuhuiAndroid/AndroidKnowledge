@@ -1,0 +1,607 @@
+WEBVTT
+
+00:00.210 --> 00:06.810
+Let's put together this user interface component here that allows us to have this very nice elevated
+
+00:06.990 --> 00:07.940
+card per se.
+
+00:08.310 --> 00:09.570
+Let's see, how can we do that?
+
+00:09.840 --> 00:14.640
+So now we have created a surface which is this entire canvas here.
+
+00:15.090 --> 00:16.930
+Let's go ahead and put together that card entity.
+
+00:16.950 --> 00:23.010
+Well, as the name implies, there is in fact a UI function user interface function that we can call
+
+00:23.190 --> 00:24.620
+to create just that.
+
+00:24.630 --> 00:26.040
+And it's called card.
+
+00:26.130 --> 00:26.520
+There we go.
+
+00:26.580 --> 00:27.990
+So you start typing card again.
+
+00:27.990 --> 00:34.590
+You can see here it is indeed a function that is a composable function, which means comes from the
+
+00:34.590 --> 00:37.290
+compose library jetpack compose library.
+
+00:37.320 --> 00:42.780
+So all of this is already done for us, so we're just invoking lost functions and get the results.
+
+00:43.020 --> 00:44.100
+How neat is that, right?
+
+00:44.310 --> 00:46.830
+OK, so now we're going to see enter to get that.
+
+00:46.840 --> 00:49.170
+So we have the card on the beta of the card here.
+
+00:49.170 --> 00:51.450
+If you hover over, this is another amazing thing.
+
+00:51.750 --> 00:56.190
+There's a lot of information that you'll will see here, and most of it make no sense to you, and that's
+
+00:56.190 --> 00:56.820
+fine again.
+
+00:57.000 --> 00:59.190
+We're just getting something done here.
+
+00:59.280 --> 00:59.610
+OK.
+
+01:00.030 --> 01:03.870
+So just follow along and we'll have plenty of time to go over all these things.
+
+01:03.870 --> 01:04.830
+All these details.
+
+01:05.100 --> 01:05.410
+OK.
+
+01:05.640 --> 01:06.090
+No problem.
+
+01:06.300 --> 01:06.510
+All right.
+
+01:06.510 --> 01:07.740
+So it's a composable function.
+
+01:07.860 --> 01:13.860
+If you have all we can see and you can see here is this function card and has this composable at composable
+
+01:13.860 --> 01:16.080
+there to say this is indeed a composable function.
+
+01:16.350 --> 01:22.590
+And then we have this modifier here and we'll find again, it allows us to modify the contents of that
+
+01:22.590 --> 01:27.460
+function and we can perhaps shape to say what kind of shape we want, background color of this shape
+
+01:27.460 --> 01:29.520
+of content, color and all sorts of things.
+
+01:30.060 --> 01:30.540
+Wonderful.
+
+01:30.630 --> 01:37.560
+So the first thing I want to do, of course, is put a modifier I can hit enter when I say modifier
+
+01:37.620 --> 01:44.850
+can modify my diet with because I want to control the width of this card.
+
+01:45.150 --> 01:45.440
+OK.
+
+01:45.510 --> 01:49.950
+So if say with like that, you see a few options when the first option, which is we're going to be
+
+01:49.950 --> 01:52.500
+able to pass a with value.
+
+01:52.680 --> 01:57.870
+OK, so in this case, I just want 200 and now we need to pass the actual unit size.
+
+01:58.170 --> 02:00.750
+OK, so I'm going to say that dpi like this now.
+
+02:00.750 --> 02:04.290
+What is this deep deep is Android unit measure.
+
+02:04.290 --> 02:08.250
+So this is how Android measures the pixels that we are needing.
+
+02:08.310 --> 02:10.140
+Height, width and all sorts of things.
+
+02:10.290 --> 02:16.890
+Just think of it as just a measuring system or measuring unit with Android has a lot with it, but that's
+
+02:16.890 --> 02:18.300
+what we are going to go with for that.
+
+02:18.420 --> 02:18.720
+All right.
+
+02:19.170 --> 02:24.010
+But we have a problem here because that says that we need to actually import the library, this unit
+
+02:24.010 --> 02:24.630
+to the library.
+
+02:24.640 --> 02:29.420
+So what we can do here, I can say alt or option on the window in the air like this.
+
+02:29.430 --> 02:34.740
+And while it's important you can see for the wider top here, you know imports, this may be closed
+
+02:34.740 --> 02:35.200
+for you.
+
+02:35.220 --> 02:37.500
+You can just actually click to the left there.
+
+02:37.680 --> 02:42.120
+You can see this is what was imported, so we're able to use that library.
+
+02:42.480 --> 02:42.780
+All right.
+
+02:42.780 --> 02:44.780
+So we have that done.
+
+02:44.790 --> 02:51.030
+So now the width of this card, it's going to be 200 and we can pile on onto our modifier.
+
+02:51.030 --> 02:52.040
+So we hit enter.
+
+02:52.080 --> 02:53.070
+I say again.
+
+02:53.280 --> 02:59.040
+I can say I want in this case, at the height, the height, we're going to put 390 dpi again right
+
+02:59.220 --> 02:59.610
+there again.
+
+02:59.970 --> 03:05.070
+If you want to continue to add more modifiers, more things to customize our card, you can.
+
+03:05.070 --> 03:06.540
+But we're going to stop here for now.
+
+03:06.630 --> 03:11.340
+Anything we want to do is we want to give this card some sort of elevation.
+
+03:11.340 --> 03:18.120
+What that means is that if you look at our card here, you notice that we have some sort of shadow around,
+
+03:18.120 --> 03:24.800
+which makes it look like it's elevated from the main background canvas or, in this case, surface.
+
+03:24.810 --> 03:28.000
+So we can actually set that up and say how elevated we want.
+
+03:28.020 --> 03:34.170
+So meaning how much of this shadow we want wanted to show so it pops from the canvas?
+
+03:34.480 --> 03:37.360
+OK, so we can do that by, say, comma hit enter.
+
+03:37.410 --> 03:39.570
+Notice this is not part of the modifier anymore.
+
+03:39.600 --> 03:41.040
+This is a different property.
+
+03:41.280 --> 03:42.600
+And so was the elevation.
+
+03:42.600 --> 03:43.320
+Start typing.
+
+03:43.410 --> 03:45.120
+You can see there it is, says here.
+
+03:45.120 --> 03:50.070
+Right away it's elevation and we must pass a DPI unit for it.
+
+03:50.190 --> 03:54.060
+So I want to say I want about, let's say for that dpi.
+
+03:54.120 --> 03:54.630
+There we go.
+
+03:54.660 --> 03:55.920
+Now let's go ahead and refresh.
+
+03:56.040 --> 03:57.900
+See if we're going to see anything.
+
+03:58.140 --> 04:00.600
+OK, so it's done refreshed, but we see nothing.
+
+04:00.630 --> 04:03.780
+In fact, if I keep going here, let's go and see.
+
+04:03.810 --> 04:07.000
+It doesn't look like there's anything, but there is something.
+
+04:07.020 --> 04:11.240
+It's just that there's more to do to make it look like this, right?
+
+04:11.460 --> 04:12.990
+So there are other properties we need to pass.
+
+04:13.140 --> 04:14.460
+What are those other properties?
+
+04:14.700 --> 04:16.070
+Well, the card is there.
+
+04:16.080 --> 04:21.480
+We understand that we're not seeing it because it's white on white and there is really we haven't delineated
+
+04:21.480 --> 04:22.020
+everything.
+
+04:22.020 --> 04:25.440
+So what do we need to do next is to pass in a shape.
+
+04:25.590 --> 04:30.690
+Now, if you have a over cardigan, cardigan can see there is, of course, a type or parameter or in
+
+04:30.690 --> 04:32.880
+this case, a property we can past called shape.
+
+04:32.880 --> 04:33.660
+We're going to use that.
+
+04:33.690 --> 04:38.160
+Now, what are we going to do is after elevation or even before elevation, really?
+
+04:38.370 --> 04:41.140
+And when I say shape, this is equal.
+
+04:41.160 --> 04:44.140
+And for us here, for a shape, what do we need to do?
+
+04:44.160 --> 04:45.690
+I'm going to say rounded.
+
+04:45.870 --> 04:50.370
+You can actually start tightening rounded corners, shapes this water corner shape.
+
+04:50.370 --> 04:56.010
+As the name imply, it's going to create rounded corners of the entire shape, all of the edges.
+
+04:56.010 --> 04:57.320
+But we need to pass something else.
+
+04:57.340 --> 04:58.050
+We need to pass it.
+
+04:58.050 --> 04:59.370
+There's a different thing which can pass.
+
+04:59.380 --> 04:59.700
+We can I.
+
+04:59.800 --> 05:05.230
+Really said I would say, OK, I want to top start to be 10 dpi four instead, which means the corner
+
+05:05.230 --> 05:07.380
+is not going to be as sharp, right?
+
+05:07.390 --> 05:07.920
+So desired.
+
+05:07.930 --> 05:10.210
+No, the sharper the corner is.
+
+05:10.270 --> 05:14.800
+Or in this case, the round the corner is, I should say, but I want make sure that all the corners
+
+05:14.980 --> 05:17.590
+are actually same roundness, if you will.
+
+05:17.830 --> 05:23.980
+So I could just pass he or say corner this hit enter, I'm going to pass a corner type you will and
+
+05:23.980 --> 05:27.280
+pass this size there to the size again is going to be DPI.
+
+05:27.280 --> 05:31.390
+So I'm going to say I want to be about 15 dpi like this.
+
+05:31.660 --> 05:36.580
+So now what I'm saying again, is that I'm going to put a sheep onto this card so that this card has
+
+05:36.580 --> 05:42.640
+a rounded corners shape and a passing the size of the radius per say of each corner.
+
+05:42.760 --> 05:47.710
+Let's see if we're going to be able to see something, and you can see probably let's make this really,
+
+05:47.710 --> 05:48.370
+really, really.
+
+05:48.580 --> 05:52.860
+You can see now there is indeed a little corner out there, right?
+
+05:52.870 --> 05:53.740
+It's rounded.
+
+05:53.740 --> 05:54.670
+It's not too much.
+
+05:54.670 --> 05:57.730
+But is there one thing I can do to make this more visible?
+
+05:57.730 --> 06:00.300
+It's I'm going to change the color of on a card.
+
+06:00.310 --> 06:01.300
+That way it's more visible.
+
+06:01.480 --> 06:06.160
+In fact, again, if you have over a card, you can see we have that property of background color.
+
+06:06.220 --> 06:09.300
+So right after shape, I can come up here and say.
+
+06:09.340 --> 06:13.390
+Background color, such forget the color.
+
+06:13.420 --> 06:18.130
+And then here I'm going to say color, evoke this color function, say Dot.
+
+06:18.400 --> 06:20.260
+And I just want to say green for now.
+
+06:20.290 --> 06:25.720
+This will just let us be able to actually see the difference between the background as in the surface,
+
+06:25.930 --> 06:30.070
+right in the background of the card, so it can see that this is actually working.
+
+06:30.250 --> 06:33.490
+The shape is rounded, corners shape refresh again.
+
+06:33.670 --> 06:35.050
+And now you can see the difference.
+
+06:35.170 --> 06:35.830
+There it is.
+
+06:35.860 --> 06:38.410
+I know this is a very aggressive color, but bear with me here.
+
+06:38.410 --> 06:38.830
+You can see.
+
+06:38.830 --> 06:39.370
+There it is.
+
+06:39.610 --> 06:42.240
+We do have those corners there.
+
+06:42.250 --> 06:44.290
+In fact, you look at the bottom to there go.
+
+06:44.650 --> 06:45.570
+All right, that's good.
+
+06:45.580 --> 06:46.150
+That's really good.
+
+06:46.150 --> 06:51.010
+And anything we can do, we can actually add a padding around the entire card.
+
+06:51.250 --> 06:55.930
+So instead of our modifier here, I'm going to come up and say, dot padding.
+
+06:55.930 --> 06:59.140
+This padding is going to have a padding around the entire card.
+
+06:59.140 --> 07:02.950
+So I'm going to say 12 dpi, such as go ahead and rebuild.
+
+07:02.960 --> 07:07.120
+Is this a normal size since we have seen that this is actually working?
+
+07:07.390 --> 07:08.140
+OK, there we go.
+
+07:08.340 --> 07:14.590
+Now you can see it's much better and you can see now that because we added that padding around this
+
+07:14.590 --> 07:15.640
+card here, right?
+
+07:15.790 --> 07:17.500
+That's what we are building.
+
+07:17.710 --> 07:18.490
+We have 12.
+
+07:18.490 --> 07:22.690
+So the bigger this number, of course, the more padding, which means the more difference we will see
+
+07:22.690 --> 07:28.570
+between the background and our card case, the more padding that means you padding around it, making
+
+07:28.570 --> 07:29.260
+it a little bit smaller.
+
+07:29.530 --> 07:30.580
+OK, so this is working.
+
+07:30.580 --> 07:31.240
+This is really good.
+
+07:31.420 --> 07:36.850
+In fact, now I can get rid of this hideous color and let's just put something like white, even though
+
+07:36.850 --> 07:41.710
+we know that white is is the color that is given automatically as default.
+
+07:41.710 --> 07:44.140
+But I just want to show you other alternatives here.
+
+07:44.200 --> 07:48.220
+OK, so there we go, and I know it's really hard to see, but there you go.
+
+07:48.310 --> 07:49.280
+It's not too bad.
+
+07:49.300 --> 07:51.400
+You can see now there it is.
+
+07:51.640 --> 07:52.760
+It's it's showing.
+
+07:52.780 --> 07:57.400
+So now we have the actual card on top of our surface.
+
+07:57.700 --> 08:00.910
+So it's starting to look a lot like this, least the background.
+
+08:01.000 --> 08:01.360
+All right.
+
+08:01.630 --> 08:02.050
+Very good.
+
+08:02.110 --> 08:05.260
+So while we're here, let's go ahead and see if we can run this because we have something.
+
+08:05.260 --> 08:07.420
+Let's run this onto our device.
+
+08:07.480 --> 08:08.680
+There are two things you can do.
+
+08:08.690 --> 08:13.780
+We can go ahead, of course, and run this because this still is an application Android application
+
+08:14.050 --> 08:15.880
+and run this directly from here.
+
+08:16.210 --> 08:18.550
+Or we can just go ahead and run it from here.
+
+08:18.670 --> 08:20.170
+It says it will deploy preview.
+
+08:20.170 --> 08:21.460
+I can just right click there.
+
+08:21.490 --> 08:24.490
+It should go ahead and start realizing an emulator.
+
+08:24.490 --> 08:29.260
+It says no emulators are currently running and we can change that rule quick.
+
+08:29.890 --> 08:31.000
+OK, it's connecting.
+
+08:31.150 --> 08:34.390
+Actually should have just waited a little bit until it started connecting.
+
+08:34.570 --> 08:35.450
+And voila!
+
+08:35.470 --> 08:38.740
+You can see we have now and I just let someone down.
+
+08:39.220 --> 08:41.890
+I have the same later and can see it looks really good.
+
+08:41.920 --> 08:46.390
+We have that nice card rounded corner card showing there.
+
+08:46.600 --> 08:47.350
+OK, great.
+
+08:47.830 --> 08:55.120
+So the moral of the story here is, I hope you can see how easy really things are now with Compose to
+
+08:55.120 --> 08:59.110
+create these amazing, good looking user interfaces.
+
+08:59.290 --> 09:00.810
+We didn't have to do a lot of work.
+
+09:00.820 --> 09:06.880
+We just passed in a modifier and said, for instance, we want this surface to take up the entire width
+
+09:06.880 --> 09:07.480
+of the screen.
+
+09:07.810 --> 09:12.760
+We want to take up the entire height of a screen and then inside of this surface, this canvas, this
+
+09:12.970 --> 09:17.290
+back background there another white one, one to put a card in inside of this card.
+
+09:17.290 --> 09:22.690
+We want to also make this card a little bit smaller and width 200 dpi height 390.
+
+09:22.840 --> 09:25.630
+And then we're going to create a padding around it, a card.
+
+09:25.630 --> 09:30.660
+So padding around this whole card here, right of twelve dpi.
+
+09:30.670 --> 09:35.170
+And then we said the shape should be, of course, have it, corner size of 15 DB.
+
+09:35.170 --> 09:39.910
+So the higher this number, the rounder, this will be these corners.
+
+09:40.090 --> 09:42.730
+They're right and say with background color.
+
+09:42.730 --> 09:47.740
+In fact, we can just get rid of that because the default is always white and it'll say elevations are
+
+09:47.740 --> 09:50.950
+going to be four dpi, which means going to be visible.
+
+09:51.040 --> 09:55.630
+It's going to be higher on top of our surface that we created over again.
+
+09:55.640 --> 09:59.680
+So as we go through this, please go ahead and type as AMD.
+
+10:00.490 --> 10:07.270
+And break things tried to change, for instance, the padding and see what happens or add, make this
+
+10:07.270 --> 10:12.490
+larger or perhaps change the color as it showed you, or change the corner size.
+
+10:12.640 --> 10:17.760
+Deep inside there and see what will transpire here or inside of our preview.
+
+10:17.780 --> 10:19.600
+So that's a really good exercise I like to do.
+
+10:19.900 --> 10:21.130
+And let's keep going.

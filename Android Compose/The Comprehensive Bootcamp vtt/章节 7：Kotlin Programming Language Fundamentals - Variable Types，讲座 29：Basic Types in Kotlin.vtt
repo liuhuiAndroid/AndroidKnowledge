@@ -1,0 +1,289 @@
+WEBVTT
+
+00:00.450 --> 00:07.380
+When we talk about types such as strings or integers and so forth, it's important to think about the
+
+00:07.530 --> 00:09.290
+memory in computers, right?
+
+00:09.330 --> 00:16.080
+Because the idea really in computing is we are storing data into memory and then retrieving it when
+
+00:16.080 --> 00:22.290
+we needed to do some computations or whatever we need to do and then put it back right as a result and
+
+00:22.290 --> 00:22.650
+so forth.
+
+00:22.650 --> 00:24.600
+So we are manipulating data.
+
+00:25.080 --> 00:31.110
+So it's important to understand how, at least at a top level, how it all works so that we know exactly
+
+00:31.110 --> 00:36.190
+when to use what type of versus the other so types in Kotlin and their sizes.
+
+00:36.220 --> 00:43.770
+So types in this case, if you look at the type as a bucket right in the memory that will store certain
+
+00:43.770 --> 00:49.950
+size or variable, we could divide everything into small types, medium types, large types and extra
+
+00:49.950 --> 00:51.420
+large or x large types.
+
+00:51.660 --> 00:52.440
+What does that mean?
+
+00:52.710 --> 00:58.650
+Well, first of all, we have to understand what is a bit in computer science and jargon, if you will.
+
+00:58.980 --> 01:04.530
+Now this is a very computer science topic, and so we're not going to be going into computer science,
+
+01:04.530 --> 01:09.750
+but I think it's important to understand a little bit what's a bit well, a bit in computer science
+
+01:09.750 --> 01:12.750
+is the smallest unit of data or information.
+
+01:12.910 --> 01:15.990
+OK, so it's either one or zero on or off.
+
+01:16.140 --> 01:17.430
+So that is a bit.
+
+01:17.670 --> 01:23.790
+So if you talk about sizes, obviously we have to have some sort of a default, a central unit that
+
+01:23.790 --> 01:25.560
+is the base of everything.
+
+01:25.610 --> 01:25.860
+Right.
+
+01:25.890 --> 01:29.850
+So a bit in computing is the base unit for everything.
+
+01:30.180 --> 01:35.940
+So that's important because when we talk about types and codling, the basic types are int byte in short
+
+01:36.060 --> 01:38.340
+and an integer, as we've seen before.
+
+01:38.520 --> 01:41.010
+We can use it for a whole number.
+
+01:41.160 --> 01:47.010
+So it is a whole number and the int type can hold 32 bits.
+
+01:47.250 --> 01:50.070
+So that's a lot of data, a lot of information.
+
+01:50.190 --> 01:54.780
+OK, now if we want something that is a little bit smaller, we would use a byte.
+
+01:54.780 --> 02:02.340
+So if we are working on an application that requires us to have larger numbers in this case, at least
+
+02:02.340 --> 02:05.190
+up to 32 bits, then obviously we'll use an integer.
+
+02:05.310 --> 02:11.670
+But if we know that the application will require smaller numbers, right, that will hold something
+
+02:11.670 --> 02:14.100
+like eight bits, then we're going to use a byte.
+
+02:14.100 --> 02:14.790
+He makes sense.
+
+02:15.120 --> 02:21.090
+If we want something in the middle right and not too small, but not too large, then as short would
+
+02:21.090 --> 02:25.770
+be fine because short will hold sixteen bits of information.
+
+02:25.920 --> 02:26.280
+All right.
+
+02:26.760 --> 02:29.670
+There's another type in Scotland called Long Island.
+
+02:29.730 --> 02:35.730
+Long is a large type, which means it holds 64 bits.
+
+02:35.760 --> 02:37.340
+This is real big.
+
+02:37.350 --> 02:41.010
+It's a large container, if you will, that can hold a lot of information.
+
+02:41.040 --> 02:46.830
+Now this topic is very important because you need to understand which size is or what kind of what types
+
+02:47.010 --> 02:49.560
+you may need in certain situations.
+
+02:49.800 --> 02:54.990
+Obviously, you're not going to be using long types if you are just creating an application that doesn't
+
+02:55.110 --> 02:58.410
+really need to store that much in memory.
+
+02:58.890 --> 03:06.330
+So we've seen int right and integer, and we saw that is a whole number and an entire as a whole number
+
+03:06.330 --> 03:09.600
+holds 32 bit, so it's quite a large bucket.
+
+03:09.930 --> 03:13.920
+But of course, it's not infinite, which means it has a fixed size.
+
+03:14.250 --> 03:23.070
+So if we want a smaller size type or would use and byte, so I can say, well, my byte, for instance,
+
+03:23.340 --> 03:28.140
+and then we're going to say this is a byte types, not the syntax here, right?
+
+03:28.380 --> 03:29.040
+There is a bite.
+
+03:29.520 --> 03:32.100
+And then I could get rid of all of this, of course.
+
+03:32.100 --> 03:39.720
+And in fact, it can come up here and say my byte and give it a value of one 20.
+
+03:40.020 --> 03:44.040
+And then here, of course, I'm going to just go ahead and say my byte.
+
+03:44.700 --> 03:48.000
+This will make less sense, or it can just get rid of all of this.
+
+03:48.480 --> 03:48.780
+All right.
+
+03:48.780 --> 03:53.910
+So if you go ahead and run this, we should obviously see 120 and you can see 120.
+
+03:54.000 --> 03:57.660
+OK, now just to prove to you that there's indeed a limit to this size.
+
+03:57.870 --> 04:00.550
+What happens if I go to 126?
+
+04:00.850 --> 04:01.680
+Things are still good.
+
+04:01.770 --> 04:03.240
+If I say 127.
+
+04:03.420 --> 04:04.330
+Perfectly good.
+
+04:04.350 --> 04:06.750
+But look what happened if I go to 128?
+
+04:06.960 --> 04:07.520
+Aha.
+
+04:07.620 --> 04:08.880
+That's the upper limit.
+
+04:09.000 --> 04:16.830
+What this is saying is that we no longer can fit 120 eight into a byte type because that is the upper
+
+04:16.830 --> 04:17.220
+limit.
+
+04:17.640 --> 04:21.900
+The upper limit, in fact, is 21 27 positive or negative.
+
+04:22.050 --> 04:25.530
+The moment ago, over 127, which is the upper limit, right?
+
+04:25.680 --> 04:26.790
+We get this problem.
+
+04:27.000 --> 04:33.740
+This shows us that this is not going to work because byte, it has so much space verdicts of 1.7 that
+
+04:33.750 --> 04:34.920
+that is the highest we can go.
+
+04:34.950 --> 04:43.290
+If I go back here and let's say another vow and I'm going to use this time my short and say short as
+
+04:43.290 --> 04:44.630
+a type, it's cuddly type.
+
+04:44.820 --> 04:47.370
+Let's see what's going to happen when I say my short.
+
+04:47.520 --> 04:51.270
+I'm going to give a value of 128 is no problem.
+
+04:51.750 --> 04:57.870
+Let's go ahead and call my short here right the way because we not concatenating or interpolating anything,
+
+04:57.870 --> 04:59.620
+we can just get rid of the double.
+
+05:00.250 --> 05:03.550
+And go like that, it's much easier, more readable.
+
+05:03.730 --> 05:06.310
+OK, so let's go ahead and run one to an eight, that's fine.
+
+05:06.520 --> 05:09.070
+Now what is the highest threshold here?
+
+05:09.100 --> 05:13.360
+Let's continue in when I say 29, this seems to be fine and I keep going.
+
+05:13.360 --> 05:13.810
+I do not.
+
+05:13.910 --> 05:15.870
+No, no, no, no.
+
+05:16.420 --> 05:18.250
+So at some point, this also breaks.
+
+05:18.340 --> 05:23.620
+It looks like we have reached our 16 bit size there.
+
+05:23.680 --> 05:30.310
+This is just to illustrate what I have just spoken about sizes and types in cuddling.
+
+05:30.340 --> 05:35.860
+Now, in most cases, really all you will always see and use is an integer.
+
+05:35.980 --> 05:38.350
+In most, most cases in your programming life.
+
+05:38.350 --> 05:41.830
+But of course, there are times you will see later you can use floats and so forth that doubles.
+
+05:42.280 --> 05:46.340
+But when it comes to whole numbers integers, this is most likely.
+
+05:46.360 --> 05:47.590
+What are you going to be using?
+
+05:47.890 --> 05:48.160
+All right.
+
+05:48.430 --> 05:54.190
+So really, you don't have to memorize any of this is just an exploration something that I can let you
+
+05:54.190 --> 05:54.760
+know about.
+
+05:54.760 --> 06:02.080
+So you actually know, understand it, that there are types in color and those types do hold size of
+
+06:02.080 --> 06:04.240
+values and it's important to be aware of this.

@@ -1,0 +1,508 @@
+WEBVTT
+
+00:00.150 --> 00:05.430
+So the first thing we're going to do is we're going to put together the scaffolding of the structure
+
+00:05.430 --> 00:11.070
+of this application, so you can see at the bottom here we do have this nice floating action button.
+
+00:11.520 --> 00:12.870
+That's what we're going to be putting together.
+
+00:12.870 --> 00:17.490
+So we're going to use a scaffold so we can add at the top bar and so forth.
+
+00:18.120 --> 00:19.350
+OK, let's get started.
+
+00:20.220 --> 00:22.590
+So opening our reader home screen.
+
+00:22.650 --> 00:25.290
+So at this point, we just have this text.
+
+00:25.560 --> 00:27.630
+I am home, which is not flattering.
+
+00:27.780 --> 00:32.910
+So we're going to get rid of this altogether because we are going to make this even better and make
+
+00:32.910 --> 00:37.380
+this beautiful and get to what we want and show you exactly what we need to do.
+
+00:37.830 --> 00:38.150
+All right.
+
+00:38.160 --> 00:43.920
+So the first thing, of course, I'm going to add is scaffolding here or scaffold.
+
+00:47.640 --> 00:53.730
+And if you have a over a can see that we can pass through arguments here for our scaffold modifier,
+
+00:53.730 --> 00:57.360
+of course, have top bar, bottom bar, snack bar host.
+
+00:57.900 --> 01:01.560
+And of course, we will be able to add content to our scaffold.
+
+01:01.660 --> 01:04.050
+That's a really good structure, and I love it.
+
+01:04.500 --> 01:06.870
+So first, I'm going to add a top bar.
+
+01:07.170 --> 01:10.680
+It's going to be, of course, a lambda can there.
+
+01:11.580 --> 01:20.370
+And then right after that, I'm going to add the floating action button, which is also going to be
+
+01:20.760 --> 01:24.030
+who can add a trailing lambda as well.
+
+01:24.630 --> 01:26.910
+And then here is where we're going to have our content.
+
+01:27.540 --> 01:31.650
+Now we are able to add this floating action button there.
+
+01:31.950 --> 01:40.200
+So here I'm going to have a fab content composable and it's going to be a lambda actually go ahead and
+
+01:40.200 --> 01:42.150
+create this composable.
+
+01:43.320 --> 01:48.360
+And while I can see we're passing a function about this dysfunction here, I'm going to call this,
+
+01:48.600 --> 01:56.250
+this is going to take care of ONTAP such and we're going to pass a string when that happens so that
+
+01:56.250 --> 01:58.170
+we can retrieve whatever we need to retrieve.
+
+01:58.200 --> 01:58.800
+We'll see that.
+
+01:59.370 --> 01:59.750
+All right.
+
+01:59.760 --> 02:03.750
+So our fab here, I'm going to say floating action button.
+
+02:03.810 --> 02:04.510
+There it is.
+
+02:04.920 --> 02:06.900
+And there is the click.
+
+02:07.020 --> 02:11.670
+And if you have a over, of course, like any composable, you can see, we're going to pass a lot of
+
+02:11.670 --> 02:14.780
+arguments, my fire action shape and so forth, right?
+
+02:15.330 --> 02:22.440
+So what we want to do is we want to have a structure such as this so we can have, of course, this
+
+02:22.440 --> 02:24.510
+circle with the plus icon.
+
+02:26.680 --> 02:31.330
+So, Guy, put a sheep on, say, rounded corners, shave.
+
+02:32.790 --> 02:36.300
+And in the past, about 50, someone this really round.
+
+02:39.020 --> 02:39.710
+We're glad.
+
+02:41.450 --> 02:44.660
+And then I want to pass background color.
+
+02:45.470 --> 02:47.810
+And for now, let's say material theme.
+
+02:48.590 --> 02:53.030
+And we're going to pass colors, let's say background color like this.
+
+02:53.750 --> 03:01.760
+And then inside, I'm going to add an icon and this icon and let's say icons, dot, default dot and
+
+03:02.360 --> 03:05.390
+icon or plus sign there and contents.
+
+03:06.050 --> 03:11.930
+I'm just going and for the content description here, for visually impaired people, we can say something
+
+03:12.350 --> 03:16.940
+like add a book, or perhaps yes, add a book.
+
+03:17.840 --> 03:20.510
+And also it can pass a tint color here.
+
+03:21.030 --> 03:29.270
+See material theme, see colors that on on secondary like this.
+
+03:29.630 --> 03:35.720
+So that means then where we call this, which is right here, we do have our lambda on tap, which means
+
+03:35.720 --> 03:36.560
+we can use that.
+
+03:36.950 --> 03:39.480
+And this is where we're going to pass something, right?
+
+03:39.500 --> 03:43.970
+In this case, the one click is going to pass the string if we need to and go from there.
+
+03:44.570 --> 03:47.600
+OK, now we need to make sure that is on tap is called somewhere.
+
+03:47.600 --> 03:53.420
+So it's called is our own tap and all we need really at this point, just pass an empty string where
+
+03:53.420 --> 03:55.160
+there's really nothing that we want to pass there.
+
+03:57.340 --> 04:04.870
+In fact, I can just remove this altogether, say that I don't want to pass anything, just call on
+
+04:04.870 --> 04:05.200
+tap.
+
+04:06.130 --> 04:09.760
+And as for our content here, let's go ahead and put a service.
+
+04:11.530 --> 04:21.780
+I'm going to add a modifier modifier such and I want to fill max size and here we'll add our home content.
+
+04:23.580 --> 04:23.800
+All right.
+
+04:24.730 --> 04:28.750
+Let's go ahead and give you a run real quick so we hopefully can see something.
+
+04:30.790 --> 04:36.130
+And there you have it, just like that, I can see you have that nice button floating action button
+
+04:36.130 --> 04:36.970
+at the bottom there.
+
+04:37.120 --> 04:41.350
+Now this doesn't look that great because we have, of course, we don't have a nice color there because
+
+04:41.350 --> 04:45.940
+I just added the material thing, which is fine, but let's change that real quick manually.
+
+04:45.970 --> 04:54.190
+So some of that change of background color here to a hex color that we have so color and then say zero
+
+04:54.190 --> 05:00.820
+x half f two CBD f like this and you can see it's going to be this nice color there.
+
+05:00.830 --> 05:04.870
+So let's go ahead and run again just to see a nice.
+
+05:05.260 --> 05:06.580
+OK, so it looks really nice.
+
+05:07.150 --> 05:11.860
+It's got we can go ahead and say something again, like colors.
+
+05:15.540 --> 05:22.830
+Don White Cat, and you can see now looks pretty much like, what do we have here?
+
+05:23.170 --> 05:27.140
+OK, next, let's go ahead and see if we can at the top what we have here to our top bar.
+
+05:27.150 --> 05:32.790
+So it's easy to do that because remember, we have our scaffold and we have our top bar.
+
+05:33.090 --> 05:39.090
+So here I can say because I'm going to be using, we're going to be using this top bar in different
+
+05:39.090 --> 05:40.290
+places, right?
+
+05:40.680 --> 05:44.410
+And we want to make sure that it is customizable depending on the screen.
+
+05:44.430 --> 05:45.930
+There are a few things that we're going to change.
+
+05:46.230 --> 05:51.900
+So I'm going to create, of course, a separate composable top bar.
+
+05:52.380 --> 06:04.920
+So here I'm going to just say and say at composable a function called this reader app bar, and it would
+
+06:04.920 --> 06:07.080
+have has a few parameters.
+
+06:09.030 --> 06:14.220
+The first one being the title that we're going to pass, right, going to be a string.
+
+06:14.820 --> 06:20.460
+And then I'm going to pass a Boolean called show profile because it's like I said, in some places,
+
+06:20.460 --> 06:22.470
+I won't need to show a profile.
+
+06:22.830 --> 06:23.370
+We'll see.
+
+06:23.910 --> 06:24.750
+Going to be a Boolean.
+
+06:25.110 --> 06:26.430
+At first, it's going to be.
+
+06:27.990 --> 06:34.080
+True, as a default value, and of course, I want to pass out enough controller if need be.
+
+06:34.610 --> 06:34.880
+Right?
+
+06:35.850 --> 06:39.450
+So inside here, I'm just going to create a top bar.
+
+06:39.690 --> 06:45.920
+We do get a top bar composable that comes with compose for a title.
+
+06:45.930 --> 06:50.160
+It's going to be a canvas, a lambda there, and it's going to be.
+
+06:50.340 --> 06:57.150
+I'm going to add a row because I want to create this structure here and then we can pass actions.
+
+06:57.600 --> 06:58.080
+Oops.
+
+06:58.410 --> 07:03.330
+Going to be right after this one, let's say actions as such.
+
+07:04.170 --> 07:08.760
+OK, so looks like I don't need to pass any lambda like this, OK?
+
+07:09.390 --> 07:14.400
+And of course, inside, if you have over a top party, you will see that we can pass elevation, the
+
+07:14.400 --> 07:15.720
+background colors and so forth.
+
+07:16.140 --> 07:21.930
+Let's pass the background color, so I'm going to make this transparent.
+
+07:22.890 --> 07:30.000
+Such an elevation is going to be zero dpi because I don't want to see any elevation whatsoever, and
+
+07:30.000 --> 07:32.020
+I like to put things this way first.
+
+07:32.020 --> 07:37.500
+That way you can see what are you working with because you will see or as you've noticed in compose,
+
+07:37.980 --> 07:44.250
+you are piling up all of the or passing arguments into our composable.
+
+07:44.280 --> 07:47.370
+And sometimes can look really funky, very strange.
+
+07:47.370 --> 07:54.690
+So putting the structure like this first, all of our arguments as they are like this right now, it
+
+07:54.690 --> 07:57.600
+just helps you to see exactly what to fill in.
+
+07:57.870 --> 08:02.730
+OK, so now for a title, what I want to do is I want to have this structure here.
+
+08:02.740 --> 08:06.570
+I'm going to have an icon and then something like this and then like that.
+
+08:06.630 --> 08:06.900
+OK.
+
+08:07.710 --> 08:13.080
+So in this case here, I'm just going to go ahead and say for a title, I'm going to put a row first.
+
+08:13.800 --> 08:16.890
+So this row I'm going to make it vertical.
+
+08:16.950 --> 08:23.840
+It's got you import or row, and I'm going to check if show profile, right?
+
+08:25.080 --> 08:35.250
+It's true, then I'm going to add an image or image painter when I use or a painter resource pass an
+
+08:35.250 --> 08:36.270
+image that I may have.
+
+08:36.270 --> 08:37.100
+So I'm going to say it.
+
+08:38.040 --> 08:39.090
+Or are that?
+
+08:40.380 --> 08:42.660
+And it looks like our art is not.
+
+08:43.140 --> 08:47.880
+So let's say ah, and sometimes takes time to show which are we looking for?
+
+08:48.210 --> 08:50.880
+We want this are for resources, for our apps.
+
+08:50.890 --> 08:55.110
+Look for the one that has your package name like this.
+
+08:55.210 --> 08:55.470
+OK?
+
+08:56.070 --> 09:02.460
+Enter can see that drabble such and I want to go and get the I see.
+
+09:05.590 --> 09:10.360
+Launcher now, you may not have this, let's go finalize, this will quick.
+
+09:10.510 --> 09:16.240
+This is going to be, say, just icon, but at this point actually what it can do.
+
+09:16.240 --> 09:20.470
+Instead of adding this icy launcher, I can just add an icon.
+
+09:20.500 --> 09:25.570
+All I want really is to have an icon that represent this app so you can create your own icon content
+
+09:25.570 --> 09:28.390
+online and find an icon for your app.
+
+09:28.690 --> 09:30.970
+I just have one here, and so it's OK.
+
+09:30.970 --> 09:35.080
+We don't have to add exactly like that, so I'm going to get rid of this.
+
+09:35.530 --> 09:43.810
+So now I'm just going to be the icon and pass our icons default and I want.
+
+09:47.120 --> 09:52.290
+Person or a book, do I have a book a book right now?
+
+09:52.310 --> 09:53.420
+Let's get this.
+
+09:53.420 --> 09:54.320
+I had a favorite.
+
+09:54.830 --> 09:55.820
+That's totally fine.
+
+09:55.910 --> 09:56.960
+So it doesn't really matter.
+
+09:57.470 --> 10:04.130
+And then for the content description here, I'm just going to say logo icon.
+
+10:04.790 --> 10:05.180
+All right.
+
+10:05.390 --> 10:08.090
+And of course, we can pass modifier here,
+
+10:11.750 --> 10:15.380
+and I'm going to clip.
+
+10:17.780 --> 10:22.790
+This icon with a rounded corners shape.
+
+10:25.100 --> 10:27.770
+I just give 12 dpi all around.
+
+10:28.160 --> 10:37.070
+And let's go ahead and scale it down to at least 0.6 or about 60 percent scaling down.
+
+10:37.820 --> 10:40.310
+So it's out of if statement here I'm going to put a text.
+
+10:40.610 --> 10:49.610
+This text will take the title that we're passing right and we can set it up better.
+
+10:49.640 --> 10:52.980
+Give it some adjustments here.
+
+10:52.980 --> 10:53.900
+OK, I say color.
+
+10:55.350 --> 11:08.350
+And he is a scholar that read not copy and pass an alpha here and 0.7 float just to get that nice right
+
+11:08.350 --> 11:08.680
+there.
+
+11:09.490 --> 11:15.370
+Let's also give a style, Texas style font weight.
+
+11:15.580 --> 11:20.260
+I want this to be a bold and size about $20.
+
+11:20.680 --> 11:29.080
+OK, let's go ahead and import that real quick and see if we can call that first of all, inside of
+
+11:29.080 --> 11:29.510
+here.
+
+11:29.540 --> 11:36.760
+Reader App Bar This title is going to be a dot reader.
+
+11:38.300 --> 11:41.930
+Pass our knife controller like this.
+
+11:43.700 --> 11:46.480
+Let's go ahead and run this just to see, OK.
+
+11:46.670 --> 11:47.420
+It looks really good.
+
+11:47.780 --> 11:48.860
+Very small there.
+
+11:48.890 --> 11:52.910
+Maybe I can change the scale here.
+
+11:53.090 --> 11:55.430
+Make a little bit bigger by the second one.
+
+11:56.120 --> 11:57.320
+Okay, let's start again.
+
+11:58.160 --> 11:59.480
+Scale up, actually.
+
+12:00.870 --> 12:01.170
+OK.
+
+12:02.070 --> 12:02.700
+Let's see.
+
+12:05.530 --> 12:06.470
+All right, that's fine.
+
+12:06.490 --> 12:09.490
+Doesn't really matter because you are going to add your own anyway.
+
+12:09.760 --> 12:11.620
+So are we making progress here?
+
+12:11.740 --> 12:13.960
+We are creating this structure here at the top.
+
+12:14.200 --> 12:19.380
+As you see, we now have the icon, which is different in this, but that's fine.
+
+12:19.390 --> 12:21.250
+And then we have a reader then.
+
+12:21.430 --> 12:25.090
+Next, we're going to add this sign out button there.

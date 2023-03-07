@@ -1,0 +1,628 @@
+WEBVTT
+
+00:00.770 --> 00:04.260
+So now let's go back to our portfolio and work on this.
+
+00:04.280 --> 00:08.330
+Obviously, we don't want these projects go here and get rid of that.
+
+00:08.340 --> 00:09.650
+So what is are we going to do?
+
+00:09.740 --> 00:16.970
+Well, we want to make sure that we have a list scrollable list that is that looks like this and that
+
+00:16.970 --> 00:22.430
+list is going to be fed with this data that it's been passed, as you see here, OK?
+
+00:22.790 --> 00:23.720
+So how do we do this?
+
+00:24.230 --> 00:30.200
+Well, first of all, we need a way in which we are able to create a list, right?
+
+00:30.200 --> 00:34.940
+A visual list such as this, which will have these cards as you see here, right?
+
+00:35.360 --> 00:36.160
+That's what we want to do.
+
+00:36.170 --> 00:38.090
+But let's start one thing at a time.
+
+00:38.360 --> 00:42.830
+First, let's accomplish one thing, which is how do we create a scrollable list?
+
+00:43.250 --> 00:46.820
+Well, luckily, it's really simple and compose.
+
+00:46.880 --> 00:50.720
+All you have to do is call this lazy column.
+
+00:51.470 --> 00:55.130
+OK, now the reason why we want to use a lazy column is twofold.
+
+00:55.130 --> 00:59.930
+One, you get the scroll ability of the list, whatever content you're going to be passing in.
+
+01:00.380 --> 01:06.710
+Number two, you also will get the advantage of recyclable views, which is really important, especially
+
+01:06.710 --> 01:11.270
+as you are passing in, for instance, a lot of data through.
+
+01:11.480 --> 01:13.310
+You want to use a lazy column.
+
+01:13.700 --> 01:19.160
+Lazy column will know how to recycle the views as they are being displayed.
+
+01:19.460 --> 01:23.270
+So lazy column, if you're an Android developer, is like a recycler view.
+
+01:23.660 --> 01:24.440
+But simpler.
+
+01:25.010 --> 01:27.680
+OK, so we can pass contents right away like that?
+
+01:27.680 --> 01:29.360
+Or we can just use a lambada.
+
+01:29.690 --> 01:31.250
+OK, so like this and while.
+
+01:31.670 --> 01:37.740
+So inside here now the lazy column will require a few things, one of which is the data in this case
+
+01:37.770 --> 01:39.380
+going to go through items.
+
+01:40.010 --> 01:44.990
+I'm going to use items like this because we're going to be passing a list of items.
+
+01:44.990 --> 01:47.720
+So there are different versions of this lambda or methods.
+
+01:48.260 --> 01:49.250
+So I'm going to use that one.
+
+01:49.760 --> 01:50.910
+And inside here, I'm going to pass.
+
+01:50.930 --> 01:52.880
+Of course, our data as such.
+
+01:53.210 --> 01:59.330
+Once you do that, you notice, then we can pass here a parameter which is going to be each item of
+
+01:59.330 --> 02:00.320
+our data.
+
+02:00.350 --> 02:05.510
+So I'm going to call it an item like that, and I can use either one of these helps that I have here
+
+02:05.510 --> 02:10.410
+to say these are just parameters that are being passed through our lambda again, lambda.
+
+02:10.430 --> 02:13.090
+If you've never heard of what a lambda is, it's OK in this case.
+
+02:13.100 --> 02:19.850
+Just think of it as a function that is anonymous and we can pass items through it, but in a more concise
+
+02:19.850 --> 02:20.090
+way.
+
+02:20.540 --> 02:22.490
+So I'm going to just use that first option there.
+
+02:22.820 --> 02:27.500
+So this means now this item is going to be a string because what would happen here?
+
+02:27.500 --> 02:31.160
+We're passing this data, which is what are we passing through, you know, items there?
+
+02:31.490 --> 02:36.410
+And when that happens, what happens is we are sifting through and getting each one of these items,
+
+02:36.410 --> 02:41.810
+which we have 100 strings in our list that we're passing when we call portfolio.
+
+02:42.020 --> 02:46.250
+Then to those, each one of them are going to be held in this item object.
+
+02:46.880 --> 02:49.160
+OK, so now I can do whatever I want.
+
+02:49.490 --> 02:55.640
+In this case, I'm just going to go ahead and say text just for now and pass the item like this because
+
+02:55.640 --> 02:57.890
+items are string and that will work anyway.
+
+02:58.220 --> 03:03.500
+You can see now because we're inside of a portfolio here and we that's inside of content, which means
+
+03:03.980 --> 03:05.470
+we're calling it here, right?
+
+03:05.480 --> 03:07.020
+And this has a preview.
+
+03:07.250 --> 03:10.200
+We can see that we have Project one, two and three.
+
+03:10.220 --> 03:11.000
+This is really good.
+
+03:11.060 --> 03:12.050
+So it's working.
+
+03:12.380 --> 03:16.580
+So if I add more projects this copy, there's a few times as such.
+
+03:17.110 --> 03:21.050
+You can go ahead and refresh and you can see we have all this project.
+
+03:21.170 --> 03:22.810
+Of course, some numbers are being repeated.
+
+03:22.820 --> 03:23.480
+That's OK.
+
+03:23.720 --> 03:24.920
+But you get the idea.
+
+03:25.310 --> 03:26.050
+This is really good.
+
+03:26.240 --> 03:28.940
+Just make sure that everything is aligned like that.
+
+03:29.090 --> 03:30.170
+OK, so it's working.
+
+03:30.560 --> 03:35.930
+Obviously, this is far from what we really want it to happen, but it is progress.
+
+03:35.940 --> 03:37.400
+So let's start small.
+
+03:37.640 --> 03:41.390
+Now let's go back to understand the whole idea of what are we trying to do?
+
+03:41.750 --> 03:46.820
+So what are we trying to do here is that when we click this portfolio button, in fact, when they first
+
+03:46.820 --> 03:52.790
+run this app and they come to this page, they being the users, we're not going to show anything.
+
+03:52.850 --> 03:54.950
+So this is going to be hidden, right?
+
+03:55.220 --> 03:59.480
+It's not until the portfolio button is clicked that we are going to show this.
+
+03:59.870 --> 04:02.040
+And when we click again portfolio, we don't hide it.
+
+04:02.060 --> 04:08.630
+So we're going to toggle this event that happens one click and then if it's shown, Click Again is going
+
+04:08.630 --> 04:12.320
+to hide this content area where we have the portfolios.
+
+04:12.560 --> 04:13.310
+How do we do that?
+
+04:13.700 --> 04:14.000
+OK.
+
+04:15.260 --> 04:16.460
+So let's think a little bit through.
+
+04:16.700 --> 04:21.920
+So if we go back to our button because this is where the action happens, right when we click, we don't
+
+04:21.920 --> 04:25.250
+want this anymore because we understand that this works and that's all that we needed.
+
+04:25.850 --> 04:33.590
+We want to make sure when this buttons clicked, then this content shows right whatever we have inside
+
+04:33.590 --> 04:34.220
+of this content.
+
+04:34.490 --> 04:39.650
+In this case, we have our portfolio here and we're passing project strings, right?
+
+04:40.250 --> 04:40.730
+That's neat.
+
+04:40.790 --> 04:41.900
+That's what needs to be shown.
+
+04:42.230 --> 04:47.990
+So if that's the case, that means then we have to figure out a way in which we can control the toggling
+
+04:48.020 --> 04:48.800
+of this button.
+
+04:48.810 --> 04:51.890
+Meaning if we click, then we want to show it.
+
+04:51.920 --> 04:56.240
+If it's showing our projects or being shown, then we want to hide that view.
+
+04:56.660 --> 04:59.990
+That takes us to another concept, which again, we are going.
+
+05:00.080 --> 05:05.660
+Who dive really deep into later again, we're just trying to get through this so we can see the basics
+
+05:05.660 --> 05:06.260
+of compose.
+
+05:06.740 --> 05:13.160
+So the concept here is very simple is that OK, we need to create a variable that will control or that
+
+05:13.160 --> 05:15.170
+will keep this state.
+
+05:15.350 --> 05:21.260
+It is a very crucial concept that will keep this state, whether it is false or true, true or false,
+
+05:21.260 --> 05:26.240
+so that we can toggle back and forth this view here when the buttons clicked.
+
+05:26.720 --> 05:34.880
+That just means then somewhere around here, I'm going to create a variable where say foul, say, button
+
+05:35.960 --> 05:37.400
+clicked state.
+
+05:37.820 --> 05:40.270
+Now this is not a simple variable.
+
+05:40.280 --> 05:46.040
+This is a different kind of variable that is very important in compose, and we will see into more details
+
+05:46.040 --> 05:46.400
+later.
+
+05:46.730 --> 05:53.360
+What this variable must be able to do is to remember this state of the button.
+
+05:53.510 --> 05:58.340
+And for that, we have a special syntax here we're going to see is equal to remember.
+
+05:58.730 --> 06:00.080
+Oh, interesting.
+
+06:00.710 --> 06:06.470
+Remember to pick the first one and I'm going to use the Lamp ID. Now, what is are we trying to remember
+
+06:06.500 --> 06:07.700
+when you set that up to?
+
+06:07.850 --> 06:12.920
+It's going to be a mutable state of a mouthful.
+
+06:13.310 --> 06:16.220
+At first is going to be a false value as such.
+
+06:17.000 --> 06:19.310
+OK, let's go ahead and think a little bit through this.
+
+06:19.700 --> 06:23.630
+So what we're doing here, we're creating a button, click state, and we're going to want it to remember
+
+06:23.720 --> 06:24.910
+this state, right?
+
+06:24.920 --> 06:25.670
+We say, remember?
+
+06:25.850 --> 06:28.280
+And it is indeed, of course, a function.
+
+06:28.280 --> 06:29.360
+But in this case, a lambda.
+
+06:29.390 --> 06:31.040
+That's why we have these curly braces.
+
+06:31.310 --> 06:36.890
+And then inside we're setting up the mutable state of these is the value type that needs to remember,
+
+06:36.890 --> 06:39.050
+which is the mutable state of and we passed.
+
+06:39.050 --> 06:41.360
+The actual Typekit in this case is going to be a Boolean.
+
+06:41.540 --> 06:42.380
+So true or false.
+
+06:42.710 --> 06:47.000
+So in this case, we're saying at the beginning, what are we going to try to remember in the form of
+
+06:47.000 --> 06:47.510
+this button?
+
+06:47.510 --> 06:48.380
+Click Variable.
+
+06:48.860 --> 06:52.700
+It's going to be a false Boolean, but it's very special here.
+
+06:52.710 --> 06:53.660
+Who must do like this?
+
+06:54.230 --> 07:01.880
+OK, so now we can use this now another thing you'll see you may end up having squiggly red lines between
+
+07:01.880 --> 07:04.700
+who remember and also mutable state or both them.
+
+07:04.910 --> 07:10.850
+All you have to do is to make the right point, so you have to right click and show context actions,
+
+07:10.850 --> 07:13.010
+or it will tell you exactly that.
+
+07:13.010 --> 07:15.590
+You need to import and go ahead and import, as we've done before.
+
+07:15.830 --> 07:16.720
+It's very important, OK?
+
+07:17.510 --> 07:21.560
+But in this case, here you see that I didn't have to do much because he just detected that I didn't.
+
+07:21.770 --> 07:24.560
+I needed those libraries and went ahead and got it, in fact.
+
+07:24.950 --> 07:31.130
+You can see somewhere we have their mutable state of and we have to remember if you have those issues
+
+07:31.130 --> 07:33.290
+as make sure that you import as such.
+
+07:33.860 --> 07:34.340
+All right.
+
+07:34.550 --> 07:35.500
+Let's come back here.
+
+07:35.510 --> 07:37.550
+So we have a button click state.
+
+07:37.790 --> 07:39.890
+So where do we set it or use this?
+
+07:39.920 --> 07:44.030
+Well, we use it inside of one click stadia is in the beginning.
+
+07:44.030 --> 07:48.590
+Obviously, this button click state is going to be false, and that's fine because we don't want to
+
+07:48.590 --> 07:49.520
+show anything.
+
+07:49.760 --> 07:50.240
+OK?
+
+07:50.330 --> 07:54.230
+So when we click on it, we're going to set it in one state button.
+
+07:54.230 --> 07:56.960
+Click State, was it Dot?
+
+07:56.960 --> 07:58.760
+Want to get the value right?
+
+07:59.060 --> 08:03.530
+And going to set it to what I'm going to set it to true.
+
+08:03.890 --> 08:05.570
+Because in the beginning it's always false.
+
+08:06.050 --> 08:07.020
+But that's not all good.
+
+08:07.040 --> 08:08.720
+This is going to be just one part of the equation.
+
+08:09.170 --> 08:15.260
+I want to target between true or false, so I'm going to just put the whatever is this state, we just
+
+08:15.260 --> 08:16.070
+get the opposite.
+
+08:16.520 --> 08:17.870
+This is how we toggle it.
+
+08:18.470 --> 08:18.710
+OK.
+
+08:18.920 --> 08:24.200
+So meaning if it's true and going to set it true, but that's not the whole story because we don't want
+
+08:24.200 --> 08:24.340
+it.
+
+08:24.350 --> 08:27.890
+Just when you click said it's all true and then we're done right.
+
+08:28.280 --> 08:32.500
+We want to be able to say, OK, when that button is clicked, we are going to toggle it.
+
+08:32.510 --> 08:35.960
+So meaning we're going to take the value that is current, right?
+
+08:35.960 --> 08:41.190
+When we just copy that and then we're going to make it the opposite of what it is.
+
+08:41.240 --> 08:45.920
+So if the value is false, then we're going to toggle to true.
+
+08:46.340 --> 08:47.710
+If you click again, it's going to be false.
+
+08:47.720 --> 08:48.960
+So he's going to toggle back and forth.
+
+08:48.980 --> 08:49.730
+This is how you do it.
+
+08:50.090 --> 08:51.140
+OK, there we go.
+
+08:51.620 --> 08:55.790
+So to see this, if it works, what I'm going to do here, then let's click here.
+
+08:55.830 --> 08:58.100
+Make sure that we are outside of our button.
+
+08:58.490 --> 09:00.780
+OK, portfolio is there.
+
+09:01.130 --> 09:03.230
+So outside here, I'm going to say something.
+
+09:03.230 --> 09:04.630
+If right?
+
+09:04.820 --> 09:06.440
+Let's check if this is indeed true.
+
+09:07.360 --> 09:15.470
+We can say if button clicks state that value is true, if we just leave as that, if that's true, if
+
+09:15.470 --> 09:17.330
+it's true, then I'm going to go.
+
+09:17.330 --> 09:21.860
+I say, call this content like this, it's going to show that content.
+
+09:22.520 --> 09:26.680
+Else, I'm just going to go ahead and show nothing but to show nothing.
+
+09:26.680 --> 09:31.250
+I'm going to say box such and pass nothing like this.
+
+09:31.910 --> 09:32.750
+Let's see this true.
+
+09:32.780 --> 09:38.570
+Let's go ahead and actually run this on an emulator and see, OK, so there we go.
+
+09:38.610 --> 09:39.380
+Moment of truth.
+
+09:39.410 --> 09:44.870
+If I click voila, we see all the project are showing and it could scroll up and down.
+
+09:44.870 --> 09:48.860
+But since there aren't enough, there are filling out the entire space.
+
+09:49.100 --> 09:52.940
+I don't see the scrolling, but it's OK if I click back is going to hide that.
+
+09:53.300 --> 09:54.440
+All right, so it is working.
+
+09:54.440 --> 09:56.060
+This is exactly what we wanted.
+
+09:56.330 --> 09:59.750
+OK, so before we go, because this is again too long, I just want to go.
+
+09:59.920 --> 10:05.520
+Again, what we did here, so we went ahead and created our content as we saw before, and we called
+
+10:05.530 --> 10:11.980
+the portfolio passing data dummy data indicates just strength when we separated our code a little bit
+
+10:11.980 --> 10:13.030
+to make it better.
+
+10:13.150 --> 10:16.870
+We created the actual portfolio composable and passing the list.
+
+10:17.230 --> 10:23.410
+And inside here we have the lazy column, which is corresponding to recycle view in Android development,
+
+10:23.410 --> 10:27.280
+which this is still Android development, but a subset of another development, if you will.
+
+10:27.280 --> 10:28.210
+This is composed, right?
+
+10:28.220 --> 10:30.100
+So this takes care of everything.
+
+10:30.100 --> 10:35.440
+You don't have to worry about adapters or all the things that we had to worry about in traditional Android
+
+10:35.440 --> 10:35.860
+development.
+
+10:36.040 --> 10:41.350
+And so we passed that data and this case just passing the strings as the row was, if you will.
+
+10:41.680 --> 10:44.410
+So that's what it's happening inside here.
+
+10:44.680 --> 10:44.940
+OK.
+
+10:45.190 --> 10:51.430
+And so when we click the button, first of all, we created these mutable state in Remember here, so
+
+10:51.430 --> 10:57.190
+it's a very special variable that will always remember a state of this Boolean.
+
+10:57.580 --> 11:01.120
+And so what we did is when we clicked, we are going to toggle that button.
+
+11:01.120 --> 11:04.870
+So if it's true, then it is going to be false when clicked in and vice versa.
+
+11:05.290 --> 11:10.090
+And when that happens, we're going to attach if statement to say, OK, if it's true, the button state
+
+11:10.090 --> 11:10.480
+is true.
+
+11:10.480 --> 11:14.890
+That means you want the content to show which in this case, we're going to pull in the content else.
+
+11:14.890 --> 11:21.340
+We're just going to have an empty box and hence you're able to see this wonderful effect there.
+
+11:21.820 --> 11:22.310
+All right.
+
+11:22.330 --> 11:25.300
+So we're making good progress, and I hope this is making sense.
+
+11:25.450 --> 11:29.170
+If not, again, don't worry, we are going to go over this so many times.
+
+11:29.440 --> 11:35.200
+You're going to be so, so tired and sick of me going over all of these great things.
+
+11:35.200 --> 11:36.730
+But don't worry, I won't get you bored.
+
+11:37.210 --> 11:38.930
+But this is what are we doing here?
+
+11:38.950 --> 11:44.140
+Ladies and gentlemen, and I hope you are having lots of fun and that this is making some sense at least,
+
+11:44.470 --> 11:45.760
+and I hope you're excited.

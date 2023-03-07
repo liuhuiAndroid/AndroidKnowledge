@@ -1,0 +1,241 @@
+WEBVTT
+
+00:00.450 --> 00:07.350
+So continue here, what we can do also with said that the return type we have for calculate Cat eight
+
+00:07.350 --> 00:11.160
+is an oenta type, so we're expecting to receive or return an integer.
+
+00:11.460 --> 00:13.410
+So obviously we can return any other type.
+
+00:13.800 --> 00:17.610
+This case, I'm going to return a Boolean because we've just talked about it in passing.
+
+00:17.820 --> 00:21.000
+Bullying can only hold true or false values, right?
+
+00:21.120 --> 00:22.170
+Either true or false.
+
+00:22.680 --> 00:24.370
+So I'm going to create a Boolean in this call.
+
+00:24.370 --> 00:27.360
+This fun check age I.
+
+00:28.180 --> 00:32.780
+In this case, here to check age, we're going to pass the cat age, right?
+
+00:32.790 --> 00:36.020
+It's going to be an integer and then we're going to return a billion.
+
+00:36.060 --> 00:39.530
+We say, be looking at we have gotten Boolean there.
+
+00:40.170 --> 00:41.430
+OK, so now we have a body.
+
+00:41.430 --> 00:45.660
+So in this case here, these check age function will return important.
+
+00:45.660 --> 00:52.380
+So we're going to pass the cat age already that we have calculated and then return whether this cat
+
+00:52.380 --> 00:53.460
+is old or not.
+
+00:53.940 --> 00:58.740
+So inside here what I will do, I'm going to say return because we need to return something.
+
+00:58.860 --> 01:05.490
+You can see that we even get help to return false or true because this is indeed a billion type, but
+
+01:05.490 --> 01:07.620
+we need to check something for see a return.
+
+01:07.920 --> 01:09.600
+Well, what is it that we're going to return it?
+
+01:09.630 --> 01:17.400
+Well, it will depend if cat age, let's say in this case is greater than 14, then it's going to return.
+
+01:17.400 --> 01:20.190
+True else in this case will return false.
+
+01:20.760 --> 01:22.590
+That is the default, right?
+
+01:23.220 --> 01:26.490
+So now if I go up here, let's go ahead and get rid of this change.
+
+01:26.610 --> 01:36.960
+All of this if I say, let's call check cat or check age passing cat age give equal to cat age.
+
+01:37.440 --> 01:43.920
+In this case, because this variable here holding to calculate cat age is the same as the argument name
+
+01:43.920 --> 01:44.310
+there.
+
+01:44.970 --> 01:46.740
+I can actually get rid of that, right?
+
+01:46.800 --> 01:49.440
+So just say Cat H like that, that's totally fine.
+
+01:49.500 --> 01:50.100
+That works.
+
+01:50.730 --> 01:52.770
+So let's go and run and see what's going to happen.
+
+01:53.190 --> 01:53.880
+So it's true.
+
+01:53.970 --> 01:54.750
+What's happening here?
+
+01:54.780 --> 01:58.500
+Well, Cat Age is 12 while we passed 12.
+
+01:58.890 --> 02:02.100
+You know, it's going to be 84, I believe, right?
+
+02:02.400 --> 02:03.480
+Twelfth time seven.
+
+02:03.780 --> 02:07.580
+So 12 07 is 84, 84 is great and 14.
+
+02:07.590 --> 02:08.790
+That's why this is true.
+
+02:09.120 --> 02:16.950
+If I for some reason, save one and run, it's going to say false because one time seven, right, it's
+
+02:16.950 --> 02:17.550
+going to be seven.
+
+02:17.550 --> 02:19.950
+Seven is not greater than 14, right?
+
+02:20.040 --> 02:20.790
+So there we have it.
+
+02:21.090 --> 02:23.220
+Let's put back what we had and then we have it.
+
+02:23.220 --> 02:30.270
+So we have created another function that returns a Boolean and we can use it in conjunction with these
+
+02:30.270 --> 02:33.240
+calculate cat h and branch out a little bit.
+
+02:33.330 --> 02:39.390
+We can even move further to say something like this if check age, pass or cat age.
+
+02:40.020 --> 02:44.790
+If it's true and you can do this, you could say if it's equal to true equal like that.
+
+02:45.030 --> 02:50.640
+But this is redundant because Caitlin knows that if you just don't say is equal to true, it assumes
+
+02:50.640 --> 02:51.660
+that this is true.
+
+02:52.050 --> 02:55.230
+So we're saying, if this is true, check Cat Age, it's true.
+
+02:55.230 --> 02:57.630
+Returns it true value right there.
+
+02:57.690 --> 02:59.790
+In that case, we're going to print something.
+
+03:00.120 --> 03:08.220
+Put that inside there instead of a check age, we're going to say this cat is old, I'm going to put
+
+03:08.310 --> 03:12.270
+the cat age so we can see like that, OK?
+
+03:12.630 --> 03:17.070
+And say else, this cat is young.
+
+03:18.240 --> 03:21.480
+And notice I can remove these because there's just one liners in a way.
+
+03:21.480 --> 03:22.740
+So we only have one line.
+
+03:22.740 --> 03:24.270
+I can just put all of that like this.
+
+03:24.270 --> 03:25.050
+This also works.
+
+03:25.620 --> 03:27.120
+OK, let's go in, right?
+
+03:27.630 --> 03:30.240
+OK, this cat is old, is 84 years old.
+
+03:30.540 --> 03:32.070
+Makes sense because we're past 12.
+
+03:32.430 --> 03:39.840
+But if I say to see what's going to happen, this cat is young because 14 because 14 is not greater
+
+03:39.960 --> 03:42.090
+than 14, that's why this returns false.
+
+03:42.810 --> 03:47.430
+If I change this to a greater than or equal like this, I think this is going to change right because
+
+03:47.430 --> 03:49.110
+we are including the 14.
+
+03:49.380 --> 03:51.390
+So now it says this cat is old.
+
+03:51.720 --> 03:52.220
+14.
+
+03:52.800 --> 03:53.210
+All right.
+
+03:53.220 --> 04:00.210
+So we're able to again create this check age in passing the cat age, which will return a Boolean once
+
+04:00.210 --> 04:01.320
+we pass this condition.
+
+04:01.890 --> 04:05.320
+Cat H is greater than or equal to 14, right?
+
+04:05.370 --> 04:06.030
+It's going to be true.
+
+04:06.180 --> 04:06.960
+It's going to be false.
+
+04:07.170 --> 04:14.460
+And so we can use that or use these functions in past the correct values and check with if statement.
+
+04:14.880 --> 04:17.740
+Obviously, this is less complicated to check age.
+
+04:17.770 --> 04:21.090
+We can make this more complicated or more complex.
+
+04:21.090 --> 04:29.520
+I should say and do all sort of calculations to yield a true or false value that will be fed somewhere
+
+04:29.640 --> 04:30.540
+whenever we call it.
+
+04:31.530 --> 04:31.890
+All right.
+
+04:32.170 --> 04:32.550
+Very good.

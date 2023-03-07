@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.790 --> 00:06.190
+So let's start putting together the user interface now that we know that we have data and it's time
+
+00:06.190 --> 00:07.610
+to put together be user interface.
+
+00:07.630 --> 00:08.380
+It just makes sense.
+
+00:08.860 --> 00:10.750
+All right, so this is what we going for.
+
+00:10.960 --> 00:12.790
+It's a simple user interface, really.
+
+00:12.790 --> 00:17.080
+As you see here, there really isn't that much going on, but yet we're going to go ahead and build
+
+00:17.080 --> 00:17.230
+it.
+
+00:17.620 --> 00:17.890
+OK.
+
+00:18.250 --> 00:20.140
+Let's start with the top section.
+
+00:20.620 --> 00:21.850
+So what I'm going to do?
+
+00:21.880 --> 00:24.280
+Let's go ahead and divide things up on one.
+
+00:24.280 --> 00:27.430
+Create another composable at the bottom here.
+
+00:27.460 --> 00:30.940
+So at, let's call this question.
+
+00:31.500 --> 00:32.260
+Display.
+
+00:35.960 --> 00:45.470
+I such finales make this at preview, so we can see the preview, this content Susquehanna split.
+
+00:47.830 --> 00:50.050
+And while so there's really nothing there yet.
+
+00:50.320 --> 00:51.250
+That's why it's empty.
+
+00:52.330 --> 00:53.770
+So what is there want to do here?
+
+00:53.800 --> 00:57.760
+First, let's create a surface that seems to be what we do first.
+
+00:58.630 --> 01:00.820
+So instead of a surface, I'm going to pass modifier.
+
+01:03.080 --> 01:04.760
+And I want to start with Phil.
+
+01:04.790 --> 01:06.980
+Max with.
+
+01:08.360 --> 01:12.450
+Such and then Phil Max height.
+
+01:13.880 --> 01:19.520
+And while I'm here, let's just give a general pattern of about five dpi or for dpi that is scoring
+
+01:19.520 --> 01:21.890
+important our DPI.
+
+01:23.690 --> 01:24.040
+OK.
+
+01:24.230 --> 01:24.830
+Very well.
+
+01:26.080 --> 01:28.370
+Let's go ahead and refresh us to see what's going on.
+
+01:29.240 --> 01:30.260
+All right, there we go.
+
+01:30.890 --> 01:37.400
+Nothing really out of this world, but at least we see we have something showing their next list ad.
+
+01:37.820 --> 01:38.810
+Let's give a color.
+
+01:39.440 --> 01:46.190
+And in this case, here, I'm actually going to create yet another class instead of a utils hardline
+
+01:46.190 --> 01:46.610
+class.
+
+01:46.640 --> 01:48.140
+This is going to be just an object.
+
+01:50.910 --> 01:53.130
+It's called this app colors.
+
+01:53.970 --> 01:55.800
+So what are we going to add here?
+
+01:55.830 --> 01:59.670
+Just some static colors for our app, so this will help.
+
+01:59.670 --> 02:06.000
+I'm just going to go ahead and get a few colors that I've created, so I don't have to type all of them
+
+02:06.000 --> 02:07.690
+and bore you with all these details.
+
+02:07.710 --> 02:11.790
+So we should have access to all of these, of course, in the GitHub to get all of these.
+
+02:11.790 --> 02:12.900
+So that's not a problem.
+
+02:13.290 --> 02:19.350
+So we have our app colors there and it's very good so we can now use it to invoke them inside here so
+
+02:19.350 --> 02:20.250
+we can get those colors.
+
+02:20.880 --> 02:21.200
+OK.
+
+02:21.510 --> 02:32.250
+So now I can say here app colors such and in this case, I'm going to get the M and dark purple like
+
+02:32.250 --> 02:32.610
+this.
+
+02:33.060 --> 02:34.830
+That's the color I'm going to have in the background.
+
+02:34.830 --> 02:38.220
+So trying to mimic this color you see in the background there.
+
+02:40.670 --> 02:46.430
+And now that we say, let's go ahead and refresh to see if that's going to change, it should.
+
+02:47.270 --> 02:47.570
+OK.
+
+02:47.750 --> 02:48.410
+Very nice.
+
+02:49.670 --> 02:57.350
+So inside we are going to create a column because all of the items are going to be laid out vertically
+
+02:58.190 --> 02:58.540
+somewhere.
+
+02:58.550 --> 02:59.570
+Passive modifier
+
+03:02.930 --> 03:04.910
+give her padding of 12 dpi.
+
+03:10.790 --> 03:13.550
+And then let's give it a vertical arrangement.
+
+03:13.640 --> 03:21.050
+I'm going to arrange top all of items to be at the top first and then horizontal arrangement or alignment,
+
+03:21.050 --> 03:22.370
+that is when a center.
+
+03:22.550 --> 03:25.550
+Actually, I want to start alignment to stars.
+
+03:25.580 --> 03:27.410
+It all starts from the left.
+
+03:27.950 --> 03:28.280
+All right.
+
+03:28.510 --> 03:28.650
+All right.
+
+03:28.720 --> 03:28.970
+Good.
+
+03:29.540 --> 03:31.910
+So next, we are going to add this.
+
+03:33.420 --> 03:41.010
+UI element here, I'm going to go ahead at the bottom, you create yet another composable such let's
+
+03:41.010 --> 03:46.110
+call this question tracker is going to track the question.
+
+03:46.110 --> 03:50.160
+As you see here, we're going to have zero out of 40 875 something like that.
+
+03:52.620 --> 03:58.130
+And I can go ahead and also add another preview here so we can take a look now.
+
+03:58.140 --> 04:05.250
+This tracker here will have, as you see here, the first numbers are going to be zero out of the entire
+
+04:05.580 --> 04:07.140
+size of our list.
+
+04:07.800 --> 04:10.770
+So I'm going to pass two parameters here.
+
+04:10.780 --> 04:18.030
+So counter it's going to be an inch and I'm just going to give it 10 to start with so we can see something.
+
+04:19.860 --> 04:27.390
+And then out of this call, it's going to be an inch and I'm just going to give a hundred as a default.
+
+04:28.310 --> 04:29.160
+OK, good.
+
+04:29.610 --> 04:36.660
+So here I'm going to add a text, not just any other text, and I'm going to add an annotated string
+
+04:36.690 --> 04:38.760
+text annotated string as such.
+
+04:39.090 --> 04:45.410
+This will allow us to divide or to change parts of our string or text, as you see here.
+
+04:45.420 --> 04:46.960
+So this one question zero.
+
+04:47.250 --> 04:51.270
+See its different size, then this next number there.
+
+04:51.720 --> 04:54.630
+So that's why we're going to use annotated string.
+
+04:55.110 --> 05:01.050
+So for that, you know, text here, I'm going to use the build annotated string of such suits at Lambda.
+
+05:01.620 --> 05:05.400
+So now inside here, I'm going to pass with style
+
+05:08.040 --> 05:09.190
+and I would say style.
+
+05:09.190 --> 05:13.620
+I'm going to pass style and I see paragraph style.
+
+05:15.290 --> 05:23.290
+Text inent for the first part and say text intent, none.
+
+05:23.930 --> 05:34.010
+So there is no invitation for this text, so I can't pass another with style here inside for a style
+
+05:34.430 --> 05:40.100
+parameter, I'm going to just say span style for the color.
+
+05:40.310 --> 05:48.010
+In this case, I want to see app colors again and say, Am light purple or gray, actually?
+
+05:48.980 --> 05:49.250
+OK.
+
+05:50.420 --> 05:58.340
+And then I'll continue, I'm going to say font weight, I want this to be a bold like this.
+
+06:00.290 --> 06:08.030
+And also a wonderful in size to be a little bit extravagance or 27 that speaks, so we need to use the
+
+06:08.120 --> 06:12.530
+Unit ESP when we are dealing with strings or text in this case.
+
+06:12.770 --> 06:13.460
+Not deep.
+
+06:13.760 --> 06:14.870
+That's the recommendation.
+
+06:15.530 --> 06:15.930
+All right.
+
+06:15.980 --> 06:24.020
+So now in this lambda here, I'm going to build the actual string that I want to annotate, which I
+
+06:24.020 --> 06:26.420
+want to pass all of these styles that we've created.
+
+06:27.020 --> 06:28.170
+So I'm going to say Append.
+
+06:28.190 --> 06:31.310
+So in this case, I'm going to be handed a text and I want this to be.
+
+06:31.820 --> 06:34.440
+So it's going to be your question.
+
+06:35.180 --> 06:42.290
+And then I'm going to pass the counter value right variable and for a slash like they.
+
+06:42.300 --> 06:43.700
+So it's going to be something like that.
+
+06:44.660 --> 06:44.890
+OK.
+
+06:45.350 --> 06:49.520
+Because I want annotated this different than this other text.
+
+06:50.730 --> 06:50.950
+Right.
+
+06:51.100 --> 06:51.670
+Very handy.
+
+06:52.480 --> 06:54.070
+A little bit of water back, very handy.
+
+06:54.400 --> 06:59.950
+OK, let's go ahead and refresh this to see if we can see to see our preview at the bottom here.
+
+07:01.840 --> 07:02.250
+All right.
+
+07:02.470 --> 07:05.200
+So you can see the bottom here.
+
+07:07.100 --> 07:16.340
+Concedes his question for now, I'm going to comment this out that we don't see this, OK, so we see
+
+07:16.340 --> 07:17.360
+that question.
+
+07:17.660 --> 07:19.880
+Ten out of something.
+
+07:20.750 --> 07:26.050
+So next, we're going to create this last session where there right?
+
+07:26.480 --> 07:30.440
+So right there and let's say with style, do the same thing.
+
+07:33.380 --> 07:35.300
+Expense style can pass the color.
+
+07:38.220 --> 07:39.210
+Light grey.
+
+07:41.120 --> 07:48.200
+That's what we had before and lost a font weight.
+
+07:52.340 --> 07:55.520
+I want light to differentiate.
+
+07:58.930 --> 08:00.250
+Font size.
+
+08:00.730 --> 08:03.610
+This is going to be smaller, 14 sb like that.
+
+08:07.610 --> 08:11.750
+And then, of course, what is that we want to append here for our text?
+
+08:12.350 --> 08:21.290
+It's going to be the out of variable, which should be out of not out of let's go ahead and refactor
+
+08:21.290 --> 08:21.650
+that.
+
+08:25.990 --> 08:28.450
+Out of right.
+
+08:30.040 --> 08:30.400
+Very good.
+
+08:30.460 --> 08:31.420
+So that looks real good.
+
+08:32.080 --> 08:33.880
+Question 10 out of 100.
+
+08:34.900 --> 08:40.780
+So still, instead of a tax here, if you click there, we noticed that are text parameters and here
+
+08:40.930 --> 08:45.190
+because we're passing this bill annotated annotated string there.
+
+08:45.190 --> 08:48.850
+So that means we can still pass other parameters in our text.
+
+08:49.910 --> 08:50.210
+Right.
+
+08:50.390 --> 08:56.930
+So when a pass modifier, our good friend and we say modifier, I want to give a padding in general
+
+08:56.930 --> 08:59.600
+patting of about 20 deep or such.
+
+09:01.420 --> 09:01.680
+OK.
+
+09:01.840 --> 09:03.610
+Very nice to we have that nice padding.
+
+09:04.240 --> 09:11.170
+All right, so now that we have our question tracker, we can of course call that inside there right
+
+09:11.170 --> 09:11.710
+about here.
+
+09:11.710 --> 09:15.880
+And I say a question tracker, such a personal nothing.
+
+09:15.880 --> 09:16.930
+For now, that's fine.
+
+09:17.620 --> 09:23.920
+And if we go up and to make sure that our preview is on.
+
+09:25.590 --> 09:27.810
+Should be able to see the full picture, hopefully.
+
+09:28.410 --> 09:32.310
+Angela looks real good question.
+
+09:32.700 --> 09:34.500
+Ten out of 100.

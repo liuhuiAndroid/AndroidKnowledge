@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00.810 --> 00:04.500
+Let's go ahead and set up hilt and the structure of our project.
+
+00:04.900 --> 00:08.730
+Let's get rid of all of this testing that we were doing earlier.
+
+00:09.030 --> 00:10.110
+You no longer need that.
+
+00:13.210 --> 00:16.980
+OK, let's go ahead and open our project structure here.
+
+00:16.980 --> 00:17.550
+Files.
+
+00:18.580 --> 00:21.010
+Inside of Main Java there.
+
+00:21.030 --> 00:26.220
+Let's go to our folder, so right there, I'm going to right click create a few packages.
+
+00:26.710 --> 00:28.440
+The first one's going to be components.
+
+00:31.370 --> 00:35.330
+Square can put all the components, classes and so forth.
+
+00:36.740 --> 00:42.440
+Let's create another package, call this data to AI for dependency injection.
+
+00:42.680 --> 00:45.110
+We'll see that and.
+
+00:46.820 --> 00:47.510
+Model.
+
+00:52.380 --> 00:57.550
+Navigation, this is where we're going to put all the classes that pertain to navigation because this
+
+00:58.330 --> 01:05.920
+app will need some navigation and we are going to add network.
+
+01:08.570 --> 01:16.350
+Seems like a lot, but it's necessary Pozzi repository such.
+
+01:17.670 --> 01:18.710
+We're getting there.
+
+01:18.840 --> 01:31.350
+And ladies and gentlemen, and this past screens here, that's and then last but not least again, put
+
+01:31.350 --> 01:31.920
+your deals.
+
+01:32.160 --> 01:37.350
+So it's always nice to have this structure because especially in projects are a little bit more complex.
+
+01:37.950 --> 01:43.830
+You want to make sure that related classes are grouped together.
+
+01:43.980 --> 01:46.470
+That's why we have these different packages, right?
+
+01:46.830 --> 01:51.420
+OK, so at our package level, they're going to right click create a new.
+
+01:52.960 --> 02:04.700
+Caitlin class and this I'm going to call this reader application such and this one will have to add
+
+02:04.700 --> 02:13.480
+to the ad hilt at Hild Android app to say that this is going to, of course, allow the entire application
+
+02:13.720 --> 02:16.510
+to to bind either dependencies.
+
+02:16.840 --> 02:21.880
+So this actually has to go and invoke or inherit from application.
+
+02:22.450 --> 02:23.490
+Android applications.
+
+02:23.920 --> 02:28.280
+So application is the higher class that governs the entire application, right?
+
+02:28.300 --> 02:29.710
+The entire project.
+
+02:31.410 --> 02:38.270
+So before we forget this, we must make this official by going to Andrew Manifest and say the Android
+
+02:38.290 --> 02:46.290
+name and we need to invoke this reroll application, Apple to say this indeed is the class that will
+
+02:46.290 --> 02:49.440
+connect everything will have access to all the bindings.
+
+02:49.770 --> 02:55.440
+And of course, all of the dependencies of the entire project, the entire app.
+
+02:55.710 --> 02:59.450
+And don't forget to add the at hilt android, right?
+
+02:59.910 --> 03:02.450
+And that's all we need to do for this class.
+
+03:02.940 --> 03:04.530
+And next in our D-R.I.
+
+03:04.530 --> 03:07.440
+Here, I'm going to right click creating new Kotlin class.
+
+03:07.890 --> 03:14.250
+This is actually going to be an object such and I'm going to call this app module.
+
+03:14.280 --> 03:19.890
+This is where are we going to add providers that are needed to provide certain instances, for instance,
+
+03:20.220 --> 03:27.270
+instances of repository instances of anything that we're doing will be needed in this application?
+
+03:27.690 --> 03:27.960
+OK.
+
+03:28.500 --> 03:31.740
+For that to work, we need to pass a few annotations here.
+
+03:31.740 --> 03:35.250
+First of all, add module to say this is indeed a module.
+
+03:37.260 --> 03:46.650
+And then I'm going to say at install in and pass the singleton component class and inside here we're
+
+03:46.650 --> 03:47.400
+going to come back.
+
+03:47.610 --> 03:51.750
+Like I said, this is where we're going to add more of the providers and so forth.
+
+03:52.050 --> 03:54.570
+We'll get back to that now before we forget.
+
+03:54.690 --> 03:55.470
+I usually do.
+
+03:55.500 --> 04:07.200
+Let's go to main activity and just add also say at Android entry point to say that this main activity
+
+04:07.200 --> 04:12.480
+is going to be the one that will receive all of the dependency injections.
+
+04:12.750 --> 04:19.680
+When we say Android entry point to like that, I think for the basics when it comes to health dependency
+
+04:19.680 --> 04:21.720
+injection, which should be good for now.
+
+04:21.720 --> 04:27.780
+Of course, all of these other packages will be filled with classes and so forth.
+
+04:27.790 --> 04:34.920
+So we are going to slowly ramp up our process here of pulling together this amazing application.
+
+04:35.490 --> 04:37.140
+All right, I'll see you next.

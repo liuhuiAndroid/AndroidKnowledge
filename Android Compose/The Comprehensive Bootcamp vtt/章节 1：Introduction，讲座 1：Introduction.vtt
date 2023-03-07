@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.180 --> 00:01.680
+Well, hello and welcome.
+
+00:01.830 --> 00:06.300
+So what I'm going to do in the next few minutes is do some introductions, so at least, you know,
+
+00:06.300 --> 00:08.520
+who am I and what is this course about?
+
+00:08.730 --> 00:11.220
+OK, so let's start with who am I?
+
+00:11.310 --> 00:12.750
+Well, my name is politician.
+
+00:12.870 --> 00:16.350
+I'm a software engineer and mobile developer, among other things.
+
+00:16.410 --> 00:20.250
+So but at the heart of all of that, I am an instructor and a teacher.
+
+00:20.250 --> 00:22.310
+I love teaching programming.
+
+00:22.320 --> 00:25.890
+I love teaching people how to think about programming and so forth.
+
+00:26.220 --> 00:32.520
+OK, so that's who I am, and I take my job as an instructor very seriously because it is one of my
+
+00:32.520 --> 00:33.330
+biggest passions.
+
+00:33.600 --> 00:34.920
+Now what is this course about?
+
+00:35.400 --> 00:40.050
+In this course, we're going to learn about Jetpack Compose, which is a modern Android development
+
+00:40.170 --> 00:43.920
+tool that allows us to build apps in a different way.
+
+00:44.040 --> 00:50.970
+So with Jetpack Compose, we use Kotlin to create declarative UI.
+
+00:51.060 --> 00:56.130
+So it's a different mindset when it comes to building mobile Android apps.
+
+00:56.430 --> 00:59.520
+So that is what we're going to be focusing on in this course.
+
+00:59.900 --> 01:05.310
+Now, one other thing I'd like to discuss before we move forward is a way in which you can get the most
+
+01:05.310 --> 01:06.300
+out of this course.
+
+01:06.510 --> 01:11.430
+So I understand most of us have different ways to approach things, especially when we're learning.
+
+01:11.430 --> 01:18.510
+But this is what I find helpful for students to retain what they're going to be learning, especially
+
+01:18.510 --> 01:19.860
+when it comes to programming.
+
+01:20.010 --> 01:24.790
+OK, so first of all, I may give you certain challenges or exercises for you to do.
+
+01:24.870 --> 01:29.310
+Don't skip those, go ahead and do those because those will help you retain the material.
+
+01:29.340 --> 01:30.870
+The thing is, are we trying to accomplish?
+
+01:30.870 --> 01:35.340
+Which is to learn how to build Android apps in this case with compose?
+
+01:35.910 --> 01:40.230
+And of course, because this is a video course, which means you're going to be watching me code, you
+
+01:40.230 --> 01:41.130
+will do just that.
+
+01:41.130 --> 01:47.790
+You watch me code along, but you will do a little bit differently because you will code along with
+
+01:47.790 --> 01:48.240
+me.
+
+01:48.300 --> 01:49.350
+That is very important.
+
+01:49.360 --> 01:50.970
+So don't be just any spectator.
+
+01:51.090 --> 01:54.890
+I would like you to actually type as I type as well.
+
+01:54.900 --> 01:57.330
+So that's part of the whole learning process.
+
+01:57.570 --> 02:01.590
+And everything is programming can be daunting at times.
+
+02:01.600 --> 02:05.180
+And so when you feel overwhelmed, it's OK to stop arrest.
+
+02:05.190 --> 02:12.630
+Go get some fresh air, coffee, tea, whatever it is that you like to drink to just rest a little bit,
+
+02:12.630 --> 02:16.380
+OK, and once you've rested, you can come back and keep at it.
+
+02:16.530 --> 02:17.460
+OK, very well.
+
+02:17.460 --> 02:19.470
+Now what are the course prerequisites?
+
+02:19.680 --> 02:23.970
+Well, it will be very helpful if you know some basics of Android development.
+
+02:24.060 --> 02:28.770
+OK, so meaning that if you've done a little bit of an Android development or mobile development in
+
+02:28.770 --> 02:31.740
+general, that will be extremely helpful, obviously.
+
+02:31.860 --> 02:38.820
+However, in this course is not entirely required because I go through the basics so that you are at
+
+02:38.820 --> 02:43.020
+that level that it's needed for you to start building Android apps using Compose.
+
+02:43.170 --> 02:43.470
+OK.
+
+02:43.590 --> 02:49.500
+So if you are not an Android developer, you've not done enough development and this course is still
+
+02:49.500 --> 02:50.100
+for you.
+
+02:50.250 --> 02:54.180
+It's not a problem because I go through stuff, but if you already have some experience, this course
+
+02:54.180 --> 02:56.220
+is equally useful to you.
+
+02:56.280 --> 03:02.040
+So you would be fine because we are going to be using Kotlin, having a basic understanding of with
+
+03:02.040 --> 03:08.280
+the Catalan language or any modern, object oriented programming language, for that matter, is a big
+
+03:08.280 --> 03:08.760
+plus.
+
+03:08.790 --> 03:16.020
+But if you don't have those skills, if you haven't really done any object oriented programming or any
+
+03:16.020 --> 03:21.390
+programming in general, it's OK in so many ways because I will cover Kotlin basics in this course.
+
+03:21.510 --> 03:25.130
+But if you want to be ahead of the curve, it's not going to hurt you.
+
+03:25.140 --> 03:31.950
+If you could pick up a book or just do some brush up on killing, but also remember I will cover Kotlin
+
+03:31.950 --> 03:33.240
+and of course, as well.
+
+03:33.420 --> 03:39.720
+For those of you who want to brush up on Kotlin or want to brush up on programming concepts in general,
+
+03:39.750 --> 03:45.660
+OK, so this course is supposed to be a comprehensive course, meaning that it will take you from where
+
+03:45.660 --> 03:49.530
+you are to understanding how to build Android apps using compose.

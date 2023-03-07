@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00.480 --> 00:05.430
+So let's talk about the course of learning path now and this course, because I want to make sure that
+
+00:05.430 --> 00:10.260
+it's a comprehensive course right for everybody to actually get the most out of this.
+
+00:10.440 --> 00:16.830
+I have two sections, so there is the first part which is going to be because Compose uses Catling,
+
+00:16.830 --> 00:18.900
+so it's important that you understand codling.
+
+00:18.900 --> 00:26.680
+So I will include sections with full of information about Kathleen, from fundamentals to intermediate
+
+00:26.700 --> 00:28.440
+in a little bit advanced concepts.
+
+00:28.620 --> 00:34.920
+So that will aid you to understand better how COMPOSE is used to build Android applications.
+
+00:35.190 --> 00:37.380
+And the other part is a jetpack compose.
+
+00:37.380 --> 00:41.370
+So this is where we're going to be building Android apps using Jetpack Compose.
+
+00:41.550 --> 00:45.210
+Now the great thing here, because this is a video course, right?
+
+00:45.320 --> 00:47.070
+Know all of this is our online course.
+
+00:47.130 --> 00:50.250
+There's videos that you can watch whenever you want to watch them.
+
+00:50.280 --> 00:50.880
+That's the beauty.
+
+00:50.970 --> 00:56.550
+You are not required to watch everything, especially when it comes to codling fundamentals.
+
+00:56.700 --> 01:02.490
+Could be that you already know Kotlin and you are well versed with Kotlin, so obviously you won't need
+
+01:02.490 --> 01:04.410
+to watch codling fundamental section.
+
+01:04.530 --> 01:06.660
+So this is purely optional.
+
+01:06.720 --> 01:14.370
+However, I would recommend anyone to go through the Kotlin fundamentals just to brush up on the fundamentals
+
+01:14.370 --> 01:19.230
+of Kotlin, because there's always something that you missed or something that perhaps you forgotten,
+
+01:19.230 --> 01:21.350
+and it doesn't hurt to go through.
+
+01:21.360 --> 01:24.200
+What do you feel like you should know about codling, right?
+
+01:24.210 --> 01:29.840
+So you can peruse through and find it the topics that you are wanting to brush up on?
+
+01:30.890 --> 01:34.760
+For those of you who have never done programming or have done some programming in different languages
+
+01:34.850 --> 01:40.280
+and don't know coupling that well, then obviously I recommend you to go through the codling fundamentals
+
+01:40.280 --> 01:46.670
+before you jump onto the jetpack compose because that way jetpack compose will be much easier to grasp
+
+01:46.970 --> 01:48.380
+if you understand codling.
+
+01:48.620 --> 01:49.040
+All right.
+
+01:49.230 --> 01:50.030
+OK, very good.
+
+01:50.150 --> 01:52.310
+I'm very excited and I'll see you in the next video.

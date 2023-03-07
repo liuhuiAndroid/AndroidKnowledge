@@ -1,0 +1,172 @@
+WEBVTT
+
+00:01.100 --> 00:02.900
+So in this section, we did a lot of things.
+
+00:03.740 --> 00:10.460
+The first thing we look at was the basics of compose, project and function so that we can situate ourselves
+
+00:10.700 --> 00:13.550
+as we progress in our learning process here.
+
+00:14.270 --> 00:20.360
+And of course, we created a very simple money counting app, which the main idea was to show you how
+
+00:20.360 --> 00:27.260
+things are constructed or how to put together a very simple application, but give you the foundation
+
+00:27.260 --> 00:33.640
+of how compose works, how composable functions work, how we call composable functions inside of how
+
+00:33.650 --> 00:34.730
+the compose functions.
+
+00:34.880 --> 00:38.360
+So how to simply structure your compose applications?
+
+00:39.080 --> 00:39.320
+OK.
+
+00:39.740 --> 00:45.410
+And of course, we look at modifiers, which is a way of us to customize our compose widgets.
+
+00:45.650 --> 00:51.200
+And there is so much you can do with modifiers, and we'll continue obviously building upon this concept
+
+00:51.200 --> 00:53.180
+as we move forward in this course.
+
+00:53.900 --> 01:00.470
+We talked about basic layouts surface, which we said it is the main and the most primitive traditional
+
+01:00.470 --> 01:08.160
+canvas that we can manipulate and use it to add other widgets on top box and column and so forth.
+
+01:08.180 --> 01:14.870
+So we also learned that in compose, you can make anything clickable, meaning you can respond to a
+
+01:14.870 --> 01:16.430
+click event, a tap event.
+
+01:16.790 --> 01:24.350
+Not only buttons receive click events, but anything really can also receive a click event through modifiers.
+
+01:25.790 --> 01:32.690
+And of course, we talked about state and compose, which is a very important topic because the whole
+
+01:32.690 --> 01:39.380
+idea in compose is to make sure that we dissociate this direct tinkering or updating of the state of
+
+01:39.380 --> 01:42.020
+widgets directly using setters and so forth.
+
+01:42.380 --> 01:48.500
+So state allows us to do all sorts of things, but mainly to decouple this dependency between the user
+
+01:48.500 --> 01:50.420
+interface and the logic.
+
+01:50.570 --> 01:56.330
+But the main goal really is to have one source of truth in our project through states.
+
+01:56.990 --> 02:03.050
+And with that, we really dove into the imperative and declarative approach the differences and advantage
+
+02:03.050 --> 02:08.660
+of those imperative, meaning the older quote unquote way of creating apps in Android.
+
+02:09.080 --> 02:13.070
+And we learned that the industry now is favoring more.
+
+02:13.070 --> 02:16.040
+It declares approach the clarity approach.
+
+02:16.040 --> 02:22.970
+You are declaring what you want to see on a screen and let data be the reactor data being the thing
+
+02:23.090 --> 02:25.550
+that will allow the function.
+
+02:25.560 --> 02:30.730
+In this case, the computer functions to react and to describe themselves as they were supposed to do.
+
+02:30.740 --> 02:37.580
+So the data is the ingredient, if you will, that makes this declarative approach even better.
+
+02:38.360 --> 02:44.570
+We talked about state hosting again, which is a way in which we need to remove the state from a composing
+
+02:44.570 --> 02:46.610
+function to the calling function.
+
+02:46.610 --> 02:53.600
+That way, that way, we decoupled the state with a composable, making that composable function more
+
+02:53.600 --> 02:55.450
+usable and easy to manage.
+
+02:55.460 --> 03:02.420
+And of course, we had to define this very important aspect of compose, which is called recomposition.
+
+03:02.510 --> 03:08.810
+Composition is the process of calling your composable function again when inputs change, which again,
+
+03:09.080 --> 03:16.400
+is the whole idea behind a declarative approach in the beautiful composition is that when that happens,
+
+03:16.550 --> 03:18.170
+we are only targeting.
+
+03:18.170 --> 03:25.370
+Or I should say, the compose compiler is only targeting the widget or the compose or function that
+
+03:25.460 --> 03:31.190
+needs to recomposition, that needs to be refreshed, if you will anything else around it.
+
+03:31.550 --> 03:38.060
+If it doesn't need it to refresh itself, it won't be just targets the one widget or to the painting
+
+03:38.600 --> 03:45.140
+that needs to change if data changes, which is amazing because now we are making sure that we don't
+
+03:45.140 --> 03:49.790
+run into memory issues because we compose or refreshing the whole screen.
+
+03:49.790 --> 03:55.770
+Every time something change, it takes a lot of memory and a lot of computing power.
+
+03:56.090 --> 04:03.830
+And so the way compose works with recomposition, it makes it way easier and more memory efficient.
+
+04:04.070 --> 04:11.240
+Now one thing I have to say that these concepts this paradigm shift from imperative to declarative approach
+
+04:11.240 --> 04:12.800
+of building applications.
+
+04:13.250 --> 04:19.340
+It can be very daunting at first, or at least it can be very hard to grasp that because the concepts
+
+04:19.340 --> 04:26.930
+are hard to grasp, but because it's a shift of paradigm shift of way of thinking about building apps,
+
+04:27.200 --> 04:27.440
+right?
+
+04:27.740 --> 04:33.590
+So I encourage you to really take the time to watch the videos if you need to, because remember, this
+
+04:33.590 --> 04:38.360
+is video quality, which means you can watch as many times as you need.
+
+04:38.720 --> 04:45.110
+And really, if you hone in and understand this concept, you're going to have a better time building
+
+04:45.440 --> 04:51.380
+compose apps because these concepts are the base of everything we're going to be learning now forward.
+
+04:51.980 --> 04:52.200
+OK?
+
+04:52.290 --> 04:57.230
+I'm very excited, as you can tell, and I will see you in the next section.

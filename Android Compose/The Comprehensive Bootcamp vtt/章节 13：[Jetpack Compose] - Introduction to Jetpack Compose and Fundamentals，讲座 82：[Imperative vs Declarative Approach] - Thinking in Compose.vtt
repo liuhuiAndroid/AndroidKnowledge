@@ -1,0 +1,316 @@
+WEBVTT
+
+00:00.420 --> 00:04.170
+Now, let's look again at the imp. versus declarative approach.
+
+00:04.380 --> 00:11.880
+But let's dig deeper so that we really understand what's going on or or why compose is really great
+
+00:11.880 --> 00:12.660
+at what he does.
+
+00:14.040 --> 00:20.460
+So in imperative approach of Android development, so you would have Android layout, so you have a
+
+00:20.460 --> 00:26.760
+lot of views that you put together to create a user interface, which means that you have two sections.
+
+00:26.760 --> 00:33.870
+Going first is going to be the layout file, which is usually an XML, and then you would have an activity,
+
+00:33.900 --> 00:34.230
+right?
+
+00:34.500 --> 00:41.460
+So in order for you to be able to traverse or to be able to go and get, for instance, if you or or
+
+00:41.460 --> 00:47.850
+in this case, a widget could be a button, a text or an image or so forth in your coding activity would
+
+00:47.850 --> 00:50.700
+have to use functions such as find view by and.
+
+00:51.420 --> 00:51.720
+Right.
+
+00:52.470 --> 00:54.060
+So what are you doing when you say fine?
+
+00:54.060 --> 01:00.210
+If you buy ID's that you traversing this tree that is created containing all of these widgets in the
+
+01:00.210 --> 01:05.610
+background, which, as you imagine, takes time and it's expensive in the sense that it takes a lot
+
+01:05.610 --> 01:07.920
+of memory, a lot of computing power.
+
+01:08.130 --> 01:14.120
+So one of things that also you have to remember is that in order for you to change, let's say a text
+
+01:14.130 --> 01:16.010
+view, you would have to use getters and setters.
+
+01:16.020 --> 01:23.610
+That means you have to say TextView set text to a string or a button that on click and so forth.
+
+01:23.760 --> 01:24.030
+Right.
+
+01:24.330 --> 01:28.350
+So you actually have to manually change the state of the views.
+
+01:28.950 --> 01:32.460
+First of all, you have to traverse the widget tree, which is very expensive.
+
+01:32.760 --> 01:35.340
+That takes a lot of computing power.
+
+01:35.850 --> 01:42.450
+And also it increase errors because it may happen that the view you're trying to find has been long
+
+01:42.450 --> 01:45.450
+removed by another function by another class.
+
+01:45.690 --> 01:50.700
+So now you are looking for something that doesn't exist, or if you are trying to update something that
+
+01:50.700 --> 01:54.990
+doesn't exist, then you end up with a lot of errors and your app may crash.
+
+01:55.290 --> 02:00.030
+And also, as I said, you are directly changing the state of the widget manually.
+
+02:00.040 --> 02:06.660
+When you say text view that set text, you are directly going and changing that state of that text field,
+
+02:06.870 --> 02:14.040
+which is not a great thing because it pollutes your whole state management four app and you wind up
+
+02:14.040 --> 02:18.510
+with a lot of issues and you potentially may wind up with a lot of problems.
+
+02:19.170 --> 02:22.290
+So this is the imperative approach.
+
+02:22.890 --> 02:27.360
+And the fourth pitfall is that you may end up with also update conflicts.
+
+02:27.390 --> 02:33.300
+So aptly, conflicts may happen for the same reason I said you may try to update something that was
+
+02:33.300 --> 02:34.440
+already updated.
+
+02:34.680 --> 02:42.270
+And now the state is all messed up because there are there isn't really the one source of truth when
+
+02:42.270 --> 02:43.230
+it comes to state.
+
+02:43.530 --> 02:48.510
+All of these are some of the pitfalls we get from the imperative approach of Android development.
+
+02:48.930 --> 02:54.780
+Now, when we go to the declarative approach in this case, Jet.com jetpack compose, things change
+
+02:54.790 --> 02:55.380
+dramatically.
+
+02:56.130 --> 02:58.310
+The same idea we have, right?
+
+02:58.320 --> 02:59.850
+So we create views.
+
+02:59.850 --> 03:02.910
+In this case, we create declarative UI, right?
+
+03:03.630 --> 03:09.690
+Which means now the UI is are built and updated differently than before.
+
+03:10.290 --> 03:16.230
+What happened now is that when something changes inside of our widget of tree, in this case, all of
+
+03:16.230 --> 03:23.340
+these composable functions or widgets inside of your app, what happens is the system goes out and updates
+
+03:23.550 --> 03:30.570
+the screen, but most importantly, goes and only updates what needs to update the widget or the function
+
+03:30.570 --> 03:31.890
+that needs to be updated.
+
+03:32.130 --> 03:36.000
+Only this is what we call recomposition.
+
+03:36.450 --> 03:42.690
+The beauty here is that we no longer have to manually update each widget, so you'll remember the text
+
+03:42.690 --> 03:43.500
+TextView that set.
+
+03:43.860 --> 03:49.410
+We no longer have to do that because we're declaring what we want to see, and we're letting the data
+
+03:49.410 --> 03:52.290
+dictate whether that view needs to update or not.
+
+03:52.800 --> 03:57.510
+And also, most importantly, we no longer rely on XML to create user interfaces.
+
+03:57.780 --> 04:01.920
+Now, everything is done in one way using one language in this case.
+
+04:02.400 --> 04:07.800
+Another main concept in the declarative approach is that data is passed down.
+
+04:07.980 --> 04:08.700
+What that means?
+
+04:08.910 --> 04:16.680
+Well, in other words, we passed data into our main composable and then the other inner composable
+
+04:16.680 --> 04:22.590
+functions in this case in return will react to it, which means they will update and describe the user
+
+04:22.590 --> 04:24.570
+interface as they see fit.
+
+04:24.780 --> 04:32.070
+So now we have smaller, composable functions that are waiting or receiving data and be reactive as
+
+04:32.070 --> 04:32.880
+they get that data.
+
+04:33.330 --> 04:34.680
+That's really, really powerful.
+
+04:35.160 --> 04:40.830
+And on the other hand, on the other side, too, what happens is that events go up.
+
+04:41.370 --> 04:43.510
+What that means is that an event is triggered.
+
+04:43.560 --> 04:49.770
+For instance, if a user interacts with, for instance, parts of a story widget, as you see in this
+
+04:49.770 --> 04:55.560
+diagram here, what happens is that the app logic will know that there is an event that is happening
+
+04:55.560 --> 04:59.520
+here and it will know whether it is a new data that's been.
+
+04:59.900 --> 05:07.460
+That been that's been sent out that way, other parts of the Outis are, like other composable, will
+
+05:07.460 --> 05:10.160
+also be notified that something has changed.
+
+05:10.280 --> 05:12.620
+We need to do something if necessary.
+
+05:13.130 --> 05:15.830
+Again, that recomposition is happening here.
+
+05:16.670 --> 05:23.570
+Remember, if necessary, that is the most beautiful thing about compose is that it does not go around
+
+05:23.570 --> 05:25.610
+and compose or in recompose.
+
+05:25.610 --> 05:28.010
+I should say all of the functions.
+
+05:28.280 --> 05:32.900
+No, it just goes and picks the one that needs updating.
+
+05:33.230 --> 05:35.780
+Now we got rid of all of the clunk.
+
+05:36.210 --> 05:42.830
+We got rid of all the coupled situation that we had between layout, example and activity because no
+
+05:42.830 --> 05:48.890
+longer have to go and set my data or the state manually using getters and setters and so forth.
+
+05:49.490 --> 05:54.230
+Now we were letting the data itself mandate everything, the data and events.
+
+05:55.040 --> 05:57.980
+So this is the declarative UI model.
+
+05:58.100 --> 06:03.680
+Just because we need to have some sort of definition recomposition is the process of calling your composable
+
+06:03.680 --> 06:11.570
+function again when inputs update is the process of calling your composable function again, when inputs
+
+06:11.570 --> 06:17.660
+change in these goes back or takes back to what we've been working on, which is that circle that we
+
+06:17.660 --> 06:18.110
+tapped.
+
+06:18.350 --> 06:19.100
+What happens?
+
+06:19.490 --> 06:26.780
+The recomposition happens because every time we change this state over a counter, the compose compiler
+
+06:26.780 --> 06:33.410
+will know that, OK, just that text will have to recompose because the data has changed.
+
+06:33.710 --> 06:35.690
+Not anything else, just that text.
+
+06:36.380 --> 06:37.780
+All right, so let's go back to our code.
+
+06:37.800 --> 06:43.970
+Now that we have, we understand at least the advantages that we have when using compose versus the
+
+06:43.970 --> 06:46.580
+old way, quote unquote of doing development.
+
+06:46.940 --> 06:51.830
+Now there are a lot of things that I went through here, but I hope I broke them down in such a way.
+
+06:51.830 --> 06:59.720
+They are easy to understand and you are welcome to watch this video that way you have certain concepts
+
+06:59.720 --> 07:03.640
+that are really, really important for you to really understand.
+
+07:04.340 --> 07:05.660
+Compose, jetpack compose.
+
+07:05.990 --> 07:10.280
+So if things are not really making a lot of sense, don't worry just to watch a video.
+
+07:10.280 --> 07:14.270
+And remember, we're still in the beginning stages of this course, so there's a lot to learn.
+
+07:14.450 --> 07:20.270
+And this concepts or these concepts, they should say they will come up over and over.
+
+07:20.480 --> 07:23.780
+And by the end of this course, I promise you, you will.
+
+07:23.780 --> 07:24.740
+You will be good.
+
+07:25.400 --> 07:31.820
+You will understand all of these concepts because you will have done a lot of work yourself to really
+
+07:31.820 --> 07:33.410
+understand how all of this work.
+
+07:33.420 --> 07:36.130
+But I want you to get this concept.
+
+07:36.140 --> 07:38.840
+You change the way you think about development.
+
+07:38.870 --> 07:40.610
+OK, so let's go back to our code.

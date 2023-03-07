@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00.390 --> 00:06.120
+So we did a lot of work in this section, so what we did was to make some improvements on our movie
+
+00:06.120 --> 00:13.470
+app, so we had something like this and would transform into into something that's more elaborate and
+
+00:13.530 --> 00:14.760
+visually pleasing.
+
+00:14.790 --> 00:16.140
+I hope so.
+
+00:16.620 --> 00:22.800
+Along the way, we learned a few new topics, such as how to add to dependencies in our Gradle, this
+
+00:22.800 --> 00:28.830
+case adding to dependency, the coil dependency, which is a library that allows us to get images from
+
+00:28.830 --> 00:34.290
+the internet easily without having to worry about a hassle, behind getting images from the internet
+
+00:34.290 --> 00:35.820
+and load them onto our apps.
+
+00:36.300 --> 00:42.330
+We learn how to use it in classes that model after this case, a movie object, and we'll learn how
+
+00:42.330 --> 00:48.900
+to structure even further our application, as well as a little bit of animation, such as what to expand
+
+00:48.900 --> 00:50.670
+or contract certain view.
+
+00:51.060 --> 00:56.480
+Now, hopefully, you can see the full picture how to start from nothing, right?
+
+00:56.490 --> 01:03.060
+You just have a piece of data, very rudimentary list of just strings, and then you can and then you
+
+01:03.060 --> 01:08.660
+put together a decent UI, decent row, as you can see here with more information and get images and
+
+01:08.790 --> 01:13.980
+and navigate to a different screen or different compose wall passing data and so forth.
+
+01:13.990 --> 01:20.010
+So these are literally the basis of any application you will ever create, really.
+
+01:20.670 --> 01:25.410
+The complexity usually comes with the user interface of things that you want to include, right?
+
+01:25.710 --> 01:33.570
+But the basics of an application is getting data and use that data to show something pleasing to the
+
+01:33.570 --> 01:36.030
+eye and useful to your users.
+
+01:36.650 --> 01:36.900
+OK.
+
+01:37.290 --> 01:40.110
+And so you have those basics done at this point.
+
+01:40.110 --> 01:40.380
+So.
+
+01:40.620 --> 01:44.100
+So I would like you to take this application and think about other things.
+
+01:44.100 --> 01:52.590
+You can add it to it or even branch out finding other data points, finding other data sets so that
+
+01:52.590 --> 01:58.380
+you can create some sort of hierarchy, such as this write an application that resembles something like
+
+01:58.380 --> 02:00.480
+this, and I'll see you next time.

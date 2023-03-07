@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.240 --> 00:04.860
+Now managing state and data and compose is very important, as we have been talking about.
+
+00:05.160 --> 00:12.000
+So at this point, as we were building our Notes app, we found ourselves in a situation where we are
+
+00:12.000 --> 00:19.860
+stuck because we want to hoist our state, do state housing even further, because we want to make sure
+
+00:19.860 --> 00:25.110
+that any composable, any class can access that data that is intact.
+
+00:25.540 --> 00:27.190
+OK, so what do we have right now?
+
+00:27.210 --> 00:29.310
+The situation is that we have two main activity.
+
+00:29.310 --> 00:31.770
+We have no screen and we have no role.
+
+00:32.130 --> 00:33.750
+These are calling each other right.
+
+00:33.930 --> 00:37.800
+So Note Row is been called the inside of no screen, no screen.
+
+00:37.800 --> 00:39.390
+It's been called the onset of activity.
+
+00:39.840 --> 00:46.130
+It's an idea here is that we are stuck because the list note this state is state and we created make
+
+00:46.140 --> 00:52.140
+of all notes its stock instead of main activity, which means even though we are seeing the repercussions
+
+00:52.140 --> 00:53.520
+of that, we're seeing the difference.
+
+00:53.520 --> 00:57.870
+We're seeing the state being propagate to notes and of course, do not row.
+
+00:58.350 --> 01:04.800
+That's very problematic because because if you want to add another class, a subset of this main activity,
+
+01:04.800 --> 01:11.720
+maybe, and that a fragment or another composable that is away from this structure here, we're stuck
+
+01:12.000 --> 01:18.390
+right because we can't really get ahold of the state of this list that contains data.
+
+01:18.960 --> 01:26.100
+So in this case, here we would go ahead and pass the list manually to not screen and row and to whoever
+
+01:26.100 --> 01:26.580
+won it.
+
+01:26.850 --> 01:30.960
+In this case, here we are making copies of that state, which is not what we want.
+
+01:31.290 --> 01:37.050
+What we want really is something that is different, something that will allow us to still have this
+
+01:37.050 --> 01:37.710
+structure.
+
+01:38.220 --> 01:41.130
+However, we want to separate this state.
+
+01:41.550 --> 01:47.920
+We want to even hoist this state further out of this whole tree of composable.
+
+01:48.230 --> 01:48.450
+Right.
+
+01:48.840 --> 01:54.870
+Doing that, that will allow this separation that we need because we want to make sure that this state,
+
+01:55.110 --> 02:03.600
+this data is not bothered by any lifecycles and many things that may happen inside of our campus, both
+
+02:03.610 --> 02:07.380
+in main activity to host this state in a separate entity.
+
+02:07.800 --> 02:09.300
+We have an entity.
+
+02:09.300 --> 02:13.710
+We have a class in compose in Android called view model.
+
+02:14.130 --> 02:16.730
+So the view model here will encapsulate the state.
+
+02:16.740 --> 02:24.090
+The data will do all the work that needs to be done, but most importantly, it will contain that information
+
+02:24.090 --> 02:26.650
+away from the distractions of life cycle.
+
+02:26.670 --> 02:32.160
+So if you want to will in this case, it will expose values data to other classes in composable as the
+
+02:32.160 --> 02:40.660
+single source of truth, the data in a view model is intact from the tree that we have there of composable.
+
+02:40.830 --> 02:45.750
+The data is integral and away from the lifecycle of activity and composable, which is really important.
+
+02:46.380 --> 02:54.690
+So now whoever wants the data, they can access it through the view model and do what they need to do
+
+02:54.690 --> 02:55.590
+inside of Noro.
+
+02:55.590 --> 03:03.960
+So if note screen access the view model and change the data note role when it access the view model
+
+03:04.050 --> 03:09.960
+because they're going to be accorded the same view model right, the single source of truth, the one
+
+03:09.960 --> 03:17.760
+place they can all go to get the actual source of note row in this case will get the last state of that
+
+03:17.760 --> 03:21.720
+view model, that variable or whatever it is that is trying to access from if you want.
+
+03:21.960 --> 03:29.610
+So separating that gives us a lot of flexibility, as you can see, because now we have hosted the state
+
+03:29.610 --> 03:36.510
+even higher than what we have done before, because before we would just try to hoist to the calling
+
+03:37.050 --> 03:38.240
+function, right?
+
+03:38.250 --> 03:41.230
+In this case, my activity would be the calling function.
+
+03:41.580 --> 03:43.050
+That's what we would host the state.
+
+03:43.050 --> 03:51.690
+But now we're moving that even further down to a few model, especially if this state contains actual
+
+03:51.690 --> 03:53.490
+data, such a list and so forth.
+
+03:53.820 --> 04:01.200
+Because remember, if the list changes, the data is what drives everything in this application or in
+
+04:01.230 --> 04:03.600
+potentially any application that needs data.
+
+04:03.900 --> 04:04.200
+Right?
+
+04:04.590 --> 04:10.890
+So having one place where the data is integral, meaning if it changes that anybody else or any class
+
+04:10.890 --> 04:16.140
+or any composable that needs a data when they also use that review model, because that's again, is
+
+04:16.140 --> 04:22.020
+the one place, the single source of truth, it will get the most up to date state.
+
+04:22.650 --> 04:24.540
+In this case, the most up to date list.
+
+04:25.350 --> 04:26.460
+So that's what we're going to do.
+
+04:26.490 --> 04:32.880
+We are going to use a view model to hoist our data even further up the chain.
+
+04:32.970 --> 04:33.260
+All right.
+
+04:33.270 --> 04:35.400
+Let's go ahead and implement if you model.

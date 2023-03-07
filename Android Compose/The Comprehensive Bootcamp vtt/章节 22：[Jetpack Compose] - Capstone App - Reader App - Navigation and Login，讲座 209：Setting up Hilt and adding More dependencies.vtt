@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00.210 --> 00:03.080
+So we've added our Firebase dependencies.
+
+00:03.420 --> 00:08.820
+Now there are few other dependencies I would like to add here because we'll need them.
+
+00:09.540 --> 00:12.830
+So let's start by going to the top here.
+
+00:12.840 --> 00:14.190
+So we have our plug ins.
+
+00:14.190 --> 00:16.290
+I'm going to add a couple more plug ins here.
+
+00:16.680 --> 00:22.310
+So now I have this Caitlin capped like Ian and also dagger hilt Android plugin.
+
+00:22.320 --> 00:28.080
+So we're going to need these because we're going to be using Helt as our dependency injector.
+
+00:28.740 --> 00:29.040
+OK.
+
+00:30.210 --> 00:33.480
+So for this to work, of course, I have to add a few other things.
+
+00:34.020 --> 00:40.590
+So at the bottom and our dependencies, a few other plug ins, I'm going to add here a few other dependencies.
+
+00:40.590 --> 00:46.220
+I'm going to add copying now instead of you trying to pause this video and go and type all of this.
+
+00:46.230 --> 00:47.910
+That's just not good use of your time.
+
+00:48.270 --> 00:55.470
+What you can do is go to my repo, which you have access to where we have this project and go and find
+
+00:55.470 --> 00:57.210
+the build that Gradle that app.
+
+00:57.340 --> 00:57.680
+OK.
+
+00:57.870 --> 01:02.970
+And look at the build that Gradle, that app and to build it, that Gradle module.
+
+01:03.450 --> 01:09.240
+And so you see all of the dependencies and plugins that I've added, that's probably going to be the
+
+01:09.240 --> 01:11.340
+best and make sure you have exactly what I have.
+
+01:11.640 --> 01:17.490
+Of course, like I say, you can change or you may need to change the versioning, but that's my dad's
+
+01:17.520 --> 01:20.310
+still the same because we need all of these dependencies.
+
+01:20.550 --> 01:25.140
+OK, so I'm also going to create this hilt a version inside of our.
+
+01:27.160 --> 01:35.530
+Bill, that Gradle module one top level and it passed like this, and I believe way at this point is
+
+01:35.530 --> 01:43.000
+going to be to that 39 again, this may change, so that's fine.
+
+01:43.420 --> 01:49.650
+And I also need to add this class path, which is Google Dagger Hilt Gradle plugin.
+
+01:49.690 --> 01:54.670
+I such and you can see the numbers should be the same with the health version.
+
+01:56.270 --> 01:56.600
+All right.
+
+01:56.840 --> 02:00.650
+So this is very important to add, so we have those dependencies, let's go ahead and sync.
+
+02:01.100 --> 02:01.450
+All right.
+
+02:01.470 --> 02:03.750
+Let's go back to build a grade on that app.
+
+02:03.770 --> 02:05.570
+There are a few other things I'm going to add here.
+
+02:05.630 --> 02:11.840
+Yes, I know a lot of things, and that's why I'm saying you probably will be better off to go to get
+
+02:11.840 --> 02:16.280
+this file in the repo for this app.
+
+02:16.610 --> 02:16.880
+OK.
+
+02:17.240 --> 02:18.320
+And you have access to that.
+
+02:18.920 --> 02:21.050
+OK, so what else am I going to add?
+
+02:22.100 --> 02:25.670
+I'm going to add a few core routines dependencies here.
+
+02:27.140 --> 02:29.030
+And there's another one.
+
+02:29.520 --> 02:30.200
+Couple more.
+
+02:30.350 --> 02:31.280
+The bottom there.
+
+02:31.520 --> 02:38.180
+And because we're going to deal with getting images, I'm going to also add the coil dependency, which
+
+02:38.180 --> 02:40.520
+is the library that we're going to be using to.
+
+02:41.840 --> 02:44.450
+Get images from the internet and show them in our app.
+
+02:45.480 --> 02:47.070
+OK, let's go ahead and sink it all.
+
+02:47.610 --> 02:50.040
+Everything seems to be fine.
+
+02:50.160 --> 02:50.760
+That's well, good.
+
+02:51.270 --> 02:54.570
+Let's go ahead and run one more time to make sure that I didn't miss anything.
+
+02:55.950 --> 02:57.690
+All right, so now everything OK.
+
+02:57.720 --> 03:02.820
+So I still see Hello Android from our project because we haven't done anything in our user interface,
+
+03:02.820 --> 03:03.330
+so that's good.
+
+03:03.390 --> 03:04.410
+This is always good news.
+
+03:04.800 --> 03:06.570
+Again, while we here.
+
+03:06.630 --> 03:08.790
+Yes, I know a lot of things, but it's OK.
+
+03:08.820 --> 03:09.900
+We're used to this now.
+
+03:10.590 --> 03:12.240
+We're going to go to our manifest here.
+
+03:12.250 --> 03:16.980
+So I'm going to add the permissions here because this is one of these things that we always forget.
+
+03:17.400 --> 03:18.210
+This is Will.
+
+03:18.300 --> 03:23.340
+This will allow us to be able to use internet in our application, which we need.
+
+03:23.550 --> 03:23.970
+Of course.
+
+03:24.450 --> 03:29.070
+So just add that one there and I wish would be good.
+
+03:31.020 --> 03:31.330
+All right.
+
+03:31.350 --> 03:32.670
+Let's get rid of all of those.
+
+03:33.420 --> 03:38.880
+And at this point, we should be ready to get started and if there's anything else we need to add,
+
+03:38.880 --> 03:42.260
+of course we're going to be adding those as we go through the course.
+
+03:42.330 --> 03:46.320
+So but at least make sure you have these bases done right.
+
+03:46.620 --> 03:51.930
+But at least make sure that we have the setup done, especially the Firebase set up done, because that
+
+03:51.930 --> 03:54.450
+is crucial for our application.
+
+03:54.570 --> 03:57.090
+So, all right, I'll see you next.

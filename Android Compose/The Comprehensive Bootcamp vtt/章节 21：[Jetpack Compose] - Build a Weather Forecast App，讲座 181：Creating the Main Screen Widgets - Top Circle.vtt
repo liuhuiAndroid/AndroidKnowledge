@@ -1,0 +1,640 @@
+WEBVTT
+
+00:01.150 --> 00:05.940
+All right, so let's go ahead and get started and put together this main screen here.
+
+00:05.970 --> 00:09.540
+There's a lot of things, but are we going to start slow as we always do?
+
+00:09.930 --> 00:11.130
+Let's start with the top.
+
+00:11.400 --> 00:12.690
+I think that's always helpful.
+
+00:13.290 --> 00:13.520
+All right.
+
+00:13.530 --> 00:17.070
+So we are going to get rid of our weather app bar.
+
+00:18.180 --> 00:19.700
+Let's also get rid of that.
+
+00:19.710 --> 00:21.150
+Let's focus on main screen.
+
+00:22.890 --> 00:24.690
+So back to our main content here.
+
+00:24.690 --> 00:26.910
+Instead of just having that, we're going to get rid of that.
+
+00:27.030 --> 00:32.520
+That was just for us to do some testing to see if indeed we're getting data, which we are.
+
+00:32.550 --> 00:33.510
+So let's move on.
+
+00:34.470 --> 00:34.770
+All right.
+
+00:34.770 --> 00:40.530
+So I'm going to create a column here first, because everything, as you see here, it's going to be
+
+00:40.920 --> 00:42.200
+top to bottom, right?
+
+00:42.210 --> 00:45.810
+All of the data, all of the widgets, for the most part, anyway.
+
+00:47.070 --> 00:50.360
+And before we move forward here, it's for a column.
+
+00:50.370 --> 00:59.460
+I'm going to put a modifier modifier and I'm going to say padding for this modifier for dpi.
+
+01:00.420 --> 01:03.870
+And when they fill max with.
+
+01:06.270 --> 01:13.470
+I feel the entire width, and then I'm going to make sure that a vertical arrangement is going to be
+
+01:13.470 --> 01:17.300
+center, I snatch and horizontal alignment.
+
+01:17.310 --> 01:20.530
+I want to be centered horizontally.
+
+01:21.990 --> 01:23.160
+That will take care of everything.
+
+01:23.160 --> 01:25.830
+We need to make sure that everything is nicely laid out.
+
+01:27.690 --> 01:27.930
+All right.
+
+01:27.930 --> 01:29.130
+So inside now.
+
+01:31.200 --> 01:39.030
+I'm going to put a text to this tax here will have this top part here, which says Monday, November,
+
+01:39.240 --> 01:41.750
+so the date essentially, all right.
+
+01:41.760 --> 01:47.100
+So for now, they text and give some sort of say November.
+
+01:50.070 --> 01:52.530
+29TH, something like this.
+
+01:53.800 --> 01:53.990
+OK.
+
+01:54.580 --> 01:56.950
+And let's go and execute a style.
+
+02:02.360 --> 02:06.620
+Topography, you know, going to make it a caption, so, you know, not too large.
+
+02:07.130 --> 02:08.000
+Let's give a color.
+
+02:12.290 --> 02:15.800
+They colors and on the secondary as such.
+
+02:16.200 --> 02:18.320
+Right, and let's give the font weight.
+
+02:18.920 --> 02:25.430
+And I want to say my bold so us time, say my bold like this and let's give it a modifier.
+
+02:26.030 --> 02:32.360
+I say modifiers such and I want to padding about six dpi all around.
+
+02:33.310 --> 02:33.410
+All right.
+
+02:34.310 --> 02:34.730
+Very good.
+
+02:36.230 --> 02:40.190
+Now at the bottom there, I'm going to add this, create this structure.
+
+02:40.700 --> 02:46.760
+So if you see this structure is a circle and inside we have all of these other structures, other widgets
+
+02:47.090 --> 02:50.170
+so we can use different kinds of composable.
+
+02:50.180 --> 02:57.210
+But the one that I always like to use is surface because it's a more malleable, easy to customize canvas,
+
+02:57.480 --> 02:58.160
+if you will.
+
+02:58.260 --> 02:59.540
+OK, so once they surface.
+
+03:02.680 --> 03:04.300
+And we're past modifier.
+
+03:07.040 --> 03:09.290
+Give you a patting of about four deep,
+
+03:12.830 --> 03:18.760
+and I'm going to give a size in overall size of about 200 deep.
+
+03:18.830 --> 03:23.000
+It's a size 200 such.
+
+03:25.280 --> 03:26.810
+And for that?
+
+03:26.840 --> 03:27.710
+Let's see.
+
+03:28.820 --> 03:30.650
+Oops, I'm making a mess here.
+
+03:31.400 --> 03:38.000
+Let's go like that, and I'm going to say, actually, I'm just going to put it, come on and give a
+
+03:38.000 --> 03:41.360
+shape because I want this to be circular as you see it.
+
+03:41.360 --> 03:43.010
+Like that so we can pass a shape.
+
+03:44.120 --> 03:44.900
+Let me circle.
+
+03:48.830 --> 03:50.510
+Shapely, not very good.
+
+03:51.860 --> 03:55.250
+And it looks like we need to import size somehow.
+
+03:56.150 --> 04:02.600
+And inside you will see that we will need some sort of a column because we have all of these other widgets
+
+04:02.750 --> 04:03.920
+lined up vertically.
+
+04:04.340 --> 04:04.640
+OK.
+
+04:05.420 --> 04:08.420
+So when you put your column?
+
+04:15.130 --> 04:23.200
+And I want this to vertically be aligned arrange should say center and.
+
+04:28.250 --> 04:33.780
+Horizontally, I want to line this center horizontal horizontally.
+
+04:34.160 --> 04:34.940
+I just see.
+
+04:36.380 --> 04:39.170
+And then I'm going to add an image here, which we'll get into later.
+
+04:40.010 --> 04:46.670
+But before let's go ahead and add a text, so I'm going to add a couple of texts, actually.
+
+04:48.530 --> 04:53.660
+So again, we're trying to emulate this or this text in that second one.
+
+04:54.470 --> 05:00.740
+So the first one, I'm just going to put something like for like this.
+
+05:02.400 --> 05:04.200
+And let's give it a style
+
+05:09.330 --> 05:10.060
+typography.
+
+05:10.080 --> 05:20.850
+It's going to be a little bit larger, so H-4 and give a font weight of extra bold like that.
+
+05:23.300 --> 05:23.530
+OK.
+
+05:24.450 --> 05:25.590
+And this one.
+
+05:29.200 --> 05:35.200
+It's going to be a description image as a snow for now, we're going to add the actual text later say
+
+05:35.200 --> 05:40.820
+font style, say font italic.
+
+05:40.870 --> 05:41.590
+That's what I want.
+
+05:45.060 --> 05:49.110
+All right, let's go ahead and give it a rain and let's go ahead and give it a quick run.
+
+06:00.620 --> 06:01.430
+OK, there we go.
+
+06:01.460 --> 06:09.010
+We have at the top there's November 29th and 56 snow and so forth, so it looks kind of like this.
+
+06:09.020 --> 06:12.680
+We're missing a few things, of course, but we're getting there now.
+
+06:12.890 --> 06:13.820
+We need to.
+
+06:13.850 --> 06:18.020
+Obviously, there is that circle there, but we have don't have that background.
+
+06:18.020 --> 06:22.040
+So we need to add the background color holidays so we can see it.
+
+06:23.970 --> 06:25.410
+All right, so after our shape.
+
+06:27.500 --> 06:36.410
+I'm going to say color, and in this case, I'm going to use constructing actual color with hacks like
+
+06:36.410 --> 06:46.160
+this, and I'm going to say zero x f f f f c for zero zero.
+
+06:46.190 --> 06:49.280
+Now I know these colors, of course, because I've created them before.
+
+06:49.580 --> 06:56.030
+But what one thing I do is whenever we want to add color and you don't know the Colorado was trying
+
+06:56.030 --> 06:57.200
+to test things out.
+
+06:57.560 --> 07:03.950
+You can just put any gibberish or not gibberish, but a an actual hex color.
+
+07:04.160 --> 07:07.550
+And then you can see the got it here, you can click and this tool.
+
+07:08.670 --> 07:12.870
+Opens up here, or you can actually start choosing around the color that you want.
+
+07:12.930 --> 07:16.590
+So it's really handy, especially when you're trying to figure out what colors you want.
+
+07:17.040 --> 07:17.370
+All right.
+
+07:17.670 --> 07:19.020
+So this is the one we're going to use.
+
+07:19.320 --> 07:23.700
+And let's go ahead and run and see if indeed we're going to see.
+
+07:23.940 --> 07:24.780
+What are we looking for?
+
+07:28.610 --> 07:29.390
+OK, there we go.
+
+07:29.750 --> 07:32.450
+We have our circle looks really nice, just like that.
+
+07:33.290 --> 07:33.830
+All right.
+
+07:34.250 --> 07:34.670
+Very good.
+
+07:34.940 --> 07:37.810
+So the next thing we want to do, of course, is to get the image.
+
+07:37.820 --> 07:42.830
+So something like this now, it's not going to be a general image, it's going to be an image that we're
+
+07:42.830 --> 07:46.940
+going to be getting indeed from our API.
+
+07:47.000 --> 07:48.410
+Now where is that image?
+
+07:48.410 --> 07:50.540
+Because you look at here, you don't see an image.
+
+07:50.930 --> 07:53.210
+However, you see certain clouds.
+
+07:53.660 --> 07:56.900
+If you go to the weather array here, there's an object.
+
+07:56.900 --> 08:01.850
+This object has the main in description or description of the weather that day.
+
+08:02.210 --> 08:05.600
+And there there is this icon and is a code.
+
+08:06.230 --> 08:13.850
+Now we can use that code to create or to retrieve an image, and that is actually somewhere else.
+
+08:14.390 --> 08:18.530
+So you can use this code and paste into a URL, right?
+
+08:18.890 --> 08:20.330
+And then we're going to get an image.
+
+08:20.360 --> 08:21.170
+Now, where is that?
+
+08:21.200 --> 08:22.010
+Well, let's go.
+
+08:22.490 --> 08:32.150
+If you go to this link, open weather map there or image and and let's say 10 D, for instance.
+
+08:34.720 --> 08:37.090
+That P and G hit enter.
+
+08:39.160 --> 08:42.880
+And you can see we get an icon image, it's very small.
+
+08:43.210 --> 08:45.790
+It's hard to see, but it's there.
+
+08:46.120 --> 08:47.800
+So this is what we're going to be using, right?
+
+08:48.070 --> 08:55.900
+So the idea is we are going to create another composable with this, of course, with this URL and we're
+
+08:55.900 --> 08:57.880
+going to just pass these codes.
+
+08:58.090 --> 09:03.280
+We're going to append these codes 10d and so forth to pass that along.
+
+09:03.820 --> 09:04.120
+Right.
+
+09:04.210 --> 09:06.910
+All these codes, of course, we're going to get from our API.
+
+09:07.390 --> 09:10.270
+We're going to pass that along and get that image.
+
+09:11.020 --> 09:19.000
+So for image here, I'm just going to invoke a different composable we haven't created called this whether
+
+09:20.410 --> 09:28.360
+state image like this and going to patch, we are going to pass an image your al, which we're going
+
+09:28.360 --> 09:31.030
+to get from image.
+
+09:32.650 --> 09:36.260
+URL, let's go ahead and create this imagery out at the top here.
+
+09:45.130 --> 09:49.080
+This and we understand we need to have panned a few things here.
+
+09:49.110 --> 09:52.150
+The first thing we're going to hand is going to be.
+
+09:53.290 --> 09:59.740
+The actual image, but then I'm going to say that the energy, so here, I'm going to hand that code.
+
+10:00.340 --> 10:02.740
+Where do we get that code for our image?
+
+10:02.920 --> 10:08.080
+We can see the code for images inside of a weather and inside of this object.
+
+10:08.170 --> 10:13.510
+As I said before, and we're going to go to Icon, so we need to get that code so that again, we can
+
+10:13.510 --> 10:20.200
+append that inside there and that eight and then that pkg to get that correct image.
+
+10:21.650 --> 10:25.220
+All right, so well, how do we get that?
+
+10:25.250 --> 10:26.810
+Well, we have our data here.
+
+10:26.840 --> 10:33.860
+It's a weather object, which is convenient when, say, data and let's go ahead to.
+
+10:35.140 --> 10:41.740
+I want to list in what I'm going to do because is a list which means contains indices, right?
+
+10:41.770 --> 10:47.560
+It's a list containing objects of whether in this case forecast whether I'm going to just go ahead and
+
+10:47.560 --> 10:52.780
+focus on getting the first item, the first list or index.
+
+10:52.780 --> 10:58.540
+That is so in this case, I'm going to go ahead and get this first one there because this is going to
+
+10:58.540 --> 10:59.210
+be today.
+
+10:59.590 --> 10:59.920
+Right?
+
+11:00.640 --> 11:04.120
+And I'm going to peruse through it weather and get the icon.
+
+11:05.610 --> 11:06.000
+All right.
+
+11:06.840 --> 11:14.970
+OK, so I get to the first object for today, data or weather, and then I'm going to go and get weather
+
+11:15.210 --> 11:19.050
+and it's indeed a list or rain, but I also get the first.
+
+11:19.080 --> 11:26.370
+It's also another list or race, or I'm going to get the first index item there, which is going to
+
+11:26.370 --> 11:27.370
+be this object here.
+
+11:27.370 --> 11:28.950
+There's only one, right?
+
+11:29.250 --> 11:30.540
+And then I'm going to get the icon.
+
+11:31.860 --> 11:32.160
+All right.
+
+11:32.160 --> 11:37.020
+So right zero there, and then I'm going to go ahead and see icon like that.
+
+11:38.160 --> 11:41.580
+And I'm going to paint the pudgy looks like it isn't like God.
+
+11:41.730 --> 11:42.280
+It's OK.
+
+11:42.300 --> 11:43.230
+Remove unnecessary.
+
+11:43.290 --> 11:43.650
+Very good.
+
+11:44.160 --> 11:44.570
+So there we go.
+
+11:44.580 --> 11:52.050
+So we have the image URL, which will be called inside of her image, whether state image, which we
+
+11:52.050 --> 11:52.800
+haven't created.
+
+11:53.220 --> 11:54.570
+OK, but I'm going to create that.
+
+11:55.770 --> 12:01.080
+So this composable, of course, takes in that string URL to show the image.
+
+12:01.380 --> 12:07.260
+The reason why we are breaking things down is because we may want to use this, whether state image
+
+12:07.740 --> 12:09.390
+again and somewhere else.
+
+12:09.420 --> 12:13.320
+So putting it this way, it's way better than hard coding everything.
+
+12:13.830 --> 12:16.530
+So in this case, I'm going to just use image like this now.
+
+12:16.680 --> 12:17.490
+We have to be careful.
+
+12:17.730 --> 12:24.600
+We're going to use the image for coil because remember, it's an image coming from a URL, which means
+
+12:24.600 --> 12:25.500
+coming from an internet.
+
+12:25.830 --> 12:33.150
+So it's much easier using a coil library dependency, which deals with all of other things that we don't
+
+12:33.150 --> 12:36.330
+want to deal with when it comes to getting images from the internet.
+
+12:36.660 --> 12:42.280
+Image painter like that in the here, I'm going to say, remember image painter?
+
+12:42.330 --> 12:43.170
+This is important.
+
+12:43.680 --> 12:47.400
+And that's why we passed the request, which is going to be our image.
+
+12:47.400 --> 12:53.410
+You l d URL in this case or description icon image.
+
+12:55.020 --> 12:57.000
+It looks like it doesn't like this.
+
+12:57.240 --> 13:00.980
+That's just not at the request, just past the imagery like that.
+
+13:00.990 --> 13:01.290
+OK?
+
+13:01.320 --> 13:05.940
+It's much better because that was a an argument that it wasn't be recognized.
+
+13:05.940 --> 13:07.860
+So just remove that just past imagery.
+
+13:08.940 --> 13:15.590
+OK, and then I'm going to pass a modifier here or quick to modify the sizes.
+
+13:15.600 --> 13:17.430
+So modifier size.
+
+13:17.670 --> 13:22.310
+I'm going to make this about ADP, OK?
+
+13:23.310 --> 13:30.840
+So this whether state image now has been called there, we passed the image URL and of course, coil.
+
+13:30.900 --> 13:35.640
+You now know this quarrel because if you hover over, you can see you can do it again.
+
+13:37.440 --> 13:40.050
+You can see it says from Io Coil.
+
+13:40.530 --> 13:46.620
+Katie, this is very important because it deals with everything in the background to get an image to
+
+13:46.620 --> 13:46.920
+show.
+
+13:48.210 --> 13:49.410
+All right, let's see if this works.
+
+13:49.560 --> 13:50.370
+Let's go ahead and run.
+
+13:52.080 --> 13:58.540
+Well, doesn't look like the image is showing maybe there's a space in here, perhaps.
+
+13:58.560 --> 13:59.340
+Let's see.
+
+14:00.420 --> 14:00.870
+There we go.
+
+14:00.990 --> 14:02.670
+So that was a little space there.
+
+14:03.000 --> 14:06.830
+Don't add spaces because as you know, that creates issues.
+
+14:06.840 --> 14:08.340
+And there we go, there is that image.
+
+14:08.820 --> 14:11.340
+All right, this icon very well.
+
+14:11.490 --> 14:18.210
+So again, like I said, we can always use the weather state anywhere we want, and then we passed the
+
+14:18.210 --> 14:19.770
+URL and life is good.
+
+14:20.640 --> 14:27.330
+And as you see, we have that image and that is, of course, dynamic depending on the state or in this
+
+14:27.330 --> 14:30.790
+case, depending on the city.
+
+14:31.020 --> 14:31.320
+Right.
+
+14:31.650 --> 14:37.590
+It should change if I come up here and see Moscow, for instance, let's go ahead and run.
+
+14:38.820 --> 14:43.800
+Hopefully, we should see something different unless in Moscow, the conditions are the same as Portland.
+
+14:43.860 --> 14:45.780
+That could happen, but I doubt it.
+
+14:49.750 --> 14:52.870
+And while I can see in my school is indeed snowing.
+
+14:54.800 --> 14:55.220
+All right.
+
+14:55.310 --> 14:55.760
+Very good.

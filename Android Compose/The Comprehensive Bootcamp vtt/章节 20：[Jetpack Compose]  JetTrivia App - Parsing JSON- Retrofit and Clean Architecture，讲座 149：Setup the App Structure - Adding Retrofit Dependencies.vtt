@@ -1,0 +1,490 @@
+WEBVTT
+
+00:00.820 --> 00:07.570
+So before we do anything with our Jason here, let's structure our app project here the way that we
+
+00:07.570 --> 00:09.100
+should structure it, right?
+
+00:09.710 --> 00:11.500
+So inside of the first.
+
+00:12.190 --> 00:14.560
+So inside of our package here where my click.
+
+00:15.660 --> 00:22.760
+Let's create a few packages and start with you till package, so all the utility classes will go there,
+
+00:22.790 --> 00:23.080
+OK?
+
+00:23.400 --> 00:23.850
+Add
+
+00:27.000 --> 00:30.030
+a component package.
+
+00:33.670 --> 00:34.210
+Dana.
+
+00:39.310 --> 00:39.940
+Model.
+
+00:46.700 --> 00:49.880
+And because we are going to need all of these a repository.
+
+00:55.260 --> 01:00.030
+And I'm going to add screens, even though we're going to have just one screen, but it's always a good
+
+01:00.030 --> 01:07.470
+idea to have such structure in section, so I'm going to also add network because we're going to have
+
+01:07.650 --> 01:09.780
+some classes dedicated to network.
+
+01:12.500 --> 01:15.500
+And because we are going to have.
+
+01:15.860 --> 01:21.680
+And also because of dependency injection, I'm going to say to you where we can put our model and so
+
+01:21.680 --> 01:21.950
+forth.
+
+01:22.430 --> 01:26.870
+So this should be good for now and if we need to add anything else, we can come and create here.
+
+01:27.890 --> 01:37.430
+Now we need it to create a model class that will model after a single question or single trivia question,
+
+01:37.430 --> 01:37.880
+if you will.
+
+01:38.070 --> 01:46.190
+OK, so we understand that a trivia question would have, of course, the question category answer and
+
+01:46.190 --> 01:52.040
+of course, a list containing all of the possible choices, all of the possible answers.
+
+01:52.550 --> 01:56.330
+Now we could just create again a class and mimic all of this.
+
+01:56.720 --> 02:00.490
+But the best way to do so is to use a tool.
+
+02:00.500 --> 02:06.620
+So if you go to Android Studio, if you click, let's say, instead of a model, that's where we're
+
+02:06.620 --> 02:07.070
+going to do.
+
+02:08.620 --> 02:13.180
+What it can do here, I can say right click, we're going to say new, you should get this hotline data
+
+02:13.180 --> 02:15.310
+class file from Jason.
+
+02:49.230 --> 02:49.490
+OK.
+
+02:49.560 --> 02:58.500
+It's really handy tool that allows us to actually get or extract the data model or models in this case,
+
+02:59.100 --> 03:01.980
+that represents our data data capacity.
+
+03:01.980 --> 03:02.730
+So if you click here.
+
+03:03.150 --> 03:04.560
+There are two options, right?
+
+03:04.580 --> 03:10.140
+You could go ahead and copy the entire payload at such and then added here.
+
+03:10.650 --> 03:16.170
+But there's also another option if you don't want to copy this entire payload because it could be too
+
+03:16.170 --> 03:16.400
+much.
+
+03:16.410 --> 03:18.120
+As you see, this is a really long file.
+
+03:19.290 --> 03:23.730
+And so we can actually get the URL, so copy that URL right click.
+
+03:24.210 --> 03:30.900
+And when I say retrieve from content from HDP or else or click that and here's where we paste that URL,
+
+03:31.200 --> 03:38.370
+OK, where we have on a JSON, say OK, it would take a little bit, so it pulls in the entire payload.
+
+03:38.370 --> 03:41.670
+As you see, it has a lot of information.
+
+03:41.850 --> 03:45.650
+OK, now we have to add a class name, right?
+
+03:45.660 --> 03:50.740
+So that will represent this one entity of the question and so forth.
+
+03:51.300 --> 03:53.520
+So I'm going to go ahead and say, question like this?
+
+03:53.820 --> 03:55.410
+OK, let's go ahead and say generate.
+
+03:56.070 --> 04:02.550
+And the beauty of all of this, I would say, add also add in the beauty of all of this.
+
+04:02.550 --> 04:07.710
+You may not need to do that, by the way, that is from get because I have a data repository attached
+
+04:07.710 --> 04:08.310
+to this project.
+
+04:09.390 --> 04:14.610
+OK, so the beauty of all of this for a few moments is that if you look at all model there, you can
+
+04:14.610 --> 04:17.130
+see we have two classes.
+
+04:17.460 --> 04:18.240
+If you click on this.
+
+04:18.660 --> 04:24.060
+The first one is this class question and expect an array list of question item.
+
+04:24.480 --> 04:26.400
+And then we have question item itself.
+
+04:26.400 --> 04:27.870
+So this is a data class, so.
+
+04:28.170 --> 04:34.020
+So the tool that we use went ahead and looked at the entire tree of these JSON here and separated these
+
+04:34.020 --> 04:34.710
+two classes.
+
+04:34.710 --> 04:37.680
+So it created this question item data classes here.
+
+04:37.950 --> 04:42.510
+And you can see it follows exactly this payload here, right?
+
+04:42.900 --> 04:47.760
+So for each item, for each, let's say question per se, right?
+
+04:47.790 --> 04:52.830
+If you see here this object, we have a question category answer and choices as a list.
+
+04:52.830 --> 04:56.820
+So that answer, although the order is different, but that doesn't matter.
+
+04:57.690 --> 05:01.950
+So we have question, we have choices, category and list and look at choices.
+
+05:01.950 --> 05:07.020
+Here is a list of string, which is exactly how it's set up for each one of these objects.
+
+05:07.830 --> 05:10.080
+So this is good and we didn't have to do anything.
+
+05:10.090 --> 05:17.340
+All we had to do was just to pass the URL to our JSON payload, and then the tool went ahead and created
+
+05:17.490 --> 05:21.980
+and knew also how it created those two items was to model classes.
+
+05:21.990 --> 05:28.230
+The question here, which is an array list of question item and question item the the item itself,
+
+05:28.620 --> 05:33.120
+which contains it's a data class which has all of these properties in the constructor.
+
+05:34.430 --> 05:34.830
+There we go.
+
+05:34.850 --> 05:36.380
+So we don't have to do anything.
+
+05:36.560 --> 05:41.570
+Now we have our model classes, which we're going to use to then extrapolate the data we want and to
+
+05:41.570 --> 05:47.000
+show, you know what is in the face at a later time, of course, that it is to use these model classes
+
+05:47.150 --> 05:53.510
+and retrieve the information from our API, which is this world design, which is this JSON payload
+
+05:53.510 --> 06:02.390
+here now for us to be able to then pass or first connect to this remote URL and get this information
+
+06:02.390 --> 06:03.260
+here, right?
+
+06:03.500 --> 06:08.150
+We need it to, of course, have the infrastructure ready for that to happen, which means we need to
+
+06:08.150 --> 06:12.430
+be able to connect to the URL and in the background.
+
+06:12.440 --> 06:17.630
+Get to this information, all of this and pass it all and use that data.
+
+06:17.870 --> 06:22.850
+There are a lot of ways to do what I just mentioned, which is to parse some data from somewhere in
+
+06:22.850 --> 06:29.900
+this case, a remote server of section and get that information and make it so that it actually makes
+
+06:29.900 --> 06:31.730
+sense in our application.
+
+06:31.850 --> 06:32.180
+Right?
+
+06:32.750 --> 06:39.500
+So to convert all of these into objects that we can call and say, question, give me the answers or
+
+06:39.500 --> 06:44.390
+the choices or the the questions and so forth, like how do we do that now?
+
+06:45.230 --> 06:50.690
+As I said, there are different ways to do this and different libraries that allows us to do this networking.
+
+06:50.990 --> 06:54.500
+We're going to use one that is very popular, called retrofit.
+
+06:54.890 --> 07:01.310
+And I really encourage you to actually whenever you need such transaction, which is to go and fetch
+
+07:01.310 --> 07:06.500
+data from the internet API and so forth and get that data so we can use our applications.
+
+07:06.950 --> 07:12.140
+I really recommend you to use Retrofit, which is an HDP client for Android in Java.
+
+07:12.210 --> 07:18.650
+So now, as with anything in development, certain things may take a little bit to get used to because
+
+07:18.650 --> 07:24.650
+of setting up, but also the way you need to set things up or the classes that you need to use from
+
+07:24.650 --> 07:26.360
+this library to get things working.
+
+07:26.690 --> 07:32.090
+But the great thing is that retrofit is really simple to use in a sense, once you get the hang of it,
+
+07:32.570 --> 07:39.720
+because Ada's not to complicate things, it is actually to uncomplicate the process of doing HDP calls
+
+07:39.740 --> 07:41.300
+as the network calls.
+
+07:42.020 --> 07:47.420
+So you may imagine trying to get information using HDP requests and so forth in Android.
+
+07:47.750 --> 07:49.610
+If we were to do ourselves.
+
+07:49.850 --> 07:50.900
+It's very possible.
+
+07:51.050 --> 07:52.280
+It's been done many times.
+
+07:52.700 --> 07:59.330
+I've done it, but it takes a lot of effort because you may have to deal with some lower level classes
+
+07:59.330 --> 08:04.610
+and understand how your requests are or cold and how to partition information into work.
+
+08:04.760 --> 08:06.920
+So there's a lot of work now with retrofit.
+
+08:07.310 --> 08:14.370
+Most of that work is actually abstracted out, so we don't have to worry about the underlining processes.
+
+08:14.870 --> 08:15.110
+All right.
+
+08:15.110 --> 08:21.110
+So as you see here, this is an example, says our retrofit turns your API into a Java interface, which
+
+08:21.110 --> 08:22.780
+is really important, as you see here.
+
+08:22.790 --> 08:29.780
+So for instance, as as an example, you have a GitHub service here and we want to go and get all the
+
+08:29.780 --> 08:32.630
+repos for a certain user.
+
+08:32.930 --> 08:33.800
+This is how you do it.
+
+08:33.830 --> 08:37.910
+So you see, there is this annotation at Get New Pass here.
+
+08:38.030 --> 08:43.850
+The path right to where you want to get this information, it's repos and then you have a function here.
+
+08:43.850 --> 08:49.520
+Call this repo and it's a call type as you see and expect a list of repos and so forth.
+
+08:49.520 --> 08:51.460
+So this is just an example.
+
+08:51.500 --> 08:58.010
+Might and you pass the user this case, the user that you want to get the repos for and shows here.
+
+08:58.010 --> 09:03.260
+How do you think, shade or generate any implementation of our GitHub class there?
+
+09:03.740 --> 09:04.760
+So it's fairly so.
+
+09:04.760 --> 09:08.060
+It's fairly easy once you understand how it works.
+
+09:08.070 --> 09:15.770
+And so in this case, I'm creating a retrofit object and I'm actually invoking the builder their method,
+
+09:15.770 --> 09:19.730
+and I'm past the base URL, the space URL and I built.
+
+09:20.300 --> 09:26.690
+So I use that object retrofit object and pass it along the GitHub user along with our service.
+
+09:26.930 --> 09:28.370
+And then I'm done.
+
+09:28.380 --> 09:29.570
+So now I have this service.
+
+09:29.570 --> 09:36.200
+I can use anywhere to do things like service that list repos and get that information.
+
+09:36.410 --> 09:40.250
+OK, so as you know, to use it, then we have to configure our project.
+
+09:40.700 --> 09:43.820
+So let's go to a retrofit configuration here.
+
+09:44.510 --> 09:50.510
+Now there are a lot of things that are happening in the back end as retrofit goes and gets the data
+
+09:50.510 --> 09:52.190
+right passes and so forth.
+
+09:52.610 --> 09:55.160
+So you will see that it will need a few other.
+
+09:55.520 --> 10:02.990
+So that way, we can were able to get this information right into an actual object that is known to
+
+10:02.990 --> 10:06.140
+us in our code as something like question or question item.
+
+10:06.740 --> 10:10.460
+So that's why we you see here we need to do a lot of converting.
+
+10:10.820 --> 10:12.050
+We'll be able to go through that.
+
+10:12.050 --> 10:16.250
+But one of the libraries we're going to be using for civilization is JSON.
+
+10:17.030 --> 10:23.780
+I'm just giving you some of the things that you will need to think about or we will cover to get retrofit
+
+10:23.780 --> 10:24.800
+work for us.
+
+10:25.490 --> 10:25.730
+All right.
+
+10:25.730 --> 10:32.300
+So if you scroll down here, you can see here there are two ways to set up retrofit in our project.
+
+10:32.690 --> 10:33.800
+There is the maven.
+
+10:33.990 --> 10:38.200
+You're not going to be using and there's a greater which is something that we would use, right?
+
+10:38.220 --> 10:39.720
+You can see here, we've seen this before.
+
+10:40.350 --> 10:45.360
+So what do we need to do really is to copy this line there and go to our project.
+
+10:45.840 --> 10:47.730
+Let's go to great scripts.
+
+10:47.950 --> 10:49.080
+Let's go to this one here.
+
+10:49.200 --> 10:54.450
+The app and what I usually like to do is you've seen me now.
+
+10:54.450 --> 11:01.890
+I'd just like to say retro fit like this and paste it all in, and we need to pass the actual retrofit
+
+11:02.070 --> 11:04.950
+version of the latest version than what I usually do.
+
+11:04.950 --> 11:08.730
+I go to view GitHub, where I click open the new tab.
+
+11:09.780 --> 11:12.550
+So this is where this leaves this library.
+
+11:13.140 --> 11:18.180
+And if you scroll down, you can see here, says Square Retrofit to retrofit two point nine zero.
+
+11:18.180 --> 11:23.070
+So that is the version that is current at this point and should work.
+
+11:23.070 --> 11:27.180
+So copy that and go back and add it there.
+
+11:27.210 --> 11:29.520
+I want to go ahead in sync.
+
+11:30.090 --> 11:33.000
+So we need something else right for it to work.
+
+11:33.010 --> 11:36.630
+We need what we call the JSON converter.
+
+11:36.900 --> 11:41.070
+So going back to the retrofit documentation here, you can scroll down.
+
+11:43.080 --> 11:44.910
+Or in this case, let's see.
+
+11:46.490 --> 11:46.830
+Right.
+
+11:46.850 --> 11:53.930
+So we have converters here, and there are few options to get the sterilization library, so we're going
+
+11:53.930 --> 11:57.650
+to get this design, they're going to copy this, go back to our code.
+
+11:58.240 --> 12:00.080
+I'm going to say implementation.
+
+12:04.350 --> 12:06.000
+And then, of course, I need to pass.
+
+12:09.910 --> 12:14.530
+The version, too, that I find I zero in is go ahead and sink.
+
+12:15.400 --> 12:21.400
+OK, so it seems like all is good and we should be good to go with retrofit.

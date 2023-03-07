@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.550 --> 00:07.330
+We are ready now to dive in and start putting together the room structure so our application here can
+
+00:07.330 --> 00:15.400
+save things into a database local database first, and let's go to our model, our note.
+
+00:15.860 --> 00:19.660
+Now the way things are right now, you see this is just a data class.
+
+00:19.750 --> 00:22.030
+We pass a few parameters and life is good.
+
+00:22.330 --> 00:30.250
+However, how do we then transform this into an actual entity, meaning it into an actual table database
+
+00:30.250 --> 00:30.580
+table?
+
+00:31.540 --> 00:37.300
+It's very simple to do so thanks to room database, because remember room database abstracts out all
+
+00:37.300 --> 00:41.860
+of the things we had to do prior to room to create a table and so forth.
+
+00:41.890 --> 00:49.450
+So now we can use a class like this and transform it into an actual table or rather to make it so that
+
+00:50.440 --> 00:57.640
+the compiler, the room compiler, will create a table with this name or a name that we want to pass.
+
+00:57.940 --> 00:58.240
+All right.
+
+00:58.270 --> 00:58.930
+How do we do that?
+
+00:58.960 --> 00:59.890
+Yes, you guessed it.
+
+01:00.190 --> 01:06.160
+We pass in and at this is an annotation and say Entity like this?
+
+01:06.310 --> 01:06.750
+Aha.
+
+01:06.790 --> 01:07.960
+You can see there's A..
+
+01:07.990 --> 01:09.400
+From Android X Room.
+
+01:09.430 --> 01:10.570
+That's exactly what we want.
+
+01:10.990 --> 01:17.050
+And the great thing here is that we can actually pass the table name, start typing table name like
+
+01:17.050 --> 01:17.260
+this.
+
+01:17.260 --> 01:22.810
+We can pass a table name that we want now if we don't pass anything right.
+
+01:22.840 --> 01:28.420
+What would happen is, is that the processor they were on processor will take this note here as a table
+
+01:28.420 --> 01:28.660
+name.
+
+01:28.840 --> 01:32.530
+So in this case, I'm just going to change it to something else and the see notes.
+
+01:35.390 --> 01:37.970
+TBE Owl like this to say this is a notes table.
+
+01:38.990 --> 01:39.320
+All right.
+
+01:40.880 --> 01:41.270
+Very good.
+
+01:42.740 --> 01:49.490
+Now, the other thing I want to do is I want to make sure that we annotate each one of these fields
+
+01:49.490 --> 01:52.550
+so that there are actually columns of our table.
+
+01:53.210 --> 01:59.150
+What we want to do, we want to make each one of these fields to be a row by attaching certain annotations.
+
+01:59.450 --> 02:05.720
+So the first annotation, I'm going to pass here when I say primary key to say that this ID here, when
+
+02:05.810 --> 02:12.950
+we start putting this into table or this becomes a table, whenever we create an item, we create a
+
+02:12.950 --> 02:15.200
+table notes table and we add in the item.
+
+02:15.440 --> 02:22.670
+It's going to be seen as the primary key, which is a unique key that will be used in our table to reference
+
+02:22.820 --> 02:23.090
+it.
+
+02:25.290 --> 02:30.450
+OK, so there we go, I'm going to say primary key and again, Levi's as it is, and then I'm going
+
+02:30.450 --> 02:38.280
+to put ad column to say that I want to give a name to this column different from this titled name.
+
+02:38.280 --> 02:46.830
+I could live it as it is, but I'm going to specify a different name and say note title right spaces
+
+02:46.830 --> 02:54.780
+so we can see everything and then add column info and it's going to be name.
+
+02:54.840 --> 02:55.560
+I'm going to see.
+
+02:56.580 --> 02:58.740
+Note description.
+
+03:04.840 --> 03:08.770
+That and then the last one here, I'm going to say.
+
+03:11.920 --> 03:12.610
+The same thing.
+
+03:21.870 --> 03:25.600
+For name, I'm just going to say no.
+
+03:27.130 --> 03:34.850
+And three, I'm going to change this local date type pass a date like this and this will change won't
+
+03:34.950 --> 03:42.090
+say date that from and pass an instance, for instance, that now so I'm just changing the types that
+
+03:42.090 --> 03:43.230
+would have worked also.
+
+03:43.230 --> 03:45.690
+But this is much better for what we want to do.
+
+03:46.650 --> 03:47.430
+All right, there we go.
+
+03:47.850 --> 03:49.230
+So that's what we're doing here.
+
+03:49.230 --> 03:55.200
+What we did, we created an entity was saying, this is going to be now a table and give a name notes
+
+03:55.440 --> 03:55.920
+table.
+
+03:56.280 --> 03:56.510
+OK.
+
+03:56.610 --> 03:58.800
+All of these are going to be created internally.
+
+03:59.070 --> 04:03.370
+Just to give an idea, all of these we had to manually do before on.
+
+04:04.690 --> 04:09.700
+Really hard, but now all we have to do is just pass inside of our model class note.
+
+04:10.060 --> 04:15.610
+I'm going to pass all of these annotations to say, room database whenever this is read is going to
+
+04:15.610 --> 04:23.110
+know, OK, I'm going to make a table and name it notes table and I'm going to create an ID.
+
+04:23.770 --> 04:25.240
+In this is going to be primary key.
+
+04:25.540 --> 04:28.210
+And then these are also going to be columns.
+
+04:28.220 --> 04:34.150
+So this table is going to be column called title, which is going to store titles, column name description.
+
+04:34.150 --> 04:37.840
+Actually, it's going to be note description and notes title that says, What are we doing here?
+
+04:38.710 --> 04:43.690
+And a column of note entry date which is going to hold dates.
+
+04:45.590 --> 04:50.370
+And there you have it right now as this point, you may ask, how is the database created?
+
+04:50.390 --> 04:52.250
+We haven't created the database yet.
+
+04:52.640 --> 04:55.090
+And we're going to do that in the next video.

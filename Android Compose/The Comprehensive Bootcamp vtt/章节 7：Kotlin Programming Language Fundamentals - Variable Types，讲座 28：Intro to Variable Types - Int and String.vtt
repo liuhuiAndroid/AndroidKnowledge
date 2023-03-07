@@ -1,0 +1,139 @@
+WEBVTT
+
+00:00.180 --> 00:04.260
+Now, you don't have to initialize variables as such right away.
+
+00:04.370 --> 00:08.340
+Meaning if I wanted to, we could have said something like this.
+
+00:08.400 --> 00:12.480
+Let's get rid of this, all of that and make like that notice.
+
+00:12.480 --> 00:16.590
+We haven't issued the moment to do that because now if you have it over is going to say variable name
+
+00:16.600 --> 00:20.940
+must be initialized because we cannot call on something that hasn't been initialized.
+
+00:21.220 --> 00:27.100
+OK, so that means then I can have some conditions here that it could have, but then initialize a variable
+
+00:27.100 --> 00:31.360
+that's at a later time and gives a name is equal to James, then this would work.
+
+00:31.410 --> 00:35.190
+Of course, if you have over a can say, can be joined with an assignment, that's fine.
+
+00:35.190 --> 00:39.600
+That means then I can just click here and it's going to go back to what we had before because the compiler
+
+00:39.600 --> 00:42.900
+is trying to help us to write concise code.
+
+00:43.080 --> 00:45.860
+But obviously, like I said, you can do this and it's very valid.
+
+00:45.870 --> 00:51.090
+And it's also important to remember that because we're writing programs, usually what do you do?
+
+00:51.120 --> 00:54.750
+You may have some condition or something you're doing with the data in this case, the variable.
+
+00:54.780 --> 00:59.070
+And then you want to set it up to that condition or to to whatever it is that you want.
+
+00:59.430 --> 01:00.660
+This variable to hold.
+
+01:00.750 --> 01:07.170
+So this is very valid, even though we have in this warning or tip to just declare everything in one
+
+01:07.170 --> 01:07.660
+assignment.
+
+01:07.680 --> 01:13.350
+We understand when we are creating a variable, there is two as vowel in VAR, but there's also a type
+
+01:13.350 --> 01:14.100
+of the variable.
+
+01:14.460 --> 01:20.100
+What is it that these variable is going to contain or will accept as its content, if that makes any
+
+01:20.100 --> 01:20.240
+sense?
+
+01:20.460 --> 01:24.000
+So here we are explicitly saying this is going to be a string type.
+
+01:24.030 --> 01:30.600
+The string is a lot of characters together and we always use double quotes to represent a string.
+
+01:30.780 --> 01:34.120
+But also there times, obviously, we want to represent numbers.
+
+01:34.140 --> 01:35.510
+Yes, different kind of numbers.
+
+01:35.520 --> 01:37.530
+And the one of which is an int.
+
+01:37.590 --> 01:43.080
+So I can say Val age, I can explicitly say the type, say age.
+
+01:43.170 --> 01:46.360
+Notice you say, put Colin in and then say it.
+
+01:46.710 --> 01:46.980
+OK.
+
+01:47.220 --> 01:50.240
+It's very important to look at the syntax here.
+
+01:50.250 --> 01:52.080
+We say int with cap i.
+
+01:52.230 --> 01:59.250
+So now age is indeed an integer will hold any integer that is so at some point here I can say age is
+
+01:59.250 --> 02:01.260
+equal to 21.
+
+02:01.440 --> 02:06.870
+And now I can concatenate all interpolate all of this information so I can say hello, something like
+
+02:06.870 --> 02:07.160
+this.
+
+02:07.170 --> 02:09.810
+My name is name.
+
+02:10.230 --> 02:12.780
+You see there and then I am.
+
+02:13.020 --> 02:18.000
+I am C age right to remember because it's a variable right?
+
+02:18.200 --> 02:24.240
+I you have to put the dollar sign years old, something like that.
+
+02:24.330 --> 02:25.850
+Now if I run C.
+
+02:25.890 --> 02:27.210
+Hello, my name is James.
+
+02:27.210 --> 02:29.220
+I'm 21 years old and it works.
+
+02:29.490 --> 02:31.140
+So this is indeed an integer.
+
+02:31.410 --> 02:37.640
+So we said this age is kind of an integer, so it's a whole number twenty one hundred three thousand.
+
+02:37.920 --> 02:39.210
+So that's a whole number.
+
+02:39.210 --> 02:43.410
+And that's how you would represent simpler numbers I section.

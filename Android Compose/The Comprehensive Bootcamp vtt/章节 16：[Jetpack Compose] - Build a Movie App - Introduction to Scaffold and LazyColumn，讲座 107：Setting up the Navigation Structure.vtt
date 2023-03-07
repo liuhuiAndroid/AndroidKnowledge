@@ -1,0 +1,514 @@
+WEBVTT
+
+00:00.120 --> 00:05.670
+I think it's important for us to put together this structure that it's easier to keep track of, especially
+
+00:05.670 --> 00:11.570
+as the application grows, we have more screens, we have a lot of things going on in a single application.
+
+00:11.580 --> 00:15.540
+Of course, he wouldn't need to do what I'm going to show you right now, but I think it's a good idea
+
+00:15.540 --> 00:21.090
+to get into the habit of doing this way that I'm going to show you, as opposed to just putting everything
+
+00:21.090 --> 00:21.900
+all over the place.
+
+00:23.370 --> 00:26.670
+Let's go ahead and create a new package inside of our main package.
+
+00:26.670 --> 00:28.710
+So new package.
+
+00:29.070 --> 00:30.570
+It's called this navigation.
+
+00:32.310 --> 00:34.710
+OK, there it is, and going to create another package.
+
+00:36.780 --> 00:38.720
+We can call these screens.
+
+00:39.330 --> 00:44.090
+We are going to create two files, the first one is going to be navigation.
+
+00:44.160 --> 00:45.960
+The other one is going to be screens.
+
+00:46.400 --> 00:52.380
+Get lost right click here and I'm going to add a cuddling class or file called this movie
+
+00:55.860 --> 00:56.640
+screens.
+
+00:57.330 --> 00:57.540
+All right.
+
+00:57.540 --> 00:59.790
+So what are we going to do in movie screens?
+
+01:00.000 --> 01:07.350
+Well, here we go and create an enum, so really a way of us to list out all of the possible screens.
+
+01:07.680 --> 01:13.650
+Again, there are other ways to do this, but this is the best way because we can always add more screens
+
+01:13.650 --> 01:18.090
+into this list in this anam as our application grows.
+
+01:18.450 --> 01:22.140
+So I'm going to say something like this, you know, class movie screens as such.
+
+01:22.770 --> 01:25.740
+And then here I'm going to create the Enum.
+
+01:25.740 --> 01:31.200
+So the first, you know, I'm going to be home screen and the next details.
+
+01:33.820 --> 01:39.940
+Screen a session, but inside of this, Ina, I'm going to create a companion object.
+
+01:40.990 --> 01:47.860
+OK, now instead of this companion object, I'm going to have a function called from root or root,
+
+01:47.860 --> 01:49.810
+depending how you say this.
+
+01:50.110 --> 01:55.960
+And in this case, I'm going to pass the root and it's going to be an olive oil string as such.
+
+01:56.320 --> 02:02.080
+So this function here is going to be related or inherit from movie screens like that.
+
+02:02.950 --> 02:08.530
+And then I'm going to set all of that to a one expression because I want to check a few things.
+
+02:08.860 --> 02:14.410
+The first thing I want to check, of course, I'm going to check if root, OK, substring before I see
+
+02:14.410 --> 02:24.820
+substring before like this and put forward slash like that because the roots in navigation, they work
+
+02:24.820 --> 02:28.810
+pretty much just like if you go to a web link, right?
+
+02:29.020 --> 02:35.590
+So it could be something like a double double w that Google dot com and that forward slash in the middle
+
+02:35.590 --> 02:41.000
+would go to a root such as sign in.
+
+02:41.320 --> 02:44.560
+What are we doing here trying to figure out what is this root?
+
+02:44.800 --> 02:46.570
+This is the root of what we're talking about, right?
+
+02:46.960 --> 02:50.350
+Which is after the forward slash, right?
+
+02:51.340 --> 02:59.950
+So in this case here, instead of when I'm going to say home screen that name things, then this is
+
+02:59.950 --> 03:01.150
+going to be a home screen.
+
+03:01.780 --> 03:02.770
+That name as such.
+
+03:03.100 --> 03:08.620
+And next, we're going to check details, screen that name, getting the actual, you know, value.
+
+03:08.830 --> 03:10.960
+It's going to be details, screen that name like this.
+
+03:12.430 --> 03:19.420
+And if it's no, we're just going to say, let's just go back to home screen, OK?
+
+03:20.590 --> 03:30.670
+Else we are just going to say through a legal argument exception like this and it's going to be, say,
+
+03:30.680 --> 03:31.310
+rout.
+
+03:33.880 --> 03:36.700
+We're going to pass the route that we try to access.
+
+03:37.450 --> 03:46.390
+So it's not recognize essentially in Scotland, if you want to write a function of or any member of
+
+03:46.390 --> 03:51.670
+the class that can be called without having to instantiate this class racing, then you can just use
+
+03:51.670 --> 03:52.660
+this companion object.
+
+03:52.870 --> 03:57.610
+It's almost like the static, a key word in many other languages, such as Java.
+
+03:57.790 --> 04:03.590
+So I can go straight for movies that get the movies that from around we that haven't been sanctioned.
+
+04:03.660 --> 04:06.040
+In this case, we're also going to create just one instance.
+
+04:06.370 --> 04:06.700
+All right.
+
+04:06.880 --> 04:13.760
+So that number one next year, once we've done or movie screens right in I'm class here will introduce
+
+04:13.760 --> 04:16.330
+is to create the actual navigation.
+
+04:16.540 --> 04:16.860
+All right.
+
+04:16.900 --> 04:19.780
+So let's go ahead and go say new.
+
+04:21.160 --> 04:21.730
+Kathleen?
+
+04:23.330 --> 04:30.800
+It's a file that's fine, that's fine, and here I'm going to call this movie navigation.
+
+04:32.060 --> 04:38.750
+So what are you going to be doing here is we're going to create that structure that I showed you earlier.
+
+04:39.050 --> 04:43.130
+We are actually going to start creating this structure here so we can start with the traffic controller.
+
+04:43.490 --> 04:43.790
+All right.
+
+04:43.800 --> 04:44.700
+So what I'm going to do.
+
+04:44.720 --> 04:53.030
+Let's say it's going to be a composable composable such and I'm going to call this say fine movie
+
+04:55.670 --> 04:56.590
+navigation.
+
+04:57.830 --> 04:58.070
+Right?
+
+04:58.160 --> 04:58.640
+There it is.
+
+04:59.180 --> 05:01.460
+And to create our controller now, it's very simple.
+
+05:01.610 --> 05:09.920
+Can say foul all this nav controller, and I'm going to set it to the remember nav.
+
+05:13.470 --> 05:17.370
+Controller like this now we're going to have a problem here.
+
+05:17.880 --> 05:24.180
+The reason why is because the NAF controller say NAF controller, such it's not added into our dependencies
+
+05:24.180 --> 05:27.510
+automatically, which means we actually have to go into Gradle.
+
+05:28.020 --> 05:36.030
+Go to build that Gradle, the module music app in that here we need to add that dependency doesn't come.
+
+05:37.160 --> 05:38.570
+He doesn't come for free.
+
+05:39.170 --> 05:40.670
+He doesn't come just like that.
+
+05:41.030 --> 05:42.770
+Where do we get that dependency?
+
+05:42.980 --> 05:44.510
+Well, Google is our friend.
+
+05:44.870 --> 05:51.140
+If you go to developer that Android dot com jetpack, compose navigation or just type in Google Navigation,
+
+05:51.140 --> 05:56.810
+compose navigation or call navigation component, you should get somewhere like here.
+
+05:57.320 --> 05:58.130
+Now notice here.
+
+05:58.130 --> 06:05.450
+This is part of Jetpack, which means that the navigation component is actually also working in compose,
+
+06:05.450 --> 06:11.720
+which is really important because we're using compose, so you can go start reading a little bit, the
+
+06:11.720 --> 06:13.090
+set up says here.
+
+06:13.100 --> 06:19.040
+All you need to do is to add this implementation here by the Android Navigation Compose.
+
+06:19.370 --> 06:28.220
+I noticed that the version of this navigation compose dependency here may change by the time you watch
+
+06:28.220 --> 06:28.760
+this video.
+
+06:28.820 --> 06:32.810
+So what's important is that you just come here, you will always get the current one.
+
+06:33.710 --> 06:33.980
+All right.
+
+06:34.160 --> 06:37.630
+So let's go back and I'm going to change the syntax a little bit.
+
+06:37.680 --> 06:39.650
+I'm just going to put somewhere at the bottom here.
+
+06:41.170 --> 06:46.570
+And just going to keep it all uniform, who's going to remove all of those and leave it as that?
+
+06:47.230 --> 06:47.500
+All right.
+
+06:47.500 --> 06:48.760
+So now we're going to go ahead and sink.
+
+06:49.690 --> 06:49.970
+OK.
+
+06:50.120 --> 06:50.540
+Everything is.
+
+06:50.900 --> 06:57.490
+If you come back here, you can see that now you should have access to import or at least the capability
+
+06:57.490 --> 06:59.860
+of importing the Remember controller.
+
+07:00.280 --> 07:01.600
+So I say alt or option.
+
+07:01.600 --> 07:04.990
+Enter and voila, it's now imported.
+
+07:05.680 --> 07:09.940
+So again, we just instantiate it out enough controller, which is really, really important.
+
+07:10.150 --> 07:10.490
+Why?
+
+07:10.510 --> 07:15.160
+Because remember now controller is the central API of navigation component.
+
+07:15.460 --> 07:18.280
+This is what instructs everything to happen.
+
+07:18.610 --> 07:20.650
+OK, so now we have created Snap host.
+
+07:21.040 --> 07:25.930
+Remember, you now have host, as the name implies, it will host all of the graphs.
+
+07:25.960 --> 07:31.300
+These guys here, you will be able to swap out each destination in this case, each composable when
+
+07:31.300 --> 07:32.770
+users navigate to a new screen.
+
+07:33.430 --> 07:34.750
+So how do you do that?
+
+07:35.200 --> 07:36.370
+There is a class.
+
+07:36.550 --> 07:37.930
+Let's go ahead and close this now.
+
+07:38.560 --> 07:40.450
+Well, we can say nav host.
+
+07:41.170 --> 07:41.680
+Look at that.
+
+07:41.800 --> 07:44.710
+We have all of these nav hosts and all of them.
+
+07:45.070 --> 07:49.080
+They are composable functions, which is very important because we are in compose.
+
+07:49.360 --> 07:50.170
+So just pick one.
+
+07:50.650 --> 07:52.240
+Now we have to pass enough controller.
+
+07:52.330 --> 07:53.230
+Where do we find it?
+
+07:53.260 --> 07:56.350
+Well, we just created one pass that and then we have to pass the graph.
+
+07:56.360 --> 08:01.600
+But instead of graph here, what we actually one of their paths is going to be the start destination
+
+08:01.630 --> 08:08.380
+because the graph is created once we started this nation and we passed that along with start destination
+
+08:10.690 --> 08:11.800
+in past the string.
+
+08:12.700 --> 08:16.270
+Now for we start this nation, what is it that we're going to be passing here?
+
+08:16.570 --> 08:18.790
+Well, let's put this in your line.
+
+08:20.530 --> 08:27.580
+We are going to say the following We're going to say movies, movie screens, and I'm going to go ahead
+
+08:27.580 --> 08:30.540
+and get home screen and get the name.
+
+08:31.900 --> 08:32.830
+What's happening here?
+
+08:32.860 --> 08:38.410
+Well, we could have just wrote a string that contains a home screen.
+
+08:39.480 --> 08:40.140
+Name, right?
+
+08:40.710 --> 08:46.650
+But this is the best way, as I said, because we have just one place where we can add all the screens,
+
+08:46.650 --> 08:53.220
+all the destination, all of the composer goals as the app grows, it looks like overkill, but this
+
+08:53.220 --> 08:54.270
+is the best way to do this.
+
+08:54.310 --> 08:56.550
+Okay, so we just passing this to our destination.
+
+08:56.550 --> 08:57.330
+It could be a string.
+
+08:57.330 --> 09:00.390
+You could just put a home screen as a string, right?
+
+09:00.390 --> 09:02.550
+Double quotes or like this.
+
+09:02.760 --> 09:03.510
+Do like this.
+
+09:04.140 --> 09:04.590
+All right.
+
+09:04.950 --> 09:10.840
+OK, so we have that now and then we can say we have a trailing lambada now inside here.
+
+09:10.860 --> 09:14.070
+This is where we put the actual navigation graph builder.
+
+09:14.580 --> 09:20.400
+This is where we build what this is, where we build this the knife graph.
+
+09:20.880 --> 09:21.930
+That's why you see us here.
+
+09:21.930 --> 09:22.830
+NAV graph builder.
+
+09:23.580 --> 09:24.210
+Does that makes sense?
+
+09:24.900 --> 09:28.590
+That means and this is where we put together decompose the bowls.
+
+09:28.920 --> 09:30.030
+But how do we do that?
+
+09:30.510 --> 09:32.670
+Well, the way we do this is as follow.
+
+09:33.000 --> 09:39.540
+You say composable like this and you can see says composable is a function that you pass out and you
+
+09:39.540 --> 09:40.290
+can pass arguments.
+
+09:40.290 --> 09:41.190
+But what's important?
+
+09:41.520 --> 09:43.020
+You can pass through route.
+
+09:43.260 --> 09:43.920
+What route?
+
+09:45.120 --> 09:51.180
+We go to movie screens again, that home screen, that name to get the actual value.
+
+09:51.930 --> 10:02.010
+And we have another trailing their trailing lambda, which means here we pass.
+
+10:03.760 --> 10:09.700
+Where this should lead us to right?
+
+10:11.030 --> 10:15.290
+So here I'm going to pass home screen as such.
+
+10:15.530 --> 10:20.360
+Now here's the thing this home screen here is going to ask you to import.
+
+10:20.870 --> 10:24.410
+That's not the one we want because we have to pass the actual composable.
+
+10:24.620 --> 10:25.730
+That's very important here.
+
+10:26.780 --> 10:27.110
+OK.
+
+10:28.320 --> 10:30.540
+So this is the starting point.
+
+10:30.660 --> 10:36.570
+We are saying here our starting point in our nav host, our starting point is going to be in this case
+
+10:36.570 --> 10:39.180
+in home screen, which we created, right?
+
+10:39.840 --> 10:42.510
+The route here instead of movie screens.
+
+10:45.640 --> 10:48.910
+And we say it's going to be a composable we pass the name.
+
+10:50.510 --> 10:51.620
+Over water, we want to be.
+
+10:51.950 --> 10:53.390
+We want to go the name of the composer.
+
+10:53.570 --> 10:57.830
+But now we have to actually pass the composable, the actual composable.
+
+10:58.310 --> 11:02.150
+Now this means let them go ahead and go ahead and comment this out.
+
+11:02.990 --> 11:07.760
+This means then we have to restructure other things as well for this to work because the things the
+
+11:07.760 --> 11:10.580
+way things are right now, everything is inside of main activity.
+
+11:10.820 --> 11:13.610
+It works, but it's not going to work for what we want to do.
+
+11:13.790 --> 11:16.040
+And this is what are we going to be tackling in the next video?

@@ -1,0 +1,394 @@
+WEBVTT
+
+00:00.450 --> 00:03.330
+Let's go ahead and create a class called Finder.
+
+00:03.650 --> 00:05.310
+Okay, just bear with me here.
+
+00:05.810 --> 00:06.630
+My say class.
+
+00:07.290 --> 00:13.650
+The idea is that this class will enclose a function that will be able to find an item from a list that
+
+00:13.650 --> 00:14.850
+we provide to it.
+
+00:15.180 --> 00:16.770
+A property here, a field.
+
+00:17.040 --> 00:18.690
+So I'm going to use private.
+
+00:19.020 --> 00:26.100
+We haven't seen this, but private means that this field is not accessible by anyone but the class,
+
+00:26.520 --> 00:27.750
+this class, right?
+
+00:28.230 --> 00:30.180
+And let's say foul and then list.
+
+00:30.930 --> 00:37.560
+And then I'm going to create actually a list and then I'm going to put inside of angle brackets like
+
+00:37.560 --> 00:37.880
+this.
+
+00:37.890 --> 00:41.310
+I'm going to put the types that this list will contain.
+
+00:41.360 --> 00:43.050
+OK, so it's just a list in general.
+
+00:43.470 --> 00:49.740
+And so here inside of this angle brackets, we're going to pass what's called the types that are needed
+
+00:50.040 --> 00:50.730
+or the types.
+
+00:50.760 --> 00:53.100
+This list will be expecting to host.
+
+00:53.610 --> 00:56.370
+So in this case, I'm going to say it's going to be a string list of string.
+
+00:56.790 --> 00:57.030
+OK.
+
+00:57.990 --> 01:05.430
+And an inside here of our class finder, we're going to create a function phone called this find item.
+
+01:06.780 --> 01:09.450
+And then to find an item, I can remember.
+
+01:09.960 --> 01:14.610
+There are many other ways to find an item in the list.
+
+01:14.670 --> 01:20.700
+So this is not necessarily the best way this just to illustrate something that I want to illustrate
+
+01:20.700 --> 01:20.970
+to you.
+
+01:21.470 --> 01:26.130
+So unless they find item, in this case, I'm going to pass the element that we need to find a critical
+
+01:26.160 --> 01:29.730
+element to such a search and then going to make it a string type.
+
+01:29.760 --> 01:35.460
+But then inside of this function here, I'm going to pass another function because we know this is very
+
+01:35.460 --> 01:37.020
+possible to do.
+
+01:38.070 --> 01:41.250
+And so unless a found item in this.
+
+01:42.440 --> 01:47.180
+Found item here, of course, as a property parameter.
+
+01:47.750 --> 01:53.840
+I'm going to make it function, as I said, and in this case, I'm going to say it's going to expect
+
+01:53.840 --> 01:57.290
+an element which is going to be type of string as a parameter.
+
+01:57.410 --> 02:04.040
+And I'm going to append this exclamation point because I want this to be multiple because the idea is
+
+02:04.040 --> 02:12.050
+if no element is found, I want to be able to pass inside of this found item or this element inside
+
+02:12.050 --> 02:15.080
+of this function here, I want to be able to pass a null value.
+
+02:15.080 --> 02:15.920
+So what do you do?
+
+02:16.160 --> 02:18.500
+You put this exclamation point and such?
+
+02:19.160 --> 02:19.490
+All right.
+
+02:19.580 --> 02:23.330
+So and then of course, I'm going to return the unit as such.
+
+02:23.990 --> 02:30.200
+And if you remember correctly, if we have a function that we are calling with every passing as a parameter
+
+02:30.530 --> 02:38.900
+and this function is the last parameter that should ring a bell, that means then this can be this can
+
+02:38.900 --> 02:40.670
+be accessed as lambda.
+
+02:40.940 --> 02:41.720
+And we'll see that.
+
+02:42.260 --> 02:45.200
+OK, so let's give a body to this function.
+
+02:45.950 --> 02:52.010
+So what I'm going to do here, I would say Val for someone to create an item found variable.
+
+02:52.580 --> 02:59.090
+And then when I said that to the list we were getting and I want to use the filter method, which is
+
+02:59.090 --> 03:00.740
+actually a lambda, right?
+
+03:01.310 --> 03:05.620
+You said before in the here, I'm going to put past a predicate white or something.
+
+03:05.630 --> 03:10.970
+I see it if it is equal to the element that we are trying to look for.
+
+03:11.390 --> 03:14.000
+Right, then we know we've found that element.
+
+03:14.270 --> 03:20.000
+And to remember when we filter a list, what's the return is going to be a list, right?
+
+03:20.330 --> 03:22.760
+So that's why we put that inside of this item found.
+
+03:24.320 --> 03:30.350
+So at this point, we will have found that list, or I should say that item we're looking for, it's
+
+03:30.350 --> 03:36.020
+going to be inside of a new list which is going to be inside an item found can say item found lists.
+
+03:36.020 --> 03:37.910
+It has to be more specific.
+
+03:38.060 --> 03:38.300
+All right.
+
+03:38.300 --> 03:43.880
+So and then outside here, because I still have this found item, which is a function that we're passing,
+
+03:43.880 --> 03:45.110
+I want to pass something to it.
+
+03:45.770 --> 03:46.070
+OK.
+
+03:46.490 --> 03:52.670
+So in this case, I would say if item found item, at least I should say.
+
+03:54.670 --> 03:57.220
+Is not null or empty.
+
+03:57.780 --> 04:07.120
+If that's the case, then let's say found item that function there and I'm going to pass this case.
+
+04:07.720 --> 04:12.190
+No, because you just can say, well, there's no element that's been found right?
+
+04:12.200 --> 04:17.560
+Because the item found list, which we use this filter here is empty.
+
+04:17.560 --> 04:18.460
+So it doesn't have anything.
+
+04:18.460 --> 04:21.490
+So we're just going to say, well, we found nothing else.
+
+04:21.700 --> 04:26.620
+We are going to say found item and then we're going to pass the item that we found.
+
+04:27.110 --> 04:30.920
+Now you have to remember, this item found the list, right?
+
+04:30.940 --> 04:33.610
+It is indeed a list which will contain one item.
+
+04:33.970 --> 04:36.610
+So I'm going to get the item itself.
+
+04:36.910 --> 04:45.040
+So when I say item found list again and then I'm going to just say Dot first item, but this will just
+
+04:45.040 --> 04:51.370
+go ahead and get the first item we can find, which incidentally, is going to be the only item that
+
+04:51.370 --> 04:52.720
+was found on a list.
+
+04:53.350 --> 04:54.850
+So one that's that's fine.
+
+04:55.360 --> 05:01.750
+So let's go and see, how can we invoke this fine item here, which is inside of is find a class.
+
+05:02.140 --> 05:07.030
+So in Maine, I'm going to say, Val, first off, I'm going to create a list, right?
+
+05:08.730 --> 05:14.430
+Items and was a list of just to simplify things, I'm going to pass a few elements here.
+
+05:14.970 --> 05:16.080
+They have to be strings.
+
+05:16.890 --> 05:20.220
+Let's say I fail.
+
+05:20.900 --> 05:27.330
+Jean George and James, of course.
+
+05:27.750 --> 05:28.020
+All right.
+
+05:28.500 --> 05:30.240
+So we have a list of names there.
+
+05:30.810 --> 05:34.770
+Next, we're going to say Val, and I'm going to say, find her.
+
+05:35.430 --> 05:39.750
+It's going to be equal to find or make sure we're getting our finder that it was just creating that
+
+05:39.750 --> 05:41.790
+this sand tools package there.
+
+05:42.510 --> 05:42.840
+All right.
+
+05:43.050 --> 05:46.660
+And then we have to pass the list in this case is going to be a list of items.
+
+05:46.680 --> 05:50.220
+So let's say list and pass the list of items.
+
+05:51.030 --> 05:52.050
+OK, very good.
+
+05:52.260 --> 05:58.380
+And then once they find her and invoke the find element because we can see the element, I'm just going
+
+05:58.380 --> 05:59.770
+to go ahead and pass here.
+
+05:59.790 --> 06:03.870
+Element is going to be a string and I want to find Gina first.
+
+06:03.960 --> 06:04.980
+Let's see what's going to happen.
+
+06:05.880 --> 06:11.130
+All right now, we're having a little issue here because remember a find item there isn't this found
+
+06:11.130 --> 06:17.040
+item function that we passed as a parameter and we can put trailing lambda like this.
+
+06:17.370 --> 06:22.080
+And of course, we're going to return either a null string or an actual string.
+
+06:22.140 --> 06:28.260
+So in this case here, I'm just going to say print l n and pass our item if I can.
+
+06:28.260 --> 06:36.900
+When I say found Item II such an item, this has to be it could have changed this item, but that's
+
+06:36.900 --> 06:37.200
+fine.
+
+06:37.950 --> 06:38.340
+OK.
+
+06:39.210 --> 06:39.670
+Very simple.
+
+06:39.670 --> 06:42.030
+Let's see what's going to happen if we run this.
+
+06:44.260 --> 06:44.620
+All right.
+
+06:44.650 --> 06:46.420
+It says here, found Gina.
+
+06:46.480 --> 06:47.560
+Very good, so it works.
+
+06:48.070 --> 06:52.690
+What if I just put an empty string just to see both cases?
+
+06:55.900 --> 06:59.110
+Found, no, that's great, because we found nothing.
+
+06:59.470 --> 07:03.460
+So as we say here, if there's nothing in there, we're just going to pass.
+
+07:03.790 --> 07:07.480
+No to be found item function there.
+
+07:09.070 --> 07:10.540
+OK, so it's working perfectly.
+
+07:10.870 --> 07:12.100
+Now we have a problem here.
+
+07:12.580 --> 07:21.500
+The problem is that this find her class and find item function inside of it only work for one types.
+
+07:22.090 --> 07:26.140
+In this case, only works for a list of strings.
+
+07:28.130 --> 07:36.110
+Because if I were to create another list here, say, wow, list of numbers, for instance, say a list
+
+07:38.090 --> 07:41.060
+of and pass here a few numbers.
+
+07:43.130 --> 07:48.050
+And pass this list of numbers to our finder like this?
+
+07:48.380 --> 07:53.870
+We're going to have issues if you have a over, you will see that we have type mismatch required list
+
+07:53.990 --> 07:54.980
+strings, right?
+
+07:55.550 --> 07:56.660
+But found a list of it.
+
+07:57.650 --> 07:57.880
+All right.
+
+07:57.890 --> 08:04.910
+So this is not good because now we have some sort of a limitation of what we can pass on to our finder
+
+08:05.330 --> 08:09.350
+class and incidentally on to our find item function.
+
+08:10.800 --> 08:17.190
+So this problem here can be solved in a few ways we can create duplicate this code, create another
+
+08:17.190 --> 08:21.090
+finder and then put a list in here instead of say.
+
+08:21.900 --> 08:30.120
+So change the types here, right to enter into an event and then call it good in a few changes that
+
+08:30.130 --> 08:30.810
+then we're good.
+
+08:31.530 --> 08:31.830
+OK.
+
+08:32.190 --> 08:39.810
+And if we want to, for instance, find a Boolean type or even a custom type of data type that we created
+
+08:40.020 --> 08:41.220
+will have to do the same thing.
+
+08:42.670 --> 08:43.690
+But there is a better way.
+
+08:44.030 --> 08:48.220
+They are always called generics, which we are going to talk about in the next video.

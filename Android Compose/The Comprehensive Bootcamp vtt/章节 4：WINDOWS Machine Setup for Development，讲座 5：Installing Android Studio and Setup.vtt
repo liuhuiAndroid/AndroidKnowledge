@@ -1,0 +1,712 @@
+WEBVTT
+
+00:00.360 --> 00:03.150
+All right, so let's go ahead and install Android Studio.
+
+00:03.330 --> 00:09.180
+It's very simple, we can just head off to Google and write install Android Studio as such and you're
+
+00:09.180 --> 00:10.440
+going to get a few hits.
+
+00:10.620 --> 00:12.960
+So I just go to either one of these links here.
+
+00:12.960 --> 00:15.780
+I just go to straight to go to download.
+
+00:16.170 --> 00:16.770
+Click there.
+
+00:16.920 --> 00:21.300
+And in this case here, this is why you should see if you're watching this right now.
+
+00:21.300 --> 00:26.010
+But of course, Android Studio as an idea changes constantly.
+
+00:26.070 --> 00:31.630
+Or at least the engineers are making it better, so things may be different by the time you watch this.
+
+00:31.650 --> 00:35.490
+This could be a different logo, but the idea is that this is what you need to come any time you need
+
+00:35.490 --> 00:37.350
+to install Android Studio.
+
+00:37.530 --> 00:41.220
+You can scroll down to see what Android Studio has to offer.
+
+00:41.430 --> 00:43.570
+OK, so all we're going to do is just click here.
+
+00:43.590 --> 00:45.000
+Download Android Studio.
+
+00:45.090 --> 00:48.540
+Of course, we will ask you to read some terms and conditions.
+
+00:48.540 --> 00:49.230
+You can do that.
+
+00:49.320 --> 00:55.410
+Scroll down and then say, I have read, Oh, it's good and I'm going to click and the download process
+
+00:55.410 --> 00:55.870
+will start.
+
+00:55.960 --> 01:01.110
+Now, this may take a little bit, depending on your computer and the speeds that you have and so forth.
+
+01:01.470 --> 01:06.570
+And the other thing that you have to realize, or at least you should be aware of, is that when you
+
+01:06.570 --> 01:12.180
+want to download Android Studio, Android Studio is a very heavy idea.
+
+01:12.300 --> 01:14.730
+So your computer has to be set up to handle that.
+
+01:14.970 --> 01:18.460
+So if you scroll down, you can see here so system requirements.
+
+01:18.510 --> 01:21.030
+So for Mac, Linux, Chrome OS and so forth.
+
+01:21.060 --> 01:22.440
+But we are talking about Windows.
+
+01:22.800 --> 01:25.840
+And so these are the system requirements that you have to be aware of.
+
+01:25.860 --> 01:31.590
+So has to be 64 bit Microsoft Windows eight or 10 and all of these requirements.
+
+01:32.010 --> 01:37.170
+And you can see we have all of these system requirements that you have to have in order for this to
+
+01:37.170 --> 01:37.500
+work.
+
+01:37.590 --> 01:37.890
+All right.
+
+01:37.890 --> 01:39.360
+So this is still downloading.
+
+01:39.510 --> 01:41.940
+Give it a few minutes and we'll be back.
+
+01:42.270 --> 01:44.490
+OK, now we see that it was downloaded.
+
+01:44.490 --> 01:46.920
+Let's double click to start the installation process.
+
+01:47.250 --> 01:49.380
+OK, and this may happen to you.
+
+01:49.380 --> 01:54.460
+All we have to say here is just say yes, it's verified to say all is good and we can continue.
+
+01:54.480 --> 01:55.590
+So now we're going to go ahead.
+
+01:55.880 --> 01:57.960
+Can see we have this window here.
+
+01:57.970 --> 02:00.230
+We can say next and all is good.
+
+02:00.240 --> 02:02.520
+Just leave as it is, I'm going to say next.
+
+02:02.760 --> 02:06.750
+So this is the location that's picked to install Android Studio.
+
+02:06.840 --> 02:07.470
+That's fine.
+
+02:07.470 --> 02:08.490
+We'll say next again.
+
+02:08.580 --> 02:14.550
+And that's fine in this case here you can say, do not create shortcuts if you don't want to.
+
+02:14.610 --> 02:20.280
+I'm just going to leave as it is and say so, and it's going to start installing all the dependencies,
+
+02:20.280 --> 02:23.730
+all the modules that are needed for Android Studio to work.
+
+02:24.210 --> 02:24.450
+OK.
+
+02:24.480 --> 02:26.910
+After a few moments, you should see this completed.
+
+02:27.060 --> 02:28.050
+Let's say next.
+
+02:28.320 --> 02:31.830
+And he's going to start Android Studio and say, finish.
+
+02:31.830 --> 02:34.730
+Such take a few seconds, you should see.
+
+02:34.770 --> 02:35.310
+There we go.
+
+02:35.460 --> 02:40.830
+Android Studio is started and is going to ask us if we want to import Android Studio settings.
+
+02:41.040 --> 02:46.830
+So these assumes that we already have and or had, this would say, Android Studio installed and set
+
+02:46.830 --> 02:48.000
+up on our machine.
+
+02:48.000 --> 02:49.380
+In this case, this is the first time.
+
+02:49.590 --> 02:53.580
+I'm just going to say do not import settings because I actually have none.
+
+02:53.700 --> 02:56.590
+So just click OK, and it should see something like this.
+
+02:56.610 --> 03:02.610
+Now it's very important for what are we going to be doing that we have this Arctic Fox, Android Studio
+
+03:02.700 --> 03:03.880
+or higher?
+
+03:04.140 --> 03:09.690
+Because that's what's needed for creating modern applications using jetpack compose.
+
+03:10.210 --> 03:10.590
+All right.
+
+03:10.590 --> 03:12.810
+So I'm going to say, don't stand for now.
+
+03:13.140 --> 03:14.040
+And there you have it.
+
+03:14.190 --> 03:16.620
+We need to update a few things in this case.
+
+03:16.640 --> 03:21.240
+Just click updates or whatever that is asking us to do at this point of setting up.
+
+03:21.390 --> 03:27.810
+We need to just say yes because Android Studio knows better and because we need to restart a few things.
+
+03:27.810 --> 03:30.840
+Now, let's go ahead and restart Android Studio.
+
+03:31.380 --> 03:31.830
+OK.
+
+03:31.920 --> 03:32.550
+That's very good.
+
+03:32.700 --> 03:34.050
+And have a few moments.
+
+03:34.050 --> 03:35.430
+You should see this.
+
+03:35.500 --> 03:36.780
+OK, so now it is welcome.
+
+03:36.780 --> 03:37.650
+That means all this good.
+
+03:37.650 --> 03:40.770
+And let's say next, I'm going to use the standards Android Studio.
+
+03:40.780 --> 03:43.280
+You can change to your liking if you want.
+
+03:43.290 --> 03:44.100
+You can say custom.
+
+03:44.100 --> 03:46.450
+You can customize it as a standard for now.
+
+03:46.620 --> 03:51.630
+I say next, and in this case, you can use a dark color, so it's a darker color.
+
+03:51.660 --> 03:56.460
+I like that best, but if you don't want that, you can use light whenever you want to use.
+
+03:56.790 --> 03:57.480
+That's fine.
+
+03:57.870 --> 03:59.130
+Can I keep on dark color?
+
+03:59.400 --> 04:00.030
+Say next.
+
+04:00.570 --> 04:03.690
+And if you want to review or change any of these, that's all good.
+
+04:03.840 --> 04:07.920
+That means all of these settings will be set up for us.
+
+04:07.920 --> 04:10.080
+So we don't have to worry about anything so standard.
+
+04:10.080 --> 04:12.030
+That's totally fine when I say finish.
+
+04:12.360 --> 04:16.620
+So now what's going to do is going to go ahead and install all the components, tools and everything
+
+04:16.620 --> 04:23.970
+that we need to have in order for us to be able to write Android applications and used emulator to emulate
+
+04:23.970 --> 04:25.500
+to that to test our apps.
+
+04:26.280 --> 04:30.060
+It may take a few seconds, so just be patient and wait until all is done.
+
+04:30.450 --> 04:36.240
+In most cases, you won't have this problem that says unable to install intel hasn't.
+
+04:36.270 --> 04:42.510
+So what this is is a way to make the emulator to work faster on your machine.
+
+04:42.510 --> 04:48.390
+Because when you are using emulators on Android development, which is connected to Android Studio,
+
+04:48.480 --> 04:52.150
+it takes up a lot of memory and it's really heavy on your CPU.
+
+04:52.260 --> 04:58.170
+So axons a component that when installed in your machine, it will all help with the accelerated virtualization,
+
+04:58.170 --> 04:59.940
+which means really just to make sure that.
+
+05:00.250 --> 05:05.960
+I create a virtual machine within this main machine so that the emulator can run on.
+
+05:05.980 --> 05:06.280
+OK.
+
+05:06.580 --> 05:11.300
+So because of the set up that I have on this window machine, this is not possible now.
+
+05:11.320 --> 05:17.160
+If you have an issue such as this, there's a way to fix this that I will share with you later.
+
+05:17.320 --> 05:19.330
+In this case, we should be OK for now.
+
+05:19.600 --> 05:20.500
+I'm going to say finish.
+
+05:20.500 --> 05:24.550
+And once that is done, you can see that we can create a new project and so forth.
+
+05:24.580 --> 05:26.680
+And while we're here, let's go ahead and create a new project.
+
+05:26.840 --> 05:27.040
+OK.
+
+05:27.500 --> 05:33.700
+So because we are going to talk about compose, there's different ways to create to start our Android
+
+05:33.700 --> 05:34.180
+project.
+
+05:34.210 --> 05:35.230
+What are we going to do here?
+
+05:35.260 --> 05:37.690
+We're going to start with an empty compose activity.
+
+05:37.760 --> 05:39.100
+I say next and voila.
+
+05:39.430 --> 05:44.010
+So the next thing we need to do here is notice that we can give a name to our application.
+
+05:44.020 --> 05:48.660
+I'm going to say my test app such and it can give a package name.
+
+05:48.660 --> 05:49.570
+You just leave as it is.
+
+05:49.810 --> 05:53.260
+And this is the location where this is going to live this project.
+
+05:53.350 --> 05:54.790
+And of course, we're going to use Kotlin.
+
+05:54.790 --> 05:56.770
+That is the default language, as you see there.
+
+05:56.950 --> 05:57.280
+OK.
+
+05:57.430 --> 05:57.770
+All right.
+
+05:57.790 --> 06:02.920
+So the other thing you notice here is that we have minimum SDK where this will be run on.
+
+06:02.930 --> 06:05.260
+That's fine API twenty one.
+
+06:05.500 --> 06:06.440
+That's totally fine.
+
+06:06.490 --> 06:07.900
+We we can go higher.
+
+06:07.960 --> 06:10.070
+In this case, you could use the latest one.
+
+06:10.090 --> 06:14.050
+But notice the higher you go, the less devices are supported.
+
+06:14.050 --> 06:15.280
+So we just testing things.
+
+06:15.280 --> 06:16.920
+Let's just get to API 29.
+
+06:16.930 --> 06:17.500
+That's fine.
+
+06:17.560 --> 06:17.960
+All right.
+
+06:17.990 --> 06:19.750
+I'm going to go ahead and say, finish.
+
+06:20.020 --> 06:24.060
+Now you can see that Android Studio has started, OK, very well.
+
+06:24.070 --> 06:24.610
+So there we go.
+
+06:24.610 --> 06:27.070
+We have a studio in tells us what's new.
+
+06:27.070 --> 06:28.000
+This is the assistant.
+
+06:28.000 --> 06:31.810
+You can always hide it from their target and is loading.
+
+06:31.840 --> 06:34.450
+Our first project there, so we'll take a few seconds.
+
+06:34.780 --> 06:39.880
+Now, just keep in mind that this process may take a while, so just be patient.
+
+06:40.030 --> 06:46.300
+While the whole project is being indexed, it's getting all the dependencies SDK and all that great
+
+06:46.300 --> 06:47.650
+stuff in the background.
+
+06:47.650 --> 06:50.320
+So just just be patient with this.
+
+06:50.620 --> 06:50.890
+All right.
+
+06:50.890 --> 06:57.790
+So after a few moments, you can see that everything is indexed to concede there is no loading at the
+
+06:57.790 --> 06:58.330
+bottom here.
+
+06:58.330 --> 06:59.050
+So that's the good news.
+
+06:59.380 --> 07:04.600
+And now it's going to ask us to build and refresh to hopefully see some sort of preview here of our
+
+07:04.600 --> 07:11.110
+compose code that is written there gets it looks like it says failed to install the following Android
+
+07:11.110 --> 07:14.830
+Studio sticks as some licenses have not been accepted.
+
+07:14.980 --> 07:15.340
+Right?
+
+07:15.520 --> 07:20.890
+So to build this project, except the sticky license agreements and install the missing components and
+
+07:20.890 --> 07:23.290
+it says here using the Android Studio SDK manager.
+
+07:23.290 --> 07:27.880
+So Android Studio SDK manager is here, so have over to the right.
+
+07:28.240 --> 07:29.200
+So I'm going to click that.
+
+07:29.890 --> 07:37.840
+So let's go ahead and install that one there, which is Android 11 R, and let's see what else to do.
+
+07:37.870 --> 07:39.160
+I think that's fine for now.
+
+07:39.700 --> 07:42.430
+OK, what's going to say Plie?
+
+07:42.910 --> 07:44.970
+I say, OK, I'm going to accept.
+
+07:44.980 --> 07:51.310
+So this is what needed to be done and what to say except say next and now is going to install those
+
+07:51.310 --> 07:55.270
+components, and we have accepted all the licensing and so forth.
+
+07:55.960 --> 07:56.230
+I can't.
+
+07:56.230 --> 08:00.630
+This might take a few minutes, so just relax and we should be back, OK?
+
+08:00.640 --> 08:05.890
+After a few moments notice that everything has been installed successfully and I say, finish, just
+
+08:05.890 --> 08:08.530
+say, OK, get out of there.
+
+08:09.100 --> 08:11.110
+In this case here, it's going to refresh again.
+
+08:11.650 --> 08:13.600
+OK, looks like everything is looking good.
+
+08:14.410 --> 08:18.550
+Take a little bit to do some building out internally.
+
+08:18.730 --> 08:19.960
+So wait for a second here.
+
+08:20.440 --> 08:25.960
+OK, it looks like the build was fine and our preview is taking its own time.
+
+08:26.350 --> 08:31.030
+Let's go ahead and closes down, so hopefully we can have more space here still analyzing our code.
+
+08:31.360 --> 08:34.450
+And voila, the preview is there is very, very small.
+
+08:34.900 --> 08:41.240
+OK, so if I come here and we're passing this Android, I could see.
+
+08:41.410 --> 08:49.600
+And me like that can see as you change the preview right away shows exactly what's going to be showing.
+
+08:49.650 --> 08:49.900
+Right.
+
+08:49.900 --> 08:50.650
+So hello, Android.
+
+08:50.870 --> 08:56.500
+Me now the other thing we need to do is to make sure that, of course, obviously this is just a preview
+
+08:56.500 --> 08:58.430
+of what we are composing here.
+
+08:58.450 --> 09:05.080
+This is the beauty of jetpack compose is that we can actually use this code directly and starting to
+
+09:05.080 --> 09:09.310
+compose our user interfaces, which is why this is very exciting.
+
+09:09.820 --> 09:16.300
+But of course, we also want to be able to run this app, if you will, this user interface on an AMA
+
+09:16.320 --> 09:16.660
+later.
+
+09:16.960 --> 09:18.820
+So we need to install that as well.
+
+09:18.910 --> 09:25.710
+To do that, we go to the top was his AVD manager that stands for Android Virtual Device Manager.
+
+09:25.760 --> 09:30.040
+When I click there and then we're going to click Create Virtual Devices section.
+
+09:30.190 --> 09:30.460
+OK.
+
+09:30.640 --> 09:31.960
+So you can pick whatever you want.
+
+09:31.960 --> 09:35.290
+But I always like to pick something that has this Play Store.
+
+09:35.530 --> 09:38.040
+It's going to be more apparent as we go through this course.
+
+09:38.740 --> 09:39.040
+All right.
+
+09:39.040 --> 09:41.160
+So Pixel four, that's fine.
+
+09:41.170 --> 09:46.990
+I'm going to say next and it says here recommendation your CPU does not support Vertex.
+
+09:47.170 --> 09:51.190
+OK, so like I said before, in your case, you shouldn't have this problem.
+
+09:51.340 --> 09:51.790
+OK.
+
+09:52.180 --> 09:56.610
+Because again, the settings that I have on my windows here, it doesn't have that great.
+
+09:56.620 --> 09:59.710
+But now if you end up having this problem, don't get along.
+
+10:00.000 --> 10:01.320
+There are ways to solve this.
+
+10:01.560 --> 10:06.900
+Number one, you make sure that all the system requirements your computer are up to par.
+
+10:07.410 --> 10:08.250
+That's very important.
+
+10:08.280 --> 10:13.800
+And number two, just don't panic if this is the problem that you may encounter.
+
+10:14.100 --> 10:14.400
+OK.
+
+10:14.490 --> 10:17.070
+It's something that can be fixed in most cases, anyway.
+
+10:17.550 --> 10:17.870
+All right.
+
+10:17.910 --> 10:25.230
+So if you don't see this and everything is great, all you have to do is then go to download the actual
+
+10:25.230 --> 10:30.990
+release name or in this case, the API level that is needed for our selected image in this case, for
+
+10:30.990 --> 10:32.040
+our emulator.
+
+10:32.040 --> 10:34.020
+So you can you would do this, click there.
+
+10:34.380 --> 10:35.610
+And this would happen.
+
+10:36.120 --> 10:38.790
+OK, so we have that component finish.
+
+10:38.850 --> 10:44.760
+Again, this may take a long time, so just wait until it's all done and then go ahead and say, Finish,
+
+10:45.000 --> 10:45.270
+OK?
+
+10:45.510 --> 10:48.200
+And in this case, here, I'm going to see it's there.
+
+10:48.210 --> 10:49.350
+I'm going to select that.
+
+10:49.530 --> 10:50.940
+I'm going to say next.
+
+10:51.090 --> 10:55.200
+And then that's when you would, of course, leave the name or changed everything.
+
+10:55.200 --> 10:57.360
+Name and Emily to performance.
+
+10:57.360 --> 10:58.920
+You will change to automatic, right?
+
+10:58.940 --> 11:00.240
+That's what we have, of course.
+
+11:00.510 --> 11:03.600
+In your case, you will have other options here, but automatic is fine.
+
+11:03.930 --> 11:04.710
+And then I'm going to go ahead.
+
+11:04.750 --> 11:05.310
+Finish.
+
+11:05.580 --> 11:11.130
+Again, for us, it's not going to work because our CPU does not support Vertex virtualization acts
+
+11:11.130 --> 11:11.640
+and so forth.
+
+11:11.820 --> 11:12.090
+OK.
+
+11:12.390 --> 11:12.680
+All right.
+
+11:12.720 --> 11:17.010
+So in this case, again, I'm going to and say finish and going to create Android virtual device.
+
+11:17.400 --> 11:17.820
+All right.
+
+11:17.880 --> 11:18.570
+Resume.
+
+11:18.810 --> 11:19.370
+There we go.
+
+11:19.380 --> 11:21.390
+There's that virtual device there.
+
+11:21.690 --> 11:26.280
+And in your case, you could go in and say, actions launch that virtual device.
+
+11:26.280 --> 11:28.770
+And of course, for me, it's going to work better for your case.
+
+11:29.220 --> 11:31.820
+This should launch the AVP.
+
+11:32.190 --> 11:32.970
+So we should be good.
+
+11:32.970 --> 11:36.690
+And at this point here, you could just go ahead.
+
+11:36.690 --> 11:42.000
+And of course, it would show here and click on this run button and it would have run this app on your
+
+11:42.000 --> 11:42.930
+virtual device.
+
+11:43.410 --> 11:43.770
+All right.
+
+11:43.890 --> 11:44.610
+There you have it.
+
+11:44.700 --> 11:47.670
+You should have Android Studio set up for development.

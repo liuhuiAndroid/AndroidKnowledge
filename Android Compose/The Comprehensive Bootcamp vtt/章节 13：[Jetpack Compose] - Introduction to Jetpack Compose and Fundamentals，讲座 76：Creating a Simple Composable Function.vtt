@@ -1,0 +1,289 @@
+WEBVTT
+
+00:00.650 --> 00:09.200
+So everything you see to the right here comes from our preview, so any function that has ad preview
+
+00:09.620 --> 00:11.030
+will be previewed here.
+
+00:11.390 --> 00:16.640
+That means if I come here and create another composable, we need to start at composable and there we
+
+00:16.640 --> 00:16.940
+go.
+
+00:17.390 --> 00:23.750
+The ad was going to help us hit enter and then it's a fun show age, for instance.
+
+00:24.170 --> 00:26.740
+In this case, I'm going to pass age.
+
+00:27.350 --> 00:28.610
+It's going to be an integer type.
+
+00:29.510 --> 00:32.530
+And then here I can say text enter.
+
+00:32.540 --> 00:33.590
+That's the first option.
+
+00:34.310 --> 00:37.250
+And all we want is the first one, which is just a simple text.
+
+00:37.520 --> 00:38.300
+So hit enter.
+
+00:38.750 --> 00:40.940
+And then here I'm going to say age like this.
+
+00:41.660 --> 00:44.300
+OK, now we still may have the same problem.
+
+00:44.300 --> 00:47.870
+If you have it over there, say, OK, some issues are there now.
+
+00:47.870 --> 00:52.040
+The reason why I know what's going up here, if you have it over, is going to say parameter age is
+
+00:52.040 --> 01:01.760
+an integer, but this text widget here only allows us to pass in a blistering song I say to string for
+
+01:01.760 --> 01:03.890
+now, just to simplify our lives.
+
+01:04.700 --> 01:10.310
+OK, so we have this show age who pass age int it's essentially similar to this.
+
+01:10.610 --> 01:10.910
+OK.
+
+01:11.810 --> 01:16.790
+So what happens here if I want it to be previewed here like I can do?
+
+01:16.790 --> 01:18.410
+So how do I do that?
+
+01:18.800 --> 01:23.510
+Well, at the top, I'm going to say at preview something like this.
+
+01:24.650 --> 01:30.530
+Now we have a problem because it says if you have always going to say composable functions with nine
+
+01:30.530 --> 01:36.020
+default parameters are not supported in preview unless they are annotated with preview parameter.
+
+01:36.800 --> 01:41.420
+What this means is that, well, because we seeing age here, we say, is integer.
+
+01:41.810 --> 01:48.110
+We need to pass some sort of default values so that it's picked up in our preview here.
+
+01:48.890 --> 01:56.360
+So when you do that to say equals 12 and you can see this is gone and now can see, says show there,
+
+01:56.360 --> 01:57.530
+but we don't see anything.
+
+01:58.010 --> 01:59.630
+Let's go ahead and refresh.
+
+02:01.970 --> 02:08.120
+And while you can see you see 12, if you click, it's going to go straight to where we created that
+
+02:08.120 --> 02:08.750
+text there.
+
+02:09.140 --> 02:15.070
+Also, you can see that we have this show age, which is the name of the composable function that would
+
+02:15.380 --> 02:22.400
+create it now because this is a composable I could call show age inside of our entire compose theme
+
+02:22.400 --> 02:23.420
+as well as at the bottom.
+
+02:23.420 --> 02:25.910
+Here you can see show age.
+
+02:28.070 --> 02:32.060
+And, of course, because we have a default value for age.
+
+02:33.180 --> 02:40.140
+Nothing will happens, but I can see if I want to age 30 for such should see something here.
+
+02:42.440 --> 02:43.880
+Let's go ahead and refresh.
+
+02:46.310 --> 02:50.450
+And well, now here's a problem, it's there.
+
+02:50.660 --> 02:53.450
+I can promise you that it's there, but it's on top of each other.
+
+02:53.900 --> 02:55.100
+What's really going on here?
+
+02:55.550 --> 03:00.940
+Well, what happens is because we're just passing inside of this intro to compose theme.
+
+03:01.190 --> 03:02.420
+There's no layout.
+
+03:02.420 --> 03:06.230
+There's no way that composable will know exactly where am I going to put this?
+
+03:06.350 --> 03:10.160
+So what happens is that it just puts things on top of each other.
+
+03:10.880 --> 03:14.990
+So if you really want to see what's going on, we can put inside of a column.
+
+03:15.350 --> 03:21.650
+It's a column will always put things on top, will always put things vertically right below each other.
+
+03:21.650 --> 03:30.230
+So when I see column subtyping column, I search and you can see this is indeed, of course, another.
+
+03:32.050 --> 03:39.940
+Lambda, everything is a lambda, and we can pass all modifiers and so forth here to structure our column.
+
+03:40.150 --> 03:46.570
+But for now, it's OK, we're just going to go and put all of these inside it there the square and refresh.
+
+03:47.680 --> 03:53.980
+And just like that, now you can see that we have hello, Android and 34, because we put that inside
+
+03:53.980 --> 03:57.400
+of a column which is going to structure everything vertically.
+
+03:57.790 --> 04:02.380
+Again, if you want to know more about a column, you can hover over and you can read all of this stuff.
+
+04:03.780 --> 04:06.510
+OK, so now what is up here?
+
+04:06.540 --> 04:08.370
+Let's look at this content.
+
+04:08.610 --> 04:10.110
+So this content here.
+
+04:10.170 --> 04:15.720
+As the name implies, this is where we are setting the content so that it can be viewed on an actual
+
+04:15.720 --> 04:17.850
+device or Emily or so forth, right?
+
+04:18.360 --> 04:24.480
+So in this case, you can see we have a main activity inherits one component activity we have on create.
+
+04:24.480 --> 04:28.500
+So this is the entry point to our entry point to our project.
+
+04:29.220 --> 04:35.220
+So here we are, setting the content yet another lambda and we're passing the entire compose who remember
+
+04:35.220 --> 04:37.320
+this guy from down here, right?
+
+04:37.350 --> 04:38.070
+Same guy.
+
+04:38.100 --> 04:39.360
+Same thing, right?
+
+04:39.690 --> 04:46.470
+He sets up the entire view, according to the default theme of the project.
+
+04:47.100 --> 04:55.800
+And then another compose we pass inside here the surface, which is another which is another compose,
+
+04:57.340 --> 05:00.750
+which is not a compose, and it has also trained lambda.
+
+05:00.750 --> 05:02.850
+So everything is about lambda is here.
+
+05:03.600 --> 05:03.940
+Very good.
+
+05:04.380 --> 05:08.340
+So here it says a surface container using the background color from the theme.
+
+05:08.340 --> 05:13.770
+So its surface is just in the main, the most primitive, the most basic canvas.
+
+05:14.310 --> 05:17.220
+And as you can see, we can pass a few arguments here.
+
+05:17.400 --> 05:23.430
+Color and we said the color from our material theme that we saw before we could colors and we get the
+
+05:23.430 --> 05:23.970
+background.
+
+05:25.030 --> 05:25.380
+OK.
+
+05:25.450 --> 05:28.290
+And that's where we passing quilting Android.
+
+05:28.870 --> 05:35.950
+This is going to be called when we run this app on the emulator, so if I go ahead and run this app,
+
+05:36.160 --> 05:38.470
+make sure you have, of course, an emulator.
+
+05:39.640 --> 05:44.140
+So the idea is that when we run, we should see this creeping android.
+
+05:45.310 --> 05:45.640
+OK.
+
+05:45.730 --> 05:51.610
+You can see after a few moments, you can see, Hello, Android, so whatever we pass here instead of
+
+05:51.610 --> 05:54.850
+said content, it's not going to be in our preview, right?
+
+05:54.890 --> 05:57.160
+So the preview is to preview whatever we doing.
+
+05:57.310 --> 05:59.140
+We call in great greeting.
+
+05:59.440 --> 06:02.280
+The same thing that we see here is for us to preview.
+
+06:02.290 --> 06:07.830
+We're also calling another composable that we created at the top there, which incidentally also has
+
+06:07.840 --> 06:08.290
+preview.
+
+06:08.290 --> 06:11.980
+We can remove that preview if we want it to and so forth.
+
+06:11.980 --> 06:19.000
+So whatever we pass here inside of our set content, it is indeed what we see there.
+
+06:21.220 --> 06:28.150
+The beauty also here, let's toggle the coat on me, is that if I set a different color, let's say
+
+06:28.150 --> 06:34.180
+I want see colors and let's see what else I'm going to get.
+
+06:35.610 --> 06:39.440
+Let's get the primary to see what's going to happen, let's go ahead and rerun this.
+
+06:40.500 --> 06:44.880
+And you can see now the background over a surface, which is this.
+
+06:45.980 --> 06:46.340
+Right.
+
+06:47.530 --> 06:51.760
+That's enclosing our greeting, which is what we have at the bottom here.
+
+06:52.010 --> 06:55.060
+It's a composable it changed the colors now.

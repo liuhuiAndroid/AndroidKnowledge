@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00.360 --> 00:05.010
+Nice, so we're able to put tap in the middle of our card, which in this case is a circle.
+
+00:06.030 --> 00:11.070
+Now we want to make sure that this tap here or actually this whole card when it's tapped or clicked,
+
+00:11.640 --> 00:16.050
+something happens to want to make this whole composable, this whole widget here clickable.
+
+00:16.230 --> 00:16.890
+How do we do that?
+
+00:17.130 --> 00:18.450
+Because remember, this is just a card.
+
+00:18.450 --> 00:23.970
+If you have over, you see, there's no on click event that we can pass directly.
+
+00:24.840 --> 00:25.710
+But here's the thing.
+
+00:26.100 --> 00:30.180
+Because of modifier, we can actually invoke a clickable event.
+
+00:30.960 --> 00:31.400
+Look at this.
+
+00:31.410 --> 00:35.490
+If I say dot clickable, I can make anything clickable.
+
+00:36.390 --> 00:39.540
+If I hit, enter can see now we have another trailing lineberger.
+
+00:39.810 --> 00:44.040
+Here is where we actually add the event.
+
+00:45.950 --> 00:48.770
+Here is where we captured the clickable event.
+
+00:49.580 --> 00:57.500
+In fact, if I just come here and I want to log out just for testing purposes, I can say Log D can
+
+00:57.500 --> 00:59.970
+see you have an option of creating a lock and enter.
+
+01:00.030 --> 01:02.000
+Then there is this code completion.
+
+01:02.630 --> 01:11.000
+So for a logged four log debug, we need to pass here a tag and say, tap like this circle a sandwiches
+
+01:11.000 --> 01:12.200
+circle, tap like that.
+
+01:12.590 --> 01:15.380
+So now if we run this, we should be able to.
+
+01:15.380 --> 01:21.290
+When this whole entity, this whole widget is tapped, we should get this message.
+
+01:21.320 --> 01:24.200
+We can also deploy this specific preview here.
+
+01:24.200 --> 01:26.320
+Own to device by clicking this button there.
+
+01:26.330 --> 01:28.700
+So right click there, actually.
+
+01:33.270 --> 01:36.300
+Let's look at her emulator, and we should see, hopefully soon.
+
+01:38.180 --> 01:41.230
+Something let's go ahead and just good code so we can save some space.
+
+01:45.320 --> 01:49.940
+They would go it's very small, can make it this little bit bigger, so you can actually see they're
+
+01:49.940 --> 01:50.960
+very small, but there it is.
+
+01:51.230 --> 01:52.460
+Now let's see if this works.
+
+01:52.460 --> 01:57.450
+I'm going to open LOLCat and I put tap here for Orange Rejects.
+
+01:58.190 --> 02:01.250
+So if you tap, you can see says tap there.
+
+02:04.050 --> 02:05.820
+So each time it tap, it's going to show.
+
+02:09.460 --> 02:12.430
+You can see all of the taps are being shown there.
+
+02:13.180 --> 02:14.080
+All right, so it's working.
+
+02:14.440 --> 02:19.240
+All we had to do is just to through our modifier to say we want this car to be clickable.
+
+02:19.510 --> 02:25.320
+And when that happens, we want, in this case, a message that says Create Circle Tap, which is exactly
+
+02:25.320 --> 02:25.810
+what you see.
+
+02:27.340 --> 02:29.770
+OK, so as you can see, when we run it, it's really small.
+
+02:29.770 --> 02:30.730
+Want to make a little bit bigger?
+
+02:31.030 --> 02:34.600
+Let's maybe make this one hundred and five.
+
+02:35.080 --> 02:35.590
+There we go.
+
+02:35.920 --> 02:36.880
+It's really large.
+
+02:37.360 --> 02:41.920
+The other thing we can do because it's a card, if you have over again, you see we have this elevation.
+
+02:41.920 --> 02:48.370
+So this elevation, what it will do will elevate the button so that we have a contrast between the button
+
+02:48.370 --> 02:49.090
+and the background.
+
+02:49.090 --> 02:52.390
+Because as you see here right now, it's very minimal the contrast.
+
+02:52.630 --> 02:56.200
+So hover over it to make sure we know exactly where that.
+
+02:56.680 --> 03:00.640
+So any time after our shape, we can add elevation.
+
+03:00.720 --> 03:06.180
+So we have modifier there and we have shape.
+
+03:06.190 --> 03:09.370
+I'm going to just put here the what I'm going to say elevation.
+
+03:14.080 --> 03:17.050
+And give it a bath for that deep like this.
+
+03:18.880 --> 03:19.230
+All right.
+
+03:19.300 --> 03:19.930
+Let's go ahead.
+
+03:26.230 --> 03:34.650
+We can stop this if we want it and go back to split mode and make this that size in the sky and refresh,
+
+03:34.660 --> 03:36.640
+we should see some differences there.
+
+03:40.100 --> 03:46.060
+Right there it is, it's hard to see us go ahead and just run altogether on an animal later, hopefully
+
+03:46.060 --> 03:46.630
+we can see.
+
+03:48.970 --> 03:49.450
+Aha!
+
+03:49.780 --> 03:51.880
+Now you may ask, OK, what's going on here?
+
+03:51.910 --> 03:54.000
+Why is that we don't see anything on Amelia.
+
+03:54.010 --> 04:01.750
+Remember earlier we actually created or clicked the blog preview, which just deployed this not necessarily
+
+04:01.750 --> 04:02.200
+the app.
+
+04:02.770 --> 04:04.030
+So that is a distinction.
+
+04:04.210 --> 04:10.240
+Another thing here you remember that we still constructing our circle here and we have in a preview
+
+04:10.240 --> 04:12.100
+mode for this create circle.
+
+04:12.400 --> 04:13.600
+We're not calling it anywhere.
+
+04:14.140 --> 04:20.890
+So if I call it inside of my app because my or my app is being called inside of us, that content that
+
+04:20.890 --> 04:21.370
+should work.
+
+04:21.700 --> 04:25.540
+So here I'm going to say, create a circle like that.
+
+04:25.960 --> 04:28.510
+Now, if I run, I should be able to see that circle.
+
+04:30.520 --> 04:30.790
+Huh.
+
+04:31.450 --> 04:31.960
+There we go.
+
+04:32.050 --> 04:38.200
+There is our circle, the circle is not what we're expecting, but it's OK, we'll fix that.
+
+04:38.380 --> 04:44.590
+So what's happening here is that because in our my app here, we have a surface and we are saying fill
+
+04:44.590 --> 04:47.470
+max height and fill max width.
+
+04:47.770 --> 04:52.750
+So the circle now is taking up the entire space where there's nothing else inside of this surface.
+
+04:52.930 --> 04:53.560
+We'll fix that.
+
+04:53.920 --> 04:59.320
+But nonetheless, you can see now that there is a distinction between the background and the button
+
+04:59.320 --> 05:01.120
+because we added that elevation.
+
+05:03.460 --> 05:07.120
+Here, so the bigger the elevation, the more contrast you will have.
+
+05:07.450 --> 05:07.750
+OK?
+
+05:07.960 --> 05:09.040
+Can see at the bottom here.
+
+05:09.130 --> 05:10.210
+Actually, it's probably better.
+
+05:10.390 --> 05:12.400
+There's some sort of shadow happening there.
+
+05:13.710 --> 05:19.460
+OK, now if you click, you can see how this will work, if you go back to LOLCat, can see that Tap
+
+05:19.470 --> 05:22.110
+has been working each time you tap, everything still works.
+
+05:23.160 --> 05:26.820
+All right, so next, we need to tackle this problem we're having here, which is it's taking up the
+
+05:26.820 --> 05:30.390
+whole space, which is exactly what we told the surface to do.
+
+05:31.170 --> 05:32.280
+But that's not what we want.
+
+05:32.620 --> 05:35.460
+Want the button to hopefully be in the middle of the screen.
+
+05:36.060 --> 05:37.620
+So I want you to think about this.
+
+05:37.980 --> 05:44.220
+What would be a way for us to make it so that this button is in the middle of the screen?

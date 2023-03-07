@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.720 --> 00:07.230
+All right, so let's go ahead and look at creating this structure here again, I'm going to create a
+
+00:07.230 --> 00:17.850
+different composable, but I make this preview of also preview as such and then act composable.
+
+00:19.540 --> 00:22.750
+This is a function I'm going to call this rounded.
+
+00:28.180 --> 00:30.040
+Button, because it is indeed a button.
+
+00:30.430 --> 00:34.030
+OK, OK, good call something else, but different button sounds better.
+
+00:34.510 --> 00:34.780
+All right.
+
+00:34.780 --> 00:41.860
+So I'm going to pass a label here because each one will need a label of a string.
+
+00:44.280 --> 00:46.620
+Let's close this, so we don't have distractions.
+
+00:54.070 --> 01:02.680
+And let's set it to reading for now, and then let's pass a radius.
+
+01:04.510 --> 01:10.870
+It's going to be an integer and let's set it to 29 as its default and we're going to need the UN press,
+
+01:11.320 --> 01:11.700
+OK?
+
+01:12.430 --> 01:12.970
+Press,
+
+01:16.360 --> 01:19.950
+let's just say passing empty there.
+
+01:20.000 --> 01:20.950
+It's going to be unit.
+
+01:22.510 --> 01:22.900
+All right.
+
+01:23.110 --> 01:32.050
+So inside here, I'm going to start by putting together a surface and less passive modifier modifier,
+
+01:32.680 --> 01:37.600
+and I'm going to go straight to clipping because I want to clip into a shape.
+
+01:37.600 --> 01:45.010
+So I'm going to pass this great pass a rounded, rounded corners shape, and I'm going to change a few
+
+01:45.010 --> 01:48.490
+things differently, depending on the side of the shape.
+
+01:48.850 --> 01:53.380
+Because you see here, this structure has this side's going to be like this and this is going to be
+
+01:53.380 --> 01:54.850
+different and the tops.
+
+01:54.970 --> 01:59.890
+So there's a lot of different rounding that I'm going to add to each side.
+
+02:00.640 --> 02:09.250
+OK, so bottom, so bottom and percentage, I'm going to pass the radius that we're passing and.
+
+02:10.470 --> 02:11.610
+Top start.
+
+02:12.540 --> 02:20.430
+It's also going to be the radius, so we're looking at the bottom and this is the bottom end and top
+
+02:20.430 --> 02:21.840
+start is going to be this.
+
+02:22.290 --> 02:25.710
+So these two will have the same percentages of roundness.
+
+02:26.610 --> 02:28.710
+OK, and let's go ahead and give you a color.
+
+02:29.880 --> 02:35.550
+I have a special color for it like this we've seen before and.
+
+02:37.490 --> 02:38.030
+That's good.
+
+02:38.350 --> 02:46.280
+Now we're going to go into the contents of its column like this and I'm going to pass modifier again.
+
+02:49.180 --> 02:54.970
+With in this case, I'm going to make it 90 deep, and then I'm going to say, oops.
+
+02:55.450 --> 03:01.080
+And then we say height in this is a different function.
+
+03:01.130 --> 03:01.990
+I'm going to call here.
+
+03:02.110 --> 03:04.390
+So let's go ahead and have a look and see what this is.
+
+03:04.870 --> 03:08.110
+Well, this is going to arrange things differently.
+
+03:08.110 --> 03:14.950
+So it's going to constrain the height of the content to be between Mendip and Max deep as permitted
+
+03:14.950 --> 03:16.930
+by incoming measurement.
+
+03:17.140 --> 03:17.380
+OK.
+
+03:17.680 --> 03:24.550
+So we are trying to make sure that the contents of this surface in this case of this one button will
+
+03:24.550 --> 03:26.470
+be constrained somehow.
+
+03:26.480 --> 03:32.800
+So the constraint we're going past is going to be about 40 dpi, depending on on the overall, depending
+
+03:32.800 --> 03:36.310
+on our surface and where this surface is being laid out.
+
+03:37.000 --> 03:39.220
+And then I'm going to make this clickable.
+
+03:40.390 --> 03:41.920
+In fact, we're not going to do anything.
+
+03:45.220 --> 03:49.420
+They make this clickable, I'm just going to say on press, OK, so there we go.
+
+03:50.110 --> 03:52.120
+All right, let's continue here.
+
+03:52.540 --> 04:01.930
+I want to make sure that the vertical arrangement is center and horizontal alignment here.
+
+04:02.530 --> 04:04.450
+It's going to be center horizontally.
+
+04:05.200 --> 04:07.810
+OK, so inside now I'm going to add a text.
+
+04:09.010 --> 04:13.000
+This text is going to have a label which is going to be passed along.
+
+04:13.520 --> 04:18.850
+And let's give a style, let's say, text style, different ways of styling thing.
+
+04:18.880 --> 04:21.520
+This is the beauty of compose, of course.
+
+04:21.880 --> 04:32.560
+So when I say color, just give it color that white and font size, let's give about 15 ACP.
+
+04:36.890 --> 04:37.150
+OK.
+
+04:37.230 --> 04:37.820
+And that's it.
+
+04:38.750 --> 04:47.030
+Now this round button, it's going to be called so right after our column, I'm just going to put another
+
+04:47.030 --> 04:48.500
+row right here.
+
+04:49.720 --> 04:55.330
+And it's a horizontal arrangement space.
+
+04:57.030 --> 04:57.720
+Between.
+
+05:03.480 --> 05:04.470
+And then vertical
+
+05:07.170 --> 05:07.980
+alignment.
+
+05:10.320 --> 05:11.430
+Bottom like this.
+
+05:17.010 --> 05:19.380
+But here, let's add a rounded button.
+
+05:19.860 --> 05:30.780
+Let's just pass a label, sure, that says Reading, and let's pass a radius of about 70.
+
+05:31.810 --> 05:36.040
+Like that, great, let's see if this is going to show something.
+
+05:37.000 --> 05:42.090
+OK, so there it is, but it's not necessarily where we want it to be.
+
+05:42.100 --> 05:43.520
+It's right at the top here.
+
+05:43.540 --> 05:46.030
+So this has to come down here.
+
+05:46.420 --> 05:46.680
+OK.
+
+05:46.990 --> 05:51.430
+So I think what I need to do is this has to still be inside of this column.
+
+05:51.430 --> 05:55.760
+So let's put inside of the column, they're fresh.
+
+05:55.960 --> 05:58.610
+We should probably have it down here, hopefully.
+
+05:58.630 --> 05:59.020
+Let's see.
+
+06:02.870 --> 06:04.730
+OK, that's good, that's good progress.
+
+06:05.660 --> 06:09.890
+We want this to be all the way to the right, but at least we know it's part of this column here, so
+
+06:09.890 --> 06:10.670
+it's looking really good.
+
+06:11.090 --> 06:11.600
+Very nice.
+
+06:12.320 --> 06:19.610
+This is the power of using compose because you cannot take a card, for instance, and clip to make
+
+06:19.610 --> 06:21.080
+it look the way you want it to look.
+
+06:21.590 --> 06:23.240
+OK, so this is good.
+
+06:23.240 --> 06:25.630
+Now we need to figure out a way to get this to the right.
+
+06:25.640 --> 06:29.790
+So what we can do because we have is inside of a row, we have space in between.
+
+06:29.810 --> 06:36.320
+In fact, let's see if we can say push that to end, right, so that whatever it is inside of a row
+
+06:36.320 --> 06:38.360
+is going to go to the end of the room.
+
+06:38.690 --> 06:40.160
+See if this is going to help.
+
+06:42.250 --> 06:44.120
+And while that works perfectly.
+
+06:44.410 --> 06:48.010
+Of course, it looks a little bit strange because we don't have that image there, but at least we have
+
+06:48.310 --> 06:49.810
+the infrastructure that we need.
+
+06:50.200 --> 06:51.400
+So back to our home.
+
+06:51.670 --> 06:51.670
+I.
+
+06:52.360 --> 06:53.500
+Let's close this down.
+
+06:54.340 --> 06:57.580
+Well, actually our home content, but this is what's called inside of our home.
+
+06:58.330 --> 07:02.350
+How about adding, Let's see, this is our role.
+
+07:02.590 --> 07:04.810
+Just this is our column.
+
+07:05.050 --> 07:05.530
+Very good.
+
+07:06.460 --> 07:07.330
+So how about here?
+
+07:07.340 --> 07:09.430
+I'm going to pass just real quick.
+
+07:10.060 --> 07:11.350
+Our list card?
+
+07:11.740 --> 07:12.760
+Let's go ahead and run.
+
+07:13.580 --> 07:16.600
+In fact, before we run was, see, that's going to show.
+
+07:17.470 --> 07:19.090
+Let's just go ahead and run real quick here.
+
+07:19.100 --> 07:21.400
+I think it would be better that way.
+
+07:23.370 --> 07:25.980
+We have this very nice card, says Reading.
+
+07:26.250 --> 07:30.720
+Look at that, and we have the ratings and heart, and the one thing that is missing is, of course,
+
+07:30.720 --> 07:31.500
+an image here.
+
+07:31.830 --> 07:37.050
+And we can change that later, but at least we see this structure is working.
+
+07:37.500 --> 07:38.100
+All right.
+
+07:38.160 --> 07:39.090
+It's looking really good.
+
+07:39.450 --> 07:40.140
+Very exciting.
+
+07:40.650 --> 07:43.080
+So once we have the image, then we should be golden.
+
+07:43.620 --> 07:44.220
+This is good.
+
+07:44.790 --> 07:45.230
+All right.
+
+07:45.240 --> 07:47.250
+It's coming together pretty nicely.
+
+07:47.970 --> 07:48.870
+Oh, it's exciting.
+
+07:49.500 --> 07:56.010
+Next, we'll continue working on finalizing our main screen here and hopefully attach an image here,
+
+07:56.010 --> 07:58.230
+a dummy image so we can see how it all works.
+
+07:58.980 --> 08:01.290
+OK, but so far you can even click on it.
+
+08:01.710 --> 08:02.820
+It's really good.

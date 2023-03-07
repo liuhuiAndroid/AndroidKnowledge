@@ -1,0 +1,217 @@
+WEBVTT
+
+00:00.240 --> 00:03.630
+Now, let's say we want to make this say hello a little bit more dynamic.
+
+00:03.870 --> 00:06.320
+In fact, let's also change this name to say hello.
+
+00:06.330 --> 00:07.780
+It's no longer valid, right?
+
+00:07.800 --> 00:12.360
+Let's change this to something else now because I know that say hello is being called here and whenever
+
+00:12.360 --> 00:15.340
+we want to change something in all occurrences, right?
+
+00:15.360 --> 00:19.170
+Meaning if I change, hear this name, it will also reflect where are we calling?
+
+00:19.470 --> 00:24.030
+And we could have called this many other places as well if this was an extensive program.
+
+00:24.510 --> 00:30.300
+What you can do is you can right click just quickly hear me say, refactor and I say change like that
+
+00:30.300 --> 00:31.080
+or rename it.
+
+00:31.470 --> 00:36.360
+So when you do that, then you can actually see that it's going to affect all other places where we
+
+00:36.360 --> 00:37.170
+are calling say, hello.
+
+00:37.230 --> 00:42.840
+So in this case, I'm going to say calculate something like that if you enter and then you can see it
+
+00:42.840 --> 00:44.250
+change to where we're calling as well.
+
+00:44.610 --> 00:47.220
+OK, so back to what we want to accomplish here.
+
+00:47.220 --> 00:53.400
+We want to make sure that instead of hard coding these values, the range values, what if we wanted
+
+00:53.400 --> 01:00.240
+to make it so that these numbers, the ranges are actually passed through as parameters right in our
+
+01:00.240 --> 01:00.810
+function here?
+
+01:01.020 --> 01:07.500
+So that takes us to another particularity about functions is that we can actually pass parameters that
+
+01:07.500 --> 01:08.760
+can be used inside of this.
+
+01:09.090 --> 01:12.720
+So in this case here, I'm going to say I want the parameter to be what?
+
+01:12.960 --> 01:16.440
+So in this case here, I'm going to say first, it's going to be in each type.
+
+01:16.440 --> 01:18.990
+So I say calling like that and say it.
+
+01:19.020 --> 01:22.590
+And then second, it's also going to be an int type as well.
+
+01:23.010 --> 01:28.050
+So what's happening here is that we're saying whenever this is called, we need to pass first, which
+
+01:28.050 --> 01:31.440
+nobody int type an integer and second parameter.
+
+01:31.440 --> 01:32.610
+It's going to also be an integer.
+
+01:32.940 --> 01:37.590
+And you can see right away that we have an issue here because if you have over is going to say no value
+
+01:37.590 --> 01:40.710
+pass for parameters first and second, OK?
+
+01:40.920 --> 01:45.120
+And you can see right away here, it says, gives us a snapshot of the calculator.
+
+01:45.120 --> 01:47.460
+Saying OK at first is going to be in second is going to be end as well.
+
+01:47.620 --> 01:53.580
+That means here in the past, for instance, one for the first and 100 for the second parameter.
+
+01:53.880 --> 01:55.380
+So these are now arguments.
+
+01:55.380 --> 01:56.610
+So whenever we pass something.
+
+01:56.850 --> 01:59.250
+These are arguments and these would be parameters.
+
+01:59.370 --> 02:03.150
+So in this case, here were passing arguments because we're calling the function.
+
+02:03.300 --> 02:08.460
+These are now called arguments in this case here, since we're setting the types of parameters that
+
+02:08.460 --> 02:09.090
+need to pass.
+
+02:09.420 --> 02:11.040
+We call these parameters.
+
+02:11.280 --> 02:13.500
+Just some programming jargon.
+
+02:13.920 --> 02:14.220
+All right.
+
+02:14.430 --> 02:20.400
+So as you see here, if we run this, we're going to still get the same information that we have here.
+
+02:20.610 --> 02:25.770
+However, because we haven't really used first and second parameters.
+
+02:26.040 --> 02:29.030
+So in this case here, I'm just going to go and change a set of hardcoded one.
+
+02:29.040 --> 02:31.710
+I'm going to say first because it is indeed an end.
+
+02:31.860 --> 02:36.590
+There we go, and I can see it's highlighted because that's what we're using and when I say second as
+
+02:36.600 --> 02:36.990
+such.
+
+02:37.440 --> 02:43.350
+OK, now if I run, we're going to again see the same results because we are passing one and 100 for
+
+02:43.350 --> 02:43.860
+the range.
+
+02:43.920 --> 02:44.730
+Nothing has changed.
+
+02:44.880 --> 02:46.710
+But look how wonderful this is now.
+
+02:46.980 --> 02:49.650
+Now I can change this to a thousand.
+
+02:49.950 --> 02:52.830
+When we call, we passed the argument from one to a thousand.
+
+02:52.830 --> 02:59.160
+So if you run now, what happens is that we get to a thousand because we are dynamically passing the
+
+02:59.160 --> 03:01.810
+arguments one in, one out so we can change this.
+
+03:01.830 --> 03:04.380
+We can say 11 to 1000 run.
+
+03:04.560 --> 03:06.510
+And then, as I see it, still runs.
+
+03:06.900 --> 03:13.140
+OK, now the beauty here, of course, is that we are no longer just having to come down here instead
+
+03:13.140 --> 03:16.110
+of recalculate function and pass the hardcoded.
+
+03:16.110 --> 03:20.610
+That is the values, the first item and the second value, right?
+
+03:20.640 --> 03:21.120
+The range.
+
+03:22.290 --> 03:22.560
+OK.
+
+03:22.920 --> 03:23.520
+And there we have it.
+
+03:23.610 --> 03:24.710
+So that is the power.
+
+03:24.720 --> 03:28.170
+So now calculate can be used for any number, really.
+
+03:28.350 --> 03:33.060
+Of course, we have some issues here because if you pass negative numbers, then that's another issue.
+
+03:33.060 --> 03:39.900
+But at least you can see that having to have parameters that we pass along, it makes our function a
+
+03:39.900 --> 03:44.250
+little bit more flexible and customizable, and in turn, it's going to be more dynamic.
+
+03:44.490 --> 03:49.350
+What I want you to do before I go to the next week is think other ways you can make this even more dynamic
+
+03:49.650 --> 03:53.310
+because you notice here there's this number here that is indeed hardcoded.
+
+03:53.490 --> 03:58.590
+So would it be awesome to also have that as a parameter here?
+
+03:58.620 --> 04:02.490
+So that way, when we call calculate, we have to pass that as an argument.
+
+04:02.940 --> 04:05.490
+Okay, think about a way to do that and I'll see you next.

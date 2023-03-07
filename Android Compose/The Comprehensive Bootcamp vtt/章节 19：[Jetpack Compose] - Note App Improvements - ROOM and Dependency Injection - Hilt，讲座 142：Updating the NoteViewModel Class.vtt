@@ -1,0 +1,394 @@
+WEBVTT
+
+00:00.150 --> 00:05.400
+Good progress we're making here, we finished our repository, which means we're ready now to go and
+
+00:05.400 --> 00:06.570
+look at our review model.
+
+00:07.110 --> 00:13.650
+We have this set up of four of you already, but we'll need to update a few things, of course, for
+
+00:13.650 --> 00:15.900
+it to work as we've changed a few things.
+
+00:16.110 --> 00:23.070
+Also now we're looking at the room database and there are other things we've changed, so we need to
+
+00:24.030 --> 00:27.090
+make sure that our review model is ready for changes.
+
+00:27.260 --> 00:34.920
+OK, so one step closer to look at the user interface in this case, the composable at the top level,
+
+00:34.920 --> 00:35.790
+the user interface.
+
+00:37.010 --> 00:39.060
+Let's go ahead and find.
+
+00:40.860 --> 00:42.600
+View model that would go.
+
+00:43.140 --> 00:48.970
+OK, so things are looking good, but now we're going to change a few types here, for instance.
+
+00:49.680 --> 00:56.550
+The first thing we need to do is we're also going to inject, you know, the model here, our repository,
+
+00:56.580 --> 00:58.240
+because remember, that's what we're trying to do.
+
+00:58.560 --> 01:04.260
+We need, first of all, for our repository, we had to inject our DAO using Helt.
+
+01:04.360 --> 01:05.460
+That was really simple.
+
+01:05.700 --> 01:13.380
+And now we need a piece of our repository so that we can get access to what a repository has access
+
+01:13.380 --> 01:14.070
+to in this case.
+
+01:14.500 --> 01:14.910
+All right.
+
+01:15.150 --> 01:17.880
+So we need to inject a repository into our view model.
+
+01:18.210 --> 01:18.690
+Makes sense.
+
+01:19.290 --> 01:19.930
+How do we do that?
+
+01:19.950 --> 01:27.090
+Well, again, because we're using Helt, we can go ahead and say at inject constructor such and pass
+
+01:27.090 --> 01:28.530
+our final score head.
+
+01:28.530 --> 01:39.950
+And first of all, make sure that we import or inject there we go and call the Repository Note Repositories
+
+01:39.960 --> 01:40.320
+section.
+
+01:41.280 --> 01:41.790
+And that's it.
+
+01:42.360 --> 01:47.700
+So now, what are we going to do because the type that we are getting, we are actually not not using
+
+01:47.700 --> 01:49.040
+mutable states, right?
+
+01:49.050 --> 01:54.030
+Because neutral state is real hard to get it to work with from.
+
+01:54.210 --> 01:55.320
+So we've changed this.
+
+01:55.320 --> 01:57.570
+So I'm going to just comment this out.
+
+01:59.070 --> 02:06.230
+And instead, we are going to say private, I'm going to use the same name and we'll say fowl first
+
+02:06.240 --> 02:10.230
+and I'm going to create a private right, say, note list.
+
+02:10.230 --> 02:20.350
+So this will have all the notes and going say, mutable state flow like this.
+
+02:20.350 --> 02:22.410
+So this is a type that I'm looking for.
+
+02:22.980 --> 02:29.700
+And of course, it's going to be a list of notes object and to initialize it.
+
+02:30.180 --> 02:34.050
+They just say empty list because we're using flow.
+
+02:34.080 --> 02:36.510
+We're going to use the mutable state flow.
+
+02:36.840 --> 02:38.340
+So this is going to be the private state.
+
+02:38.340 --> 02:44.010
+So we are going to obviously have file here, which is going to be now a public state so you can see
+
+02:44.010 --> 02:44.610
+the difference here.
+
+02:44.610 --> 02:47.040
+We have underscore this means it's private.
+
+02:47.160 --> 02:53.420
+It's going to be used only inside here and this is going to be our public API note, Lisa.
+
+02:53.460 --> 02:58.860
+Such and I'm going to just say it's going to be equal to a note, a list of what we just created and
+
+02:58.860 --> 03:01.430
+we're going to get say as state flow.
+
+03:01.440 --> 03:08.460
+So we're going to get the state, all of these notes and we have to say as state flow to say that indeed
+
+03:08.460 --> 03:14.760
+this is going to be holding a flow that is stateful, which is exactly what we need.
+
+03:15.690 --> 03:23.880
+So let's not forget to add the at helt view model to annotate that this note view model is a hilt type.
+
+03:24.540 --> 03:28.800
+OK, so let's go ahead and change a few things here.
+
+03:28.830 --> 03:33.690
+So all of these will need to change because we've changed the tides and we've changed a lot of things.
+
+03:34.260 --> 03:43.200
+So for our add note here, let's start by saying that let's make this a very codling like I say, this
+
+03:43.200 --> 03:43.440
+one.
+
+03:43.440 --> 03:45.750
+First of all, this is going to be suspend, right?
+
+03:47.280 --> 03:53.970
+Because we're going to have Cortines like this and I'm going to use a repository.
+
+03:56.150 --> 04:02.540
+And in this case here, and in this case, I'm going to say lunch, and in this case and we a few model
+
+04:02.540 --> 04:03.140
+scope.
+
+04:03.440 --> 04:05.930
+All right, because now we're inside of a call routine here.
+
+04:06.200 --> 04:08.240
+I'm going to say lunch, invoke this block.
+
+04:08.630 --> 04:14.690
+And here is what I'm going to say something like repository, get a repository and then invoke the add
+
+04:15.500 --> 04:17.810
+note and pass the Note II section.
+
+04:19.340 --> 04:24.620
+So it might as well just delete all of this and write them one by one grid, not suspend.
+
+04:25.310 --> 04:27.290
+And let's say I update.
+
+04:29.840 --> 04:30.110
+No.
+
+04:30.140 --> 04:32.450
+Two and I have noticed we're going to be updating.
+
+04:36.210 --> 04:44.310
+And when I say view, model scope, that launch repository, an update note passed that note.
+
+04:49.140 --> 04:49.950
+And again.
+
+04:55.590 --> 04:58.440
+Say remove note,
+
+05:02.370 --> 05:08.280
+same thing, view, model, scope, launch repository, update.
+
+05:08.910 --> 05:10.290
+That's going to be remove.
+
+05:14.110 --> 05:16.020
+Well, maybe you recall the leaked note instead of.
+
+05:16.660 --> 05:19.000
+Same thing, pass out a note.
+
+05:20.080 --> 05:27.100
+So obviously in our init block here, we're not going to go and get the DNA source in LoDo notes with
+
+05:27.110 --> 05:31.480
+that's old news, but also see that this isn't going to work because we've changed a few things.
+
+05:31.480 --> 05:33.880
+So it's coming this out.
+
+05:33.880 --> 05:39.610
+So what are we going to do here is we are going to retrieve items from our database when I say repository
+
+05:39.610 --> 05:40.780
+to get all notes.
+
+05:40.790 --> 05:48.700
+But remember, we're getting these notes differently now because we attach these notes or we wrap this
+
+05:48.700 --> 05:52.540
+notes with a flow state, right?
+
+05:52.930 --> 06:01.090
+So the best way to do this is obviously also add the view model scope here and then say lunch to launch
+
+06:01.090 --> 06:03.670
+this code block, which is part of our call routine.
+
+06:04.120 --> 06:10.180
+But what you can do inside also, I'm going to pass a dispatcher object here or dispatcher that is as
+
+06:10.210 --> 06:12.220
+part of 13 when I say I.
+
+06:12.610 --> 06:14.130
+So what this means?
+
+06:14.140 --> 06:17.320
+There's a lot of information here and you can go and read about it.
+
+06:17.650 --> 06:23.170
+But what are we trying to do here is that we want to make sure that our highway, if you use that as
+
+06:23.170 --> 06:29.440
+an allergy, as an analogy, we want to make sure that his highway has a lot of different lanes.
+
+06:29.450 --> 06:35.290
+So if we have a lot of different lanes or many lanes in our highway, that means we can have more influx
+
+06:35.290 --> 06:35.950
+of cars.
+
+06:36.160 --> 06:37.480
+So that's what we're saying here.
+
+06:37.690 --> 06:42.100
+When we launch this code block, it is 14 per whatever we pass here.
+
+06:42.460 --> 06:50.020
+We want to pass as many processes as many tasks as possible because we will have that space to do so.
+
+06:50.380 --> 06:50.660
+OK?
+
+06:51.310 --> 06:55.270
+And all of these items or all of these tasks will run in parallel.
+
+06:56.080 --> 06:56.440
+OK.
+
+06:56.650 --> 07:03.760
+So this is where I'm going to say a repository such as that gets old notes right and then invoke the
+
+07:03.760 --> 07:06.040
+distinct until changed.
+
+07:06.580 --> 07:08.170
+And then I'm going to say collect.
+
+07:08.180 --> 07:11.830
+So now I'm going to be able to go and collect information.
+
+07:12.310 --> 07:17.670
+In this case, it's going to be information coming in as a sequence of data flow.
+
+07:17.890 --> 07:21.150
+So I have here my lambada and in our lab.
+
+07:21.150 --> 07:24.190
+But of course, this I.T., it's passing a list of notes.
+
+07:24.190 --> 07:29.710
+I can change this name to something it's more readable list of notes as such.
+
+07:30.610 --> 07:36.940
+And then here I can even go ahead and check if this list of notes is not.
+
+07:40.630 --> 07:54.400
+It's no more empty, such for now, I'm just going to say Log Rd and say an empty list like something
+
+07:54.400 --> 07:54.880
+like this.
+
+07:55.660 --> 07:58.640
+In any other case, that means we have something what we want to do.
+
+07:58.670 --> 08:05.380
+Well, we want to populate our note list here with these values of lists.
+
+08:06.450 --> 08:12.820
+I guess this is what we're going to be using in in our note fuel model to access all of the list, all
+
+08:12.820 --> 08:15.010
+of the lists of notes we're getting from our database.
+
+08:16.330 --> 08:21.340
+So simply, I'm going to say note list that value.
+
+08:21.580 --> 08:27.730
+And when I said that, I'm going to get all the list and set that on to our note list like this.
+
+08:28.090 --> 08:29.620
+So our note lists that value.
+
+08:29.980 --> 08:36.430
+Now this state here, it's a mutable set flow should have all of the items from our database.
+
+08:37.240 --> 08:45.160
+OK, so now that we finished this structure, we started from Dow and then created a room database and
+
+08:45.160 --> 08:46.420
+we understand all of that.
+
+08:46.480 --> 08:53.530
+And then we created this repository like the the source of truth for all the single source of truth,
+
+08:53.530 --> 08:55.210
+for all of the data.
+
+08:55.420 --> 08:59.640
+So anybody who wants something from our database, they will go through the repository.
+
+08:59.650 --> 09:06.890
+So it's just a clean way to put it clean structure, and we put together the view model.
+
+09:06.910 --> 09:14.110
+Notice now the structure we're using for our data, it's not a lot of data and it's not mutable state
+
+09:14.260 --> 09:15.520
+because with.
+
+09:16.960 --> 09:21.460
+Room mutable state is really hard to work with, at least that's what I found.
+
+09:21.910 --> 09:23.650
+So flow, it's recommended.
+
+09:23.650 --> 09:26.500
+So we're using flow instead of life data or mutable state.
+
+09:26.890 --> 09:28.960
+You could have used life data, but I chose flow.
+
+09:29.590 --> 09:31.840
+Now we're ready to implement our user interface.
+
+09:31.840 --> 09:38.260
+In this case, our composable so get our view model and see if we can start pulling pulling in data
+
+09:38.620 --> 09:40.690
+that we have been working so hard for.
+
+09:41.080 --> 09:42.880
+I show, you know, a user interface.
+
+09:43.300 --> 09:43.570
+All right.
+
+09:43.570 --> 09:45.520
+So we will do that in the next video.

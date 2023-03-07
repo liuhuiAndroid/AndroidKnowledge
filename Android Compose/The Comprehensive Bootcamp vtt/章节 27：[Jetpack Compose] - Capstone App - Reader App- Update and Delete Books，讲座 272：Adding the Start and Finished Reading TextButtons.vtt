@@ -1,0 +1,478 @@
+WEBVTT
+
+00:00.780 --> 00:01.060
+All right.
+
+00:01.200 --> 00:04.110
+So let's go ahead and see if we can put this structure here now.
+
+00:04.800 --> 00:07.800
+You will see that to make this to work.
+
+00:08.040 --> 00:10.020
+Of course, these are text buttons.
+
+00:10.440 --> 00:13.320
+You'll see that will click when we click on Start Reading.
+
+00:13.530 --> 00:19.890
+This will change color, meaning it's going to we're going to disable it to look like cannot be clicked
+
+00:19.890 --> 00:20.460
+again, right?
+
+00:21.120 --> 00:31.980
+Let's add a row because everything is side by side modifier vertical alignment, the one center vertically
+
+00:33.180 --> 00:35.160
+horizontal arrangement.
+
+00:37.690 --> 00:42.340
+To start, OK, let's add a text button.
+
+00:43.390 --> 00:46.210
+There's different kinds of buttons, text buttons and so forth.
+
+00:46.810 --> 00:50.530
+And then right after that, I'm going to say enabled.
+
+00:51.790 --> 00:52.900
+Now here's the thing.
+
+00:53.200 --> 00:56.650
+How are we going to know whether this is enable or not?
+
+00:56.680 --> 01:05.200
+Well, the idea is this is going to be enabled if they started reading field from our database because
+
+01:05.200 --> 01:07.660
+we're going to have we have that field, right?
+
+01:08.650 --> 01:12.460
+If they started reading field is no.
+
+01:13.840 --> 01:17.830
+That makes sense because we want to make it enabled to say, well, you can enable it now because we
+
+01:18.130 --> 01:24.490
+haven't started, so we can do that by checking our book.
+
+01:26.050 --> 01:32.890
+Say, started reading his novel, then we're going to take whatever.
+
+01:33.370 --> 01:36.130
+If it's true, then this is going to be enabled.
+
+01:36.190 --> 01:38.530
+If it's false, then is this going to be disabled?
+
+01:39.250 --> 01:46.210
+What I'm going to do inside also going to check something else and say if in this case is started,
+
+01:46.210 --> 01:47.770
+which we haven't created yet.
+
+01:50.080 --> 01:57.190
+So they started reading Let's Create is started reading our top here and say, remember?
+
+02:00.280 --> 02:11.020
+Mutable state, state of the city falls, OK, back here, so if is started reading.
+
+02:12.380 --> 02:20.270
+Is the opposite, that value is not true, so it's it's the opposite of what it is at this point.
+
+02:20.990 --> 02:31.070
+What I'm going to do, I'm going to add a text here that will say started reading, she's going to toggle
+
+02:31.070 --> 02:31.940
+back and forth.
+
+02:31.940 --> 02:32.300
+Really?
+
+02:33.260 --> 02:33.700
+OK.
+
+02:33.770 --> 02:38.390
+Else in this case, a lot of Alsace here, let's say text.
+
+02:39.320 --> 02:40.940
+Oh, actually, this has to be start.
+
+02:41.180 --> 02:41.620
+Really?
+
+02:41.630 --> 02:47.060
+That makes sense, Alison when she started reading.
+
+02:48.560 --> 02:53.180
+I'm going to pass an alpha modified because I want to change the way it looks, so it's going to be
+
+02:53.510 --> 03:01.280
+zero that six f right to show it, that to show it, that this is disabled now by this point.
+
+03:02.000 --> 03:03.410
+And then let's give a color.
+
+03:04.570 --> 03:14.480
+It's a color red of the alpha of about 0.5 f floats like this.
+
+03:19.470 --> 03:19.860
+All right.
+
+03:19.890 --> 03:23.340
+So in any other case here, I'm going to say text.
+
+03:26.100 --> 03:34.320
+Right, in this case, we'll know that they have started reading where, say, started on, and we're
+
+03:34.320 --> 03:35.780
+going to finish that at some point.
+
+03:36.750 --> 03:40.620
+Looks like you have too many things going on.
+
+03:41.010 --> 03:42.300
+Let's go like this.
+
+03:42.630 --> 03:43.080
+OK.
+
+03:44.880 --> 03:47.820
+So we have this have this if.
+
+03:49.730 --> 03:54.530
+ALS and to have another if statement here, right?
+
+03:55.670 --> 03:56.390
+If book.
+
+03:57.600 --> 04:05.310
+That started reading, so I want to check that first put that inside, you like this.
+
+04:05.970 --> 04:06.210
+All right.
+
+04:06.210 --> 04:08.340
+So man, I'm going to put an else statement there.
+
+04:08.550 --> 04:11.590
+Let's walk through this real quick search to make sure you understand.
+
+04:11.610 --> 04:15.360
+So what do we want to do is when this start reading is clicked?
+
+04:16.790 --> 04:20.780
+First of all, we are going to, first of all, actually this text button.
+
+04:20.900 --> 04:27.110
+It's going to either be enabled or disabled depending on the book status, right, if it started reading.
+
+04:27.650 --> 04:31.410
+So if books that started reading is known, that means it's true.
+
+04:31.430 --> 04:34.370
+So Enable is going to be true, which means it's going to look like this, right?
+
+04:35.210 --> 04:41.150
+And then we're going to check real quick inside of this book was going to change this text, depending
+
+04:41.600 --> 04:42.530
+on the situation.
+
+04:42.810 --> 04:48.350
+OK, so we're going to check if ebook in this case, if started reading the value.
+
+04:49.950 --> 04:54.510
+We're going to toggle back and forth, right, so that's why would that instead of a remember, immutable
+
+04:54.510 --> 04:54.870
+state?
+
+04:55.710 --> 04:57.320
+So in this case, here we started reading.
+
+04:57.330 --> 04:59.180
+It's true or it's the opposite.
+
+04:59.190 --> 05:02.390
+Whatever it is, we're going to face start reading, right?
+
+05:02.410 --> 05:04.140
+So it's going to look like they start reading.
+
+05:04.980 --> 05:09.930
+Else is going to say, started reading, meaning we going to change this text to say, started reading
+
+05:09.930 --> 05:14.940
+because it would say that you indeed either have clicked to say that they've started reading.
+
+05:15.240 --> 05:22.060
+Now this else here is outside the main if from the book started reading coming from our database.
+
+05:22.770 --> 05:29.190
+So what we want to do is if books I started reading is not novel, which is going to be catched hot
+
+05:29.190 --> 05:30.240
+here in this LS.
+
+05:30.690 --> 05:38.340
+What I want to do is we're going to, of course, get the date of when this was started reading why
+
+05:38.340 --> 05:40.230
+the date when we started reading this book?
+
+05:41.410 --> 05:50.410
+And that's what are we going to add here so we can see text and where they started, then that pass
+
+05:50.410 --> 05:50.860
+here?
+
+05:51.070 --> 05:56.080
+The book started reading like that.
+
+05:58.150 --> 06:02.590
+We will have to format this date later, but we'll get there, so I'm going to do
+
+06:05.920 --> 06:07.270
+format date.
+
+06:08.740 --> 06:09.000
+Right.
+
+06:09.840 --> 06:11.070
+So that's all we're doing here.
+
+06:11.280 --> 06:14.850
+Let's go ahead and run just to see what we have there.
+
+06:18.850 --> 06:22.570
+OK, let's just pick one, and you can see it is indeed enabled.
+
+06:22.690 --> 06:24.040
+And of course, not changing anything.
+
+06:24.040 --> 06:24.400
+Why?
+
+06:24.400 --> 06:30.160
+Because we need to actually because this tagline here is not happening, because we need to do that
+
+06:30.160 --> 06:36.800
+when the buttons text, when the button is clicked on here and which is started reading that value.
+
+06:36.820 --> 06:37.670
+First of all, go ahead.
+
+06:37.700 --> 06:38.500
+Set true.
+
+06:39.220 --> 06:40.450
+When we click on it.
+
+06:40.460 --> 06:42.430
+So now if we run again.
+
+06:43.560 --> 06:46.140
+I'm going to be able to see that it's going to toggle itself.
+
+06:49.990 --> 06:50.770
+OK, let's see.
+
+06:50.830 --> 06:53.880
+Click Voila, I started reading again, let's.
+
+06:54.040 --> 06:56.560
+Like I said, we don't want to change it back.
+
+06:56.950 --> 07:01.960
+Once we start reading it first, we can change that if we want to, but we're just going to leave it
+
+07:01.960 --> 07:02.860
+as it is like that.
+
+07:02.950 --> 07:05.140
+Let's go ahead and add this second one.
+
+07:05.140 --> 07:10.450
+There is going to be the same concept with some minor differences after the Owls.
+
+07:14.050 --> 07:15.780
+I put a spacer here.
+
+07:18.040 --> 07:21.430
+Say height of about four deep.
+
+07:23.760 --> 07:27.450
+In the text button, put it down enabled.
+
+07:28.020 --> 07:32.310
+It's going to be depending on book that finished reading.
+
+07:33.510 --> 07:34.410
+It's not known.
+
+07:37.940 --> 07:38.300
+This.
+
+07:39.870 --> 07:48.750
+And then inside, I went to the same thing, go and check if book that finished reading is no, that's
+
+07:48.750 --> 07:50.720
+the case, then I'm going to even check further.
+
+07:50.730 --> 07:53.400
+So if I'm going to create yet another.
+
+07:54.580 --> 08:00.100
+Variable here, immutable variable valve is finished reading.
+
+08:05.050 --> 08:05.860
+Remember?
+
+08:11.000 --> 08:15.200
+Mutable state of, say, false first, OK.
+
+08:15.800 --> 08:22.700
+So we're going to do the same thing, check if it's not finished reading.
+
+08:27.530 --> 08:37.870
+If it's not true, then this Kasem's text is going to say what will say, Mark as read, it's just a
+
+08:37.870 --> 08:49.050
+normal one else text will say finished reading like this and else, right?
+
+08:49.060 --> 08:51.310
+In this case here, grandpa, go to the.
+
+08:52.330 --> 08:54.370
+If statement that one.
+
+08:55.140 --> 08:56.620
+So I'm going to say else.
+
+08:58.240 --> 09:00.250
+Well, the text will say.
+
+09:02.460 --> 09:09.300
+Finished reading or finished on and pass in the actual.
+
+09:10.260 --> 09:13.350
+Book not finished reading.
+
+09:13.380 --> 09:18.330
+And of course, we will come back here to do format like that.
+
+09:18.690 --> 09:20.550
+OK, so we're doing the same thing here.
+
+09:21.060 --> 09:22.980
+If indeed this is finished.
+
+09:23.880 --> 09:26.090
+For course, make sure that no one click here.
+
+09:26.100 --> 09:29.820
+We're going to say it's finished reading that value.
+
+09:29.820 --> 09:32.230
+We're going to set that to true.
+
+09:33.000 --> 09:40.140
+So to drive everything OK again, we are saying is we're going to first check to see if book finished
+
+09:40.140 --> 09:42.750
+reading from our database, right?
+
+09:44.000 --> 09:50.050
+Finish reading is no is novel in this case, it is novel, and this is true that enables going to be
+
+09:50.060 --> 09:54.380
+name, which means they can't actually say Mark as read.
+
+09:54.390 --> 09:56.780
+So click and go from there, right?
+
+09:57.200 --> 10:00.410
+And then inside here I'm going to check if it's finished.
+
+10:01.100 --> 10:06.650
+Reading is not true, then he's going to say Mark as read want them to mark us, right?
+
+10:06.650 --> 10:07.760
+Because they haven't finished it.
+
+10:07.790 --> 10:13.340
+If they need to say so right, Alice is going to say finish reading because we know that if it's finished,
+
+10:13.340 --> 10:16.250
+is it a true, then they finished reading it.
+
+10:16.880 --> 10:18.230
+OK, finished reading.
+
+10:18.710 --> 10:21.370
+That's going to happen the moment we click it, right?
+
+10:22.220 --> 10:22.820
+Wonderful.
+
+10:23.200 --> 10:31.280
+Alice, this Alice here is outside for our test here in our book that finished reading If no coming
+
+10:31.280 --> 10:35.220
+from our database, if book that finished reading is not novel.
+
+10:35.240 --> 10:37.130
+This is where it is going to run, right?
+
+10:37.400 --> 10:42.770
+So what I want to do, then we're going to pull in the finished reading date and add it here.
+
+10:43.670 --> 10:48.320
+So that when they come back, this is going to be the actual date when they finished something I say
+
+10:48.320 --> 10:49.640
+finished on and the date.
+
+10:49.760 --> 10:56.420
+Now it's not going to really make a lot of difference visually, but once we have everything set up,
+
+10:56.420 --> 10:57.140
+this should work.
+
+10:58.560 --> 10:59.070
+Now click.
+
+11:00.000 --> 11:00.900
+All right, there we go.
+
+11:01.590 --> 11:02.130
+Looking good.
+
+11:03.420 --> 11:08.550
+It's finished reading now, it's finished reading that idea is that when you say finished reading,
+
+11:08.550 --> 11:13.890
+we can go back and come back, this is going to go and repopulate itself at this point is, are saying
+
+11:13.890 --> 11:19.290
+finished reading because it looks at this book that finished finished reading from our book, it's still
+
+11:19.290 --> 11:19.770
+no.
+
+11:19.800 --> 11:24.000
+So that's why it doesn't even go and read this and added the actual date.
+
+11:24.300 --> 11:25.710
+Same with start reading, right?
+
+11:26.490 --> 11:27.810
+OK, very good.
+
+11:27.840 --> 11:33.150
+So we have this structure here and next we're going to work on the other structures that we need to
+
+11:33.150 --> 11:33.390
+add.

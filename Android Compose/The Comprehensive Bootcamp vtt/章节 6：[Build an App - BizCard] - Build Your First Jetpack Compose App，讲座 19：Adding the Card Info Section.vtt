@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00.390 --> 00:08.910
+So let's focus on adding the actual info about this particular developer, OK, so name and other text,
+
+00:09.420 --> 00:14.190
+and I'm sure you were able to get that done because I know how dedicated and smart you are.
+
+00:14.580 --> 00:15.030
+OK.
+
+00:15.330 --> 00:15.690
+All right.
+
+00:15.750 --> 00:16.530
+Let's go ahead and do that.
+
+00:16.540 --> 00:19.270
+So after the fighter, as you see, there it is.
+
+00:19.290 --> 00:24.900
+We are going to add another composable, which is a piece of UI real estate, as I like to call it.
+
+00:25.440 --> 00:27.150
+Now let's think about this again.
+
+00:27.330 --> 00:34.590
+All of this area here will have all of its items laid out vertically, which means also we may think
+
+00:34.590 --> 00:35.580
+about a column.
+
+00:35.700 --> 00:40.380
+OK, because a column, as we've seen earlier, will lay things out vertically.
+
+00:40.770 --> 00:45.150
+Now we could get away with just adding them as they are right now.
+
+00:45.150 --> 00:48.450
+But I like to create little entities, little factories.
+
+00:48.450 --> 00:50.580
+They can exist by themselves.
+
+00:51.000 --> 00:52.470
+So here I'm going to say column.
+
+00:52.470 --> 00:54.960
+I such in the column.
+
+00:55.260 --> 00:59.490
+And let's add a modifier and say modifier.
+
+00:59.820 --> 01:04.110
+I want the padding overall pattern of about five dpi as such.
+
+01:04.350 --> 01:04.650
+All right.
+
+01:04.650 --> 01:07.050
+So now we're going to add to the text, right?
+
+01:07.050 --> 01:11.820
+This text here that we see in the square and see how can we accomplish that?
+
+01:11.970 --> 01:14.250
+Let's go just to code so we can see everything for now.
+
+01:15.300 --> 01:20.700
+Well, simply when I say, text this OK, the first option and I'm going to pass something that's a
+
+01:20.700 --> 01:28.500
+miles P. As such now, because like anything else that we've seen before, a composable allows us to
+
+01:28.500 --> 01:33.120
+pass modifiers, allows us to pass other parameters so we can customize.
+
+01:33.330 --> 01:35.580
+These composable, in this case, is a text.
+
+01:35.940 --> 01:41.520
+OK, if you hover over, you can see there's all sort of parameters we can pass to modify and customize
+
+01:41.520 --> 01:41.970
+our text.
+
+01:42.120 --> 01:49.370
+That is indeed the beauty of compose is that we can take anything and start passing all of these parameters
+
+01:49.440 --> 01:51.780
+so we can modify the composable.
+
+01:52.020 --> 01:52.590
+Very neat.
+
+01:52.890 --> 01:54.090
+So what do you want to do first?
+
+01:54.120 --> 01:56.160
+Well, we want to pass in a style.
+
+01:56.170 --> 02:02.100
+So when I say comma in say style as such and for the style, it cannot pass a textile type.
+
+02:02.100 --> 02:08.820
+Or I can continue the trend by saying material theme and go and get typography.
+
+02:08.910 --> 02:10.860
+And then I want each force.
+
+02:10.860 --> 02:16.450
+So each one is the larger size you can pick and the higher the number, the less the size.
+
+02:16.470 --> 02:22.590
+So in this case, I just want kind of a medium there for then still inside of our text there, and we're
+
+02:22.590 --> 02:26.070
+passing these parameters so that we can customize our text.
+
+02:26.370 --> 02:28.260
+I'm going to give it color scheme with a color.
+
+02:28.470 --> 02:32.100
+I can pass a color object, but I'm going to use material again.
+
+02:32.550 --> 02:37.890
+Theme one Colors and I'm going to say primary variance.
+
+02:37.890 --> 02:39.990
+I can choose from all of this.
+
+02:40.050 --> 02:40.320
+OK.
+
+02:40.710 --> 02:41.340
+All right, there we go.
+
+02:41.550 --> 02:42.420
+There's our text.
+
+02:42.690 --> 02:48.150
+Now, if we go back to sleep mode so we can see, let's go ahead and refresh this real quick.
+
+02:48.570 --> 02:52.170
+And you can see we have Myles P. looking really good.
+
+02:52.200 --> 02:52.560
+Very good.
+
+02:52.740 --> 02:54.550
+So now what else can we do here?
+
+02:54.570 --> 03:00.480
+Well, I can do the same thing that we did with create image profile so we can refactor everything right
+
+03:01.140 --> 03:03.750
+before we do that, let's continue because there are the things we need to add.
+
+03:03.870 --> 03:07.290
+As you see here, we have this piece of text and more.
+
+03:07.560 --> 03:09.240
+So next, I'm going to add another text.
+
+03:09.780 --> 03:11.820
+This one will say whatever you want to say.
+
+03:11.820 --> 03:14.370
+Android compose programmer.
+
+03:14.700 --> 03:21.420
+There's added modifier for voice and I want padding all to be three that deep.
+
+03:22.080 --> 03:23.340
+And that's fine.
+
+03:24.000 --> 03:30.750
+And let's just get the same another one at the bottom, and this one is going to be something like at
+
+03:31.310 --> 03:32.520
+least miles.
+
+03:33.120 --> 03:34.240
+Of course, you can put whatever you want.
+
+03:34.260 --> 03:35.250
+This is just an example.
+
+03:35.610 --> 03:41.420
+And now for this one modifier, we are going to do the same thing as we did before, but we also are
+
+03:41.430 --> 03:44.010
+going to add something else in our style.
+
+03:44.190 --> 03:52.430
+Still inside of our text, their was style material, theme typography, and I'm going to use the subtitle
+
+03:52.440 --> 03:55.170
+a subtitle to subtitle one one is fine.
+
+03:55.560 --> 03:58.320
+All right, let's go ahead and update, build and refresh.
+
+03:58.980 --> 03:59.520
+And voila!
+
+04:00.330 --> 04:03.160
+And as you can see, it's looking really good, right?
+
+04:03.180 --> 04:07.140
+We have our image, our profile image when we have our text.
+
+04:07.320 --> 04:09.510
+So it's really getting to look like this.
+
+04:09.930 --> 04:14.430
+Now, one thing we haven't done in a while is we haven't really looked to see how this will look on
+
+04:14.430 --> 04:16.240
+a device in this case on emulators.
+
+04:16.260 --> 04:17.970
+Go ahead and run real quick.
+
+04:18.330 --> 04:20.760
+This whole app to see how it will look like.
+
+04:21.610 --> 04:22.660
+And there you have it.
+
+04:22.840 --> 04:23.900
+It's looking really good.
+
+04:24.010 --> 04:26.410
+We have everything perfectly fine.
+
+04:26.440 --> 04:30.730
+OK, so one more thing we need to do is to add this portfolio button.
+
+04:30.910 --> 04:34.420
+But before we do that, let's go ahead and refactor this column here.
+
+04:34.510 --> 04:37.960
+So I'm going to just click there and select everything.
+
+04:38.740 --> 04:39.400
+Right click.
+
+04:39.580 --> 04:43.330
+And let's go to refactor function in this name.
+
+04:43.340 --> 04:50.800
+This create info such and you can see you now have another composable, which is just a little piece
+
+04:51.040 --> 04:53.950
+that is not attached to the main card here.
+
+04:54.220 --> 04:54.550
+All right.
+
+04:54.760 --> 04:56.440
+So now just calling it a session.
+
+04:57.250 --> 04:59.330
+So we're making real good progress, as I said.
+
+04:59.380 --> 05:02.260
+Next thing we're going to do is to create this button here.
+
+05:02.260 --> 05:04.540
+In fact, as a little exercise, it can do this.
+
+05:04.840 --> 05:07.000
+How would you create a button like this?
+
+05:07.480 --> 05:10.120
+Go ahead and try to figure out, and I'll see you in next video.

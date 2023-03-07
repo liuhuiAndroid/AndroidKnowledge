@@ -1,0 +1,589 @@
+WEBVTT
+
+00:00.180 --> 00:05.490
+So even though we were able to update and add books and delete into all sorts of things in our main
+
+00:05.490 --> 00:08.970
+screen here, we still have all the books being shown.
+
+00:08.980 --> 00:15.390
+So this book here, if you click, looks like they started reading on November six, yet it's still
+
+00:15.690 --> 00:19.800
+in our reading list, so we want to add it to our reading now.
+
+00:20.160 --> 00:23.640
+And of course, this is showing here because it's the same thing, right?
+
+00:23.940 --> 00:27.240
+So we want to structure this a little bit differently.
+
+00:27.930 --> 00:35.910
+So how do we make it so that if the book in this case has been started right, we want to show it here.
+
+00:35.970 --> 00:39.570
+And if a book was just added, they will be shown around here.
+
+00:39.840 --> 00:44.670
+And if the book is finished being read, then we're going to put it somewhere else.
+
+00:45.180 --> 00:47.910
+Okay, let's start with restructuring this area here.
+
+00:48.090 --> 00:50.220
+Let's go back to our reader home screen.
+
+00:50.550 --> 00:56.420
+That's where the magic happens, and we need to go and find our book list area.
+
+00:56.430 --> 01:01.330
+Let's go and say Command F. Book List Area.
+
+01:01.380 --> 01:02.070
+Let's see.
+
+01:02.370 --> 01:04.260
+Well, OK.
+
+01:04.260 --> 01:05.700
+So we have a horizontal.
+
+01:06.990 --> 01:08.040
+I call it bull.
+
+01:08.100 --> 01:09.930
+That's why it's going to be book.
+
+01:09.930 --> 01:12.570
+So let's go ahead and refactor this.
+
+01:15.340 --> 01:20.590
+It's going to be a book list area like this.
+
+01:22.460 --> 01:27.650
+All right, so what do you want to do here because we see that we have a list of books, so this list
+
+01:27.650 --> 01:31.490
+of books is just going to be the list of all the books that we have in our database.
+
+01:31.910 --> 01:32.210
+OK?
+
+01:32.960 --> 01:33.780
+Which is OK.
+
+01:34.040 --> 01:35.390
+That's not what we want right now.
+
+01:36.260 --> 01:44.480
+What do we need to do is to cipher through this list before we pass it along to be fed in our Aurizon
+
+01:44.480 --> 01:45.900
+or scribble here.
+
+01:46.910 --> 01:47.720
+So how do we do that?
+
+01:47.750 --> 01:54.920
+Well, I'm just going to create a separate variable here called added books, because assuming these
+
+01:54.920 --> 02:00.800
+books were just added right, and then I'm going to use all of this book list that is OK.
+
+02:02.070 --> 02:09.160
+A list of books they were receiving when a filter and here I'm going to pass a book or an ebook in this
+
+02:09.180 --> 02:17.790
+case, and I'm going to pass the predicate, so I'm going to say if a book or any book that is that
+
+02:17.790 --> 02:28.770
+starting reading started reading is null and book that finished M book that is that finished reading
+
+02:29.250 --> 02:30.120
+is null.
+
+02:30.210 --> 02:31.680
+It makes sense what I'm saying here.
+
+02:32.070 --> 02:37.770
+All I want to filter through find all the books that started reading is now, meaning they haven't started.
+
+02:38.130 --> 02:39.930
+They haven't started reading the book.
+
+02:40.260 --> 02:42.210
+And also finished reading is no.
+
+02:42.510 --> 02:47.250
+So this will tell me that this book is a new book that was just added, which is the kind of book that
+
+02:47.250 --> 02:51.960
+I want to pass along now because this horizontal scrollable component is being called.
+
+02:52.170 --> 02:56.400
+Also, you know, reading now area, right?
+
+02:56.400 --> 02:57.750
+Because we passing the same thing.
+
+02:58.260 --> 03:03.570
+Now I'm going to go inside there and change a few things so that we separate this even further.
+
+03:03.810 --> 03:07.350
+What I can also what I'm also going to do, I'm going to pass a view model.
+
+03:07.350 --> 03:10.020
+Home screen view model can be helped.
+
+03:11.430 --> 03:14.760
+If you model such, I'm going to be using that just to check a few things.
+
+03:15.060 --> 03:21.480
+So here is where we can getting those books and passing in and sort of our card pressed into all the
+
+03:21.480 --> 03:22.380
+things that we've seen.
+
+03:22.890 --> 03:29.520
+Now what I'm going to do here, I'm going to put an if statement to say, if you model that data that
+
+03:29.520 --> 03:37.260
+value and get loading state, if it's true, then what I'm going to do, then I'm going to sit and else
+
+03:37.410 --> 03:37.800
+there.
+
+03:38.970 --> 03:45.180
+If that is true, then here I'm going to say linear progress indicator else.
+
+03:45.810 --> 03:50.490
+Check first if our books or list of books in this case.
+
+03:53.140 --> 03:56.020
+Is null or empty?
+
+03:57.700 --> 04:01.390
+I'm going to pass a little message here, so I'm going to create a surface.
+
+04:02.860 --> 04:04.390
+And this special modifier.
+
+04:07.490 --> 04:10.600
+Padding about 23 deep.
+
+04:10.880 --> 04:12.380
+Then I'm going to add text.
+
+04:15.270 --> 04:23.640
+That will say no books found at a book, let's add a little styling as well.
+
+04:26.690 --> 04:28.850
+It's a text style.
+
+04:32.160 --> 04:45.360
+Right, give it color that red passing the alpha or copy first pass the alpha of about zero point four.
+
+04:45.370 --> 04:49.600
+So it's kind of -- red in the -- font weight.
+
+04:49.870 --> 04:58.570
+I'm going to add a bold font weight, and let's give a font size of about 14 sb.
+
+04:59.950 --> 05:01.780
+So that's inside of this if statement.
+
+05:01.780 --> 05:05.950
+And then I'm going to add in an else inside there else.
+
+05:05.980 --> 05:09.070
+That's when we get to show all of the books.
+
+05:09.460 --> 05:12.550
+It's going to cut all of this and put inside there.
+
+05:12.730 --> 05:18.940
+So we've taken care of this book list area, which is this this area here now?
+
+05:18.940 --> 05:22.720
+And it's take care of this category where the books are being read.
+
+05:22.900 --> 05:25.300
+So it's going to be reading now, let's just go there.
+
+05:26.320 --> 05:29.440
+We're going to do the same thing, which is I'm going to filter.
+
+05:32.070 --> 05:34.380
+Books by reading now.
+
+05:36.080 --> 05:36.860
+How do we do that?
+
+05:36.890 --> 05:38.060
+Well, I'm going to say, Val.
+
+05:39.070 --> 05:45.550
+Put this reading now, list variable and when to use the list of books that we're getting there.
+
+05:46.900 --> 05:56.650
+And I'm going to say filter like what we did before and book like this and then I'm going to check if
+
+05:56.650 --> 05:59.350
+an ebook started reading.
+
+05:59.530 --> 06:02.140
+It's not know, right?
+
+06:04.670 --> 06:07.060
+And book that is not finished.
+
+06:07.210 --> 06:09.700
+Reading is not right.
+
+06:09.910 --> 06:15.490
+So the idea is that, well, this study of reading shouldn't be null because that tells us this.
+
+06:15.700 --> 06:22.240
+They have started reading this book and also want to be sure that finished reading property is novel
+
+06:22.240 --> 06:26.530
+because they haven't they haven't finished reading this book, which exactly is what we want.
+
+06:27.070 --> 06:28.090
+So this is the list.
+
+06:28.120 --> 06:35.170
+Now we're going to pass along here to our horizontal scroll book component to be shown.
+
+06:35.530 --> 06:42.100
+You can see how easy all this seems now because we've put together that structure of the database,
+
+06:42.100 --> 06:43.090
+that books and everything.
+
+06:43.690 --> 06:46.690
+So all we do is just get the data we have the state.
+
+06:46.990 --> 06:48.490
+It's got everything that we need.
+
+06:48.550 --> 06:55.750
+Now we can just start manipulating, filtering and trying to categorize all of the books into different
+
+06:55.960 --> 06:56.620
+categories.
+
+06:58.090 --> 06:58.400
+Right.
+
+06:58.420 --> 07:04.900
+So let's go ahead and run this real quick so we can see how fluid and make any mistakes and see how
+
+07:04.900 --> 07:05.770
+this will look.
+
+07:07.870 --> 07:08.320
+Aha!
+
+07:08.560 --> 07:11.260
+And you saw there there was that very nice loading.
+
+07:11.300 --> 07:12.070
+And that's very good.
+
+07:12.460 --> 07:13.390
+And here we are.
+
+07:13.780 --> 07:18.850
+So it seems like this is working because this book, if you click, well, nothing is going to happen
+
+07:18.850 --> 07:23.830
+because we haven't added a click ability to click event to this yet.
+
+07:23.890 --> 07:25.960
+To this top, we'll get there.
+
+07:26.290 --> 07:30.940
+So this tells us that this flatter in action it's being read right now.
+
+07:31.040 --> 07:35.740
+If you go back here, you can click click this one, OK?
+
+07:36.430 --> 07:37.930
+You will see that this.
+
+07:38.950 --> 07:41.710
+Finish reading at is no, which is exactly right.
+
+07:41.800 --> 07:46.300
+They haven't finished, so that means they're reading because says he has started reading or started
+
+07:46.300 --> 07:47.590
+reading at that date.
+
+07:49.070 --> 07:49.400
+OK.
+
+07:49.670 --> 07:54.680
+And the other book, because we only have two books, the other book, it's going to be at the bottom
+
+07:54.680 --> 08:00.560
+list right at the reading list because first of all, they started reading is not because they haven't
+
+08:00.560 --> 08:00.980
+started.
+
+08:01.790 --> 08:04.760
+And if that's the case, then of course, that book is going to be at the bottom.
+
+08:04.940 --> 08:06.320
+If I change this, look at this.
+
+08:06.590 --> 08:10.340
+If I just give a rating and start reading an update, we go back.
+
+08:10.380 --> 08:10.790
+Voila!
+
+08:10.940 --> 08:16.940
+You can see now reading list is empty because there are no books found because we changed this other
+
+08:16.940 --> 08:21.950
+one to reading because now we're reading, so it's filtered here.
+
+08:22.280 --> 08:28.250
+If I go ahead and add the new book because we can still search wonderful boxing, because that's what
+
+08:28.250 --> 08:31.130
+I'm going to learn from now on.
+
+08:31.670 --> 08:34.760
+OK, let's take that book and let's save.
+
+08:35.900 --> 08:36.470
+Go home.
+
+08:36.960 --> 08:42.540
+I love it's showing here because we haven't started reading it or anything, we just added it great.
+
+08:42.560 --> 08:43.280
+So it's working.
+
+08:43.520 --> 08:49.640
+Now the other thing we need to do is to change the the wording here, because here's your says reading,
+
+08:49.640 --> 08:50.840
+which makes sense.
+
+08:51.650 --> 08:55.490
+But here we want to change to something else, maybe saying not ready yet.
+
+08:55.500 --> 09:00.380
+But before we do that, let's make it so that we can navigate in this reading right now because we don't
+
+09:00.380 --> 09:01.220
+have anything yet.
+
+09:01.340 --> 09:02.270
+We have this to do.
+
+09:03.050 --> 09:09.630
+Let's navigate to that with enough controller to the update screen that is navigate.
+
+09:10.340 --> 09:13.430
+Get the route over the years.
+
+09:13.820 --> 09:21.870
+Screen's going to update that name and remember, we need to pass that value.
+
+09:21.890 --> 09:22.370
+Yes.
+
+09:22.670 --> 09:25.640
+So I'm going to say forward slash.
+
+09:26.010 --> 09:30.140
+So this is exactly what we did with this other area.
+
+09:30.230 --> 09:31.320
+Remember, same thing.
+
+09:31.340 --> 09:34.010
+So just take them to the update screen.
+
+09:34.040 --> 09:35.270
+So now both of them.
+
+09:35.750 --> 09:38.390
+Let's go ahead and Brian real quick so we can see what I'm talking about.
+
+09:39.590 --> 09:41.690
+OK, now if I click on this, I should go.
+
+09:42.020 --> 09:49.370
+Just like we did before to the update screen and here I'm good Mac marked as red and say something like
+
+09:50.030 --> 09:50.810
+wonderful.
+
+09:51.440 --> 09:54.050
+And let's go ahead and update go back.
+
+09:54.290 --> 09:55.910
+You notice that we don't see that book anymore.
+
+09:56.300 --> 10:01.400
+That's good because that is the logic, because it we've read that book and life is good and we'll we'll
+
+10:01.400 --> 10:05.630
+we'll get that book at some point at show in the stats screen, but a lot.
+
+10:05.630 --> 10:06.410
+So it's working.
+
+10:06.560 --> 10:12.260
+Now let's look at changing this reading and this text here, right at the bottom here.
+
+10:12.260 --> 10:13.150
+We're not reading this.
+
+10:13.190 --> 10:17.690
+We just added, maybe we could say just added perhaps something like that, right?
+
+10:17.870 --> 10:22.190
+But here it's fine reading, because that's what we're doing these books that what are we doing with
+
+10:22.190 --> 10:22.370
+them?
+
+10:23.650 --> 10:24.610
+OK, let's take a look.
+
+10:25.240 --> 10:32.440
+All right, so let's click on our horizontal and then go there, we want to go to the actual list card
+
+10:32.440 --> 10:34.600
+because that's where the magic happens.
+
+10:34.600 --> 10:41.470
+That's where we can see this list card there and we're going to scroll down to see it, says Reading.
+
+10:41.470 --> 10:44.920
+So this is this text, so we want to change that.
+
+10:46.060 --> 10:55.540
+So first of all, I'm going to create a state here and say, file is started reading, say, remember
+
+10:56.290 --> 11:01.420
+and mutable state of false.
+
+11:01.480 --> 11:02.560
+So it's going to be Boolean.
+
+11:02.890 --> 11:03.970
+That's exactly what we want.
+
+11:04.210 --> 11:04.510
+OK.
+
+11:04.900 --> 11:08.390
+Say is started reading that value.
+
+11:08.950 --> 11:11.490
+I'm going to set that to what?
+
+11:11.500 --> 11:15.340
+Well, I'm going to get the book started reading.
+
+11:17.180 --> 11:18.370
+Is not no.
+
+11:19.790 --> 11:26.030
+So what I'm saying here is, well, I'm going to get the value, whether this is started or not by looking
+
+11:26.030 --> 11:29.000
+at the book started reading property.
+
+11:29.210 --> 11:31.520
+If it's no that's true, then this is true.
+
+11:31.520 --> 11:33.140
+That, I mean, start reading is true.
+
+11:34.490 --> 11:38.090
+So depending on that, then I'm going to change the text.
+
+11:38.570 --> 11:39.620
+What he will say here?
+
+11:40.010 --> 11:46.880
+Put a end in line if statement here, I'm going to say if he started reading that value is true, it
+
+11:46.880 --> 11:47.800
+just leave as it is.
+
+11:48.440 --> 11:50.720
+I'm going to say he's reading like that is fine.
+
+11:50.990 --> 11:58.490
+Else, the text is going to say White not started like this.
+
+11:58.820 --> 12:00.710
+Let's save this and give it a run.
+
+12:03.000 --> 12:05.910
+And you can see it says they're not started.
+
+12:07.040 --> 12:07.220
+Right.
+
+12:07.250 --> 12:13.730
+It looks like it's pretty crammed in there instead here that started just changed the do something less
+
+12:14.420 --> 12:14.930
+long.
+
+12:14.990 --> 12:17.450
+Of course, you can readjust as you wish to do.
+
+12:17.630 --> 12:21.110
+I can say not say just let's just say not yet.
+
+12:21.830 --> 12:22.790
+Sure, that's fine.
+
+12:22.930 --> 12:23.450
+Doesn't matter.
+
+12:25.460 --> 12:26.870
+And you can see says not yet.
+
+12:27.350 --> 12:27.910
+All right.
+
+12:27.920 --> 12:29.450
+So this is working.
+
+12:30.020 --> 12:36.410
+And of course, if I get started and update, this is going to be empty because now we've started that
+
+12:36.500 --> 12:37.550
+book also.
+
+12:38.890 --> 12:40.480
+All right, coming together.
+
+12:41.080 --> 12:45.220
+All right, so the next thing we need to do to finalize everything is to make sure that when we click
+
+12:46.090 --> 12:50.750
+there, we can go to that screen and we can show the stats in this case.
+
+12:50.770 --> 12:53.110
+How many books have been read and so forth?
+
+12:53.800 --> 12:54.120
+All right.
+
+12:54.130 --> 12:54.940
+Let's go ahead and do that.

@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.330 --> 00:06.090
+Let's go ahead and talk about navigation, as you know, navigation is an important components when
+
+00:06.090 --> 00:11.970
+it comes to building applications because your applications need to be able to go from screen A to B
+
+00:11.970 --> 00:14.610
+B to C, maybe back to A and so forth.
+
+00:15.150 --> 00:20.700
+An example here is is this we need a way in which perhaps that when we click one button, we can go
+
+00:20.700 --> 00:25.710
+to movie details will display the details of the movies that we are showing.
+
+00:25.860 --> 00:33.300
+So traditionally we would use start activity and pass the destination activity from where we are and
+
+00:33.300 --> 00:37.350
+so forth, and we could pass, of course, data around as well that way.
+
+00:37.590 --> 00:44.940
+But this way of doing things, it only works for simple navigation cases, not for complex cases.
+
+00:45.330 --> 00:50.670
+Because, as you know, we applications may be growing and there are other use cases that need to be
+
+00:50.670 --> 00:57.210
+addressed, such as, you know, bottom nav A. And you have to control which bottom navigation is clicked,
+
+00:57.210 --> 00:57.840
+which button.
+
+00:57.990 --> 01:03.210
+And there is a lot of complication that happens when we are using just start activity as it is.
+
+01:03.690 --> 01:04.890
+What is the solution?
+
+01:05.460 --> 01:12.060
+Well, jetpack navigation component that is to remember Jetpack is this collection of tools and libraries
+
+01:12.360 --> 01:19.380
+that enable us that enable us developers to build modern applications, make it possible to have concise
+
+01:19.380 --> 01:23.220
+and consistent code across all the different devices in Android.
+
+01:23.700 --> 01:27.960
+So within the jetpack library, if you will, there is navigation component.
+
+01:28.530 --> 01:34.920
+So navigation component component is a set of modern tools and libraries for handling complex navigation
+
+01:34.920 --> 01:36.030
+cases in Android.
+
+01:36.480 --> 01:41.000
+Now, the navigation component has three major parts working together.
+
+01:41.010 --> 01:42.630
+These are navigation graph.
+
+01:43.660 --> 01:48.280
+NAF host, so navigation host and the navigation controller.
+
+01:49.710 --> 01:51.330
+OK, let's take a look at something here.
+
+01:51.630 --> 01:55.050
+So the way I like to visualize it in aviation component is as follows.
+
+01:55.050 --> 02:02.190
+So we have a navigation component as the whole base component as you see here and inside, we have the
+
+02:02.190 --> 02:06.840
+navigation controller and then inside of that, we have the nav host.
+
+02:07.440 --> 02:09.720
+And then we have the knife graph.
+
+02:10.670 --> 02:17.330
+So let's look at what enough controllers well enough controller is the central API of navigation component.
+
+02:17.660 --> 02:22.220
+So here this class constructs navigation to occur.
+
+02:22.760 --> 02:28.760
+This controller, as the name implies, control so instructs it has instructions to say go and navigate
+
+02:28.760 --> 02:33.250
+to Route X and the navigation host.
+
+02:33.260 --> 02:40.010
+As the name implies, it hosts each navigation graph item, meaning it swaps out each destination,
+
+02:40.010 --> 02:43.910
+which in this case could be an activity or a composable in our case.
+
+02:44.510 --> 02:50.720
+So that happens when, for instance, users navigate to a new screen navigation graph holds information
+
+02:50.720 --> 02:53.180
+about destination or screen or composable.
+
+02:53.480 --> 02:54.740
+It all means the same thing.
+
+02:55.070 --> 02:59.630
+So essentially the navigation graph, this is where we have a graph containing all these nodes.
+
+02:59.960 --> 03:06.200
+These nodes being the actual destination in this case, could be composable activities or fragments
+
+03:06.200 --> 03:06.770
+and so forth.
+
+03:07.220 --> 03:09.970
+Most importantly, this graph have connection.
+
+03:09.980 --> 03:13.880
+These connection do carry information about these navigation, right?
+
+03:14.270 --> 03:16.130
+I want to emphasize the nav graph.
+
+03:16.160 --> 03:17.780
+It would look something like this, right?
+
+03:17.780 --> 03:19.400
+In this case, we're talking about composable.
+
+03:19.670 --> 03:25.610
+So the nav graph would have, for instance, detailed screen splash screen, but in homescreen right
+
+03:25.610 --> 03:26.330
+and many other screens.
+
+03:26.330 --> 03:32.720
+But most importantly, again, there would be more information about these nodes, how they are interacting
+
+03:32.900 --> 03:34.310
+or how they could interact.
+
+03:34.430 --> 03:34.760
+Right?
+
+03:35.180 --> 03:41.420
+For instance, detail screen, for instance, in this case, my screen connects to a home screen and
+
+03:41.420 --> 03:45.110
+home screen could be connected to a little screen or vice versa.
+
+03:47.060 --> 03:54.170
+So this is the structure, that navigation component, which allows us to do a little bit more complex
+
+03:54.170 --> 04:00.470
+navigation as opposed to the usual old school strike activity and pass information.
+
+04:01.280 --> 04:01.550
+All right.
+
+04:01.550 --> 04:04.850
+So now let's go to code and start putting together this structure.
+
+04:05.360 --> 04:10.310
+Now, as we put together this structure, these navigation components structure in code.
+
+04:11.180 --> 04:14.900
+I want you to keep in mind these diagrams that have shown you here.
+
+04:15.290 --> 04:20.900
+It may seem a little bit confusing at first, I will confess, but I will try my best to relate.
+
+04:21.140 --> 04:24.860
+What are we going to be doing to what I've shown you here in this diagram?
+
+04:26.020 --> 04:28.660
+Or these diagrams, I should say, because there are a few of them.
+
+04:29.740 --> 04:33.370
+OK, let's go back to our wonderful, beautiful, great coat.

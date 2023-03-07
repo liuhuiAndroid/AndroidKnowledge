@@ -1,0 +1,463 @@
+WEBVTT
+
+00:00.360 --> 00:10.050
+Let's see, how can we add the actual images, because remember in our movie file, we do have the poster
+
+00:10.050 --> 00:15.060
+and we have images so we can actually get these images from these links.
+
+00:15.450 --> 00:15.840
+OK?
+
+00:16.320 --> 00:19.640
+Images of the movie the first thing I want to make sure.
+
+00:19.680 --> 00:23.040
+So let's make this preview of all songs, a preview as such.
+
+00:23.550 --> 00:25.140
+But are we going to have a problem here?
+
+00:25.140 --> 00:31.230
+Because if you have over is going to say composable functions with non default parameters are not supported
+
+00:31.230 --> 00:35.340
+in preview unless they are annotated with preview parameter?
+
+00:35.580 --> 00:42.480
+Well, in this case here, all he's saying is that some of the parameters here must have some total
+
+00:42.480 --> 00:43.350
+default values.
+
+00:43.740 --> 00:47.760
+So for us, I'm just going to pass a say, get movies right?
+
+00:47.990 --> 00:52.800
+Remember, we remember these get movies, a return, a list of movies, and I'm just going to say I
+
+00:52.800 --> 00:56.340
+want to get the first movie, so we have some data default.
+
+00:56.730 --> 01:01.890
+So here this is another way of getting the first item from a list.
+
+01:02.580 --> 01:09.770
+So we call get movies which are returns at list and then we want the first index or index zero up there.
+
+01:10.310 --> 01:10.620
+All right.
+
+01:10.950 --> 01:11.970
+So get the first movie.
+
+01:13.020 --> 01:14.010
+Well, let's split it.
+
+01:14.280 --> 01:15.600
+Let's see what's going to happen.
+
+01:16.860 --> 01:17.130
+OK.
+
+01:17.160 --> 01:17.760
+There you have it.
+
+01:17.910 --> 01:21.120
+So this is what we see, nothing new there.
+
+01:21.630 --> 01:25.590
+So let's start with adding some more information here.
+
+01:26.280 --> 01:32.820
+So after our title here, what I'm going to do, actually, I'm going to create a column in this column
+
+01:32.820 --> 01:33.180
+here.
+
+01:33.190 --> 01:38.400
+We're going to get take all of this text and put inside of this column.
+
+01:38.430 --> 01:44.430
+The reason being is because we want to add other texts below the title.
+
+01:45.600 --> 01:46.980
+So let's go ahead first.
+
+01:47.670 --> 01:51.630
+I'm going to put a modifier here modifier.
+
+01:54.000 --> 01:55.590
+Keep a padding about four deep.
+
+01:55.800 --> 01:57.870
+OK, that seems to be what we always do.
+
+01:58.530 --> 02:04.800
+And let me copy this few times over just to show you a few things.
+
+02:05.100 --> 02:07.530
+OK, so the first we have a title.
+
+02:08.130 --> 02:15.390
+And while we're here, we may also add a modifier here and I want modifier.
+
+02:16.740 --> 02:19.470
+Let's say style one to modify his style.
+
+02:19.980 --> 02:24.780
+So let's add this style in this case, say material theme.
+
+02:24.780 --> 02:26.190
+I want typography.
+
+02:26.700 --> 02:33.570
+And let's say a six or not too large then for this tax here, I'm just going to say, let's put that
+
+02:33.570 --> 02:35.790
+inside of.
+
+02:38.680 --> 02:41.620
+Double quotes, because we are going to interpolate here.
+
+02:42.830 --> 02:52.780
+It's this is going to be director and let's say style for this one material theme, and we're going
+
+02:52.780 --> 02:57.070
+to go to typography again and we want to make it a caption so small.
+
+02:58.090 --> 03:01.630
+OK, let's go ahead and then get rid of this.
+
+03:02.770 --> 03:05.800
+In this case, I'm going to use the released.
+
+03:08.230 --> 03:15.790
+Such an was a movie that released, so just getting no, I think it's here, let's see, a year ago.
+
+03:16.360 --> 03:21.580
+Just getting the properties of the movie object might release you getting the year this movie was released.
+
+03:22.450 --> 03:24.520
+OK, let's go ahead and refresh will quit here.
+
+03:24.520 --> 03:26.380
+We should be able to see something, hopefully.
+
+03:27.460 --> 03:28.540
+OK, that looks real good.
+
+03:29.080 --> 03:29.710
+I like that.
+
+03:30.880 --> 03:37.210
+OK, now we need to work on the image because we don't want this icon just to show as it is right now.
+
+03:37.220 --> 03:38.470
+So we want to get rid of that.
+
+03:38.470 --> 03:38.770
+So.
+
+03:39.270 --> 03:46.420
+So how do we then bring in images, especially bring in images from a URL and compose?
+
+03:47.480 --> 03:53.910
+Well, there are a few ways, but there is one recommended way which is to use this library called coil.
+
+03:54.160 --> 03:59.050
+So coil is a library that allows us to get images from the URL, as you see here.
+
+03:59.380 --> 04:05.710
+If we go to this website, so we just Google Coil Jetpack Coil, as you see here, you will see that
+
+04:05.710 --> 04:09.730
+coil is a jetpack compose library that allows us to add images.
+
+04:09.970 --> 04:16.270
+There are other things that he can do with it, but mainly is to help us with adding images into our
+
+04:16.270 --> 04:23.380
+apps, using using your or in this case, if the image is at this URL, you can use image and then passed
+
+04:23.380 --> 04:23.470
+it.
+
+04:23.470 --> 04:25.090
+Remember image painter and so forth.
+
+04:25.120 --> 04:31.270
+Now this library is really helpful because it deals with all the underlining issues when he trying to
+
+04:31.270 --> 04:33.580
+get images from a URL.
+
+04:33.940 --> 04:39.430
+OK, so takes care of all the memory issues, everything that as developers in this case, we don't
+
+04:39.430 --> 04:40.390
+want to take care of.
+
+04:40.930 --> 04:41.110
+OK?
+
+04:41.350 --> 04:46.240
+It's really easy to use, but the first thing to do, of course, is to add the dependency, to say
+
+04:46.240 --> 04:49.690
+that we can get the library onto our project.
+
+04:50.020 --> 04:57.100
+So I'm going to copy this, or we can just click that their clipboard and what do you need to do?
+
+04:57.130 --> 05:00.780
+Let's go to our project and we need to go to Gradle scripts.
+
+05:00.790 --> 05:06.490
+So we take the second one to module movie app, double click and you can see we have a lot of other
+
+05:06.490 --> 05:07.420
+implementations there.
+
+05:07.420 --> 05:14.020
+So all we're going to do somewhere we can just go here, and I like to always add some sort of information.
+
+05:14.020 --> 05:15.550
+So I know what library.
+
+05:15.550 --> 05:16.090
+That's what.
+
+05:16.300 --> 05:17.140
+Or dependency.
+
+05:17.500 --> 05:23.230
+And let's go ahead and add that to their OK, so we have coil, and the next thing you need to do is
+
+05:23.230 --> 05:25.090
+to sync that way.
+
+05:25.300 --> 05:29.560
+The whole project a sync so we can start using this library after a few moments.
+
+05:29.560 --> 05:30.640
+Everything should be good.
+
+05:31.790 --> 05:36.860
+Just get out, get out of there, and now we can just comment this out.
+
+05:37.190 --> 05:38.270
+This is our icon.
+
+05:38.810 --> 05:41.560
+So here I'm just going to go ahead and say, say image.
+
+05:42.350 --> 05:44.450
+I say that and I'm going to use the first one.
+
+05:44.450 --> 05:45.290
+Is this painter.
+
+05:45.830 --> 05:53.630
+Now the thing we're going to do here, we're just going to start typing, remember and say, image painter
+
+05:53.630 --> 05:54.140
+like this.
+
+05:54.140 --> 05:55.460
+So we're going to use the first one.
+
+05:55.820 --> 05:56.300
+There we go.
+
+05:56.900 --> 05:59.960
+Actually, this is not what we want one to neither one, but it's OK.
+
+05:59.960 --> 06:02.030
+We can just overload it by saying data.
+
+06:02.540 --> 06:06.320
+So the data we're going to pass here is going to be the link, the URL.
+
+06:06.620 --> 06:09.020
+This case will be something like this, right?
+
+06:09.410 --> 06:15.500
+So where we get the image real, well, we get that from our object and that's a movie dot.
+
+06:16.570 --> 06:23.350
+And I'm going to see poster, but the problem with poster I learned, even though I added here, is
+
+06:23.350 --> 06:25.150
+that this is a broken link.
+
+06:25.480 --> 06:26.890
+So don't use poster.
+
+06:26.890 --> 06:31.060
+We're going to actually go and get one of these images, but there's a list of the image we can just
+
+06:31.060 --> 06:32.350
+go ahead and fetch one of them.
+
+06:32.800 --> 06:33.070
+OK.
+
+06:33.670 --> 06:39.640
+So instead of poster, which should be what we would get, we're just going to go and see get images
+
+06:40.210 --> 06:43.180
+and I'm going to get just the first image there.
+
+06:44.440 --> 06:46.900
+OK, from our list of images.
+
+06:47.290 --> 06:48.520
+And then here I'm going to say.
+
+06:49.720 --> 06:53.740
+Movie poster, such for content description.
+
+06:54.070 --> 06:59.980
+Now there's not thing that would happen because we are invoking remember image painter, which goes
+
+06:59.980 --> 07:02.800
+and tries to fetch an image from a URL.
+
+07:03.220 --> 07:07.240
+We need to go to a project again and add that permission.
+
+07:07.400 --> 07:07.740
+Right.
+
+07:07.750 --> 07:12.160
+Because Android is a protective is a protected box, if you will.
+
+07:12.490 --> 07:18.610
+Whenever we want to get something from a URL, we need to have the permission so we can say, use this
+
+07:18.610 --> 07:20.380
+permission like that, and he'd enter.
+
+07:20.710 --> 07:23.050
+And there is the internet if you don't see it.
+
+07:23.350 --> 07:27.980
+You can start typing internet like that and the first one, that's the one.
+
+07:28.000 --> 07:30.820
+So for a slash and closes itself.
+
+07:31.180 --> 07:38.560
+So this is what we need to do every time we want to use the internet to fetch images or to get something
+
+07:38.560 --> 07:42.790
+from the API or whatever we want to do whenever we want to access the internet.
+
+07:43.060 --> 07:46.450
+This has to be added into our Android manifest.
+
+07:48.390 --> 07:53.610
+At the time of the recording of these video images that we're getting from the internet don't show inside
+
+07:53.610 --> 08:00.270
+of a preview so we can go ahead and refresh that, even though we added in the image there.
+
+08:01.920 --> 08:03.990
+It's not going to show here, right?
+
+08:04.000 --> 08:04.560
+I see.
+
+08:04.890 --> 08:05.760
+It doesn't show.
+
+08:06.420 --> 08:10.890
+But the best way, of course, is to run in our immolated or your device.
+
+08:10.950 --> 08:16.130
+So in this case, I have my device here that you can see on the screen and we should see images.
+
+08:16.140 --> 08:16.850
+And voila!
+
+08:16.890 --> 08:21.480
+You can see now we went and got images for each one of the movies.
+
+08:22.500 --> 08:23.280
+Pretty neat.
+
+08:23.460 --> 08:23.900
+Very good.
+
+08:23.910 --> 08:28.740
+So if I click again, we go back to two details, which doesn't have anything.
+
+08:29.400 --> 08:31.410
+OK, so we're making good progress now.
+
+08:31.560 --> 08:33.660
+The great thing about this library, right?
+
+08:33.660 --> 08:38.550
+The coil, is that for our image, we can actually do something cool.
+
+08:38.550 --> 08:44.790
+For instance, we can invoke the builder right inside of our remember their let's go ahead and close
+
+08:44.790 --> 08:46.800
+this instead of our remember.
+
+08:47.160 --> 08:49.350
+I can see past something else.
+
+08:49.350 --> 08:56.520
+I'm going to pass the builder say builder like this and I'm going to pass Alhambra inside here.
+
+08:56.880 --> 08:58.830
+I can see, for instance, animation.
+
+08:58.830 --> 09:01.500
+I can say I want crossfade to happen.
+
+09:02.130 --> 09:10.170
+So let's say true to get a little animation when these images are being loaded.
+
+09:10.770 --> 09:15.810
+The other thing we can do, we can crop this image that is coming in into a circle.
+
+09:16.380 --> 09:17.040
+It's very easy.
+
+09:17.040 --> 09:22.320
+All you have to do have to invoke transformations and then pass here a circle.
+
+09:23.490 --> 09:26.250
+Crop transformation like that.
+
+09:27.430 --> 09:32.050
+All of that is being done inside of this builder parameter or argument, every passing.
+
+09:33.430 --> 09:33.820
+All right.
+
+09:34.090 --> 09:35.620
+And it's optional, obviously.
+
+09:35.830 --> 09:37.480
+OK, so now she'll run again.
+
+09:38.440 --> 09:39.460
+You will see the difference.
+
+09:40.000 --> 09:46.640
+You've seen this before, but now we're using the image painter in this case, the image coil.
+
+09:47.170 --> 09:49.990
+Remember image painter to do so, and you can see there we go.
+
+09:50.290 --> 09:54.130
+It looks very nice to have that nice circle image.
+
+09:54.670 --> 10:00.970
+And of course, we have the director and the release year for each one of the movies I get.

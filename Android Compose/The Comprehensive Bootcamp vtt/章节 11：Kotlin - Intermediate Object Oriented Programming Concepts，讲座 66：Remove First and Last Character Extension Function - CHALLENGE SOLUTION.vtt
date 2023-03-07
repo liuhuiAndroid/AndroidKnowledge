@@ -1,0 +1,97 @@
+WEBVTT
+
+00:00.550 --> 00:07.570
+Let's go and see if we can put together extension function that will remove the first and last character.
+
+00:08.050 --> 00:08.390
+All right.
+
+00:08.470 --> 00:11.980
+You may have been able to do this, but let's go ahead and try real quick here.
+
+00:11.980 --> 00:14.770
+So it's a fun string, of course.
+
+00:15.100 --> 00:20.650
+And then I'm going to say remove first and last.
+
+00:23.840 --> 00:25.050
+Charles, OK.
+
+00:25.310 --> 00:26.870
+Rather long name, but that's fine.
+
+00:27.710 --> 00:32.900
+So what I'm going to pass, anything is going to be a string that's going to be expected to return.
+
+00:33.440 --> 00:36.110
+And in this case, I'm just going to say return, right?
+
+00:36.110 --> 00:39.080
+And there's going to be this string that we are painting this to.
+
+00:39.860 --> 00:45.630
+When I use the substring method or function in passing.
+
+00:46.610 --> 00:54.140
+The first item that we need to remove and then we're going to pass the last one and to get it the last
+
+00:54.140 --> 00:59.930
+one, because this is going to transform their strength into, of course, a an array or list.
+
+00:59.990 --> 01:03.140
+We can say this at length, right?
+
+01:03.590 --> 01:07.340
+And then minus one to get the last item.
+
+01:09.310 --> 01:10.450
+Oops, minus one.
+
+01:11.860 --> 01:14.200
+And this has to be written like this.
+
+01:14.680 --> 01:21.280
+And as you know, right now, we can just get rid of all of this and all of that, and I say equal like
+
+01:21.280 --> 01:21.730
+this.
+
+01:21.970 --> 01:25.750
+Put that in one long line, and there you have it.
+
+01:26.590 --> 01:35.230
+So now we can use it by, say, print, for instance, in the message and again, to say, this is fun.
+
+01:36.430 --> 01:40.970
+And then for that on that string, I get inside because it's a string.
+
+01:40.990 --> 01:43.870
+This is going to be read as a string, as you saw before.
+
+01:44.650 --> 01:51.880
+It is a string and we say dot and say remove first and last charge.
+
+01:52.300 --> 01:58.120
+The beauty is that, as I told you earlier, is that we can invoke this extension function as if we
+
+01:58.960 --> 02:01.090
+as if it came with cuddling.
+
+02:01.810 --> 02:02.290
+All right.
+
+02:02.860 --> 02:03.430
+That's really good.
+
+02:03.820 --> 02:05.680
+OK, so there you have it.
+
+02:05.860 --> 02:07.360
+Let's go ahead and run this.
+
+02:08.550 --> 02:14.910
+And you can see his is full because we remove the first and the last.
+
+02:16.310 --> 02:16.910
+Characters.

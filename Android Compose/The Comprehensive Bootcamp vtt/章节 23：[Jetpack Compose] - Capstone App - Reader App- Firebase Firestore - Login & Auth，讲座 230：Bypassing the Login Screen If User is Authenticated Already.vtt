@@ -1,0 +1,160 @@
+WEBVTT
+
+00:00.540 --> 00:07.680
+One thing you'll notice is that every time you run this app, as it is right now, we always go through
+
+00:07.680 --> 00:13.080
+the same process, which is we have the splash screen and then a few seconds later we go to log in a
+
+00:13.080 --> 00:18.810
+log out, log in or create account, right, which is fine because we were putting this together.
+
+00:18.810 --> 00:26.190
+But at some point, obviously, if you ship this app and people are using this app, it will be annoying
+
+00:26.190 --> 00:29.310
+to always having to go through the process of logging in.
+
+00:29.310 --> 00:38.130
+And there is a way that allows us to get rid of this whole process of going through the screens that
+
+00:38.130 --> 00:43.620
+are not needed anymore because we have created accounts and we just want to go straight to home screen.
+
+00:44.340 --> 00:50.940
+So what we can do now is let's go to our splash screen splash screen.
+
+00:50.940 --> 00:51.480
+Let's see.
+
+00:54.660 --> 00:58.780
+This and we can put an if statement, but where is that going to be?
+
+00:58.800 --> 01:07.620
+So if we go back to where we have a watched effect there and after our delay right here, we see we
+
+01:07.620 --> 01:13.500
+have this to do actually check if there is a Facebook groups that Facebook should say, Firebase, if
+
+01:13.500 --> 01:14.880
+there's a Firebase user.
+
+01:14.910 --> 01:17.640
+If so, take them to homescreen otherwise to log in.
+
+01:17.760 --> 01:18.060
+All right.
+
+01:18.240 --> 01:21.030
+So how do we check if there is a Firebase user?
+
+01:21.060 --> 01:26.640
+Well, the beauty here is that because Firebase, we have added Firebase to our project.
+
+01:26.910 --> 01:35.820
+We have a way to get Firebase off object right to check things out, to say if statement.
+
+01:35.820 --> 01:45.780
+He put an if statement when say if Firebase Auth get that one there that get instance.
+
+01:47.430 --> 02:02.100
+And I can say, look for the current user, look at that and email is null or empty, right then.
+
+02:02.130 --> 02:05.400
+If that's the case, we are going to go to nav controller.
+
+02:05.880 --> 02:09.270
+We're going to use nav controller that is and go to navigate.
+
+02:11.130 --> 02:12.540
+We're going to get the right one.
+
+02:12.540 --> 02:13.260
+We want the.
+
+02:16.290 --> 02:20.670
+The route you can't quite see there, we see the route one, the bottom there.
+
+02:20.790 --> 02:21.080
+OK.
+
+02:21.640 --> 02:23.820
+And let's say leaders scream.
+
+02:24.990 --> 02:27.660
+Let's go to log in screen that name.
+
+02:28.410 --> 02:28.710
+OK.
+
+02:29.370 --> 02:33.750
+And we'll have to wrap this this way.
+
+02:34.170 --> 02:34.500
+OK.
+
+02:34.740 --> 02:36.440
+There it is else.
+
+02:36.750 --> 02:40.680
+Well, we know that there is indeed a user already logged in.
+
+02:41.190 --> 02:43.960
+We're just going to go ahead and say NAV control again.
+
+02:44.790 --> 02:45.540
+Navigate.
+
+02:45.690 --> 02:46.980
+Let's get the correct one.
+
+02:46.980 --> 02:48.590
+Otherwise we'll run into issues here.
+
+02:48.740 --> 02:50.850
+I repeat myself here, it's crucial.
+
+02:51.450 --> 02:59.430
+And when I say readers screen again, we're going to go to reader home screen like this.
+
+03:00.540 --> 03:02.850
+Just this piece of code is going to change everything.
+
+03:03.810 --> 03:04.110
+All right.
+
+03:04.110 --> 03:08.580
+So I have the problem here is that I still have this navigate to log in screen.
+
+03:08.580 --> 03:12.510
+So this must get out of here because we don't need that.
+
+03:12.540 --> 03:14.520
+So now what is going to happen?
+
+03:14.520 --> 03:16.620
+We still going to have this animation happening.
+
+03:16.890 --> 03:24.690
+But if we have a a user, then it's going to go straight to read reader home instead of going to these
+
+03:24.780 --> 03:25.560
+screens here.
+
+03:26.010 --> 03:26.310
+All right.
+
+03:26.340 --> 03:28.590
+Let's go ahead and run once again.
+
+03:31.900 --> 03:34.870
+And we should go straight to home like that.
+
+03:35.110 --> 03:36.030
+All right, so there we go.
+
+03:36.040 --> 03:42.790
+So this is how we bypass these two screens so that users don't have to go through this process again
+
+03:43.030 --> 03:47.440
+if they indeed already have created account and they have locked in.

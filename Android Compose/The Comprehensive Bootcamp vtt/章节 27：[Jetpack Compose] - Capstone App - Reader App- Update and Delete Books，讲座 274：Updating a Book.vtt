@@ -1,0 +1,583 @@
+WEBVTT
+
+00:00.570 --> 00:00.970
+All right.
+
+00:00.990 --> 00:04.510
+So I hope you were able to add these two buttons, and that's OK.
+
+00:04.530 --> 00:05.400
+Let's go ahead and do that.
+
+00:06.090 --> 00:09.510
+So after our rating, they're just below that.
+
+00:09.510 --> 00:13.360
+I'm going to add a spacer just to give us some space.
+
+00:14.280 --> 00:15.090
+To give it padding.
+
+00:16.200 --> 00:16.830
+Bottom.
+
+00:21.610 --> 00:24.070
+Of about 15 dpi or such.
+
+00:25.270 --> 00:26.530
+All right, let's say a row.
+
+00:33.400 --> 00:34.240
+And surrounded.
+
+00:36.380 --> 00:37.670
+Button like this.
+
+00:41.340 --> 00:42.720
+Verse two of them.
+
+00:43.400 --> 00:50.450
+All right, so the first one, we're going to say label, it's going to be update.
+
+00:51.060 --> 00:53.760
+Remember this wanted button we created earlier?
+
+00:53.790 --> 00:55.170
+That's why they look like this.
+
+00:55.330 --> 00:55.590
+OK.
+
+00:58.790 --> 01:01.790
+And this one is going to be delete.
+
+01:08.280 --> 01:13.290
+And let's give let's make this just one single line.
+
+01:14.190 --> 01:14.730
+That's good.
+
+01:15.390 --> 01:17.550
+And let's give another spacer here.
+
+01:18.470 --> 01:24.870
+I say height, actually width, because this is in a row of about 100.
+
+01:26.430 --> 01:29.430
+Let's see in the row, let's perhaps say.
+
+01:31.390 --> 01:37.360
+Horizontal arrangement in this arrangement space in between.
+
+01:37.510 --> 01:41.290
+And see if that's going to help and then it's not going to add that space are.
+
+01:41.830 --> 01:42.130
+OK.
+
+01:43.170 --> 01:49.680
+Of course, we know that for each one, we have the lambda for one click OK.
+
+01:49.840 --> 01:50.810
+Click on one of these.
+
+01:50.830 --> 02:00.160
+OK, that looks good, but I want to give some space there, and I'm just going to get rid of all of
+
+02:00.160 --> 02:01.630
+that altogether.
+
+02:01.630 --> 02:10.570
+And let's just add a spacer here with about 100 dpi to keep that nice space.
+
+02:15.020 --> 02:15.290
+All right.
+
+02:15.710 --> 02:16.430
+Much, much better.
+
+02:17.090 --> 02:21.740
+OK, so things are looking good now, what is they want to do when we click on Update?
+
+02:21.800 --> 02:25.130
+Well, we need to update the book now.
+
+02:25.310 --> 02:26.840
+Here's what I'm going to do first.
+
+02:27.230 --> 02:30.970
+Because we want to make sure that we don't want to update, you know, there's nothing here, right?
+
+02:30.980 --> 02:35.060
+Because remember, this is going to be coming from our database, right?
+
+02:35.090 --> 02:37.670
+If they've changed nothing, they update nothing.
+
+02:37.700 --> 02:43.340
+When they click Update, we don't want to make that trip back to our database to do nothing right.
+
+02:43.340 --> 02:43.970
+That makes some sense.
+
+02:43.970 --> 02:45.560
+So we're going to put an if statement here.
+
+02:45.560 --> 02:51.880
+So I'm going to first create a few variables here to only update if the fields have new data.
+
+02:51.890 --> 02:54.680
+So I say, wow, that changed.
+
+02:55.760 --> 02:57.160
+Note, OK?
+
+02:57.530 --> 03:01.070
+Notice that is when I say book right notes.
+
+03:02.360 --> 03:10.880
+If that's not equal to our notes, text and value, what I'm doing here, I'm I'm checking if our books
+
+03:10.890 --> 03:18.500
+that notes coming from our database is not the same as what we have in our text field.
+
+03:19.220 --> 03:19.760
+This is true.
+
+03:19.770 --> 03:21.920
+That means then we're good to update.
+
+03:23.060 --> 03:27.680
+So this is going to be true, which means then we can go ahead and update you.
+
+03:27.680 --> 03:29.330
+OK, so I'm going to do the same for others.
+
+03:30.260 --> 03:34.340
+Changed rate rating.
+
+03:38.940 --> 03:40.650
+Waiting to end,
+
+03:44.130 --> 03:49.340
+it's hard to rating that foul, right?
+
+03:50.520 --> 03:53.190
+And then I'm going to look for is finished.
+
+03:56.380 --> 03:57.480
+Time stamp.
+
+03:57.610 --> 04:05.410
+So here I'm going to look at a few things, so I'm going to put in sort of if statement here, so first
+
+04:05.980 --> 04:12.580
+is finished reading and getting remember is finished reading here is the value we created earlier.
+
+04:12.850 --> 04:18.390
+If it's true, so they have finished reading what I'm going to do.
+
+04:20.790 --> 04:27.690
+That means then I'm going to just go to use our time stamp, make sure we get the Google Firebase time
+
+04:27.690 --> 04:28.890
+stamp this very important.
+
+04:29.670 --> 04:35.430
+Say that now because I'm saying, but this will look at is it because this will look and say, Well,
+
+04:35.430 --> 04:39.810
+this is finished reading only happens when we click on our button.
+
+04:42.160 --> 04:42.430
+Right.
+
+04:44.290 --> 04:46.360
+Start reading here, click and then we're going to.
+
+04:47.850 --> 04:53.340
+And then we're going to pass and this time stamp that now because we say they finish it now, so it's
+
+04:53.340 --> 04:54.180
+going to be here.
+
+04:54.600 --> 04:54.870
+OK?
+
+04:56.020 --> 05:02.250
+Else we're going to just use our book that finish reading timestamp.
+
+05:02.910 --> 05:07.500
+So checking to see if it's finished, they've clicked here to say it's finished.
+
+05:07.770 --> 05:13.620
+We're going to take that time stamp when they clicked and add to our he's finished time stamp.
+
+05:14.220 --> 05:20.190
+Else, we're just going to get whatever we have from our finished reading book object.
+
+05:20.520 --> 05:27.000
+All right, let's do the same thing with is actually, I was looking at this mark as read and I start
+
+05:27.000 --> 05:30.570
+reading, It's OK now this is started.
+
+05:31.140 --> 05:31.800
+Time.
+
+05:33.490 --> 05:42.870
+Standpoint for went through the same thing, if it started reading value is true, then.
+
+05:43.270 --> 05:44.140
+Time stamp.
+
+05:46.060 --> 05:46.720
+Not now.
+
+05:48.560 --> 05:48.850
+OK.
+
+05:49.450 --> 05:59.300
+Else we're going to get from our database, so book that started reading timestamp.
+
+05:59.800 --> 06:03.400
+OK, that's pretty much it that we need to worry about updating.
+
+06:04.270 --> 06:06.280
+OK, so I'm going to create not available here.
+
+06:06.310 --> 06:08.770
+I'm just going to say book to update.
+
+06:12.430 --> 06:17.110
+So I'm going to check all of these guys, so it's changed notes.
+
+06:19.710 --> 06:24.540
+Or changed rating or.
+
+06:26.080 --> 06:36.370
+He started reading that value is true or is finished reading that value as well.
+
+06:37.750 --> 06:44.350
+OK, so what I'm saying here, I'm checking for either one of those is true, then something we need
+
+06:44.350 --> 06:47.950
+to go update because that means this book to update is going to be true this value.
+
+06:48.220 --> 06:49.840
+So then we can just put.
+
+06:50.170 --> 06:55.090
+So what I'm doing here, I'm putting all of these statements, all of this, checking all of this,
+
+06:55.090 --> 06:57.670
+checking here into one variable so I can just use that.
+
+06:57.790 --> 07:01.770
+So then I can say, let's change this to book update.
+
+07:02.260 --> 07:05.020
+Like that could now come a tweet the actual.
+
+07:06.520 --> 07:13.720
+Book or in this case, the hash map to update, OK, so book to update this case where you have great
+
+07:13.730 --> 07:17.050
+hash map of key value pair.
+
+07:19.670 --> 07:22.190
+And I can just go ahead and create one real quick.
+
+07:22.580 --> 07:23.520
+And so what I want to do?
+
+07:23.540 --> 07:25.490
+Well, first of all, I'm going to go finished.
+
+07:27.160 --> 07:30.940
+Underscore reading and the score at.
+
+07:32.540 --> 07:38.990
+Get the key value here, if he's going to be is finished timestamps, I'm going to pass that one.
+
+07:39.830 --> 07:46.750
+Now we have to be mindful because this finished, this key has to be exactly the same as you have here.
+
+07:46.760 --> 07:54.100
+So if you have something different, you know, finish reading at it, you have to take whatever we
+
+07:54.110 --> 07:59.360
+added here as the field and has to be exactly the same because remember, this is going to be sent over
+
+07:59.510 --> 08:00.200
+here to update.
+
+08:00.380 --> 08:03.890
+If you have something different here and you're passing something different here, you're not going
+
+08:03.890 --> 08:04.010
+to.
+
+08:04.100 --> 08:05.020
+This is not going to work.
+
+08:05.030 --> 08:08.270
+So be very careful with these fields.
+
+08:09.110 --> 08:10.040
+They're very careful.
+
+08:10.550 --> 08:22.250
+OK, I'm going to continue then started reading at the Valley is going to be is started.
+
+08:23.850 --> 08:26.760
+Reading timestamp like that of study time stamp.
+
+08:30.310 --> 08:37.720
+And then we're going to pass rating two and I say rating, right, this is going to change because remember
+
+08:37.720 --> 08:42.090
+that rating vowel that we had created earlier here.
+
+08:42.370 --> 08:47.290
+So I'm going to get to that state that value.
+
+08:47.750 --> 08:48.070
+OK.
+
+08:49.150 --> 08:50.350
+And then notes
+
+08:53.170 --> 08:54.670
+the value is going to be notes.
+
+08:56.500 --> 08:58.450
+Texts that value like that.
+
+09:00.440 --> 09:09.020
+OK, now I'm going to have to invoke that to map like that so that this.
+
+09:10.140 --> 09:14.040
+Hash map will transform that into a map, so we are able to save there.
+
+09:14.310 --> 09:18.340
+Now we could have just put straight a R M book, but it's OK.
+
+09:18.360 --> 09:21.540
+Doing it like this because we just have a few fields that we want to update.
+
+09:21.960 --> 09:26.910
+Instead of putting the whole object, we can just send in just an hash map like this.
+
+09:27.360 --> 09:30.450
+And actually, it can remove all of this from here.
+
+09:30.660 --> 09:31.710
+Put it outside.
+
+09:35.370 --> 09:39.070
+Because we're just checking things anyway, right there, and we're just out of there.
+
+09:39.090 --> 09:46.770
+OK, so now inside of our own click because remember this button here you have over there is that on
+
+09:46.770 --> 09:47.140
+press?
+
+09:47.160 --> 09:48.740
+That's why we have this lamp to that, right?
+
+09:48.750 --> 09:51.960
+So when I click, this is where we can save stuff now.
+
+09:51.960 --> 09:58.980
+So now I can see the following because I have this boolean here the checks to make sure that notes changed.
+
+09:59.910 --> 10:05.610
+Change reading and so forth that the something has changed, at least so that we don't make that trip
+
+10:05.880 --> 10:07.480
+for nothing to save nothing.
+
+10:07.500 --> 10:08.340
+That's not a good thing.
+
+10:08.940 --> 10:15.060
+I'm going to check here if a book update Boolean, right?
+
+10:15.960 --> 10:19.290
+If that's true, then I'm going to say Firebase Firestorm Store.
+
+10:20.610 --> 10:24.210
+Get that instance and I'm going to go to collection.
+
+10:24.680 --> 10:30.300
+I'm it's going to be our books collection once we get that collection to get to the actual document.
+
+10:30.300 --> 10:35.790
+In this case, the actual book that we want to update because we will have many books here, right?
+
+10:36.300 --> 10:37.290
+So how do we do that?
+
+10:37.350 --> 10:41.210
+I can say document, then pass a document and pass the document ID.
+
+10:41.730 --> 10:43.440
+Well, how do we get that document it?
+
+10:43.680 --> 10:45.270
+Well, we get that from our book.
+
+10:45.960 --> 10:46.800
+That's the beauty.
+
+10:47.190 --> 10:48.360
+And pass the ID.
+
+10:48.600 --> 10:49.140
+Like this?
+
+10:49.350 --> 10:49.710
+OK.
+
+10:51.270 --> 10:52.410
+How wonderful.
+
+10:52.410 --> 11:00.630
+And do you remember earlier the reason why I said we wanted to physically in our book, add that ID
+
+11:00.750 --> 11:03.630
+field of this book, right?
+
+11:04.380 --> 11:06.390
+It's the same ID of the document.
+
+11:06.390 --> 11:13.050
+We want to actually add it into our field of the book because then we would want to do something like
+
+11:13.050 --> 11:13.290
+this.
+
+11:13.320 --> 11:18.750
+Look how easy this is, because each book now will have that document ID, which is, of course, the
+
+11:18.750 --> 11:19.140
+book ID.
+
+11:20.790 --> 11:21.840
+Now we have access to that.
+
+11:22.020 --> 11:25.260
+So we're going to say that update and update that book.
+
+11:26.550 --> 11:33.330
+And what is that we're going to update or pass here is going to be our book to update it just looked
+
+11:33.330 --> 11:34.680
+at this like that.
+
+11:35.280 --> 11:45.840
+And of course, we can attach the add on complete listener this and then we can say, add on failure
+
+11:46.890 --> 11:48.330
+listener like that as well.
+
+11:48.660 --> 11:51.690
+So here I am, just to get log W.
+
+11:53.870 --> 11:56.300
+It's going to say error.
+
+11:59.490 --> 12:06.360
+Updating document and pass, I take exception like that.
+
+12:07.080 --> 12:12.270
+All right, so on complete here we have our tasks and can see task.
+
+12:13.960 --> 12:15.880
+I see a lot of the sort we can see.
+
+12:16.300 --> 12:21.700
+It's our task that result into string like this.
+
+12:22.450 --> 12:23.710
+This is just for us to see.
+
+12:24.010 --> 12:24.510
+Let's see.
+
+12:24.520 --> 12:25.580
+Let's see if this works.
+
+12:25.600 --> 12:27.100
+I'm going to just run this real quick.
+
+12:31.560 --> 12:35.880
+OK, let's pick this book, and I'm going to add something here.
+
+12:36.660 --> 12:41.850
+It's a great book and I say started, Aha!
+
+12:41.880 --> 12:42.510
+There we go.
+
+12:43.440 --> 12:46.890
+And then I'm going to give a five star rating and say update.
+
+12:48.280 --> 12:48.970
+Nothing happens.
+
+12:49.270 --> 12:49.780
+Let's see.
+
+12:51.820 --> 12:54.790
+This is going to be, I believe, this book.
+
+12:55.890 --> 12:56.820
+Yes, that's the book.
+
+12:57.570 --> 12:58.790
+Let's see the fields.
+
+12:59.080 --> 12:59.610
+Yay!
+
+12:59.640 --> 13:00.070
+Notes.
+
+13:00.090 --> 13:03.000
+Great book and writing is five.
+
+13:03.330 --> 13:08.580
+And did we start reading when I started reading and there is the date.
+
+13:09.930 --> 13:13.620
+It comes in like this, but we can then format that when we get back.
+
+13:13.950 --> 13:14.290
+All right.
+
+13:14.310 --> 13:15.000
+So it's working.
+
+13:15.240 --> 13:15.990
+Now check this out.
+
+13:16.080 --> 13:17.160
+If I go back.
+
+13:18.580 --> 13:20.770
+And click this again, look at that.
+
+13:21.010 --> 13:26.650
+It just started on, and we have this time stamp, this is why we will need to come back formatted this.
+
+13:26.650 --> 13:30.790
+That is so that it doesn't look like this, but at least you see now you updated the book.
+
+13:30.790 --> 13:32.680
+So now it's this great book in our thoughts.
+
+13:33.220 --> 13:34.390
+And five.

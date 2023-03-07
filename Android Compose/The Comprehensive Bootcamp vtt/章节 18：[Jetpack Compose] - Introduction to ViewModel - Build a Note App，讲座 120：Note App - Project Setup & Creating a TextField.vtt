@@ -1,0 +1,700 @@
+WEBVTT
+
+00:01.200 --> 00:03.300
+All right, so I went ahead and created a new project.
+
+00:03.430 --> 00:04.240
+She did the same.
+
+00:04.590 --> 00:07.320
+And this is what we have seen this many times.
+
+00:07.770 --> 00:15.270
+So let's go ahead and delete things that we don't need to see because we're going to start from scratch.
+
+00:17.370 --> 00:18.060
+OK, there we go.
+
+00:18.270 --> 00:25.620
+So what going to do now is I'm going to separate my code into different folders or different packages.
+
+00:26.010 --> 00:30.030
+So inside inside of this main package packaging, we're right click Save New.
+
+00:31.720 --> 00:32.560
+Create a package.
+
+00:33.010 --> 00:37.330
+I'm going to create a model package, this is where we're going to put a.
+
+00:37.360 --> 00:43.270
+All the models in this case, we're just going to have one model right that will model after an instance
+
+00:43.270 --> 00:44.650
+of a note in this case.
+
+00:44.930 --> 00:45.190
+OK.
+
+00:45.670 --> 00:47.330
+And then I'm going to create a new one.
+
+00:47.350 --> 00:51.110
+Another package here and call this data.
+
+00:51.160 --> 01:00.040
+This is where we can put data related classes or files, create any one package and let's put components.
+
+01:00.910 --> 01:06.390
+So this is where we can put all the components, widgets and so forth that will be part of our application.
+
+01:08.520 --> 01:14.910
+And I always like to do this in this case, we only have one screen, but I still like to create a screen.
+
+01:17.090 --> 01:17.960
+Package as such.
+
+01:18.620 --> 01:23.210
+All right, so instead of a screen package here, I'm going to create a new codling class.
+
+01:25.020 --> 01:27.570
+And let's just make this a file.
+
+01:28.950 --> 01:30.270
+Let's call this note.
+
+01:31.320 --> 01:32.790
+Screen as such.
+
+01:34.230 --> 01:36.870
+This is OK at Target.
+
+01:36.990 --> 01:39.300
+That's just my kit repo.
+
+01:39.960 --> 01:45.720
+OK, so we have no screen there, so here I'm just going to have to create, see, compose.
+
+01:47.290 --> 01:57.520
+Composable, that is quite a function called this note screen as such, and there we have it, note
+
+01:57.530 --> 02:03.790
+screen is going to be screen and we're going to call somewhere inside of our main activity.
+
+02:05.110 --> 02:06.970
+So let's construct our notes screen.
+
+02:06.970 --> 02:10.480
+So notes screen is going to look like this, right?
+
+02:10.510 --> 02:11.290
+That is the idea.
+
+02:11.290 --> 02:15.310
+So we are going to have here an app bar of some sort.
+
+02:15.520 --> 02:18.130
+Top bar with Tab Bar with the app name.
+
+02:18.130 --> 02:20.620
+And then we're going to have all of these widgets.
+
+02:21.070 --> 02:23.560
+All of these composable so text.
+
+02:23.860 --> 02:25.750
+So to text views and a button.
+
+02:25.750 --> 02:27.430
+And of course, later we're going to add more.
+
+02:28.860 --> 02:30.150
+All right, let's start at the top.
+
+02:30.660 --> 02:31.530
+So if you go to.
+
+02:31.620 --> 02:36.930
+So back to our notes screen here before before I even move forward, let's create a preview.
+
+02:37.170 --> 02:37.980
+Compose over here.
+
+02:37.980 --> 02:46.200
+Here's what to say at preview because I want to preview this composable and I'm going to say at composable,
+
+02:46.890 --> 02:56.400
+it's a fun and can I'm going to name these notes screen preview such.
+
+03:00.280 --> 03:01.870
+And he him just passed notes.
+
+03:07.560 --> 03:08.730
+Note screen like that.
+
+03:12.830 --> 03:19.760
+So this is where the preview, so here is just preview our screen now, one thing I can do also is in
+
+03:19.760 --> 03:20.690
+our preview here.
+
+03:20.690 --> 03:25.340
+I can go ahead and say back show background.
+
+03:25.820 --> 03:33.080
+If I say true, it's going to go ahead and show have over says, if true, the composable will use a
+
+03:33.080 --> 03:34.550
+default background color.
+
+03:35.450 --> 03:37.400
+All right, so let's start construction.
+
+03:37.730 --> 03:38.030
+All right.
+
+03:38.330 --> 03:41.840
+So first, let's go ahead and put a column.
+
+03:43.220 --> 03:47.690
+I want column because in all of these items are going to be inside of a column, right?
+
+03:48.140 --> 03:53.660
+Everything is in a vertical layout manner, so the column works.
+
+03:54.140 --> 03:55.880
+Let's give it a modifier here.
+
+04:03.380 --> 04:05.990
+Give it patting of about 60 P.
+
+04:06.890 --> 04:08.090
+Let's go ahead and import
+
+04:11.150 --> 04:11.420
+good.
+
+04:12.050 --> 04:12.340
+All right.
+
+04:12.350 --> 04:18.950
+So what I need to do, what I'm going to do next is to add this structure here, which is just a top
+
+04:18.950 --> 04:19.400
+bar.
+
+04:20.090 --> 04:23.840
+Now we've seen top brass before, we've seen in the context of scaffold.
+
+04:24.170 --> 04:29.090
+But remember top bar like anything else in Kappos.
+
+04:29.390 --> 04:32.540
+These are composable function, which means we can actually call them.
+
+04:33.050 --> 04:36.710
+I don't have to have a scaffold in order to use a top bar.
+
+04:37.040 --> 04:39.390
+So I'm going to say here, top bar.
+
+04:39.410 --> 04:42.470
+Look at that right and you can see it is indeed a composable.
+
+04:42.590 --> 04:47.000
+First of all, there is this green f to say function and composable.
+
+04:47.000 --> 04:51.020
+The white Android there Android, I should say.
+
+04:51.530 --> 04:51.890
+All right.
+
+04:52.070 --> 04:56.600
+So our top bar requires a title, which we can pass.
+
+04:57.650 --> 05:01.100
+Of course, the lambda and also requires actions.
+
+05:01.580 --> 05:03.530
+We can pass them by at some point.
+
+05:03.740 --> 05:04.250
+Maybe not.
+
+05:04.250 --> 05:06.800
+Now it's fine like that.
+
+05:08.230 --> 05:11.530
+OK, so in this case here, it's not a lambda itself.
+
+05:11.890 --> 05:15.250
+That's why it's saying we shouldn't have that lambda trailing lambda.
+
+05:15.910 --> 05:17.110
+All right for a Tyler here.
+
+05:17.530 --> 05:21.460
+I'm going to say text, let's pass.
+
+05:22.090 --> 05:23.110
+Let's say text.
+
+05:24.400 --> 05:28.540
+I could pass just a text like that.
+
+05:28.540 --> 05:30.120
+But there's another way to do this.
+
+05:30.130 --> 05:40.180
+For instance, I can say something like this string resource, and I'm going to say, Ah, got to string
+
+05:40.990 --> 05:44.520
+and get the app name like this.
+
+05:44.530 --> 05:46.930
+Now this is going to have a problem because we need to install.
+
+05:46.930 --> 05:49.060
+We need to import on a class.
+
+05:49.360 --> 05:50.380
+Just click import.
+
+05:50.960 --> 05:52.980
+Let's go ahead and import that well.
+
+05:53.950 --> 05:56.230
+So these are class is a class.
+
+05:56.230 --> 06:03.880
+If you have over, it's a class that has access to resources in our application.
+
+06:04.090 --> 06:10.300
+That means then with our we can go back and we can go ahead and go to resources, go to troubles, go
+
+06:10.300 --> 06:13.270
+to MIT Map, go to values and go to strings.
+
+06:13.540 --> 06:18.670
+So we are going to do is we're going to go ahead and get this app, that name or app underscore name,
+
+06:18.940 --> 06:22.540
+which is going to be Jack Note or whatever title you've given it.
+
+06:23.320 --> 06:27.070
+OK, so this is another way of getting things from our string resource file.
+
+06:27.080 --> 06:32.440
+So string that see, now I have access to app happening like this for actions here, I can actually
+
+06:32.440 --> 06:36.850
+add an icon such icons.
+
+06:42.830 --> 06:50.570
+Grounded as an option, and it can go ahead and say, let's find something like notification, for instance,
+
+06:51.020 --> 06:52.070
+doesn't matter, really.
+
+06:52.910 --> 06:54.460
+We just want to see something there.
+
+06:54.470 --> 06:57.080
+OK, so this case here, I'm just going to go for description.
+
+06:59.460 --> 06:59.940
+It's a.
+
+07:03.100 --> 07:03.730
+Icon.
+
+07:04.900 --> 07:05.260
+All right.
+
+07:07.970 --> 07:10.790
+Let's go ahead and preview real quick here to see what's going on.
+
+07:11.480 --> 07:12.380
+All right, so there we go.
+
+07:12.390 --> 07:14.480
+We have our notes.
+
+07:14.660 --> 07:16.520
+There looks really good.
+
+07:16.610 --> 07:19.290
+We have our top bar and we have that icon there.
+
+07:19.310 --> 07:20.690
+This is just a placeholder.
+
+07:20.970 --> 07:21.910
+It doesn't really matter.
+
+07:21.920 --> 07:23.180
+But OK, it's looking really good.
+
+07:24.050 --> 07:29.660
+And anything we can do, we can actually change the background color of these top bars if you have over.
+
+07:30.080 --> 07:36.140
+You will see that we have the background, color, property or argument you can pass.
+
+07:36.590 --> 07:38.810
+So that's going to be after our actions.
+
+07:38.820 --> 07:42.620
+I'm going to go ahead and say, enter background color.
+
+07:43.280 --> 07:46.700
+And for the color here, I'm going to say color already have the color.
+
+07:46.880 --> 07:49.460
+So I'm going to put an hex color.
+
+07:49.460 --> 07:57.140
+So zero x, then f f a such d a d f e three like this and the beauty.
+
+07:57.140 --> 07:59.630
+Also remember that this doesn't matter, right?
+
+07:59.640 --> 08:03.770
+So you can actually click here and start changing colors to your liking.
+
+08:04.190 --> 08:07.130
+This is the color that I found to be decently OK.
+
+08:07.700 --> 08:08.240
+I may change.
+
+08:08.240 --> 08:09.120
+It doesn't matter.
+
+08:09.170 --> 08:09.470
+Guess so.
+
+08:09.470 --> 08:13.370
+Save this if you're going to refresh, you can see now we should have something different.
+
+08:14.210 --> 08:15.230
+OK, there we go.
+
+08:15.830 --> 08:16.550
+Very subtle.
+
+08:16.940 --> 08:22.190
+So after we have put together the top bar.
+
+08:23.190 --> 08:29.670
+So ends here now at the bottom here, that's where we're going to add this structure here, which is
+
+08:29.670 --> 08:37.650
+going to be these two text fields and button say content like this.
+
+08:41.160 --> 08:42.870
+So what I'm going to do is.
+
+08:46.580 --> 08:50.570
+Let's go ahead and put inside of a column, right?
+
+08:51.350 --> 08:59.090
+And let's press my fire as such, and we want Phil Max with as such.
+
+08:59.660 --> 09:10.220
+And I want to get also the horizontal alignment to alignment center horizontally section.
+
+09:11.930 --> 09:15.170
+OK, so inside here with you, now is time.
+
+09:15.740 --> 09:17.510
+Now we're going to add these two.
+
+09:18.590 --> 09:20.240
+Now we're going to add first.
+
+09:21.490 --> 09:24.280
+So we're going to go ahead and add a text field as such.
+
+09:24.760 --> 09:29.740
+Now we can go ahead, of course, and right put it detects field right away directly here.
+
+09:30.100 --> 09:35.140
+But what are we going to do is we're going to compartmentalize everything, put things into different
+
+09:35.140 --> 09:40.090
+classes or folders or in this case, packages to make it even better.
+
+09:40.630 --> 09:42.670
+So I'm going to see Cottle in class.
+
+09:43.270 --> 09:44.610
+He is just going to be a file.
+
+09:44.620 --> 09:45.670
+It's called this.
+
+09:48.260 --> 09:59.240
+Note components such an inside here, I'm going to just add it composable like this real quick and then
+
+09:59.240 --> 10:04.340
+I'm going to create a function called note input text.
+
+10:04.910 --> 10:08.180
+So this is just a way for us to separate everything.
+
+10:08.180 --> 10:11.410
+And also you notice we have two of them, right?
+
+10:11.420 --> 10:14.900
+So I have for the title and we have another one for the notes.
+
+10:15.500 --> 10:19.130
+So this will be great because then we could just call this composable.
+
+10:20.150 --> 10:27.440
+A few times that we want, so we can that we won't have to repeat ourselves instead of a note here.
+
+10:31.720 --> 10:36.550
+So first, let's go ahead and pass a modifier, make sure we get the correct modifier, which is the
+
+10:36.550 --> 10:37.570
+compose, right?
+
+10:39.300 --> 10:43.290
+And I'm going to say modifier just to say that we are not.
+
+10:47.310 --> 10:49.710
+That's to say that this is an optional parameter.
+
+10:50.310 --> 10:52.020
+And then let's pass text.
+
+10:59.880 --> 11:11.400
+And then let's pass the text of the string and the parcel label also strained max line.
+
+11:12.090 --> 11:24.100
+It's going to be an inch and it's going to be one as default value and they don't text change, right?
+
+11:24.180 --> 11:29.640
+We're going to expect to pass a string value and return unit.
+
+11:30.870 --> 11:31.190
+OK.
+
+11:31.820 --> 11:46.260
+On i e action that we are just going to pass nothing and return unit and just also say that we don't
+
+11:46.260 --> 11:48.860
+require to be passed at all.
+
+11:48.870 --> 11:49.770
+I say argument.
+
+11:53.010 --> 11:56.070
+OK, so now inside, we're going to create the text field.
+
+11:56.340 --> 12:02.360
+Some will say text field and then let's go ahead and start constructing our text field.
+
+12:02.370 --> 12:04.650
+So first one is the value.
+
+12:04.660 --> 12:11.360
+So in this case, let's put this in your line for our value here, we're going to pass the text, OK,
+
+12:11.370 --> 12:15.090
+which is why we're passing their own value change.
+
+12:15.090 --> 12:21.660
+We're going to pass on text change and we're going to pass, of course, on text change like that.
+
+12:23.250 --> 12:26.550
+And they're all going to continue, let's say, four colors.
+
+12:27.420 --> 12:32.460
+I'm going to change something here in this case, because the text field, I'm going to use the text
+
+12:33.630 --> 12:41.940
+field default with C text field, default search and text field colors.
+
+12:42.540 --> 12:43.170
+All right.
+
+12:44.100 --> 12:47.250
+And then inside here I can pass, for instance, to background color.
+
+12:47.640 --> 12:51.930
+I'm going to make it transparent, so color transparent.
+
+12:52.890 --> 12:57.660
+And then I'm going pass max lines just pass max lines that the user would be passing.
+
+12:57.660 --> 13:03.130
+When we use this for the label, it expects, as you can see, a lambda right to function.
+
+13:03.150 --> 13:09.240
+So I'm just going to say for the lambda here where I pass a text and I'm going to pass to the label,
+
+13:09.790 --> 13:10.100
+OK?
+
+13:16.910 --> 13:21.590
+And then I'm going to pass keyboard options and I'm going say keyboard.
+
+13:24.480 --> 13:27.360
+Options might default.
+
+13:27.420 --> 13:32.820
+I'm going to just say copy in this case, I'm just extending a few things here.
+
+13:33.180 --> 13:37.170
+So for the Miami action, right, I'm going to say I am action.
+
+13:37.380 --> 13:39.140
+We want to show Don.
+
+13:40.080 --> 13:41.910
+Hey, come back.
+
+13:42.600 --> 13:48.810
+So this is so supposed to be keyboard options, not actions.
+
+13:48.840 --> 13:49.320
+There we go.
+
+13:49.890 --> 13:50.160
+All right.
+
+13:50.160 --> 13:53.760
+So next I'm going to say keyboard now actions.
+
+13:55.860 --> 13:58.200
+Price or keyboard actions?
+
+14:03.180 --> 14:06.570
+So undone what I want to happen.
+
+14:07.070 --> 14:13.470
+Put a lambada here when it's done and we are going to say on, I am action that we passed.
+
+14:14.010 --> 14:18.630
+And then here we want to hide the keyboard in order for us to hide the keyboard.
+
+14:18.660 --> 14:21.390
+We need to get the actual controller.
+
+14:21.810 --> 14:28.380
+So at the top, I'm going to say foul keyboard controller.
+
+14:28.560 --> 14:38.550
+Such and where say, local soft keyboard controller, long class and say currency, this is going to
+
+14:38.550 --> 14:39.930
+get the current.
+
+14:40.200 --> 14:42.210
+So this is going to get our software.
+
+14:42.450 --> 14:46.450
+So this is going to get the keyboard controller so that we can use it.
+
+14:46.470 --> 14:47.880
+Now we're going to have an issue here.
+
+14:47.910 --> 14:53.010
+If you have is going to say this API is experimental and is likely to change in the future, again,
+
+14:53.010 --> 14:57.630
+this just says that things may change in the future because compose is still evolving.
+
+14:58.110 --> 15:02.880
+It's trying to warn us, and we have to add these experimental composer UI annotation.
+
+15:03.040 --> 15:05.310
+OK, so quick there, and you can see there it is.
+
+15:06.030 --> 15:07.290
+OK, so now we can use it.
+
+15:07.710 --> 15:13.290
+So on that action, we're going to say keyboard controller that hide.
+
+15:14.850 --> 15:15.210
+OK.
+
+15:15.300 --> 15:18.330
+This is going to be knowable, so we need to unwrap like this.
+
+15:23.760 --> 15:28.110
+And we are going to pass the modifier past the modifier.
+
+15:30.000 --> 15:30.400
+I see.
+
+15:30.960 --> 15:31.740
+You see there.
+
+15:32.310 --> 15:33.330
+So what are we doing here again?
+
+15:33.600 --> 15:36.960
+We're creating this composable that is very flexible, customizable.
+
+15:36.960 --> 15:46.470
+We can then just call node input text of text like that and pass some of these arguments there to create
+
+15:46.470 --> 15:47.220
+a text field.
+
+15:48.060 --> 15:54.960
+So now if we go back to our notes screen, it's kind of easy inside of our column here we can just say.
+
+15:56.650 --> 16:01.150
+Note input, text and we can pass some of the parameters.
+
+16:01.660 --> 16:03.770
+Now what we want to pass here first, let's go ahead.
+
+16:03.790 --> 16:14.410
+I'm just going to say hello and for a label also hello so we can see something and offer on change and
+
+16:14.410 --> 16:16.330
+tax change must pass an empty.
+
+16:18.520 --> 16:26.620
+Like this, man, I also have to add experimental compose UI, right, like this for this to work.
+
+16:27.160 --> 16:28.460
+Let's go ahead and refresh this.
+
+16:28.480 --> 16:37.930
+So hopefully we can at least see a while again every time we use the experimental APIs anywhere we are
+
+16:37.930 --> 16:39.190
+calling that function.
+
+16:39.490 --> 16:40.930
+We need to also add that.
+
+16:41.110 --> 16:43.030
+So that's the contract.
+
+16:43.840 --> 16:44.590
+So refresh again.
+
+16:46.030 --> 16:47.350
+And there you have.
+
+16:47.350 --> 16:48.670
+It looks really good.
+
+16:49.450 --> 16:49.890
+We have.
+
+16:49.900 --> 16:50.610
+Hello, hello.
+
+16:50.620 --> 16:54.940
+Of course, that's not what we want, but at least we see we do have a text field.

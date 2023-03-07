@@ -1,0 +1,406 @@
+WEBVTT
+
+00:00.900 --> 00:08.070
+So we were able to see that our title and I note this card description states are working because we
+
+00:08.070 --> 00:11.280
+are able to add things to our fields.
+
+00:11.610 --> 00:12.360
+So this is really good.
+
+00:12.810 --> 00:18.360
+But what we want to do ultimately is to be able to save or at least when this is clicked, be able to
+
+00:18.360 --> 00:21.220
+say, Okay, let's go back to our note.
+
+00:21.660 --> 00:27.630
+I'm going to close down there because we don't need to look at this point at the user interface.
+
+00:27.630 --> 00:28.890
+We just want to look at the logic.
+
+00:29.700 --> 00:35.670
+So if you look at the next note button should say what should save, which says save.
+
+00:36.270 --> 00:39.510
+We have here the one click lambda.
+
+00:39.630 --> 00:41.340
+So what needs to happen here?
+
+00:42.060 --> 00:52.440
+Well, first of all, I'm going to validate and say if they want to check if title, that is not empty.
+
+00:54.820 --> 00:55.360
+And.
+
+00:57.550 --> 01:01.090
+Description also is not empty.
+
+01:01.630 --> 01:10.030
+Only then will I be able to say, let's save or add to the list.
+
+01:10.570 --> 01:10.890
+OK.
+
+01:12.850 --> 01:15.130
+But when that happened, I also want to do something.
+
+01:15.130 --> 01:19.360
+I want to clear our title and then just set that to empty.
+
+01:19.390 --> 01:26.770
+Like this, an empty string, as well as our description say and district, is how we clear the fields.
+
+01:26.800 --> 01:29.920
+Once we have clicked safe.
+
+01:31.300 --> 01:31.550
+OK.
+
+01:31.870 --> 01:38.910
+And remember, the reason why this title and and description are what they are, is because they are
+
+01:38.920 --> 01:39.970
+mutable state.
+
+01:40.000 --> 01:42.580
+We need those as we have talked about.
+
+01:42.880 --> 01:43.750
+Something to remember.
+
+01:43.840 --> 01:44.590
+But what is it?
+
+01:44.590 --> 01:51.730
+How do we then save or add this item into our list in this case?
+
+01:52.260 --> 01:52.430
+All right.
+
+01:52.490 --> 01:56.440
+So we are able to display at the bottom here something like this a later time.
+
+01:57.160 --> 02:02.470
+Here's a period we should go back to the top where we instantiate or created our note screen.
+
+02:02.470 --> 02:04.420
+Here, we need to pass a few parameters.
+
+02:05.230 --> 02:11.500
+Primarily, we want to be able to pass that responsibility to whoever is calling you, notes screen.
+
+02:11.980 --> 02:19.510
+So what I mean by that is we know that this note screen, because it's going to have also late our time
+
+02:19.960 --> 02:22.330
+on the list of all of these notes.
+
+02:22.450 --> 02:22.750
+Right.
+
+02:23.230 --> 02:27.700
+That means then here I'm going to have to pass notes like that.
+
+02:28.050 --> 02:30.430
+It's going to be a list of notes.
+
+02:31.030 --> 02:32.650
+Note object, which we haven't created.
+
+02:32.980 --> 02:34.960
+Do not to use this provider contact.
+
+02:34.960 --> 02:35.770
+That's not what we want.
+
+02:36.340 --> 02:39.070
+So let's go ahead and create that first before we move forward.
+
+02:39.880 --> 02:41.890
+So what if we go and let's go to a project?
+
+02:42.010 --> 02:43.360
+Let's go to our model.
+
+02:43.370 --> 02:48.240
+In this case, right click Want to create a new and class?
+
+02:48.250 --> 02:52.060
+It's going to be a data class, called his note.
+
+02:52.930 --> 02:59.410
+So our note here is going to be very simple now because I want to make this note easy to work with in
+
+02:59.410 --> 02:59.920
+the future.
+
+02:59.920 --> 03:04.010
+If we choose to do so, I'm going to add needs to save for it.
+
+03:04.210 --> 03:11.290
+Now I could come here and start adding perhaps some random numbers each time a note is created and so
+
+03:11.290 --> 03:11.650
+forth.
+
+03:12.070 --> 03:18.120
+And that's very valid, but there is a really awesome class that we can use that creates random you
+
+03:18.340 --> 03:19.030
+IDs.
+
+03:19.770 --> 03:22.240
+You ID is universal ID.
+
+03:22.810 --> 03:28.250
+So what I can do here in this ID, it's going to be a u u i d type.
+
+03:28.270 --> 03:30.350
+This comes from Java you.
+
+03:31.450 --> 03:36.970
+If you scroll up, you can see a class that represents an immutable, universal, unique ID.
+
+03:38.680 --> 03:40.420
+Universal unique identifier.
+
+03:40.900 --> 03:42.190
+I love that great name.
+
+03:42.310 --> 03:42.550
+OK.
+
+03:43.330 --> 03:45.210
+And you can read more about it and so forth.
+
+03:45.220 --> 03:51.850
+So the idea is that this will create very strong ideas that we don't have to worry about ever.
+
+03:52.120 --> 03:53.080
+So I'm going to import that.
+
+03:53.320 --> 03:56.980
+I'm going to set it to create that UI.
+
+03:58.000 --> 03:59.160
+There's different forms here.
+
+03:59.170 --> 04:02.110
+I'm just going to use the random, you know, I'd like this.
+
+04:03.160 --> 04:08.320
+So each time a note is created, we're going to have something like this.
+
+04:10.720 --> 04:17.620
+So anytime you need to create IEDs, random IEDs, you you IEDs like this, which means the AIDS will
+
+04:17.620 --> 04:22.570
+never be the same, which is what we want, won't take care of business with you.
+
+04:22.810 --> 04:28.120
+You ied that random and next thing I'm going to pass here is going to foul title.
+
+04:28.390 --> 04:32.650
+It's going to be just a string next description.
+
+04:36.240 --> 04:45.030
+Also, strength, and because we are excited and also just because I'm going to add an entry date here,
+
+04:45.300 --> 04:53.130
+so it's going to be I'm going to use local date time travel time there and it will set this to local
+
+04:53.700 --> 04:54.930
+date to now.
+
+04:56.340 --> 05:03.030
+So what this will do any time that this class is created or an object or this class is intentionally
+
+05:03.030 --> 05:07.620
+instantiated to create a note, we're going to have a random ID generated.
+
+05:07.830 --> 05:10.800
+We don't have to add ourselves, we can't if we want, but we don't have to.
+
+05:11.130 --> 05:17.520
+And then we're going to have the time stamp, which is going to be the time when this was added or created.
+
+05:17.850 --> 05:18.270
+Very neat.
+
+05:18.540 --> 05:18.930
+That's all.
+
+05:19.470 --> 05:25.440
+OK, so now that we have our note, we can go back to our note screen here and uncomment this and this
+
+05:25.440 --> 05:25.910
+should work.
+
+05:25.920 --> 05:26.810
+Now, let's be careful.
+
+05:26.820 --> 05:27.810
+Let's go ahead and import.
+
+05:28.140 --> 05:32.250
+Make sure we get our note from our project.
+
+05:32.970 --> 05:33.420
+There we go.
+
+05:33.840 --> 05:34.720
+What else do you want to do?
+
+05:34.740 --> 05:42.810
+Well, for each note to want to be able to, of course, add that note to somewhere, as well as remove
+
+05:42.810 --> 05:43.260
+that note?
+
+05:43.880 --> 05:44.130
+Right?
+
+05:44.610 --> 05:52.380
+So in this case, I'm going to also pass the on add note what I want to happen while I'm going to pass
+
+05:52.830 --> 05:55.650
+and note object that needs to be added, obviously.
+
+05:56.040 --> 06:03.400
+And in this case, in which case we turn nothing and then only remove note.
+
+06:04.140 --> 06:05.790
+I need that note.
+
+06:06.540 --> 06:07.530
+So I know what is it?
+
+06:07.530 --> 06:10.470
+I'm removing and also return nothing.
+
+06:11.100 --> 06:12.430
+All right now, we're going to have an issue.
+
+06:12.430 --> 06:18.960
+If you have over here to the right click in our note screen preview here is going to say, Well, I
+
+06:18.960 --> 06:20.640
+don't have any notes.
+
+06:20.640 --> 06:21.570
+So what's going on?
+
+06:22.200 --> 06:27.180
+Well, in this case here, I'm just going to go ahead and say, for instance, for notes, when I say
+
+06:27.450 --> 06:28.110
+empty.
+
+06:29.530 --> 06:35.500
+List and then for on I'd note, I just put an empty lambada.
+
+06:37.740 --> 06:44.040
+Remove also an empty land, therefore, for now, because this is just the preview, so we just going
+
+06:44.040 --> 06:44.640
+to pass that.
+
+06:45.360 --> 06:48.570
+In fact, also we'll probably have to do the same thing when we go to.
+
+06:50.840 --> 06:55.160
+Our main activity, what are we calling for now, I'm just going to say notes.
+
+06:57.840 --> 06:58.740
+Say empty.
+
+06:59.960 --> 07:00.440
+List
+
+07:03.260 --> 07:11.510
+and move note, just past that for now, and also just pass something like that for now, we'll change
+
+07:11.510 --> 07:12.020
+all of that.
+
+07:12.560 --> 07:18.230
+So back to notes here you'd see that our notes screen now requires a list of notes.
+
+07:18.920 --> 07:21.880
+So we need some sort of a list of notes for now.
+
+07:21.890 --> 07:22.670
+What are we going to do?
+
+07:22.700 --> 07:26.690
+We're going to have dummy data, so stay inside of our data here.
+
+07:26.700 --> 07:31.340
+I'm going to say command and write another way of getting there.
+
+07:33.090 --> 07:35.250
+This created Class Coughlin class.
+
+07:35.580 --> 07:41.250
+It's just going to be a file note data like that.
+
+07:41.790 --> 07:43.890
+And here I'm going to just create a class.
+
+07:46.440 --> 07:50.610
+All this notes data source.
+
+07:54.030 --> 08:05.040
+And just create a function here, say load notes, OK, return a list, yes, of notes, our notes make
+
+08:05.280 --> 08:06.870
+very careful what we importing there.
+
+08:07.440 --> 08:11.220
+And so now this will return a list of notes.
+
+08:11.640 --> 08:14.640
+I said list of that.
+
+08:15.150 --> 08:21.720
+Now I do have a lot of notes, so I'm just going to copy all of them and add them here so you don't
+
+08:21.720 --> 08:22.890
+have to type it all in.
+
+08:22.900 --> 08:25.980
+You also will have access to all of that or you can write them yourself.
+
+08:26.160 --> 08:26.430
+OK.
+
+08:26.880 --> 08:31.110
+So these are objects of notes which are going to be returned.
+
+08:31.140 --> 08:38.070
+So anytime we want to notes, we come to notes, data source and load notes, which should be good.
+
+08:38.490 --> 08:39.480
+Maybe not.
+
+08:41.580 --> 08:42.050
+There we go.
+
+08:42.060 --> 08:45.960
+I think looks like I'm missing something here.
+
+08:46.620 --> 08:48.750
+Copy and paste sometime gets you.
+
+08:49.230 --> 08:50.220
+OK, there we go.
+
+08:51.270 --> 08:51.620
+All right.
+
+08:51.630 --> 08:56.850
+So now we have the infrastructure set up so we can continue here.

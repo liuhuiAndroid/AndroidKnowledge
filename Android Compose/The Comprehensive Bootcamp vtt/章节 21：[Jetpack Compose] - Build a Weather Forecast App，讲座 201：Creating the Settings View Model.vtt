@@ -1,0 +1,463 @@
+WEBVTT
+
+00:01.020 --> 00:09.210
+So we need to create another table one entity so that we can hold the settings in this case, hold the
+
+00:09.220 --> 00:14.160
+measurement, I should say, of winter weather, his imperial or metric.
+
+00:15.060 --> 00:19.140
+So let's go back to a project and inside of.
+
+00:20.810 --> 00:29.180
+Our models here, I'm going to create yet another class cutting class that's going to be just a data
+
+00:29.720 --> 00:30.200
+class.
+
+00:31.130 --> 00:36.230
+Let's call this unit OK because it's going to be presenting a unit of measurement.
+
+00:38.720 --> 00:46.850
+OK, so I'm going to make sure this is an entity, so same thing we did with favourite and table name.
+
+00:49.310 --> 00:51.740
+Called Settings Tbo.
+
+00:55.210 --> 00:55.610
+All right.
+
+00:55.740 --> 01:01.080
+So I'm going to start by saying, I know or not novel should say no, no.
+
+01:02.790 --> 01:09.690
+And this is going to be at the primary key as well, and I'm going to make Stacey that column in full
+
+01:10.290 --> 01:10.950
+the name.
+
+01:11.280 --> 01:13.110
+It's going to be unit.
+
+01:13.380 --> 01:21.530
+So we're just going to have one column or one in this case, variable or Property Valley Unit.
+
+01:21.660 --> 01:22.950
+It's going to just be a string.
+
+01:23.790 --> 01:24.450
+Very simple.
+
+01:25.440 --> 01:31.470
+Again, we could have done this using a simpler data structure that allows us to save pieces of data.
+
+01:31.710 --> 01:37.920
+But because we are looking into a database and that's just fine, we can just use the database, right?
+
+01:38.010 --> 01:38.460
+That's it.
+
+01:38.550 --> 01:41.160
+Now, because we created this entity, a table.
+
+01:41.430 --> 01:44.760
+You remember, we need to go back and get rid of all of this.
+
+01:46.080 --> 01:50.130
+We need to go back to our database, a weather database.
+
+01:54.600 --> 01:54.870
+Right.
+
+01:55.260 --> 02:00.750
+Because remember, this is the skeleton that's created for our database, and we need to add that class
+
+02:01.740 --> 02:04.410
+or rather that entity, right?
+
+02:04.980 --> 02:06.150
+Which is a class, of course.
+
+02:06.450 --> 02:09.270
+So I'm going to say unity or unity.
+
+02:10.320 --> 02:16.380
+Make sure again, this is another thing about naming make sure that we get our unit, not the coddling
+
+02:16.380 --> 02:16.690
+unit.
+
+02:16.740 --> 02:19.500
+This is our model class unit.
+
+02:20.070 --> 02:20.400
+OK.
+
+02:21.240 --> 02:23.310
+And make sure that's a class like this.
+
+02:23.580 --> 02:30.990
+Now, before we do anything else, what's going to happen because we've changed the skeleton structure
+
+02:31.980 --> 02:34.350
+of our database room extension here?
+
+02:35.400 --> 02:37.400
+We will have to change a few things.
+
+02:37.410 --> 02:42.120
+While one thing really, we're going to change the version that way when this database, because we'll
+
+02:42.120 --> 02:44.610
+have to recompiled and recreate it in the background.
+
+02:45.120 --> 02:50.730
+We are going to override everything and create this unit class along the way as well.
+
+02:51.090 --> 02:55.260
+So changed us to a higher number than we had before.
+
+02:55.290 --> 02:57.660
+If you had five, then change that to six.
+
+02:58.860 --> 02:59.160
+OK.
+
+02:59.670 --> 03:00.060
+Very good.
+
+03:00.690 --> 03:08.190
+So now that we have this table unit table that we created here, entity, we need to go do the same
+
+03:08.190 --> 03:10.860
+thing we did with our favorite, which is we need to create.
+
+03:13.120 --> 03:17.290
+We need to add into our Dow and into our repository.
+
+03:17.800 --> 03:19.180
+OK, let's go back to.
+
+03:22.660 --> 03:31.990
+And here we created all of these right crud operations and so forth for our favorites, so now I'm going
+
+03:31.990 --> 03:37.240
+to create the same thing for our unit table per se.
+
+03:37.840 --> 03:39.380
+So it's going to be pretty much the same.
+
+03:39.790 --> 03:42.190
+I accept a few changes there.
+
+03:47.850 --> 03:55.920
+So let's copy this, and I'm going to do just a few that we're going to be using because the concept
+
+03:55.920 --> 03:57.660
+is the same and you can always do it yourself.
+
+03:58.020 --> 04:02.010
+So for this one is going to be, I think, settings table.
+
+04:02.020 --> 04:05.730
+They would go and instead of get favorites, this is going to be get.
+
+04:08.460 --> 04:18.610
+Units, this flow list of units, objects, again, make sure we don't get the in, we get our unit
+
+04:18.610 --> 04:22.330
+here, so you can see that is our model class.
+
+04:22.900 --> 04:24.040
+That's very important.
+
+04:27.540 --> 04:35.880
+And then I'm just going to copy and added here again, because it's very the same thing, really.
+
+04:37.380 --> 04:38.520
+And.
+
+04:46.250 --> 04:50.570
+And it's not, you know, Caitlin is going to be unit again.
+
+04:50.720 --> 04:53.030
+Be very careful, we get the correct unit.
+
+04:57.560 --> 05:01.370
+While I'm here, let's just get everything, really, that's fine.
+
+05:02.950 --> 05:06.370
+Again, make sure not to coddling units, our unit.
+
+05:07.510 --> 05:10.480
+That's what happened when you and copy and paste.
+
+05:11.570 --> 05:16.550
+OK, so insert unit data unit, get units, let's get delete.
+
+05:18.020 --> 05:18.860
+All units.
+
+05:23.880 --> 05:25.200
+OK, that's very simple.
+
+05:28.390 --> 05:32.200
+And if we want to delete one unit, we can do so as well.
+
+05:32.510 --> 05:36.430
+OK, I think that's enough for us.
+
+05:36.790 --> 05:39.310
+It's going to be units, our type units like this.
+
+05:40.120 --> 05:42.310
+OK, so we add Vladimir, whether weather now.
+
+05:42.490 --> 05:42.970
+Very good.
+
+05:43.840 --> 05:54.040
+Now we need to go to our repository where the repository, whether DB repository that is.
+
+05:56.660 --> 05:58.070
+And what I'm going to do here.
+
+06:02.250 --> 06:04.880
+I just larger for now and say we're not running anything.
+
+06:11.110 --> 06:13.480
+I'm going to copy and get the other ones.
+
+06:28.480 --> 06:29.260
+There we go.
+
+06:41.720 --> 06:45.080
+I need to change because I'm copying and pasting.
+
+06:45.350 --> 06:48.590
+I'm sure you get the right unit, right?
+
+06:48.600 --> 06:49.250
+I see.
+
+06:49.580 --> 06:51.940
+We're not going to use that update, right?
+
+06:51.950 --> 06:52.880
+That's OK.
+
+06:54.260 --> 06:55.310
+Can you do that in a way?
+
+06:55.850 --> 06:56.600
+And the unit?
+
+07:05.130 --> 07:07.020
+OK, delete all units.
+
+07:16.120 --> 07:17.800
+It or anything like that?
+
+07:17.820 --> 07:19.050
+OK, that's fine.
+
+07:19.950 --> 07:23.940
+Again, I'm copying and pasting, you're not explaining much because if you have been following us,
+
+07:24.240 --> 07:27.410
+this is not, you know, something new.
+
+07:27.420 --> 07:33.840
+We've done this before and you can just go back to the previous videos if you are not remembering what
+
+07:33.840 --> 07:34.200
+it was doing.
+
+07:34.590 --> 07:37.590
+Next thing we need to create a Settings review model, right?
+
+07:37.980 --> 07:41.610
+So you can do in class
+
+07:44.040 --> 07:46.530
+settings, do you model?
+
+07:47.130 --> 07:51.300
+So again, it's going to be exactly the same as favorite settings, right?
+
+07:51.480 --> 08:01.530
+Or if you moderately should say, I'm sure this units are actually all units first or unit.
+
+08:04.200 --> 08:04.610
+OK.
+
+08:06.530 --> 08:07.970
+Sometimes the.
+
+08:11.640 --> 08:13.770
+OK, that's fine if he wants to do that.
+
+08:14.030 --> 08:17.640
+I'm just going to add all those units that way.
+
+08:17.700 --> 08:22.260
+We don't run into issues in this quarantine here.
+
+08:22.650 --> 08:27.420
+It's sort of a repository, not get units.
+
+08:31.020 --> 08:33.000
+Extinct until changed.
+
+08:41.280 --> 08:42.760
+Collect there we go now.
+
+08:42.780 --> 08:43.470
+It's showing.
+
+08:43.500 --> 08:48.180
+All right, so now I'm going to just get all of that code so we don't have to.
+
+08:49.840 --> 08:51.220
+Go through the same thing.
+
+08:55.580 --> 08:57.170
+At least four units.
+
+09:14.080 --> 09:21.010
+And make sure, yes, this unit here again is probably getting she should have probably named something
+
+09:21.010 --> 09:23.750
+differently, something different instead of a unit.
+
+09:24.010 --> 09:24.370
+OK.
+
+09:24.400 --> 09:27.830
+It has changed our unit and life should be good.
+
+09:27.880 --> 09:31.480
+It looks like now I don't have to pass all of that redundant junk.
+
+09:32.170 --> 09:32.500
+All right.
+
+09:32.680 --> 09:35.020
+So just a few things that we have to change here and there.
+
+09:35.020 --> 09:40.240
+But again, as you see here, really, I don't need to explain everything again because everything is
+
+09:40.240 --> 09:47.560
+looking the same because everything is the same thing that we did with our favorite repository.
+
+09:47.890 --> 09:49.660
+OK, so we're just mirroring the same thing.
+
+09:52.990 --> 09:53.380
+All right.
+
+09:53.950 --> 09:57.010
+So in this case, now we go to a settings screen
+
+10:01.060 --> 10:07.540
+and instead of just passing the controller now we can also pass our Settings View model.
+
+10:07.840 --> 10:12.610
+And I'm going to say it's going to be a Hilt V model such.
+
+10:18.450 --> 10:20.820
+And let's make this a scaffold.
+
+10:24.540 --> 10:25.380
+A top bar.
+
+10:29.800 --> 10:30.170
+OK.
+
+10:30.760 --> 10:35.350
+All right, so we've created our Settings View model and part of our Settings screen.
+
+10:35.560 --> 10:35.910
+All right.
+
+10:35.920 --> 10:36.970
+So we'll come back to that.
+
+10:37.300 --> 10:39.640
+This feed is getting a little bit too long, but there we go.
+
+10:39.730 --> 10:41.810
+So at this point, let's go ahead and run.
+
+10:41.840 --> 10:46.690
+Of course, we are going to see really anything new, but we want to make sure that nothing breaks,
+
+10:46.690 --> 10:48.100
+because that's that's very important.
+
+10:48.730 --> 10:54.670
+And the next video we are going to tackle the settings screen so that hopefully it looks something like
+
+10:54.670 --> 10:54.970
+this.
+
+10:55.240 --> 10:55.930
+It's very simple.
+
+10:55.930 --> 10:56.620
+We can do that.
+
+10:57.310 --> 10:58.390
+Let's run first.
+
+11:05.580 --> 11:08.940
+OK, so everything's still looking good.
+
+11:10.830 --> 11:11.470
+All right.
+
+11:11.490 --> 11:16.680
+You can see now because we griped because we wiped out the database.
+
+11:16.710 --> 11:19.740
+Now we don't have anything in our favorites, which is fine.
+
+11:20.190 --> 11:21.630
+We just testing things around anyway.
+
+11:21.870 --> 11:23.170
+So now we can save again.
+
+11:23.190 --> 11:29.850
+San Diego added to favorites go to favorites, should see San Diego, click on San Diego, get San Diego
+
+11:29.850 --> 11:30.120
+again.
+
+11:30.400 --> 11:31.170
+All right, so very good.
+
+11:32.010 --> 11:32.760
+Nothing broke.
+
+11:33.660 --> 11:39.540
+The database just went and wiped itself out because we changed the versioning to say that we added something
+
+11:39.540 --> 11:39.810
+new.
+
+11:39.810 --> 11:40.290
+That's fine.
+
+11:40.560 --> 11:41.930
+Forget everything is good.
+
+11:41.940 --> 11:48.300
+So we were ready then to look at the settings screen to make it so that it looks like this, and then
+
+11:48.300 --> 11:54.210
+we can save the settings so we can change the the measurement right of measurements.
+
+11:54.390 --> 11:56.160
+Celsius or Fahrenheit.

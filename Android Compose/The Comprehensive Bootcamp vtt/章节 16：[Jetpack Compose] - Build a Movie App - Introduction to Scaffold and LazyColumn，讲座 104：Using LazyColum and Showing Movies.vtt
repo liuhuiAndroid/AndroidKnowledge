@@ -1,0 +1,508 @@
+WEBVTT
+
+00:00.390 --> 00:03.620
+OK, so we have our skeleton set up here to scaffold.
+
+00:04.060 --> 00:08.940
+Let's see, we want to show a list of movies.
+
+00:09.330 --> 00:09.630
+All right.
+
+00:10.110 --> 00:10.830
+How do we do that?
+
+00:11.280 --> 00:18.720
+Now, if you've done Android development before, you probably had to look at recycler fuel cycle view
+
+00:19.110 --> 00:24.810
+is a widget that allows us to add lists into our application, right?
+
+00:24.900 --> 00:31.650
+Scrollable lists and of course, in Android, in traditional Android development that requires adapters
+
+00:31.980 --> 00:35.460
+and requires XML files to create the rows.
+
+00:35.460 --> 00:41.100
+And there is a lot of moving parts, a lot of different things that you have to do in order to get a
+
+00:41.100 --> 00:42.480
+list showing items.
+
+00:43.800 --> 00:45.900
+But in composable, things are a little bit different.
+
+00:45.900 --> 00:48.270
+In fact, there are a whole lot different.
+
+00:49.560 --> 00:54.360
+And to create a list to create a recycle view in this case, we use a.
+
+00:55.400 --> 00:59.420
+Function, a composable function called lazy column.
+
+01:00.200 --> 01:05.300
+So let's see how that would work if we go back to our main content here.
+
+01:06.020 --> 01:08.510
+Let me for now, let me just get rid of all of this.
+
+01:08.870 --> 01:10.340
+We probably won't need that.
+
+01:10.670 --> 01:16.460
+Let's just have text and I'm going to pass as a parameter here.
+
+01:16.490 --> 01:16.850
+Let's go.
+
+01:17.030 --> 01:25.070
+Pass it movie list as such, and it's going to be a list containing strings for now.
+
+01:25.190 --> 01:25.580
+OK.
+
+01:26.060 --> 01:30.740
+And this list, I said, is to list of perhaps a few elements here.
+
+01:31.460 --> 01:34.100
+And first is going to be Avatar.
+
+01:35.690 --> 01:36.350
+How about life?
+
+01:36.420 --> 01:38.900
+I'm sure there are a lot of movies titled Life.
+
+01:39.290 --> 01:43.910
+OK, so we have we're passing here a list, right as a parameter.
+
+01:44.480 --> 01:50.660
+And inside here, we want to create a structure that will allow us to create a list, a scrollable list
+
+01:51.170 --> 01:52.520
+of each one of these movies.
+
+01:52.850 --> 01:58.400
+So a modifier here, I'm just going to say padding give about, well, that deep.
+
+01:58.910 --> 02:05.930
+OK, so now inside of our column here, I'm going to call the lazy column function there composable.
+
+02:06.260 --> 02:06.560
+OK.
+
+02:07.730 --> 02:13.220
+And so in this case, here for the content, I'm just going to go ahead and pass in a trailing lambda.
+
+02:13.670 --> 02:16.280
+And I'm going to see items now.
+
+02:16.280 --> 02:20.660
+There are different methods we can call here or this item lambda.
+
+02:21.050 --> 02:22.160
+There's item account.
+
+02:22.160 --> 02:23.990
+We can pass each count if you want.
+
+02:24.380 --> 02:31.700
+And I want this either one of these items, which allows us to pass a list of type T in this case could
+
+02:31.700 --> 02:34.220
+be anything or array of type T.
+
+02:34.640 --> 02:38.630
+I can also pass indexed items indexed and so forth.
+
+02:38.750 --> 02:41.360
+So we have a lot of methods and functions we can use.
+
+02:41.660 --> 02:43.700
+Let's use the items like that one.
+
+02:44.480 --> 02:47.120
+Here, I'm going to pass items for our items.
+
+02:48.790 --> 02:54.580
+I'm going to pass out a movie list and then it's a laugh, and then we have a to here.
+
+02:55.000 --> 03:03.100
+Here is where we can then for each item that we are getting here on our list.
+
+03:03.160 --> 03:05.380
+We can then call it, show it.
+
+03:05.830 --> 03:12.700
+In this case, we're just going to put a text in to say it because we have this implicit variable that
+
+03:12.700 --> 03:14.270
+is being passed there, which is it.
+
+03:14.860 --> 03:19.000
+In this case, the string, because it knows items, is a list of strings.
+
+03:20.630 --> 03:23.870
+Now, if I refresh this, we should see.
+
+03:25.640 --> 03:26.450
+And they have it.
+
+03:26.930 --> 03:29.750
+We have a list of strings.
+
+03:30.230 --> 03:33.110
+So does it matter how many other items we add here?
+
+03:34.010 --> 03:36.950
+If we refresh, you can see the list will keep growing.
+
+03:37.610 --> 03:38.600
+So this looks great.
+
+03:38.660 --> 03:44.750
+Now, if we were to run this on our emulator or on our device, we wouldn't really see the power that
+
+03:44.750 --> 03:50.390
+we have here because we don't have as many items as we could have, so we wouldn't see this scrollable
+
+03:50.390 --> 03:51.440
+effect happening.
+
+03:52.010 --> 03:54.050
+But let's modify things here.
+
+03:54.050 --> 03:58.550
+First of all, this is really boring with just passing text, creating a list of text, which is fine
+
+03:58.550 --> 03:59.120
+in some cases.
+
+03:59.120 --> 04:06.230
+But in this case, we can create some sort of a role that will represent each one of these items, each
+
+04:06.230 --> 04:07.040
+one of these movies.
+
+04:07.610 --> 04:15.230
+We can wrap this inside of yet another composable and we can structure what we want to see.
+
+04:15.650 --> 04:16.700
+So what we can do?
+
+04:17.450 --> 04:18.650
+Yes, you guessed it.
+
+04:18.800 --> 04:22.270
+I'm going to create another composable at the bottom here.
+
+04:22.280 --> 04:23.900
+Let's say at composable.
+
+04:24.500 --> 04:25.910
+And let's call this fun.
+
+04:28.390 --> 04:36.190
+Movie row now each row will need something, it will need an actual movie.
+
+04:36.490 --> 04:39.310
+So for now, I'm just going to put here movie.
+
+04:39.550 --> 04:41.230
+It's going to be just a string.
+
+04:42.160 --> 04:46.630
+OK, because you see each one of these movies that we're getting here, it's going to be a string.
+
+04:46.630 --> 04:48.010
+So this is going to be called.
+
+04:49.090 --> 04:52.270
+We're going to call inside here and get the structure going.
+
+04:53.050 --> 04:54.310
+So what is it that we want to do?
+
+04:54.400 --> 04:57.370
+Well, we want to have a card.
+
+04:58.510 --> 05:04.300
+So each one of these items, when we are calling the lazy column, it's going to go look through.
+
+05:04.600 --> 05:12.880
+We want to create a nice card around each one of these titles and maybe add more UI components or widgets.
+
+05:13.490 --> 05:13.690
+OK.
+
+05:14.140 --> 05:15.340
+So I'm going to create a card.
+
+05:15.340 --> 05:17.650
+I'm going to use a card because it has what I need.
+
+05:17.950 --> 05:27.250
+So this passive modifier modifier, let's give her a padding of about four dpi all around and feel max
+
+05:27.250 --> 05:29.290
+with like that.
+
+05:31.390 --> 05:33.640
+And let's give it a height
+
+05:40.000 --> 05:42.760
+of about 130 deep.
+
+05:45.260 --> 05:53.180
+And we can give it a shape because it's a card, we can pass a shape, let's say rounded corners, shape
+
+05:54.200 --> 05:58.790
+and we can see a corner passing the corner size radius.
+
+05:59.510 --> 06:02.070
+It doesn't matter to see corner sizes.
+
+06:02.390 --> 06:07.910
+I'm going to say 12 that deep, perhaps 16 to make it a little bit dramatic.
+
+06:09.510 --> 06:12.110
+And we can pass elevation, right?
+
+06:12.660 --> 06:17.370
+Say, six that deep to give that nice shadow and contrast.
+
+06:18.060 --> 06:25.500
+OK, so inside here, this is where I'm going to then copy or pass the actual text for an album and
+
+06:25.510 --> 06:29.010
+just pass this text that would say, what?
+
+06:29.010 --> 06:30.210
+Well, he's going to say movie.
+
+06:30.510 --> 06:33.210
+So just passing whatever strain we're getting.
+
+06:33.270 --> 06:38.790
+So now this movie role, we can call each side of our lazy column.
+
+06:38.820 --> 06:45.120
+Some say Movie Pro and expects the idea, which in this case, it's going to be a movie column.
+
+06:45.120 --> 06:49.050
+So we'll get rid of that and we'll refresh once again.
+
+06:50.160 --> 06:51.150
+And there you have it.
+
+06:51.610 --> 06:56.640
+OK, let's make it a decent size and you can see we have that very nice structure.
+
+06:57.240 --> 07:02.370
+OK, see, it has the border and it looks really nice.
+
+07:02.490 --> 07:07.200
+Of course, the text is to the left and it's kind of not looking great.
+
+07:07.200 --> 07:08.620
+So let's see what we can do.
+
+07:08.640 --> 07:13.590
+Well, as you know, by now, you can do all sorts of things, for instance, to start with.
+
+07:13.620 --> 07:19.080
+We can wrap this inside of a roll because we may want to add other items here, not just the title of
+
+07:19.080 --> 07:19.730
+the movie, right?
+
+07:20.340 --> 07:22.560
+So we can start customizing nothing new here.
+
+07:22.770 --> 07:31.170
+So let's put a row, and I'm going to say the vertical alignment alignment.
+
+07:31.350 --> 07:32.700
+I want a center vertically.
+
+07:33.570 --> 07:33.900
+OK.
+
+07:34.770 --> 07:38.080
+And then we want horizontal.
+
+07:40.620 --> 07:48.660
+They want horizontal arrangement to say, I want this to start, so it will always be good to start
+
+07:48.660 --> 07:49.020
+there.
+
+07:49.650 --> 07:54.630
+Now I'm going to just get our text and add inside of our row.
+
+07:55.500 --> 07:58.490
+And before that, we can say, Well, I want to add something else.
+
+07:58.500 --> 08:04.110
+Perhaps we can add an image here or an icon, OK, we can do that.
+
+08:04.590 --> 08:06.450
+Let's put it inside of a surface.
+
+08:06.900 --> 08:09.150
+It's easy to manage and put a modifier.
+
+08:12.510 --> 08:14.940
+Keep a padding of about 12 that deep.
+
+08:16.950 --> 08:22.160
+And I'm going to give it an overall size of about 100 deep.
+
+08:23.550 --> 08:25.950
+I'm going to pass a shape in this shape.
+
+08:25.950 --> 08:29.330
+I'm going to make it rectangular or rectangle shape.
+
+08:31.250 --> 08:35.010
+And give it another elevation here, can say about five deep.
+
+08:36.240 --> 08:36.470
+OK.
+
+08:38.010 --> 08:40.020
+All right, so what I want instead of a surface.
+
+08:40.410 --> 08:47.910
+Well, for now, this passing icon, let's use the first option with image of Vector and four image
+
+08:47.910 --> 08:48.480
+vector here.
+
+08:48.480 --> 08:51.150
+I can't invoke the icons library, right?
+
+08:51.660 --> 08:56.400
+And say default, and let's just say a count box so we can put whatever we want.
+
+08:56.670 --> 09:02.250
+But for now, we're just going to add that so we can have some sort of a placeholder is also valuable
+
+09:02.250 --> 09:03.500
+to visually impaired.
+
+09:03.510 --> 09:07.140
+We need to pass a content description for image icons and so forth.
+
+09:07.150 --> 09:13.200
+So in this case, I'm going to say image or may rather movie image.
+
+09:16.080 --> 09:16.470
+There you go.
+
+09:16.830 --> 09:21.720
+So let's go ahead and refresh this and see what's going to happen and what do you have?
+
+09:22.140 --> 09:22.650
+Very nice.
+
+09:22.650 --> 09:26.040
+So we have that very nice icon around it.
+
+09:26.040 --> 09:32.190
+You can see there we have this nice square and the text is showing to the right of the title of the
+
+09:32.190 --> 09:32.520
+movie.
+
+09:33.000 --> 09:33.480
+Very nice.
+
+09:33.510 --> 09:37.350
+Let's see if we can run this on an immolated or device.
+
+09:37.980 --> 09:38.420
+All right.
+
+09:38.430 --> 09:40.110
+So I'm running on my device.
+
+09:41.250 --> 09:48.690
+And I can see I have this very nice application with all of these rows that we just created.
+
+09:48.960 --> 09:54.690
+And the beauty here again, if I go up here and add a few more items in our list.
+
+09:59.080 --> 10:00.680
+Let's see.
+
+10:11.040 --> 10:11.360
+Hmm.
+
+10:12.320 --> 10:13.970
+Let's go ahead and rerun this.
+
+10:14.700 --> 10:15.440
+OK, there we go.
+
+10:15.950 --> 10:22.250
+And voila, it's a scrollable view and we have a list, and I'm going to look at my app here.
+
+10:22.300 --> 10:25.760
+You can see it's very smooth and.
+
+10:27.070 --> 10:27.580
+They'd have it.
+
+10:28.970 --> 10:34.340
+Just like that, we're able to put together a list of in this case, movies could be anything.
+
+10:34.580 --> 10:41.930
+And on top of that, we were able to create a row easily that would feed the actual movie title and
+
+10:41.930 --> 10:42.620
+it's out of this role.
+
+10:42.620 --> 10:44.250
+We can do whatever we want.
+
+10:44.270 --> 10:45.200
+We can customize it.
+
+10:45.470 --> 10:47.450
+We added a card because that's what we like.
+
+10:47.810 --> 10:50.000
+We put a row instead of this row.
+
+10:50.000 --> 10:54.430
+We have a surface where we have this icon and then we have the text.
+
+10:54.470 --> 10:56.300
+The actual movie title.
+
+10:57.080 --> 10:57.770
+And there you have it.
+
+10:58.100 --> 11:04.070
+The important thing here to notice is that we passed, we created this composable row, which is called
+
+11:04.070 --> 11:11.240
+inside of a lazy column, which of course, we are calling it inside of a main content composable.
+
+11:11.720 --> 11:14.240
+And then we're passing this movie list.
+
+11:14.750 --> 11:16.370
+We're just passing some data at this point.
+
+11:16.970 --> 11:23.060
+And then, of course, the lazy column takes that list and invokes the multiple row and passes in that
+
+11:23.060 --> 11:23.390
+data.
+
+11:23.990 --> 11:28.910
+And just like that, you can see that we have the scrollable list of movies.

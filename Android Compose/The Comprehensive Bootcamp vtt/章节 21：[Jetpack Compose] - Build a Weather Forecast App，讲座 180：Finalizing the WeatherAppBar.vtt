@@ -1,0 +1,625 @@
+WEBVTT
+
+00:02.720 --> 00:09.230
+Now, although this works, that's totally fine, you can see we have our eye bar and has that hideous
+
+00:09.230 --> 00:10.400
+color will change that.
+
+00:10.880 --> 00:16.700
+But the other thing will notice that we can do is instead of adding in this rose scope here because
+
+00:16.700 --> 00:19.820
+we want a little bit more flexibility, there's two ways to do this.
+
+00:20.330 --> 00:24.710
+First of all, is that, you know, top up bar, as it is, you can actually pass.
+
+00:25.040 --> 00:27.620
+Just like we saw in our main screen.
+
+00:27.620 --> 00:32.360
+We saw, you know, a scaffold to have the top bar and it can pass title and so forth.
+
+00:32.750 --> 00:33.950
+You can also do the same.
+
+00:34.250 --> 00:39.010
+So for our top up bar here, I can actually remove all of this and put inside there.
+
+00:39.020 --> 00:44.300
+So what I mean by that is this fall leaf is if you start typing title like these can see we have a way
+
+00:44.300 --> 00:46.700
+of passing a title as a parameter.
+
+00:46.940 --> 00:50.540
+And indeed, we can pass anything in this case in the form of a lambda.
+
+00:50.690 --> 00:54.050
+So in this case, here I can just go ahead and say something like this.
+
+00:54.620 --> 00:59.450
+OK, now when that happens, if I'm passing as a parameter, then this is not going to work because
+
+00:59.450 --> 01:03.550
+we are already doing that by passing in as a trailing lambda.
+
+01:03.560 --> 01:04.670
+So I'm going to cut all of that.
+
+01:05.420 --> 01:09.330
+And then and also it means I can't get rid of all of that as well.
+
+01:10.310 --> 01:10.610
+OK.
+
+01:10.850 --> 01:15.490
+That also means I can also go to actions type actions like this.
+
+01:15.500 --> 01:20.060
+You can see we have another row scope like that, which is going to be four actions.
+
+01:20.510 --> 01:24.470
+And as you have over a can see, there's other things we can pass as parameters.
+
+01:24.680 --> 01:30.470
+We can pass a navigation icon if you want to get past background, color, content, color and so forth.
+
+01:31.200 --> 01:31.520
+Right.
+
+01:32.180 --> 01:33.920
+So in this case, we wanted to pass navigation.
+
+01:33.920 --> 01:39.200
+I convince a navigation icon like that and we pass it along a section.
+
+01:39.410 --> 01:42.650
+So this is actually a better way of constructing our top up bar.
+
+01:43.070 --> 01:49.430
+And of course, I'm going to pass the background color, and I can say the background color is going
+
+01:49.430 --> 01:51.560
+to be something different.
+
+01:52.100 --> 01:53.900
+Let's say color.
+
+01:56.820 --> 02:04.560
+Transparent like this, and I can continue, I can say, let's say elevation, I can pass the elevation
+
+02:05.160 --> 02:07.260
+that we're going to be passing along there.
+
+02:07.680 --> 02:08.460
+And there you have it.
+
+02:09.030 --> 02:10.200
+So this is way better.
+
+02:10.200 --> 02:15.840
+And I like this better because as you see, it's easier to conceptualize and easier for us to see what's
+
+02:15.840 --> 02:16.290
+going on.
+
+02:16.770 --> 02:17.040
+All right.
+
+02:17.040 --> 02:19.680
+So there is a tapas bar, it's for the title, of course.
+
+02:19.680 --> 02:21.900
+It can go ahead and pass a text.
+
+02:22.950 --> 02:28.080
+In this case, they will say title like we had passed there.
+
+02:29.010 --> 02:29.290
+OK.
+
+02:31.740 --> 02:32.790
+Let's go ahead and run again.
+
+02:33.510 --> 02:39.390
+In fact, now looks like we heading have a problem here because I made sure that our nav controller
+
+02:40.170 --> 02:46.110
+needs to be passed around along, I should say, say, nav controller like this?
+
+02:46.920 --> 02:48.750
+Oops, nav controller.
+
+02:51.950 --> 02:54.080
+OK, let's go ahead and run.
+
+02:55.820 --> 02:56.420
+And there we go.
+
+02:56.450 --> 02:59.990
+You can see how an empty and it is transparent.
+
+03:00.110 --> 03:00.550
+Of course.
+
+03:00.570 --> 03:01.100
+Background.
+
+03:01.250 --> 03:08.630
+Now one thing I want to do instead because I am treating everything as different as possible.
+
+03:08.960 --> 03:14.060
+Notice the reason why we have this elevation to set up to zero as default, but we can change that,
+
+03:14.060 --> 03:14.390
+right?
+
+03:14.600 --> 03:21.560
+When we call it, that means then for our elevation, they can add, go here and say elevation, and
+
+03:21.560 --> 03:27.860
+I want elevation to be five that deep like this in that will change, of course, elevation, as you
+
+03:27.860 --> 03:28.790
+will see in a minute here.
+
+03:30.900 --> 03:35.280
+OK, can see now the elevation is pretty much like what we have there.
+
+03:36.480 --> 03:41.340
+So let's go ahead and look at adding these three action buttons there.
+
+03:41.490 --> 03:47.280
+So we know how to do that because we're back to our weather app can see that we have that scaffolding
+
+03:47.280 --> 03:49.800
+per se of actions that we can add.
+
+03:49.920 --> 03:53.370
+So again, we can pass anything we want here, any composable, really.
+
+03:53.610 --> 03:55.380
+It's still a row, which is great.
+
+03:55.740 --> 04:02.070
+And in this case, let's go and add something because we know we are customizing this weather app to
+
+04:02.070 --> 04:04.890
+work in any screen, really.
+
+04:05.490 --> 04:11.790
+We are going to use, for instance, this is main pool in here to check whether we are showing and main.
+
+04:12.030 --> 04:13.500
+And then that's the case.
+
+04:13.500 --> 04:14.850
+Then we're going to show those buttons.
+
+04:14.970 --> 04:16.200
+Otherwise, we're not going to show them.
+
+04:16.650 --> 04:18.960
+So to do so, we can put an if statement here.
+
+04:19.440 --> 04:22.320
+Someone say if is mean, it's true.
+
+04:22.320 --> 04:24.090
+We can just see is mean like that.
+
+04:24.720 --> 04:30.270
+If that's true, then I'm going to create in this case here, an icon button.
+
+04:31.110 --> 04:39.790
+And for this icon button here inside, I'm going to create an icon like that for image.
+
+04:39.800 --> 04:44.220
+I'm going to say icons that can use default.
+
+04:47.180 --> 04:48.260
+I'm going to say search.
+
+04:48.560 --> 04:55.110
+I'm going to have this nice search icon there, OK, for content.
+
+04:55.130 --> 04:58.490
+I'm just going to go and see search icon like this.
+
+04:59.240 --> 05:02.240
+And then I'm going to also add another icon button.
+
+05:06.680 --> 05:12.020
+Icons get set out rounded and say more vertical.
+
+05:12.260 --> 05:18.380
+This will give us this more icon that user will know when click, there's more to show.
+
+05:18.960 --> 05:22.610
+Forget, let's go ahead and see if this is going to show anything.
+
+05:24.630 --> 05:26.460
+And you can see there it is.
+
+05:26.970 --> 05:29.880
+We have those two icons showing there.
+
+05:30.480 --> 05:35.990
+Now this is only if Maine is true, right, meaning that we are on the main screen.
+
+05:36.030 --> 05:38.420
+We want to show this else in this case here.
+
+05:38.490 --> 05:43.560
+All I'm going to do, I'm just going to pass in a box, an empty box, which means, you know, nothing
+
+05:43.560 --> 05:44.520
+really will show.
+
+05:44.820 --> 05:45.510
+That's fine.
+
+05:46.230 --> 05:51.810
+I'm going to go like this, and the next thing we do is, I know when we call this, we're just passing
+
+05:51.810 --> 05:52.890
+Helena T here.
+
+05:52.920 --> 05:56.250
+However, you notice that we have the weather object, right?
+
+05:56.610 --> 06:01.620
+So we can use that to our advantage, which means for our title here, I'm going to use this weather
+
+06:01.620 --> 06:08.640
+object and get this city title that we are trying to get the information about the weather for so long.
+
+06:08.640 --> 06:14.370
+We say weather go again in, say, City, and I wanted the city name.
+
+06:15.580 --> 06:22.510
+And I'm going to append a comma like this and then add a little bit more because they want to be able
+
+06:22.510 --> 06:27.250
+to also say the country that you have silly object can get ID a name.
+
+06:27.260 --> 06:32.620
+There is coordinates which we don't care about at this point, but we want to get to the countries to
+
+06:32.620 --> 06:33.070
+get the.
+
+06:33.400 --> 06:35.110
+In this case, the country code.
+
+06:35.470 --> 06:37.300
+So we're going to use the same object.
+
+06:37.390 --> 06:39.490
+So whether let's see.
+
+06:42.600 --> 06:45.360
+Go to City and then get a country like this.
+
+06:47.160 --> 06:53.480
+Now if you run this, you will see is going to say Portland, U.S. over there at the top.
+
+06:57.350 --> 07:00.980
+Well, Portland, U.S. and I can put some space there.
+
+07:01.520 --> 07:03.800
+You can see that very nice space in between.
+
+07:07.270 --> 07:07.580
+OK.
+
+07:08.890 --> 07:09.320
+Very good.
+
+07:09.340 --> 07:15.850
+So it's working now, if we were to run this somewhere else or call these weather app on a different
+
+07:15.850 --> 07:21.730
+screen, we can then of course say something like, well, is mean is false.
+
+07:21.760 --> 07:27.040
+Which in which case, then what would be called in for ActionScript, which is going to be an empty
+
+07:27.040 --> 07:28.540
+box, which means nothing.
+
+07:28.960 --> 07:35.590
+None of these will show it makes sense because all of these items, all these icons are these action
+
+07:35.590 --> 07:36.160
+icons.
+
+07:36.790 --> 07:40.720
+We want to show them only if the users are on main screen.
+
+07:41.290 --> 07:41.950
+And what else?
+
+07:41.950 --> 07:42.640
+We don't want that.
+
+07:43.090 --> 07:45.220
+Now let's look at the navigation icon.
+
+07:45.220 --> 07:50.300
+Let's go back to where we are with our app for our navigation icon.
+
+07:50.350 --> 07:55.350
+These navigation icons let me show you so you can see what I mean.
+
+07:55.390 --> 07:56.440
+So this is what it mean.
+
+07:56.440 --> 08:03.940
+So we can add in this case here, depending on where we are, we can add an icon that will represent
+
+08:04.060 --> 08:07.570
+a back arrow, depending again on the screen.
+
+08:07.900 --> 08:14.050
+So what I'm going to do is we can accommodate that by going to navigation icon.
+
+08:14.320 --> 08:15.400
+And of course, we're going to check.
+
+08:15.430 --> 08:20.410
+Remember, we're also passing this icon parameter image of a vector, which can be null.
+
+08:20.800 --> 08:22.150
+So we're going to check, right?
+
+08:22.150 --> 08:28.720
+Because if we are when we call this weather app and we are passing an icon, it means this icon is that
+
+08:28.720 --> 08:32.470
+no, which means that this navigation icon needs to be triggered to show something.
+
+08:33.070 --> 08:40.000
+So again, let's say, if icon might variable we're passing is not normal.
+
+08:40.250 --> 08:47.290
+If that's the case, then we need to add an icon, something say icon and an image vector as such is
+
+08:47.290 --> 08:49.570
+going to be the icon we're passing, right?
+
+08:50.470 --> 08:51.520
+This icon.
+
+08:53.220 --> 08:55.860
+There you can pass a description.
+
+08:57.540 --> 09:03.000
+It's looks like I got the wrong icon, let's start over, say icon.
+
+09:03.090 --> 09:05.310
+I want that first one there, OK?
+
+09:05.730 --> 09:06.120
+Very good.
+
+09:06.570 --> 09:07.710
+What a pass icon.
+
+09:09.480 --> 09:12.060
+And this is going to where I'm just going to add in all.
+
+09:12.060 --> 09:16.380
+That's fine, and I'm going to add a little tint to this icon.
+
+09:16.990 --> 09:20.040
+And same material theme
+
+09:22.620 --> 09:30.210
+and say on secondary like this and we're passing modifier and I want to make this icon, of course,
+
+09:30.210 --> 09:30.870
+clickable.
+
+09:30.990 --> 09:35.010
+So I'm going to invoke the clickable function there.
+
+09:35.370 --> 09:40.710
+And this case here, when that's clicked, we're going to invoke the on button clicked and then say,
+
+09:40.710 --> 09:43.770
+Invoke like it's going to just invoke this button.
+
+09:43.770 --> 09:45.070
+Click What is that one?
+
+09:45.090 --> 09:46.740
+Well, this is what we added there.
+
+09:46.740 --> 09:54.270
+So the idea is that when that happens, we're going to pass it as a callback to whatever we are passing
+
+09:54.270 --> 09:56.400
+when we call this navigation icon.
+
+09:56.880 --> 09:57.240
+OK.
+
+09:58.410 --> 10:03.750
+So if it's to go back or to go up or whatever reason they want to do, then that will be passed along.
+
+10:04.380 --> 10:09.630
+To see this in action, I will have to go to Maine because remember, it's all contextual, which means
+
+10:09.630 --> 10:17.520
+in our our bar here, I can go ahead and say I can see how over to make sure where is like it's after
+
+10:17.520 --> 10:18.030
+title.
+
+10:18.030 --> 10:20.040
+So right there.
+
+10:20.040 --> 10:21.180
+And let's say icon
+
+10:24.060 --> 10:34.470
+when I say equal to an icon with, say, icon default, say arrow back like this because icon is not.
+
+10:34.470 --> 10:40.410
+No, that means then this will run and we're going to have something in our navigation icon.
+
+10:41.370 --> 10:44.910
+Where do I get that callback right when that's clicked?
+
+10:45.000 --> 10:46.290
+I want to be able to do something.
+
+10:46.560 --> 10:54.330
+Now, if we go back to our weather app, you could see that on button clicked is the last function or
+
+10:54.330 --> 10:59.070
+parameter of function in this case that is called, which means we can use a trailing the lambda.
+
+10:59.580 --> 11:03.170
+What that means is that it can just go ahead at the end of weather app.
+
+11:03.180 --> 11:04.980
+They can just put trailing lambda like this.
+
+11:05.850 --> 11:07.980
+We don't pass anything that means here can stay logged.
+
+11:08.580 --> 11:12.450
+In this case, they say, button clicked.
+
+11:14.660 --> 11:20.090
+Like that, just put that inside of there, that's good.
+
+11:20.270 --> 11:26.810
+So at this point here, if I run this, we're going to see in a back arrow, hopefully a message such
+
+11:26.810 --> 11:28.400
+as this, OK?
+
+11:28.430 --> 11:28.880
+There it is.
+
+11:28.890 --> 11:30.800
+You can see they're not.
+
+11:30.860 --> 11:32.030
+They will go click.
+
+11:32.810 --> 11:33.980
+Let's go to our Logcat.
+
+11:36.580 --> 11:36.970
+There we go.
+
+11:37.300 --> 11:42.340
+Looks like our luck had is not really being responsive sometimes happens, what do you need to do is
+
+11:42.340 --> 11:44.620
+restart the entire Android Studio, but it's OK.
+
+11:44.620 --> 11:49.460
+We can go to run and we can see that the click button also is shown there.
+
+11:49.510 --> 11:53.440
+So whenever you locate, it's not working if you go to the Run tab.
+
+11:53.470 --> 11:57.040
+Usually you get the same functionality.
+
+11:57.220 --> 11:58.870
+Forget it, so it's indeed working.
+
+11:59.260 --> 12:00.610
+Obviously, this is not what we want.
+
+12:00.700 --> 12:09.610
+I'm just showing you how this would look if we were to actually add that particular add that icon,
+
+12:10.210 --> 12:10.450
+right?
+
+12:10.630 --> 12:12.670
+So later, we'll see all that in action.
+
+12:13.000 --> 12:17.170
+And so what I'm going to do now in on a main screen here, I'm going to say that I don't want this icon
+
+12:17.170 --> 12:18.940
+at all because that's not the deal.
+
+12:18.940 --> 12:20.170
+I don't want to have an icon there.
+
+12:20.500 --> 12:25.840
+So I'm going to run this and we're just going to see Portland U.S. in that one thing I'm also going
+
+12:25.840 --> 12:26.260
+to do.
+
+12:26.470 --> 12:28.240
+It looks like that is too large.
+
+12:28.450 --> 12:31.300
+Let's go back to our weather there.
+
+12:33.180 --> 12:36.360
+And change the size of our title.
+
+12:37.110 --> 12:38.580
+OK, let's go here.
+
+12:39.930 --> 12:44.760
+Let's start by seeing the color two material theme.
+
+12:48.320 --> 12:51.300
+Colonies on secondary, that's fine.
+
+12:51.320 --> 12:53.090
+And let's give it a style.
+
+12:53.950 --> 13:03.470
+I won't fight, wait to be bold, of course, and font size to be about.
+
+13:05.910 --> 13:07.200
+15 got SB.
+
+13:14.630 --> 13:15.290
+OK, let's see.
+
+13:19.490 --> 13:19.760
+All right.
+
+13:19.850 --> 13:20.720
+It looks much, much better.
+
+13:20.750 --> 13:21.230
+I like that.
+
+13:21.890 --> 13:24.890
+So now that we have our app are looking decent.
+
+13:25.430 --> 13:30.620
+As you see there, we are going to move on and look at the actual body of our scaffold, right?
+
+13:30.620 --> 13:31.460
+So we know.
+
+13:31.850 --> 13:33.830
+So now we're going to go and look at all of this.
+
+13:34.010 --> 13:39.800
+Of course, we're going to come back when we need and add more or at least restructure everything here.
+
+13:39.810 --> 13:40.420
+But that's fine.
+
+13:40.430 --> 13:45.230
+At least we have the bases, which is important because we can reuse it as many times as we need.

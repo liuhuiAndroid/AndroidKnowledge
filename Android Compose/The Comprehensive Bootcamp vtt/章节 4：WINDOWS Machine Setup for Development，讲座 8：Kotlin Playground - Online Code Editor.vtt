@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00.630 --> 00:07.140
+Although we can use, obviously Android Studio and create a module so we can write some common code
+
+00:07.140 --> 00:08.430
+as we learn about Kotlin.
+
+00:08.820 --> 00:10.290
+There are other options out there.
+
+00:10.290 --> 00:16.680
+So if you want something different as opposed to working in an Android studio for Kotlin, you can go
+
+00:16.680 --> 00:19.470
+to Google and type in Kotlin Playground.
+
+00:19.620 --> 00:22.560
+Usually the first hit you get, that's where you need to go.
+
+00:22.660 --> 00:26.860
+So let's click on codling playground of such, and this should open.
+
+00:26.880 --> 00:28.880
+In fact, I've been working here.
+
+00:28.890 --> 00:31.320
+That's why we have some code already.
+
+00:31.530 --> 00:36.270
+But for you, you should probably just have something that says Hello world, so it should have something
+
+00:36.510 --> 00:40.800
+that would say print hello world.
+
+00:41.100 --> 00:41.970
+Something like this.
+
+00:42.240 --> 00:42.540
+OK.
+
+00:42.570 --> 00:44.900
+It's an amazing tool that is for free.
+
+00:44.910 --> 00:51.210
+It's online and you can use this tool as well to write some Kotlin code and learn about Kotlin.
+
+00:51.520 --> 00:54.450
+OK, so it's just another option I would like to give to you.
+
+00:54.720 --> 00:59.280
+You can read more about this playground online playground, but it's really simple.
+
+00:59.580 --> 01:08.290
+The government can do something like Val, save my name and just give it a value of James, for instance.
+
+01:08.430 --> 01:16.050
+Of course, we can then pass in side of or print there and put the dollar sign to invoke the variable
+
+01:16.050 --> 01:19.940
+say my name as such and picks that up.
+
+01:19.950 --> 01:20.430
+And voila!
+
+01:20.670 --> 01:22.260
+So to run, it's very simple.
+
+01:22.260 --> 01:26.760
+You just click on this one button and it's going to run and print out James.
+
+01:27.000 --> 01:32.240
+It's a very good alternative for learning about Colin and writing your Kotlin code.
+
+01:32.250 --> 01:35.040
+So whichever one you want to use, I don't mind.
+
+01:35.190 --> 01:39.990
+I just stick to one, or you can interchangeably use both of them as we go through cuddling.

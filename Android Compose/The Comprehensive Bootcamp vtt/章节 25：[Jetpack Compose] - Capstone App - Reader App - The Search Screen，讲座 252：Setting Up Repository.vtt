@@ -1,0 +1,502 @@
+WEBVTT
+
+00:00.360 --> 00:05.220
+All right, so what do we need to do next is to set up our repository, which will allow us to then
+
+00:05.220 --> 00:08.130
+tap into our API.
+
+00:08.700 --> 00:13.230
+OK, so let's go back to our code here.
+
+00:14.160 --> 00:17.610
+So in our repository, we create a new class.
+
+00:18.690 --> 00:21.180
+It's called this book repository.
+
+00:22.530 --> 00:28.560
+Such it's going to just be a normal class like any thing else, except that we are going to inject here.
+
+00:30.450 --> 00:42.670
+Our constructor with the private API should say Private File API, which is going to be our books API
+
+00:42.990 --> 00:46.950
+because we need access to our books API in order to get the data right.
+
+00:47.580 --> 00:52.580
+Our repository will have functions that will access our API Books API here.
+
+00:52.590 --> 00:56.400
+Remember to get for it to get all books or get info books.
+
+00:56.580 --> 01:01.500
+So we are going to create a suspend function here because remember, we want to make sure that all of
+
+01:01.500 --> 01:07.620
+these transactions are done correctly instead of a quarantine so that it can force everything to run
+
+01:07.620 --> 01:09.180
+in the back thread.
+
+01:09.570 --> 01:11.130
+So suspend fun here.
+
+01:11.130 --> 01:18.840
+I'm going to say get books, and of course, I'm going to pass a search query, which is going to be
+
+01:18.840 --> 01:19.700
+just a string.
+
+01:20.460 --> 01:24.510
+And now here, here, now here I'm going to receive a list.
+
+01:24.970 --> 01:27.150
+OK, this list will contain items.
+
+01:27.630 --> 01:31.250
+Now make sure that we get our items from our models.
+
+01:31.250 --> 01:32.850
+So this is the item.
+
+01:32.850 --> 01:38.790
+If you go ahead and click on that, it is this item here which says access, info, tag and so forth.
+
+01:39.360 --> 01:41.010
+Get the volume info.
+
+01:41.220 --> 01:48.240
+So essentially what we're doing is we are getting each one of these objects inside of this items list
+
+01:48.240 --> 01:48.810
+or right?
+
+01:48.810 --> 01:49.080
+Right?
+
+01:49.260 --> 01:53.100
+So we're modelling after these data here.
+
+01:53.520 --> 01:59.880
+So then we can go and get kind ID tag or volume info, which is an object within itself and get title
+
+01:59.880 --> 02:00.840
+authors and so forth.
+
+02:01.290 --> 02:06.300
+This will have to, of course, be a function and returns a list, so it's going to expect to return
+
+02:06.310 --> 02:06.690
+the list.
+
+02:07.260 --> 02:12.270
+Now, the way things are right now, it would work fine because we expecting a list of item and that's
+
+02:12.270 --> 02:12.660
+fine.
+
+02:13.080 --> 02:20.100
+However, it will be nice to be able to wrap this list inside of another object or another class per
+
+02:20.100 --> 02:22.740
+se, so that we can attach more information to it.
+
+02:23.050 --> 02:23.280
+Right.
+
+02:23.290 --> 02:29.700
+So again, for instance, attach whether the transaction was successful of getting this data, whether
+
+02:29.700 --> 02:31.290
+there are exceptions and so forth.
+
+02:31.620 --> 02:31.920
+OK.
+
+02:32.280 --> 02:37.890
+So to simplify our lives, I'm going to create a yet another class here inside of our data.
+
+02:38.400 --> 02:43.260
+It's going to be a sealed class, and let's call this resource.
+
+02:47.870 --> 02:50.390
+The name anything but resource source works just fine.
+
+02:52.890 --> 02:54.020
+So what is this resource?
+
+02:54.030 --> 03:00.740
+Well, this resource is going to be expecting a type T template, which means it's going to be a generic
+
+03:00.750 --> 03:02.280
+so it can pass any type you want.
+
+03:02.850 --> 03:05.880
+And then here in its constructor, I'm going to pass a validator.
+
+03:05.940 --> 03:12.900
+It's going to receive that type T, which also, by the way, we can just say, can be no and we're
+
+03:12.900 --> 03:14.670
+going to pass Val message.
+
+03:15.300 --> 03:19.020
+Any kind of message we want could be a string type, OK, in this case.
+
+03:21.080 --> 03:23.540
+Which can also be no, I.
+
+03:24.440 --> 03:33.560
+And then inside of his class, then I'm going to create other classes that inherit our resource in this
+
+03:33.830 --> 03:38.330
+case and was, say, success, for instance, it's going to pass any type T.
+
+03:38.900 --> 03:39.290
+Right?
+
+03:40.160 --> 03:46.100
+And then the data is going to be of the type you that we are accepting, you know, success last year
+
+03:46.460 --> 03:48.350
+and this will inherit resource.
+
+03:49.960 --> 03:52.900
+T and we're going to pass the data.
+
+03:54.480 --> 03:59.470
+OK, I'm going to create yet another class here called error.
+
+03:59.890 --> 04:04.750
+So if there are some issues, exceptions and so forth, you can actually pass all like that.
+
+04:05.230 --> 04:06.910
+When I say message, it's going to be a string.
+
+04:08.860 --> 04:14.910
+And I can pass data in this case T, which can also be, no, I such.
+
+04:15.700 --> 04:15.970
+OK.
+
+04:16.180 --> 04:20.230
+And that pass resource tea and data.
+
+04:24.300 --> 04:32.200
+And message, and I can also create another class here that will handle the loading status opacity in
+
+04:32.250 --> 04:35.940
+the data of this type of any type, really.
+
+04:37.650 --> 04:39.420
+And of course, it can be no said it to.
+
+04:39.420 --> 04:39.810
+No.
+
+04:40.770 --> 04:48.930
+And it's also going to inherit from our resource team and we pass along that data.
+
+04:50.340 --> 04:54.870
+So what we do here is that now we can have a structure that we can use such a resource type Typekit
+
+04:54.870 --> 04:58.230
+can pass the type, let's say, list of item like we have.
+
+04:58.650 --> 05:03.030
+And then we're going to be able then to say, Well, in this class here we can pass a data.
+
+05:03.600 --> 05:08.670
+In this case here, we can then attach information to our list because it can be wrapped in some of
+
+05:08.670 --> 05:14.970
+a resource so we can pass data, which will in this case, can be the object that we're getting from
+
+05:14.970 --> 05:20.700
+our API, right or can be no nothing, and we can pass a message along and so forth, right?
+
+05:20.910 --> 05:24.060
+And we can also attach the success error and loading.
+
+05:24.150 --> 05:30.600
+So this is a very important way of structuring your objects or wrapping your objects that require may
+
+05:30.600 --> 05:37.290
+require a little bit more data so that we have more information about the status of the data for sale.
+
+05:38.160 --> 05:42.690
+So what I'm going to do next here is that instead of passing in a list of item, I actually just like
+
+05:42.690 --> 05:42.960
+that.
+
+05:43.260 --> 05:50.820
+We actually get a wrap inside of a resource and the type is going to be a list of items like that.
+
+05:51.480 --> 05:54.420
+So now we can say, try put this inside of a tray.
+
+05:55.140 --> 05:58.860
+You can save file item list, for instance.
+
+05:58.860 --> 06:05.580
+It's going to be a list of type e, whatever we want, and some would say API that get all books and
+
+06:05.580 --> 06:09.420
+pass our search query like that.
+
+06:10.530 --> 06:12.120
+And then we say that items.
+
+06:12.390 --> 06:16.650
+So what I'm saying now, because this item list, here we are.
+
+06:17.900 --> 06:22.160
+We actually in getting all the books from our data.
+
+06:22.550 --> 06:28.280
+We actually getting all the books from our API and we are not just getting all the books as such, but
+
+06:28.280 --> 06:35.540
+we have to go and say dot items because you can see the items, meaning this endpoint here is a list.
+
+06:36.050 --> 06:39.290
+So we're getting the list of all of books.
+
+06:41.130 --> 06:42.780
+And now it's going to be inside of an item list.
+
+06:45.020 --> 06:49.280
+Well, when that happens, because I know this resource object here it has.
+
+06:50.310 --> 06:56.510
+Many other we can parcel, because I know a resource we can, so once that happens, I'm going to use
+
+06:56.520 --> 06:59.550
+a resource again, a good friend, right?
+
+06:59.880 --> 07:02.940
+And I can see the success class.
+
+07:03.660 --> 07:04.290
+I'm going to pass.
+
+07:04.530 --> 07:09.870
+In this case, some data along with, say, data, it's going to be what item.
+
+07:10.140 --> 07:14.520
+So now this item list is going to be wrapped inside of our resource.
+
+07:14.520 --> 07:15.360
+That's success.
+
+07:15.720 --> 07:20.250
+And while I'm here, I can go ahead when this is about to happen.
+
+07:20.410 --> 07:25.200
+Write this Try about two is about to be ran against a resource.
+
+07:25.590 --> 07:26.550
+Look at that.
+
+07:26.970 --> 07:28.830
+Loading the data.
+
+07:28.830 --> 07:35.580
+In this case, it's going to be something like loading and then going to pass catch here.
+
+07:37.600 --> 07:38.520
+It's an exception.
+
+07:44.480 --> 07:46.790
+And then it was the resource, so in this case here.
+
+07:47.090 --> 07:49.790
+So if this happens, we have an exception.
+
+07:49.790 --> 07:55.010
+We can then load up our resource again class that we created.
+
+07:55.490 --> 07:57.110
+And I'm going to say that error.
+
+07:57.530 --> 08:01.520
+And then I'm going to pass a message that says.
+
+08:02.890 --> 08:08.530
+Well, I'm going to just pass the exception that we're receiving that message and to drink like this,
+
+08:09.790 --> 08:15.730
+and because we need to return a resource type, all we can do really is just, say, return in the beginning
+
+08:15.730 --> 08:22.270
+there, so it will go ahead and try and return what needs to be return dependent on the status of our
+
+08:22.270 --> 08:23.020
+data fetching?
+
+08:23.410 --> 08:26.410
+OK, so while we're here, let's go ahead and create the next one.
+
+08:26.450 --> 08:27.700
+It's going to be suspended fine.
+
+08:28.060 --> 08:34.380
+This is going to be get book info, which we will look at later, but nevertheless we here.
+
+08:34.390 --> 08:36.070
+Let's go ahead and deal with it.
+
+08:36.080 --> 08:36.970
+So book it.
+
+08:37.330 --> 08:42.570
+That's what we need to pass, and it's going to be a strain type of the same thing.
+
+08:42.580 --> 08:47.130
+This guy now needs a resource of type item.
+
+08:47.140 --> 08:48.370
+That's where we receiving.
+
+08:48.370 --> 08:51.460
+We just want one book really or book object.
+
+08:51.980 --> 08:52.960
+OK, item.
+
+08:52.960 --> 08:55.450
+In this case, so do the same things if our.
+
+08:57.610 --> 08:58.590
+Response.
+
+09:00.740 --> 09:07.960
+And then I just add that to try as such, and I'm going to say, in fact, for this day to hear this
+
+09:07.960 --> 09:10.110
+can be any type, I can just pass a Boolean.
+
+09:10.120 --> 09:10.810
+This is the beauty.
+
+09:11.380 --> 09:16.120
+I can just say true because it is updating, right?
+
+09:16.960 --> 09:17.680
+And this is the beauty.
+
+09:17.680 --> 09:22.930
+Again, if we go back to a resource that's the beauty of having a template of having generics because
+
+09:22.930 --> 09:24.280
+it we can pass any time we want.
+
+09:24.290 --> 09:26.350
+That's why we have this t i the template.
+
+09:27.220 --> 09:27.520
+All right.
+
+09:28.510 --> 09:28.890
+There we go.
+
+09:28.900 --> 09:32.050
+So back to our get info here.
+
+09:32.380 --> 09:33.460
+Well, get book info.
+
+09:33.460 --> 09:39.700
+That is I'm going to use start by saying resource that loading again.
+
+09:40.270 --> 09:44.830
+And for a data, I'm going to say it's going to be true that we need indeed floating.
+
+09:45.340 --> 09:52.480
+OK, and then let's say API, I get book info like that and pass out a book ID because that's what's
+
+09:52.480 --> 09:52.840
+needed.
+
+09:55.390 --> 09:55.620
+OK.
+
+09:56.110 --> 10:01.870
+And then we say, catch again, exception, exception.
+
+10:03.190 --> 10:05.320
+Caitlin Java doesn't matter, really.
+
+10:05.770 --> 10:10.240
+And then here, I'm just going to say in return a resource
+
+10:12.760 --> 10:13.510
+that error.
+
+10:13.780 --> 10:16.150
+And I'm going to pass the message.
+
+10:18.770 --> 10:22.220
+Say an error occurred.
+
+10:23.790 --> 10:29.670
+And if I want to get past the exception and then at the end here at the bottom, I'm going to still
+
+10:29.670 --> 10:33.130
+say resource again, that loading.
+
+10:33.150 --> 10:35.340
+I'm going to say it to false, right?
+
+10:36.460 --> 10:40.660
+Data now is false because everything they loaded should be over with.
+
+10:41.500 --> 10:45.970
+And then let's go ahead and return our resource success.
+
+10:49.280 --> 10:54.500
+Which then and we're best for our data, I'm going to pass the response that we just received there.
+
+10:55.310 --> 10:55.800
+I did.
+
+10:55.820 --> 11:06.830
+So what we can do here, I can just check to see if real quick item list that is not empty.
+
+11:08.450 --> 11:10.070
+Then I can say resource.
+
+11:12.480 --> 11:16.770
+Not loading in past data to.
+
+11:18.270 --> 11:18.750
+False.
+
+11:19.530 --> 11:24.060
+OK, so what I'm doing here is that in the beginning, a resource is loading is true.
+
+11:24.420 --> 11:30.060
+And then once we hopefully have something, you know, get old books, then we are just going to check
+
+11:30.060 --> 11:32.970
+if items is not empty, if that's the case.
+
+11:33.360 --> 11:35.850
+We're going to check sector loading to false.
+
+11:36.390 --> 11:36.660
+All right.
+
+11:38.460 --> 11:38.890
+OK.
+
+11:38.910 --> 11:40.440
+That should be that should do it.
+
+11:40.740 --> 11:43.320
+Next, we are going to see how can we use this book?
+
+11:43.650 --> 11:48.750
+Book a repository and see if we can start getting some data from our API.

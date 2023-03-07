@@ -1,0 +1,214 @@
+WEBVTT
+
+00:00.360 --> 00:00.900
+All right.
+
+00:01.110 --> 00:02.070
+What a journey.
+
+00:02.220 --> 00:10.200
+So we've done a lot from start, we put together a very simplistic app that we call the Beskind, where
+
+00:10.200 --> 00:12.450
+we learn the basics of compose.
+
+00:12.450 --> 00:14.400
+So to get us excited, right?
+
+00:14.910 --> 00:21.280
+And of course, we ramped up our skills and we put together a little bit more complex user interface
+
+00:21.300 --> 00:24.270
+with this in this tip calculator application.
+
+00:24.570 --> 00:30.120
+Then we moved on to create something a little bit more advanced all along, learning more about computers.
+
+00:30.510 --> 00:37.350
+So we created this movie app as we call this, where we can list all the movies and add the pictures
+
+00:37.350 --> 00:43.500
+from a URL creating data classes, and then make sure that there was some sort of an application which
+
+00:43.500 --> 00:47.010
+was really important to learning in development in mobile.
+
+00:47.700 --> 00:49.500
+Android compose development, right?
+
+00:49.520 --> 00:55.590
+So when the users clicked each one of these roles, they would get to a details page.
+
+00:55.830 --> 01:02.220
+OK, and then we learn how to persist data in a very simple chat note app where we could save data to
+
+01:02.220 --> 01:02.610
+a room.
+
+01:03.120 --> 01:05.310
+So in this case, we learned a lot.
+
+01:05.610 --> 01:05.890
+Right?
+
+01:05.910 --> 01:13.200
+So we learned about database, how to create a room database using dependency injection, part of clean
+
+01:13.200 --> 01:14.160
+architecture, really.
+
+01:14.670 --> 01:16.650
+And structure our app that way.
+
+01:16.860 --> 01:17.160
+OK.
+
+01:17.640 --> 01:21.540
+And of course, we continue and put together another application.
+
+01:21.720 --> 01:27.600
+We call it trivia app, where we pull data from a JSON file somewhere on the internet.
+
+01:28.140 --> 01:36.060
+And we structure it so that each trivia question came with the choices and we showed them and we showed
+
+01:36.060 --> 01:41.190
+those choices as buttons so users can select the correct or wrong choice in this case.
+
+01:41.550 --> 01:43.440
+And, of course, adding points and so forth.
+
+01:43.450 --> 01:50.430
+So we also learned how to deal with structuring a fairly complex application that has data.
+
+01:50.550 --> 01:55.230
+And of course, our final app was this amazing application.
+
+01:55.230 --> 02:02.190
+Here we called the reader, which allows us to log in users using Firebase at a base US right, create
+
+02:02.190 --> 02:09.570
+users, log them in and add books, and delete update books and structure our user interface to where
+
+02:10.530 --> 02:16.320
+we can select books that have been read books are being that we are reading and books that we no longer
+
+02:16.320 --> 02:18.420
+want to read, or we finished or can delete them.
+
+02:18.750 --> 02:20.490
+And there were a lot of things that we learn here.
+
+02:20.520 --> 02:28.380
+We had a few sections dedicated to building this full fledged capstone application, so a lot that has
+
+02:28.380 --> 02:29.010
+been done here.
+
+02:29.130 --> 02:30.660
+So what we did?
+
+02:30.810 --> 02:32.090
+Yes, we learned a lot.
+
+02:32.130 --> 02:36.480
+So we started with codling programming language, so started from the basics.
+
+02:36.810 --> 02:43.470
+For those of you who wanted a refresher, we learned from Basics Kotlin intermediate and advanced concepts,
+
+02:43.470 --> 02:49.470
+which were proven to be very useful in our compose development journey.
+
+02:49.680 --> 02:51.300
+And of course, the jetpack compose.
+
+02:51.300 --> 02:58.460
+That's where we learn about fundamentals of compose, state hosting, dependency injection, clean architecture,
+
+02:58.470 --> 03:06.240
+a few models of repositories, Dow's room and retrofit and Firebase Auth and so forth.
+
+03:06.390 --> 03:12.840
+These are just a few things that we, in summary we've touched in this course, which is a lot.
+
+03:12.990 --> 03:15.480
+Now the question is always the same what's next?
+
+03:15.630 --> 03:20.160
+Well, next, I would really encourage you to keep learning in one ways.
+
+03:20.160 --> 03:27.780
+To learn or keep learning is to go to this GitHub account, which is hosted by the engineers to Google
+
+03:27.780 --> 03:29.760
+engineers who build compose.
+
+03:30.190 --> 03:35.180
+So there are a lot of sample apps they can look at, and it's always important to look at those apps.
+
+03:35.190 --> 03:40.500
+You can actually download them and run on your Android studio so you can see how things are done.
+
+03:40.530 --> 03:42.630
+That's the best way to learn, really.
+
+03:42.870 --> 03:43.170
+OK.
+
+03:43.410 --> 03:45.450
+So head over there and take a look.
+
+03:46.440 --> 03:48.670
+And then, of course, he go to the source of everything.
+
+03:48.690 --> 03:55.110
+If you go to developing that Android dot com jetpack compose, you've got a lot of information there.
+
+03:55.290 --> 04:01.230
+It's always the place to go, especially as Jetpack Compose grows because this is still the beginning
+
+04:01.470 --> 04:05.730
+of jetpack compose and it will continue to grow and there will be some changes.
+
+04:05.820 --> 04:07.770
+That's the thing about new technologies.
+
+04:07.770 --> 04:10.770
+They're still working on it, even though it's stable at this point.
+
+04:10.980 --> 04:15.750
+But there will be some changes, so it's always to keep up with what they're changing with the changes,
+
+04:15.750 --> 04:16.530
+with the update.
+
+04:16.740 --> 04:18.900
+So always go to that site again.
+
+04:19.080 --> 04:20.040
+Thank you so much.
+
+04:20.310 --> 04:23.040
+If you got to this point, well, congratulations.
+
+04:23.040 --> 04:26.490
+You deserve you deserve the world, really.
+
+04:26.910 --> 04:29.610
+And I really appreciate you being here.
+
+04:29.640 --> 04:35.070
+I really appreciate you choosing me choosing this course to learn compose.
+
+04:35.280 --> 04:40.350
+It's a continuing journey, and I hope you continue along and thank you.
+
+04:40.860 --> 04:42.030
+I hope you learned a lot.
+
+04:42.510 --> 04:42.900
+Thanks.
+
+04:43.110 --> 04:43.830
+I'll see you next time.

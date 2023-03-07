@@ -1,0 +1,217 @@
+WEBVTT
+
+00:01.360 --> 00:09.570
+Now we need to get some sort of a default choice that in any case, it will always be added to our choice
+
+00:09.600 --> 00:09.940
+state.
+
+00:10.060 --> 00:12.310
+I think that's probably the best thing to do.
+
+00:12.820 --> 00:19.690
+That way, we don't run into issues where users the first time they run the app or the settings, they
+
+00:19.690 --> 00:23.740
+don't have anything or the state has nothing because that's what it has now.
+
+00:23.920 --> 00:24.790
+It's just empty.
+
+00:25.510 --> 00:28.300
+So what we can do here is let's get first.
+
+00:28.660 --> 00:38.590
+I put a variable here valve called choice from DB like this and I'm going to use Settings View model
+
+00:38.590 --> 00:41.400
+and use our unit list right?
+
+00:41.610 --> 00:43.360
+State flow and unless they collect.
+
+00:44.630 --> 00:47.780
+I state and get the volume like this.
+
+00:48.590 --> 00:48.860
+All right.
+
+00:50.000 --> 00:55.040
+And for a choice, default or default choice, OK, I'm going to say bye, remember?
+
+00:57.920 --> 01:03.630
+And then it's going to be mutable state of and I'm going to pass zero to begin with.
+
+01:03.650 --> 01:04.710
+Now, why am I doing this?
+
+01:04.710 --> 01:10.910
+So what this is going to be because I have this measurement units list and a list has iness, which
+
+01:10.910 --> 01:13.220
+means this is index zero index one, right?
+
+01:13.220 --> 01:22.250
+So I'm going to use that to kind of point to either metric or imperial index zero or metric index one.
+
+01:22.850 --> 01:23.750
+We'll see in a second here.
+
+01:24.500 --> 01:24.800
+All right.
+
+01:25.940 --> 01:26.210
+All right.
+
+01:26.270 --> 01:32.780
+Next, I want to create another value here called default choice.
+
+01:33.060 --> 01:38.930
+So this is where I'm going to actually put if statement here to check first, if our choice from database
+
+01:40.820 --> 01:47.810
+is null or empty, then our measurements.
+
+01:48.080 --> 01:52.590
+In this case, I'm just going to put that one, which is going to be zero.
+
+01:52.640 --> 01:57.050
+In this case, I'm saying, if it's empty, nothing we're getting from their base, our measurements,
+
+01:57.170 --> 02:01.040
+I'm going to pass two default choices, right?
+
+02:01.280 --> 02:04.710
+This variable here, it's going to be imperial, right?
+
+02:04.820 --> 02:09.500
+I'm going to get the first in this in this the first index of our list.
+
+02:09.560 --> 02:15.620
+So zero else in this case, I'm going to then get choice.
+
+02:17.010 --> 02:25.470
+From DDB, which is a listing that I'm going to just go ahead and get the first item which will be added
+
+02:25.710 --> 02:31.410
+or it's going to be inside of our list, right first item of our list as it comes in, in this case,
+
+02:32.070 --> 02:33.790
+our choice from DB.
+
+02:33.900 --> 02:36.060
+It will come in as a list, right?
+
+02:37.110 --> 02:41.520
+You'd have to list collect a state the value is going to be list and should be.
+
+02:41.850 --> 02:44.040
+And there should only be one item anyway.
+
+02:44.040 --> 02:51.210
+So that's why I can just safely say get the zeroth index and get that object and get the property unit.
+
+02:51.900 --> 02:54.180
+OK, whatever we have saved in our database.
+
+02:55.290 --> 02:56.730
+Now, this default choice.
+
+02:56.760 --> 03:03.170
+That's what I'm going to pass it to be a default choice for choice state.
+
+03:04.320 --> 03:04.620
+OK.
+
+03:06.600 --> 03:08.310
+So again, let's go ahead and look.
+
+03:08.880 --> 03:09.870
+The quick recap.
+
+03:11.310 --> 03:15.960
+In this case here, I actually don't need this choice definition anymore, because I'm not going to
+
+03:15.960 --> 03:16.440
+use that.
+
+03:17.310 --> 03:17.610
+All right.
+
+03:17.880 --> 03:24.870
+So in this case here, what I'm doing is we are again getting our choice from TV to see a list that
+
+03:24.870 --> 03:33.090
+we get from our Settings View model to get all of our in this case, all of our measurement, right?
+
+03:33.630 --> 03:35.670
+Or units that we have like.
+
+03:36.930 --> 03:43.710
+And then I'm going to and then I create a default choice here where I checked to see if we have anything
+
+03:43.710 --> 03:44.640
+from our database.
+
+03:45.810 --> 03:50.170
+If the database is empty, there's nothing, then our measurements units that are going to pass thoughtful
+
+03:50.190 --> 03:50.550
+choice.
+
+03:50.880 --> 03:54.540
+We're just going to go and say it's going to be imperial Fahrenheit.
+
+03:54.900 --> 03:56.370
+That's all else.
+
+03:56.430 --> 03:59.550
+Then we're going to get what we get from a database, going to be lists.
+
+03:59.550 --> 04:04.680
+You're going to get that first object, which is going to be the measurement object in it and get the
+
+04:04.680 --> 04:06.210
+unit property.
+
+04:06.210 --> 04:10.290
+So it's either going to be metric like this or imperial.
+
+04:11.070 --> 04:13.290
+We get that an actor default choice.
+
+04:13.680 --> 04:19.050
+And that's when we get back the default choice and we pass along, you know, our choice state so that
+
+04:19.050 --> 04:21.090
+it has a default choice of value.
+
+04:21.750 --> 04:22.500
+From the get go.
+
+04:23.670 --> 04:26.760
+OK, I'm just going to run again just to make sure we didn't break anything.
+
+04:27.300 --> 04:28.620
+But everything should be good.
+
+04:28.630 --> 04:36.000
+And if I go to our app inspection, remember this may take a little while for you to see the database
+
+04:36.000 --> 04:38.370
+and everything, so just be patient.
+
+04:41.520 --> 04:42.180
+OK, there we go.
+
+04:42.210 --> 04:44.550
+Let's go to settings you can see symmetric right now.
+
+04:45.420 --> 04:50.480
+If we go to Settings, let me change this to Fahrenheit and save refresh.
+
+04:50.770 --> 04:53.480
+What is imperial now, right?
+
+04:53.620 --> 04:54.390
+Still working?

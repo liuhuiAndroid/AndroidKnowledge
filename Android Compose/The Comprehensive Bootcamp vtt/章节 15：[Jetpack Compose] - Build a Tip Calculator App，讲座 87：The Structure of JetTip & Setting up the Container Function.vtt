@@ -1,0 +1,751 @@
+WEBVTT
+
+00:00.510 --> 00:04.950
+Before we start coding our jet tip app, that's why I decided to name it.
+
+00:05.550 --> 00:10.950
+Let's look at the structure of this application, so it's always a good idea to look at the overall
+
+00:10.950 --> 00:19.830
+structure that we are going to implement because it will give us an idea or a map on how to navigate,
+
+00:21.150 --> 00:26.880
+how to navigate all the components, all of the functions in this case, composable functions that we
+
+00:26.880 --> 00:30.000
+need to put together in order to have a full app.
+
+00:31.140 --> 00:36.150
+So if you look at this app here, this is the screenshot of the app that we're going to be building.
+
+00:36.420 --> 00:39.600
+You notice that we have at the top a few sections, right?
+
+00:39.840 --> 00:41.760
+So we have the top section.
+
+00:41.760 --> 00:45.810
+This is where this is, where we're going to calculate the total per person.
+
+00:45.960 --> 00:53.040
+So to calculate the overall calculation of how much money each person will have to pay or just a person
+
+00:53.280 --> 00:55.440
+if there's only one person paying the bill?
+
+00:55.780 --> 01:00.120
+OK, and then we have an overall bottom area.
+
+01:00.300 --> 01:05.880
+This actually includes a lot of things, includes other pieces of user interface.
+
+01:06.270 --> 01:12.840
+Mainly, we have here a text field, so users are going to be able to enter something, right?
+
+01:13.860 --> 01:15.630
+In this case, enter a bill.
+
+01:16.470 --> 01:21.780
+And then at the bottom, we have the split section, which contains a button, actually two buttons.
+
+01:22.080 --> 01:24.900
+One is to add more people.
+
+01:24.960 --> 01:27.600
+So how many ways we are going to split this by?
+
+01:27.840 --> 01:32.490
+And the other one is to reduce or discriminate the amount of people.
+
+01:33.180 --> 01:36.400
+And then we have this other area, which is the total tip.
+
+01:36.420 --> 01:39.420
+This is where we're going to display the total amount of the tip.
+
+01:39.840 --> 01:40.110
+OK.
+
+01:40.410 --> 01:43.050
+And then we have the tip percentage area.
+
+01:43.350 --> 01:46.200
+This is connected to the tip slider.
+
+01:46.200 --> 01:50.760
+So as we slide left and right, the tip percentage area is going to change accordingly.
+
+01:51.390 --> 01:57.780
+So these are the moving parts, as I like to call them, as we build this app again, thinking in those
+
+01:57.780 --> 02:06.000
+terms, it will always help you because you will know what pieces that need to be built and then assemble
+
+02:06.000 --> 02:06.660
+all together.
+
+02:06.660 --> 02:08.580
+So we have a full application.
+
+02:09.660 --> 02:11.820
+All right, so let's go ahead and get going.
+
+02:12.390 --> 02:17.570
+So I went ahead and created a new project, as you can see here, I named it Jet Tip app.
+
+02:17.590 --> 02:18.870
+Go ahead and do that yourself.
+
+02:19.170 --> 02:20.160
+You should be able to do that.
+
+02:20.700 --> 02:20.940
+Right.
+
+02:20.940 --> 02:22.360
+So nothing really new here.
+
+02:22.380 --> 02:27.960
+What we have is the grading Android app we've seen before.
+
+02:27.960 --> 02:29.610
+We can go to split mode here.
+
+02:29.620 --> 02:36.300
+I'm going to close this down and you should see the same thing we've seen before, which is just a representation
+
+02:36.600 --> 02:40.140
+which suggests we which will just said Hello, Android.
+
+02:40.560 --> 02:40.830
+OK.
+
+02:41.010 --> 02:45.480
+So while that loads, we can just go ahead and start thinking about what we want to do.
+
+02:46.020 --> 02:52.650
+So we are going to start with putting together this top part here, which is the total per person.
+
+02:53.070 --> 02:56.040
+Let's think about how do we put this structure together?
+
+02:56.040 --> 03:01.680
+You can see it should be some sort of a card which will have rounded corners.
+
+03:02.180 --> 03:02.850
+All right.
+
+03:03.390 --> 03:06.570
+So we can start thinking about, OK, what structure we need now.
+
+03:06.570 --> 03:12.630
+We can use a surface, we can use a card, we can use whatever we want and remember, we can always
+
+03:12.630 --> 03:20.070
+use modifiers to modify the way this function behaves in this case, the way this card will look like.
+
+03:20.460 --> 03:23.220
+OK, so that's good, at least to start thinking about things.
+
+03:23.760 --> 03:26.310
+OK, so let's go ahead and see how can you put a structure like this?
+
+03:27.100 --> 03:32.970
+Now, the other thing you will notice is that because we are putting pieces together, the UI pieces
+
+03:32.970 --> 03:37.200
+together, we don't necessarily need it to run on an emulator.
+
+03:37.410 --> 03:39.510
+This is why we have the preview.
+
+03:39.900 --> 03:40.110
+OK?
+
+03:40.140 --> 03:42.510
+That's why we have it, and that's why we use it.
+
+03:42.750 --> 03:48.750
+So what we can do, we can leverage that because sometimes having to run each time on the emulator can
+
+03:48.750 --> 03:50.760
+take times, can take a lot of time.
+
+03:50.760 --> 03:56.850
+And also we just want to create these pieces and then put them together, you know, in a bigger container,
+
+03:56.850 --> 03:59.790
+which is going to be our main user interface, the whole screen.
+
+04:00.270 --> 04:02.370
+OK, so whichever you prefer, you can do it.
+
+04:02.370 --> 04:03.240
+But I like this way.
+
+04:03.780 --> 04:05.970
+OK, so this seems to have worked.
+
+04:06.330 --> 04:09.210
+This is just what comes with this project boilerplate.
+
+04:09.750 --> 04:10.650
+What are you going to do here?
+
+04:10.710 --> 04:14.700
+As you know, we're going to just get rid of all of these because we don't need them.
+
+04:14.760 --> 04:20.190
+I'm going to get rid of the call there and of course, get rid of that.
+
+04:21.720 --> 04:23.400
+OK, so there it is.
+
+04:24.510 --> 04:28.760
+So the next concept here, we said we want to put together this structure here, but let's strike.
+
+04:29.040 --> 04:32.670
+Let's go ahead and structure the app per se.
+
+04:33.330 --> 04:38.340
+There are different ways to structure an app, but I'm going to show you one that's very helpful.
+
+04:38.790 --> 04:40.830
+You see here that we have a set content.
+
+04:40.830 --> 04:45.420
+In fact, this is a laminar trailing lambda, which means we can pass yet another composable.
+
+04:45.420 --> 04:50.690
+In this case, that type app theme, which was created by Android Studio, right?
+
+04:51.210 --> 04:56.100
+And then we passed our surface, our famous surface, and we pass a background color.
+
+04:56.910 --> 04:59.340
+So what we can do, we can extract everything.
+
+04:59.620 --> 05:06.720
+Inside of said content somewhere else and then call that function that compose or function inside here.
+
+05:07.140 --> 05:11.760
+This will just decouple even further the pieces that we want to put together in our app.
+
+05:12.330 --> 05:16.530
+So there's this concept called container functions in the compose.
+
+05:17.160 --> 05:22.230
+So this again makes things a little bit more flexible and easier to deal with each composable.
+
+05:23.070 --> 05:23.820
+How does that work?
+
+05:23.910 --> 05:28.620
+Well, let's let's hover over the chat tip app to hover over like this.
+
+05:29.070 --> 05:35.220
+This is an example of a container function because it gives you this flexibility.
+
+05:35.220 --> 05:40.920
+You can see it is a compose or function that we can pass another compose function as a parameter.
+
+05:42.030 --> 05:47.280
+And if you have over again, you can see because this content here, it is indeed a function called
+
+05:47.280 --> 05:51.840
+inside of this function, and it expects a composable which is exactly what you want to do.
+
+05:51.840 --> 05:58.470
+That's a that's a container function, expects a composable because this is the last parameter is pass
+
+05:58.470 --> 05:59.550
+inside of a function.
+
+06:00.030 --> 06:01.740
+That means then we can.
+
+06:03.580 --> 06:06.120
+Use a lambda trailing Lambda A.S..
+
+06:06.760 --> 06:08.170
+So this is the concept we're going to do.
+
+06:08.560 --> 06:16.210
+So here I'm going to say something like this at composable such and then I'm going to say function,
+
+06:16.210 --> 06:18.010
+I'm going to call this my app.
+
+06:18.250 --> 06:19.570
+So this is the entry point.
+
+06:19.870 --> 06:20.410
+My app.
+
+06:20.680 --> 06:23.710
+And then I'm going to do the same thing as we have seen.
+
+06:23.710 --> 06:27.580
+If you, however, call this content and pass the composable function.
+
+06:28.450 --> 06:32.830
+Now you get named whatever you want, of course, but content seems to make more sense.
+
+06:33.580 --> 06:42.490
+And then I'm going to say at composable like this, this tells the compiler that this expects a composable
+
+06:42.490 --> 06:47.890
+function and this composable function is going to return unity, which means really nothing.
+
+06:48.910 --> 06:53.920
+And then we go, take all of this and put inside here.
+
+06:54.400 --> 06:54.700
+OK.
+
+06:56.420 --> 07:02.450
+And I can say something like tax just before you see hello again.
+
+07:04.560 --> 07:12.420
+All right, so now I can call this my component or my app record and see my app like this, and here
+
+07:12.420 --> 07:13.550
+I can pass whatever I want.
+
+07:13.560 --> 07:17.670
+In fact, I can just remove all of this and just pass here.
+
+07:18.030 --> 07:18.630
+Text.
+
+07:20.170 --> 07:28.330
+Hello again, Angela Concede follows this same convention as all of these other container functions.
+
+07:31.370 --> 07:37.520
+So content here is whatever we get a passing inside hearing, which means we just passing a Texas hello
+
+07:37.520 --> 07:37.850
+again.
+
+07:38.950 --> 07:40.430
+They refresh this.
+
+07:41.420 --> 07:45.950
+Actually, I would have to call at the bottom here.
+
+07:45.980 --> 07:50.480
+My app and passive text that says hello again.
+
+07:51.980 --> 07:55.220
+All right, let's refresh because we didn't have my app.
+
+07:55.520 --> 07:56.810
+You know our default preview.
+
+07:57.830 --> 08:00.470
+So now I can take all of this.
+
+08:01.730 --> 08:07.760
+Even the jet tip apt theme, which in return, it's also a container function.
+
+08:08.150 --> 08:12.800
+I can just cut all of this and put inside here.
+
+08:14.280 --> 08:19.860
+And now what we do instead of our content here, because we know it's a composable that it's expected,
+
+08:19.860 --> 08:27.000
+I'm just going to say content as such, call our content like this now inside of us that content.
+
+08:27.090 --> 08:33.210
+All I have to do is say my app and pass, for instance, one text to be our content.
+
+08:34.080 --> 08:35.790
+Let's say hello again.
+
+08:37.530 --> 08:43.170
+Of course, this is not going to work because inside of our chat app theme here, I need to go ahead
+
+08:43.170 --> 08:45.690
+and call my content.
+
+08:46.840 --> 08:50.710
+Or my app, I should say, and pass text that says.
+
+08:52.840 --> 08:54.400
+Hello again.
+
+08:56.660 --> 08:57.920
+Let's go ahead and refresh quick.
+
+08:58.280 --> 09:00.260
+And you can see it says hello again.
+
+09:00.830 --> 09:03.200
+So nothing really crazy that's happening here.
+
+09:03.200 --> 09:05.690
+It's just that we're restructuring everything they can see.
+
+09:05.690 --> 09:12.650
+It's real easy because everything we want to pass in the content here as a composable we can just put
+
+09:12.650 --> 09:13.790
+inside of my app.
+
+09:13.910 --> 09:14.900
+You can put whatever we want.
+
+09:14.900 --> 09:20.030
+In fact, you can put as many functions, call as many composable functions as you want inside here.
+
+09:20.030 --> 09:25.310
+It makes things much, much easier because all you will see in our set content, it's going to be my
+
+09:25.310 --> 09:27.740
+app only end whatever we call it here.
+
+09:28.070 --> 09:34.160
+It's way better than cramming everything together and saying, OK, so this is just something to keep
+
+09:34.160 --> 09:34.600
+in mind.
+
+09:34.610 --> 09:43.970
+And I would really suggest you think in those terms pass in this case, a container function which allows
+
+09:43.970 --> 09:45.470
+you to pass another composable.
+
+09:46.130 --> 09:46.450
+OK.
+
+09:46.670 --> 09:48.170
+And then of course, called the contents.
+
+09:48.170 --> 09:56.930
+But this is what's been called or what's been passed inside of our my app in this case, inside of the
+
+09:57.260 --> 09:58.150
+trailing lambda.
+
+09:59.510 --> 09:59.690
+Right.
+
+09:59.690 --> 10:01.290
+So let's get rid of all of this.
+
+10:01.340 --> 10:03.290
+In fact, we could keep it there for now.
+
+10:03.770 --> 10:05.600
+And it said content is fine.
+
+10:05.840 --> 10:08.540
+OK, now let's start working on this structure.
+
+10:09.200 --> 10:09.500
+All right.
+
+10:09.500 --> 10:12.350
+So at the bottom here, I can start structuring a few things.
+
+10:13.010 --> 10:17.020
+Let me call this top entity here.
+
+10:19.000 --> 10:22.480
+I'm going to start with that composable such going to be a function.
+
+10:22.750 --> 10:27.110
+Let's call this top her section.
+
+10:28.600 --> 10:28.860
+OK.
+
+10:29.590 --> 10:35.560
+And we are composing things right now, so I'm going to pass a preview real quick so we can look at
+
+10:35.560 --> 10:36.250
+it and see.
+
+10:37.480 --> 10:42.070
+You can see it started to show there, but there's nothing in there, so there's really not much to
+
+10:42.070 --> 10:43.570
+do or to see.
+
+10:44.230 --> 10:48.640
+OK, so let's create then this card like structure again.
+
+10:48.820 --> 10:49.540
+What do you do?
+
+10:49.570 --> 10:53.770
+We could use card, but I'm going to go straight with a surface and with this surface.
+
+10:54.100 --> 10:54.640
+There we go.
+
+10:55.720 --> 11:01.480
+And instead of the surface here, this is where we're going to add all of the contents that we see there.
+
+11:01.900 --> 11:06.550
+Now we can see that we should have another structure, right?
+
+11:06.640 --> 11:13.810
+Because all of these items so total per person text and there's no text there that shows the amount
+
+11:13.810 --> 11:20.680
+of total amount that is, they are laid out vertically, which means one after the other.
+
+11:20.690 --> 11:25.030
+So what structure or what layout should we use in turn?
+
+11:25.360 --> 11:27.160
+What layout should we use inside here?
+
+11:28.370 --> 11:29.360
+Right, Colum.
+
+11:29.480 --> 11:36.590
+So I'm just going to go ahead and add a column real quick here and work on their column like this.
+
+11:36.830 --> 11:43.880
+Okay, so inside of our surface, of course, notice sometimes Android Studio may give us the entire
+
+11:43.880 --> 11:44.390
+path.
+
+11:45.020 --> 11:45.350
+Right?
+
+11:45.410 --> 11:46.310
+We can just delete that.
+
+11:46.310 --> 11:46.930
+That's not needed.
+
+11:47.840 --> 11:48.710
+So that's fine.
+
+11:49.220 --> 11:55.070
+And so here we're going to first pass a modified implicit modifier modifier.
+
+11:55.430 --> 11:56.090
+Good friend.
+
+11:59.530 --> 12:02.080
+And I'm going to say dad can put it into a new line.
+
+12:02.970 --> 12:12.720
+I'm going to say Phil Max with Mike because I want to make sure this takes the entire space and then
+
+12:12.720 --> 12:14.440
+I'm going to say Dad Phil.
+
+12:14.560 --> 12:17.200
+Max with such.
+
+12:20.070 --> 12:26.970
+And we say that Phil Max, with such, I want to continue.
+
+12:29.220 --> 12:31.200
+Looks like something is not right.
+
+12:31.440 --> 12:32.230
+Let's go back.
+
+12:32.250 --> 12:36.230
+Sometimes the imports are not correct.
+
+12:36.310 --> 12:38.100
+Let's get rid of that import.
+
+12:40.280 --> 12:45.710
+Let's get rid of this import and see if we can import a few things, OK, this modified here.
+
+12:46.130 --> 12:47.090
+Now let's go ahead.
+
+12:47.220 --> 12:49.710
+All option and haha.
+
+12:49.730 --> 12:52.480
+Let's get the modifier compose modify.
+
+12:52.490 --> 12:53.440
+This is very important.
+
+12:53.450 --> 12:54.050
+Good lesson.
+
+12:54.350 --> 13:01.330
+Sometimes when you see that were red lines or red functions being called, that means we are getting
+
+13:01.340 --> 13:01.520
+old.
+
+13:01.520 --> 13:06.890
+We've imported that modifier in that class from a different package, right?
+
+13:06.890 --> 13:08.450
+So we won't look at the.
+
+13:08.660 --> 13:14.840
+We want the modifier in the face from Android acts that compose that UI make it like that.
+
+13:15.410 --> 13:20.150
+And you can see now we have to also import that field max width.
+
+13:20.630 --> 13:21.290
+All right, there we go.
+
+13:21.320 --> 13:22.550
+So back in business here.
+
+13:23.030 --> 13:26.930
+OK, so next we are going to give it a height of this structure.
+
+13:27.380 --> 13:30.770
+And I want to say 150 dot dpi.
+
+13:31.880 --> 13:34.750
+And we need to import every right.
+
+13:35.900 --> 13:39.740
+And without a modifier, we can continue because remember, we want to make sure that this structure
+
+13:40.160 --> 13:44.750
+has this rounded, as you see here, rounded corners.
+
+13:45.290 --> 13:46.520
+Well, we can continue.
+
+13:46.520 --> 13:50.450
+I can say that again, this is still invoking modifier functions.
+
+13:50.870 --> 13:56.930
+I'm going to say clip clip allows us as the name applied to clip into a certain shape.
+
+13:57.140 --> 14:01.550
+If you hover over sage shape, content would be clipped to this shape.
+
+14:02.270 --> 14:03.230
+I'm going to pass a shape.
+
+14:03.470 --> 14:05.720
+What shape do you want to go to take shape such?
+
+14:06.230 --> 14:10.280
+And I'm going to say I want to circle now.
+
+14:10.280 --> 14:11.570
+I have a few options here.
+
+14:12.080 --> 14:16.220
+I can say rounded corner shape like this.
+
+14:16.820 --> 14:21.200
+And inside here, I'm going to pass the corner size.
+
+14:21.560 --> 14:22.940
+So it's going to be a corner.
+
+14:24.600 --> 14:25.920
+Size object.
+
+14:26.650 --> 14:27.750
+Pass, I should say.
+
+14:28.080 --> 14:29.140
+And here we can pass.
+
+14:29.160 --> 14:37.710
+Let's say I want this to be about 12 that dpi around the entire shape what this does.
+
+14:38.190 --> 14:43.020
+Well, actually, let's go ahead and refresh this real quick to see what will happen.
+
+14:44.010 --> 14:45.430
+And all right, there we go.
+
+14:45.450 --> 14:47.490
+You can see we have the shape we want.
+
+14:47.490 --> 14:51.540
+It looks very similar to those, of course, the colors different, but at least we accomplished what
+
+14:51.540 --> 14:52.700
+we wanted, right?
+
+14:52.950 --> 14:55.110
+And it said that there are different ways to do this.
+
+14:55.330 --> 14:56.460
+I'll show you another way.
+
+14:57.000 --> 14:57.390
+OK.
+
+14:57.900 --> 15:04.350
+This is the beauty of compose is that it gives us these many possibilities of doing the same things.
+
+15:04.350 --> 15:09.180
+I'm going to say clip again and for shape here I can see something like this.
+
+15:09.180 --> 15:19.680
+I can say circle shape and I can see Dot Copy to say I'm going to further customize this shape, Scobee.
+
+15:19.680 --> 15:28.100
+So essentially, we're creating essentially overwriting a few of the circle shape, a few parameters,
+
+15:28.120 --> 15:30.090
+a few fields of a circle shape here.
+
+15:30.090 --> 15:32.610
+And I can then specify what is that I want.
+
+15:33.030 --> 15:37.620
+I can say all to say, I want all of the corner sizes to be one.
+
+15:38.870 --> 15:44.330
+Size then have to pass a corner size function and then pass in this case, 12 feet deep.
+
+15:45.980 --> 15:50.540
+If you refresh again, you won't see any difference really, because it's going to be.
+
+15:51.820 --> 15:56.920
+All the same, you just that we use a different way of doing the same thing.
+
+15:57.610 --> 15:58.540
+You see no change.
+
+15:58.810 --> 15:59.630
+It's all the same.
+
+15:59.810 --> 16:01.280
+Make this their size.
+
+16:01.600 --> 16:02.260
+And there you have it.
+
+16:03.500 --> 16:04.370
+All right, very good.
+
+16:04.550 --> 16:06.410
+So either way, works fine.
+
+16:06.710 --> 16:12.380
+I sometimes I use around the corner or just circle shape and then pass the copy to say I want to override
+
+16:12.560 --> 16:14.660
+certain properties of our circle shape.
+
+16:15.320 --> 16:19.860
+So before you go to the next video, I want you to figure out a way to change this color.
+
+16:19.880 --> 16:23.270
+This background color of our top hat here.
+
+16:23.570 --> 16:27.320
+So to have some color like this, OK, something similar, at least.

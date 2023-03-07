@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00.520 --> 00:04.980
+Right, so in previous section, we were able to put together the home screen.
+
+00:05.070 --> 00:08.250
+We went through the whole process of structuring everything.
+
+00:08.430 --> 00:13.680
+Now we are going to make it so that when the floating action button is clicked, we are going to open
+
+00:13.680 --> 00:15.150
+the search box screen.
+
+00:15.510 --> 00:22.350
+This screen here contains a few items, not as many as we had before in our home screen and to top,
+
+00:22.350 --> 00:27.970
+we're going to have, of course, the top bar there to allow us to go back to the previous screen.
+
+00:28.410 --> 00:35.100
+We're going to have, of course, this area here where we are going to have a list of books that are
+
+00:35.100 --> 00:36.210
+preloaded, right?
+
+00:36.210 --> 00:43.020
+These books are going to come from the API, the Google Book API, and then we're going to have, of
+
+00:43.020 --> 00:49.230
+course, that search text field there, which will allow users to type something and search.
+
+00:49.470 --> 00:55.650
+And then once they hit Enter White or next, then they will repopulate the books.
+
+00:56.280 --> 00:58.480
+So this is what we're going to be doing.
+
+00:58.500 --> 01:00.840
+And well, let's get started.

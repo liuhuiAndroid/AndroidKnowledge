@@ -1,0 +1,412 @@
+WEBVTT
+
+00:00.300 --> 00:05.130
+So the cut in library has different types of collections.
+
+00:05.190 --> 00:12.330
+The one we've been looking at so far is the list of its case, immutable and mutable list of.
+
+00:12.810 --> 00:17.760
+So these are implementation of the list, right collection.
+
+00:18.000 --> 00:21.240
+Now there's another type of relevant collection type.
+
+00:21.870 --> 00:24.450
+There are two types actually set and map.
+
+00:24.960 --> 00:28.140
+So what you just said is a collection of unique elements.
+
+00:28.710 --> 00:30.900
+And the order is that important in a set.
+
+00:31.560 --> 00:33.640
+Let's go ahead and see how that works.
+
+00:33.670 --> 00:37.020
+So let's get rid of these guys here.
+
+00:37.030 --> 00:45.770
+I'm going to say found my set and I'm going to create a set of anyone who has an element here.
+
+00:45.780 --> 00:51.630
+When I say you as Ms Z a you.
+
+00:51.990 --> 00:52.770
+OK, that's enough.
+
+00:53.610 --> 00:55.410
+So now let's go ahead and print this.
+
+00:55.560 --> 00:59.880
+I say print out and say my set.
+
+01:00.750 --> 01:01.860
+Let's see what's going to happen.
+
+01:03.160 --> 01:03.400
+Right?
+
+01:03.420 --> 01:04.140
+So there it is.
+
+01:04.200 --> 01:13.440
+U.S. Embassy A, you know, although it looks the same as a list or mutable list, a set has a few different
+
+01:13.440 --> 01:19.500
+properties, one of which is that each store's unique elements and their order is generally undefined.
+
+01:19.500 --> 01:23.420
+So really, there's no order, even though we saw that this is ordered here.
+
+01:23.430 --> 01:27.300
+But if you keep adding more items, there's really no order that is defined.
+
+01:27.660 --> 01:27.960
+OK?
+
+01:28.380 --> 01:35.190
+As we said, this is just a set of it's pretty much just like a list of which means this is immutable.
+
+01:35.280 --> 01:40.440
+So I can't say, for instance, my set that add, you know, this, that's not going to work.
+
+01:40.890 --> 01:45.210
+So what do you think would allow me to make a mutable set?
+
+01:45.630 --> 01:50.970
+Yes, I will have to say something for my mutable set.
+
+01:51.510 --> 01:55.090
+I'm going to say mutable set of.
+
+01:55.560 --> 01:58.350
+And I can, of course, parse elements such as this.
+
+01:58.980 --> 02:01.740
+In this case, I can just pass just a few numbers like that.
+
+02:01.740 --> 02:06.030
+And I can say now my immutable set add in.
+
+02:06.030 --> 02:13.350
+I can add, for instance, thirty four and then down here can just say my mutable set.
+
+02:13.890 --> 02:19.710
+You'll see that we should get all the numbers that I think will notice that it's very interesting if
+
+02:19.710 --> 02:21.420
+I try to add, let's say three.
+
+02:21.900 --> 02:23.160
+Let's see what's going to happen.
+
+02:23.550 --> 02:23.880
+Right?
+
+02:24.330 --> 02:29.790
+You notice that a set in this case only allows unique values.
+
+02:30.060 --> 02:31.350
+I'll show you something interesting.
+
+02:31.530 --> 02:36.180
+If I go back to my immutable list here, we know it's mutable, so I'm going to add something to it.
+
+02:36.300 --> 02:41.460
+So my mutable, listless add in number that we already know it exists.
+
+02:41.970 --> 02:47.670
+Let's add another three four and we're going to go ahead and print l'an my immutable list.
+
+02:47.670 --> 02:48.090
+That is.
+
+02:48.240 --> 02:50.070
+OK, so you can see what's happening here.
+
+02:50.310 --> 02:51.150
+Let's go ahead and run.
+
+02:52.380 --> 02:57.990
+And you'll see we have 13, 12, 34, 45, 13 and 34 is repeated again.
+
+02:58.410 --> 03:03.360
+So one of the differences here is that immutable list quite old lists.
+
+03:03.360 --> 03:08.640
+In general, we can have repeating values because we can see here we have 12, three, four four, five,
+
+03:08.640 --> 03:12.030
+12, one, 23 and 34 again.
+
+03:12.150 --> 03:19.050
+However, we try to add to our mutable set three because already contains three.
+
+03:19.320 --> 03:24.660
+It just ignores that it doesn't add three actually add a different number.
+
+03:24.930 --> 03:29.940
+If you run this, we should see 123 added to our set.
+
+03:30.840 --> 03:36.720
+So here we have set the next collection type, so we have list.
+
+03:37.060 --> 03:40.470
+We'll talk about the set and its different implementations.
+
+03:40.470 --> 03:43.620
+Right set of this is immutable and mutable.
+
+03:43.620 --> 03:46.380
+Set of is mutable, so you see the trend here.
+
+03:46.770 --> 03:49.010
+The next one is map, right?
+
+03:49.020 --> 03:51.930
+I like maps because I will show you why maps.
+
+03:52.440 --> 04:00.180
+So a map, as the name implies, allows us to map values so we can say, for instance, a maps to one,
+
+04:00.600 --> 04:03.190
+see maps to 10 and so forth.
+
+04:03.210 --> 04:06.900
+So we have this key value pair relationship that we can add.
+
+04:07.370 --> 04:08.580
+OK, let's go ahead and create one.
+
+04:08.580 --> 04:13.110
+So I'm going to go ahead and say, Val, pull this secret map.
+
+04:13.800 --> 04:20.580
+And when I use a map of yes, and you can see here in this function, it says, is a pair.
+
+04:20.610 --> 04:21.450
+So it's a pair.
+
+04:21.690 --> 04:23.550
+We have key invalidate.
+
+04:23.550 --> 04:28.860
+The syntax may be very strange because we haven't talked about classes or objects and so forth.
+
+04:28.920 --> 04:34.290
+But what we're saying here is that it's going to require a pair of key value pairs.
+
+04:34.890 --> 04:38.460
+So a map of in this case, this is immutable.
+
+04:38.610 --> 04:39.690
+Yes, you guessed it.
+
+04:39.690 --> 04:45.630
+So what we're going to do here, so we're going to say first, we're going to put a key and then map
+
+04:45.630 --> 04:46.620
+it to a value.
+
+04:47.160 --> 04:50.430
+So this case, I could start a key with the type.
+
+04:50.430 --> 04:51.900
+In this case, it can be anything.
+
+04:52.350 --> 04:55.680
+I'm going to start with the key of string type.
+
+04:56.010 --> 04:59.700
+I'm going to say, for instance, I like.
+
+04:59.780 --> 05:07.550
+Is and I must say it's going to map to what I'm going to map it to one, for instance, and then I see
+
+05:07.850 --> 05:21.560
+down key map it to to say left and say to map two three and then I'm going to continue right.
+
+05:24.140 --> 05:26.960
+I'm going to map this to four as such.
+
+05:27.560 --> 05:27.920
+All right.
+
+05:28.220 --> 05:34.970
+As we do map retail and secret map such, let's go ahead and comment this out.
+
+05:34.970 --> 05:38.480
+So we don't have all this prints showing up here.
+
+05:39.150 --> 05:39.530
+All right.
+
+05:40.340 --> 05:47.720
+And voila, you can see there is a string representation, so up is equal to one down is equal to two,
+
+05:47.720 --> 05:50.700
+left three and so forth and waiting here.
+
+05:50.720 --> 05:56.930
+We can also go, for instance, if I want to get all the keys, I can just a secret map like that and
+
+05:56.930 --> 05:59.260
+say dot keys, right?
+
+05:59.270 --> 06:01.760
+It's to give a set of strings of keys.
+
+06:02.360 --> 06:07.070
+If I run this, we're going to see all the keys so up, down, left, right.
+
+06:07.250 --> 06:08.450
+The same thing.
+
+06:08.450 --> 06:13.730
+We can go and get the entries in this case or in this case, I'm just going to go ahead and get the
+
+06:13.730 --> 06:14.330
+values.
+
+06:14.600 --> 06:15.800
+OK, let's see values.
+
+06:17.260 --> 06:20.050
+Should get all the numbers one, two, three four.
+
+06:20.680 --> 06:30.460
+And anything we can do, we can actually check who can say, for instance, if OP is in our secret map
+
+06:30.670 --> 06:32.920
+like this, then I want to print.
+
+06:35.380 --> 06:38.150
+Yes, is in something like that.
+
+06:38.170 --> 06:45.370
+Let's go and run and you can see yes, is in because I'm indeed is in secret map.
+
+06:45.430 --> 06:50.860
+So what happens here is going to go and check to see if there is up inside of our secret map file there.
+
+06:51.520 --> 07:03.130
+Same way I can do something like this if I can, let's say before in secret map and go and get the values
+
+07:04.090 --> 07:09.940
+I say print yes, is in is there for there and we should see another.
+
+07:09.940 --> 07:10.570
+Yes is in.
+
+07:10.750 --> 07:11.410
+So we have to.
+
+07:11.410 --> 07:12.040
+Yes, is there.
+
+07:12.520 --> 07:16.810
+And as always, we are also able to add something to our map.
+
+07:17.200 --> 07:19.600
+Obviously, not the map of we will have to create.
+
+07:19.750 --> 07:25.600
+Yes, you guessed it, we have to create another immutable secret map.
+
+07:25.750 --> 07:26.680
+Very long names.
+
+07:26.680 --> 07:27.310
+But it's OK.
+
+07:27.610 --> 07:28.470
+So say immutable.
+
+07:28.990 --> 07:33.430
+I love to see immutable map of there we go.
+
+07:34.150 --> 07:47.530
+In this case here, I'm going to say one is going to be mapped to one to two like this three to three.
+
+07:48.430 --> 07:52.720
+So now I can actually add some of my immutable secret map.
+
+07:52.720 --> 07:58.660
+I can see that ad. So for a set, we don't have ad we have put actually.
+
+07:58.660 --> 08:02.880
+So I said that put you can see it says here we can pass.
+
+08:02.890 --> 08:04.500
+There is a different kind of puts forward.
+
+08:04.510 --> 08:07.450
+We can put the pairs in interval and so forth.
+
+08:07.780 --> 08:10.060
+Let's go ahead and use the most simple ones.
+
+08:10.060 --> 08:12.310
+So put it, we can put key and value.
+
+08:12.640 --> 08:20.350
+So the key is going to be I'm going to see four and then the value is going to be number four selected
+
+08:20.350 --> 08:27.150
+as in quite likely this I'm going to just go see alt enter or option enter and then I'm going to convert
+
+08:27.160 --> 08:28.620
+that to assignment like this.
+
+08:28.630 --> 08:36.190
+So looks like it prefers to pass the square brackets like this and pass four and then set equal like
+
+08:36.190 --> 08:36.430
+that.
+
+08:36.730 --> 08:39.520
+Either way, works just a preference of the idea.
+
+08:40.330 --> 08:50.890
+So now if I actually just go ahead and print out when my mutable secret map, we should see that another
+
+08:51.310 --> 08:52.810
+key value pair was added.
+
+08:53.320 --> 08:56.080
+In all I can see, there is one, two, three and four.
+
+08:56.530 --> 08:56.920
+All right.
+
+08:57.070 --> 09:04.330
+So this is very basic, but I hope it gets you in the frame of mind here of understanding, OK, the
+
+09:04.330 --> 09:10.180
+things that we have at our disposable to use in codling when it comes to collections.
+
+09:10.510 --> 09:10.810
+OK.
+
+09:11.140 --> 09:13.600
+There are a lot of other things we can do with collections.
+
+09:13.600 --> 09:19.480
+Obviously, that would take probably 20 hours, but this is the basics and the fundamentals.
+
+09:19.810 --> 09:24.100
+So for you to understand how collections work in cuddling?
+
+09:24.610 --> 09:30.130
+OK, so now you can be very dangerous because you understand or you've learned a lot of things.
+
+09:30.130 --> 09:35.860
+So go back and get a cup of coffee or whatever it is that you drink and relax and think about the things
+
+09:35.860 --> 09:38.440
+that he can do now as a cutlet programmer.
+
+09:39.820 --> 09:41.470
+All right, I'll see you next VIDEO.

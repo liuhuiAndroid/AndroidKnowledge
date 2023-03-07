@@ -1,0 +1,298 @@
+WEBVTT
+
+00:00.210 --> 00:03.240
+The way we have things working here, it's OK.
+
+00:03.360 --> 00:09.960
+Things work fine, but it's not fully coddling in the sense that we have things more succinct and we
+
+00:09.960 --> 00:14.310
+getting our class to be customizable as easy as possible.
+
+00:14.400 --> 00:19.890
+What I mean by that is as follows you see here, when we create this class here we are passing or we
+
+00:19.890 --> 00:25.110
+have these properties collar and model, and we're able to change this properties.
+
+00:25.110 --> 00:31.020
+But it will be really nice to pass them along in the creation of the class.
+
+00:31.200 --> 00:35.850
+Because you see, if you look at when we instantiate our car, it looks like a function was to we've
+
+00:35.850 --> 00:36.450
+seen before.
+
+00:36.510 --> 00:37.830
+We have parentheses there.
+
+00:38.220 --> 00:42.540
+That means inside here we will be able to create or construct.
+
+00:42.780 --> 00:43.560
+That's the key word.
+
+00:43.740 --> 00:50.970
+Construct our object in the beginning when we start, because the moment we do say car information or
+
+00:50.970 --> 00:56.850
+a car, in this case, it will have the state all the properties that we have created or added inside
+
+00:56.850 --> 01:02.250
+of our class, inside of our plan or inside of our blueprint, which is OK.
+
+01:02.340 --> 01:03.540
+But that sounds very flexible.
+
+01:04.050 --> 01:10.260
+It would be nice to pass as variables or as parameters inside of here like color model, so that when
+
+01:10.260 --> 01:11.940
+we say shaded, we can pass directly.
+
+01:12.030 --> 01:13.870
+So what are we going to be passing here?
+
+01:14.670 --> 01:19.110
+In our class, it's what we call inside of a constructor.
+
+01:19.120 --> 01:21.630
+This is what we call a primary constructor.
+
+01:21.630 --> 01:27.180
+So every class Kotlin class has a primary constructor, even if you don't add it right.
+
+01:27.390 --> 01:30.630
+So in this case, here there is one, but it's not explicit.
+
+01:30.930 --> 01:35.640
+So in this case here, I'm going to explicitly say, OK, for our primary constructor here, I'm going
+
+01:35.640 --> 01:38.040
+to pass, for instance, color.
+
+01:38.520 --> 01:39.840
+It's going to be a string type.
+
+01:40.110 --> 01:45.810
+And also I'm going to pass model, which is going to be a string type as such.
+
+01:45.960 --> 01:52.830
+And as we hear, we can also set them up to something say blue for default, right?
+
+01:53.730 --> 01:57.870
+Sounds like this now because we have default variables and we have default values.
+
+01:57.870 --> 02:01.360
+I should say they still works right if you hover over.
+
+02:01.620 --> 02:04.290
+You can see it says color is going to be blue.
+
+02:04.320 --> 02:06.200
+Model's going to be empty.
+
+02:06.420 --> 02:08.100
+Let's run this and see if this happens.
+
+02:08.100 --> 02:09.630
+If this works, so we have color.
+
+02:10.140 --> 02:12.090
+Let's go ahead and run and see what's going to happen.
+
+02:12.450 --> 02:15.900
+Which one of these properties is going to be taken?
+
+02:16.890 --> 02:20.400
+It turns out, of course, even though we pass, actually, we didn't pass anything.
+
+02:20.400 --> 02:24.990
+But in this case, in our constructor here, we added default values.
+
+02:25.230 --> 02:30.060
+Even though that happened, we're still getting the values that we set up in our properties.
+
+02:30.120 --> 02:35.430
+So what we can do here, in fact, we can just set all of these color in the model, the properties
+
+02:35.580 --> 02:43.410
+inside by saying color like this and change this to model like that.
+
+02:44.520 --> 02:46.470
+Now we're going to have some little issues here.
+
+02:46.770 --> 02:48.270
+It says, move to constructor, it's OK.
+
+02:48.270 --> 02:48.990
+We're going to get there.
+
+02:49.770 --> 02:58.380
+So now if I run this, we should get as you see Blue and x MDL because these properties that we added
+
+02:58.380 --> 03:02.320
+inside of the class are now getting from our constructor.
+
+03:02.340 --> 03:03.520
+This is indeed a constructor.
+
+03:03.540 --> 03:10.590
+It looks like just parameters that we're passing in a function, but internally we have a constructor
+
+03:10.590 --> 03:13.500
+that is constructing this object when we instantiated.
+
+03:14.040 --> 03:14.940
+In fact, I'm here.
+
+03:14.940 --> 03:16.440
+I can just say color.
+
+03:16.980 --> 03:22.050
+Whenever I instantiate a new class, I can say color green and then the model.
+
+03:23.950 --> 03:28.760
+Say L am like this, if I run this, what do you think is going to happen, right?
+
+03:28.780 --> 03:30.490
+We should see Green and Alim.
+
+03:30.730 --> 03:31.510
+And there you have it.
+
+03:31.660 --> 03:35.800
+The important thing here is that when we instinctually class, actually when we create a class, it
+
+03:35.800 --> 03:41.770
+should say we can pass as parameters here instead of this constructor and we can set them up like this.
+
+03:41.950 --> 03:44.500
+Now this is too much of redundant code.
+
+03:44.680 --> 03:46.180
+This is not very coddling.
+
+03:46.510 --> 03:50.050
+Like that means we can change this to make it better.
+
+03:50.260 --> 03:55.120
+What I mean by that is if I change, then go get rid of all of this change internally.
+
+03:55.300 --> 04:02.830
+Let's say VAR for each one of these so far like this, we're going to have a problem because by doing
+
+04:02.830 --> 04:05.680
+this, say VAR or Val doesn't matter.
+
+04:06.040 --> 04:11.470
+What do we do in here is that we no longer need this property because these are being assigned, we're
+
+04:11.470 --> 04:12.220
+creating them.
+
+04:14.380 --> 04:21.790
+When we add far more value for our properties, so in this case here, remember what are we doing?
+
+04:21.800 --> 04:25.210
+We're passing these arguments inside of our constructor.
+
+04:25.300 --> 04:32.190
+If we put VAR before each one of these parameters in our constructor, Kotlin will know that what we're
+
+04:32.200 --> 04:36.340
+doing also, we are using these as properties like we did here.
+
+04:36.400 --> 04:40.690
+So this will make our code a little bit more concise, which is cut in like, OK, so let's go ahead
+
+04:40.690 --> 04:41.320
+and run this.
+
+04:41.560 --> 04:46.990
+We should see the same thing because we we've just changed the structure here.
+
+04:47.180 --> 04:49.660
+Now here's the beauty of object oriented programming.
+
+04:50.230 --> 04:55.180
+One of the beauties, at least we can create different kinds of car because we have created a class.
+
+04:55.330 --> 04:59.140
+We created a structure that is the blueprint, the plan.
+
+04:59.170 --> 05:03.100
+We were saying here we have to have a property, color and model.
+
+05:03.370 --> 05:06.130
+We can add as many as we want, but this works OK.
+
+05:06.970 --> 05:12.220
+And now I did hear what you're saying while car is equal car in passing those properties.
+
+05:12.580 --> 05:16.450
+That means we can actually create as many cars as we want.
+
+05:16.690 --> 05:20.180
+In this case, he can say second car.
+
+05:20.560 --> 05:22.510
+And it can say this is going to be.
+
+05:24.370 --> 05:30.490
+Portable and a model is going to be ex Aldi like this?
+
+05:31.050 --> 05:31.360
+OK?
+
+05:31.390 --> 05:37.240
+Gibberish and I can go ahead and say print alone like that.
+
+05:38.470 --> 05:39.910
+I'm going to copy all of this.
+
+05:44.210 --> 05:44.960
+And if I run
+
+05:48.290 --> 05:54.650
+right, I need to invoke the second car to get the color as well as the model like this, it's going
+
+05:54.650 --> 05:55.010
+to run.
+
+05:55.730 --> 05:56.360
+And there go.
+
+05:56.480 --> 06:02.450
+Second car color purple model that they're so potentially you could just create a class such as this.
+
+06:02.450 --> 06:06.410
+And this is very simple, of course, and send it out to as many friends as you want.
+
+06:06.440 --> 06:12.200
+All they have to know is that there is a class car and how it's created, and they can create as many
+
+06:12.200 --> 06:16.440
+cars as they want to start thinking about at a factory where they make cars.
+
+06:16.560 --> 06:21.290
+Right, there is the team that creates the blueprint of the car, and then they send those blueprints
+
+06:21.500 --> 06:22.790
+to the manufacturer.
+
+06:22.820 --> 06:24.950
+That's where they actually going to build any car.
+
+06:25.190 --> 06:26.700
+That's the same thing, right?
+
+06:27.020 --> 06:31.040
+This is the architect, the blueprint of a car.
+
+06:31.490 --> 06:38.300
+This is what happens when we go to the manufacturer and they start building the actual car.
+
+06:38.450 --> 06:43.460
+And this concept is very powerful in programming, not just in Scotland, but in programming in general.

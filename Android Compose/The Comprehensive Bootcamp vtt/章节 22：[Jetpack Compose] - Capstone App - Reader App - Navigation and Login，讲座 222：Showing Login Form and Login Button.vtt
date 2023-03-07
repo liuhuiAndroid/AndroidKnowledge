@@ -1,0 +1,373 @@
+WEBVTT
+
+00:01.340 --> 00:05.780
+So first, let's look at the obvious here, and let's get rid of this issue here, the reason why I
+
+00:05.780 --> 00:11.690
+think it's because I didn't put inside of our column the password, so let's go ahead and get all of
+
+00:11.690 --> 00:12.050
+this.
+
+00:14.220 --> 00:19.650
+And put it all inside the password like this.
+
+00:19.680 --> 00:23.100
+Oh, I should say instead of our column that the password?
+
+00:23.280 --> 00:26.130
+OK, let's go ahead and see if we can.
+
+00:28.530 --> 00:30.960
+Structure, everything, that's very good.
+
+00:33.190 --> 00:42.430
+It's good we run this, we should be able to see, hopefully that these should be close to each other.
+
+00:45.240 --> 00:49.140
+OK, that looks really, really nice, so pretty much just like what we have here.
+
+00:49.230 --> 00:52.980
+Of course, some padding here and there, but it's OK, looks good.
+
+00:53.950 --> 01:00.540
+Now, let's go ahead and add this log in button, so we might still be inside of our column there,
+
+01:00.550 --> 01:02.530
+so let's go ahead bottom here.
+
+01:02.650 --> 01:08.770
+So here we're going to create actually another submit or call a submit button, which is going to be
+
+01:09.310 --> 01:12.310
+a rapper composable that we are going to have a button.
+
+01:12.730 --> 01:15.850
+And for that, I'm going to pass the actual.
+
+01:16.940 --> 01:20.330
+Arguments, OK, subtext I.D. in this case.
+
+01:24.130 --> 01:25.060
+I'm going to say if.
+
+01:28.230 --> 01:38.130
+Is Create account is true, then the tax is going to be create account else, we're going to change
+
+01:38.130 --> 01:39.030
+that to lock in.
+
+01:39.030 --> 01:45.090
+So always doing here we'll see in a second is that depending on situation, we are going to change the
+
+01:45.390 --> 01:50.430
+text, the title to log in or create account like we'll see that.
+
+01:50.850 --> 01:51.320
+All right.
+
+01:51.360 --> 01:54.180
+So passing the loading.
+
+01:55.670 --> 02:02.810
+This case is going to be loading that same variable and then valid inputs.
+
+02:04.580 --> 02:12.350
+Then passed, it rallied, right, which is this reality that we are validating to see if all of the
+
+02:12.350 --> 02:16.850
+items we added, all of the text fields, information we added if it's valid.
+
+02:17.390 --> 02:17.660
+All right.
+
+02:18.080 --> 02:21.340
+Sounds very cryptic, but let's go ahead and created this composable.
+
+02:21.350 --> 02:25.940
+So that way we actually can see all in action.
+
+02:30.880 --> 02:33.550
+All right, so there we go, we have our composable what's new.
+
+02:33.580 --> 02:37.210
+One thing we actually need to pass along here is the on click
+
+02:40.330 --> 02:46.810
+function here that we're going to pass along and we're not going to pass anything as a parameter and
+
+02:46.810 --> 02:47.350
+say unit.
+
+02:47.920 --> 02:49.540
+OK, so what?
+
+02:49.540 --> 02:53.830
+We want to happen here, it's just going to create a button and you may ask, why is it?
+
+02:53.830 --> 02:57.400
+Didn't I just create a button as it is straight here?
+
+02:57.430 --> 02:58.660
+Now that's very possible.
+
+02:58.660 --> 03:04.720
+Just like it was possible for us to create all of these passwords inputs directly by adding the outlined
+
+03:05.170 --> 03:06.160
+text field, right?
+
+03:06.430 --> 03:11.440
+But this gives us a little bit more flexibility because let's say we decided later that we wanted to
+
+03:11.440 --> 03:15.040
+create another form, then we'll have to repeat ourselves.
+
+03:15.280 --> 03:20.500
+With this, we can just go ahead and call, for instance, the password input or in this case, the
+
+03:20.500 --> 03:24.190
+email input and pass different arguments and then we're ready to go.
+
+03:24.880 --> 03:28.210
+So then we'll have a very consistent look as well.
+
+03:29.050 --> 03:29.350
+OK.
+
+03:29.890 --> 03:33.550
+It takes a little bit of time, of course, because you have to code it up, but then you're set up
+
+03:33.970 --> 03:34.540
+correctly.
+
+03:35.140 --> 03:41.380
+So I really recommend you to think in these terms whenever possible, a rabbit instead of another composable
+
+03:41.380 --> 03:47.830
+so Lenny can pass arguments that will modify the actual button in this case or the text field and so
+
+03:47.830 --> 03:48.130
+forth.
+
+03:48.760 --> 03:49.030
+All right.
+
+03:49.570 --> 03:55.930
+OK, so for our own click here, of course, I'm just going to go ahead and pass the on click that is
+
+03:55.930 --> 03:57.550
+being passed along there.
+
+03:57.790 --> 03:58.030
+OK.
+
+03:58.630 --> 04:01.750
+OK, so after this, let's go ahead and add a modifier.
+
+04:08.020 --> 04:14.450
+And patting about three deep and Phil Max width, OK?
+
+04:21.560 --> 04:27.290
+And then I'm going to pass enabled, I'm going to look at loading.
+
+04:27.500 --> 04:35.450
+I did haggling to make sure that we know exactly the state of our tax fields and make sure that we have
+
+04:35.450 --> 04:39.530
+this that we can control if this looks enabled or disabled.
+
+04:40.040 --> 04:46.790
+OK, so that users cannot actually click on it if there's nothing valid or, I think added in our fields.
+
+04:48.380 --> 04:52.100
+So but also we need to pass and the valid inputs.
+
+04:52.910 --> 05:00.320
+So this will set out to make sure that we either make this enabled or disabled the button that way,
+
+05:00.320 --> 05:05.030
+if it's disabled, like I said, these are users are not going to be able to say, log in.
+
+05:06.400 --> 05:06.700
+All right.
+
+05:07.840 --> 05:08.140
+All right.
+
+05:08.180 --> 05:10.060
+I'm going to ask the shape for this button.
+
+05:10.570 --> 05:16.330
+Put a comma there and vice shape or make it a circle shape like that.
+
+05:17.470 --> 05:22.990
+So inside I'm going to put an if statement to say if the loading is true, all right.
+
+05:23.020 --> 05:28.870
+I'm going to pass a circle progress indicator as such, and it can also has more information for our
+
+05:28.870 --> 05:31.120
+progress indicator in the form of modifier.
+
+05:31.600 --> 05:40.650
+So my say modifier and I want the size of this loading or circular progress indicator to be about 25
+
+05:40.670 --> 05:42.670
+died as such.
+
+05:43.900 --> 05:44.220
+OK.
+
+05:44.830 --> 05:52.450
+Else, in that case, I'm just going to put a text field or text, I should say, in passing a text
+
+05:52.450 --> 05:58.000
+ID, which is going to be maybe the naming is not the best by saying Text City, but that's fine.
+
+05:58.000 --> 06:04.840
+What we say here is a string that will give us the text that we are going to add, which is going to
+
+06:04.840 --> 06:07.020
+be either log in or create account.
+
+06:07.630 --> 06:11.080
+You'll see that all in place pass a modifier, of course.
+
+06:11.230 --> 06:11.920
+What's new?
+
+06:13.840 --> 06:19.420
+And I'm going to add it padding all of five deep inside of our text around.
+
+06:19.420 --> 06:20.290
+Oh, Texas should say.
+
+06:20.620 --> 06:22.270
+So right, then you're going to see that error.
+
+06:22.270 --> 06:22.850
+Submit here.
+
+06:22.850 --> 06:26.050
+You're going to have some issues because we need to pass that on.
+
+06:26.050 --> 06:27.670
+Click function there.
+
+06:28.000 --> 06:33.310
+Well, because it's the last parameter that is a function that has been passed as a parameter.
+
+06:33.310 --> 06:37.030
+We can, you know, use just the lambda search.
+
+06:37.030 --> 06:46.210
+So here then inside here, I'm going to call the undone HA and going to pass the email again.
+
+06:47.380 --> 06:57.010
+Get the value, and I'm going to trim analyst, pass the password and value and also trim that.
+
+06:58.230 --> 06:58.560
+OK.
+
+06:59.610 --> 07:06.060
+Depending whether this is is create account, which we'll see later, we're going to change the name
+
+07:06.060 --> 07:11.670
+of the button, so it's either going to be create account for our text, the name of the button or logging.
+
+07:12.090 --> 07:16.980
+In this case, if you look or create, this great account is false, meaning we're not creating an account.
+
+07:17.430 --> 07:19.170
+That's why it looks the way it looks.
+
+07:20.130 --> 07:23.700
+That's why we should see log in.
+
+07:24.660 --> 07:24.930
+OK.
+
+07:26.070 --> 07:28.830
+So when then they click on down here?
+
+07:28.880 --> 07:30.810
+Not in this button on Click.
+
+07:31.080 --> 07:31.710
+What happens?
+
+07:31.740 --> 07:36.270
+Well, we're going to go ahead and invoke the function on Click.
+
+07:36.600 --> 07:40.200
+In this case, it's going to be this one down here, which we are passing this information.
+
+07:40.920 --> 07:43.170
+So now where we calling this?
+
+07:45.920 --> 07:49.100
+This password here, we should see the email and the password.
+
+07:50.170 --> 07:52.970
+Once we run this, let's see, that's true.
+
+07:52.990 --> 07:53.530
+Let's run.
+
+07:58.320 --> 07:58.870
+And there we go.
+
+07:58.890 --> 08:01.020
+You can see now the log in.
+
+08:01.140 --> 08:04.800
+It's not enabled because nothing has happened yet.
+
+08:05.220 --> 08:07.050
+The women they start putting their money say.
+
+08:08.690 --> 08:12.260
+How at mi.com and go to the next?
+
+08:13.250 --> 08:13.790
+Hello.
+
+08:13.820 --> 08:15.500
+The moment we start adding something here?
+
+08:15.530 --> 08:16.280
+Notice it is.
+
+08:16.280 --> 08:24.260
+It says, OK, something is there, so we can actually start to make this enabled to say, OK, they
+
+08:24.260 --> 08:26.450
+can log in if I click on this.
+
+08:26.750 --> 08:28.400
+Let's go to our Black Hat.
+
+08:28.970 --> 08:35.180
+We're going to see we have indeed the reader screen log in screen pal at Mi.com.
+
+08:35.390 --> 08:40.580
+And there is the password that I just added because we were getting that information from our user form.
+
+08:40.590 --> 08:43.280
+We have that trailing lambada and we have that info.
+
+08:43.640 --> 08:48.530
+This is great because that means here I can do things like create an account and do all the things that
+
+08:48.530 --> 08:50.570
+I need in this case, logging in right.
+
+08:51.410 --> 08:52.670
+But you get the idea.
+
+08:54.600 --> 08:55.060
+All right.
+
+08:55.080 --> 08:56.520
+So it is indeed working.

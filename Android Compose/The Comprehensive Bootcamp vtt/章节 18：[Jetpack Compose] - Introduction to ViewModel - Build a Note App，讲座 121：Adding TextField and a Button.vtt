@@ -1,0 +1,436 @@
+WEBVTT
+
+00:00.360 --> 00:03.630
+All right, so we have a text field there, but we have this hello, hello.
+
+00:03.660 --> 00:04.440
+That's not what we want.
+
+00:04.740 --> 00:10.830
+Well, what we really want, if you look at any text field in this case here or text is going to be
+
+00:10.830 --> 00:13.650
+the value of our text field, there's going to be changing.
+
+00:14.180 --> 00:16.740
+OK, so that means then we have to have some sort of state.
+
+00:18.180 --> 00:25.440
+So inside of our notes screen still inside here at the top, we're going to create a variable save our
+
+00:25.560 --> 00:26.190
+title.
+
+00:26.730 --> 00:28.570
+And this is going to be by remember.
+
+00:28.590 --> 00:32.960
+Remember, there's two ways to create these kind of states, right?
+
+00:32.970 --> 00:36.330
+You could say it's equal and they remember by remember also works.
+
+00:36.690 --> 00:38.160
+So I'm going to use my remember at this point.
+
+00:39.510 --> 00:49.680
+So in this case, I'm going to say mutable state of in past empty strings like this or empty string.
+
+00:49.920 --> 00:55.470
+This tells us then we are expecting a string to be remembered as a dishonorable state.
+
+00:56.940 --> 01:02.520
+Right, so we have issues here, the reason why is because we have to import a few things for this to
+
+01:02.520 --> 01:03.600
+work something, click here.
+
+01:04.260 --> 01:10.830
+Saying import and it will have to do it again because there are other functions that we need to import
+
+01:11.400 --> 01:15.000
+or other the old option enter an import again.
+
+01:15.480 --> 01:16.530
+OK, so that's the thing.
+
+01:16.530 --> 01:18.900
+Whenever you use by, we'll see that we have to import twice.
+
+01:19.200 --> 01:25.650
+So if we go and going to the same because we will need another one later uncle description, which in
+
+01:25.650 --> 01:30.860
+this case is going to be for this text field, it might as well do it now.
+
+01:30.870 --> 01:31.710
+So remember.
+
+01:33.640 --> 01:36.370
+Going to be the same thing, but it was state of it's going to be strange.
+
+01:36.400 --> 01:38.230
+So we pass empty string like this.
+
+01:38.860 --> 01:39.130
+All right.
+
+01:39.130 --> 01:44.260
+So now that we have title and description we can instead of passing hello here.
+
+01:44.740 --> 01:46.160
+Let's go ahead and pass title.
+
+01:46.200 --> 01:48.340
+Guess that is the state we're going to be controlling.
+
+01:49.240 --> 01:52.030
+And for a label here, I'm just going to say title, that's fine.
+
+01:52.570 --> 02:00.250
+The beauty here is that because we have created this no input text, composable function, we can call
+
+02:00.250 --> 02:01.450
+as many times as we need.
+
+02:02.230 --> 02:06.610
+In fact, we need to call it a few times, actually just two times in this case.
+
+02:06.610 --> 02:15.220
+Now we are going to say the scription right past that state and there is going to be I didn't note.
+
+02:19.040 --> 02:19.360
+OK.
+
+02:19.520 --> 02:20.030
+There it is.
+
+02:20.330 --> 02:21.440
+Let's go ahead and refresh.
+
+02:24.200 --> 02:24.650
+Very nice.
+
+02:24.680 --> 02:29.600
+Now we can see we have the title and add note text fields.
+
+02:30.500 --> 02:32.510
+Now let's go ahead and add the button.
+
+02:33.090 --> 02:33.950
+OK, it's very simple.
+
+02:33.950 --> 02:34.490
+You can do it.
+
+02:34.790 --> 02:39.890
+But again, I'm going to customize our button a little bit in the sense that I also want to be able
+
+02:39.890 --> 02:45.230
+to create that button inside of node components here so we can call it whenever we want to call it.
+
+02:45.510 --> 02:49.360
+We make as many instances, as many instances as we want and so forth.
+
+02:49.370 --> 02:54.500
+So it's a good habit whenever you have pieces of UI that you may want to use again.
+
+02:54.920 --> 02:58.130
+It's a good habit to put them in a different file.
+
+02:58.400 --> 02:59.720
+That way, you can reuse them.
+
+03:00.110 --> 03:00.410
+All right.
+
+03:00.420 --> 03:05.450
+So back in our note components, what I'm going to do here, I'm going to create yet another function
+
+03:05.810 --> 03:08.960
+composable function that is so act composable.
+
+03:11.450 --> 03:17.030
+Call this function and just call this note button as such.
+
+03:17.450 --> 03:21.890
+And I'm going to pass a few parameters, of course, so I can customize it.
+
+03:22.820 --> 03:23.890
+First, I'm going to pass.
+
+03:23.900 --> 03:31.430
+Let's start with a modifier, because that should be the first thing we pass, say modifier such.
+
+03:34.640 --> 03:38.930
+Our default, then we have pass text.
+
+03:40.850 --> 03:41.690
+On Click.
+
+03:46.880 --> 03:48.390
+The term unit.
+
+03:51.020 --> 03:51.710
+So nothing.
+
+03:53.030 --> 03:54.470
+And I'm going to say enabled.
+
+03:59.680 --> 04:04.330
+It's going to be a Boolean, and of course, I'm just going to say it's true as default.
+
+04:06.010 --> 04:06.430
+All right.
+
+04:07.390 --> 04:10.480
+So now I'm going to create a button inside here.
+
+04:10.810 --> 04:13.320
+So for one, click what I want to do.
+
+04:13.390 --> 04:19.090
+Of course, when it clicked, are going to call the UN, click that we passed along.
+
+04:19.360 --> 04:20.020
+Here's the thing.
+
+04:20.290 --> 04:25.450
+If we do, as you see here, that means then we have to see that invoke, right?
+
+04:26.020 --> 04:31.360
+So if you don't want to go through that problem, the trouble of doing that, we can just remove the
+
+04:31.360 --> 04:37.090
+lambda and say that this now it's going to call this one, click that we're passing.
+
+04:38.020 --> 04:40.020
+OK, so different ways of doing the same thing.
+
+04:40.530 --> 04:48.000
+All right, so for our button here, we can pass a few other parameters deed or arguments in this case.
+
+04:48.300 --> 04:51.150
+OK, so let's go ahead and say shape.
+
+04:51.960 --> 04:54.840
+When I had a nice shape, when it's just a circle shape
+
+04:57.630 --> 05:01.380
+or add enabled, it's going to be enabled.
+
+05:02.070 --> 05:02.970
+What are we passing?
+
+05:03.720 --> 05:05.930
+And then let's put modifiers here.
+
+05:05.940 --> 05:07.170
+Pass our modifier.
+
+05:08.190 --> 05:08.550
+OK.
+
+05:10.680 --> 05:19.230
+And then the contents of this is going to be text and I'm going to pass text and again, and because
+
+05:19.230 --> 05:24.180
+text and argument name are the same, I can just get rid of that altogether.
+
+05:24.630 --> 05:26.310
+And this will work as well.
+
+05:27.000 --> 05:27.350
+All right.
+
+05:27.360 --> 05:38.310
+So now if we go back to note screen here and and right after our last input text, I can say note button
+
+05:38.580 --> 05:40.560
+such and pass the text.
+
+05:42.420 --> 05:48.180
+Save the screen and refresh and see there it is.
+
+05:48.270 --> 05:56.160
+We have a save button, so you can see that the button is really close to our add note text field.
+
+05:56.610 --> 06:02.520
+Well, actually, let's add something a modifier for each one of these because we can't do that.
+
+06:03.060 --> 06:04.140
+I won't say modifier.
+
+06:10.520 --> 06:18.400
+I say padding and in this case here, and let's put the comma there for a padding here, I'm going to
+
+06:18.400 --> 06:26.170
+say I want top to be about nine deep and bottom to be about.
+
+06:27.250 --> 06:28.690
+Eight deep like this
+
+06:32.410 --> 06:35.380
+can put in one line, but I like Ken's two lines like that.
+
+06:40.950 --> 06:42.510
+And it can do the same thing.
+
+06:43.280 --> 06:44.430
+Pass this modifier
+
+06:47.550 --> 06:52.790
+next one could go and save refresh, right?
+
+06:52.950 --> 06:53.970
+It looks much better.
+
+06:54.000 --> 06:57.060
+There is some padding around all of these widgets.
+
+06:57.720 --> 06:58.010
+All right.
+
+06:58.080 --> 07:02.020
+So now what is that we want to do for on tax change?
+
+07:02.040 --> 07:07.830
+So the idea is that when we add something here, we want to capture that information, which we are
+
+07:07.920 --> 07:13.650
+going to be able to do that because if you look at the top here, we've set up the title and description.
+
+07:14.580 --> 07:19.710
+So instead of the first one text change here, this is for our title.
+
+07:20.220 --> 07:21.690
+I'm going to put an if statement here.
+
+07:21.820 --> 07:24.840
+Now this is not required, but I'm going to show you something really awesome.
+
+07:25.050 --> 07:32.370
+So I say if and then I'm want to say it in this case is going to be the text, right?
+
+07:32.760 --> 07:40.290
+I'm going to say that all what this does, if you look at it, it's all that function and it says predicate.
+
+07:40.650 --> 07:45.720
+What this means, if you have over, it's going to say returns true if all characters match the given
+
+07:45.720 --> 07:46.320
+predicate.
+
+07:47.490 --> 07:49.500
+What is it that we want to check here?
+
+07:49.860 --> 07:55.710
+Well, we want to check in with, first of all, has pass chart here to signify character.
+
+07:56.280 --> 08:02.640
+I'm going to go ahead and check if each character, every passing is a ladder.
+
+08:03.300 --> 08:13.530
+Look at that or each character is white space like that.
+
+08:14.310 --> 08:17.250
+If that is true, then I'm going to say title.
+
+08:19.650 --> 08:26.010
+And I say that to the actual information that we are getting because we all know that we have added
+
+08:26.010 --> 08:26.970
+the correct text.
+
+08:27.330 --> 08:28.980
+We validated that text.
+
+08:29.550 --> 08:35.070
+And if you have over, if you don't know what is white space is, it says white space determines whether
+
+08:35.070 --> 08:40.380
+a character is a white space, according to the Unicode standards, to return true if the character
+
+08:40.380 --> 08:41.130
+is white space.
+
+08:41.760 --> 08:43.620
+And so we're going to do the same thing.
+
+08:46.250 --> 08:49.190
+For this guy here as well, a few changes.
+
+08:51.170 --> 08:57.170
+Sort of title in this case is going to be a description to set it to whatever we're getting from the
+
+08:57.170 --> 08:58.220
+user add note.
+
+08:59.060 --> 09:06.120
+OK, so now let's go ahead and see if we can run this just to make sure we can see if we can add something.
+
+09:06.170 --> 09:10.400
+So I'm going to run again on my device can run on your emulator.
+
+09:10.520 --> 09:11.090
+It's fine.
+
+09:12.360 --> 09:14.880
+For the first time always takes a little bit of time.
+
+09:14.910 --> 09:16.770
+So let's be patient.
+
+09:17.580 --> 09:20.340
+And of course, I have this blank screen here.
+
+09:21.150 --> 09:24.960
+The reason why I have this blank screen is because I'm not calling this anywhere.
+
+09:24.960 --> 09:27.300
+So my main activity, I have nothing here.
+
+09:27.630 --> 09:30.540
+So let's go ahead and just call our notes.
+
+09:32.300 --> 09:34.220
+Screen like that.
+
+09:35.270 --> 09:41.450
+And I think this time, of course, I have to add experimental because I'm using experimental, I'm
+
+09:41.450 --> 09:45.230
+going to add it to the class main activity, the top.
+
+09:45.830 --> 09:47.450
+OK, let's go ahead and run this time.
+
+09:49.430 --> 09:55.010
+Hopefully this time or works will be able to see something and voila, we can see we can add things
+
+09:55.010 --> 09:59.180
+now say hello or something similar to that.
+
+09:59.780 --> 10:00.710
+And there it is.
+
+10:01.250 --> 10:01.610
+OK.
+
+10:02.720 --> 10:04.700
+So this is indeed working.
+
+10:04.940 --> 10:10.790
+The state of title as well as the state of the description in this case to note both of them are working.
+
+10:11.900 --> 10:12.260
+All right.
+
+10:12.650 --> 10:13.940
+So what are we going to do next?
+
+10:14.030 --> 10:19.970
+Yes, we're going to figure out a way to actually save these notes, at least saving memory and see
+
+10:20.240 --> 10:20.960
+how that goes.

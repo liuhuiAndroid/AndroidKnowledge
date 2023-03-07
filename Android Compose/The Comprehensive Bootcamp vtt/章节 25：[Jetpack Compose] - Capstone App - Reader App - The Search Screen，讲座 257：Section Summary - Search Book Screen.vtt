@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00.150 --> 00:05.550
+All right, so we've made a lot of progress from the beginning, we started with my screen and we did
+
+00:05.760 --> 00:11.790
+the lock and screens and and of course, we went ahead and put together this awesome main screen, our
+
+00:11.790 --> 00:13.020
+home screen, as we call it.
+
+00:13.230 --> 00:17.370
+And there are a lot of things that we had to put together, but it was fun and we are very happy at
+
+00:17.370 --> 00:17.760
+this point.
+
+00:17.790 --> 00:22.890
+I hope you are following along and your coding and you're getting a little bit of frustrated but fixing
+
+00:22.890 --> 00:27.390
+things, and that's part of the whole thing about learning programming.
+
+00:27.390 --> 00:29.250
+There's really no other way around it.
+
+00:29.940 --> 00:31.950
+But I hope is that too painful and shouldn't be?
+
+00:31.950 --> 00:33.330
+That's not the idea, really.
+
+00:33.780 --> 00:35.130
+OK, so we've done that.
+
+00:35.130 --> 00:42.300
+And then, of course, we just finished the search books screen here, which allows us to we, you know,
+
+00:42.300 --> 00:50.760
+to go into our API, Google's book API and get information and then load it all up here so we can now
+
+00:50.760 --> 00:57.600
+search for books, any topic we want and we can get some books, which is really exciting and we'll
+
+00:57.600 --> 00:58.970
+learn a lot along the way.
+
+00:58.980 --> 01:06.510
+Of course, we'll learn how to use Retrofit, which is the HP client library used in Java and codling,
+
+01:06.510 --> 01:08.310
+of course, and Android development.
+
+01:08.620 --> 01:14.070
+OK, so we've now finished with our search books for the most part, meaning the user interface is going
+
+01:14.070 --> 01:14.870
+to be just like that.
+
+01:14.880 --> 01:16.290
+We can improve upon it, of course.
+
+01:16.650 --> 01:20.040
+I encourage you to do so, but the base is there.
+
+01:20.580 --> 01:26.670
+And so in the next lectures, in the next sections, what are we going to do is we're going to look
+
+01:26.670 --> 01:31.980
+at the detailed screen because now we're going to take the user when they click on, for instance,
+
+01:31.980 --> 01:37.020
+Android for Dummies book, we want to show them, for instance, a little bit more information about
+
+01:37.020 --> 01:37.560
+that book.
+
+01:37.830 --> 01:44.700
+It could be the description and also a way for users to be able to save that book, right?
+
+01:44.730 --> 01:50.580
+So when they save the book, we're going to save that to our backend Firestar database and then later
+
+01:50.580 --> 01:55.200
+we can retrieve back in our main screen here homescreen.
+
+01:55.560 --> 01:56.910
+All right, I'll see you next.

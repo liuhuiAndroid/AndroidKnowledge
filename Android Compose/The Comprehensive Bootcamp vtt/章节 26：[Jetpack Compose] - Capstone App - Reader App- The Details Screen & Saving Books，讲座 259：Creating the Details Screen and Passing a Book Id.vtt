@@ -1,0 +1,526 @@
+WEBVTT
+
+00:01.260 --> 00:06.430
+OK, let's open up our reader book details screen, and as you see right now, it has nothing.
+
+00:06.450 --> 00:13.050
+Let's go ahead and pass our nav controller and then we need to pass a book ID as well because it will
+
+00:13.050 --> 00:15.630
+have to receive a book ID so that we can then.
+
+00:17.000 --> 00:23.420
+Go and get that book that was clicked, get more information about it, so it is going to be a strong
+
+00:24.980 --> 00:25.520
+message.
+
+00:26.240 --> 00:29.120
+All right, we'll add something else later, but for now, that's fine.
+
+00:29.750 --> 00:31.180
+That's great surface here.
+
+00:31.190 --> 00:31.940
+That's what we do.
+
+00:32.840 --> 00:34.880
+This remove that redundancy there.
+
+00:35.210 --> 00:36.230
+What am I actually going to do?
+
+00:36.260 --> 00:39.290
+Let's add a scaffold here again.
+
+00:40.400 --> 00:45.640
+And four of my scaffold here, I want to say top bar, just put something like that.
+
+00:45.650 --> 00:46.790
+That's all I need.
+
+00:47.160 --> 00:53.390
+And then this surface is going to be inside the surface here.
+
+00:53.510 --> 00:56.330
+We're going to pull it in inside there.
+
+00:56.660 --> 01:01.050
+OK, so far, top bar going to do the same thing we did with others.
+
+01:01.100 --> 01:10.580
+I'm just going to use our reader top bar what we call, read our app, top bar, app bar.
+
+01:10.580 --> 01:11.030
+That is.
+
+01:11.870 --> 01:19.850
+And in this case, here for the title, I'm just going to say detail details of such and we can just
+
+01:19.850 --> 01:20.840
+pass out and have control.
+
+01:20.840 --> 01:22.340
+That's fine like this.
+
+01:23.090 --> 01:27.740
+And of course, we know that we're going to have here a lambda.
+
+01:27.980 --> 01:31.010
+And I'm also going to pass an icon.
+
+01:31.070 --> 01:38.300
+It's going to be icons by default, and I'm going to go to arrow back.
+
+01:38.720 --> 01:45.080
+Profile, of course, is going to be false to say that we don't want to to say that we don't to say
+
+01:45.080 --> 01:50.030
+this is not going to be the reader app from our home screen.
+
+01:50.360 --> 01:52.790
+And then it can see on back row clicked.
+
+01:53.300 --> 01:55.010
+There's a lambda I can pass here.
+
+01:55.430 --> 02:01.640
+What I want to do is going to be nav controller that we have here that navigate around like this.
+
+02:01.730 --> 02:03.560
+I'm going to say leaders screen.
+
+02:03.710 --> 02:07.930
+I'm going to go back to reader search, search screen.
+
+02:07.940 --> 02:08.720
+That's what we call it.
+
+02:08.930 --> 02:10.550
+So inside here, I'll surface here.
+
+02:10.550 --> 02:21.770
+I'm going to just create passive modifier first, like padding of about three dpi and then fill Max.
+
+02:22.980 --> 02:26.520
+They just say, Phil Max sites, so we can tackle both right away.
+
+02:27.860 --> 02:28.090
+OK.
+
+02:29.520 --> 02:30.900
+And then I'm going to add a column.
+
+02:35.550 --> 02:36.750
+Pastor Modifier.
+
+02:39.530 --> 02:50.210
+If a padding of top about 12 deep will see that and then a vertical arrangement, I want to go to top
+
+02:51.620 --> 03:00.290
+horizontal alignment center like this and will do work there for now.
+
+03:00.290 --> 03:04.840
+Let's just say text book description as such.
+
+03:04.970 --> 03:09.680
+Let's go to our reader navigation to make sure that we have that setup for details.
+
+03:09.680 --> 03:11.960
+We don't just copy one of this.
+
+03:14.740 --> 03:19.570
+Right at the bottom here, there's going to be details screen.
+
+03:22.890 --> 03:30.630
+Reader book, I see these details, book details, screen, I think that's what we call it, detail
+
+03:30.640 --> 03:31.410
+screen like that.
+
+03:31.710 --> 03:36.530
+And for book ID for now will change all of that, of course.
+
+03:36.660 --> 03:37.140
+Book it.
+
+03:37.810 --> 03:39.810
+It's going to be just an empty string like this.
+
+03:40.230 --> 03:41.100
+Let's see if this works.
+
+03:41.100 --> 03:46.500
+That means we have to go to our research book because somewhere in our book row, which is going to
+
+03:46.500 --> 03:48.120
+be this row here, we clicked.
+
+03:48.120 --> 03:49.960
+We want to go to this.
+
+03:49.980 --> 03:51.930
+This is actually a different app, by the way.
+
+03:51.930 --> 03:53.940
+That's why it's working, right?
+
+03:54.270 --> 03:55.050
+That's what I want to do.
+
+03:55.770 --> 04:00.660
+So that means then in our book row, we have the clickable derivate event.
+
+04:00.660 --> 04:05.250
+So we can then say, here I'm going to say nav controller just for testing.
+
+04:07.020 --> 04:07.800
+Navigate.
+
+04:07.980 --> 04:10.080
+Make sure we get to the root there.
+
+04:11.160 --> 04:12.480
+And from readers.
+
+04:14.010 --> 04:17.790
+Screens a detailed screen.
+
+04:19.430 --> 04:21.140
+But name like that.
+
+04:21.620 --> 04:22.670
+Let's see if this will work.
+
+04:23.630 --> 04:24.200
+Gwen Run.
+
+04:25.400 --> 04:28.160
+So click and book details and go back.
+
+04:29.260 --> 04:30.730
+We go back to our sketchbooks.
+
+04:30.940 --> 04:31.630
+This is real good.
+
+04:32.110 --> 04:34.250
+Now let's talk about what will happen here.
+
+04:34.270 --> 04:38.830
+So when we click, of course we go to the details, book right booklet, health ideas.
+
+04:39.400 --> 04:43.990
+But what we will want to do is to make sure, of course, with that happens, we want to pass the ID
+
+04:44.140 --> 04:44.860
+of this book.
+
+04:45.400 --> 04:49.150
+That way, we're able then to retrieve that ID and then do another search.
+
+04:49.660 --> 04:58.390
+Because if you remember correctly, we do have in our book API like this, we have this get book info
+
+04:58.700 --> 04:59.770
+where we pass the book.
+
+05:00.460 --> 05:06.250
+And then we will be able to then actually call that inside of our book repository.
+
+05:06.650 --> 05:13.390
+We did this and we are supposed to go there and get that information about the book specific book.
+
+05:13.630 --> 05:19.060
+So for that, we have to set things up a little bit differently, especially in our reader navigation.
+
+05:19.480 --> 05:21.590
+So let's go there right now.
+
+05:21.610 --> 05:26.770
+You see, I just had this composable because we were just testing things to see things working if they
+
+05:26.770 --> 05:27.520
+were working or not.
+
+05:27.880 --> 05:36.040
+But this is not going to do it, which means we have to pass that ID, which is going to be sent when
+
+05:36.040 --> 05:38.510
+we actually click on this book.
+
+05:38.530 --> 05:45.130
+So this book item will have an I.D. and we're going to pass it along with the navigation.
+
+05:45.520 --> 05:50.560
+But in order to do that, we need to go back to our reader navigation and set it up.
+
+05:51.280 --> 05:58.840
+So first, I'm going to put this outside and we say Val details name a search is going to be readers.
+
+06:00.770 --> 06:06.350
+Screens or screens, I'm going to say detailed screen type name, so we can put it somewhere else.
+
+06:06.560 --> 06:08.130
+OK, now we're going to use that.
+
+06:08.570 --> 06:12.860
+So, you know, composable here we can pass a few other things if you have over.
+
+06:13.430 --> 06:16.850
+It says we passed the route, which is why we passed.
+
+06:16.850 --> 06:18.020
+It would always passed that.
+
+06:18.260 --> 06:19.970
+But it can also pass arguments.
+
+06:20.060 --> 06:23.840
+This is going to be a list of arguments and nav arguments, as they say here.
+
+06:24.500 --> 06:30.260
+So if you read at the bottom of his arguments, it's a list of arguments to associate with destination.
+
+06:31.330 --> 06:31.590
+OK.
+
+06:32.050 --> 06:36.340
+So in this case, here, we're going to pass the ID through our arguments.
+
+06:36.940 --> 06:41.680
+But before we do that, we need to actually make this extreme because we're going to be appending a
+
+06:41.680 --> 06:42.640
+few other things here.
+
+06:42.640 --> 06:45.400
+So that's why I put this little name outside.
+
+06:46.090 --> 06:51.370
+So first, I'm going to say pass out detail name, which is just the same thing we had before, just
+
+06:51.760 --> 06:52.690
+written differently.
+
+06:53.260 --> 06:55.780
+And then I'm going to say forward slash, right?
+
+06:55.960 --> 07:02.350
+So I'm creating here a root, and then I'm going to put inside of brackets like this and I'm going to
+
+07:02.350 --> 07:04.050
+say, book it like that.
+
+07:04.120 --> 07:09.700
+So I'm saying now I'm going to be passing a book, add a variable a path.
+
+07:09.850 --> 07:17.470
+But I need to then say, Remember composable, it has these arguments, so I need to pass the actual
+
+07:17.470 --> 07:18.070
+arguments.
+
+07:18.310 --> 07:19.390
+Some say arguments.
+
+07:19.600 --> 07:20.230
+Look at that.
+
+07:20.230 --> 07:20.920
+It's a list.
+
+07:21.130 --> 07:25.720
+OK, I could pass just one, but I'm going to show you how to pass a list because you could pass more
+
+07:25.720 --> 07:27.970
+than one thing and say list of.
+
+07:28.210 --> 07:32.320
+So in this case here, I'm going to say nav argument like this.
+
+07:33.570 --> 07:37.460
+Create that function there, which will then pass if you items.
+
+07:38.460 --> 07:44.340
+So really, what are we going to pass here is going to be what it is going to be a string which is going
+
+07:44.340 --> 07:45.090
+to be book.
+
+07:45.390 --> 07:49.320
+It has to be the same name as what we said this to be.
+
+07:49.600 --> 07:54.540
+We have over this nav argomenti notice, we have this builder, which is a function in the last one.
+
+07:54.600 --> 07:59.490
+That way we can actually say builder, or we can just use the trailing lambda.
+
+08:00.360 --> 08:01.290
+And that's what we'll do.
+
+08:01.350 --> 08:07.410
+So right here and we just put that and here and here, we're going to pass the type of arguments that
+
+08:07.420 --> 08:08.730
+were going to pass to nav type.
+
+08:08.740 --> 08:11.820
+So I'm going to say this case is going to be a string.
+
+08:14.140 --> 08:15.130
+Type like this.
+
+08:15.190 --> 08:20.680
+So it's going to happen now if that type, Nayef, type, type, string here, string type.
+
+08:21.820 --> 08:27.250
+If this was something like an integer, I obviously would SECNAV type that integer.
+
+08:27.400 --> 08:28.530
+There are many types within pass.
+
+08:28.870 --> 08:29.270
+Forget it.
+
+08:29.740 --> 08:32.650
+And then here we see we have this 80.
+
+08:32.650 --> 08:33.580
+That's another lambda.
+
+08:34.030 --> 08:38.050
+So I'm going to just change that to say back stack entry.
+
+08:38.590 --> 08:40.390
+So we have something visual there.
+
+08:41.500 --> 08:43.060
+What do we need to do here is as follow.
+
+08:43.090 --> 08:51.130
+First of all, and I say back stack entry in a word past theta arguments say, get string.
+
+08:51.140 --> 08:56.180
+So this is going to allow us to get this item in this case, when we get to our book details, right?
+
+08:56.200 --> 09:03.280
+This actual ID, the key is going to be white while this key is going to be book I.D. And then I'm going
+
+09:03.280 --> 09:08.140
+to say that let me have that block there so I can set things up.
+
+09:08.500 --> 09:13.240
+That's when I'm going to take all of these what we had before and pass inside there.
+
+09:13.450 --> 09:18.010
+Now I'm saying I'm going to find a way to get this argument because we are sending something which is
+
+09:18.010 --> 09:18.580
+going to be an ID.
+
+09:19.240 --> 09:23.440
+How do I get that ID in our back in our book details screen?
+
+09:23.650 --> 09:25.210
+Well, I'm going to say it gets string.
+
+09:25.840 --> 09:29.560
+It's a key that would be daddy, and I have that string key there.
+
+09:30.190 --> 09:33.360
+So now I can say book ID instead of empty as we had before.
+
+09:33.700 --> 09:35.080
+I'm going to pass that.
+
+09:35.230 --> 09:36.430
+It like this.
+
+09:36.940 --> 09:38.230
+And of course, it's noble.
+
+09:38.240 --> 09:44.230
+I can just say to string this right now, you know, if I go to a reader of books search, but this
+
+09:44.230 --> 09:46.470
+is where we click to go to details.
+
+09:46.840 --> 09:52.900
+Now navigate here is a little bit different because now I can append by saying it's following, let's
+
+09:52.900 --> 09:58.630
+say, class space and then double quotes there and then forward slash.
+
+09:58.630 --> 10:01.270
+And then here I'm going to say, book it.
+
+10:01.390 --> 10:04.090
+So each book has the ID field.
+
+10:04.540 --> 10:05.920
+So now I'm going to pass that ID.
+
+10:06.130 --> 10:10.860
+If I go to read a book details, I'm going to be able to get that book ID.
+
+10:11.320 --> 10:11.950
+Is that possible?
+
+10:12.010 --> 10:13.670
+This is going to be there?
+
+10:13.690 --> 10:16.820
+So now I can say here, book it.
+
+10:17.350 --> 10:20.800
+It's going to be equal to a book that I do like this.
+
+10:21.760 --> 10:23.710
+Let's save this and run and see if this is going to work.
+
+10:25.150 --> 10:25.870
+OK, let's see.
+
+10:27.290 --> 10:30.800
+Let's just pick any book, click and voila, we have an ID.
+
+10:31.370 --> 10:33.500
+And you wonder where that book is coming from?
+
+10:33.530 --> 10:34.520
+Well, if you look.
+
+10:36.070 --> 10:42.190
+In our items, you have that book object item, we call it item and there is an I.D. So each book has
+
+10:42.190 --> 10:44.710
+this unique I.D. that we are passing along.
+
+10:45.340 --> 10:50.170
+This is important because we can get this idea then and invoke another call to another, call to the
+
+10:50.170 --> 10:53.230
+API and get information about that in that book.
+
+10:54.130 --> 10:55.600
+So we're now able to get that book.
+
+10:55.870 --> 10:57.280
+In fact, this is different.
+
+10:57.280 --> 10:58.010
+Just memorize.
+
+10:58.040 --> 11:01.360
+Maybe Badge gave the last three characters.
+
+11:01.840 --> 11:05.170
+If I click on something else, see, it's totally different.
+
+11:06.070 --> 11:08.800
+So I'm getting the correct book IDs.
+
+11:09.100 --> 11:09.640
+It's like that.

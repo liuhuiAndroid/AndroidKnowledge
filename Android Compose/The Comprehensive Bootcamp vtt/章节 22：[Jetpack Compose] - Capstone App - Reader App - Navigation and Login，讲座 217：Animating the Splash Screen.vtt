@@ -1,0 +1,373 @@
+WEBVTT
+
+00:01.470 --> 00:06.390
+All right, so now that we have that, let's go ahead and run this real quick so I can see how it looks
+
+00:07.500 --> 00:09.730
+on the phone or our emulator.
+
+00:09.750 --> 00:10.440
+Real quick here.
+
+00:13.650 --> 00:14.190
+Very nice.
+
+00:14.310 --> 00:15.600
+It looks really nice.
+
+00:15.690 --> 00:18.810
+It's in the middle and yeah, we're doing great.
+
+00:19.380 --> 00:26.540
+So now let's go ahead and put together the the code that will give us this animation that we need okay
+
+00:26.820 --> 00:27.520
+and compose.
+
+00:27.540 --> 00:32.160
+We have access to a lot of different kinds of animation, and that's the beauty of compose.
+
+00:32.460 --> 00:38.490
+In fact, I could create a total different course just on animation, but we're going to use a subset
+
+00:38.490 --> 00:39.580
+of this animation.
+
+00:39.600 --> 00:45.870
+So the idea is that we're going to be scaling up and down this, this entire structure here, this entire
+
+00:45.870 --> 00:46.320
+logo.
+
+00:46.590 --> 00:51.210
+And then after a few milliseconds, we're going to jump onto the next screen, which is going to be
+
+00:51.210 --> 00:52.260
+the log in screen.
+
+00:53.100 --> 00:57.820
+So how do we create this structure of animating our logo in this case?
+
+00:57.820 --> 00:58.810
+So I'm calling logo.
+
+00:58.830 --> 01:03.060
+This is this is what I call it, a logo, essentially all of these surface.
+
+01:03.600 --> 01:09.570
+So essentially, what we want to be able to do is to scale up and down right this surface here, which
+
+01:09.570 --> 01:11.460
+is indeed our logo.
+
+01:12.570 --> 01:15.090
+To do that, we need to have some sort of animation.
+
+01:15.780 --> 01:17.770
+Now how do we animate something?
+
+01:17.790 --> 01:24.690
+Well, in this case, here we are going to use a different block here called launched effect.
+
+01:24.810 --> 01:28.600
+I'm going to say launched effect as such.
+
+01:29.410 --> 01:29.570
+OK.
+
+01:30.000 --> 01:34.140
+And if you look at it, it is actually part of the compose runtime.
+
+01:34.170 --> 01:40.650
+So if you scroll down, is going to say when launched effect endorse when launched effect enters this
+
+01:40.650 --> 01:40.980
+block.
+
+01:43.020 --> 01:49.350
+When launched, in fact enters this composition, it will launch a block into the compositions quarantine
+
+01:49.350 --> 01:50.190
+context.
+
+01:51.120 --> 01:53.790
+The quarantine will be canceled and relaunched.
+
+01:53.790 --> 01:54.420
+Wouldn't launched.
+
+01:54.420 --> 01:56.790
+In fact, esque recompose occur different key.
+
+01:57.300 --> 02:02.970
+So, Courtney, in this case, what he's saying is that we want to stay away from the main thread because
+
+02:02.970 --> 02:10.500
+we don't want to bog down the main thread, which is solely for the user interface, for drying the
+
+02:10.500 --> 02:11.160
+user interface.
+
+02:11.280 --> 02:14.370
+So we're saying we're going to launch these in a separate thread sake.
+
+02:14.520 --> 02:18.360
+There's more to that, of course, but that's the essence of all of this.
+
+02:18.480 --> 02:24.300
+So I say launched effect, I said, and I'm going to say true for the key and for the block, because
+
+02:24.300 --> 02:32.930
+I know the block is also the last function parameter of the fact I can actually use the trailing lambda.
+
+02:33.300 --> 02:39.270
+And you can see, indeed, I have inside here the actual quarantine scope, which means we can run code
+
+02:39.270 --> 02:43.650
+here that requires to be outside of the main thread, if you will.
+
+02:44.220 --> 02:44.530
+All right.
+
+02:44.550 --> 02:51.120
+So in this case here, I'm going to use a variable to scale things down to a certain value.
+
+02:51.570 --> 02:55.950
+But for that, I'll have to create yes, because it's going to be a state that create a variable called
+
+02:55.950 --> 02:56.670
+scale.
+
+02:57.180 --> 03:02.310
+Such wear make it a remember anima table like this.
+
+03:03.930 --> 03:06.780
+Get the animate table, compose like that.
+
+03:07.410 --> 03:12.060
+And I'm going to add the initial value here of zero f floats.
+
+03:12.480 --> 03:12.740
+OK.
+
+03:13.170 --> 03:19.560
+So this is going to be the scale factor and initial value is going to be zero and it has to be float.
+
+03:20.370 --> 03:22.350
+OK, so we can use that value inside here.
+
+03:22.590 --> 03:27.090
+It's not going to say scale dot and then once they animate.
+
+03:28.310 --> 03:33.410
+More animate, too, can animate to decay or animate, too.
+
+03:33.440 --> 03:36.320
+So in this case, here I need to pass the target value.
+
+03:36.560 --> 03:38.530
+In the end, we should scope and so forth.
+
+03:38.540 --> 03:44.780
+It could all get you can always come down here and start reading what this animator who does so says
+
+03:44.810 --> 03:49.160
+it starts in animation to animate from a value to the provided target value.
+
+03:50.030 --> 03:54.290
+The target value here you can play with this, but target of value is going to be.
+
+03:55.010 --> 04:00.470
+I'm going to say zero that nine f OK, and I'm going to pass here.
+
+04:00.500 --> 04:02.030
+The animation specs.
+
+04:02.150 --> 04:05.960
+So the idea is that what kind of animation I'm looking to do?
+
+04:06.410 --> 04:07.540
+Well, there are a few.
+
+04:07.550 --> 04:11.150
+I'm going to use the twin animation there, and that's a function.
+
+04:11.570 --> 04:14.120
+And then this requires a few parameters.
+
+04:14.300 --> 04:16.350
+Also, it's duration.
+
+04:16.360 --> 04:18.980
+So how long this animation will last?
+
+04:19.490 --> 04:21.230
+In this case, I want 800.
+
+04:22.170 --> 04:24.180
+Milliseconds or less than a second?
+
+04:24.720 --> 04:24.980
+Right.
+
+04:25.380 --> 04:27.270
+And I can pass the easing.
+
+04:27.420 --> 04:30.150
+So the elasticity of this animation?
+
+04:30.600 --> 04:30.910
+OK.
+
+04:31.470 --> 04:33.200
+In this case, here it's a lambda.
+
+04:33.210 --> 04:37.550
+I'm going to say I want to use the overshoot interpolated.
+
+04:39.150 --> 04:48.270
+And for that, I need to pass detention, say tension that I need eight f and then I'm going to say,
+
+04:48.270 --> 04:51.960
+don't get interpolation and pass in the act.
+
+04:52.120 --> 04:53.280
+You know, a lot of code here.
+
+04:53.580 --> 04:59.860
+All we're doing really is that we are creating the actual animation we pass in the animation aspect.
+
+04:59.880 --> 05:02.700
+Obviously, the target file is going to be zero point nine.
+
+05:02.700 --> 05:07.680
+Our animation spec here, we pass the twin and we say how long this animation will last.
+
+05:07.680 --> 05:12.780
+It's going to be eight hundred millisecond and we passed easing the curve.
+
+05:12.780 --> 05:16.050
+They will be used to interpolate between start and end values.
+
+05:16.680 --> 05:22.440
+And of course, we have or should interpret later pass attention and they get interpolation past act,
+
+05:22.650 --> 05:26.970
+which is these float that we get in our easing lambda.
+
+05:27.510 --> 05:29.760
+So all of this is actually given by the framework.
+
+05:30.060 --> 05:34.440
+If we had to do this manually ourselves, well, we would have to do a lot of work.
+
+05:34.740 --> 05:38.700
+So that's one of the powers that we get from using compose.
+
+05:39.660 --> 05:40.020
+All right.
+
+05:40.290 --> 05:48.090
+And next here wanting to do still inside of our launch, the fact you might think of it as a different
+
+05:49.050 --> 05:53.500
+lane, I'm going to delay this and say delay, right?
+
+05:53.520 --> 05:56.520
+It can pass time, melaye's or duration.
+
+05:56.520 --> 05:57.810
+Just time is fine.
+
+05:58.320 --> 06:05.670
+And I'm going to delay this for about 2000 long, which in this case, two thousand milliseconds.
+
+06:06.000 --> 06:07.530
+So this is about two seconds.
+
+06:07.530 --> 06:14.370
+In this case, we've created the scale animate table, their initial value zero, and we know that a
+
+06:14.370 --> 06:15.900
+target is going to be 0.9.
+
+06:15.980 --> 06:16.290
+OK.
+
+06:17.130 --> 06:18.330
+These are floats, of course.
+
+06:18.930 --> 06:21.360
+And now the scale here.
+
+06:22.500 --> 06:27.930
+It's going to change its status or its state as this animation happens.
+
+06:28.260 --> 06:34.020
+So this scale needs to be called somewhere just like with any other surface or any other composer where
+
+06:34.020 --> 06:37.080
+we can actually attach the scale.
+
+06:38.830 --> 06:45.850
+The scalability of the scale of our surface look at is inside of our modified gives away surface, which
+
+06:45.850 --> 06:50.530
+indeed we're talking about this whole logo here, as I call it.
+
+06:51.040 --> 06:56.660
+We can actually go and say something like this dot scale so we can scale this surface here.
+
+06:56.680 --> 06:57.460
+This composable.
+
+06:59.380 --> 07:00.850
+And what are we going to pass?
+
+07:00.890 --> 07:06.970
+Well, we're going to scale value that actually scale got value like this for our scale.
+
+07:08.230 --> 07:19.360
+So as the animation happens, this surface here will also get the value of our state right and then
+
+07:19.360 --> 07:20.350
+change accordingly.
+
+07:20.360 --> 07:24.790
+So this entire surface now, should I dare to our animation?
+
+07:26.620 --> 07:27.070
+Is that true?
+
+07:27.100 --> 07:29.020
+Well, let us see.
+
+07:30.230 --> 07:30.830
+I'm going to run.
+
+07:32.370 --> 07:34.710
+Let's look at our map here.
+
+07:34.950 --> 07:39.990
+If all goes well, you should see that scaling animation happening.
+
+07:42.580 --> 07:43.480
+And there it is.
+
+07:44.140 --> 07:44.640
+OK.
+
+07:44.800 --> 07:45.310
+It works.
+
+07:45.370 --> 07:47.860
+Let's do it again because we worked so hard for it.
+
+07:49.830 --> 07:56.220
+And while obviously you can go ahead and change these values to your liking and you can research more
+
+07:56.220 --> 08:01.980
+about animation compose and there's a lot you can do, this is just scratching the surface.
+
+08:02.310 --> 08:06.660
+But at least we have something decent that users hopefully get delighted by.

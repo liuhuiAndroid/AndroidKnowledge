@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00.150 --> 00:05.700
+All right, so we have done these search books screen and everything is great.
+
+00:06.120 --> 00:12.570
+Now I want to be able to one one of the books is clicked such we want to take them to a details screen
+
+00:12.570 --> 00:15.300
+so they can see a little bit more information about the book.
+
+00:16.020 --> 00:17.990
+But most importantly, this is the page.
+
+00:18.000 --> 00:24.600
+This is the screen, I should say where they will be able to save this book onto our back end database
+
+00:24.620 --> 00:30.210
+of our story so we can later retrieve that book and show on the main screen on home screen.
+
+00:30.480 --> 00:32.400
+So this is all going to be doing next.

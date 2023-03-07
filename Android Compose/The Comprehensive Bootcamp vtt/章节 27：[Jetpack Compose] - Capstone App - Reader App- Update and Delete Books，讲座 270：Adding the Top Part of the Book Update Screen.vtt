@@ -1,0 +1,574 @@
+WEBVTT
+
+00:01.570 --> 00:04.100
+So this is how the update screen should look like.
+
+00:04.120 --> 00:07.690
+OK, so we're going to have, of course, the book in a little bit of information about it, the title
+
+00:08.350 --> 00:09.280
+author and the date.
+
+00:09.640 --> 00:10.960
+This was published.
+
+00:11.350 --> 00:16.180
+And of course, we're going to have a form here that allows users to add their thoughts about the book
+
+00:16.180 --> 00:16.780
+as they're reading.
+
+00:17.230 --> 00:22.330
+And most importantly, we can also have start in reading Marcus, read in reading and update and delete
+
+00:22.330 --> 00:24.280
+the book right if they want to delete the book.
+
+00:24.640 --> 00:26.650
+So this is the main structure.
+
+00:28.000 --> 00:28.270
+All right.
+
+00:28.270 --> 00:31.750
+So instead of having this, what do we have here?
+
+00:31.750 --> 00:32.980
+So that was just for testing.
+
+00:33.490 --> 00:42.010
+Alice, I'm going to actually create a surface and parsing modifier modifiers such and I say padding
+
+00:42.430 --> 00:46.580
+too deep and they say, Dot feel max.
+
+00:47.020 --> 00:59.740
+When I past shape, circle, shape and give an elevation of about four dpi, then we're going to actually
+
+00:59.740 --> 01:02.680
+show book update.
+
+01:03.460 --> 01:12.040
+So then we're past our book info, which is going to be our view model that data that value like this?
+
+01:12.340 --> 01:13.600
+OK, let's go ahead and create that.
+
+01:19.110 --> 01:28.740
+And the other thing we also want to be able to pass is a book ID once a book item I.D. that very good.
+
+01:31.210 --> 01:40.540
+Let's go with that, it's called Spanish Book II, the second book I'd like this.
+
+01:40.790 --> 01:41.650
+OK, let's go back.
+
+01:42.460 --> 01:47.920
+So here I'm going to just go ahead and create a row because I'm going to have this book image.
+
+01:47.920 --> 01:53.380
+And then this structure, which of course, is going to be wrapped inside of a column just creating
+
+01:53.380 --> 01:54.040
+this structure.
+
+01:54.070 --> 01:55.720
+Nothing really crazy here.
+
+01:55.720 --> 01:56.650
+So why so throw?
+
+01:58.570 --> 02:08.440
+And I'm going to add a spacer life say width for that space is going to be about 43 dpi.
+
+02:12.030 --> 02:18.420
+So I say if book info, that data is not no.
+
+02:20.860 --> 02:22.120
+When I created column.
+
+02:24.480 --> 02:34.440
+Passive modifier, say, padding for deep and then would say vertical.
+
+02:38.250 --> 02:39.060
+Arrangement.
+
+02:39.780 --> 02:44.790
+And I want it to be center list item, and I'm going to pass a book.
+
+02:47.080 --> 02:51.330
+It's going to be equal to book info.
+
+02:52.330 --> 02:53.080
+That data.
+
+02:56.810 --> 03:00.260
+Just get the first item like this.
+
+03:00.710 --> 03:02.840
+And I'm just going to say and book.
+
+03:06.150 --> 03:07.890
+And what are we going to do there in West End?
+
+03:07.890 --> 03:16.710
+Book that Google IDs I'm checking right is equal to book Item ID songs.
+
+03:17.070 --> 03:23.910
+So now I'm comparing the book to getting the ID if it's equal to the idea of the book that we are passing
+
+03:23.910 --> 03:24.160
+here.
+
+03:24.180 --> 03:24.960
+That's true.
+
+03:25.410 --> 03:27.840
+That's the book that we're going to pass there.
+
+03:28.530 --> 03:31.230
+And then here, I'm going to have one press
+
+03:33.600 --> 03:37.090
+details just going to be equal to empty.
+
+03:37.110 --> 03:37.410
+OK.
+
+03:37.620 --> 03:40.310
+It's very strange because we haven't created that, but we'll get there.
+
+03:40.320 --> 03:42.840
+So let's go ahead and create this composable.
+
+03:44.220 --> 03:48.210
+So my credit card, so essentially, I'm just creating this structure there.
+
+03:48.240 --> 03:50.520
+OK, let's create a card
+
+03:53.220 --> 03:54.330
+passing a modifier.
+
+03:58.900 --> 04:16.240
+So I'm going to say this start for deep and for deep top also and bottom, I'm going to change things
+
+04:16.240 --> 04:16.840
+a little bit.
+
+04:17.290 --> 04:19.120
+It's going to be about eight deep.
+
+04:20.610 --> 04:21.030
+OK.
+
+04:23.710 --> 04:25.060
+And then I'm going to say that.
+
+04:27.200 --> 04:35.930
+Clip and the clip I'm going to use is going to be rounded corners shape in, let's say, 20 dpi in percentage.
+
+04:36.410 --> 04:36.660
+OK.
+
+04:36.870 --> 04:45.500
+And things that I want to make this clickable if need be, which in this case we're not going to do
+
+04:45.500 --> 04:46.340
+anything anyway.
+
+04:46.400 --> 04:47.120
+But that's fine.
+
+04:49.920 --> 04:54.750
+And Liz, pass elevation about eight dpi.
+
+04:55.530 --> 04:56.010
+Very good.
+
+04:56.730 --> 05:00.720
+And now we're going to look at the inside, so we created a structure that now we're going to look at
+
+05:00.720 --> 05:01.320
+the inside.
+
+05:01.950 --> 05:02.280
+All right.
+
+05:02.430 --> 05:07.360
+Well, in this case here, I'm going to say image painter.
+
+05:07.770 --> 05:11.220
+I'm going to use remember image painter.
+
+05:12.450 --> 05:20.070
+And it's going to be data when I say book that's been passing around for Israel to string
+
+05:22.870 --> 05:26.100
+in the description here, which is can pass.
+
+05:26.490 --> 05:30.150
+Go ahead and pass on all that's fine and pass the modifier.
+
+05:32.810 --> 05:36.200
+Height of about 100.
+
+05:36.320 --> 05:47.660
+This is the book now the the image with one dpi and padding about four dpi.
+
+05:48.590 --> 05:52.760
+So now I'm going to go and create this very cool effect there.
+
+05:53.060 --> 05:57.740
+Say rounded corners, shape and top start.
+
+05:59.130 --> 06:06.030
+I'm going to say about 120 dpi, so pretty intense and crazy.
+
+06:07.020 --> 06:13.500
+All right and top and let's say, how about top bottom?
+
+06:16.940 --> 06:21.520
+Bottom and zero dpi.
+
+06:24.470 --> 06:28.280
+Bottom start, also zero dpi.
+
+06:28.520 --> 06:32.680
+So I'm saying I don't want anything to do with these three corner just there.
+
+06:32.910 --> 06:36.110
+OK, and then I'm going to add a column here.
+
+06:37.430 --> 06:39.590
+This is where I'm going to add this structure.
+
+06:40.100 --> 06:40.700
+All right.
+
+06:42.830 --> 06:43.340
+So.
+
+06:44.810 --> 06:45.980
+Let's say text.
+
+06:47.300 --> 06:50.660
+I'm going to pass a book that title to strain.
+
+06:51.290 --> 06:55.600
+Do some styling modifier want padding?
+
+06:57.530 --> 06:58.340
+Start.
+
+07:00.470 --> 07:03.340
+ATP and and about
+
+07:06.220 --> 07:07.420
+ATP as well.
+
+07:11.890 --> 07:12.490
+And with.
+
+07:14.640 --> 07:19.150
+120 deep font weight.
+
+07:20.370 --> 07:29.040
+Why say my bold and max lines about to overflow?
+
+07:29.640 --> 07:31.330
+I want this ellipsis.
+
+07:32.370 --> 07:37.050
+OK, so I've created this structure there that's created in a text.
+
+07:39.930 --> 07:46.830
+So now I'm going to wood pulp book published date two strength style.
+
+07:49.160 --> 07:55.070
+By two and modifier to the padding.
+
+07:57.800 --> 07:58.460
+Start.
+
+08:01.530 --> 08:05.820
+Of pretty much the same eight dpi.
+
+08:08.490 --> 08:12.060
+And it's going to be about the same.
+
+08:16.680 --> 08:23.790
+Top just want deep bottom.
+
+08:25.370 --> 08:26.690
+HDP is such.
+
+08:28.530 --> 08:28.860
+OK.
+
+08:29.280 --> 08:30.270
+A lot of quoting here.
+
+08:31.500 --> 08:32.610
+But that's good.
+
+08:32.820 --> 08:34.350
+So we should be good now.
+
+08:34.770 --> 08:35.100
+All right.
+
+08:35.100 --> 08:37.560
+So it's nothing really out of this world.
+
+08:37.560 --> 08:40.770
+So a credit card list which is being called right here.
+
+08:40.770 --> 08:47.880
+So we are actually the book that we're passing here of making sure this book is equal to the I.D. of
+
+08:47.880 --> 08:52.350
+the Google Book, right that we pass from the previous screen.
+
+08:53.040 --> 08:53.970
+And that's it.
+
+08:54.270 --> 08:58.470
+Let's go ahead and run so we can see because I think that will make us a little bit happier.
+
+09:00.810 --> 09:01.170
+OK.
+
+09:01.890 --> 09:02.790
+Let's click on this one.
+
+09:03.480 --> 09:04.010
+Whoops.
+
+09:04.170 --> 09:05.370
+Looks like I have a problem.
+
+09:05.700 --> 09:08.430
+Let's see what the problem might be.
+
+09:09.330 --> 09:09.700
+OK?
+
+09:09.720 --> 09:13.620
+No such collection contains no element matching the predicate.
+
+09:14.280 --> 09:18.510
+We are checking for something that doesn't exist on update screen update.
+
+09:19.460 --> 09:22.610
+It's take a look book item ready.
+
+09:23.190 --> 09:27.090
+Let's make sure the book item ready they were passing.
+
+09:29.650 --> 09:30.340
+A reader.
+
+09:31.830 --> 09:34.170
+Here's what we want to pass.
+
+09:34.710 --> 09:38.610
+Let's go to our horizontal, have one card pressed.
+
+09:41.130 --> 09:43.770
+Maybe this is not what we we looking for here.
+
+09:44.370 --> 09:45.580
+I can just pass this book.
+
+09:45.600 --> 09:50.340
+That's the problem, because we're just passing a string, which in this case, I think it's just the
+
+09:50.340 --> 09:51.800
+title, which is not what he wants.
+
+09:51.800 --> 09:56.550
+So this book needs to be a book that Google books.
+
+09:56.820 --> 09:57.240
+There we go.
+
+09:57.430 --> 09:58.200
+Theta strength.
+
+09:59.070 --> 10:01.050
+So that should do the trick.
+
+10:01.620 --> 10:06.960
+So remember, in this case here, we're just ignoring this idea because that is just going to be the
+
+10:06.960 --> 10:07.800
+title of the book.
+
+10:07.800 --> 10:08.430
+We want the add.
+
+10:08.580 --> 10:15.590
+So it's a book that we're receiving Google Book I.D. But that's what we're using to check, right?
+
+10:15.870 --> 10:15.990
+Just.
+
+10:16.650 --> 10:17.790
+If you look around.
+
+10:19.840 --> 10:25.330
+To check, uh, let's see, show book there to check here, right?
+
+10:26.620 --> 10:28.960
+The IDs so we can get the correct book.
+
+10:29.620 --> 10:30.100
+All right.
+
+10:30.190 --> 10:31.030
+Let's go and run.
+
+10:34.040 --> 10:37.220
+Hopefully this time we get the best results.
+
+10:37.820 --> 10:39.140
+Click Voila!
+
+10:39.860 --> 10:40.610
+Very nice.
+
+10:41.300 --> 10:48.170
+If I click on this programmatic should see there now we have some problems here mostly are just issues
+
+10:48.170 --> 10:49.970
+with laying things out.
+
+10:50.360 --> 10:52.160
+So let's go and check the suit.
+
+10:52.160 --> 10:58.500
+Wrap this inside of a row so we can have more control over it.
+
+10:58.520 --> 11:02.420
+And I'm going to get everything, everything, including this column.
+
+11:03.140 --> 11:05.030
+OK, so can pull that.
+
+11:06.320 --> 11:12.470
+Let's get all of this put inside there and fold now.
+
+11:13.310 --> 11:17.900
+And it's a horizontal
+
+11:20.600 --> 11:23.960
+arrangement, and that's a start.
+
+11:26.000 --> 11:26.570
+All right.
+
+11:26.660 --> 11:30.260
+Let's see if this is going to solve our life problems.
+
+11:32.810 --> 11:33.740
+OK, there we go.
+
+11:34.250 --> 11:35.300
+Now it works.
+
+11:38.290 --> 11:42.520
+We're missing a few other things there, but we can add in a second here.
+
+11:43.400 --> 11:43.930
+Very good.
+
+11:44.170 --> 11:47.500
+Let's see where we go.
+
+11:49.750 --> 11:50.590
+What that guy?
+
+11:51.590 --> 11:55.560
+OK, so let's I think we're missing the authors.
+
+11:55.580 --> 11:59.960
+Let's go and see what the authors I think I did.
+
+12:00.740 --> 12:04.250
+OK, so I need to add authors here.
+
+12:04.250 --> 12:13.370
+So text essentially is going to be roughly the same as some of these the authors and body to.
+
+12:13.370 --> 12:14.420
+That's fine.
+
+12:15.230 --> 12:20.690
+And it's a bottom zero dpi and talks can be to just give that nice.
+
+12:22.390 --> 12:22.960
+OK.
+
+12:23.050 --> 12:23.380
+All right.
+
+12:23.530 --> 12:24.610
+I think they should do it.
+
+12:28.710 --> 12:30.600
+OK, now looks much better.
+
+12:32.820 --> 12:33.360
+Very good.
+
+12:34.140 --> 12:38.700
+So this is working now, we still have some work to do, obviously, because we want to, of course,
+
+12:38.700 --> 12:44.670
+then add the sections one, two, three, four or five, but we will get there.
+
+12:44.850 --> 12:50.130
+But the most important thing is that we have the infrastructure, the base infrastructure set up.
+
+12:50.520 --> 12:54.370
+This is really good because think about where we started, we didn't even have anything.
+
+12:54.390 --> 12:55.710
+Now we are getting information.
+
+12:55.710 --> 13:02.580
+We are able to search for books and add those books to, let's say, money books about money.
+
+13:02.610 --> 13:03.930
+What can we learn about money?
+
+13:05.070 --> 13:08.480
+OK, I'm going to add this book and I'm going to go back.
+
+13:08.490 --> 13:15.840
+And when I see that the book was added right to the end there, I can click on that one of my phone
+
+13:15.840 --> 13:18.810
+right now and they can see that to update, right?
+
+13:18.810 --> 13:22.500
+So next, we're just going to look at this area at the bottom.
+
+13:23.100 --> 13:23.490
+OK.
+
+13:24.210 --> 13:28.020
+It's getting real late for me here, but we are making real good progress.
+
+13:28.050 --> 13:35.640
+I hope you are seeing the light at the end of the tunnel and I still excited and are still learning
+
+13:35.640 --> 13:37.560
+a lot as we go through this.
+
+13:38.370 --> 13:38.790
+OK.
+
+13:39.100 --> 13:39.840
+We're getting there.

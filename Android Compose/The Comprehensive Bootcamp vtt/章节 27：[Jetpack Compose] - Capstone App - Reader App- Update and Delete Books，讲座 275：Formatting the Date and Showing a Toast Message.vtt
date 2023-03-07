@@ -1,0 +1,349 @@
+WEBVTT
+
+00:00.460 --> 00:04.900
+All right, let's go and format this state that way, show something better is maybe something like
+
+00:04.900 --> 00:05.170
+this.
+
+00:05.960 --> 00:09.010
+OK, let's go to where we calling our date.
+
+00:09.610 --> 00:09.910
+All right.
+
+00:10.090 --> 00:13.120
+We have to do there and we have two to do's, actually.
+
+00:13.270 --> 00:13.550
+OK.
+
+00:14.350 --> 00:16.810
+Thanks to a project structure here.
+
+00:16.840 --> 00:18.850
+Let's go to our utils.
+
+00:19.120 --> 00:20.590
+We're going to create yet another.
+
+00:23.330 --> 00:28.580
+Class or just a file, because we don't need a class for this, let's say utils.
+
+00:29.930 --> 00:33.170
+So here I'm going to say fun, safe format.
+
+00:36.610 --> 00:46.670
+Data such so we are going to be passing a time stamp of some sort, which is going to be a time stamp.
+
+00:46.690 --> 00:50.650
+Make sure you get to the correct timestamp, which is the Google Firebase.
+
+00:50.680 --> 00:52.450
+There are different kind of stamp timestamps.
+
+00:52.900 --> 00:56.710
+Get the Google database, Google Firebase, I should say.
+
+00:58.670 --> 01:02.270
+OK, and we were going to return a string like this.
+
+01:02.330 --> 01:10.280
+OK, so here I'm going to say foul date and I'm going to set it to a date format.
+
+01:10.340 --> 01:14.600
+This is going to be from Java actually date format for Android.
+
+01:15.470 --> 01:17.930
+I see you text like this.
+
+01:18.350 --> 01:27.680
+OK, I'm going to say get date instance and I'm going to invoke the format and pass our timestamp like
+
+01:27.680 --> 01:27.950
+this.
+
+01:30.530 --> 01:34.520
+And then I'm going to evoke that, not to date.
+
+01:35.090 --> 01:38.450
+All right, and inside here, actually, I'm going to make it to date.
+
+01:38.780 --> 01:38.960
+All right.
+
+01:38.970 --> 01:40.070
+There's going to be time stamp.
+
+01:40.070 --> 01:42.680
+There is a function called to date to get it to date.
+
+01:43.020 --> 01:47.030
+In fact, hover over returns a new date corresponding to this timestamp.
+
+01:47.450 --> 01:48.170
+OK, forget.
+
+01:49.970 --> 01:55.700
+And then I'm going to make it as to strength so that I can split, so I want to split this because I
+
+01:55.700 --> 02:02.210
+don't want to show the year, OK, I'm just going to go ahead and pass the comma because when this comes
+
+02:02.210 --> 02:12.830
+in as this date as it is at this point, it's going to probably have something like March 12 and then
+
+02:13.370 --> 02:16.040
+2020 three like this.
+
+02:16.430 --> 02:18.980
+So I want to get rid of this year.
+
+02:19.010 --> 02:21.590
+So that's why I'm going to pass this split.
+
+02:22.190 --> 02:28.850
+The regular expression of comma to say just split more comma is so in this case, we just can delete
+
+02:28.850 --> 02:29.210
+this.
+
+02:29.300 --> 02:36.020
+So now I'm going to just get the first side, which is going to be the.
+
+02:37.130 --> 02:39.470
+Month and today it's like that.
+
+02:40.650 --> 02:43.440
+And then, of course, on my return date.
+
+02:45.120 --> 02:45.540
+Like that?
+
+02:46.930 --> 02:47.920
+Data and data.
+
+02:48.100 --> 02:48.370
+OK.
+
+02:49.890 --> 02:53.520
+Now, probably one would want me to put all that in one line.
+
+02:53.820 --> 02:54.480
+That's fine.
+
+02:54.900 --> 02:57.690
+The same thing so we can use that now.
+
+03:00.300 --> 03:06.870
+To pass along here, I would say format date like that.
+
+03:07.410 --> 03:10.170
+And we're going to wrap that around like this.
+
+03:11.320 --> 03:19.050
+You go ahead and go like that, and this will probably need to assert a section and do the same as well
+
+03:19.050 --> 03:19.470
+here.
+
+03:19.500 --> 03:25.440
+Format date, this has to be inside.
+
+03:25.740 --> 03:26.550
+Like that, OK?
+
+03:32.440 --> 03:33.490
+Let's give it a quick run.
+
+03:37.620 --> 03:38.880
+OK, let's get this one.
+
+03:39.480 --> 03:42.030
+Now you can see it started on November six.
+
+03:43.620 --> 03:46.110
+So I can update still further, right?
+
+03:46.110 --> 03:51.240
+If I say, well, not that great, for instance.
+
+03:52.020 --> 03:55.750
+And they can update that, I go back, go back.
+
+03:55.770 --> 03:59.130
+Here you can see now it's reflecting everything.
+
+04:00.830 --> 04:01.400
+OK, very good.
+
+04:01.730 --> 04:08.120
+The other thing I want to do is I want to make sure that whenever we update, we want to actually show
+
+04:08.120 --> 04:13.790
+the user that this was updated and maybe take users back to the main screen or something.
+
+04:14.120 --> 04:18.350
+Because at this point, it doesn't make sense because they update and nothing really happens.
+
+04:19.620 --> 04:26.910
+OK, so back to our book update, we're updating the book inside of uncompleted listener, we know that
+
+04:26.970 --> 04:28.500
+we've done updating.
+
+04:29.720 --> 04:35.550
+What it can do now is when I call this method called Show Toast, which is going to allow us to show
+
+04:35.550 --> 04:36.930
+a little toast message.
+
+04:37.290 --> 04:41.010
+This comes up on the bottom, so show toast.
+
+04:41.550 --> 04:48.000
+I'm going to have to pass a context as well as the message.
+
+04:48.630 --> 04:50.970
+So that would say something like this book.
+
+04:52.600 --> 04:55.360
+Updated successfully.
+
+04:56.770 --> 04:58.900
+OK, so we need to create this show toast.
+
+04:59.980 --> 05:05.560
+And somewhere at the bottom here, I'm going to just go ahead and say, show toast.
+
+05:07.090 --> 05:09.700
+And for this, we're going to have to pass a context.
+
+05:10.020 --> 05:15.700
+It's just going to be an Android context like that and a message.
+
+05:18.590 --> 05:23.710
+It's going to be just stream like this, OK, to show toast.
+
+05:23.830 --> 05:24.560
+It's very simple.
+
+05:24.580 --> 05:28.000
+I'm going to use invoked the Toast class Android widget.
+
+05:28.630 --> 05:30.370
+I say make text.
+
+05:31.540 --> 05:40.710
+And pass our context and then pass our message such and then we have to say, toast that length.
+
+05:40.840 --> 05:44.770
+I want this to be long, and let's not forget to show that taut toast.
+
+05:45.830 --> 05:46.100
+OK.
+
+05:48.110 --> 05:48.650
+And that's it.
+
+05:49.010 --> 05:50.990
+Now go back to our readers here.
+
+05:52.570 --> 05:54.270
+Let's go ahead and import that.
+
+05:55.750 --> 06:00.400
+Now, how do we create a context because remember now we're inside of a composable.
+
+06:01.240 --> 06:02.470
+Well, it's very simple.
+
+06:02.470 --> 06:12.580
+Let's go back up when you say foul, say context, it's going to be from local context such and then
+
+06:12.580 --> 06:15.450
+say current and then all is good.
+
+06:17.020 --> 06:22.140
+So now, since I don't need that information, I'm just going to go and remove that lambda section.
+
+06:22.180 --> 06:22.510
+OK.
+
+06:23.020 --> 06:28.480
+Well, once this happened, we show that toast that indeed something was updated and all is good.
+
+06:29.290 --> 06:35.290
+We want to be able to then navigate to the reader home screen.
+
+06:35.290 --> 06:43.030
+So I'm going to say NAF Controller Dot Navigate, make sure again, I say this many times, let's go
+
+06:43.030 --> 06:44.770
+to the root.
+
+06:45.070 --> 06:50.350
+This one is strain, and I'm going to say reader screams.
+
+06:53.180 --> 06:56.510
+And it was a reader home screen like that.
+
+07:01.530 --> 07:02.250
+Let's go ahead and run.
+
+07:05.000 --> 07:05.780
+All right, let's see.
+
+07:06.170 --> 07:08.900
+Click, OK, let's update this again.
+
+07:12.330 --> 07:16.500
+And let's update and voila, says a book updated successfully.
+
+07:16.740 --> 07:23.880
+And it was so fast in what took us back to our reading scheme, our main screen here, home screen,
+
+07:24.330 --> 07:25.460
+it was about this guy.
+
+07:25.470 --> 07:30.150
+Let's update this guy as well, and let's give you three starting.
+
+07:30.390 --> 07:31.110
+Let's go update.
+
+07:31.500 --> 07:32.070
+Go back.
+
+07:32.460 --> 07:36.120
+If we go back to that, you can see we have a starting date and so forth.
+
+07:36.570 --> 07:39.870
+I can also mark Mark, as Read says finished.
+
+07:40.140 --> 07:44.250
+This date can also update say, done.
+
+07:45.390 --> 07:46.920
+And now I'm going to say update.
+
+07:47.490 --> 07:47.910
+OK.
+
+07:48.370 --> 07:49.500
+Update successfully.
+
+07:49.500 --> 07:51.750
+That's very good at night's message there.
+
+07:52.230 --> 07:55.330
+If I go now is going to say finished on that date.
+
+07:55.440 --> 08:01.590
+This is the logic we put together before, and we really didn't see how it would be would turn out.
+
+08:02.070 --> 08:03.060
+But this is what happens.
+
+08:03.330 --> 08:07.470
+So we're going to show here started on November six, finished on November six.

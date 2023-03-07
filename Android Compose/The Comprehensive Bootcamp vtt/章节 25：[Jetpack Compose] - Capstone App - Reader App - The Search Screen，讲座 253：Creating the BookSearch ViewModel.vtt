@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00.270 --> 00:02.790
+Now, let's go ahead and create our search for you model.
+
+00:03.180 --> 00:06.600
+Let's go to our search here on RN.
+
+00:07.020 --> 00:11.550
+I'm going to create a new custom class and call this books.
+
+00:13.780 --> 00:16.570
+Search for you model such.
+
+00:19.060 --> 00:27.910
+And let's not forget to attach the ad belt view mall model, and then we are going to inject in the
+
+00:27.910 --> 00:29.170
+constructor here.
+
+00:30.460 --> 00:40.450
+We're going to inject the repository so private about repository book repository as such.
+
+00:40.930 --> 00:43.690
+And let's not forget that this is indeed a few models.
+
+00:43.700 --> 00:49.190
+I'm going to say the model like this first thing I'm going to do.
+
+00:49.210 --> 00:50.410
+Let's create a list.
+
+00:51.220 --> 01:00.640
+Actually, if our list is going to expect a list of item objects, write the books or the book object
+
+01:00.700 --> 01:04.930
+that contains or the object that contains a lot of information about a book.
+
+01:04.930 --> 01:08.260
+And let's import our model item there.
+
+01:08.860 --> 01:13.810
+Let's say by mutable state of like this.
+
+01:16.450 --> 01:21.700
+No need to pass anything, I'm just going to say a list of OK.
+
+01:23.010 --> 01:26.140
+Let's go ahead and do some importing.
+
+01:26.160 --> 01:26.970
+Let's see.
+
+01:28.940 --> 01:35.030
+Mutable state, not set state like this,
+
+01:38.600 --> 01:40.880
+OK, we need to do some import.
+
+01:42.740 --> 01:46.520
+Our list, which is going to contain the list of books once we get there.
+
+01:47.280 --> 01:53.360
+OK, so I'm going to create a net block here, which we're going to call load books.
+
+01:53.660 --> 01:58.940
+So, so we have some initial books and let's go ahead and create that real quick load.
+
+01:58.940 --> 02:05.150
+Books is going to call search books, and we're going to pass a query.
+
+02:05.180 --> 02:11.450
+Here is, say, Android, and we have a great search book with their creator right now.
+
+02:11.510 --> 02:11.990
+There we go.
+
+02:12.080 --> 02:13.670
+So let's call this query.
+
+02:15.880 --> 02:16.270
+All right.
+
+02:17.020 --> 02:18.730
+So what are we going to do here?
+
+02:18.760 --> 02:26.740
+Well, we are going to invoke the law response because we've injected our repository so have access
+
+02:26.740 --> 02:29.740
+to all of our military functions.
+
+02:30.040 --> 02:33.700
+That means here we will have to save you moral scope.
+
+02:34.450 --> 02:34.720
+OK.
+
+02:35.260 --> 02:40.480
+And they say, launch this case here and I can pass dispatchers.
+
+02:42.400 --> 02:50.410
+To say that I want to stay for this matter, which means just give me enough highway lanes for say that
+
+02:50.410 --> 02:52.990
+I may need to run these processes.
+
+02:53.710 --> 02:59.650
+OK, so first I'm going to actually check to see if query is empty.
+
+03:02.020 --> 03:08.410
+If that's the case, all I'm going to do, we say return nothing, so say return at lunch like this,
+
+03:08.470 --> 03:13.000
+so nothing will happen, OK, because we don't want to search anything if Quarry is empty.
+
+03:13.630 --> 03:19.630
+This is where I'm going to say, try and let's find the last, the catch going to have an exception
+
+03:19.630 --> 03:20.200
+here.
+
+03:20.320 --> 03:22.870
+It's going to be an exception type.
+
+03:23.650 --> 03:30.700
+And we'll deal with that because I know that the resource wrapper class has a lot of information about
+
+03:30.700 --> 03:31.300
+what's going on.
+
+03:31.300 --> 03:34.120
+So what I can say here can put inside of when expression.
+
+03:35.170 --> 03:39.970
+I can say foul response is equal to a repository.
+
+03:42.200 --> 03:48.130
+Write our book repository, I'm going to go get books and pass these search query pass query, that's
+
+03:48.140 --> 03:48.470
+that.
+
+03:51.050 --> 03:56.930
+And then in this case here, what is that I want to do while I'm going to go say is I'm going to look
+
+03:56.930 --> 03:59.190
+at a resource, right?
+
+03:59.240 --> 04:03.020
+This will have to look out resource tea that we created there, right?
+
+04:03.680 --> 04:04.640
+If it's success.
+
+04:05.990 --> 04:11.930
+Right then we're going to run this code because, you know, everything is successful, that means we
+
+04:11.930 --> 04:13.280
+have gotten response.
+
+04:13.280 --> 04:14.630
+We've gotten something right.
+
+04:14.870 --> 04:15.880
+We saw that success.
+
+04:15.890 --> 04:16.700
+We have some data.
+
+04:17.600 --> 04:23.300
+If that's the case, then well, I'm going to say list our list here.
+
+04:24.380 --> 04:34.520
+There, I said it to our response, which is a source wrapping a list of item data to get the data.
+
+04:35.030 --> 04:39.560
+And I'm going to since this going to be knowable, I'm going to wrap it like this next unless it is
+
+04:39.560 --> 04:49.790
+again, because Ben Brafman said of when expression here, if we source that error right, that is triggered,
+
+04:50.630 --> 04:52.070
+then what is going to happen?
+
+04:52.820 --> 05:00.710
+For now, let's log is that localized, daring books like that?
+
+05:06.050 --> 05:06.960
+It's a network.
+
+05:08.160 --> 05:15.720
+OK, I'm going to say else in the case, I'm just going to not add anything right in this case is exhaustive
+
+05:15.720 --> 05:16.390
+at this point.
+
+05:16.420 --> 05:20.190
+So if anything else, then we are OK.
+
+05:20.880 --> 05:21.210
+All right.
+
+05:21.240 --> 05:23.870
+For our exception here, I'm going to say log.
+
+05:26.170 --> 05:30.570
+To say that I'm going to pass a message that says can just pass that E!
+
+05:30.610 --> 05:36.770
+Exception gave the message to strange like this network as well tech.
+
+05:37.830 --> 05:41.130
+OK, so we having some issues here because we pass Android here.
+
+05:41.130 --> 05:45.370
+So that's why people have over is going to say that value is always the same android.
+
+05:45.400 --> 05:45.850
+It's OK.
+
+05:46.300 --> 05:48.790
+This is just for us to have something loaded first.
+
+05:49.420 --> 05:53.300
+So we're not going to make this private because we want to be able to access it at this point.
+
+05:53.350 --> 05:54.340
+So this is OK.
+
+05:54.350 --> 06:01.720
+So now that we have a book search of your model, that means then we can go and look at the real book
+
+06:01.870 --> 06:07.330
+search screen again and see if we can actually use the view model and get data.
+
+06:07.660 --> 06:09.940
+And that's what we're going to be doing in the next video.

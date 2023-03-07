@@ -1,0 +1,478 @@
+WEBVTT
+
+00:00.480 --> 00:05.220
+Let's go ahead and see and add these two button save and cancel.
+
+00:05.880 --> 00:10.050
+This is the power of code reuse, as you will see.
+
+00:10.710 --> 00:21.150
+So the bottom half to the third lambda there, I'm going to add buttons, so I'm going to put in a row.
+
+00:24.310 --> 00:26.200
+And add a modifier.
+
+00:33.060 --> 00:36.880
+They're padding the top about six deep.
+
+00:38.690 --> 00:46.270
+And let's add a horizontal arrangement, I say space around.
+
+00:47.290 --> 00:49.030
+Now I'm going to add these two buttons.
+
+00:49.060 --> 00:52.420
+Remember, we are going to reuse some code that we've done before.
+
+00:52.540 --> 00:54.640
+We're going to call the rounded button.
+
+00:54.880 --> 00:58.990
+So if you come how down here and say rounded button looks like.
+
+01:00.220 --> 01:00.260
+Right?
+
+01:02.140 --> 01:08.620
+So if you say rounded button like such, you'll see that we can actually go there.
+
+01:08.830 --> 01:10.150
+This is in our components.
+
+01:10.480 --> 01:15.550
+We have this smart button which allows us to pass the label radios and so forth.
+
+01:15.550 --> 01:18.490
+So they were go code usability.
+
+01:18.700 --> 01:19.630
+That's really great.
+
+01:20.120 --> 01:22.690
+To put label, I'm going to say save
+
+01:25.330 --> 01:26.530
+and what I'm going to do.
+
+01:26.620 --> 01:28.930
+I'm going to put the trailing lamp right there.
+
+01:29.650 --> 01:34.030
+This is where we're going to pass the on click event.
+
+01:34.360 --> 01:35.590
+So what is I want to do?
+
+01:35.620 --> 01:43.450
+Well, here we want to save this book to the Fire Store database.
+
+01:44.830 --> 01:55.110
+Well, first of all, let's say Val CDB and when instantiated, Firebase Firestorm get instance such.
+
+01:55.690 --> 01:55.900
+OK.
+
+01:59.080 --> 02:00.230
+Now we're going to get back to that.
+
+02:00.250 --> 02:05.050
+Let me create another add another button real quick, so we have both of them.
+
+02:06.450 --> 02:08.340
+So row, we have that button.
+
+02:08.520 --> 02:19.200
+We're going to add a spacer here to be about twenty five dpi to keep that nice space and put another
+
+02:19.200 --> 02:24.950
+rounded button and this one for the label, I'm going to say cancel.
+
+02:26.820 --> 02:29.700
+So when we cancel, I'm just going to say nav controller.
+
+02:31.050 --> 02:31.270
+All right.
+
+02:31.650 --> 02:34.650
+Pop back like this.
+
+02:37.030 --> 02:45.220
+So here I'm actually going to call a function which we haven't created yet, save to Firebase.
+
+02:45.490 --> 02:50.470
+So all I will have to do here is pass a book.
+
+02:51.340 --> 02:52.810
+OK, let's go ahead and create that.
+
+02:55.420 --> 02:58.410
+This book is going to be M Book.
+
+02:58.480 --> 03:01.720
+You may remember M Book for before, but we're going to get to that.
+
+03:02.920 --> 03:03.250
+All right.
+
+03:03.370 --> 03:07.560
+So if that's the case, let's just go ahead and cut this.
+
+03:11.230 --> 03:11.980
+Something like that.
+
+03:13.540 --> 03:14.980
+And here was, say, several.
+
+03:17.050 --> 03:20.080
+Look, it's going to be a book like that.
+
+03:22.540 --> 03:26.470
+I'm going to say my book and we will instantiate the book.
+
+03:26.810 --> 03:30.220
+Now let's go to and look and see what's the situation there.
+
+03:30.970 --> 03:37.300
+Well, we did this a little while ago and we added a few properties here in our constructor, but we
+
+03:37.300 --> 03:39.100
+need to change a few things, actually.
+
+03:40.000 --> 03:45.190
+So we were able to save a full book into our fireplace database.
+
+03:46.210 --> 03:47.920
+Let's add other fields here.
+
+03:48.140 --> 03:48.470
+OK.
+
+03:49.000 --> 03:53.650
+OK, so I'm going to pause the video and add all the fields, and then we will continue.
+
+03:54.070 --> 03:55.280
+OK, there we go.
+
+03:55.300 --> 03:56.890
+We have all the fields that we need.
+
+03:57.130 --> 04:03.610
+There's one thing that we need to talk about here because the way things are structured in our back
+
+04:03.610 --> 04:11.110
+end, going back to our cloud fire store, we are obviously going to create yet another collection here
+
+04:11.110 --> 04:11.890
+called Books.
+
+04:12.370 --> 04:12.670
+Right.
+
+04:12.880 --> 04:15.130
+That was going to happen when we save the first book.
+
+04:15.370 --> 04:20.620
+And if you look at the structure of all of our properties that we're passing you, you'll notice that
+
+04:20.620 --> 04:21.670
+we have a few things here.
+
+04:21.790 --> 04:22.490
+The user I.D..
+
+04:22.570 --> 04:29.440
+Now, the reason why we were passing a user I.D. into our book is because we want to make sure that
+
+04:29.440 --> 04:32.720
+each book that is added is connected to a user already.
+
+04:33.040 --> 04:35.170
+So if I'm Paolo, I'm adding a book.
+
+04:35.410 --> 04:43.030
+I want to save that book and add a user ID miserly that way way easier for me to later filter through
+
+04:43.030 --> 04:49.780
+all the books that may be in our book books database and just get my books.
+
+04:50.140 --> 04:54.760
+So that's why we're adding the user ID of the current user that is signing.
+
+04:55.450 --> 04:57.910
+And you also notice that we have this Google Book ID here.
+
+04:57.940 --> 05:04.240
+So it's always nice to add it that Google Book ID because we may need to look up that book.
+
+05:04.450 --> 05:06.190
+Those are two things that you were seeing there.
+
+05:06.190 --> 05:09.040
+But also we have this started reading time stamp.
+
+05:09.460 --> 05:13.900
+If you have a over is going to see this, this is actually a Google Firebase timestamp.
+
+05:14.230 --> 05:20.170
+OK says here a timestamp represents a point in time independent of any time zone or calendar.
+
+05:21.250 --> 05:27.700
+This is good because we want to extrapolate the actual time of the day or time in this case that this
+
+05:27.910 --> 05:35.350
+person started reading it independent of where they are reading it from, or which computer time stamp
+
+05:35.350 --> 05:35.890
+and so forth.
+
+05:36.070 --> 05:39.940
+So this is a spatial timestamp we're going to be adding into our database as well.
+
+05:40.060 --> 05:42.130
+But then there's another problem here.
+
+05:42.340 --> 05:48.640
+If we were to use this book and to our readers here, create right instantiate, create all the fields
+
+05:49.360 --> 05:53.160
+and add them and try to save to our database, right?
+
+05:53.710 --> 05:54.700
+We're going to have a problem.
+
+05:55.360 --> 06:03.310
+Reason being is if you look at how the fields are structured in our in the back end here in our database
+
+06:03.320 --> 06:08.530
+finder store, you'll see that we for each field, we have these avatar underscoring or else this is
+
+06:08.530 --> 06:15.400
+the way you should always structure your fields, which means every time you have two words in a field,
+
+06:15.580 --> 06:19.990
+they should be separated by underscore that's just best practices.
+
+06:20.560 --> 06:26.050
+If you look at any book, you will see that these fields, these properties, well, they look different
+
+06:26.320 --> 06:29.110
+because we are using this will be URL.
+
+06:29.980 --> 06:31.000
+There was a problem there.
+
+06:32.140 --> 06:38.500
+So because they were using a convention that we use in codling right sort of camel case and so forth,
+
+06:39.310 --> 06:40.300
+but we don't want that.
+
+06:40.300 --> 06:42.910
+We want to make sure that, for instance, this published date.
+
+06:43.860 --> 06:51.420
+When it goes to be saved, you know, a database should be something like this published underscore
+
+06:51.750 --> 06:52.110
+date.
+
+06:53.100 --> 07:00.960
+So how do we force this book to actually when it's ready to be saved to instead of having to fill to
+
+07:00.960 --> 07:05.400
+publish data such we have something like this in order to do that.
+
+07:05.610 --> 07:08.860
+We'll have to add getters and setters for our property name.
+
+07:08.880 --> 07:14.280
+Now this is the solution that I found because it was very difficult to figure out how to get this to
+
+07:14.280 --> 07:14.640
+work.
+
+07:15.330 --> 07:18.930
+And this is what is working as a recording of this video.
+
+07:19.230 --> 07:21.330
+So what do you need to do, for instance?
+
+07:22.770 --> 07:28.350
+First of all, I know that ID and title all the properties that have just single name, they don't need
+
+07:28.350 --> 07:31.020
+to have their proper name changed, right?
+
+07:31.320 --> 07:33.720
+Because it's just one single name.
+
+07:33.900 --> 07:37.830
+So it was just a show like this, the quote profession, so forth.
+
+07:38.340 --> 07:41.010
+So let's start with our full photo URL.
+
+07:41.190 --> 07:48.400
+So what you will have to do, you have to follow the say at get adaptation as such and then going to
+
+07:48.490 --> 07:50.190
+a property name.
+
+07:51.000 --> 07:56.280
+Notice now it's showing property name and it's Google Firebase property.
+
+07:56.280 --> 07:58.530
+They're very important.
+
+07:59.040 --> 08:05.850
+And then here I'm going to pass the value that I want to be saved as it's in this case, it's going
+
+08:05.850 --> 08:06.360
+to be what?
+
+08:06.420 --> 08:08.250
+Well, I can even be more specific.
+
+08:08.250 --> 08:17.340
+I can say, I want this to be something like book underscore, photo your LSH, and then I'll have to
+
+08:17.340 --> 08:21.180
+do the same thing by saying, set again.
+
+08:21.180 --> 08:22.380
+Property name.
+
+08:23.760 --> 08:26.000
+Do the same thing as you see here.
+
+08:26.010 --> 08:30.090
+Book photo the URL.
+
+08:30.300 --> 08:38.400
+So I have to pass to get and center properties to change these names when we're saving this data onto
+
+08:38.430 --> 08:39.630
+Firebase database.
+
+08:39.900 --> 08:40.320
+Very good.
+
+08:40.680 --> 08:46.650
+So I'm going to do the same thing for all the others that need to categorize as a need that actually
+
+08:46.650 --> 08:48.990
+so I can just go like this.
+
+08:49.590 --> 08:52.140
+So just copy that.
+
+08:53.880 --> 08:58.350
+And in this case, our published date, I'm just going to say publish.
+
+09:02.600 --> 09:03.050
+Date.
+
+09:07.710 --> 09:08.100
+Such.
+
+09:11.130 --> 09:14.010
+And I will do for the others, so you don't have to watch me do this.
+
+09:14.460 --> 09:18.900
+OK, so they're all done, so make sure you have all that set up.
+
+09:19.410 --> 09:24.120
+All of the the ones that have to boards like isn't easy.
+
+09:24.300 --> 09:25.740
+This is how they want to be saved.
+
+09:26.040 --> 09:26.370
+All right.
+
+09:26.490 --> 09:26.850
+Very good.
+
+09:27.240 --> 09:33.590
+Now the other thing also, we need to do you notice that I said earlier, if you remember in a while,
+
+09:33.870 --> 09:38.190
+whenever we see we save something or create a collection and we save something each.
+
+09:39.230 --> 09:46.040
+Something this case is going to be a document each one has it given ID, which means when we're saving
+
+09:46.910 --> 09:54.230
+this main book, we don't need to pass the ID name or I.D. of any kind because that is done already
+
+09:54.890 --> 09:56.900
+by Firebase.
+
+09:57.230 --> 10:05.660
+So how do we exclude this ID to be read or to be set when we pass values, when we pass this object?
+
+10:05.810 --> 10:12.200
+Well, all you do is say that again, exclude voila, there is that keyword again.
+
+10:12.590 --> 10:18.230
+Exclude annotation and it's from Google Firebase Story, which is very convenient and reassuring.
+
+10:18.800 --> 10:19.880
+And I can say exclude.
+
+10:20.930 --> 10:26.960
+This far, I'd still like that, so I can put that in one line so that it's more readable.
+
+10:27.200 --> 10:33.980
+OK, so now this will be excluded because the aid will still be there, but it will know that it's going
+
+10:33.980 --> 10:34.910
+to be decided here.
+
+10:34.910 --> 10:38.450
+So we don't need to pass that ID when we are saving this book.
+
+10:39.110 --> 10:39.520
+Very good.
+
+10:39.560 --> 10:42.410
+So now we have a complete end book, right?
+
+10:42.770 --> 10:49.250
+And I changed this to M Book because if you look back at our project, if you go to models, you will
+
+10:49.250 --> 10:50.510
+see that we have this.
+
+10:50.690 --> 10:51.080
+Let's see.
+
+10:51.080 --> 10:55.850
+Yeah, we do have this book a class that we we looked at earlier, right?
+
+10:55.870 --> 11:01.250
+So we actually don't quite use it, but we have that class, which in this case, we have items, kind
+
+11:01.310 --> 11:02.600
+total items and so forth.
+
+11:02.600 --> 11:04.100
+So we're not going to even use that.
+
+11:04.100 --> 11:09.320
+But I do want to have to have a contrast in this with these two classes.
+
+11:09.320 --> 11:10.490
+So that's why I said in my book.
+
+11:10.970 --> 11:11.550
+OK, very good.
+
+11:11.570 --> 11:16.790
+So now that we have an ebook going back to our book detail screen, we're going to be able to construct
+
+11:17.330 --> 11:24.980
+that book by passing all of the fields right and then be able to pass to save to Firebase and save that
+
+11:24.980 --> 11:27.740
+information, which we are going to be doing in the next video.

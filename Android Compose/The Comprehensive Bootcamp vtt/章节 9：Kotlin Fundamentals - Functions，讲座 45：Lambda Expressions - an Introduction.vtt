@@ -1,0 +1,394 @@
+WEBVTT
+
+00:00.780 --> 00:04.470
+So we've looked at functions who have been looking functions for a little bit right now.
+
+00:04.620 --> 00:08.230
+And so let's talk about something related to functions.
+
+00:08.280 --> 00:15.180
+We understand that functions encloses logic and then we can return something or do some computing inside
+
+00:15.180 --> 00:19.740
+of this structure and then we can return a result and so forth.
+
+00:20.160 --> 00:20.460
+OK.
+
+00:20.760 --> 00:23.820
+So if you look at this function here, it's a very simple.
+
+00:23.820 --> 00:24.930
+So we say fine.
+
+00:25.050 --> 00:27.010
+Add in a move pass two parameters.
+
+00:27.330 --> 00:33.810
+OK, so A and B, and then we expect to return an integer and this integer is going to be the sum of
+
+00:33.810 --> 00:34.710
+a plus b.
+
+00:35.070 --> 00:41.430
+So if you were to call this function, you would pass in into a six, 10 and b another 10.
+
+00:41.730 --> 00:49.140
+Then the result would be 20 because we returning a plus B, which in this case 10 plus 10 cuddling has
+
+00:49.350 --> 00:55.350
+a more succinct way of creating functions such as this or any kind of function, really.
+
+00:55.350 --> 00:56.250
+But let's start small.
+
+00:56.520 --> 01:01.980
+What I'm talking about is a simplification of a function like this into something like this.
+
+01:02.340 --> 01:07.980
+Now, if you look at this, it looks really strange and scary, but no worry, it's not that bad.
+
+01:08.520 --> 01:10.530
+This is what we call a lambda.
+
+01:10.650 --> 01:12.840
+What is a lambda expression will?
+
+01:12.840 --> 01:16.740
+A lambda expression is a shorter way of describing a function.
+
+01:17.010 --> 01:21.450
+So this is exactly the same function we had before I showed you earlier.
+
+01:21.660 --> 01:24.390
+Except now we're using a lambda expression.
+
+01:24.690 --> 01:29.150
+You can see here what we do is we sing vowels, so it's just like a variable.
+
+01:29.160 --> 01:32.050
+And then we are attach it to a lambda.
+
+01:32.070 --> 01:36.270
+So in this case, here we are, passing first to integers again, as you see there.
+
+01:36.540 --> 01:41.280
+And then we have that arrow that says that we will be expecting to receive an ENT value.
+
+01:41.670 --> 01:47.400
+And then we have the actual parameters that are going to be finding or sending right arguments in this
+
+01:47.400 --> 01:48.690
+case are going to be passing in.
+
+01:48.930 --> 01:51.150
+And then we have the result a plus B.
+
+01:51.510 --> 01:53.340
+So essentially, this is what we have.
+
+01:53.430 --> 01:55.590
+We have Val, that's the variable.
+
+01:55.800 --> 02:01.050
+And then we have to type in this case, the type of these lambda dysfunction that doesn't have any name.
+
+02:01.470 --> 02:05.940
+And then we have the parameters are going to be passing, which in this case A and B and D, we could
+
+02:05.940 --> 02:09.660
+have added or attached the types to A and B the parameters.
+
+02:10.020 --> 02:15.690
+But lambda in this case will infer from the types that we passing and the return type.
+
+02:15.930 --> 02:18.720
+You see that that these two will have to be integers.
+
+02:19.200 --> 02:21.180
+And of course, the body of a lambda.
+
+02:21.180 --> 02:23.820
+So the lambda starts, well, we have those curly braces.
+
+02:24.150 --> 02:24.410
+OK.
+
+02:24.840 --> 02:28.750
+So the body there is where we actually will say return or something.
+
+02:28.770 --> 02:31.440
+So what is that we can return a plus b?
+
+02:31.830 --> 02:37.200
+There are many advantages for using lambdas because as you can see, it's way easier for us to just
+
+02:37.200 --> 02:39.000
+look at Val some as an expression.
+
+02:39.130 --> 02:40.410
+We can use it right away.
+
+02:40.770 --> 02:41.070
+OK.
+
+02:41.610 --> 02:46.830
+Of course, there are many other advantages to using Lambda, but I just want to start slowly so you
+
+02:46.830 --> 02:53.010
+can get used to this idea because at first it's very strange to look at this syntax, but just marvel
+
+02:53.010 --> 02:55.370
+at how this looks very simple.
+
+02:55.380 --> 02:57.270
+We have two variable lambda types.
+
+02:57.510 --> 03:00.390
+We have two parameters and we have a body all in one line.
+
+03:00.870 --> 03:01.770
+And there you have it.
+
+03:02.580 --> 03:05.400
+So here it is, the same function that we've talked about.
+
+03:05.400 --> 03:06.400
+So very simple.
+
+03:06.400 --> 03:14.450
+So we have parameter A. Each type can be also in type, and we're returning an integer because A-plus
+
+03:14.460 --> 03:16.350
+B, it's going to be an integer.
+
+03:16.350 --> 03:17.780
+So that's what's happening here.
+
+03:17.790 --> 03:26.250
+So if I come here inside of me and say some past 12 and 12 such, and let's put that inside a print
+
+03:26.790 --> 03:27.750
+so we can see something.
+
+03:28.110 --> 03:29.580
+Let's go ahead and run.
+
+03:30.420 --> 03:32.820
+We can see 24 is showing here.
+
+03:33.300 --> 03:34.080
+OK, that's very good.
+
+03:34.530 --> 03:39.060
+Now to transform this into a lambda, we do as follow.
+
+03:39.450 --> 03:40.440
+We save Val.
+
+03:40.470 --> 03:45.030
+As I showed earlier, we can give any name we want for this variable sum.
+
+03:45.060 --> 03:49.590
+It's fine for now, let's just say, and just so that we don't have conflict with this sum here.
+
+03:49.600 --> 03:53.020
+So I say add and then we're going to create the type right?
+
+03:53.460 --> 04:00.720
+Meaning the types that we're going to be passing as arguments, also the type that will be returned.
+
+04:01.140 --> 04:05.490
+So we put all of that inside of parentheses, at least the parameters.
+
+04:05.880 --> 04:11.550
+This case is going to be an event and then we need to know what is the type we're going to be returning.
+
+04:11.790 --> 04:18.090
+We do that by actually seeing Dash and greater than a sign like this, and we're going to say it.
+
+04:18.360 --> 04:21.590
+That's the type we're going to be returning and then was say equal.
+
+04:21.600 --> 04:24.070
+So now we're going to add the actual lambda.
+
+04:24.090 --> 04:27.630
+So if you go like this, this is the land that we're talking about here.
+
+04:27.930 --> 04:28.350
+So what?
+
+04:28.350 --> 04:29.470
+We want to happen here?
+
+04:29.490 --> 04:34.710
+Well, we need to, of course, receive those values that we are going to be adding together.
+
+04:35.190 --> 04:40.110
+Those values are going to be we can say X, you can say D Y doesn't matter, really.
+
+04:40.650 --> 04:43.560
+But in this case, we're going to say a comma B.
+
+04:43.950 --> 04:49.320
+Those are the values that we're going to be receiving and we're going to do something with them, right?
+
+04:49.710 --> 04:56.580
+I could also specify, say, A and B enter a section that is also valid.
+
+04:56.910 --> 04:59.940
+But if you see this is a little bit redundant because, as I say.
+
+05:00.220 --> 05:06.070
+The types of passing here already inferred here, so we don't really need to add the types, they're
+
+05:06.280 --> 05:12.130
+also so going to get rid of those and then we're going to say return something in this case is going
+
+05:12.130 --> 05:13.090
+to be the body.
+
+05:13.210 --> 05:16.120
+So the body is where we're going to write the actual logic.
+
+05:16.450 --> 05:20.680
+So in this case, I'm going to say a plus B, and there you have it.
+
+05:20.920 --> 05:27.910
+So A and B, these represent whatever we passing as parameters or think of these as the actual function
+
+05:28.120 --> 05:29.680
+and the type in this case.
+
+05:30.070 --> 05:32.170
+Think of that as all of this part here.
+
+05:32.450 --> 05:32.740
+OK.
+
+05:32.950 --> 05:34.480
+So we're saying these are parameters.
+
+05:34.750 --> 05:38.500
+This is the type that we expected to receive from our lambda.
+
+05:38.800 --> 05:42.670
+And of course, inside of a parentheses, this is the lambda actual lambda.
+
+05:43.000 --> 05:44.650
+We're going to say past the value.
+
+05:44.650 --> 05:46.390
+In this case, it's going to be a and B.
+
+05:46.600 --> 05:49.960
+We could have put all of that inside like this.
+
+05:50.230 --> 05:54.760
+So a it's going to be the first parameter and B is the second one.
+
+05:55.030 --> 05:58.080
+And then we say Arrow, and then we have the body.
+
+05:58.090 --> 05:59.920
+So what is it that we want to do?
+
+06:00.410 --> 06:00.670
+Right?
+
+06:00.700 --> 06:03.520
+The result is going to be a plus b forget.
+
+06:03.820 --> 06:10.450
+So if I come here, I can just see print again and say, add like that and I'm going to go ahead and
+
+06:10.450 --> 06:13.870
+pass in this case, 12 and 10.
+
+06:14.560 --> 06:17.050
+So one can see, let's see, print l.
+
+06:17.050 --> 06:25.780
+And that way we have a new line this one again, and you can see we have this some showing 22.
+
+06:26.020 --> 06:29.790
+So to define a lambda expression is always thinking this term.
+
+06:29.830 --> 06:31.840
+So we have Val the lambda name.
+
+06:32.140 --> 06:34.900
+In this case, you can see we said add that's lambda name.
+
+06:35.470 --> 06:38.380
+And then we have call in and then we have put past into type.
+
+06:38.440 --> 06:39.970
+So all of this is a type now.
+
+06:40.390 --> 06:43.740
+We will see later that sometimes you don't want to return anything.
+
+06:43.810 --> 06:44.650
+We'll see you later.
+
+06:44.890 --> 06:46.390
+How to return void.
+
+06:46.900 --> 06:51.550
+OK, in this case, we pass the types and then it will say equal, and then we pass the parameter list.
+
+06:51.850 --> 06:55.390
+So in this case, we only have two parameters because that's where we specify.
+
+06:55.400 --> 07:01.450
+But if we had another parameter here, let's say a string, and then that means then here it can pass
+
+07:01.870 --> 07:07.690
+a string like say, See, OK, this trend is never used it, then we can't actually do anything.
+
+07:07.690 --> 07:08.650
+But in this case, there it is.
+
+07:08.890 --> 07:14.860
+So you can see now is a print ad. Here it's going to be expecting a string and going to see an empty
+
+07:14.860 --> 07:16.090
+string or hello.
+
+07:16.660 --> 07:21.400
+If you run again, you can see nothing with this change because we haven't really use this string here.
+
+07:21.430 --> 07:22.570
+It was just an example.
+
+07:22.960 --> 07:26.590
+So I'm going to just remove this and get rid of this as well.
+
+07:27.100 --> 07:34.060
+And this OK, so we can pass a list of parameters and then we have the arrow right and then we have
+
+07:34.060 --> 07:35.440
+the code body.
+
+07:35.680 --> 07:37.330
+So this is the code body here.
+
+07:37.720 --> 07:45.010
+So as an exercise, I would like you to create a normal function like we did here some and then translate
+
+07:45.010 --> 07:47.400
+it into a lambda expression.
+
+07:47.410 --> 07:52.000
+So the function that I would like you to work with is this calculate that age.
+
+07:52.090 --> 07:54.610
+So we already have this function here.
+
+07:54.610 --> 07:59.980
+I want you to transform that into a lambda, just like we did with add here.
+
+08:00.700 --> 08:06.340
+Before you go to the next video, go ahead and transform this function into a lambda expression.

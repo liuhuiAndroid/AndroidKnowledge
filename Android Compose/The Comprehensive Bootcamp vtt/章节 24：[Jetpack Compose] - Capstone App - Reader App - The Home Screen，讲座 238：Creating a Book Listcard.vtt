@@ -1,0 +1,541 @@
+WEBVTT
+
+00:00.090 --> 00:04.260
+Now, for those of you who are bothered by the fact that this is in the middle here, we can change
+
+00:04.260 --> 00:08.700
+it because remember, this is part of our home content, which means we're inside of our column and
+
+00:08.700 --> 00:15.000
+we said vertical arrangement here would save space evenly because we're going to have other user interfaces,
+
+00:15.000 --> 00:15.600
+pieces there.
+
+00:16.080 --> 00:21.780
+But if you want, we can just say, let's change this arrangement here to top like this.
+
+00:22.440 --> 00:25.980
+And if we run, we should see this is going to go to work.
+
+00:26.340 --> 00:27.090
+It's supposed to.
+
+00:28.360 --> 00:29.320
+And there you have it.
+
+00:29.800 --> 00:34.350
+Next, let's start putting together these items.
+
+00:34.750 --> 00:37.630
+So we have this card that looks really nice.
+
+00:38.080 --> 00:43.750
+And you will see then that this card here is used throughout this page throughout the screen, which
+
+00:43.750 --> 00:48.670
+means we need to actually create a composable that can be reused anywhere else we want.
+
+00:48.940 --> 00:56.620
+OK, now before we move forward, I do realize we have a few things inside of our reader home here that
+
+00:57.070 --> 01:01.150
+perhaps this should be taken somewhere else.
+
+01:01.720 --> 01:05.740
+For instance, we can move this title section somewhere else right in our components.
+
+01:06.280 --> 01:08.980
+Just cut all of this.
+
+01:11.710 --> 01:18.580
+Good components and just add it there, which means now we'll have to call it.
+
+01:20.070 --> 01:21.210
+Or import it.
+
+01:21.900 --> 01:23.490
+Such a good.
+
+01:25.030 --> 01:28.020
+Close this down and also.
+
+01:29.450 --> 01:33.890
+Our reader, that app here, we could remove that.
+
+01:36.490 --> 01:37.030
+And add.
+
+01:38.220 --> 01:40.050
+To our component here.
+
+01:44.900 --> 01:47.180
+Which means this will also have to happen.
+
+01:47.470 --> 01:52.310
+I did so just restructuring a few things here and for now, because we're going to be working and reading
+
+01:52.310 --> 01:53.740
+right now that that's fine.
+
+01:53.750 --> 01:56.600
+We can also move this away from here.
+
+01:56.600 --> 02:04.880
+Our fat content and add to our component looks like in this case, we need to pass important alignment
+
+02:04.880 --> 02:06.770
+for this to work inside here.
+
+02:07.790 --> 02:08.240
+That's good.
+
+02:08.960 --> 02:15.840
+OK, let's go back and import this RFP that.
+
+02:16.340 --> 02:17.960
+So now things are a little bit cleaner.
+
+02:18.470 --> 02:23.000
+We'll move this reading right now, area as we work on it later.
+
+02:23.390 --> 02:23.690
+All right.
+
+02:23.690 --> 02:26.630
+So in our column here, this is in our home content.
+
+02:27.200 --> 02:32.720
+What we have so far is this, which is great.
+
+02:33.170 --> 02:36.530
+Now we want to start working on this card.
+
+02:36.770 --> 02:40.310
+So let me create another composable here.
+
+02:40.340 --> 02:44.600
+Let's make it preview first and say composable.
+
+02:45.650 --> 02:47.060
+And of course, the next function.
+
+02:47.240 --> 02:50.060
+Call this list card book card list cards.
+
+02:50.060 --> 02:50.630
+Same thing.
+
+02:50.630 --> 02:52.280
+Let's call it list card section.
+
+02:53.280 --> 02:55.640
+All right, we have to pass a few things.
+
+02:55.640 --> 02:58.580
+Of course, the first thing is I'm going to pass the book that we want to show.
+
+02:58.730 --> 02:59.810
+So it's going to be a book.
+
+03:00.110 --> 03:06.140
+It's going to be our M book like this in form and book for now because we want to test things out as
+
+03:06.140 --> 03:06.680
+we go.
+
+03:06.830 --> 03:11.590
+Let's go ahead and set it to a book here and book it.
+
+03:12.080 --> 03:20.930
+Let's just put gibberish and title running authors me and you.
+
+03:23.220 --> 03:24.000
+For the notes.
+
+03:25.870 --> 03:28.740
+Let's just say hello, world.
+
+03:30.750 --> 03:32.200
+And that should be good for now.
+
+03:32.290 --> 03:38.070
+OK, so this is so that way so that we are able to actually use the preview and another one is going
+
+03:38.070 --> 03:39.180
+to be on press.
+
+03:40.910 --> 03:42.640
+Details, OK.
+
+03:42.740 --> 03:45.800
+This all makes sense in a second here, I'm going to pass it string.
+
+03:46.340 --> 03:50.570
+It's going to be most likely an idea of some sort and unit like this.
+
+03:51.320 --> 03:56.300
+OK, can we just set up two nothing more empty there?
+
+03:56.840 --> 04:01.650
+What are we doing here really is that we're passing all the the actual book, right?
+
+04:01.670 --> 04:07.670
+Because the idea is that the Liscard will have to have a book object so we can populate with it, right?
+
+04:08.510 --> 04:13.730
+But also, most importantly, we want to make sure that when it's clicked, read this card is clicked.
+
+04:13.730 --> 04:20.900
+We either want to go to the details about this book or update and so forth, so we want to pass a clickable
+
+04:20.900 --> 04:21.820
+event there.
+
+04:22.610 --> 04:28.400
+Most importantly, also, we want to pass some sort of ID because we want a way to know what is clicking
+
+04:28.760 --> 04:31.700
+and so that we can retrieve information of that book.
+
+04:32.030 --> 04:33.260
+What are we going into?
+
+04:33.270 --> 04:34.670
+Details or update screen?
+
+04:34.880 --> 04:38.330
+All right now, let's construct our view, our card.
+
+04:38.840 --> 04:42.860
+So I'm going to say it card right to use a card composable.
+
+04:45.440 --> 04:50.930
+And right away, being a past a shape, it was we need a shape, of course, and we say rounded corners.
+
+04:51.410 --> 04:56.000
+And I'm going to just say 29 deep and I'm going to give a background color.
+
+04:56.370 --> 04:57.230
+I say color.
+
+04:57.440 --> 05:04.340
+I'm just going to give a white color, give an elevation of about six deep.
+
+05:07.190 --> 05:08.900
+And let's pass a modifier here.
+
+05:11.640 --> 05:14.880
+Padding of about also 16 deep around.
+
+05:18.030 --> 05:21.170
+I'm going to give a height of about two.
+
+05:22.240 --> 05:29.410
+Forty two dpi, this all these numbers, I have thought about them, of course, but it can play around
+
+05:29.410 --> 05:33.130
+with it about two or two dpi for the width.
+
+05:34.150 --> 05:38.170
+And I also want to make this clickable, of course.
+
+05:38.170 --> 05:44.230
+And when this is clickable or clicked, I should say we're going to call it on press details and I'm
+
+05:44.230 --> 05:49.210
+going to call the Invoke in this case pass or book that title.
+
+05:50.020 --> 05:50.280
+OK.
+
+05:51.190 --> 05:55.610
+It looks like we have some issues of go ahead and drop that with either two a string.
+
+05:55.630 --> 05:57.070
+Let's just say two string, that's fine.
+
+05:57.430 --> 06:03.250
+So right now, it's going split and see if we can see something, hopefully and see there we go.
+
+06:03.260 --> 06:06.610
+We have that list card which resembles this.
+
+06:07.120 --> 06:09.640
+Now onto the contents of this card.
+
+06:10.030 --> 06:16.500
+I'm going to start by adding a column first and I'm going to pass a modifier.
+
+06:16.510 --> 06:23.470
+And I'm going to say the width here of this column is going to depend on a few things.
+
+06:23.470 --> 06:31.630
+So I'm going to actually make it a little bit more dynamic in that I want the with to be depending on
+
+06:31.630 --> 06:35.200
+the items that we are adding inside of this card.
+
+06:35.590 --> 06:35.860
+OK.
+
+06:36.400 --> 06:42.730
+So for that at the top here, I'm going to create a variable and I'm going to set it to this screen
+
+06:42.730 --> 06:44.440
+width for that.
+
+06:44.680 --> 06:46.780
+Before I do that, I have to pass a few things.
+
+06:46.780 --> 06:53.140
+So first of all, let's go ahead and create a vowel and call this display matrix.
+
+06:53.980 --> 07:00.370
+And this is going to be from resources that display metrics.
+
+07:01.000 --> 07:03.490
+OK, so what is this about?
+
+07:03.520 --> 07:05.500
+Well, first of all, we need to create this resources.
+
+07:05.620 --> 07:11.590
+And before we even do that, we need to create the context because we need to get the context class
+
+07:11.590 --> 07:14.470
+really of this entire composable.
+
+07:14.470 --> 07:19.690
+So it knows exactly everything about the drawing, about the information about this composable.
+
+07:19.690 --> 07:28.300
+So I'm going to say for context, when I use the local context provider, will composable local context
+
+07:29.200 --> 07:33.790
+can read a bit about it doesn't have much, but it's this provides it provides a context that can be
+
+07:33.790 --> 07:35.270
+used by Android application.
+
+07:35.300 --> 07:41.350
+So I want to say get the current like this to get current context, and then I'm going to create the
+
+07:41.350 --> 07:46.090
+resources, which is going to be through our context that get resources.
+
+07:46.330 --> 07:51.560
+So this will get the resources, like I said, for us to get, for instance, the display metrics so
+
+07:51.590 --> 07:53.530
+could see here, it's from Android util.
+
+07:53.530 --> 07:55.510
+That display metrics are what really does.
+
+07:55.750 --> 07:59.890
+It gets the information about where we are displaying our app, right?
+
+07:59.900 --> 08:06.790
+So the sizes and so forth internally, we need that for this to say, Wow, now I'm going to get the
+
+08:06.790 --> 08:07.750
+screen with.
+
+08:09.910 --> 08:11.190
+Such and how do I do that?
+
+08:11.330 --> 08:16.300
+I going to use the display metrics and I'm going to say get the width pixels.
+
+08:16.600 --> 08:22.420
+So now it's going to get the width of the screen if it's a TV screen is going to get that with if it's
+
+08:22.570 --> 08:27.940
+a pixel phone as such is going to get the whole width of the screen internally.
+
+08:28.480 --> 08:28.750
+All right.
+
+08:28.810 --> 08:34.150
+To get the actual screen width, I'm going to, of course, do this display metrics in this case with
+
+08:34.180 --> 08:43.110
+pixels, and I'm going to divide that by display metrics, density of the phone.
+
+08:43.120 --> 08:45.490
+That way, I can get the actual screen width.
+
+08:45.700 --> 08:46.360
+That's what I need.
+
+08:46.810 --> 08:50.800
+So now I can use that screen with what's going to be the true screen width, if you will.
+
+08:51.130 --> 08:53.470
+And I'm going to pass in center of a column here.
+
+08:53.560 --> 08:59.650
+I'm going to pass screen with that dpi get a dpi unit of it right?
+
+08:59.980 --> 09:07.160
+And I'm going to subtract that by spacing, which is also multiplied by two.
+
+09:07.180 --> 09:09.810
+And let's go ahead and create this spacing real quick here.
+
+09:09.820 --> 09:15.820
+So Val spacing just going to give a 10, but I'm going to use a screen with that was just completed
+
+09:15.820 --> 09:21.280
+and I'm going to subtract the product of the spacing, which is 10 and two.
+
+09:21.290 --> 09:21.940
+So 20.
+
+09:21.940 --> 09:30.460
+So I'm going to have subtract here 20 units and then still here, I'm going to pass a horizontal alignment
+
+09:30.460 --> 09:31.360
+to say alignment.
+
+09:31.360 --> 09:35.980
+I want it to be at the start, meaning it's going to be to the right.
+
+09:37.020 --> 09:44.040
+Right at the beginning, right now, I'm going to pass over Roe because now I'm going to look at this
+
+09:44.040 --> 09:49.770
+section and this is a rope because we have an image of a book and then we have this other these two
+
+09:49.770 --> 09:51.210
+items here, right?
+
+09:51.570 --> 09:55.680
+That means I'm going to have a row and then have column because I have to have these two top to bottom.
+
+09:55.950 --> 09:59.370
+So I'm going to pass horizontal arrangement here.
+
+10:00.180 --> 10:07.230
+I want to say Arrangement Center and I'm going to add a column I did, I said, which was going to work
+
+10:07.230 --> 10:08.670
+on later here.
+
+10:08.670 --> 10:13.920
+I'm going to first put together or add an image like this might.
+
+10:14.940 --> 10:21.720
+So I'm going to add an image like this, so I'm going to use the image in passing the painter here real
+
+10:21.720 --> 10:22.050
+quick.
+
+10:22.680 --> 10:29.580
+And because we want to make sure that these images will be coming actually from the URL that we get
+
+10:29.580 --> 10:30.210
+from our books.
+
+10:30.570 --> 10:31.740
+I'm going to pass here.
+
+10:31.740 --> 10:33.030
+I'm going to say something like this.
+
+10:33.570 --> 10:35.200
+Well, I don't have the image yet.
+
+10:35.460 --> 10:39.300
+Later, I'm going to say something like this book dot and get to the photo.
+
+10:39.630 --> 10:40.170
+You're out.
+
+10:40.200 --> 10:41.090
+We don't have that yet.
+
+10:41.100 --> 10:41.700
+We'll get there.
+
+10:41.850 --> 10:48.390
+Now I'm going to pass a photo here, and I will just say, remember because I'm going to be using actually
+
+10:48.660 --> 10:54.660
+coil, which is a library used to load images, which makes it much easier and faster, so we don't
+
+10:54.660 --> 10:55.680
+have to worry about anything.
+
+10:56.080 --> 10:59.220
+So it's called Remember image painter.
+
+10:59.400 --> 11:06.060
+This case, I'm going to use the data such and I can pass the URL, which I can get something and add
+
+11:06.060 --> 11:06.330
+there.
+
+11:06.720 --> 11:11.310
+And let's just for description, I'm going to just say book image.
+
+11:11.610 --> 11:13.440
+Now I'll remember image painter here.
+
+11:13.440 --> 11:19.950
+You can see that it comes from Croyle Compose, which is a library that we add dependency of.
+
+11:20.550 --> 11:25.290
+If we go back to a project, make sure that you have this because otherwise this is not going to work.
+
+11:25.710 --> 11:27.490
+You see, we have coil.
+
+11:27.510 --> 11:29.120
+I've added coils somewhere.
+
+11:29.220 --> 11:31.140
+See this dependency.
+
+11:31.140 --> 11:32.210
+It's important to have that.
+
+11:32.220 --> 11:35.190
+Otherwise you're not going to see not going to be able to use it.
+
+11:35.520 --> 11:42.720
+All right, now this image here, we want to make it modify it, last pass modifier on fire.
+
+11:42.750 --> 11:50.550
+And I want the height of this image to be about 140 deep and the width of about 100 dpi.
+
+11:52.180 --> 11:59.350
+And I'm going to give it a little patting of about 40 like and I'm going to put a spacer right between
+
+11:59.350 --> 12:03.100
+these two, so I'm going to say of about 50 deep.
+
+12:03.520 --> 12:10.750
+What we're doing here really is that we've created this structure where the image is going to be.
+
+12:11.020 --> 12:12.880
+And we're going to give it a little bit space.
+
+12:13.950 --> 12:14.280
+Right.
+
+12:14.310 --> 12:20.550
+That's why we put the width of 50 so that we can then have this column, which is going to have these
+
+12:20.550 --> 12:22.830
+two items in this column there, right?
+
+12:23.160 --> 12:23.530
+Very good.
+
+12:23.550 --> 12:24.690
+So we're making progress.
+
+12:25.020 --> 12:26.280
+We'll continue next.

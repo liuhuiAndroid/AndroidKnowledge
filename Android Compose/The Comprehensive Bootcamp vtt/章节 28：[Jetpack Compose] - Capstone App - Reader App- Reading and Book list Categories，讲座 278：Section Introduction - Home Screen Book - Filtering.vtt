@@ -1,0 +1,52 @@
+WEBVTT
+
+00:00.330 --> 00:04.630
+So we finished the update screen and everything is working fine.
+
+00:04.650 --> 00:10.560
+Now we want to go back to our main screen, our home screen, because we need to restructure a few things.
+
+00:10.920 --> 00:16.500
+First of all, if you remember correctly from the beginning of this course, or at least the beginning
+
+00:16.620 --> 00:23.490
+of the sections where we started putting together this app, I said that the idea is here is to categorize
+
+00:23.610 --> 00:26.180
+these books into two categories.
+
+00:26.190 --> 00:31.980
+The first one at the top is going to be the what the user is reading right now, and at the bottom it's
+
+00:31.980 --> 00:33.240
+going to just be the reading list.
+
+00:33.240 --> 00:36.720
+So if you users, when they add the book, all the added book.
+
+00:37.640 --> 00:40.070
+We'll go to the bottom trawling list.
+
+00:40.550 --> 00:47.600
+It's not until they click on the reading list item and they go to update the book and they can say,
+
+00:47.600 --> 00:49.040
+OK, I'm starting reading this.
+
+00:49.340 --> 00:54.710
+And if they do so, the moment they say started reading this, then we're going to transfer that book
+
+00:54.890 --> 00:57.320
+onto the you are reading activity right now.
+
+00:57.530 --> 00:59.210
+OK, so the top category.
+
+01:00.170 --> 01:02.610
+So that is the structure that is the flow.
+
+01:02.630 --> 01:07.130
+We need to add to this app to make it really work and worthwhile.
+
+01:07.610 --> 01:08.660
+OK, let's go ahead and do that.

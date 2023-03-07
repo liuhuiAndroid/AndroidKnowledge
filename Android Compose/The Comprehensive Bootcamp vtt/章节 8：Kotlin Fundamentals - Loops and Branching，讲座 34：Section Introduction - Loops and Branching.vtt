@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.450 --> 00:01.680
+So welcome to the section.
+
+00:01.800 --> 00:06.240
+It's very exciting, always to start a new section because we're going to learn something new, hopefully.
+
+00:06.510 --> 00:12.480
+OK, so when we talk about computing, we're talking about a lot of things, but basically we get everything
+
+00:12.480 --> 00:12.900
+out.
+
+00:12.930 --> 00:18.030
+When you talk about a programming file or a program in general, we're talking about ways in which we
+
+00:18.030 --> 00:21.640
+can take data, manipulate that data and get a result, right?
+
+00:21.660 --> 00:26.850
+But in this process of manipulating that data, there are a lot of decisions that have to be made,
+
+00:26.850 --> 00:34.560
+meaning that we have to create a tree like conditions that will respond to the data that we are passing
+
+00:34.560 --> 00:34.900
+through.
+
+00:34.920 --> 00:36.150
+What that means is as follow.
+
+00:36.510 --> 00:41.280
+So the idea of a program is that we create certain conditions, right?
+
+00:41.400 --> 00:47.400
+These conditions will allow us to then create some sort of a tree that will go and do certain things
+
+00:47.430 --> 00:48.390
+X, Y and Z.
+
+00:48.690 --> 00:50.040
+So the many is as follows.
+
+00:50.040 --> 00:56.220
+So if you have a condition that will spit out either true or false, so if condition X is true, then
+
+00:56.220 --> 00:59.010
+it will run code block B or do something.
+
+00:59.400 --> 01:02.730
+And if it's false, then write code Block eight.
+
+01:03.000 --> 01:07.110
+That's the condition that is tree like ramification that we're talking about here.
+
+01:07.380 --> 01:12.750
+But also, we can say else, if some other condition happens, then we're going to do Franko Block C.
+
+01:12.930 --> 01:15.080
+OK, so this is what we call branching.
+
+01:15.090 --> 01:19.760
+So we're creating these branches in our code, in our program that will do something.
+
+01:19.770 --> 01:22.530
+All of this is actually driven by data.
+
+01:22.860 --> 01:26.850
+So there's also a need to repeat certain tasks.
+
+01:27.030 --> 01:33.620
+For instance, we can say, while X is less than 10 or 100, we want to repeat a certain task.
+
+01:33.630 --> 01:39.690
+That's what we call looping when we take these two topics of branching and loops in any programming
+
+01:39.690 --> 01:40.370
+language, really.
+
+01:40.440 --> 01:46.920
+This is what makes a program a program, because now it on its own can make those decisions can repeat
+
+01:46.920 --> 01:51.870
+certain tasks that it needs to repeat until a certain condition is met and then gets out of that loop
+
+01:52.110 --> 01:58.590
+and then goes back to the branching and goes back and forth until the program is finished running all
+
+01:58.590 --> 01:59.460
+it needs to run.
+
+01:59.640 --> 02:05.430
+So this is what are we going to be focusing now to understand how the basics at least of loops and branching,
+
+02:05.430 --> 02:10.020
+you know, code so we can be a little bit more dangerous with what we can do with coupling?
+
+02:10.170 --> 02:11.400
+OK, let's go ahead and get started.

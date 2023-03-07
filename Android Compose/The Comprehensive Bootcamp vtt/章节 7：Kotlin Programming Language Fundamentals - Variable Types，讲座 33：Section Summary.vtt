@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.780 --> 00:06.510
+So far, we've done a lot in terms of learning about cuddling, so we went through and learned very
+
+00:06.510 --> 00:12.960
+basics to learn about variables, how to create a fire, which is a mutable variable and foul, immutable
+
+00:12.960 --> 00:13.380
+variable.
+
+00:13.500 --> 00:18.890
+And we learn that best practice is in essence, to always use foul over far.
+
+00:19.150 --> 00:26.700
+We're able to declare variables and explicitly initializing those variables, which is a good way of
+
+00:26.700 --> 00:32.100
+thinking about showing exactly what types are we creating as we create those variables.
+
+00:32.250 --> 00:39.570
+Even though most is integrated development environments such as Android Studio, they may find certain
+
+00:39.570 --> 00:40.890
+ways that we put together.
+
+00:40.890 --> 00:45.600
+These initialization is redundant, but it's always important to think in those terms because that is
+
+00:45.600 --> 00:49.350
+exactly what's happening in the back end, as you see here in this example, right?
+
+00:49.590 --> 00:54.450
+We explicitly saying that these variable name will always be a string target.
+
+00:54.480 --> 00:59.880
+And also we learn about the a different way to initialize variables so we can initialize them and give
+
+00:59.880 --> 01:00.480
+them a type.
+
+01:00.480 --> 01:06.120
+And then later on and say name is equal to James, for instance, to initialize that variable.
+
+01:06.270 --> 01:09.090
+So we declare the variable, the type and so forth.
+
+01:09.090 --> 01:10.800
+And then we add something like variable.
+
+01:10.830 --> 01:14.310
+Then we moved on to looking at basic types in Kotlin.
+
+01:14.310 --> 01:17.190
+So first we divided these types into two groups.
+
+01:17.310 --> 01:18.730
+The first one is the whole number.
+
+01:18.760 --> 01:20.850
+So we have integer bytes in short.
+
+01:20.940 --> 01:26.700
+And then second group was floating point types as we call those decimal numbers so doubles and.
+
+01:27.420 --> 01:33.810
+Now for our basic ones, the whole numbers integer, of course, is the most used, commonly used and
+
+01:33.810 --> 01:34.920
+we have byte in short.
+
+01:34.920 --> 01:40.530
+So the idea is to always think in terms of of, OK, when do I use one over the other?
+
+01:40.890 --> 01:48.240
+Not all of them are created equally because internally in memory, they have a certain capped size.
+
+01:48.570 --> 01:52.830
+OK, so four floating points types, we have double in float.
+
+01:52.920 --> 01:58.590
+So the thing to remember here is that if you need precision, you will always use double because double
+
+01:58.830 --> 02:04.300
+has more space, meaning the size of a double is larger than of a float.
+
+02:04.320 --> 02:10.710
+Hence, we are able to store more decimals in a double than we can in a float.
+
+02:10.890 --> 02:11.160
+OK.
+
+02:11.370 --> 02:18.180
+And then we looked at some basics operators such as multiplication, addition, subtraction, division
+
+02:18.180 --> 02:20.280
+and the modulo operator.
+
+02:20.580 --> 02:25.920
+OK, so we are set for the basics, at least for to understand how these, because they call them primitive
+
+02:25.920 --> 02:27.150
+types, can work.
+
+02:27.270 --> 02:33.870
+And we can at this point be somewhat dangerous when it comes to understanding how the basics work.
+
+02:34.050 --> 02:40.080
+Now we're going to move on to loops and branching, so we understand now how to create conditions so
+
+02:40.080 --> 02:47.040
+that we can then have some sort of a tree like map of, OK, this condition is true, then this will
+
+02:47.040 --> 02:47.520
+happen.
+
+02:47.640 --> 02:52.420
+If this is not true, then that will happen else if this other thing will happen.
+
+02:52.450 --> 02:58.230
+OK, so create some sort of like a tree of conditions in decisions that will be responding depending
+
+02:58.230 --> 03:03.600
+on the data that we're filling in, which essentially is how computers programs work.
+
+03:03.840 --> 03:06.150
+OK, let's go ahead and get started.
+
+03:06.450 --> 03:06.780
+All right.
+
+03:06.780 --> 03:08.160
+So that's what I'm going to be doing next.

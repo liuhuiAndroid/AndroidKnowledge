@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00.510 --> 00:02.700
+One thing you'll notice, among many other things.
+
+00:03.180 --> 00:08.370
+No one, we said that we want to change these values so that they resemble percentages, right?
+
+00:08.520 --> 00:09.300
+And we'll get there.
+
+00:09.990 --> 00:15.180
+But the other thing you see, if you look at the original slider, we see these dividers here, right?
+
+00:15.240 --> 00:21.300
+So these were very helpful because it will kind of give the users a visual representation of visual
+
+00:21.330 --> 00:26.740
+aid as to the the chunks that they can increment with.
+
+00:26.760 --> 00:27.150
+OK.
+
+00:27.780 --> 00:34.290
+So what we can do if you have her over on a slider and go first of all, close this down, hover over
+
+00:34.290 --> 00:39.600
+on our slider here can see we can also pass as you know, it's a composable can pass values.
+
+00:39.600 --> 00:40.710
+We can pass parameters.
+
+00:40.770 --> 00:47.370
+In fact, you can see that we can pass here arguments, one of which is range as well as steps.
+
+00:47.460 --> 00:48.690
+Let's start with steps.
+
+00:49.500 --> 00:55.110
+So make sure it would click inside here close to the first parenthesis.
+
+00:55.590 --> 00:58.900
+And then what I'm going to do is put a comma section.
+
+00:59.190 --> 01:03.600
+First of all, let's put a modifier because that seems to just make our day
+
+01:06.000 --> 01:10.920
+modifier such and I want to give a padding.
+
+01:11.430 --> 01:16.800
+In this case, they start padding when I say start right from left to right.
+
+01:18.360 --> 01:22.120
+I want to have some sort of indentations and with 16 dpi, that's fine.
+
+01:22.620 --> 01:29.160
+And the end padding to the right, on to the left, I'm going to see also 16 dpi.
+
+01:29.250 --> 01:29.550
+All right.
+
+01:29.580 --> 01:29.970
+There we go.
+
+01:30.720 --> 01:34.260
+So what this will do, it will just indent this to the right.
+
+01:35.570 --> 01:37.520
+And this to the left, that's what we're doing there.
+
+01:38.560 --> 01:46.360
+So let's see what else can we do after automatic fire, we can pass now the steps right to show how
+
+01:46.360 --> 01:52.450
+can we limit our entire slider so you can pass an integer here?
+
+01:52.460 --> 01:54.820
+For me, I just want past five.
+
+01:54.970 --> 01:58.230
+So if you have a over here steps, it will tell you exactly what that means.
+
+01:58.230 --> 02:04.270
+So if greater than zero, it specifies the amounts of discrete values evenly distributed between across
+
+02:04.270 --> 02:05.620
+the whole value range.
+
+02:06.040 --> 02:07.930
+And now let's go ahead and run again.
+
+02:08.180 --> 02:11.590
+Slide incrementing, you can stop there and continue like that.
+
+02:11.740 --> 02:15.880
+And the other argument can pass if you have over is on file, you change finished.
+
+02:16.300 --> 02:18.780
+We're not going to use this, but you can if you want.
+
+02:18.790 --> 02:23.950
+What that means is that this is going to be a callback can pass an anonymous function in this case,
+
+02:23.950 --> 02:30.070
+a lambda that will be called when we have stopped moving or sliding.
+
+02:30.340 --> 02:31.570
+In this case, this light.
+
+02:32.020 --> 02:38.180
+OK, so we're not going to use that, but you can experiment with that on valid changed, right?
+
+02:38.210 --> 02:38.910
+It's a lambda.
+
+02:38.920 --> 02:45.580
+You can just go ahead here and say something like log D, or you can do more calculation to say, OK,
+
+02:45.580 --> 02:50.230
+once they've stopped moving, we can retrieve their value and do whatever we want to do.
+
+02:50.850 --> 02:51.130
+OK?
+
+02:51.490 --> 02:52.400
+We're not going to use that.
+
+02:52.420 --> 02:55.000
+I just wanted to show you in a way this comment that out.
+
+02:55.570 --> 02:55.900
+All right.
+
+02:56.020 --> 03:03.670
+So we have our slider and we have our either on a face, even though we are missing this part here.
+
+03:03.670 --> 03:10.930
+But that part is already done and we've done that part and is at the top so we can actually call it.
+
+03:10.990 --> 03:11.560
+Let's see.
+
+03:12.700 --> 03:16.150
+To make things easier, I'm going to call that.
+
+03:17.540 --> 03:18.560
+Our top header.
+
+03:21.140 --> 03:22.640
+Right about here, I guess a top
+
+03:25.640 --> 03:26.690
+hat like this.
+
+03:28.320 --> 03:31.020
+Right side of my bill form.
+
+03:32.560 --> 03:34.380
+Let's run and see if that's going to work.
+
+03:38.160 --> 03:40.470
+And voila, looks really nice.
+
+03:40.620 --> 03:44.850
+The top header, so the whole application started to look like this.
+
+03:44.880 --> 03:46.830
+Now we have some little bit minor issues.
+
+03:46.830 --> 03:47.850
+Of course we can change that.
+
+03:48.090 --> 03:53.520
+You see, the padding is a little bit different, which means what we have here on our top card is a
+
+03:53.520 --> 03:54.480
+little bit smaller.
+
+03:54.840 --> 03:58.680
+That tells me there is more padding around it so we can change that.
+
+03:59.130 --> 04:05.010
+Let's go back to our card or top hat or should say a command.
+
+04:05.970 --> 04:13.170
+Click on that or control Class B on windows and we can go to our modifiers and give it perhaps a more.
+
+04:16.880 --> 04:18.620
+And give it that padding that we want.
+
+04:20.390 --> 04:22.310
+So it can come up here and say that.
+
+04:23.960 --> 04:29.240
+General padding of maybe 20 dpi such.
+
+04:31.740 --> 04:32.040
+OK.
+
+04:32.270 --> 04:33.090
+It looks real nice.
+
+04:33.480 --> 04:34.200
+My much better.
+
+04:34.830 --> 04:38.560
+Close to what we have here so we can play around with that, maybe that was a little bit too much,
+
+04:38.580 --> 04:40.620
+I can say maybe 15.
+
+04:41.860 --> 04:42.580
+Just to see.
+
+04:43.530 --> 04:44.580
+What changes will see?
+
+04:49.710 --> 04:49.960
+OK.
+
+04:50.100 --> 04:54.090
+Much better, I think that looks pretty close to what we have here.
+
+04:55.230 --> 04:58.760
+So at this point, we're able to put together the user interface, right?
+
+04:58.770 --> 05:02.840
+So now they look pretty much the same, at least for what we are going for.
+
+05:03.180 --> 05:04.440
+And that's wonderful.
+
+05:04.620 --> 05:10.920
+And I hope you're seeing a pattern of what were you doing with compose or do you create little chunks
+
+05:11.280 --> 05:16.950
+of the user interface and you can put them together by calling those functions as compose or functions
+
+05:17.130 --> 05:20.610
+inside of other compose functions and go from there?
+
+05:20.820 --> 05:21.030
+OK?
+
+05:21.420 --> 05:27.180
+But the most important thing is to remember that along you have to also have the state OK, because
+
+05:27.180 --> 05:34.440
+all of these widgets, all of these composable, they react to the values we passing in form of a state.
+
+05:35.340 --> 05:43.290
+So now we're ready to start putting together the logic behind the actual calculations to actually calculate
+
+05:43.290 --> 05:44.910
+the tip that we may need to pay.
+
+05:45.420 --> 05:48.120
+OK, let's go ahead and get started next.

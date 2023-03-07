@@ -1,0 +1,526 @@
+WEBVTT
+
+00:00.150 --> 00:06.300
+All right, so we need to install Android Studio, which is the official I.D. to download Android applications.
+
+00:06.630 --> 00:09.900
+Go to Google and type Android Studio as such.
+
+00:09.900 --> 00:15.660
+And then I think the second hit or so should be where you should be going to download industry and then
+
+00:15.660 --> 00:19.630
+you find a HTTPS developer to come this one here.
+
+00:19.650 --> 00:20.280
+Click on that.
+
+00:20.580 --> 00:22.590
+And that should take us here, right?
+
+00:22.830 --> 00:29.790
+Once we are here, we can go around and read about Android Studio and all the great things that Android
+
+00:29.790 --> 00:33.030
+Studio provides to developers and so forth.
+
+00:33.040 --> 00:33.810
+So it's pretty.
+
+00:34.470 --> 00:38.610
+I think it's a good idea to take the time to read more about it in a studio, especially if you're getting
+
+00:38.610 --> 00:40.380
+serious about Android development.
+
+00:40.980 --> 00:44.370
+It's come up here and click Download Android Studio.
+
+00:44.580 --> 00:51.150
+Such and of course, we'll have to read some terms and conditions just to make sure we are on the same
+
+00:51.150 --> 00:53.730
+page with the Google, of course.
+
+00:54.180 --> 00:57.480
+And then at the bottom, we can say I've read everything.
+
+00:57.860 --> 00:59.130
+Now here we have two options.
+
+00:59.130 --> 01:05.790
+If you are a Mac with Apple chip, of course you've got to go ahead and click and install this option.
+
+01:06.120 --> 01:09.510
+Otherwise, if you have Intel chip, you go this option.
+
+01:09.510 --> 01:12.870
+I happened to be on Intel, so I'm going to click on Intel.
+
+01:13.080 --> 01:18.120
+If you don't know which Mac you are using, I would just do a quick search and look on your Mac to see
+
+01:18.120 --> 01:19.440
+if you have an Apple chip.
+
+01:19.650 --> 01:19.950
+OK.
+
+01:20.040 --> 01:24.510
+So I have an older Mac, so Intel chip, that's what will work for me.
+
+01:24.750 --> 01:27.360
+OK, so click and we'll start.
+
+01:27.360 --> 01:33.190
+The download process may take a little while, so just wait until that is done and we'll proceed.
+
+01:33.540 --> 01:39.960
+Once all it's downloaded, you can just double click OK, so all we have to do is just take this Android
+
+01:40.080 --> 01:45.230
+studio here and drop into applications such that we take a little bit, OK?
+
+01:45.240 --> 01:48.330
+After a few seconds, you'll see that we're all good.
+
+01:48.960 --> 01:50.040
+All is installed.
+
+01:50.070 --> 01:52.320
+So what do we need to do now on Mac?
+
+01:52.380 --> 01:57.710
+Of course, we can just see command space and start typing in Android Studio as such.
+
+01:57.730 --> 02:02.100
+Now you will see that I do have, of course, two Android Studio, another one here.
+
+02:02.250 --> 02:03.390
+Just ignore everything else.
+
+02:03.720 --> 02:10.470
+But the the reason why I have two is because I already had Android Studio, so I'm just really recording
+
+02:10.470 --> 02:15.270
+this so that you have the opportunity to see how to download inside studio.
+
+02:15.600 --> 02:20.520
+So I'm going to pick this one here, which is the one that we just created or we just installed it set
+
+02:20.520 --> 02:20.690
+up.
+
+02:20.700 --> 02:26.010
+So what do you need to do, of course, is to double click and it will start verifying everything and
+
+02:26.010 --> 02:27.300
+making sure all is good.
+
+02:27.510 --> 02:28.590
+So this should happen.
+
+02:28.590 --> 02:34.290
+Android Studio and I know from internet you want to make sure that we are aware that this could also
+
+02:34.290 --> 02:37.290
+be a malware, but we know that it's trusted.
+
+02:37.290 --> 02:39.270
+So I'm going to say open in a way.
+
+02:39.690 --> 02:40.250
+And there we go.
+
+02:40.260 --> 02:42.450
+So now it is starting Android Studio.
+
+02:42.450 --> 02:44.400
+At this point, it's called Arctic Fox.
+
+02:44.730 --> 02:49.980
+So before all of that, we actually go through this process of configuring things and or studio, and
+
+02:49.980 --> 02:53.640
+we just go through that process, just follow the screen.
+
+02:53.670 --> 03:00.030
+You can choose standard or custom, and you can select a UI theme if you want a dark or light.
+
+03:00.360 --> 03:05.460
+You can also then start verifying settings, so to install everything that you need in one side and
+
+03:05.460 --> 03:08.010
+then you can go ahead and back and start the project.
+
+03:08.460 --> 03:08.760
+OK.
+
+03:09.270 --> 03:11.100
+So this is my settings, of course.
+
+03:11.100 --> 03:15.260
+And of course, you can customize Android Studio to your liking and customize.
+
+03:15.270 --> 03:19.400
+I have the accessibility I.D. font larger.
+
+03:19.410 --> 03:24.870
+So that way you can actually see, as I code, the bigger font it since I'm recording this course is
+
+03:24.870 --> 03:26.400
+better for you to be able to see.
+
+03:26.670 --> 03:31.530
+OK, so you can change, of course, the edit editor font, the fonts and so forth.
+
+03:31.680 --> 03:32.700
+So a lot of things here.
+
+03:32.880 --> 03:37.080
+And you can also add plugins and can learn more about Android Studio and so forth.
+
+03:37.230 --> 03:39.390
+OK, so back to our project here.
+
+03:39.390 --> 03:44.640
+You can go ahead and just starting your project, so we're going to create a project and voila.
+
+03:44.790 --> 03:47.130
+So now we have an option to start a new project.
+
+03:47.310 --> 03:51.330
+So as you see here, we have different paths we can take.
+
+03:51.690 --> 03:55.510
+What we're interested in is the empty compose activity, right?
+
+03:55.590 --> 03:56.700
+It's all about compose.
+
+03:57.000 --> 03:59.310
+And next, I'm going to have to add a name.
+
+03:59.580 --> 04:05.910
+OK, so my first compose whatever name you want, the location, that's fine.
+
+04:05.910 --> 04:10.530
+And also the package name, whatever you have, you probably going to have the calm that example that
+
+04:10.800 --> 04:17.460
+my first composer will, my first compose or whichever name you added at the top here for your application
+
+04:17.760 --> 04:18.300
+doesn't matter.
+
+04:18.630 --> 04:23.890
+And make sure that the language is Scotland because that's what we need and minimalistic in this case.
+
+04:23.920 --> 04:25.470
+Twenty eight, that's totally fine.
+
+04:25.830 --> 04:26.120
+All right.
+
+04:26.130 --> 04:31.230
+I'm going to go out and say, finish, and I was going to go ahead and provision our new application,
+
+04:31.230 --> 04:32.850
+new project, I should say.
+
+04:33.240 --> 04:37.680
+And because this is the first time this may take a few minutes, so just be patient and wait.
+
+04:37.920 --> 04:38.220
+All right.
+
+04:38.220 --> 04:43.200
+So right away, you can see our assistant here, we can actually close that down.
+
+04:43.620 --> 04:48.840
+It tells us a little bit about Arctic Fox, OK, what it's all about and so forth.
+
+04:48.840 --> 04:50.010
+So take time to read.
+
+04:50.370 --> 04:51.840
+So you want to read that on the browser?
+
+04:51.840 --> 04:53.550
+You can do so by clicking here.
+
+04:53.760 --> 04:56.450
+So for now, I'm just going to close it down a little bit.
+
+04:56.460 --> 04:58.290
+So now is indexing.
+
+04:58.350 --> 04:59.820
+Gradle is working a backend.
+
+04:59.990 --> 05:01.010
+It may take a little bit.
+
+05:01.490 --> 05:06.680
+Again, keep in mind the colors that you see here or my editor may be different than yours because of
+
+05:06.680 --> 05:10.730
+my settings that I have transported from previous installs and so forth.
+
+05:11.120 --> 05:15.920
+So don't worry too much if it doesn't look exactly as mine, right?
+
+05:15.920 --> 05:21.290
+As long as the Android Studio itself looks how it looks out of the box, that's totally fine.
+
+05:21.620 --> 05:24.910
+So we're waiting for Gradle to finish its singing process.
+
+05:24.920 --> 05:26.030
+It may take a little bit again.
+
+05:26.030 --> 05:30.680
+Just relax and we'll wait until it's all done OK.
+
+05:30.710 --> 05:32.270
+Once all is done.
+
+05:32.520 --> 05:33.180
+Let's see.
+
+05:33.180 --> 05:35.330
+You can see we have a project created.
+
+05:35.630 --> 05:38.870
+Can I sort of toggle that this to have more space?
+
+05:39.410 --> 05:46.170
+And now I'm actually running to see if we can see some sort of a preview to the right here, right?
+
+05:46.190 --> 05:47.270
+Because we have code.
+
+05:47.900 --> 05:49.190
+This is compose code.
+
+05:49.580 --> 05:54.410
+Now Gradle at the bottom here you can see Gradle building and running and hopefully soon we can see
+
+05:54.410 --> 05:55.100
+something here.
+
+05:55.340 --> 06:02.360
+And while I think it's building, still rendering slowly, but after a few attempts, you can see there
+
+06:02.360 --> 06:02.820
+we go.
+
+06:02.830 --> 06:07.620
+Can click this button here to make it look bigger 100 percent or can make it even bigger.
+
+06:07.640 --> 06:12.170
+I can see we have a low world is showing in our COMPOSE preview.
+
+06:12.440 --> 06:14.990
+OK, so this is success, as you can see.
+
+06:15.260 --> 06:15.710
+So, OK.
+
+06:16.010 --> 06:16.310
+All right.
+
+06:16.550 --> 06:20.780
+So as you can see, you should have your Android studio set up at this point should all be good.
+
+06:21.050 --> 06:26.300
+And the other thing we would want to do, of course, is to create an emulator because we want to use
+
+06:26.300 --> 06:28.080
+that to test our apps.
+
+06:28.400 --> 06:29.480
+So it's very simple.
+
+06:29.480 --> 06:33.530
+What you need to do is go to the top here where it says avid manager.
+
+06:33.680 --> 06:34.100
+Click.
+
+06:34.460 --> 06:38.570
+And as you can see, for me, I do have a few virtual devices already.
+
+06:38.870 --> 06:43.640
+But in your case, if this is your first time you've ever installed Android Studio, you should see
+
+06:43.640 --> 06:44.360
+nothing here.
+
+06:44.660 --> 06:49.790
+OK, so what you need to do is click on create a virtual device such and pick whatever you want.
+
+06:49.970 --> 06:50.260
+OK.
+
+06:50.570 --> 06:54.590
+I would always recommend to pick something that has placed or icon.
+
+06:54.590 --> 06:56.720
+Here is a lot of dependencies.
+
+06:56.720 --> 07:04.430
+A lot of libraries that we may need in the future are part of the Play Store library, so it's just
+
+07:04.430 --> 07:06.930
+a good thing to be aware of.
+
+07:06.950 --> 07:10.220
+So I'm going to pick Pixel four or I can pick something else.
+
+07:10.220 --> 07:12.770
+But Pixel four is fine of, let's say, next.
+
+07:13.290 --> 07:20.450
+In this case, here for your case, you may not have are or CU, depending on which API level we want
+
+07:20.660 --> 07:23.540
+to attach this emulator with.
+
+07:24.410 --> 07:25.940
+You will have to download it, right?
+
+07:25.950 --> 07:31.250
+So in this case here, if our, for instance, shows download, you will have to click download so that
+
+07:31.250 --> 07:32.860
+that is downloaded internally.
+
+07:32.870 --> 07:35.510
+Then we are going to be able to create that image.
+
+07:35.810 --> 07:38.450
+To create that emulator in this case is fine.
+
+07:38.450 --> 07:39.800
+I have it downloaded already.
+
+07:40.070 --> 07:46.430
+I'm just going to say next and I can change the name here U1 or whatever you want because I'm changing
+
+07:46.430 --> 07:51.500
+this name because I already have Pixel four API 30 installed already.
+
+07:51.680 --> 07:51.980
+OK.
+
+07:52.430 --> 07:54.130
+And of course, I use automatic.
+
+07:54.140 --> 07:56.420
+It's usually the one that is selected.
+
+07:56.510 --> 07:57.110
+That's fine.
+
+07:57.710 --> 07:59.520
+And everything else should be fine.
+
+07:59.540 --> 08:00.590
+And what do you need to do then?
+
+08:00.620 --> 08:01.440
+Just say, finish.
+
+08:01.460 --> 08:03.470
+I'm not going to do that because I don't want to create a new one.
+
+08:03.710 --> 08:08.570
+But it should be good if they finish, will take a few moments to create your in your family.
+
+08:08.660 --> 08:08.960
+OK.
+
+08:09.530 --> 08:13.850
+Once you're done, then you will see that it will be shown here as well.
+
+08:14.420 --> 08:15.260
+All right, very good.
+
+08:15.560 --> 08:20.810
+And once you have that, it's very simple because it's going to show you here as one of the available
+
+08:20.810 --> 08:21.350
+devices.
+
+08:21.740 --> 08:24.200
+And so and then you can just go ahead and click Run.
+
+08:24.770 --> 08:25.940
+We'll take a few moments.
+
+08:26.980 --> 08:27.970
+OK, it was good, David.
+
+08:28.090 --> 08:30.030
+I think he wants us to pick one.
+
+08:30.160 --> 08:30.580
+OK.
+
+08:31.030 --> 08:32.950
+I'm just going to go ahead and pick that one.
+
+08:33.610 --> 08:36.730
+OK, now says here connecting to the emulator.
+
+08:37.120 --> 08:37.990
+Just get rid of here.
+
+08:38.790 --> 08:39.820
+OK, get out of there.
+
+08:40.240 --> 08:44.080
+And we'll take a few moments ago and get this rebooting and new emulator.
+
+08:44.410 --> 08:48.840
+It's the equivalent of starting in your phone, so it may take a little bit after a few moments.
+
+08:48.860 --> 08:56.020
+Can see that we have successfully installed our Compose Android app here into our emulator.
+
+08:56.140 --> 08:57.370
+OK, so this is really good.
+
+08:57.370 --> 09:00.940
+And of course, as you can see here, I have some issues, but that's fine.
+
+09:00.940 --> 09:07.780
+He just tells us there's a warning because this pixel to know that it's probably lower API level than
+
+09:07.930 --> 09:08.860
+it needs to be.
+
+09:08.980 --> 09:15.310
+So what happened is that it went and got the Pixel four API 30, which is the minimum API level that
+
+09:15.310 --> 09:18.610
+it's needed in order to run compose applications in this case.
+
+09:18.650 --> 09:25.660
+OK, so this is good, which is the API level set up to run this app so that it's all good because Android
+
+09:25.660 --> 09:30.400
+Studio is smart enough to go and pick up the correct emulator to run this app?
+
+09:30.730 --> 09:33.460
+OK, so there we go, which should be good at this point.
+
+09:33.640 --> 09:34.750
+Ready to go?
+
+09:35.470 --> 09:35.800
+All right.
+
+09:36.460 --> 09:37.930
+Well, let's get to it.

@@ -1,0 +1,349 @@
+WEBVTT
+
+00:00.900 --> 00:05.870
+So the way things are here, it's sort of a create user, you know, a lot of things screen feel model.
+
+00:06.180 --> 00:14.060
+Notice that we kind of hacked our way through to creating a user by saying, what about map of and saying
+
+00:14.070 --> 00:16.530
+he string and values any?
+
+00:16.710 --> 00:23.070
+So this works fine because we just testing things out and getting in this case, the Rafael display
+
+00:23.070 --> 00:24.180
+name and he's already in.
+
+00:24.180 --> 00:24.660
+It's fine.
+
+00:24.690 --> 00:28.650
+So but that's not sustainable because we want to have an actual.
+
+00:29.630 --> 00:36.010
+Model that we can create, so we use our model to actually have an actual user object.
+
+00:36.380 --> 00:37.610
+So let's do that.
+
+00:37.620 --> 00:43.310
+Let's go to our project and change this to Android instead of a project.
+
+00:43.310 --> 00:53.380
+Let's go to our model model here, and it's going to be just a data class, a simple one.
+
+00:53.390 --> 00:56.550
+I'm going to say m user out the reason I'm appending M.
+
+00:56.810 --> 00:57.190
+Could it be?
+
+00:57.200 --> 01:03.500
+And the latter is because I'm not just going to say user as it is because Firebase also has a user object,
+
+01:03.500 --> 01:08.420
+so just to not have contrast or clashes with Firebase.
+
+01:08.600 --> 01:11.780
+We're just going to say I am an Amazon user like this, right?
+
+01:12.470 --> 01:13.700
+We have a data class.
+
+01:14.120 --> 01:17.000
+So what do we want to have in our data class?
+
+01:17.270 --> 01:23.990
+Well, this is going to model after an object of the user instance of a user that we can then pass along
+
+01:23.990 --> 01:25.250
+here with all these fields.
+
+01:25.640 --> 01:34.030
+So to say Val, each user has an ID going to be a string type Daryn multiple there and history has a
+
+01:34.040 --> 01:34.580
+user ID.
+
+01:34.850 --> 01:48.350
+Each user has a user ID string and their valid display name string, and we're going to have a avatar,
+
+01:49.100 --> 01:52.040
+the URL as well, if we wish to do so.
+
+01:53.900 --> 02:00.000
+And we kind have a quote that a user can have that they can add to your profile if we wish to do so
+
+02:00.000 --> 02:02.020
+also profession.
+
+02:02.240 --> 02:04.280
+So this is just the basics.
+
+02:04.580 --> 02:04.820
+OK?
+
+02:04.880 --> 02:07.010
+You can add more, but for now, this is fine.
+
+02:07.010 --> 02:09.710
+It doesn't mean you can use or we have to use all of these.
+
+02:10.940 --> 02:11.270
+All right.
+
+02:11.540 --> 02:18.500
+Now I'm going to also add some helper methods of function inside here because remember, we want to
+
+02:18.500 --> 02:24.320
+be able to create a user object, something like this different in this, of course.
+
+02:24.740 --> 02:32.030
+But remember that for firebase or forest or in this case, in order for it to be able to store that
+
+02:32.030 --> 02:39.140
+data, we need to pass in in this format as a mutable map, like a hash map, per se.
+
+02:39.470 --> 02:45.110
+So for that, what we are going to do is we're going to create a helper function inside here.
+
+02:45.200 --> 02:49.800
+So fun and want to call this to map what this will do.
+
+02:49.820 --> 02:56.690
+It will just convert the object or a user here into map all of its properties.
+
+02:56.990 --> 03:00.310
+Its fields are going to be converted into map, which is the type that we need.
+
+03:00.320 --> 03:08.330
+So when I say mutable map like this can be string key and just any for the value, this could be anything
+
+03:09.200 --> 03:09.710
+as such.
+
+03:10.910 --> 03:11.200
+All right.
+
+03:11.210 --> 03:16.790
+So this is will return in this case, a mutable map of.
+
+03:17.330 --> 03:20.780
+So now I'm going to create this structure, something like this, right?
+
+03:21.260 --> 03:24.380
+We're going to have a key and then add the value and so forth.
+
+03:24.560 --> 03:25.760
+So what would be the key?
+
+03:26.060 --> 03:32.630
+So the first key is going to be user underscore ID because this is how they will be saved, right?
+
+03:32.660 --> 03:33.910
+This key section?
+
+03:34.310 --> 03:34.580
+OK.
+
+03:35.180 --> 03:43.700
+So we have to be consistent with what we are creating in terms of the keys keys, especially how we
+
+03:43.880 --> 03:44.460
+name them.
+
+03:44.540 --> 03:52.580
+So I'm going to say to this is how we connect this user to these, that user ID there.
+
+03:53.150 --> 03:54.710
+And then I'm going to say display.
+
+03:56.240 --> 03:58.700
+See, we say display name underscore, yes.
+
+04:01.480 --> 04:07.240
+Splay name say to this that display name.
+
+04:09.670 --> 04:15.310
+And then quote to the star quote perfection.
+
+04:18.060 --> 04:20.100
+Is that profession?
+
+04:24.720 --> 04:31.500
+And then Avatar underscored you around two things that avatar your eye like this.
+
+04:32.550 --> 04:37.980
+So this is going to be great because then we can see EM user and pass all of these IDs and everything.
+
+04:38.430 --> 04:44.880
+So what this will allow us to do is whenever we want to create an object, right, in this case, user
+
+04:44.880 --> 04:51.900
+object, then we can just invoke it and then we can say usernames or AMD user username and passing the
+
+04:51.900 --> 04:53.100
+username and so forth.
+
+04:53.430 --> 05:00.210
+And then he will see, we can say, to map, which will invoke this, to map here to then to then create
+
+05:00.210 --> 05:07.590
+this immutable map that will map all of these IDs, these already and so forth into a map that is needed
+
+05:08.070 --> 05:10.020
+to be able to save in our back end.
+
+05:11.010 --> 05:13.560
+OK, so that's all we need to do for now here.
+
+05:14.010 --> 05:15.510
+So let's go back to our log in.
+
+05:15.540 --> 05:17.160
+So coming here, we can just change.
+
+05:17.220 --> 05:19.860
+It's going to be the same can just change the dynamics here.
+
+05:19.860 --> 05:22.410
+So here I can just click a valid user.
+
+05:22.410 --> 05:31.860
+Instead of doing this, I can just instantiate directly our M user as such, and then I'm going to pass
+
+05:31.860 --> 05:34.020
+all of the properties.
+
+05:34.650 --> 05:36.630
+So the first property is the ID.
+
+05:36.810 --> 05:41.550
+Now the thing here about AIDS is that we don't need to pass it because remember, these aids are going
+
+05:41.550 --> 05:46.930
+to be generated naturally because this aids are going to represent each one of these ID.
+
+05:47.460 --> 05:52.860
+So we don't need to pass anything when we're creating a user for that matter, so we can ignore that.
+
+05:53.370 --> 05:59.130
+But next, we are going to say, let's see what else comes after that User ID, say User ID.
+
+05:59.220 --> 06:07.530
+In this case, I'm going to pass our user ID that we have and then this pass display name, it's going
+
+06:07.530 --> 06:12.030
+to be the display name and then avatar, y'all.
+
+06:12.060 --> 06:20.520
+For now, I'm just going to give it nothing and then quote, I'm going to give, say, something like
+
+06:21.180 --> 06:25.620
+life is great profession.
+
+06:25.890 --> 06:29.730
+Who's going to say Android developer?
+
+06:30.240 --> 06:32.440
+All right, let's go ahead and fix this.
+
+06:32.640 --> 06:34.380
+Looks like this needs some help.
+
+06:34.590 --> 06:36.750
+Let's just say call it drink.
+
+06:36.760 --> 06:38.520
+So we know exactly what are we dealing with.
+
+06:39.270 --> 06:40.720
+Either way, I had no knowledge.
+
+06:40.980 --> 06:41.550
+That's fine.
+
+06:41.550 --> 06:42.630
+But let's just say it is free.
+
+06:43.350 --> 06:43.620
+All right.
+
+06:43.630 --> 06:48.720
+So now we no longer need any of this and it's calling for it.
+
+06:49.140 --> 06:51.240
+We just got to head past snow like this.
+
+06:51.630 --> 06:52.040
+There we go.
+
+06:52.050 --> 06:53.520
+So now we have a user object.
+
+06:53.970 --> 06:59.670
+So this will do the same thing that we did before because I have a user here once I've created the object.
+
+07:00.030 --> 07:01.860
+I'm going to invoke that to map.
+
+07:03.850 --> 07:08.280
+Method or function there, which is going to map everything into a map, as the name imply.
+
+07:08.650 --> 07:09.580
+And then we should be good.
+
+07:09.700 --> 07:16.870
+And before we move forward, let's go and find splash screen because this is not going to work for us
+
+07:16.870 --> 07:24.850
+because we will have to, of course, actually take ourselves just to log in because we want to be able
+
+07:24.850 --> 07:27.880
+to create new accounts or contests things out.
+
+07:28.000 --> 07:28.270
+OK.
+
+07:28.840 --> 07:34.510
+And the other thing earlier, what I did, I just went ahead and cleared the user.
+
+07:34.780 --> 07:37.450
+So all the users just start from afresh, so we don't have anything.
+
+07:38.530 --> 07:40.910
+And I think now it's time for us to give it a try.
+
+07:40.930 --> 07:44.110
+So this one, this should go to log in screen.
+
+07:44.830 --> 07:45.150
+Good.
+
+07:45.160 --> 07:46.060
+Let's go to sign up.
+
+07:47.350 --> 07:55.270
+OK, let's see Jay at me dot com and let's go ahead and create account.
+
+07:56.140 --> 07:56.560
+OK?
+
+07:56.590 --> 07:58.960
+Went in very nicely, built nicely.
+
+07:58.960 --> 08:01.240
+And you can see now we have Jay and voila!
+
+08:01.360 --> 08:03.030
+Avatar URL is empty.
+
+08:03.040 --> 08:06.250
+J Developer life is great and we have indeed.
+
+08:07.440 --> 08:08.780
+How are you ID as such?
+
+08:09.060 --> 08:15.120
+So now we can make your use of our user ID section instead of having to manually do all the work.

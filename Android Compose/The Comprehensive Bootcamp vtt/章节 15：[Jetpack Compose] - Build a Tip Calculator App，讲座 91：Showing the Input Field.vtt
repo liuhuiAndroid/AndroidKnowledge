@@ -1,0 +1,625 @@
+WEBVTT
+
+00:01.850 --> 00:07.850
+So now we can come back to our main content instead of a surface, we can invoke the input filter we
+
+00:07.850 --> 00:10.750
+just spent time putting together.
+
+00:10.850 --> 00:21.770
+So here I can say input field such and voila, we have all of these arguments that we need to pass and
+
+00:21.770 --> 00:22.580
+they need to be filled.
+
+00:23.360 --> 00:26.030
+OK, so the first one is going to be state.
+
+00:26.660 --> 00:28.340
+The state here is going to be what?
+
+00:28.490 --> 00:28.850
+What?
+
+00:31.140 --> 00:34.770
+The first one is going to be the value state, remember, we need to really know.
+
+00:35.190 --> 00:42.390
+We need to at all times, we need to know exactly what is going on inside us users type something inside
+
+00:42.390 --> 00:43.170
+of our text field.
+
+00:43.710 --> 00:47.850
+So for that, because we're inside here, we need to create a state.
+
+00:48.630 --> 00:51.930
+I say foul, call this total.
+
+00:54.090 --> 00:57.120
+It's this total Bill State, OK?
+
+00:58.310 --> 01:06.390
+And I'm going to say he's equal to remember mutable state of and it's going to be zero because it's
+
+01:06.390 --> 01:11.360
+just going to be an integer, so we can then use that total state inside here.
+
+01:11.900 --> 01:15.680
+It has to be a mutable state that is to do.
+
+01:16.040 --> 01:16.400
+OK.
+
+01:17.120 --> 01:18.380
+So what a pass here.
+
+01:18.470 --> 01:21.050
+Total bill state.
+
+01:21.650 --> 01:24.320
+Such a here's a problem.
+
+01:24.560 --> 01:25.250
+It looks like.
+
+01:25.260 --> 01:28.430
+So if you have over, looks like we have a problem, it says here.
+
+01:28.700 --> 01:34.070
+Type mismatch requiring multiple state string and found immutable state isn't.
+
+01:34.730 --> 01:38.960
+This was my bad because I assumed that we are passing.
+
+01:38.960 --> 01:40.790
+We need a string here, right?
+
+01:41.090 --> 01:46.040
+But everything or anything that is passed instead of a text field of any form is actually comes out.
+
+01:46.160 --> 01:49.280
+It will always come out as a string.
+
+01:49.730 --> 01:55.340
+That's the reason why this should be a string, which means it can just put empty strings like that,
+
+01:56.400 --> 01:56.660
+right?
+
+01:56.960 --> 02:00.020
+And if you remember correctly, it's out of our input field.
+
+02:00.350 --> 02:04.100
+That's what we said if our state is a mutable state of type strings.
+
+02:05.370 --> 02:05.880
+Makes sense.
+
+02:06.240 --> 02:06.570
+All right.
+
+02:06.750 --> 02:08.520
+Now we need to go to a label ID.
+
+02:08.760 --> 02:09.210
+What is that?
+
+02:09.210 --> 02:13.200
+We want you to say we just want to say something, says enter Bill.
+
+02:13.200 --> 02:19.920
+So essentially everybody is going to be added here like that are enabled.
+
+02:20.070 --> 02:24.240
+We're just going to say true right, to make sure that this is enabled.
+
+02:24.250 --> 02:26.580
+Now, we may say, I don't remember what that is.
+
+02:26.850 --> 02:29.730
+Let's go back to our components so enabled here.
+
+02:30.570 --> 02:33.510
+If you go back to our outline text field.
+
+02:34.500 --> 02:37.950
+If you have already enabled is going to tell us exactly what that means.
+
+02:38.220 --> 02:39.870
+What is it that we enabling?
+
+02:40.200 --> 02:42.780
+Well, we enabling the well here.
+
+02:42.780 --> 02:45.480
+If it's true, that means well enabled.
+
+02:45.480 --> 02:46.260
+We are controlling.
+
+02:47.730 --> 02:53.340
+Enabled says he controls the enable state of the outlined text field.
+
+02:53.790 --> 03:00.210
+So when false detects field would be neither editable nor focus of all, the input of the text field
+
+03:00.210 --> 03:01.620
+will not be selectable.
+
+03:01.920 --> 03:03.270
+OK, so that's what we're doing.
+
+03:03.270 --> 03:04.970
+We want it to be all those things.
+
+03:05.040 --> 03:09.760
+That's why we're going to pass through, as we see here, a single line.
+
+03:09.780 --> 03:12.780
+We want this to be also true.
+
+03:13.200 --> 03:15.390
+Just want this to always be a single line.
+
+03:17.240 --> 03:17.600
+All right.
+
+03:23.080 --> 03:27.100
+And next, we're going to pass another index on action here.
+
+03:27.580 --> 03:28.780
+We're going to pass a few things.
+
+03:28.780 --> 03:34.240
+So first of all and say keyboard actions because we need to retain or give access to the keyboard actions
+
+03:34.240 --> 03:41.470
+because the idea is that when the input field is clicked, the keyboard will pop up and we need to know
+
+03:41.680 --> 03:47.650
+let and we need to set up the structure of our keyboard and sense what we want to happen.
+
+03:47.980 --> 03:53.830
+So we say keyboard actions, and let's use a lambada in this case.
+
+03:54.450 --> 03:57.220
+OK, and passing the keyboard action scope inside here.
+
+03:58.180 --> 04:01.430
+Now these actions here will depend on a lot of things.
+
+04:01.450 --> 04:06.940
+First of all, we want to make sure that whatever is entered here is valid or there is something at
+
+04:06.940 --> 04:07.180
+all.
+
+04:07.510 --> 04:08.200
+How do we do that?
+
+04:08.500 --> 04:14.980
+Well, again, we're talking about state because to check if something is there, we need to to check
+
+04:14.980 --> 04:15.930
+if something is there.
+
+04:15.940 --> 04:22.990
+This something is a state which we've said here, that's what's controlling or abele and so forth.
+
+04:23.590 --> 04:24.590
+So what do we need to do?
+
+04:24.610 --> 04:32.830
+We need to create another state variable here that will allow us to check whether this state, whatever
+
+04:32.830 --> 04:35.130
+is inside here or not, is valid or not.
+
+04:35.150 --> 04:38.770
+So the state in in the sense of our text field.
+
+04:40.300 --> 04:44.170
+So in this case, we want to look inside and see, OK, if there's 100.
+
+04:45.740 --> 04:51.950
+Is this so in this case, we want to check to see if there is something inside here?
+
+04:52.370 --> 04:56.270
+If that's the case, then that will dictate what is it that we are going to do?
+
+04:56.300 --> 04:57.470
+You know, keyboard actions.
+
+04:58.160 --> 05:02.270
+So that means that I need to create another state here variable and say foul.
+
+05:03.110 --> 05:05.510
+Just call it a valid state, OK?
+
+05:06.530 --> 05:10.160
+And I'm going to say, remember again, a lot of remembering.
+
+05:10.700 --> 05:17.120
+So the other thing we can do with our remember here is that we can pass the values that we want to operate
+
+05:17.120 --> 05:19.580
+on, right as parameters.
+
+05:21.090 --> 05:23.160
+So what is it that we want to operate on?
+
+05:23.190 --> 05:31.470
+Well, it's going to be our total bill state that value because that is what we want to look into to
+
+05:31.470 --> 05:36.390
+see if there's something in there because remember, it is total bill state he's actually connected
+
+05:36.540 --> 05:44.660
+to the value of state, which indeed is what will be added inside of our bill here.
+
+05:44.670 --> 05:45.420
+Our text field.
+
+05:46.470 --> 05:47.640
+So now here.
+
+05:48.210 --> 05:50.070
+So what are we going to do?
+
+05:50.400 --> 05:51.300
+We're going to check.
+
+05:51.510 --> 05:57.030
+So I'm going to say, first of all, I'm just going to pass a total bill, state that value.
+
+05:57.330 --> 06:03.810
+Let's go ahead and invoke the two string actually can just go straight to trimming trim and then check
+
+06:03.810 --> 06:06.300
+is not empty.
+
+06:07.600 --> 06:08.820
+Oh, a lot of things happen here.
+
+06:09.120 --> 06:09.890
+So what are we doing here?
+
+06:09.900 --> 06:14.910
+Are you saying we are creating a valid state of what of this text field?
+
+06:15.270 --> 06:16.050
+And how do we do that?
+
+06:16.320 --> 06:22.740
+Well, we can use remember, because we want to make this state right and we pass the value that we
+
+06:22.740 --> 06:29.100
+want to check in this case is going to be this total bill state value, which is indeed whatever they
+
+06:29.100 --> 06:29.840
+are adding here.
+
+06:29.850 --> 06:32.460
+So if it's one or two or a hello world.
+
+06:33.270 --> 06:33.510
+All right.
+
+06:34.110 --> 06:39.390
+So what are we doing here with checking if total bills state that value whatever is?
+
+06:39.390 --> 06:40.170
+Enter here?
+
+06:40.230 --> 06:43.830
+If it's 100, we're going to trim anything around 100.
+
+06:43.980 --> 06:44.730
+This is a tax.
+
+06:44.820 --> 06:51.690
+So we're going to just get rid of all the excessive spaces and so forth and check if it's not empty.
+
+06:51.840 --> 06:52.980
+So this returns.
+
+06:52.980 --> 06:53.310
+What?
+
+06:53.940 --> 06:57.300
+Yes, appalling in a Boolean, which means true or false.
+
+06:58.200 --> 07:01.320
+So if it's not empty, that means this valid state is going to be.
+
+07:02.430 --> 07:02.860
+False.
+
+07:02.910 --> 07:05.230
+Because it's not so it's not empty.
+
+07:05.250 --> 07:06.360
+This is going to be true.
+
+07:06.690 --> 07:08.100
+Its state is going to have true.
+
+07:08.370 --> 07:10.590
+So that means then something is right.
+
+07:13.310 --> 07:20.840
+So if it's not empty, that means all is good because this will return true and will be passed inside,
+
+07:21.110 --> 07:22.790
+will be passed to our failed state.
+
+07:24.060 --> 07:24.390
+OK.
+
+07:26.380 --> 07:33.030
+And that will mean that it's valid, which means we can continue whatever we need to do, so make sense.
+
+07:33.040 --> 07:37.480
+So now here let me go ahead and just say quote for now.
+
+07:38.050 --> 07:39.940
+So now we can do what?
+
+07:40.060 --> 07:41.080
+Well, we can check.
+
+07:41.560 --> 07:48.550
+So what it can do now and say if is not a valid state.
+
+07:49.840 --> 07:52.540
+OK, if it's false, so it's not valid.
+
+07:52.870 --> 07:57.640
+What I'm going to do, I'm just going to say return, but I'm going to return and keyboard action,
+
+07:57.640 --> 08:04.240
+what that means is that just return, whatever this keyboard is going to allow us to do, so just return
+
+08:04.350 --> 08:04.780
+that.
+
+08:06.610 --> 08:09.610
+And then here I'm going to do will get there.
+
+08:13.670 --> 08:20.360
+Once all of that is done, we need a way of dismissing the keyboard because at this point that means
+
+08:20.360 --> 08:26.250
+we've enter something all is good and we'll still have to do something there to get that information
+
+08:26.250 --> 08:29.200
+in this case, whatever they've entered and do something with it.
+
+08:29.210 --> 08:29.870
+But we'll get there.
+
+08:30.260 --> 08:33.870
+So what we need to do, we're assuming at this point the old showing.
+
+08:33.890 --> 08:35.870
+So we want to hide it automatically.
+
+08:35.870 --> 08:38.480
+So to do so will have to do something else.
+
+08:38.630 --> 08:44.480
+First of all, a top here, we're going to create yet another vowel call called keyboard.
+
+08:49.050 --> 08:49.830
+Controller.
+
+08:53.950 --> 08:54.580
+Should enter.
+
+08:55.240 --> 09:00.670
+And this is going to be a local software keyboard, control it like this.
+
+09:02.230 --> 09:03.670
+And say that get current.
+
+09:05.300 --> 09:07.450
+I say it's equal.
+
+09:10.620 --> 09:17.220
+Like this and the women who do that, you will see that we have a little problem says this API is experimental
+
+09:17.220 --> 09:18.840
+and is likely to change in the future.
+
+09:19.350 --> 09:25.010
+Now this is the reality about compose at this point.
+
+09:25.020 --> 09:31.830
+At the time of the recording of this video, this lecture is that there is a lot that is being done.
+
+09:31.950 --> 09:38.730
+There are a lot of APIs that we can use them, such as this one, but is experimental, which means
+
+09:39.330 --> 09:43.320
+they're still working on it and it can change in the future.
+
+09:43.860 --> 09:50.460
+So please be aware of this, and I know that as you go through this at some point in future, things
+
+09:50.460 --> 09:53.550
+may not work or this API may be gone.
+
+09:53.850 --> 09:59.310
+And it's frustrating, but it's part of being a developer and there's really not much we can do, but
+
+09:59.700 --> 10:04.090
+just keep an open mind and whenever things change, we can readjust.
+
+10:04.610 --> 10:04.900
+Right?
+
+10:04.920 --> 10:08.040
+So keep this in mind as we go through this course.
+
+10:08.640 --> 10:08.940
+All right.
+
+10:09.180 --> 10:10.800
+So how to fix this for now?
+
+10:10.800 --> 10:12.240
+Because we it's usable.
+
+10:12.240 --> 10:12.860
+We can use it.
+
+10:12.870 --> 10:18.720
+It's just that it's warning us that this is experimental and we need to make sure that we understand
+
+10:18.720 --> 10:18.930
+this.
+
+10:18.930 --> 10:25.680
+So to fix this, I can add, I'm going to add this annotation here like this, you can see that it was
+
+10:25.680 --> 10:32.610
+added experimental compose UI to be able to use this local software keyboard control current.
+
+10:33.450 --> 10:33.670
+OK.
+
+10:33.870 --> 10:43.410
+So this is what will allow us to do something like this to say keyboard controller that hide.
+
+10:45.270 --> 10:51.570
+OK, now this is probably Nullarbor, so I'm just going to say option alt option like this, I'm going
+
+10:51.570 --> 11:00.810
+to surround either Sharron with no check or add nano asserted or add the safe like this the exclamation
+
+11:00.810 --> 11:01.110
+point.
+
+11:02.100 --> 11:02.850
+OK, there we go.
+
+11:03.840 --> 11:06.900
+OK, let's open the split view here.
+
+11:07.720 --> 11:13.110
+Let's go ahead and refresh and see if we can see something inside of our main content.
+
+11:14.190 --> 11:24.840
+And voila, we can see we now have this very nice text field there and says, Enter Bill and voila!
+
+11:27.440 --> 11:30.230
+Let's go ahead and run this on our emulator, deploy that.
+
+11:31.980 --> 11:36.390
+If you click on this deployed preview, she's going to go ahead and deploy this.
+
+11:37.380 --> 11:38.210
+Preview here.
+
+11:40.120 --> 11:42.640
+So can look at my advice.
+
+11:43.420 --> 11:44.290
+This is old.
+
+11:44.890 --> 11:47.710
+All right, it looks like we have something that's failed.
+
+11:49.060 --> 11:53.640
+See here this expression will be this just go ahead and rebuild first.
+
+11:53.650 --> 11:56.080
+I think that's going to solve all the problems.
+
+11:56.950 --> 11:58.660
+OK, let's go ahead and do it again.
+
+11:59.500 --> 12:01.120
+Deploy to device device.
+
+12:02.950 --> 12:08.660
+All right, so let's go and test this out, I'm going to call this main content instead of top header.
+
+12:08.690 --> 12:19.820
+I'm just going to remove that and call this main content such right, because again, we have that experimental
+
+12:19.820 --> 12:22.280
+composer UI thing we have to add.
+
+12:22.490 --> 12:29.540
+So whatever you call something that already has the UI, the experimental UI, you need to act that
+
+12:29.540 --> 12:32.080
+in fact, let me add that at the top here.
+
+12:32.080 --> 12:32.840
+I think that would be better.
+
+12:33.200 --> 12:33.600
+All right.
+
+12:33.620 --> 12:35.930
+Let's see if this works.
+
+12:35.930 --> 12:42.500
+Now I'm going to run on to the device or emulator depends what you're using.
+
+12:47.960 --> 12:48.320
+All right.
+
+12:48.350 --> 12:50.570
+After a few moments, you can see there we have it.
+
+12:50.660 --> 12:52.340
+It's working on device.
+
+12:52.340 --> 12:53.750
+I can tap in, there we go.
+
+12:54.260 --> 12:58.700
+I can add a number and hit that and goes away.
+
+12:58.710 --> 13:00.650
+So it's working right.
+
+13:01.220 --> 13:02.840
+I can go back and tap there.
+
+13:03.290 --> 13:04.490
+So it validates everything.
+
+13:04.490 --> 13:07.810
+If I try to tap like there's nothing happens because we are not.
+
+13:08.570 --> 13:10.130
+We don't have any value there.
+
+13:10.130 --> 13:11.270
+So let's go again.
+
+13:11.330 --> 13:11.870
+And there we go.
+
+13:11.990 --> 13:15.680
+So it is working, and that's that's always good news.
+
+13:15.710 --> 13:17.780
+So we're making a little good progress in the next video.
+
+13:17.780 --> 13:19.930
+We're going to refactor this even further.
+
+13:19.940 --> 13:25.040
+So we were able to get this information that we're adding here because that's very important.
+
+13:25.420 --> 13:30.050
+And it's a state that we need to get and do something with that value.
+
+13:31.190 --> 13:32.420
+OK, we'll do that next.

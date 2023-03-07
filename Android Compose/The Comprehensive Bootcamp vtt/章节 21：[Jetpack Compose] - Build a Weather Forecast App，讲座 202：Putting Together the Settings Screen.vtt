@@ -1,0 +1,346 @@
+WEBVTT
+
+00:00.450 --> 00:06.920
+All right, so let's continue Settings View Settings screen here, so we have a top part in for a top.
+
+00:06.960 --> 00:12.270
+Are we going to use you as I use warm, whether I bar?
+
+00:12.960 --> 00:13.740
+There it is.
+
+00:13.920 --> 00:15.240
+Has our controller?
+
+00:19.040 --> 00:20.510
+NAF controller that is.
+
+00:22.040 --> 00:23.180
+And.
+
+00:26.490 --> 00:29.340
+Before that, let's go ahead and pass a few other.
+
+00:31.210 --> 00:37.990
+Arguments with Title said that two settings and icon.
+
+00:47.290 --> 00:52.540
+Is main is going to be this false, because it's not the main screen.
+
+00:53.350 --> 00:56.990
+All right now inside of our scaffold.
+
+00:57.370 --> 01:00.120
+This is what we're going to create this structure here.
+
+01:00.130 --> 01:03.190
+As you see, there is really there isn't that much.
+
+01:03.550 --> 01:07.780
+OK, so let's go ahead and put together the structure surface.
+
+01:15.490 --> 01:16.450
+Max with.
+
+01:20.150 --> 01:21.110
+Max Height.
+
+01:32.220 --> 01:33.900
+Add a column here.
+
+01:37.480 --> 01:39.480
+I prefer to call
+
+01:42.320 --> 01:43.340
+arrangement.
+
+01:46.260 --> 01:46.990
+Sandra?
+
+01:53.520 --> 01:57.780
+Alignments and our horizontally, and I'm going to add a text.
+
+02:01.380 --> 02:02.310
+Let's change.
+
+02:10.070 --> 02:11.480
+Mortar fire.
+
+02:15.610 --> 02:23.650
+Padding bottom can give about 15 deep a good.
+
+02:25.540 --> 02:32.470
+Then after a text, what I'm going to do is I'm going to add what I call what I'm going to do.
+
+02:32.500 --> 02:34.690
+Let's go ahead and add this button here.
+
+02:34.700 --> 02:40.890
+So this is actually going to be a different kind of button called icon toggle button.
+
+02:40.900 --> 02:43.390
+So let's go ahead and have that real quick.
+
+02:45.790 --> 02:51.190
+I'm going to create later a state variable that will allow us to tabulate back and forth, right?
+
+02:51.550 --> 03:02.220
+Don't say unit toggle status, such as having created and then on change here.
+
+03:02.230 --> 03:03.670
+We're going to do some work.
+
+03:04.300 --> 03:08.410
+Let's go ahead and create this unit tackle there.
+
+03:08.440 --> 03:11.200
+So again, it's going to be a.
+
+03:13.110 --> 03:13.890
+Stateful.
+
+03:15.520 --> 03:18.730
+Or a state right at the top here.
+
+03:22.480 --> 03:24.340
+I have to import a few things.
+
+03:25.850 --> 03:26.070
+Go.
+
+03:27.200 --> 03:28.910
+And I can't also.
+
+03:30.770 --> 03:32.090
+Put that in single lambda.
+
+03:35.640 --> 03:41.460
+And then here I'm going to create a list of two strains called vowel measurement.
+
+03:45.810 --> 03:49.140
+Units list of.
+
+03:55.340 --> 04:05.390
+Looks like it's going to be a real laugh like this second five Fahrenheit and metric.
+
+04:09.900 --> 04:11.220
+See, four Celsius.
+
+04:12.150 --> 04:19.530
+And because this will toggle back and forth between Celsius and Fahrenheit, I need to add another state
+
+04:19.740 --> 04:23.730
+here called Choice State, which will use we'll see in a second.
+
+04:24.480 --> 04:27.360
+And let's say choice.
+
+04:29.640 --> 04:30.300
+State.
+
+04:37.180 --> 04:42.720
+So I remember facilitate everything immutable state of.
+
+04:47.560 --> 04:48.400
+It's going to be a string.
+
+04:51.310 --> 04:53.060
+All right, now, let's go back here now.
+
+04:53.080 --> 04:55.900
+You can see that all looks much better.
+
+04:56.320 --> 04:56.980
+So what is it?
+
+04:56.980 --> 05:02.830
+I want to do well on checked change, meaning once we click, we're checking, we're changing the state
+
+05:03.280 --> 05:05.470
+of our eye going toggle button, right?
+
+05:05.470 --> 05:09.910
+And we toggle back and forth, depending on the state of our type of state unit there.
+
+05:10.270 --> 05:14.140
+So inside here, we're going to get a bulletin as you see it there so we can check.
+
+05:14.350 --> 05:15.310
+We're going to do something here.
+
+05:15.700 --> 05:22.480
+So first, actually, and when I say unit toggle test, let's set that to the opposite of it.
+
+05:22.750 --> 05:23.030
+Right.
+
+05:23.080 --> 05:31.390
+So toggling back and forth so you can toggle test, let's say, what does it like it like change to
+
+05:31.390 --> 05:33.100
+the right subject to changing it?
+
+05:33.340 --> 05:33.760
+It's fine.
+
+05:34.090 --> 05:41.140
+And then I'm going to put an if statement here that I'm going to say, you know, titles test state.
+
+05:41.140 --> 05:46.870
+That is, if it's true, then I am going to say choice.
+
+05:47.110 --> 05:53.500
+State said that to the actual value, which is not the imperial.
+
+05:56.580 --> 05:57.540
+Half like this.
+
+06:01.820 --> 06:11.270
+Let's also make this half hour because we're changing the variable, and then else I'm going to make
+
+06:11.270 --> 06:17.450
+sure that our choice state value is in this case metrics and put this in a line.
+
+06:20.030 --> 06:21.050
+So was a metric.
+
+06:23.670 --> 06:24.750
+See like that.
+
+06:25.650 --> 06:28.260
+Let's not forget the finalize or else if.
+
+06:29.510 --> 06:33.740
+All right, so now inside here, this is where I'm going to create this structure, of course, inside
+
+06:34.080 --> 06:36.110
+can create a text and so forth.
+
+06:36.590 --> 06:49.430
+So, uh, before that, let's modify four things for our tackle button now or the fire feel max width,
+
+06:49.430 --> 06:58.400
+and I'm going to put a fraction to say, I want this to shrink using this fraction here zero point five
+
+06:58.400 --> 06:59.440
+f right.
+
+07:00.590 --> 07:01.730
+The width in this case.
+
+07:04.100 --> 07:05.810
+And then I'm going to clip.
+
+07:10.520 --> 07:15.680
+Has a shape to say what shape I want this to look to have slightly rectangle.
+
+07:21.550 --> 07:26.110
+Rectangle shape and then padding.
+
+07:26.470 --> 07:34.810
+It's going to be about five dpi and then background, let's say color, my gender
+
+07:38.530 --> 07:39.790
+and pass alpha.
+
+07:43.040 --> 07:44.870
+Zero point four F.
+
+07:46.580 --> 07:46.910
+All right.
+
+07:46.970 --> 07:52.100
+Just to change things a little bit to give this kind of, in fact, if you don't like this color, you
+
+07:52.100 --> 07:53.310
+can pass it any other time.
+
+07:53.380 --> 07:53.780
+It's fine.
+
+07:54.140 --> 07:54.440
+All right.
+
+07:54.920 --> 07:57.030
+And let's see what else we have to do.
+
+07:57.050 --> 07:59.450
+Now we're going to add the actual text, right?
+
+08:01.370 --> 08:05.240
+So it looks like all this, remember, need more to be imported and do that.
+
+08:08.270 --> 08:08.490
+All right.
+
+08:08.690 --> 08:09.490
+What's going on here?
+
+08:09.650 --> 08:10.760
+I just had a text.
+
+08:14.140 --> 08:19.690
+And for this tax here, what I want to do now, I'm going to check because depending on how this works,
+
+08:19.690 --> 08:25.300
+whether we clicked first time or second time, we want to toggle between Celsius and Fahrenheit, right?
+
+08:25.300 --> 08:26.140
+That's the idea.
+
+08:26.650 --> 08:31.120
+So I'm going put an if statement here and say if this actually has been sacked there.
+
+08:32.980 --> 08:34.330
+So if unit.
+
+08:37.720 --> 08:43.660
+Toggle state, it's true, then I'm going to say Fahrenheit.
+
+08:47.800 --> 09:01.750
+I think that's how you spell it, put effort like this else, Celsius has to be inside like that.
+
+09:05.060 --> 09:06.500
+So they decide that when we click.
+
+09:06.770 --> 09:09.890
+Of course, the toggle state will change along, right?
+
+09:10.220 --> 09:18.440
+So if in this case, the if our, you know, toggle state is true, then choice is going to imperial,
+
+09:18.710 --> 09:19.940
+else is going to be a metric.
+
+09:20.180 --> 09:21.020
+That's what are we doing here.
+
+09:21.020 --> 09:23.200
+So if it's imperial, that means it's Fahrenheit.
+
+09:23.600 --> 09:28.820
+If it's not, which means this metric, Celsius, that's what we are trying to get there.
+
+09:31.180 --> 09:33.460
+All right, let's go ahead and run this real quick.
+
+09:39.960 --> 09:40.260
+All right.
+
+09:40.290 --> 09:42.660
+Let's go to settings, I'm on my phone here.
+
+09:43.590 --> 09:44.690
+All right, there we go.
+
+09:44.700 --> 09:47.840
+So if I click right, it's changing back and forth.
+
+09:47.850 --> 09:49.020
+Fahrenheit Celsius.
+
+09:49.410 --> 09:51.270
+Fahrenheit Celsius, right?
+
+09:51.720 --> 09:54.720
+So that's exactly what we want and it's working.

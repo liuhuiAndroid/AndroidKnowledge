@@ -1,0 +1,76 @@
+WEBVTT
+
+00:00.330 --> 00:07.080
+So one thing I noticed this is after I was testing out things I noticed when we have a book, let's
+
+00:07.080 --> 00:13.380
+go ahead and I'm going to change this rating here, even though an update this is for it still sees
+
+00:13.380 --> 00:17.550
+3.5 here, it looks like I'm not changing this book rating at all.
+
+00:18.090 --> 00:20.430
+So let's start looking at.
+
+00:21.720 --> 00:27.270
+Let's go to our list card looks like the book reading is there and it's always using that.
+
+00:27.990 --> 00:29.640
+What do we want to do instead?
+
+00:29.850 --> 00:31.950
+Is pass the book right?
+
+00:33.210 --> 00:34.770
+And so we're going to go to the book.
+
+00:36.210 --> 00:37.380
+This is something I forgot.
+
+00:38.130 --> 00:40.860
+It's a book that rating.
+
+00:41.870 --> 00:45.290
+I guess so now let's go ahead and run.
+
+00:49.100 --> 00:56.540
+Now you can see it says four, because that's exactly what we have, if I say to which we should see
+
+00:56.540 --> 00:57.170
+two there.
+
+00:57.440 --> 01:02.960
+And let's make sure that it works all across, say, started reading and update now say zero.
+
+01:03.080 --> 01:03.970
+OK, that's okay.
+
+01:04.070 --> 01:04.490
+Click.
+
+01:05.390 --> 01:07.380
+Once we start reading, it refreshes everything.
+
+01:07.400 --> 01:07.990
+Let's update.
+
+01:08.850 --> 01:09.520
+OK, very good.
+
+01:09.620 --> 01:12.560
+So it is indeed working, as we would expect.
+
+01:13.550 --> 01:13.860
+All right.
+
+01:13.880 --> 01:14.930
+That was just a little thing.
+
+01:15.260 --> 01:20.360
+Make sure you go to a book rating in our components or wherever you created that and pass the actual
+
+01:20.360 --> 01:23.350
+book value there, right?
+
+01:23.570 --> 01:24.230
+Book that rating.

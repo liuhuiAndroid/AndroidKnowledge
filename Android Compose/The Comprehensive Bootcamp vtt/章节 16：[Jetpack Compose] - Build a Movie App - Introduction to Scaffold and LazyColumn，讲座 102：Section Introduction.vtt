@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00.240 --> 00:04.200
+So in this section, we are going to focus on a few things.
+
+00:04.230 --> 00:09.360
+The first thing we're going to look at is Scaffold, which is a UI structure that we can use in our
+
+00:09.360 --> 00:13.650
+apps to structure our apps using material design.
+
+00:14.220 --> 00:19.890
+And then we're going to look at navigation component, which is a very important set of tools that allows
+
+00:19.890 --> 00:27.090
+us to create really amazing navigations and complex in applications in our Android apps.
+
+00:28.020 --> 00:33.360
+And we're going to learn how to pass the data between screens using the navigation components.
+
+00:33.810 --> 00:38.820
+Also, we're going to learn about lazy column, which is a way for us to show a list of items going
+
+00:38.820 --> 00:40.320
+screen efficiently.
+
+00:41.280 --> 00:45.150
+And if we're going to do all of these while building a movie app?
+
+00:45.810 --> 00:47.220
+OK, so let's go ahead and get started.

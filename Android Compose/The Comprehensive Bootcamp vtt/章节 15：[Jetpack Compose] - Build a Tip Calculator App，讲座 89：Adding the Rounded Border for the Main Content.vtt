@@ -1,0 +1,271 @@
+WEBVTT
+
+00:00.610 --> 00:07.620
+So let's start looking at this other area here, which we will call the main content within this area,
+
+00:07.630 --> 00:11.680
+we have other many, any other composer what we need to put together.
+
+00:12.430 --> 00:18.820
+So again, I'm going to come up here and let's close this down, Foldit, I should say, and we're going
+
+00:18.820 --> 00:25.570
+to fall top header and right at the bottom here, I'm going to go ahead and work on something else.
+
+00:26.890 --> 00:28.510
+Let's say at composable again.
+
+00:36.980 --> 00:42.650
+It's a function, let's call this main content such.
+
+00:44.570 --> 00:45.260
+And there we have it.
+
+00:45.510 --> 00:46.520
+OK, I'm going to make this.
+
+00:50.530 --> 00:54.280
+The ad preview so can preview it.
+
+00:54.580 --> 00:57.430
+And if you want, you can just go ahead and.
+
+00:58.990 --> 01:01.990
+Comment this out, though, we don't have too many previews at once, right?
+
+01:02.170 --> 01:02.730
+That's fine.
+
+01:02.740 --> 01:05.190
+Either way works, but there we go.
+
+01:05.200 --> 01:07.330
+We have a preview on our main content.
+
+01:07.690 --> 01:10.120
+So our main content, again, we have all of this.
+
+01:10.330 --> 01:16.140
+So you see in the outer layers here, we have this very nice order here.
+
+01:16.150 --> 01:18.730
+So let's go ahead and see how can we put together such a thing?
+
+01:19.450 --> 01:20.860
+So go ahead.
+
+01:21.220 --> 01:22.810
+I'm going to use surface again.
+
+01:24.400 --> 01:30.400
+And then instead of our surface here, let me go back and I'm going to put a modifier.
+
+01:30.820 --> 01:31.690
+What's new?
+
+01:36.030 --> 01:38.370
+And let's go ahead and keep padding.
+
+01:39.540 --> 01:45.240
+I'm about to dive deep, so for all padding of to like that too deep?
+
+01:45.900 --> 01:55.620
+OK, so still there I go and make sure that we fill Max with and then we're going to get out of our
+
+01:55.620 --> 01:56.220
+modifier.
+
+01:57.180 --> 02:01.080
+So we want to create this structure here that is like just a border.
+
+02:01.560 --> 02:02.910
+OK, so what do we need to do?
+
+02:03.240 --> 02:05.070
+Is past shape?
+
+02:05.460 --> 02:06.030
+Yes.
+
+02:06.390 --> 02:12.750
+And in this case, I could use the circle shape or rounded corners or rounded.
+
+02:12.990 --> 02:18.030
+Let's see what we call, what do we use here, which was a rounded corner of shape.
+
+02:19.140 --> 02:24.780
+We can use rounded corner shape just to differentiate, but both of them yield to the same thing, really.
+
+02:25.080 --> 02:25.890
+So I'm going to say.
+
+02:28.500 --> 02:38.910
+Rounded corners, shape and form, the shape, see and the four corner here, a corner.
+
+02:40.840 --> 02:47.740
+And let's give it about eight ADP because we don't want the corners to be too curved, we want them
+
+02:47.740 --> 02:51.040
+to be a little bit curved just like this.
+
+02:51.670 --> 02:53.260
+So essentially kind of like this.
+
+02:53.530 --> 02:53.770
+OK.
+
+02:54.460 --> 02:54.720
+All right.
+
+02:54.830 --> 02:55.330
+Stay with you.
+
+02:55.900 --> 03:01.870
+Now the other thing we can also pass if you have for, you know, a surface is that we can pass if you
+
+03:01.870 --> 03:03.610
+other things, which is the border.
+
+03:03.940 --> 03:07.930
+You know the argument here, this is real helpful because that's exactly what we want.
+
+03:10.620 --> 03:13.170
+So afterwards here, I'm going to say border.
+
+03:13.740 --> 03:20.130
+And you can see the tape that is expecting is border stroke, toxic border border stroke.
+
+03:20.400 --> 03:25.860
+As far as that, and we have a few override methods here.
+
+03:26.190 --> 03:28.710
+Let's just get the second one.
+
+03:29.040 --> 03:34.940
+So the width of the stroke we can pass here, we just want something small.
+
+03:34.950 --> 03:39.540
+It's a width six one dpi that's fine.
+
+03:39.540 --> 03:40.530
+Nothing too thick.
+
+03:40.920 --> 03:44.610
+And for the color, I'm going to say color.
+
+03:44.910 --> 03:48.060
+It's going to use the light gray that comes with.
+
+03:51.220 --> 03:51.770
+I'm just going to go.
+
+03:53.870 --> 03:57.400
+Let's just say light gray, these is the color that we want.
+
+03:57.440 --> 03:59.630
+So it's going to be this color.
+
+03:59.630 --> 04:00.620
+They're just like gray.
+
+04:02.080 --> 04:02.380
+OK.
+
+04:02.740 --> 04:09.850
+Of course, we can get rid of these residual one things to do that is you click out option and enter
+
+04:10.120 --> 04:12.520
+and then remove redundant qualifier name.
+
+04:12.970 --> 04:14.440
+All right, so now just have surface.
+
+04:15.070 --> 04:18.190
+OK, and inside here what I can do.
+
+04:22.360 --> 04:27.610
+And inside, of course, this surface here notice this is where we're going to add all of these other
+
+04:28.270 --> 04:37.360
+UI widgets and all of them are in, all of them are one after the other, which tells us which all of
+
+04:37.360 --> 04:42.070
+them are one after the other vertically, which tells us again, we have a column.
+
+04:42.280 --> 04:42.510
+All right.
+
+04:42.520 --> 04:46.420
+Let's just go ahead and add to that column because we're not going to use it anyway.
+
+04:46.870 --> 04:49.810
+And for now here, I'm just going to add some gibberish.
+
+04:49.840 --> 04:50.980
+Just give a text.
+
+04:52.000 --> 04:57.250
+Hello and a few hellos here.
+
+04:58.330 --> 04:58.690
+OK.
+
+05:02.480 --> 05:06.770
+Let's go ahead and refresh just to see what we are going to see.
+
+05:08.780 --> 05:09.380
+And there we go.
+
+05:09.590 --> 05:14.960
+It's really small with so make this a little bigger.
+
+05:15.920 --> 05:18.260
+And if you look closely.
+
+05:22.750 --> 05:28.540
+Its tax rate over the year, you can see that we have that very nice border there, in fact, it can
+
+05:28.540 --> 05:32.080
+exaggerate this to 12 and you can see there it is or a border.
+
+05:32.500 --> 05:32.980
+All right.
+
+05:34.030 --> 05:37.510
+The stroke, I should say the border stroke, as you see there.
+
+05:38.230 --> 05:39.030
+OK, so it's there.
+
+05:39.040 --> 05:42.730
+We want about one to four now, so we can actually see.
+
+05:43.180 --> 05:43.560
+All right.
+
+05:43.570 --> 05:44.260
+So we have it.
+
+05:44.620 --> 05:45.490
+It's looking really good.
+
+05:45.700 --> 05:46.480
+It will look better.
+
+05:47.800 --> 05:48.070
+All right.
+
+05:48.070 --> 05:48.460
+There we go.
+
+05:48.460 --> 05:50.290
+So we have this structure that we need.
+
+05:50.590 --> 05:52.300
+Of course, we don't need all these hellos.
+
+05:52.300 --> 05:57.460
+We actually are going to replace all of that with all of these other things, other UI components.
+
+05:58.000 --> 06:03.370
+But at least we have the main shell, if you will, which is this structure here.

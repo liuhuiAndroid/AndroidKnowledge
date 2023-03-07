@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.180 --> 00:05.880
+Manuel, dependency injection works fine, but as the app scales, as things get more complex in no
+
+00:05.880 --> 00:09.210
+application, it can be very difficult to manage dependencies.
+
+00:09.570 --> 00:09.840
+Right?
+
+00:10.170 --> 00:17.190
+That's why we are going to use hilt health is a library that allows us to leverage and manage this dependency
+
+00:17.190 --> 00:20.160
+in Android, and it's the one that is recommended to use.
+
+00:20.820 --> 00:28.170
+The great thing about hilt, which is a dependency injection tool that allows us to have reusable code
+
+00:28.170 --> 00:32.960
+because now we have classes of objects that are decoupled that are not tightly coupled.
+
+00:33.120 --> 00:34.680
+Objects are tightly coupled.
+
+00:34.680 --> 00:39.300
+That means that they violate the single responsibility principle.
+
+00:39.600 --> 00:39.920
+Right?
+
+00:40.500 --> 00:44.280
+Which says that each class needs to have a single responsibility.
+
+00:44.580 --> 00:49.980
+If you couple with other objects, then that means it no longer has that simple responsibility.
+
+00:50.370 --> 00:50.610
+OK?
+
+00:51.090 --> 00:56.670
+And also, it's easy to refactor our code once we have decoupled our dependencies.
+
+00:57.120 --> 00:59.100
+As such, it's also easy to test.
+
+00:59.400 --> 01:01.320
+Everything is compartmentalized.
+
+01:01.320 --> 01:02.790
+Our code is compartmentalize.
+
+01:02.790 --> 01:03.830
+It objects.
+
+01:03.840 --> 01:05.610
+Classes are all compartmentalized.
+
+01:05.610 --> 01:08.130
+Separately, they're not tightly coupled.
+
+01:08.400 --> 01:11.070
+That is the benefit of dependency injection.
+
+01:11.550 --> 01:18.050
+Again, remember you can do all of this manually, but of course, at a huge cost, health is the recommended
+
+01:18.060 --> 01:19.710
+way of doing dependency.
+
+01:19.710 --> 01:25.470
+Injection in Android hilt also leverage actually another library called dagger.
+
+01:25.470 --> 01:30.510
+But we're not going to go into too much details, so we just know that hilt is the recommended way used
+
+01:30.780 --> 01:33.580
+for dependency injection to set up hilt.
+
+01:33.630 --> 01:38.180
+This dependency injection, you know, project, it takes a little bit of work, right?
+
+01:38.190 --> 01:40.830
+But nothing that we can't handle.
+
+01:41.220 --> 01:47.490
+So the amount of setting up that we need to do it doesn't compare to the advantages we get from hilt.
+
+01:47.790 --> 01:52.770
+So keep that in mind, and I'm going to go through the process of setting up our project so that we
+
+01:52.770 --> 01:58.380
+can start using Helt, which is this dependency injection manager per se.
+
+01:59.160 --> 01:59.480
+All right.
+
+01:59.500 --> 02:00.510
+Let's go ahead and get started.

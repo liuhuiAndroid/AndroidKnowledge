@@ -1,0 +1,727 @@
+WEBVTT
+
+00:00.390 --> 00:05.550
+So we know that we were able to save data and our database or favorite objects are being saved, which
+
+00:05.550 --> 00:06.120
+is great.
+
+00:06.270 --> 00:09.210
+Now we want to show those inside of our favorite screen.
+
+00:09.220 --> 00:12.180
+So when to create a structure like this, right?
+
+00:12.210 --> 00:13.020
+Let's go ahead and do that.
+
+00:13.980 --> 00:17.470
+Now we already we should have, I believe, already.
+
+00:17.490 --> 00:18.630
+Let me get rid of some of these.
+
+00:20.750 --> 00:23.840
+Let's go and find a favorite screen.
+
+00:24.380 --> 00:24.800
+Very good.
+
+00:25.130 --> 00:25.430
+All right.
+
+00:25.610 --> 00:26.680
+It's very empty.
+
+00:26.700 --> 00:27.490
+Nothing is there.
+
+00:27.500 --> 00:28.040
+That's fine.
+
+00:28.460 --> 00:29.300
+That's why we're here.
+
+00:29.360 --> 00:33.050
+So we have enough control and we're passing and we all need something else.
+
+00:33.380 --> 00:33.980
+Guess what?
+
+00:34.350 --> 00:41.270
+Yes, you need a favorite view model like this, and I'm going to go ahead and just instantiate it held
+
+00:41.270 --> 00:43.160
+view model so we can actually use it.
+
+00:44.540 --> 00:46.520
+So I'm going to create a scaffold here.
+
+00:46.910 --> 00:49.160
+Nothing really new for a top bar.
+
+00:50.060 --> 00:54.560
+I'm going to pass the weather app.
+
+00:56.100 --> 01:04.830
+Bar, such I'm going to pass on the controller and I'm also going to pass a few other parameters here
+
+01:04.830 --> 01:06.390
+because we can't do that, remember.
+
+01:06.690 --> 01:15.030
+That's the reason why we created this nav bar this top, this app bar should call it so that we can
+
+01:15.030 --> 01:15.900
+do things like this.
+
+01:15.900 --> 01:17.750
+We can customize to our liking.
+
+01:17.760 --> 01:19.920
+So it's, say, favorite cities.
+
+01:21.450 --> 01:22.720
+Okay for the title.
+
+01:22.740 --> 01:25.050
+I'm going to put it an icon here.
+
+01:27.550 --> 01:29.970
+You see icons default.
+
+01:30.720 --> 01:35.550
+Arrow back good is main screen.
+
+01:38.240 --> 01:41.540
+Let's say false, that works as well, it is not main.
+
+01:42.380 --> 01:43.850
+And we have enough controller.
+
+01:43.880 --> 01:44.560
+That's very good.
+
+01:51.500 --> 01:51.830
+OK.
+
+01:53.000 --> 01:56.730
+And we make sure here because I know I have that lambda.
+
+01:56.750 --> 02:03.980
+So when the back button is click, I'm going to use an IV controller and say Pop back stack.
+
+02:08.430 --> 02:08.720
+OK.
+
+02:09.030 --> 02:09.870
+Let's see.
+
+02:14.160 --> 02:16.230
+Put all in one lambda, that's fine.
+
+02:17.130 --> 02:25.680
+OK, so now here is going to be where we add all of this information right to the body of our favorite
+
+02:25.680 --> 02:26.130
+cities.
+
+02:32.080 --> 02:33.370
+Well, it's going to be very simple.
+
+02:33.760 --> 02:36.500
+First of all, let me put a surface here.
+
+02:36.580 --> 02:37.240
+What's new?
+
+02:37.930 --> 02:45.010
+And I'm going to add a modifier key for padding of a five dpi.
+
+02:45.910 --> 02:47.800
+I like to add modifier.
+
+02:52.840 --> 02:56.470
+And to Phil Max with.
+
+02:58.610 --> 03:01.010
+It's important to our DP there.
+
+03:08.900 --> 03:09.560
+And that's good.
+
+03:09.860 --> 03:10.940
+Let's add a column.
+
+03:14.020 --> 03:22.720
+And for a column, let's start with the vertical alignment or arrangement, I say arrangement, I want
+
+03:22.840 --> 03:23.530
+centre
+
+03:28.720 --> 03:29.980
+and horizontal.
+
+03:30.400 --> 03:32.350
+I'm going to see alignment.
+
+03:35.200 --> 03:36.490
+Senator, horizontally.
+
+03:38.780 --> 03:39.860
+That's about that.
+
+03:40.280 --> 03:45.560
+And here what I'm going to do, I'm going to create a file called this list and I'm going to say few
+
+03:45.560 --> 03:49.430
+model or rather our favorite your model.
+
+03:50.150 --> 03:55.400
+I'm going to invoke the five list variable, which is the property you remember correctly that we created
+
+03:55.700 --> 03:59.060
+right inside of the view model death value.
+
+03:59.060 --> 04:00.620
+And I'm going to say collect.
+
+04:05.750 --> 04:08.240
+Actually, I don't need to file, I'm going to say that.
+
+04:08.360 --> 04:13.430
+And let's go ahead and say, collect a state like this and then get the value.
+
+04:14.120 --> 04:14.590
+All right.
+
+04:14.600 --> 04:19.670
+So we get the actual state, which remember it's needed for composable because posibles.
+
+04:19.970 --> 04:26.180
+They are triggered triggered by data, but most importantly, data that's wrapped inside of a state.
+
+04:27.240 --> 04:28.500
+OK, all right.
+
+04:28.520 --> 04:29.000
+That's all.
+
+04:29.390 --> 04:30.080
+Not really.
+
+04:30.260 --> 04:38.060
+When parolees pass a lazy column here and I just going to use that lambda, it's much easier that way
+
+04:38.840 --> 04:44.030
+to say items going to use that flavor of items, items.
+
+04:44.030 --> 04:52.790
+Of course, in this case, I'm going to set it to our list of items there, a lambda and four lambda
+
+04:52.790 --> 04:53.150
+here.
+
+04:53.180 --> 04:56.380
+What I'm going to do call this city brew.
+
+04:57.410 --> 05:05.030
+I'm going to pass it, which is each one of our favorite objects in the past, our nav controller,
+
+05:07.490 --> 05:14.290
+which is our nav controller at the top and also going to pass the favorite view Model S..
+
+05:14.720 --> 05:19.310
+All right, let's go ahead and create our city row composable by the bottom here.
+
+05:21.320 --> 05:25.620
+I mean, go in and import that, OK?
+
+05:26.540 --> 05:29.210
+And sort of it, let's just call this favorite.
+
+05:31.240 --> 05:31.690
+That.
+
+05:34.220 --> 05:35.870
+Remove the excess and good.
+
+05:36.530 --> 05:40.190
+All right, so here we are, just going to create this very simple structure.
+
+05:42.300 --> 05:47.420
+You want to create a surface, of course, and passing the modifier.
+
+05:47.870 --> 05:59.380
+You were padding about three deep and filled max width and going to give a height of about 50 deep as
+
+05:59.420 --> 05:59.840
+such.
+
+06:01.380 --> 06:01.700
+Right.
+
+06:02.930 --> 06:07.010
+And the other thing I want to make sure that happens is that this is also clickable because we need
+
+06:07.010 --> 06:09.680
+to click on that and we're going to come back to that.
+
+06:15.100 --> 06:25.870
+So continuing here, I'm going to add the shape of circle shape such I'm going to actually customize
+
+06:25.870 --> 06:28.570
+this a little bit to add that pizzazz.
+
+06:28.570 --> 06:35.270
+So top end, I'm going to put a corner size corner size there of about 60.
+
+06:36.520 --> 06:38.440
+This is just me trying to be fancy.
+
+06:38.800 --> 06:41.500
+Nothing really necessary.
+
+06:41.500 --> 06:44.620
+But, you know, give it a color here.
+
+06:44.920 --> 06:45.780
+Say color.
+
+06:45.790 --> 06:47.680
+I'm going to use hex codes.
+
+06:49.840 --> 06:53.080
+So zero x f f what alphas and so forth.
+
+06:53.770 --> 06:56.740
+B to DfT.
+
+06:56.740 --> 06:58.240
+Be like this again?
+
+06:58.240 --> 07:02.380
+You can always change by clicking on the color there and change the color.
+
+07:02.800 --> 07:03.430
+Very handy.
+
+07:07.770 --> 07:08.640
+OK, there we go.
+
+07:09.060 --> 07:14.220
+And so now inside of our structure, here are a composed surface.
+
+07:14.760 --> 07:16.850
+Let's remove that redundancy there.
+
+07:16.860 --> 07:22.980
+I think I already have all the good there and now I'm going to create a row.
+
+07:23.970 --> 07:29.910
+Remember just creating this structure now inside there this row?
+
+07:30.630 --> 07:33.270
+We're going to make sure I pass a few modifiers here.
+
+07:33.270 --> 07:34.230
+So modifier.
+
+07:34.290 --> 07:34.710
+Oops.
+
+07:44.920 --> 07:51.700
+Phil Max, width and vertical alignment.
+
+07:51.790 --> 07:54.670
+I want this to be center vertically.
+
+07:58.870 --> 08:03.310
+And horizontal arrangement, I want this to be space evenly.
+
+08:06.340 --> 08:07.660
+And that's about it.
+
+08:13.270 --> 08:17.830
+And now it's just a matter of adding these text, all of that there.
+
+08:18.160 --> 08:22.300
+OK, so we start with a text.
+
+08:26.020 --> 08:28.460
+I'm going to use the object favorite because I have access to it.
+
+08:28.480 --> 08:33.520
+We're passing it there and I want to get the city property.
+
+08:37.510 --> 08:38.770
+Give it a modifier.
+
+08:41.420 --> 08:42.620
+I want to give a start.
+
+08:43.040 --> 08:44.540
+Start padding here.
+
+08:45.170 --> 08:47.540
+Of about four deep.
+
+08:48.620 --> 08:49.700
+And that's about it.
+
+08:52.030 --> 08:58.070
+And then if you look closely, it looks like I've also added, I do have something else here.
+
+08:58.120 --> 08:59.440
+Let's get rid of that.
+
+09:01.210 --> 09:04.810
+I have a background and then on top I have the tax.
+
+09:04.810 --> 09:09.490
+So just on the surface, what's new surface?
+
+09:11.730 --> 09:12.960
+Pass a modifier.
+
+09:27.440 --> 09:30.200
+Jesse Tulip for snow padding.
+
+09:30.890 --> 09:32.270
+And let's add.
+
+09:37.090 --> 09:39.550
+The shape, because the one that circle shape.
+
+09:43.150 --> 09:47.110
+Passing a color that's color I want.
+
+09:50.440 --> 09:52.980
+Then inside, that's why I'm going to pass on the text, right?
+
+09:54.220 --> 10:03.400
+And it's going to be a favorite that country hopes a country like this and its paths, of course, a
+
+10:03.400 --> 10:04.360
+modifier.
+
+10:08.120 --> 10:16.660
+I'm going to give a padding overall for deep and give a style material theme
+
+10:19.420 --> 10:21.910
+topography, say caption like this.
+
+10:23.290 --> 10:26.860
+OK, so we're done with this part.
+
+10:27.460 --> 10:28.990
+Now we're going to look at this.
+
+10:29.470 --> 10:29.860
+There.
+
+10:32.950 --> 10:34.750
+So I'm going to go outside, of course.
+
+10:35.800 --> 10:43.300
+Let's see, you have this structure there and created this row to remove that.
+
+10:43.330 --> 10:46.000
+So right after that, I'm going to create another icon.
+
+10:57.950 --> 11:00.170
+She was different there.
+
+11:00.740 --> 11:01.610
+I want to delete.
+
+11:05.350 --> 11:08.230
+It's just personal, actually, let's just say delete.
+
+11:14.850 --> 11:15.980
+Pass a modifier.
+
+11:20.050 --> 11:21.310
+I want this to be clickable.
+
+11:22.960 --> 11:23.890
+It's very important.
+
+11:24.580 --> 11:30.160
+And also, I want to pass it tint colour to change things a little bit when I say colour.
+
+11:33.680 --> 11:36.770
+Read and change of things, a little bit of.
+
+11:39.440 --> 11:40.780
+0.3 F.
+
+11:42.380 --> 11:42.740
+OK.
+
+11:44.940 --> 11:49.440
+Now, what do we want to happen when we click on this button?
+
+11:49.470 --> 11:50.440
+It's very simple.
+
+11:50.490 --> 11:53.520
+All I want to do is delete that favorite city.
+
+11:54.060 --> 11:59.460
+Serving as a favorite view model, dot, delete and pass our favorite object.
+
+12:00.570 --> 12:06.450
+Look how simple this is now, because we've structured everything again to emphasize everything is well
+
+12:06.450 --> 12:06.960
+structured.
+
+12:06.960 --> 12:09.850
+We have the lower part repository view model and so forth.
+
+12:09.850 --> 12:18.950
+So now at the top level of everything, it's so much easier to use what we've worked so hard for, huh?
+
+12:19.010 --> 12:25.860
+So just delete past that favorite object, which we know has been passed along in our city row and we're
+
+12:25.860 --> 12:26.130
+done.
+
+12:27.240 --> 12:31.530
+And the great thing now here is that while in fact, let's just run, this will wait to see if we're
+
+12:31.530 --> 12:37.950
+going to see something right because we've been looking to we've been working on the favorite for a
+
+12:37.950 --> 12:38.340
+while.
+
+12:39.990 --> 12:44.880
+Let's run this and hopefully make sure we can see something.
+
+12:48.840 --> 12:50.460
+All right, so let's go to our favorites.
+
+12:50.520 --> 12:52.600
+We can do that by clicking favorites.
+
+12:52.650 --> 12:53.220
+Aha.
+
+12:53.820 --> 12:59.010
+Just like that, we see San Diego, Seattle, Moscow, these are the cities we have added it before.
+
+12:59.640 --> 13:04.410
+How wonderful, in fact, because the elite is already there, I can click and voila, it's gone.
+
+13:05.100 --> 13:09.660
+If I go back, of course, say San Diego here, of course, that was the last thing we had.
+
+13:10.020 --> 13:11.310
+I can add something else.
+
+13:11.310 --> 13:13.950
+Let's say Rio de Janeiro.
+
+13:17.070 --> 13:18.300
+Hopefully you get something.
+
+13:18.600 --> 13:18.940
+All right.
+
+13:19.110 --> 13:22.000
+Janeiro, Brazil, that's saved.
+
+13:22.050 --> 13:23.620
+I know this is saved now.
+
+13:23.640 --> 13:24.270
+Good favorites.
+
+13:24.270 --> 13:25.590
+You should see a different era.
+
+13:26.600 --> 13:27.770
+And Brazil, it's there.
+
+13:28.790 --> 13:29.660
+All right, very good.
+
+13:30.050 --> 13:31.220
+It's working now.
+
+13:31.280 --> 13:37.760
+It is that when we click on this structure here, the whole thing, right, the whole room want to be
+
+13:37.760 --> 13:41.700
+able to go back to Maine and whatever now was clicked.
+
+13:41.720 --> 13:45.350
+We are going to repopulate this main screen here with that new city.
+
+13:46.310 --> 13:46.950
+What do we do that?
+
+13:46.970 --> 13:49.670
+Well, first of all, we have enough control in our city.
+
+13:50.540 --> 13:54.500
+And we're going to call that somewhere while we call that inside of this surface.
+
+13:54.500 --> 14:01.070
+Because remember, this is a surface that is this whole surface there.
+
+14:01.630 --> 14:01.910
+Right?
+
+14:02.420 --> 14:04.220
+So when that is clicked, we want to do something.
+
+14:07.040 --> 14:12.950
+Yes, we say nav controller and then we say navigate.
+
+14:13.010 --> 14:14.750
+Remember, we get the correct one.
+
+14:14.780 --> 14:16.550
+They were out strange like this.
+
+14:16.940 --> 14:18.290
+And here we pass the route.
+
+14:18.440 --> 14:27.620
+So we're going to use the weather screens these that's the, you know, and I'm going to go to main
+
+14:28.220 --> 14:29.530
+screen name.
+
+14:30.050 --> 14:31.640
+But look how wonderful this is.
+
+14:31.670 --> 14:35.860
+Remember, when we go to main screen, we have to pass a variable.
+
+14:35.870 --> 14:37.250
+In this case, we have passed to see.
+
+14:38.270 --> 14:42.500
+Which happens to be the city that we have right now set up for us.
+
+14:42.530 --> 14:42.800
+Right.
+
+14:43.730 --> 14:52.980
+So I'm going to say something like that and then passing the variable, which is our favorite dad city
+
+14:53.810 --> 14:54.320
+like that.
+
+14:56.430 --> 15:00.870
+That's right, because this favorite object here is what's being passed, you know, a single row,
+
+15:01.110 --> 15:06.990
+which in this case is going to be that favorite that we got from our favorite the view model.
+
+15:07.860 --> 15:15.930
+Like we look through the list to create this lazy column, which is this that shows they're right.
+
+15:17.220 --> 15:21.390
+And now we have access to each individual object because that's passed along, you know, see, the
+
+15:21.390 --> 15:26.850
+row in this case is the favorite, and we can use that to get the city.
+
+15:27.980 --> 15:33.560
+To navigate, to weather the main screen, and then we should pass in the new city.
+
+15:34.610 --> 15:42.200
+And just to for a reminder and we say main screen, you notice that main screen needs that information,
+
+15:43.110 --> 15:43.360
+right?
+
+15:43.370 --> 15:45.860
+We still have that log d there.
+
+15:46.160 --> 15:53.390
+But he needs this city for navigation because we passed the city name into our get weather data on another
+
+15:53.390 --> 15:57.320
+view model in our produce state, which drives everything here.
+
+15:59.690 --> 16:00.050
+All right.
+
+16:00.350 --> 16:01.310
+Let's see if this works.
+
+16:05.020 --> 16:05.430
+OK.
+
+16:05.730 --> 16:06.350
+Let's see.
+
+16:06.370 --> 16:12.040
+I'm going to go to favorites and let's say San Diego, click.
+
+16:12.160 --> 16:12.580
+Voila!
+
+16:12.700 --> 16:16.640
+San Diego is showing and it's showing everything about San Diego.
+
+16:16.870 --> 16:19.090
+Seven day everything works right.
+
+16:19.360 --> 16:23.590
+Because all that drives everything is our get weather data.
+
+16:23.590 --> 16:28.360
+We pass the city name, which we receive from our route.
+
+16:30.300 --> 16:33.810
+From what I from our out, our navigation arguments.
+
+16:35.730 --> 16:41.640
+All right, if I change this good favorites again, I want to read Jane Eyre again, click through airways
+
+16:41.640 --> 16:46.290
+showing I go, I want Seattle this time.
+
+16:46.650 --> 16:49.620
+And voila, there are a few things we need to do.
+
+16:49.920 --> 16:55.440
+Specifically, we see here that even though Seattle comes from, it's part of a favorite.
+
+16:56.160 --> 17:02.550
+They give us the option to still like this or still favor this seat, which is not what we want.
+
+17:02.550 --> 17:06.330
+So we want to be able to check, first of all, whenever we come here.
+
+17:06.360 --> 17:12.900
+Our main screen to check, to see if the city we are on right now, if that's the city, it's contained
+
+17:12.900 --> 17:17.610
+in our database and we're going to hide this because it makes no sense to show these ratings just like,
+
+17:17.610 --> 17:22.080
+well, we already have that city, so we don't need to save it again, even though if we try to save
+
+17:22.080 --> 17:29.640
+again with the strategy we have in our database table and so forth, we said that if it's the same item,
+
+17:29.640 --> 17:30.690
+we can always override it.
+
+17:30.690 --> 17:35.340
+But even though that's true, but this is just not good user experience.
+
+17:35.340 --> 17:42.000
+So we're going to hide that depending whether or not we have, that's already in our database.
+
+17:43.060 --> 17:44.620
+So that's what we're going to be doing next.

@@ -1,0 +1,457 @@
+WEBVTT
+
+00:00.120 --> 00:02.520
+So we've finished with our repository.
+
+00:02.610 --> 00:09.090
+Now it's time for us to look at the new models, we're getting closer to the prize in this case to be
+
+00:09.090 --> 00:15.450
+able to use composable and get data from a repository which gets from a Dow, which gets from a sequel
+
+00:15.450 --> 00:18.180
+eight, which gets from Entity Table and so forth.
+
+00:18.390 --> 00:18.690
+OK.
+
+00:19.200 --> 00:24.630
+OK, let's go ahead and open our project, and now we're going to go and create the view model.
+
+00:24.660 --> 00:31.980
+Now we know this view model is going to be in our favorites right screen.
+
+00:32.400 --> 00:38.910
+And so we are going to go back inside of our favorite package and you can see the reason why we had
+
+00:38.910 --> 00:39.900
+set up this way.
+
+00:39.900 --> 00:40.800
+We have these.
+
+00:42.020 --> 00:48.170
+Packages within packages because it makes life much easier, so now we're going to create a new class
+
+00:49.400 --> 00:51.230
+and it's going to be normal class.
+
+00:51.350 --> 00:57.350
+This is going to be favorite view Model S..
+
+00:58.070 --> 00:58.400
+OK.
+
+00:58.880 --> 01:00.860
+And because we are using hilt.
+
+01:01.950 --> 01:07.470
+And because we hit using hilt, we're going to say at Helt View Model, there we go.
+
+01:08.490 --> 01:16.470
+And of course, remember just like we did repository, we're going to take the repository and inject
+
+01:16.490 --> 01:18.570
+into our fuel model and inject.
+
+01:27.750 --> 01:30.120
+We want the weather database repository.
+
+01:30.510 --> 01:35.760
+And don't forget to make sure that this is actually if you model instance such.
+
+01:37.770 --> 01:38.160
+All right.
+
+01:39.760 --> 01:41.770
+It's close all these.
+
+01:43.170 --> 01:45.510
+And focus on our favorite funeral model.
+
+01:45.990 --> 01:51.960
+All right, so we can add a few properties to these favorite view model class.
+
+01:52.470 --> 01:56.350
+The first is going to be private Val.
+
+01:56.880 --> 01:58.530
+And this is going to be underscore.
+
+01:58.530 --> 02:00.540
+Recall this fave list.
+
+02:00.550 --> 02:05.940
+So we say and or score because we want to make sure that this or signal that this is actually private.
+
+02:08.020 --> 02:15.130
+Variable or field in that case, it won't be used anywhere else but in this class.
+
+02:15.530 --> 02:15.820
+OK.
+
+02:16.420 --> 02:19.030
+And we're going to make it a type.
+
+02:19.060 --> 02:22.400
+Now we know that we were expecting to get slow types.
+
+02:22.480 --> 02:26.200
+Now there is, of course, of extinction that call.
+
+02:26.200 --> 02:32.440
+It's called mutable state flow because we need to get that state portable in this case, mutable state.
+
+02:32.880 --> 02:33.880
+So we're going to see mutable.
+
+02:36.490 --> 02:38.620
+State flow like that.
+
+02:39.430 --> 02:41.500
+And here we are going to pass.
+
+02:41.890 --> 02:46.180
+Of course, requires the types that these miserable state for is going to expect.
+
+02:46.570 --> 02:50.050
+And we know it's going to be a list of favorite objects.
+
+02:51.010 --> 02:52.090
+All right, there we go.
+
+02:52.360 --> 02:57.610
+And of course, here I'm just going to shoot an empty list, say that it's just been empty, at least
+
+02:57.610 --> 02:58.180
+in the beginning.
+
+02:58.420 --> 03:00.880
+But it's not just a normal list.
+
+03:00.880 --> 03:03.960
+It's going to be a mutable state float list if you have over.
+
+03:03.980 --> 03:08.590
+Of course, it looks like it doesn't have a lot of information, but it says creates immutable set flow
+
+03:08.830 --> 03:12.700
+with the giving initial value, the initial value is going to be an empty list.
+
+03:13.520 --> 03:19.000
+OK, now we need to later than hear a creative foul.
+
+03:19.630 --> 03:26.920
+This is going to be the fave list which is going to be now an interface that any other application or
+
+03:26.920 --> 03:28.660
+any other class can use right away.
+
+03:28.690 --> 03:29.860
+You don't have underscore.
+
+03:30.370 --> 03:32.740
+So it's going to we're going to say it's equal to.
+
+03:32.770 --> 03:34.900
+We're going to get our fav list.
+
+03:36.280 --> 03:38.470
+Looks like a finished there.
+
+03:38.740 --> 03:39.040
+OK.
+
+03:39.610 --> 03:42.400
+So can I use our fav list mutable state there?
+
+03:42.430 --> 03:45.610
+I'm going to say that as state float.
+
+03:45.960 --> 03:48.010
+OK, you have over.
+
+03:48.050 --> 03:52.000
+He's going to say represents this mutable state stateful as with only state flow.
+
+03:52.000 --> 03:56.500
+So we are getting the state float that we get from a mutable state float, right?
+
+03:56.890 --> 03:59.950
+So we are saying we want to get all that as a state flow.
+
+04:00.250 --> 04:08.200
+And once we get that data, we're going to put in this five list property that we can use it anywhere
+
+04:08.200 --> 04:08.500
+else.
+
+04:08.950 --> 04:09.930
+And this is just for us.
+
+04:09.940 --> 04:12.070
+I'm going to create a neat block here.
+
+04:12.550 --> 04:19.720
+So for that, I'm going to see if I can use what I have right now, in this case, a repository and
+
+04:19.720 --> 04:24.190
+get everything that we have in our list or in this case, in our database.
+
+04:24.790 --> 04:28.360
+To do so, I have to look to do so.
+
+04:28.360 --> 04:30.400
+I have to put all that in a background.
+
+04:30.400 --> 04:38.080
+I have to launch a certain block, a call routine that will deal with all of the parallel, that will
+
+04:38.080 --> 04:43.450
+deal with all of the background threads and everything that we need to take care of that needs to be
+
+04:43.450 --> 04:44.080
+taken care of.
+
+04:44.590 --> 04:52.240
+So we do that by saying view, model, scope like that and invoke the launch block.
+
+04:53.410 --> 05:00.730
+And what I can do just to say, OK, we're going to get enough highways per say to run this parallel
+
+05:01.060 --> 05:03.100
+sequences of operations.
+
+05:03.100 --> 05:09.460
+I can just say dispatchers like that and say, I'll write so-and-so here, I'm going to invoke the repository.
+
+05:09.700 --> 05:10.750
+Where did that come from?
+
+05:10.780 --> 05:12.310
+Well, we are injecting.
+
+05:12.580 --> 05:15.280
+We have injected the repository here, right?
+
+05:15.790 --> 05:19.000
+And then I can just go and say, get favorites.
+
+05:19.810 --> 05:27.460
+You can see the favorites returns, a flow list of favorites, objects, which is very convenient.
+
+05:27.760 --> 05:31.550
+And then I'm going to use this distinct until changed function.
+
+05:31.660 --> 05:37.390
+You have over WhatsApp when I say, well, returns flow, where all subsequent repetitions of the same
+
+05:37.390 --> 05:38.780
+value are filtered out.
+
+05:38.800 --> 05:41.140
+So in this case, no repetition at all.
+
+05:41.500 --> 05:46.050
+And then I'm going to say collect block there to collect the information.
+
+05:46.060 --> 05:50.070
+In this case, going to be a list, as you can see of favorites.
+
+05:51.010 --> 05:58.120
+So I'm going to put that list of faves just for us to have that handle variable there.
+
+05:58.630 --> 06:06.070
+And then I'm going to check here if list of phase is null or empty.
+
+06:07.460 --> 06:08.860
+That's the case in is it logged?
+
+06:11.680 --> 06:15.960
+See, empty, empty faves.
+
+06:17.760 --> 06:21.960
+OK, let's put that inside of braces.
+
+06:23.830 --> 06:29.740
+Anyhow, the case arose then for now, what are we going to do when I say faithless?
+
+06:29.740 --> 06:31.630
+This is what we're going to add, right?
+
+06:32.290 --> 06:33.160
+That value.
+
+06:33.940 --> 06:44.890
+The list itself and do take our list of favorites that we're getting as we collect all of our favorites
+
+06:45.040 --> 06:46.240
+from our database.
+
+06:46.690 --> 06:51.610
+And we add that a sign that our faith lists the value, which is this guy there.
+
+06:53.150 --> 06:53.500
+All right.
+
+06:53.680 --> 07:02.560
+And while we there and say logged and I'm just going to print that out, so I'm going to use actually
+
+07:02.560 --> 07:12.700
+now the fave list, this public interface, if you will, that value to get that list, say faves like
+
+07:12.700 --> 07:13.000
+this.
+
+07:14.770 --> 07:15.120
+All right.
+
+07:15.160 --> 07:20.470
+So this is just for us in initially, obviously, initially there will be nothing there, but it's OK.
+
+07:21.010 --> 07:23.830
+And there you have it in there, on the bottom here.
+
+07:24.010 --> 07:27.460
+This is when I am going to invoke another functions, right?
+
+07:27.460 --> 07:35.470
+Because remember, this is a repository I rather, this is the view model, which if you look at our
+
+07:35.680 --> 07:42.160
+representation here we have now we have the repository in our view model and the few model, we have
+
+07:42.160 --> 07:47.260
+an instance of a repository we injected it, which is really helpful.
+
+07:48.050 --> 07:48.340
+Right.
+
+07:48.670 --> 07:59.380
+So now what we need to do is we need to create this function fine insert favorite to sort of favorite
+
+07:59.380 --> 07:59.440
+it.
+
+07:59.440 --> 08:06.730
+We need to pass a favorite object and I'm going to use the view model scope because that's important.
+
+08:06.730 --> 08:09.070
+As we saw earlier, we can set off a few model.
+
+08:09.580 --> 08:16.130
+So we get access to this view model scope, right, which is take off your model.
+
+08:16.420 --> 08:18.400
+And then I'm going to use lunch again.
+
+08:18.730 --> 08:24.910
+And in this case, I'm just going to call the repository and say, Insert favorite game pass that favorite
+
+08:26.770 --> 08:27.210
+like that.
+
+08:28.460 --> 08:31.190
+I can put out a new line so we can see everything there.
+
+08:33.380 --> 08:39.410
+So now when we call favorite the view model, essentially that say insert favorite would pass the favorite,
+
+08:39.650 --> 08:43.760
+you will know how to launch this code block here called the.
+
+08:45.650 --> 08:48.200
+Insert favorite and pass that favorite object.
+
+08:50.670 --> 08:51.330
+OK.
+
+08:51.360 --> 08:55.470
+The fun part begins, and I'm going to just put an update here, even though we're not going to use
+
+08:55.490 --> 09:00.390
+her favorite, going to pass a favorite object.
+
+09:02.800 --> 09:07.690
+And few model scope launch.
+
+09:09.790 --> 09:11.620
+It's called the repository.
+
+09:13.110 --> 09:16.230
+Update favorite pasta, favorite object.
+
+09:16.740 --> 09:17.310
+And we're done.
+
+09:18.660 --> 09:23.190
+OK, I'm going to do one more can continue to do other ones as well, of course, but we're going to
+
+09:23.370 --> 09:24.840
+do the ones we actually are going to use.
+
+09:25.230 --> 09:26.900
+Remove favorite.
+
+09:27.420 --> 09:33.360
+In fact, let's call this delete favorite just to have the same names.
+
+09:35.080 --> 09:42.630
+Pasta favorite view model scope got lunch repository.
+
+09:44.220 --> 09:46.710
+Delete favorite pie.
+
+09:46.810 --> 09:49.590
+So favorite and we're done.
+
+09:50.490 --> 09:57.360
+If you go to our repository, of course, you will see that we have others, but I'm just going to added
+
+09:57.360 --> 09:58.590
+the ones that we need.
+
+09:58.860 --> 10:01.590
+I'm not going to use to get favor by ID and so forth.
+
+10:01.590 --> 10:07.390
+But for completions, if you want, you can also have all of those reflected here.
+
+10:07.410 --> 10:08.310
+That's totally fine.
+
+10:08.610 --> 10:09.510
+But I'll just stop here.
+
+10:10.380 --> 10:13.860
+OK, I'm just put that in one line since you know exactly what's happening right now.
+
+10:16.120 --> 10:16.500
+All right.
+
+10:17.320 --> 10:22.450
+So we are good, that means now we move up a level.
+
+10:22.480 --> 10:27.670
+We go here, which is going to be our composable because now in sort of life data and what is right,
+
+10:28.030 --> 10:29.560
+we don't need to use data.
+
+10:30.190 --> 10:34.750
+We are actually using the immutable state flow, just the flow rate.
+
+10:35.530 --> 10:45.070
+And this, of course, when we call, you know, composable D5 list will have the flow of our data coming
+
+10:45.070 --> 10:50.260
+from their base and a list of favorites, and we'll know exactly how to deal with that.
+
+10:50.270 --> 10:55.090
+Or rather, the composable will know how to deal with that because it's the correct type that we need.
+
+10:55.180 --> 11:01.150
+You will have that state that's needed for a composable to know how to prove, to know how to compose
+
+11:01.150 --> 11:02.440
+itself and show the data.

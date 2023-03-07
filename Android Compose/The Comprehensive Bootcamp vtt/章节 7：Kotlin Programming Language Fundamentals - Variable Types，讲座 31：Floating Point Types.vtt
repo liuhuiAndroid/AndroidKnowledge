@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00.450 --> 00:03.870
+We just talked about whole numbers of integers, short and bright.
+
+00:04.260 --> 00:08.340
+But in reality, we also have different categories of numbers, right?
+
+00:08.370 --> 00:11.030
+These are called floating point types.
+
+00:11.070 --> 00:16.410
+So floating points, type ideas that we can represent decimal numbers, for instance, or fractions
+
+00:16.410 --> 00:17.100
+in real world.
+
+00:17.250 --> 00:20.520
+For those, we have float type, which is decimal numbers.
+
+00:20.520 --> 00:25.980
+So this represents all the decimal numbers you can imagine, and this holds 32 bits.
+
+00:26.130 --> 00:28.500
+And we have doubles that hold 64 bit.
+
+00:28.510 --> 00:31.470
+So all of these are floating point types.
+
+00:31.770 --> 00:37.620
+Now there's a lot that's been written technically about these two types, mainly in computer science
+
+00:37.620 --> 00:38.130
+arena.
+
+00:38.250 --> 00:40.680
+There's books, there are studies there.
+
+00:40.770 --> 00:44.820
+Papers have been written by gobir scientists to really distinguish these two.
+
+00:44.830 --> 00:49.770
+But in a nutshell, the main point that you need to take all you need to think about when we talk about
+
+00:49.770 --> 00:56.220
+floating point types is all comes down to precision because we want to be precise in the representation
+
+00:56.220 --> 00:57.030
+of certain numbers.
+
+00:57.120 --> 00:57.450
+OK.
+
+00:57.660 --> 01:05.100
+So if you want a precise number to be represented, you would want to use double game because Double
+
+01:05.100 --> 01:08.760
+will be able to hold more precision because number one, it holds 64 bits.
+
+01:08.970 --> 01:11.070
+We have more space for our decimals.
+
+01:11.310 --> 01:11.580
+All right.
+
+01:11.670 --> 01:13.590
+So let's go and take a look in code.
+
+01:13.620 --> 01:15.180
+How would we create these types?
+
+01:15.270 --> 01:18.060
+So imagine we want it to represent a decimal number.
+
+01:18.420 --> 01:22.990
+Well, the first one we would think of is the number PI.
+
+01:23.010 --> 01:27.030
+So we're going to say foul pi and we going to set that equal to something.
+
+01:27.030 --> 01:30.030
+In this case, it's going to be equal to three, not 14.
+
+01:30.210 --> 01:34.240
+So this dot is what would represent a decimal number in this case.
+
+01:34.260 --> 01:36.210
+This is going to be a double.
+
+01:36.330 --> 01:43.260
+It is a double because every number that we don't specify with F or D at the end, it will automatically
+
+01:43.260 --> 01:48.720
+be initialized as a double because the compiler will always infer that this is indeed a double because
+
+01:48.720 --> 01:54.630
+it will say, Well, if you're creating a decimal number, that means you want most the most precision
+
+01:54.630 --> 01:56.910
+and double offers that that is the default.
+
+01:57.000 --> 02:02.520
+But the moment we say f like this, then this is going to be represented internally as a float.
+
+02:02.550 --> 02:08.880
+Now, in some languages, you could put just an f as such, or you could just go and actually add the
+
+02:08.910 --> 02:09.790
+uppercase F.
+
+02:09.810 --> 02:13.620
+But in Kotlin, you will just go f like that the lowercase f.
+
+02:13.740 --> 02:15.450
+So now it's no longer a double.
+
+02:15.480 --> 02:17.460
+It is indeed a float.
+
+02:17.760 --> 02:22.990
+And let's see if we can print this and say, Pi, let's run this and see what's going to happen.
+
+02:23.010 --> 02:28.740
+I say float, OK, you say st that for if I remove that because we need more precision, let's see what's
+
+02:28.740 --> 02:29.280
+going to happen.
+
+02:29.520 --> 02:33.480
+I can see the number is still the same, but internally there are differences.
+
+02:33.900 --> 02:35.460
+OK, so let's do this.
+
+02:35.460 --> 02:36.610
+I'm going to change this number.
+
+02:36.630 --> 02:39.140
+In fact, let's go ahead and add a few more decimal digits here.
+
+02:39.150 --> 02:40.770
+So three something like this.
+
+02:41.190 --> 02:41.490
+OK.
+
+02:41.610 --> 02:42.300
+Just gibberish.
+
+02:42.480 --> 02:43.320
+Let's run this.
+
+02:43.770 --> 02:44.610
+OK, there go.
+
+02:44.620 --> 02:46.630
+So nothing really new here.
+
+02:46.650 --> 02:48.150
+Everything is the same, however.
+
+02:48.180 --> 02:49.580
+Let me change this number real quick.
+
+02:49.590 --> 02:57.610
+In fact, let's just say foul call this e and I'm going to say to that seven one eight two an eight,
+
+02:57.720 --> 03:00.750
+18 to eight for something like this.
+
+03:01.050 --> 03:02.220
+Let's run this.
+
+03:02.490 --> 03:06.700
+This, of course, will be offered as a double, and you can see everything is good.
+
+03:06.720 --> 03:13.590
+Now what will happen if I do the same things who file a float and it's going to be equal to this whole
+
+03:13.590 --> 03:14.060
+number?
+
+03:14.100 --> 03:16.290
+And then I put F to say float.
+
+03:16.290 --> 03:21.390
+By the way, in Scotland, you could either put lowercase f or uppercase after the way works.
+
+03:21.480 --> 03:23.010
+Let's see what is going to happen here.
+
+03:23.010 --> 03:30.870
+So I'm going to say print Elgin because I want to use the print in your line and print out and see like
+
+03:30.870 --> 03:36.540
+this do the same now e float and see what's going to happen.
+
+03:36.750 --> 03:37.710
+Now you see the difference here.
+
+03:37.710 --> 03:42.090
+So the first one here, that's our E, right, whole double number.
+
+03:42.240 --> 03:43.310
+It was very precise.
+
+03:43.320 --> 03:49.170
+It continued to show exactly all of our decimal digits has is there.
+
+03:49.290 --> 03:55.830
+However, when we change the same number to a float because we added a penalty, f things change a little
+
+03:55.830 --> 03:56.040
+bit.
+
+03:56.040 --> 03:58.980
+You notice that we lost at least three decimals there.
+
+03:58.980 --> 04:05.520
+And what happened is some rounding ended up happening because now this value here contains more than
+
+04:05.520 --> 04:07.860
+six or seven decimal digits, right?
+
+04:07.860 --> 04:14.580
+So one two three four five six seven eight nine 10, so more than six or seven, when we change to float,
+
+04:14.580 --> 04:19.890
+it's going to round itself up to at least six to seven decimal digits.
+
+04:20.490 --> 04:24.680
+So that is a difference between as you see double and float float.
+
+04:24.690 --> 04:30.180
+It's not that precise Iran's itself up, but for double, it will always be precise, meaning it's not
+
+04:30.180 --> 04:32.940
+going to round itself up as it does with float.
+
+04:33.300 --> 04:37.380
+You can imagine if you're putting together an application, they will need precise results.
+
+04:37.380 --> 04:42.720
+Precise numbers definitely will go with doubles as opposed to with floats for the reasons that we've
+
+04:42.720 --> 04:43.860
+just demonstrated here.
+
+04:44.010 --> 04:45.060
+All right, very good.
+
+04:45.390 --> 04:47.790
+So I hope this is making some sense.
+
+04:47.790 --> 04:50.580
+And again, just don't stress too much about it.
+
+04:50.580 --> 04:56.100
+If you know, if it's making a lot of sense, because all I want you to understand is that he won precision,
+
+04:56.190 --> 04:59.730
+you know, for these types of floating points type if you want precision.
+
+04:59.800 --> 05:00.400
+Absolutely.
+
+05:00.460 --> 05:03.700
+Go with doubles, if not really, then floats, that's totally fine.
+
+05:04.060 --> 05:05.080
+OK, very good.
+
+05:05.140 --> 05:05.890
+I'll see you next.

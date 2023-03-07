@@ -1,0 +1,268 @@
+WEBVTT
+
+00:00.360 --> 00:05.010
+All right, so before we proceed, I would like to talk about a little topic here of the immolated Android
+
+00:05.010 --> 00:05.490
+emulator.
+
+00:05.580 --> 00:12.690
+Now this has been something that developers Android developers specifically have talked about for as
+
+00:12.690 --> 00:15.330
+long as Android development was a thing.
+
+00:15.600 --> 00:23.010
+Meaning that developers have always had to deal with how slow the emulator will is in many cases now.
+
+00:23.370 --> 00:28.290
+But of course, things have changed throughout the years because computers have gotten faster, and
+
+00:28.770 --> 00:31.800
+the Android Studio also has gotten better and so forth.
+
+00:32.070 --> 00:38.430
+But I feel like regardless, you at some point will run into issues or run into problems with using
+
+00:38.610 --> 00:39.720
+the Android emulator.
+
+00:39.870 --> 00:40.200
+OK.
+
+00:40.290 --> 00:44.870
+And it may be that you're not part of this group of people who have problem with Android and later.
+
+00:45.120 --> 00:51.570
+But at some point your computer may crash because the Android emulator may take up a lot of memory.
+
+00:52.560 --> 00:59.370
+Also, I have to say that if you are getting serious about Android development, at some point you probably
+
+00:59.370 --> 01:04.980
+have to invest on an actual Android phone even if you don't already have an Android phone.
+
+01:05.160 --> 01:11.160
+OK, I want to say using Android emulator is a great thing, is easy, quick when everything is working
+
+01:11.160 --> 01:11.570
+fine.
+
+01:11.910 --> 01:18.480
+And so but nothing beats the actual device, the actual physical device that you can actually plug in
+
+01:18.480 --> 01:20.460
+into your computer and start testing.
+
+01:21.180 --> 01:26.400
+In this video, I want to share with you, how can you connect or how to set up a device for a development
+
+01:26.400 --> 01:28.590
+in actual Android device?
+
+01:28.950 --> 01:35.730
+Now, as you know, Android as an operating system and mobile operating system runs on a variety of
+
+01:35.730 --> 01:39.660
+devices, meaning there's different sizes, different manufacturers and so forth.
+
+01:39.900 --> 01:44.940
+That is the beauty of Android, but it gives us a little bit more headaches as developers because now
+
+01:44.940 --> 01:51.000
+we have to figure out, OK, now we have to deal with different devices, sizes and manufacturers and
+
+01:51.000 --> 01:51.570
+so forth.
+
+01:51.960 --> 01:57.660
+So what I'm going to show you here is going to help you depending on what kind of device you have.
+
+01:57.660 --> 02:03.480
+And this will also give you a way of troubleshooting when you're trying to set up your device and things
+
+02:03.480 --> 02:04.430
+are not quite working.
+
+02:04.470 --> 02:04.800
+OK.
+
+02:05.220 --> 02:05.490
+All right.
+
+02:05.820 --> 02:10.890
+So the first thing I want to show you is that I actually have my device set up and is running, as you
+
+02:10.890 --> 02:11.370
+see here.
+
+02:11.370 --> 02:16.010
+So this is actually mirroring my actual device.
+
+02:16.020 --> 02:22.470
+In fact, as you see here, I'm touching my device and you can see that it's working also there on the
+
+02:22.470 --> 02:22.830
+screen.
+
+02:23.250 --> 02:27.810
+And in fact, I can put this down and start touching, sorry, using my mouse here and I can do the
+
+02:27.810 --> 02:28.520
+same thing, right?
+
+02:28.530 --> 02:34.510
+So this is really nice, but it's actually running on my Pixel four device as we speak.
+
+02:34.530 --> 02:38.040
+In fact, if I go ahead and click running, in fact, let's just open here.
+
+02:38.310 --> 02:43.860
+There's this Pixel four API throw that is this device and this emulator in mind is this one.
+
+02:43.870 --> 02:44.850
+So when I run this?
+
+02:47.190 --> 02:52.740
+And in a second, you can see the app is running here, so I can go ahead using my phone now.
+
+02:53.430 --> 02:56.730
+So tapping and he can see that things are working.
+
+02:56.880 --> 03:02.490
+OK, so this is an actual an actual device that I'm I have installed the app and I'm testing it.
+
+03:03.120 --> 03:06.060
+The idea here, of course, is so that you have your own device.
+
+03:06.270 --> 03:07.680
+You don't have to have this software.
+
+03:07.690 --> 03:13.410
+Of course, I'm just using this because I want to show you as I run my app on my device so you can actually
+
+03:13.410 --> 03:17.970
+see it because I'm recording this video, but you have to have this, but you could have, of course,
+
+03:17.970 --> 03:20.040
+your own device as you develop.
+
+03:20.250 --> 03:27.330
+You can then run the app that we testing on to the device, which which should be faster and easier
+
+03:27.660 --> 03:27.900
+to do.
+
+03:27.900 --> 03:32.200
+So what do we need to do is to go to developer that Android dot com?
+
+03:32.220 --> 03:36.360
+This is, of course, that's the holy grail of everything, really.
+
+03:36.690 --> 03:41.190
+And if you search, if you go straight to this link, of course you're going to end up here, but you
+
+03:41.190 --> 03:47.370
+can always search, debug your app and or how to set up a device for development.
+
+03:48.210 --> 03:50.790
+And so most likely, you will end up somewhere here.
+
+03:50.880 --> 03:56.310
+OK, you can go for the inside of the overview first to see what's it all about?
+
+03:56.550 --> 04:00.270
+And there's a lot of information, and I'm not going to go through all of this because it's something
+
+04:00.270 --> 04:01.500
+that you can do yourself.
+
+04:01.950 --> 04:04.260
+But let's go to configure developer options.
+
+04:04.710 --> 04:05.290
+Click here.
+
+04:05.670 --> 04:10.890
+This will give you, of course, all the information you need most important how to enable developer
+
+04:10.890 --> 04:13.050
+options and use debugging.
+
+04:13.650 --> 04:13.860
+OK.
+
+04:14.490 --> 04:16.620
+And gives you exactly the tools.
+
+04:16.620 --> 04:21.570
+It gives exactly all these steps, depending on different phones, and they talk about API levels and
+
+04:21.570 --> 04:22.020
+so forth.
+
+04:22.320 --> 04:28.710
+So that because again, Android so diverse, there may be some differences in the user interface or
+
+04:28.710 --> 04:33.450
+in the way we access the settings like developer options and so forth.
+
+04:33.840 --> 04:34.200
+OK.
+
+04:34.560 --> 04:39.450
+As you see here says, for instance, that to enable developers options because sometimes you won't
+
+04:39.450 --> 04:46.740
+have this evolve options as in the settings right to enable it, you have to go to build number and
+
+04:46.740 --> 04:47.820
+tap seven times.
+
+04:48.300 --> 04:52.350
+And he says you can find this option in one of the following locations, depending on your device.
+
+04:52.650 --> 04:58.650
+So depending on your device level, Android level, API level, that is, you will go in and have to
+
+04:58.650 --> 04:59.880
+find in different places.
+
+04:59.880 --> 05:07.110
+But usually settings go to systems about phone and build number and tap it seven times and then you
+
+05:07.110 --> 05:11.640
+should be good, and then you should be able to get to developer options.
+
+05:12.900 --> 05:13.200
+OK.
+
+05:13.950 --> 05:17.730
+And these developer options, you have to sell it to on, as you see here.
+
+05:17.910 --> 05:24.180
+In order for you to be able to then be able to see or at least the Android Studio, be able to recognize
+
+05:24.180 --> 05:29.850
+that you indeed have a phone that is connected and ready to be used as a debug phone.
+
+05:30.760 --> 05:33.690
+I could see that is also in this course.
+
+05:33.690 --> 05:39.780
+I make solely use my own phone, which you should probably end up seeing something like this, but in
+
+05:39.780 --> 05:43.260
+your case, you may opt to using the emulator.
+
+05:43.260 --> 05:43.860
+That's fine.
+
+05:43.860 --> 05:44.640
+It doesn't really matter.
+
+05:44.850 --> 05:51.630
+I just want to give you the options so you understand that there are two ways to actually run your run
+
+05:51.630 --> 05:56.760
+ended by your apps using your own device, which I actually recommend because it's just better.

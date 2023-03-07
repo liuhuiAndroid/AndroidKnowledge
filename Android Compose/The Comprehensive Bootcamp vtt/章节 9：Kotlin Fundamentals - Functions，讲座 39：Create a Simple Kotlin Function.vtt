@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00.300 --> 00:02.970
+So as we said, OK, let's go ahead and create a function.
+
+00:03.240 --> 00:05.580
+So the syntax is very simple.
+
+00:05.820 --> 00:12.000
+Now we understand that the main here is indeed its own function, so we need to get outside of the main
+
+00:12.000 --> 00:13.380
+function to create another function.
+
+00:13.740 --> 00:15.300
+So let's say fun in this case.
+
+00:15.420 --> 00:18.270
+Let's call this say hello like this?
+
+00:18.390 --> 00:19.830
+OK, so this is the syntax.
+
+00:19.830 --> 00:25.060
+And then we have to add, of course, our curly braces to say that there is the block of our function.
+
+00:25.110 --> 00:28.320
+So here I can just say something very simple say print like that.
+
+00:29.040 --> 00:31.980
+This is a function like this.
+
+00:32.130 --> 00:38.010
+Now the whole idea of a function, as we said, is it just a way for us to package up certain statements
+
+00:38.010 --> 00:41.220
+and logic right into its own entity and then we can't use it?
+
+00:41.250 --> 00:43.920
+The great thing here is that we can call this anywhere we want.
+
+00:43.950 --> 00:45.750
+Mainly, we're going to call instead of another function.
+
+00:45.840 --> 00:50.970
+So in this case, I'm going to say something like, say hello like this, and you can see that Android
+
+00:50.970 --> 00:56.550
+Studio actually helps us right away to say, OK, I think you meant to say hello function, right?
+
+00:56.550 --> 00:57.700
+So we can just hit enter.
+
+00:57.720 --> 00:58.350
+And there we go.
+
+00:58.380 --> 01:02.430
+You know, it's called and make sure that you understand that when we call a function, we need to,
+
+01:02.460 --> 01:05.130
+of course, pass the parentheses as such.
+
+01:05.340 --> 01:10.590
+OK, so now if you run this and you can see it says this is a function because we've called say hello
+
+01:10.590 --> 01:15.810
+inside of main and remember, main is the entry point to any Kotlin program.
+
+01:15.930 --> 01:21.150
+OK, so so get so obviously in this enclosed body here, we can do all sort of things right.
+
+01:21.180 --> 01:30.180
+We can use, for instance, say something like for like that for Loop can see I in one through 100.
+
+01:30.350 --> 01:40.530
+We want to also say if I percentage sign to is equal to zero, meaning that we have numbers that are
+
+01:40.530 --> 01:41.740
+divisible by two.
+
+01:41.790 --> 01:51.780
+Then we can go ahead and take this and put inside there and say, Hi, is multiple of two like this?
+
+01:51.930 --> 01:52.170
+OK.
+
+01:52.320 --> 01:55.260
+So now I run this because say hello is still being called.
+
+01:55.270 --> 02:00.270
+You can see that we have this working, let's say, print Ellen to make it.
+
+02:00.270 --> 02:04.680
+Even so, we have a line break and go, let's run again.
+
+02:04.830 --> 02:06.420
+This is just makes it easier to read.
+
+02:06.570 --> 02:10.200
+So two is multiple of two, four and so forth, up to 100.
+
+02:10.440 --> 02:10.740
+All right.
+
+02:11.160 --> 02:11.730
+So there we go.
+
+02:11.740 --> 02:17.810
+We have the method to say hello, and there we have it because again, we're inside of our function.
+
+02:17.820 --> 02:20.850
+We can do all sort of things here and then be able to call it.
+
+02:21.060 --> 02:26.570
+This is its own entity, if you will, and then package it all up inside of this core, the braces.
+
+02:26.580 --> 02:30.450
+This is the body of our function, and we can call that function by its name.

@@ -1,0 +1,358 @@
+WEBVTT
+
+00:01.150 --> 00:07.390
+The app is pretty much done, which is wonderful news, but if you look at the bill, form can see that
+
+00:07.390 --> 00:13.330
+we have a lot of state inside of this class that are attached to bill form.
+
+00:13.360 --> 00:18.370
+Now the thing that we've learned earlier and we should always keep in mind is that it is a very good
+
+00:18.370 --> 00:25.990
+idea to always hoist this state up to the calling of function or to call in composable meaning that
+
+00:25.990 --> 00:29.470
+bill form is being called where, well, it's being called is being called.
+
+00:29.470 --> 00:31.080
+Instead of main content.
+
+00:31.620 --> 00:37.630
+We should hoist some of the state to main content and again understand that sometimes that may not be
+
+00:37.630 --> 00:40.090
+possible depending on the structure of your code.
+
+00:40.330 --> 00:40.880
+That's OK.
+
+00:40.900 --> 00:43.630
+But this is something that you should always keep in mind.
+
+00:43.960 --> 00:46.750
+So let's see if we can host some of these.
+
+00:48.180 --> 00:50.340
+Values or some of these states.
+
+00:52.200 --> 00:56.580
+So the first thing I'm going to do notice or bill form here, and we have modified which we haven't
+
+00:56.580 --> 01:02.400
+used a default argument here to say that if something is passed, that's fine.
+
+01:02.400 --> 01:04.200
+If not, we're just going to pass a default one.
+
+01:04.530 --> 01:05.550
+This is what it means.
+
+01:05.970 --> 01:06.170
+OK?
+
+01:06.780 --> 01:08.790
+And then we're passing on value change.
+
+01:08.790 --> 01:10.530
+That's reason why we're able to do this.
+
+01:10.950 --> 01:12.690
+This was just for testing purposes.
+
+01:12.900 --> 01:17.760
+We can pass the bill and do all sorts of things, but we want to be able to hoist some of this state
+
+01:17.760 --> 01:23.460
+to put inside of our main content because this is the composable that's calling our bill form.
+
+01:23.470 --> 01:28.830
+So it's just separate or to make this bill form relatively stateless.
+
+01:29.010 --> 01:35.730
+We were not going to be able to do fully stateless, but at least a relatively stateless list hosts
+
+01:35.730 --> 01:36.570
+some of these guys.
+
+01:37.110 --> 01:42.180
+So what I'm going to do is I'm going to pass a few parameters or arguments here.
+
+01:42.240 --> 01:46.230
+I'm going to say, first of all, is going to be range is going to be an inch range.
+
+01:46.790 --> 01:50.620
+When I said it to between one and 100.
+
+01:50.640 --> 01:53.850
+So what I'm doing here is that we're going to use this range in a second here.
+
+01:54.180 --> 01:54.980
+What are we doing here?
+
+01:54.990 --> 01:59.670
+I'm saying I want to create a range which is going to be used, you know, a slider here.
+
+01:59.820 --> 02:01.530
+This is going to be between one and 100.
+
+02:01.860 --> 02:03.570
+This is how we do it in codling.
+
+02:04.680 --> 02:04.950
+All right.
+
+02:04.950 --> 02:09.240
+So the next thing we are going to pass, it's going to be this split by.
+
+02:11.160 --> 02:16.890
+State and since I'm going to be passing it as a state, which means we will have to create it somewhere.
+
+02:17.710 --> 02:24.660
+Might the calling function, I'm going to say mutable, I'm going to put past the type immutable state.
+
+02:28.470 --> 02:35.370
+Such and I need to say the type that it's expecting inside of these angle brackets, so the type is
+
+02:35.370 --> 02:40.900
+going to be into such good, the next is going to be tip amount.
+
+02:42.390 --> 02:43.020
+State.
+
+02:45.050 --> 02:46.880
+It's going to be the same thing, immutable state.
+
+02:47.450 --> 02:50.410
+This case is going to be a double OK.
+
+02:51.320 --> 02:57.140
+And in total, for a person, it's going to be a mutable state again.
+
+02:57.830 --> 02:59.390
+Also a double like this.
+
+03:00.170 --> 03:02.990
+Let's change this one state says state like that.
+
+03:04.070 --> 03:11.390
+And now you can see if you go down here, you can see we have all of these that indeed can be changed.
+
+03:11.630 --> 03:18.350
+So at this point, I'm going to just go ahead and cut all of this as such, and we're going to move
+
+03:18.350 --> 03:20.690
+all of that to the calling function like this.
+
+03:23.180 --> 03:26.030
+And then we're going to pass that through here.
+
+03:26.390 --> 03:28.950
+So the first thing, let's say, let's start here.
+
+03:29.540 --> 03:32.900
+So let's start with split by state.
+
+03:32.990 --> 03:38.180
+I'm going to pass this split by state, OK?
+
+03:38.630 --> 03:46.220
+And then let's say tip a Mount St. Mary pass tip and Mount St. like that and total per person states
+
+03:46.220 --> 03:48.980
+and be able to total per person state such.
+
+03:49.220 --> 03:50.390
+So we have this land there.
+
+03:50.660 --> 03:51.740
+We don't really need it.
+
+03:51.860 --> 03:53.840
+So I'm going to just get rid of that altogether.
+
+03:57.070 --> 04:00.340
+Or in pass, nothing like this for our bill form.
+
+04:00.730 --> 04:07.090
+So now we have hoisted some of these states to the calling composable function.
+
+04:08.220 --> 04:10.620
+We didn't do all of them, but at least we did some of them.
+
+04:11.310 --> 04:12.900
+Now you see the Rangers not being used.
+
+04:12.960 --> 04:20.670
+This is, of course, optional in that if you go back to our bill form, you know, range here, if
+
+04:20.670 --> 04:25.560
+you don't pass anything, we have a default value, which is 100, one to 100.
+
+04:26.070 --> 04:32.400
+Of course, if you want to make this even more so, I can say something like this range and against
+
+04:32.410 --> 04:36.030
+say range like that.
+
+04:36.030 --> 04:41.550
+So it's going to go ahead and then get to the start and ending inclusive like that.
+
+04:41.550 --> 04:42.750
+So it doesn't matter.
+
+04:42.780 --> 04:43.680
+Either way would work.
+
+04:43.680 --> 04:47.040
+I could just comment this out and then not pass anything.
+
+04:47.640 --> 04:54.060
+And what you can do, of course, is whenever we call bill form for a range, you can just go ahead
+
+04:54.060 --> 04:58.590
+and pass that or different numbers, whatever range you want.
+
+04:59.130 --> 05:04.020
+So this modifier here that we're passing also that will be used, it's being used here.
+
+05:04.020 --> 05:07.230
+So I can just change that to pass a modifier that way.
+
+05:07.650 --> 05:13.380
+If for some reason or whenever we call bill form, we know we always going to use this modifier, it's
+
+05:13.380 --> 05:14.700
+passed if nothing is passed.
+
+05:14.940 --> 05:17.350
+Of course, it's just going to pass a default modifier.
+
+05:17.790 --> 05:19.250
+So now we've tried it.
+
+05:19.260 --> 05:24.660
+So now we're trying to customize even further the way everything is created.
+
+05:24.660 --> 05:29.800
+So I'm going to pass a modifier again that we're passing along in our parameters or in this case, I
+
+05:30.090 --> 05:30.510
+should say.
+
+05:34.830 --> 05:39.780
+Pass it modifier there, so anywhere that it's needed, you can just pass that modifier.
+
+05:40.860 --> 05:41.220
+OK.
+
+05:41.580 --> 05:42.360
+And there you have it.
+
+05:42.990 --> 05:46.530
+Let's go ahead and run it once again just to make sure we didn't break anything.
+
+05:50.500 --> 05:59.560
+OK, there it is, let's put about 1000 nice numbers so we can see, OK, that's working still.
+
+06:00.690 --> 06:07.080
+He'll go ahead and say 50 percent, that's $500 each person.
+
+06:08.250 --> 06:08.510
+OK.
+
+06:08.850 --> 06:11.300
+We said there were only two people.
+
+06:11.340 --> 06:17.340
+There's one person, of course, going to be $500 and tip if the tip is 500, which means 50 percent
+
+06:17.340 --> 06:19.140
+of the bill amount.
+
+06:20.100 --> 06:20.400
+All right.
+
+06:20.400 --> 06:22.140
+So everything is working great.
+
+06:22.320 --> 06:24.150
+So we've done a lot of work here.
+
+06:24.210 --> 06:32.790
+And most importantly, we were able to hoist some of the states from bill form to its calling function.
+
+06:33.270 --> 06:34.260
+Composable function there.
+
+06:34.910 --> 06:35.160
+OK.
+
+06:35.230 --> 06:36.900
+Not all of them, but at least some of them.
+
+06:37.500 --> 06:38.160
+OK, very good.
+
+06:38.310 --> 06:43.470
+Ladies and gentlemen, what I would like you to do, of course, is to go and maybe practice by creating
+
+06:43.620 --> 06:47.880
+different, different calculators so you can go online and look for other calculators.
+
+06:48.060 --> 06:51.450
+Or maybe there is a calculator that we would like you always wanted to create.
+
+06:51.990 --> 06:54.980
+Now you've learned at least how to put together a user interface.
+
+06:55.020 --> 06:56.640
+You learn how to use state.
+
+06:56.970 --> 07:03.240
+He learned how to really put together all of these little pieces and make your application work dynamically,
+
+07:03.240 --> 07:04.050
+as you can see here.
+
+07:04.290 --> 07:12.060
+So and one thing to notice is that we are driving the entire calculations solely through the inputs
+
+07:12.060 --> 07:19.110
+that we're getting the data, the input that we adding into the app through the widgets, right through
+
+07:19.410 --> 07:20.700
+the composable functions.
+
+07:21.000 --> 07:22.280
+This is huge.
+
+07:22.320 --> 07:28.500
+So I don't have a button that allows me to add the value and then set everything up and then click Calculate
+
+07:28.680 --> 07:31.740
+which you could do, but you can see how easy it is.
+
+07:31.890 --> 07:38.580
+We are dependent on the state of the data so that then we pass the data and there are some sort of reactive
+
+07:39.120 --> 07:44.580
+component to to the functions that are receiving this on function functions that receive the data and
+
+07:44.580 --> 07:48.180
+they know how to rebuild himself so that they can display the correct data.
+
+07:48.800 --> 07:49.110
+OK.
+
+07:49.170 --> 07:49.950
+This is real good.
+
+07:50.220 --> 07:50.610
+OK.
+
+07:50.880 --> 07:51.870
+Congratulations.
+
+07:52.200 --> 07:53.880
+And I'll see you next.

@@ -1,0 +1,436 @@
+WEBVTT
+
+00:01.820 --> 00:08.960
+All right, so back to on note button here, one click we want to be able to save something and listen
+
+00:08.960 --> 00:11.390
+to delegate the save action.
+
+00:12.290 --> 00:13.760
+So what do we need to do here?
+
+00:13.820 --> 00:14.630
+It's very simple.
+
+00:14.630 --> 00:15.980
+We do have this.
+
+00:15.980 --> 00:21.590
+Remember we still inside of our note screen, so we're going to pass this on date.
+
+00:22.130 --> 00:25.370
+So we're going to pass this on, add note and pass that actual note.
+
+00:26.960 --> 00:34.190
+We can say on add note like that expects us to pass a note and we can just create a note right away
+
+00:34.190 --> 00:34.580
+here.
+
+00:34.910 --> 00:36.860
+But remember, it's going to be our note.
+
+00:41.800 --> 00:45.130
+And so we don't have to pass the I.D. because that is created randomly.
+
+00:45.490 --> 00:53.770
+We're going to pass a title the title again because the title, the argument name is the same as the
+
+00:53.770 --> 00:54.760
+variable we're passing.
+
+00:54.760 --> 01:00.130
+That's fine to just add title like that and then a passed description like this.
+
+01:02.320 --> 01:09.370
+OK, guys, so we're getting these states that we created description and title, and we are passing
+
+01:09.370 --> 01:13.630
+them along on our own add note there.
+
+01:15.240 --> 01:21.180
+Now, after all that is done now, let's just add a little toast message here, so toast messages in
+
+01:21.180 --> 01:25.920
+Android are short messages that can pop up on the screen.
+
+01:26.160 --> 01:32.400
+They don't take too long to just give the user some sort of idea clue that something has happened.
+
+01:32.940 --> 01:34.020
+So let's say toast.
+
+01:34.560 --> 01:35.100
+There you go.
+
+01:36.180 --> 01:39.370
+And they make text like this.
+
+01:39.780 --> 01:42.450
+And he noticed that it will require us to pass.
+
+01:43.140 --> 01:48.810
+You'll notice it will require, as you notice, it will require us to pass a context.
+
+01:49.350 --> 01:50.460
+How do we get a context?
+
+01:50.460 --> 01:53.070
+First of all, a context in Android.
+
+01:53.190 --> 01:58.110
+Global class that has all the information about an application environment.
+
+01:58.320 --> 02:01.860
+So we will hear a lot of context in Android development.
+
+02:02.190 --> 02:09.000
+So think of it as a way of accessing the application specific resources and classes.
+
+02:09.360 --> 02:12.390
+So that's what it context is now.
+
+02:12.570 --> 02:18.090
+In this case, here it hosts need that context, which needs to know where does this belong?
+
+02:18.300 --> 02:26.730
+As we add this message, this short pop up message, that's why we need to pass a context now because
+
+02:26.730 --> 02:31.940
+we're not necessarily in search of an activity, so we can't really get the context as we usually do
+
+02:31.950 --> 02:33.570
+if you've done some Android development.
+
+02:34.200 --> 02:35.010
+What do we need to do?
+
+02:35.040 --> 02:38.440
+Let's go outside here to get a context.
+
+02:38.520 --> 02:43.710
+I'm going to say, Val, create a variable context.
+
+02:44.220 --> 02:53.850
+What we do, we say local context like that and say current hover over, you can say, return the value
+
+02:53.850 --> 02:56.770
+provided by nearest compositional local provider.
+
+02:56.790 --> 02:59.220
+So this is how we get the context.
+
+03:00.150 --> 03:05.670
+So coming down here, then we can use that context such.
+
+03:08.070 --> 03:16.820
+And then we're going to pass the text, the message note added, and then we going to pass also the
+
+03:16.830 --> 03:19.900
+length right toast that length.
+
+03:19.920 --> 03:22.140
+I want this to be short.
+
+03:23.100 --> 03:26.120
+OK, and let's not forget to show it right.
+
+03:26.490 --> 03:27.000
+They have it.
+
+03:27.000 --> 03:32.910
+So now we're going to have a toast that it will appear once the note has been added in this case, once
+
+03:32.910 --> 03:36.340
+we have clicked on the note button.
+
+03:36.360 --> 03:42.570
+So essentially this and if we go down here, we see that instead of our note row, we also passing on
+
+03:42.570 --> 03:43.900
+note clicked.
+
+03:43.920 --> 03:46.890
+So what we want to happen when we click on a note.
+
+03:47.430 --> 03:54.960
+Well, for this, in this case, we all we want is to invoke the honor, remove and pass the IT in this
+
+03:54.960 --> 03:57.850
+case is going to be did note you could have passed it.
+
+03:57.870 --> 03:58.890
+That would be fine, too.
+
+03:59.310 --> 04:00.990
+And because it's same thing, it's a note.
+
+04:01.280 --> 04:02.400
+OK, that's what we want to do.
+
+04:03.620 --> 04:11.240
+Remember, we had side of notes screen, so this is going to happen when we call it in Maine or somewhere
+
+04:11.240 --> 04:11.570
+else.
+
+04:13.340 --> 04:18.620
+OK, so this has been called on main activity, what you see here, we have no screen, we have this
+
+04:18.620 --> 04:20.810
+data source and all that.
+
+04:21.050 --> 04:25.580
+So on, remove here we can then implement the on remove and go from there.
+
+04:25.970 --> 04:34.070
+But how do we add those notes because we want to be able to add those notes when we click on Save?
+
+04:34.220 --> 04:40.130
+Once we added the title and the note to the first approach would be something like this will create
+
+04:40.610 --> 04:41.510
+a variable.
+
+04:41.750 --> 04:47.590
+I'm going to call, for instance, notes and say is equal to remember, right?
+
+04:47.930 --> 04:52.580
+And then here I could say mutable state list of like this.
+
+04:53.150 --> 05:00.500
+And I would have to say right before the parenthesis that the types were expecting this angle brackets
+
+05:00.500 --> 05:05.030
+here, the types they were expecting, it's going to be note, right, our note like this.
+
+05:05.300 --> 05:12.350
+So in this case here, then we have these notes, if you have over, is indeed a snapshot state list.
+
+05:12.350 --> 05:14.480
+So that means it's listening to a state.
+
+05:14.720 --> 05:19.880
+So we have a list that's wrapped around the state and we have a remember so that it will remember as
+
+05:19.880 --> 05:22.250
+we do recomposition so forth.
+
+05:22.610 --> 05:31.040
+That would mean then on add note, because we know when we said not screen here on add note, when that
+
+05:31.040 --> 05:36.950
+is called, we are going to add an object write and note.
+
+05:38.750 --> 05:43.490
+So now implementing everything here, so what we will do here would say, well, we have that note that's
+
+05:43.490 --> 05:44.540
+been passed around.
+
+05:44.780 --> 05:51.830
+I'm going to say here, right, snapshot there, I'm going to say dot, ad and pass it, which in this
+
+05:51.830 --> 05:53.600
+case is no object.
+
+05:53.840 --> 05:56.600
+Let's go ahead and run this to see if it will work.
+
+05:58.270 --> 05:58.570
+OK.
+
+05:58.870 --> 06:03.430
+Let's see if I go and add first add.
+
+06:03.700 --> 06:05.680
+Hello, world.
+
+06:05.890 --> 06:06.370
+Let's see.
+
+06:07.860 --> 06:14.340
+Note added, But in that case, then what we want to do is we want to remove this loaded, this load
+
+06:14.340 --> 06:16.860
+notes there because that's not what we want, right?
+
+06:17.160 --> 06:22.470
+I'm going to have to pass the actual notes like this for our notes list.
+
+06:23.130 --> 06:23.970
+Let's try again.
+
+06:24.510 --> 06:28.220
+Of course, if you run this notice, you'll notice that all of these will go away.
+
+06:28.230 --> 06:32.910
+So it's going to be empty because we are not getting anything from our data now.
+
+06:33.180 --> 06:36.300
+We're getting from our notes mutable state list here.
+
+06:36.540 --> 06:37.620
+OK, let's see if this works.
+
+06:38.400 --> 06:42.660
+Hello again from gibberish, I say, add Walla.
+
+06:43.140 --> 06:44.640
+It works right?
+
+06:45.240 --> 06:49.380
+Can I say another one again and add?
+
+06:49.740 --> 06:51.090
+And it is indeed working.
+
+06:51.600 --> 06:51.960
+All right.
+
+06:52.050 --> 06:52.980
+It works perfectly.
+
+06:53.280 --> 06:56.400
+We have the notes and clickable is working.
+
+06:56.610 --> 06:57.600
+Now let's go ahead and added it.
+
+06:57.690 --> 06:58.200
+Remove.
+
+06:58.620 --> 06:59.460
+So to remove.
+
+06:59.640 --> 07:00.270
+What do we do?
+
+07:00.570 --> 07:02.820
+Well, all we do, we say notes.
+
+07:04.520 --> 07:04.810
+Right.
+
+07:06.160 --> 07:11.540
+That remove element, which is going to be our it, which is the note.
+
+07:11.870 --> 07:17.900
+Now let's look at and remove before we move, let's check to see that we have everything set up and
+
+07:17.900 --> 07:19.780
+I can see that on note row.
+
+07:20.270 --> 07:23.840
+The on note collect is not being called anywhere.
+
+07:24.370 --> 07:24.830
+Aha.
+
+07:24.980 --> 07:28.270
+We need to pass here on note clicked.
+
+07:28.550 --> 07:32.000
+Click to pass our note object like this.
+
+07:32.360 --> 07:34.500
+Let's go ahead and remove that notice.
+
+07:34.540 --> 07:35.990
+It's very easy when to say notes.
+
+07:38.150 --> 07:38.350
+OK.
+
+07:38.810 --> 07:41.520
+That would remove that element.
+
+07:42.190 --> 07:42.450
+Right?
+
+07:43.010 --> 07:44.150
+Which is going to be that note.
+
+07:45.320 --> 07:46.190
+Let's go ahead and run.
+
+07:49.040 --> 07:51.230
+OK, let's go ahead and add something.
+
+07:56.730 --> 07:56.970
+OK.
+
+07:57.930 --> 07:58.770
+OK, it's click.
+
+07:59.100 --> 07:59.550
+All right.
+
+07:59.820 --> 08:00.510
+It's very moving.
+
+08:00.810 --> 08:01.410
+That's great.
+
+08:01.560 --> 08:03.440
+I'm down here safe again.
+
+08:05.370 --> 08:08.490
+I didn't save an OK, so we can keep adding whatever.
+
+08:08.490 --> 08:11.590
+We want to add all these items when you click.
+
+08:11.670 --> 08:12.750
+They are going to be.
+
+08:12.930 --> 08:15.480
+They will be removed, right?
+
+08:15.510 --> 08:16.200
+This is great.
+
+08:16.470 --> 08:18.630
+We should be happy that this is happening.
+
+08:19.230 --> 08:22.680
+However, this is not the best practices.
+
+08:22.800 --> 08:28.260
+The reason being is because first of all, this notes that we passing here.
+
+08:28.290 --> 08:35.280
+This is a state that is connected directly in the main activity, and because is a state that needs
+
+08:35.280 --> 08:45.540
+to be heavily related or heavily connected to data, it's not a good thing to have it inside here because
+
+08:45.540 --> 08:52.800
+imagine that we want a different class or a different composable to have access to the same data, potentially
+
+08:52.800 --> 08:53.760
+as could be the data, right?
+
+08:53.760 --> 08:55.980
+Because this is notes, it's a mutable state.
+
+08:55.980 --> 08:57.570
+Lists of notes.
+
+08:57.870 --> 09:03.570
+If that's the case, this state here of notes, this miserable state, it's only here.
+
+09:04.470 --> 09:09.540
+It's not going to be accessible anywhere else in our project, and that's a problem.
+
+09:09.600 --> 09:11.460
+Now how do we solve this?
+
+09:12.030 --> 09:19.590
+How do we hoist this very important state to a different class somewhere else that is independent from
+
+09:20.070 --> 09:23.610
+this one class or this composable?
+
+09:25.380 --> 09:27.300
+That's what we're going to learn in the next videos.

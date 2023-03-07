@@ -1,0 +1,331 @@
+WEBVTT
+
+00:00.550 --> 00:05.170
+Let's go ahead and get some real data and get some images and make it a little better.
+
+00:06.100 --> 00:06.910
+Let's go ahead and do this.
+
+00:07.450 --> 00:13.270
+Well, first of all, we are going to represent each movie as an object as things are right now, if
+
+00:13.270 --> 00:14.200
+you go to home screen.
+
+00:14.650 --> 00:15.490
+What are we doing here?
+
+00:15.490 --> 00:19.480
+We just passing this list of of strings.
+
+00:19.750 --> 00:20.590
+We're going to change that.
+
+00:21.160 --> 00:25.400
+So let's go back to our package.
+
+00:25.420 --> 00:28.330
+I'm going to right click create a new package.
+
+00:29.470 --> 00:31.260
+Model inside here.
+
+00:31.270 --> 00:34.910
+I'm going to create a new data class.
+
+00:34.920 --> 00:42.040
+So I'm going to create a codling in class and we need a data class, right, that you just will because
+
+00:42.040 --> 00:43.990
+this will just represent data.
+
+00:44.170 --> 00:47.480
+So when I call this movie section.
+
+00:47.770 --> 00:49.870
+So a movie will have an ID.
+
+00:50.590 --> 00:54.370
+He's going to be a string and then we'll have a title,
+
+00:58.030 --> 00:59.620
+which is also going to be a string.
+
+01:01.980 --> 01:10.410
+Yea, that was released the screen and genre, which is also going to be a strange
+
+01:12.780 --> 01:26.040
+director starring actors screen and the plot of the movie also streaming, so I'm just creating a few
+
+01:26.040 --> 01:37.950
+properties here and poster, which is going to be a strain as well, and vile images.
+
+01:38.970 --> 01:42.670
+It's going to be a list of string costume.
+
+01:42.730 --> 01:44.040
+Those will be your owls.
+
+01:45.720 --> 01:48.620
+And let's just front lines of with the rating.
+
+01:49.740 --> 01:51.060
+Also a string section.
+
+01:51.420 --> 01:57.630
+All right, now all of this data, we're going to be getting pieces of it actually from a film that
+
+01:57.630 --> 01:59.510
+Jason filed that I found online.
+
+01:59.600 --> 02:04.820
+Okay, so you will have access to this so you can take a look and see, right?
+
+02:04.890 --> 02:09.210
+But really, the way things are going to be set up, you won't really need this.
+
+02:09.210 --> 02:11.760
+But I will include in a way that way, you just have an idea.
+
+02:12.210 --> 02:19.500
+So what this is is a JSON file, which is a format used, used to represent data as object.
+
+02:19.740 --> 02:24.110
+OK, so we have an array or list containing objects that look like this.
+
+02:24.110 --> 02:27.120
+So each one of these is going to be a movie.
+
+02:27.690 --> 02:35.460
+So as an object or in this case, a class will have a title, a movie, one movie, a movie has a title
+
+02:35.460 --> 02:35.790
+here.
+
+02:35.790 --> 02:37.140
+Read it In so many other.
+
+02:37.650 --> 02:42.480
+This is what I am modelling from our movie class.
+
+02:42.480 --> 02:45.240
+They're OK with a few changes, of course.
+
+02:45.240 --> 02:46.200
+So this is what we're doing.
+
+02:46.650 --> 02:51.190
+So I'm going to extract all of this data and put in a list, right manually.
+
+02:51.510 --> 02:55.590
+And then we're going to be able to use this as our data source for this app.
+
+02:56.130 --> 02:56.520
+OK.
+
+02:56.590 --> 03:04.290
+So that's what we're doing now because we are not getting this information, this data movie data from
+
+03:04.290 --> 03:05.820
+anywhere else but locally.
+
+03:06.150 --> 03:12.780
+And it's just dummy data per say, I'm going to create a function here called get movies, OK because
+
+03:12.780 --> 03:14.520
+we're just getting something in this.
+
+03:14.520 --> 03:20.820
+In this case here, this will return a list of movie objects like this movie there?
+
+03:23.560 --> 03:23.870
+OK.
+
+03:24.070 --> 03:24.550
+There it is.
+
+03:24.910 --> 03:31.720
+And I must say return, I'm going to return a list of and I'm going to pass all the elements here.
+
+03:31.810 --> 03:36.040
+So here I'm going to go ahead and create a movie, a few movies, actually.
+
+03:36.040 --> 03:39.880
+So I'm going to say something like this movie and I'll have to pass it.
+
+03:40.780 --> 03:42.610
+Has the title and so forth.
+
+03:42.820 --> 03:44.830
+Now I already have created all of this.
+
+03:45.190 --> 03:51.070
+And so you should have you will have access to these objects, movie objects so that you know, that
+
+03:51.070 --> 03:54.320
+way you won't have to watch me type hour of editing.
+
+03:54.340 --> 03:59.610
+Now you can see, you can see now get movies will be returning movie objects.
+
+03:59.620 --> 04:05.070
+So each movie has an ID title year, Akshara director and so forth.
+
+04:05.080 --> 04:12.530
+And of course, Images lists the list of URLs containing images of the movie and so forth.
+
+04:12.530 --> 04:17.230
+So this is all going to be using to populate our user interface.
+
+04:18.310 --> 04:18.730
+All right.
+
+04:19.000 --> 04:26.710
+Now that we have that, let's go to our home and instead of passing a list of strings, what I'm going
+
+04:26.710 --> 04:27.070
+to do.
+
+04:27.100 --> 04:29.710
+Let's change this to say list of movies.
+
+04:31.930 --> 04:35.760
+Like a movie like this, we're going to have a problem, so we're going to have to get rid of all of
+
+04:35.760 --> 04:36.020
+this.
+
+04:36.020 --> 04:40.440
+So I'm just going to go ahead and delete this list.
+
+04:40.860 --> 04:43.950
+And he I'm just going to say get movies as such.
+
+04:44.340 --> 04:44.670
+All right.
+
+04:45.120 --> 04:50.980
+Now we're going to have another problem here because the movie row is expecting a string, right?
+
+04:51.000 --> 04:52.260
+So let's go to movie row.
+
+04:52.860 --> 05:01.650
+And here I'm going to just say this will be a movie object like that, and I'm going to have an issue
+
+05:01.650 --> 05:02.010
+here.
+
+05:02.460 --> 05:07.440
+And because on click what we want to do is want to be able to get the ad.
+
+05:07.560 --> 05:13.830
+Someone say that I'd hate to invoke that ad. We're going to need that to then get the information.
+
+05:15.180 --> 05:15.450
+All right.
+
+05:15.450 --> 05:21.330
+So this text here, of course, a movie now is just an object actually is an object like just an object.
+
+05:21.690 --> 05:26.280
+Let's just say for this text I'm going to say won the title that I want to show here.
+
+05:26.280 --> 05:30.720
+So I'm invoking the properties of our object very well.
+
+05:31.080 --> 05:36.010
+Now the other thing you will notice is that the movie row is inside of main activity.
+
+05:36.030 --> 05:36.990
+This is not good.
+
+05:37.380 --> 05:38.860
+So what are we going to do, actually?
+
+05:38.890 --> 05:43.890
+Usually, what we want to do is to create another package.
+
+05:44.460 --> 05:46.750
+In this package, we can call widgets.
+
+05:46.770 --> 05:53.320
+So this is where we add all the pieces of information in this case, all the pieces of the UI, all
+
+05:53.320 --> 05:55.080
+of the composable, smaller, composable.
+
+05:55.410 --> 05:55.680
+OK.
+
+05:56.550 --> 05:59.700
+So then I'm going to just cut all of this.
+
+05:59.700 --> 06:00.950
+In fact, before I do that.
+
+06:00.990 --> 06:03.890
+Let me create a new file.
+
+06:05.400 --> 06:08.970
+It's going to be just a file and call this.
+
+06:10.930 --> 06:11.620
+Widgets.
+
+06:14.540 --> 06:22.450
+Like this because we can put more than one widget, OK, and then we're going to get all of this going
+
+06:22.460 --> 06:27.350
+to just select all people in there.
+
+06:28.790 --> 06:32.360
+Right now, remain will most likely.
+
+06:32.960 --> 06:33.710
+And there you have it.
+
+06:33.920 --> 06:37.490
+OK, so now we have the widget, there is then being used anywhere.
+
+06:37.520 --> 06:39.050
+Well, it's being used here.
+
+06:39.500 --> 06:43.040
+So let's go ahead to and import our movie row.
+
+06:44.060 --> 06:46.870
+And let's see a movie that's good.
+
+06:48.890 --> 06:51.980
+Looks like we haven't had a problem, yes, we need to get rid of this import.
+
+06:52.430 --> 06:53.990
+That's old one old news.
+
+06:54.950 --> 06:57.050
+OK, so now what are we going to do?
+
+06:57.080 --> 06:58.850
+Let's go ahead and run and see what's going to happen.
+
+06:59.600 --> 07:07.710
+We should be able to get the correct information actually from our from our data database per se right
+
+07:07.730 --> 07:08.390
+to get movies.
+
+07:09.020 --> 07:14.960
+Now, if I click here, I'm going to go and get now the ID, because that's what we said.
+
+07:14.960 --> 07:17.160
+We were going to be passing the ID.
+
+07:17.270 --> 07:23.450
+So each movie, if we go back to our movie, we added this unique ID.
+
+07:24.080 --> 07:26.690
+This is important, as you will see later.
+
+07:27.470 --> 07:32.990
+Next, we're going to revamp each one of these rows to look a little bit better than this.

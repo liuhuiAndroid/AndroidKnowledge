@@ -1,0 +1,517 @@
+WEBVTT
+
+00:01.310 --> 00:09.140
+So let's add our email text field here to facilitate our lives again is I'm going to create yet another
+
+00:09.650 --> 00:12.830
+and composable here at composable.
+
+00:17.010 --> 00:19.210
+This phone call this email.
+
+00:20.830 --> 00:22.090
+Input such.
+
+00:25.230 --> 00:28.410
+Our e-mail input here, I'm going to pass a few parameters.
+
+00:28.620 --> 00:34.080
+So the first one is going to be modifier, of course, we've seen this many times this past this modifier
+
+00:34.080 --> 00:35.970
+to say it's optional.
+
+00:36.570 --> 00:42.220
+I have to worry about it if nothing is passed and then I'm going to pack IMO state.
+
+00:44.280 --> 00:51.870
+Next list past IMO state, which is going to be the actual text that we added inside of this text field.
+
+00:52.620 --> 00:55.140
+OK, which means this has to be a certain type.
+
+00:55.560 --> 01:00.570
+It's going to be, yes, immutable state type of string.
+
+01:00.600 --> 01:02.040
+That's what's going to be expecting.
+
+01:02.310 --> 01:06.380
+OK, the next thing we need to pass here is going to be label ID.
+
+01:06.720 --> 01:10.440
+There's going to be the label of our text field.
+
+01:10.640 --> 01:15.150
+This case is going to be IMO and then I'm going to say enabled.
+
+01:17.570 --> 01:21.230
+It's going to be a Boolean, and we're going to start off with true.
+
+01:22.490 --> 01:29.150
+And any action going to pass in any action in this case, we just want the button at the bottom of the
+
+01:29.570 --> 01:31.550
+keyboard to say I am action.
+
+01:31.820 --> 01:33.920
+There's done next, default and so forth.
+
+01:33.920 --> 01:34.940
+We just want next.
+
+01:35.330 --> 01:36.230
+You can change that.
+
+01:36.620 --> 01:39.470
+So we structuring our input field.
+
+01:39.500 --> 01:41.000
+How is it going to respond?
+
+01:41.540 --> 01:44.630
+How is it going to respond when the keyboard comes up?
+
+01:45.230 --> 01:45.500
+All right.
+
+01:45.500 --> 01:50.270
+So one action when something happened, we we're going to pass a keyboard.
+
+01:50.540 --> 01:51.830
+Keyboard actions.
+
+01:54.290 --> 01:58.490
+Such there said that two keyboard actions.
+
+01:59.640 --> 02:05.430
+Default, such as use of default keyboard actions that the system provides.
+
+02:06.120 --> 02:12.900
+OK, so next here, I'm actually going to call yet another composable that were constructed the actual
+
+02:13.260 --> 02:13.710
+field.
+
+02:14.130 --> 02:14.520
+OK.
+
+02:15.270 --> 02:16.390
+There's a reason why we do this.
+
+02:16.410 --> 02:21.060
+OK, so I'm going to say input field, which we haven't created.
+
+02:21.780 --> 02:24.030
+Go ahead and create this composable.
+
+02:24.840 --> 02:25.380
+There we go.
+
+02:28.140 --> 02:34.140
+So this input field is going to be called inside of email input, which is going to be called somewhere
+
+02:34.140 --> 02:34.770
+around here.
+
+02:35.430 --> 02:35.760
+All right.
+
+02:36.630 --> 02:38.940
+So what is that we want to happen in the cold field?
+
+02:39.270 --> 02:46.740
+Well, the input field would probably have pretty similar values or parameters or in this case, from
+
+02:46.890 --> 02:48.650
+our email input, right?
+
+02:48.900 --> 02:56.840
+And extract this and say my fire again, passing my fire now to pass the value state, right?
+
+02:56.850 --> 02:59.550
+Same thing that state we looked at earlier.
+
+03:00.000 --> 03:06.780
+It's going to be mutable state type of string thing and then label it.
+
+03:07.200 --> 03:12.570
+Again, it's going to be a string and enabled make it Boolean.
+
+03:12.630 --> 03:15.180
+It's going to be and then I'm going to pass.
+
+03:15.180 --> 03:23.160
+Another special field here is is single line because I want to make sure that text field here can allow
+
+03:23.160 --> 03:26.880
+more than one line in case we want more information from the user.
+
+03:27.420 --> 03:28.740
+So it's just going to be a Boolean.
+
+03:29.010 --> 03:33.060
+And to begin with, I'm going to say true, I want this just to be one line.
+
+03:34.620 --> 03:34.890
+OK.
+
+03:35.350 --> 03:37.830
+Of course, the keyboard type.
+
+03:40.050 --> 03:46.200
+Here, I'm going to want to I'm going to want actually just going to say, I want this to be a keyboard.
+
+03:46.380 --> 03:52.870
+Text different kind of keyboards, OK, and immediate actions.
+
+03:53.910 --> 03:58.320
+I'm going to say just one Miami action next, just like what we had before.
+
+03:58.680 --> 04:01.170
+One Action keyboard actions.
+
+04:01.230 --> 04:03.000
+I'm going to say keyboard actions.
+
+04:03.360 --> 04:04.470
+I want to default.
+
+04:05.310 --> 04:09.120
+Now here is what I'm going to actually create the text fields.
+
+04:09.630 --> 04:13.890
+So what I want is I want to create an outline text field like that.
+
+04:14.160 --> 04:19.500
+Now we were using white composable gives us, OK, so outline text field.
+
+04:19.770 --> 04:27.300
+In this case, our value here, I'm going to put the value state that value right and on change.
+
+04:27.570 --> 04:29.610
+I'm going to pass this case.
+
+04:29.610 --> 04:32.340
+I'm going to pass a lambda and I'm going to do.
+
+04:32.790 --> 04:34.950
+I'm going to say values state at that value.
+
+04:35.340 --> 04:41.720
+I'm going to set that to it, which is going to be the value we're getting from our values state right.
+
+04:42.030 --> 04:49.110
+So when things change, we are passing year these changes so we can take that change added to our value
+
+04:49.110 --> 04:49.440
+state.
+
+04:49.860 --> 04:55.140
+So what this is really is whatever is written inside of our text field.
+
+04:55.830 --> 04:56.220
+All right.
+
+04:56.250 --> 05:02.100
+So now we're constructing our outline text field through the parameters or the fields that we are passing
+
+05:02.100 --> 05:07.590
+through this input field, which of course, is going to be passed along from our email input.
+
+05:07.620 --> 05:12.930
+I understand there is a tree of calling different composable, but this is good because then we can
+
+05:12.930 --> 05:14.100
+separate the concerns.
+
+05:14.520 --> 05:14.790
+All right.
+
+05:15.180 --> 05:18.460
+So let's continue here constructing our outline text field.
+
+05:18.490 --> 05:21.810
+We now creating this outline there, OK for the label.
+
+05:21.810 --> 05:23.550
+Need to pass, of course, a lambda.
+
+05:24.180 --> 05:28.600
+It's going to be a text and I'm going to pass the label ID.
+
+05:29.220 --> 05:33.360
+We're going to be passing down when we invoke the input field on a single line.
+
+05:33.540 --> 05:35.550
+What do I want to happen when it goes?
+
+05:35.560 --> 05:40.200
+Pass is single line, which is going to be the decision we have created here.
+
+05:40.230 --> 05:47.340
+So if we say it is false, then it's going to be a single line where passive text, actually, let's
+
+05:47.340 --> 05:47.670
+see.
+
+05:48.060 --> 05:53.790
+Let's pass a textile for the entire field and say text style.
+
+05:55.500 --> 05:56.880
+Yeah, I had fond.
+
+05:58.020 --> 05:59.160
+About 18.
+
+06:03.120 --> 06:04.890
+Let's import ASP as such.
+
+06:09.260 --> 06:11.810
+And then to give a color, I'm going to use material.
+
+06:14.070 --> 06:19.650
+Theme that colors and I'm going to say on background this section.
+
+06:21.010 --> 06:26.680
+And this is going to take the color that is necessary to show this tax, depending on the background
+
+06:27.040 --> 06:29.050
+they have set up for our application.
+
+06:29.560 --> 06:31.480
+And next, I'm going to pass the modifier.
+
+06:32.000 --> 06:34.600
+Just pass the bar if I were going to be passing through.
+
+06:36.970 --> 06:39.800
+And I'm going to say dot padding.
+
+06:40.420 --> 06:42.280
+I'm going to add it, I don't padding here.
+
+06:42.670 --> 06:44.840
+Of about 10 dpi.
+
+06:44.860 --> 06:48.250
+Again, this is just making this look good.
+
+06:48.310 --> 06:51.590
+That's all we're doing here is nothing with special starch.
+
+06:51.760 --> 06:57.310
+I'm going to keep about 10 dpi and also about 10 dpi.
+
+06:57.650 --> 07:06.650
+Then I want to make sure that Phil Max with, OK, we're going to continue on what had enabled this
+
+07:06.670 --> 07:14.140
+past enabled property or argument and then keyboard options option as such.
+
+07:14.920 --> 07:21.220
+And actually, I'm going to pass inside of constructor there, the keyboard type.
+
+07:21.880 --> 07:24.670
+It's going to be keyboard type that we are passing.
+
+07:26.950 --> 07:29.530
+Here she is going to be just text, right?
+
+07:29.800 --> 07:37.720
+And then the immediate action is going to be our army action we set out to be when reconstructing our
+
+07:37.720 --> 07:38.320
+input field.
+
+07:38.560 --> 07:42.070
+So for a keyboard action, we're just going to go ahead and pass what we saying here.
+
+07:42.070 --> 07:43.330
+Keyboard actions default.
+
+07:43.960 --> 07:47.170
+That can be changed, of course, but we're just going to have a default one.
+
+07:47.500 --> 07:52.450
+So now we see our input field, which has been called inside of her email input, which is going to
+
+07:52.450 --> 07:56.270
+be called somewhere here so we can actually show something now.
+
+07:56.290 --> 07:58.900
+It requires all of those fields, right?
+
+07:58.900 --> 08:03.640
+All those parameters or arguments, which is going to be the modifier we're passing along.
+
+08:05.350 --> 08:10.090
+And then I'm going to pass the email state and say email state.
+
+08:11.870 --> 08:16.400
+Which is going to be equal to emails, state that we're passing along here.
+
+08:17.150 --> 08:19.880
+Values state as it's called.
+
+08:19.970 --> 08:20.480
+There we go.
+
+08:21.680 --> 08:22.840
+And they label it.
+
+08:23.330 --> 08:25.250
+I'm going to say label it.
+
+08:27.340 --> 08:30.100
+Enabled, passing enabled.
+
+08:31.450 --> 08:32.740
+Keyboard type.
+
+08:34.380 --> 08:35.970
+It's going to be keyboard.
+
+08:37.680 --> 08:44.880
+Email, it's a keyboard, so email course, because this requires an email.
+
+08:45.160 --> 08:52.660
+OK, I am actions and say I am e actions force on action.
+
+08:52.680 --> 08:54.540
+I'm going to pass on action.
+
+08:54.810 --> 08:55.200
+Here we go.
+
+08:57.780 --> 08:59.760
+OK, so now we have our input field.
+
+08:59.970 --> 09:04.680
+Now email input is going to go here to email input.
+
+09:04.830 --> 09:06.000
+We're past the state.
+
+09:06.330 --> 09:10.070
+The state, of course, is going to be this guy there.
+
+09:10.780 --> 09:11.790
+Mass email.
+
+09:14.500 --> 09:24.100
+Enabled there pass through for now will change later on action here I'm going to pass the keyboard actions
+
+09:24.340 --> 09:27.640
+and what I want to do is always say password.
+
+09:30.160 --> 09:34.180
+Focus request, that request focus like this.
+
+09:34.510 --> 09:40.510
+This means when we say done or something, it's going to go ahead and focus on the next field we're
+
+09:40.510 --> 09:41.950
+going to create, which is going to be the password.
+
+09:42.520 --> 09:45.040
+Well, let's see if we can see something in our preview here.
+
+09:45.640 --> 09:46.090
+All right.
+
+09:46.150 --> 09:49.390
+You can see there is our nice preview here.
+
+09:50.440 --> 09:53.500
+We have our email field showing.
+
+09:53.710 --> 09:53.950
+All right.
+
+09:53.950 --> 09:55.240
+So we're making really good progress.
+
+09:55.540 --> 09:59.140
+And before we move forward, let me refactor some of the code here.
+
+09:59.140 --> 10:00.070
+So we know that.
+
+10:00.700 --> 10:01.300
+Let's see.
+
+10:04.440 --> 10:06.110
+Right, this should be email input.
+
+10:06.720 --> 10:07.460
+Right, there we go.
+
+10:07.490 --> 10:07.940
+Thank you.
+
+10:09.740 --> 10:16.370
+And of course, this would be email with Capital E like that because remember, whenever we're creating
+
+10:16.370 --> 10:22.730
+convertibles, we need to follow this rule, which is this shows that these functions are composable
+
+10:22.730 --> 10:23.150
+functions.
+
+10:23.150 --> 10:24.500
+They are not just normal functions.
+
+10:24.710 --> 10:27.860
+That's why it has to start with uppercase e.
+
+10:28.370 --> 10:33.080
+So let's refactor a few things here, because all of these classes or all of these compose what should
+
+10:33.080 --> 10:38.720
+say they they shouldn't just be here inside of these for either logging because we may want to use that
+
+10:38.840 --> 10:39.450
+at some point.
+
+10:39.470 --> 10:39.740
+Right.
+
+10:40.040 --> 10:45.440
+So I'm going to cut all of these guys and then I'm going to go to our components like this.
+
+10:45.470 --> 10:47.180
+I'm going to just add them there.
+
+10:48.030 --> 10:48.200
+Okay.
+
+10:48.200 --> 10:53.810
+So now whoever wants them can go ahead and use them going to go ahead and import loops.
+
+10:55.540 --> 10:58.690
+Import our email input, and we should still be good.
+
+10:58.810 --> 11:03.490
+Hopefully, I can go ahead and refresh this, see if we can still see.
+
+11:04.890 --> 11:06.810
+Our email text field.
+
+11:07.320 --> 11:07.620
+OK.
+
+11:07.860 --> 11:10.890
+All is good, and we should be good for now.
+
+11:11.040 --> 11:14.370
+So next, we're going to add the password again.
+
+11:14.460 --> 11:21.090
+I know that this may seem cumbersome, but setting things up like this will really give us the opportunity
+
+11:21.450 --> 11:28.770
+to extend our application and you and reuse some of these code, which is what we want to be able to
+
+11:28.770 --> 11:30.300
+do and compose anyway.

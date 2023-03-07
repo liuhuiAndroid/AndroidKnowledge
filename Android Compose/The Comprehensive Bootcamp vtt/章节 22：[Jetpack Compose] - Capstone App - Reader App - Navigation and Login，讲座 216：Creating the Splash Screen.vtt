@@ -1,0 +1,262 @@
+WEBVTT
+
+00:01.030 --> 00:04.360
+So ultimately, our splash screen will look like this.
+
+00:04.420 --> 00:05.890
+So let's go ahead and construct it.
+
+00:06.790 --> 00:12.070
+So let's go and with a splash screen, I can get rid of all of these other files.
+
+00:14.060 --> 00:19.760
+For now, at least, so we don't want just to have a text like this, we want something more elaborate.
+
+00:21.610 --> 00:24.280
+So I'm going to go ahead and create a surface here.
+
+00:27.260 --> 00:28.880
+And pass it on modifier.
+
+00:33.760 --> 00:39.820
+Start with a padding modifier padding, let's just start having padding like this can give an all round
+
+00:40.360 --> 00:46.540
+modifier or padding of about 15 deep or import deep.
+
+00:46.840 --> 00:50.020
+I need to say modifier didn't add the modifier.
+
+00:51.160 --> 00:51.910
+All right, there we go.
+
+00:55.450 --> 00:58.570
+And then I'm going to say size the whole size.
+
+00:58.960 --> 01:06.060
+I want it to be, let's just say, 330 deep.
+
+01:11.490 --> 01:13.230
+And then let's go ahead and add.
+
+01:15.390 --> 01:19.770
+A shape to our surface because we're trying to create something like that.
+
+01:19.950 --> 01:23.130
+OK, so it's a shape.
+
+01:27.500 --> 01:29.120
+And I want to circle shape.
+
+01:36.300 --> 01:39.030
+Let's give a color and.
+
+01:41.410 --> 01:44.350
+It's a color that white such.
+
+01:51.730 --> 01:56.710
+And now we are going to add this border around our circle shape.
+
+02:07.590 --> 02:07.940
+OK.
+
+02:08.130 --> 02:17.120
+So border one on the border stroke, the width is going to be about two dpi.
+
+02:18.490 --> 02:23.970
+And the color I see color light gray as such.
+
+02:25.270 --> 02:25.590
+OK.
+
+02:25.990 --> 02:29.320
+Making good progress here and inside.
+
+02:29.530 --> 02:39.130
+Just put this in your line now inside I'm going to add a column inside of our structure here.
+
+02:39.130 --> 02:43.500
+Surface first, let's go ahead and also get rid of this redundant qualifier there.
+
+02:44.830 --> 02:50.140
+Here, I'm going to put a column and let's also say modifier.
+
+02:53.950 --> 02:56.700
+Padding of about one dpi.
+
+02:57.250 --> 02:57.610
+OK.
+
+03:02.760 --> 03:08.760
+And then I'm going to say horizontal alignment, but you center horizontal eye such.
+
+03:14.010 --> 03:14.880
+All right.
+
+03:15.010 --> 03:22.810
+And I want a vertical arrangement to say center to be center like this.
+
+03:23.380 --> 03:29.860
+And then we have our column scope idea is we are going to add this text in that as well.
+
+03:30.130 --> 03:36.650
+And while we're here because we are inside of a composable, we can just go ahead and add the preview.
+
+03:36.670 --> 03:37.480
+Real quick here.
+
+03:37.840 --> 03:42.430
+And in this case, we're going to have an issue here because we can't have you have over is going to
+
+03:42.430 --> 03:45.640
+say preview is going to go to work with nine default parameters.
+
+03:45.910 --> 03:46.180
+OK.
+
+03:46.360 --> 03:47.830
+So it's OK for now.
+
+03:47.830 --> 03:53.830
+I'm just going to go ahead and actually instantiate a new or a nav controller, such in passing the
+
+03:53.830 --> 03:54.710
+context.
+
+03:54.730 --> 03:59.980
+And I can say local context that current OK, when I'm going to use that, it's just so that we were
+
+03:59.980 --> 04:02.200
+able to see something in our preview.
+
+04:03.260 --> 04:07.960
+Let's go ahead and wait until it initialize and hopefully it's score will.
+
+04:09.930 --> 04:11.500
+Rebuild all of that.
+
+04:12.570 --> 04:12.870
+OK.
+
+04:12.910 --> 04:15.150
+You can see we have a very large.
+
+04:16.760 --> 04:17.450
+Circle there.
+
+04:17.480 --> 04:22.850
+That's really good, and there is indeed that very nice border stroke.
+
+04:23.030 --> 04:23.950
+That's OK.
+
+04:23.960 --> 04:24.890
+It's good, it's looking good.
+
+04:25.490 --> 04:29.770
+So now we are going to add the text, which means these two texts here.
+
+04:29.780 --> 04:31.810
+Now this is just branding.
+
+04:31.820 --> 04:35.030
+Of course, you can put your own text in colors and so forth.
+
+04:35.210 --> 04:36.620
+But this is what we have right now.
+
+04:37.400 --> 04:39.140
+OK, let's go ahead and add here.
+
+04:39.380 --> 04:43.310
+First of all, I'm going to add a logo what I call a logo anyway.
+
+04:43.670 --> 04:52.760
+So this is going to be a text and it will say a reader pass style, but I use material theme.
+
+04:54.710 --> 04:58.550
+Topography going to give an H3, so a little bit large.
+
+05:01.840 --> 05:05.320
+Then let's give a color actually inside there.
+
+05:08.990 --> 05:17.420
+I'm going to use colored red and I would say copy to pass the alpha float here, I'm going to just make
+
+05:17.420 --> 05:20.180
+it a little bit dimmer switch zero point five half like this.
+
+05:22.070 --> 05:23.990
+OK, let's go ahead and refresh will quick.
+
+05:24.750 --> 05:25.670
+All right, there you go.
+
+05:25.700 --> 05:30.860
+A reader that looks really good or good and then at the bottom, I'm going to put some sort of a spacer
+
+05:30.860 --> 05:37.100
+here because we want to give some sort of space between what we have this a reader and what comes next.
+
+05:37.670 --> 05:46.670
+So I say modifier to give it the height scales of about 15 dpi and then right after that and add another
+
+05:46.670 --> 05:47.210
+text.
+
+05:50.320 --> 05:52.510
+And this one will say.
+
+05:54.460 --> 05:55.000
+Read
+
+05:59.410 --> 06:07.630
+Change yourself very cheesy, but it's OK, and I'm going to actually want to add the.
+
+06:09.500 --> 06:10.290
+Double quotes.
+
+06:10.310 --> 06:19.290
+So for that, it will have to escape them quite like that and put like that.
+
+06:19.310 --> 06:24.800
+So what I'm saying here is that I'm going to escape this coach to be read as actually quotes not just
+
+06:24.800 --> 06:32.260
+a string in our texts there careless go ahead and pass a style when use a material theme.
+
+06:33.850 --> 06:40.750
+Typography H5 as well, and let's keep a color
+
+06:44.410 --> 06:45.220
+light gray.
+
+06:50.400 --> 06:52.490
+Such are good to refresh.
+
+06:53.250 --> 06:54.270
+OK, that looks good.
+
+06:55.350 --> 06:56.460
+Something similar to this.
+
+06:57.180 --> 07:00.630
+Now the main idea here is because it's a splash screen.
+
+07:00.630 --> 07:02.610
+The idea is that it doesn't stay long.
+
+07:02.640 --> 07:02.940
+Right.
+
+07:02.940 --> 07:08.550
+So it's going to go and stay up for a few seconds or milliseconds even and then go away.
+
+07:08.850 --> 07:15.390
+But as that happens, we want to see that nice animation of perhaps it's growing a little bit and then
+
+07:15.390 --> 07:17.640
+contracts right and then goes to the next week.
+
+07:18.180 --> 07:20.490
+So that's what we're going to be doing in the next video.

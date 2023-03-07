@@ -1,0 +1,529 @@
+WEBVTT
+
+00:00.480 --> 00:04.740
+So data is very important, especially for our app, that's the reason why we went through the trouble
+
+00:04.740 --> 00:13.050
+of creating an account with the weather open weather API so that we can get that ID, the API key we
+
+00:13.050 --> 00:17.370
+need in order for us to be able to retrieve data from the API.
+
+00:17.830 --> 00:18.070
+OK.
+
+00:18.480 --> 00:23.580
+So I'm not going to go into too many details because there's a lot of things that you can read about
+
+00:23.580 --> 00:29.010
+this API when you go to open weather map that August, assuming that you went through the process,
+
+00:29.010 --> 00:33.760
+of course, of setting up and getting the API keys and so forth.
+
+00:34.350 --> 00:36.770
+But let's go to our API click API.
+
+00:38.610 --> 00:45.720
+And you can see that there are a lot of different places you can go to get information right, so at
+
+00:45.890 --> 00:48.390
+the top here we have the current weather data.
+
+00:48.810 --> 00:55.230
+Hourly forecast on one call, daily forecast, 16 days and so forth.
+
+00:55.710 --> 00:58.680
+Let's click on this daily forecast six days less.
+
+00:58.680 --> 01:01.410
+Click there and you can see it says here.
+
+01:01.410 --> 01:06.570
+You can search six day weather forecasts with daily average parameters by city name and so forth.
+
+01:07.320 --> 01:11.670
+The most important thing here is that you can see where do we do the API?
+
+01:11.670 --> 01:13.080
+Call the endpoint right?
+
+01:13.080 --> 01:19.150
+So he says open API or IG data 2.5 forecasts daily and so forth.
+
+01:19.500 --> 01:20.760
+So this is the structure.
+
+01:20.970 --> 01:25.410
+Now, some of these parameters, per se, we don't really need them.
+
+01:25.410 --> 01:32.640
+But this is good to see how to structure our API or our endpoint so that we can get something from the
+
+01:32.640 --> 01:33.120
+API.
+
+01:34.200 --> 01:39.180
+But the most important thing also notice that you say you need to have that app ID, which we created
+
+01:39.180 --> 01:42.030
+earlier, and you should have that for things to work.
+
+01:42.690 --> 01:47.610
+But I already have something open, so if I open like those, you can see that I have this API, open
+
+01:47.610 --> 01:53.130
+weather or data that five forecast daily and I have the queue for the query.
+
+01:53.130 --> 01:53.910
+So Moscow.
+
+01:54.330 --> 01:55.650
+And then I have the App ID.
+
+01:55.980 --> 02:00.330
+You should add your your own app ID, their API key.
+
+02:00.750 --> 02:01.320
+And there this.
+
+02:01.530 --> 02:02.640
+We have this units.
+
+02:02.880 --> 02:06.060
+There is imperial and there is metric.
+
+02:06.240 --> 02:09.270
+Imperial is Farenheit and miles per hour for wind.
+
+02:09.690 --> 02:17.190
+Metric is going to be three meters per second for wind and Celsius, for the weather, for the actual
+
+02:17.670 --> 02:18.540
+for the temperature.
+
+02:18.960 --> 02:24.330
+This is the API endpoint that we're going to be using, very similar to what you see here.
+
+02:24.370 --> 02:26.100
+Of course, with a few differences.
+
+02:26.640 --> 02:31.230
+So in this case here, if I add in this case, I add in Moscow.
+
+02:32.250 --> 02:33.600
+And he'd enter.
+
+02:34.390 --> 02:37.110
+You will see then I have this payload here.
+
+02:37.560 --> 02:43.980
+Now, if you don't see the payload just like this, you can search on Chrome Store.
+
+02:44.790 --> 02:49.110
+Jason Viewer That is the name of the plug in.
+
+02:49.350 --> 02:53.190
+There are many different plug ins that allow you to see something like this, right?
+
+02:54.090 --> 02:59.730
+That's not important because in case you want to see the organized payload Jason payload, as far as
+
+02:59.730 --> 03:05.220
+I see here, OK, so it can just go to Chrome and look for chrome extension.
+
+03:05.610 --> 03:07.830
+You can see JSON view or something like that.
+
+03:07.830 --> 03:13.320
+You should get something that you can install on your browser and be able to see that and be able to
+
+03:13.320 --> 03:14.190
+see something like this.
+
+03:15.270 --> 03:15.540
+All right.
+
+03:15.540 --> 03:22.080
+So it is important for us to know exactly what we are expecting to receive because we will need this
+
+03:22.080 --> 03:27.900
+information on our price to structure our data classes and so forth in our project.
+
+03:27.930 --> 03:35.760
+So that way, we can use Retrofit, which is and the A2DP library we're going to be using to retrieve
+
+03:35.910 --> 03:37.830
+data from these API.
+
+03:38.370 --> 03:40.560
+So as you can see here, the structure is very simple.
+
+03:40.560 --> 03:47.100
+We have, of course, as our object is an object because I have this curly brace there, starting everything
+
+03:47.490 --> 03:51.120
+and then I have this city, which is also an object, right?
+
+03:51.360 --> 03:56.850
+This is just a point and contains ID, name coordinates, country, population and so forth.
+
+03:57.130 --> 03:57.310
+Right.
+
+03:57.900 --> 04:00.720
+And then we have here the list.
+
+04:01.140 --> 04:07.890
+If you close, you can see the list contains a few items, in fact contains seven items of seven objects.
+
+04:08.370 --> 04:11.370
+These objects, this is what we are looking for.
+
+04:12.300 --> 04:14.680
+For each one of the items in a list.
+
+04:14.730 --> 04:20.790
+This is a day for, say, worth of the weather or the forecast.
+
+04:21.090 --> 04:29.310
+So the stay one two three four five six seven like that seven days forecast, right?
+
+04:29.550 --> 04:32.580
+So this is where we're going to get all the information.
+
+04:33.030 --> 04:40.140
+So it's daytime is date per say, and this is time Unix time stamp, which will need to deal with later.
+
+04:40.860 --> 04:46.710
+And this is also sunrise, the time when the sunrise is going to happen at that address in that city
+
+04:47.040 --> 04:52.260
+in Moscow, sunset and then we have temperature day, minimax night, evening and so forth.
+
+04:52.650 --> 04:52.950
+OK.
+
+04:53.370 --> 04:57.180
+So as we change the names, let's say Portland.
+
+04:59.820 --> 05:03.720
+Like that, we can see we get the information about Portland.
+
+05:04.260 --> 05:12.660
+And if I change the units here to metric, you will see that now we no longer have Fahrenheit, we have
+
+05:12.660 --> 05:13.710
+Celsius and so forth.
+
+05:15.180 --> 05:20.910
+So this is a structure that we are going to use, rather, this is the API we're going to use to fetch
+
+05:20.910 --> 05:23.670
+all this data to show in our app.
+
+05:24.120 --> 05:30.540
+So by the end, of course, of these videos or these lectures should say we should see something like
+
+05:30.540 --> 05:30.810
+this.
+
+05:31.020 --> 05:33.720
+So all of this information is coming from here.
+
+05:34.110 --> 05:34.380
+All right.
+
+05:34.800 --> 05:40.650
+So now that we have that, we have our end point, which we're going to hit to get that information
+
+05:40.920 --> 05:42.930
+we need to understand, then how do we do that?
+
+05:42.960 --> 05:47.940
+Well, like I said, we're going to use a retrofit to retrofit is an Asia type client.
+
+05:48.690 --> 05:55.750
+This case to be cleaned that allows us to do these transactions, these calls to an API to get information.
+
+05:55.750 --> 06:00.240
+Now the process of doing HDP calls, it's really complicated.
+
+06:00.240 --> 06:03.350
+There's a lot of things that need to happen in order to work.
+
+06:03.360 --> 06:05.190
+Now you can do all of that manually.
+
+06:05.640 --> 06:09.210
+But HDP, in this case, retrofit, I should say retrofit.
+
+06:09.990 --> 06:17.370
+It's a wonderful library that abstracts out all of the things that we need to or had to do before in
+
+06:17.370 --> 06:19.620
+order to be able to pass JSON data.
+
+06:20.220 --> 06:23.640
+So I really, really recommend you to use Retrofit now.
+
+06:24.000 --> 06:29.340
+Now the setting up, especially with the dependency injection that we're going to be using we doing
+
+06:29.340 --> 06:30.600
+in our project.
+
+06:30.840 --> 06:36.480
+You may be a little bit strange at first, but I really recommend you to to actually get used to it
+
+06:36.480 --> 06:43.290
+and keep that in mind and keep doing it so that you get used to it and you learn it because it is the
+
+06:43.290 --> 06:43.890
+way to do it.
+
+06:44.250 --> 06:46.440
+OK, whenever we want to fetch data from the internet.
+
+06:48.000 --> 06:52.740
+All right, now, let's go back now that we have that piece of information, I think that's really important.
+
+06:52.950 --> 06:54.540
+Let's go back to our project.
+
+06:55.470 --> 07:01.380
+So back in our project here, the first thing we need to do is to find a way in which we can transform
+
+07:01.380 --> 07:10.590
+all of this into data classes, data classes in this case, models that will use in Scotland to then
+
+07:10.590 --> 07:11.220
+convert.
+
+07:11.370 --> 07:18.750
+What do we see here, all these structures into actual objects we can use to show information such as
+
+07:18.750 --> 07:19.020
+this?
+
+07:20.290 --> 07:20.540
+Right.
+
+07:21.170 --> 07:26.150
+So instead of trying to do all of that manually, what we can do, we can just copy this link.
+
+07:27.170 --> 07:28.850
+Remember this link that works right?
+
+07:28.850 --> 07:34.610
+It goes and gets fetches data information about this city and we're going to use that.
+
+07:35.150 --> 07:36.320
+Well, how do we use that?
+
+07:36.320 --> 07:37.370
+How do we create those models?
+
+07:37.670 --> 07:41.120
+Well, instead of earlier, we created this model package.
+
+07:41.540 --> 07:46.370
+What I'm going to do and I say right click, think that's a new and I'm going to go to Scotland data
+
+07:46.370 --> 07:47.970
+class file from Jason.
+
+07:48.170 --> 07:53.270
+Now the thing is, you may not have this because it's a plug in.
+
+07:53.720 --> 07:57.830
+So how do we install that calling data class file from Jason?
+
+07:58.340 --> 08:00.140
+Well, all we do, we go to file.
+
+08:00.470 --> 08:03.620
+Actually, we go to Android in this case, go to preferences.
+
+08:04.510 --> 08:06.470
+OK, and then we go to plug ins.
+
+08:07.490 --> 08:12.860
+Right inside of plug ins, you can see we have two tabs, we have marketplace and we have installed.
+
+08:13.610 --> 08:14.830
+I want to go to Marketplace.
+
+08:14.840 --> 08:21.180
+In fact, if you keep on installed, you can see that I do have Jason codling class like that it's already
+
+08:21.180 --> 08:21.590
+installed.
+
+08:22.190 --> 08:27.890
+But in case you don't have you come back to the marketplace and you search, say Jason.
+
+08:29.910 --> 08:31.370
+Write to Houghtaling.
+
+08:31.770 --> 08:32.550
+If you don't see it.
+
+08:32.730 --> 08:33.300
+And there we go.
+
+08:33.810 --> 08:37.410
+Jason, to Scotland, cos that's what you want, what you want to do.
+
+08:37.770 --> 08:41.790
+He will have this installed enable, which means you have to install, click, install.
+
+08:42.090 --> 08:43.620
+Follow the process.
+
+08:44.300 --> 08:44.690
+OK.
+
+08:44.930 --> 08:45.270
+OK.
+
+08:45.300 --> 08:50.340
+At the bottom, you can see and we should restart Android Studio and they will be installed in cases
+
+08:50.340 --> 08:51.390
+that you have that.
+
+08:52.410 --> 08:57.630
+In my case, I have that already, so I don't have to go through that, so right click again, you say,
+
+08:57.630 --> 08:59.730
+calling data class file from Jason.
+
+09:00.060 --> 09:06.080
+And here we could paste the entire payload, but we're not going to do that because there's other ways
+
+09:06.080 --> 09:06.510
+to resolve.
+
+09:07.080 --> 09:12.930
+Once you hear right click, you say retrieve content from a zip URL, which is what we want.
+
+09:12.960 --> 09:15.900
+That's why we got we copied the URL.
+
+09:16.590 --> 09:19.770
+Just paste it all there, and I'm going to say, OK.
+
+09:20.920 --> 09:27.370
+And voila, you can see it went and ran and put together pretty much got the entire payload, all of
+
+09:27.370 --> 09:27.700
+this.
+
+09:28.900 --> 09:29.170
+OK.
+
+09:29.230 --> 09:30.100
+As you see there.
+
+09:30.940 --> 09:35.530
+Got it all into here.
+
+09:35.650 --> 09:39.100
+Now it's not very pretty because it's all in one line, but that doesn't matter because we don't.
+
+09:39.400 --> 09:40.000
+We don't care.
+
+09:40.630 --> 09:40.950
+All right.
+
+09:40.960 --> 09:46.570
+So now we're going to add here the actual class, why we're going to give it a class name.
+
+09:59.190 --> 09:59.490
+All right.
+
+09:59.610 --> 10:07.800
+So I'm just going to say weather like this, they generate and after a few seconds will see that our
+
+10:07.800 --> 10:10.440
+model package is no longer empty.
+
+10:10.950 --> 10:12.840
+What happened open in Whyalla?
+
+10:14.030 --> 10:16.340
+You can see we have all these classes.
+
+10:17.750 --> 10:18.150
+All right.
+
+10:18.670 --> 10:25.960
+So all of these classes, what are they doing, they're actually representing each one of these entry
+
+10:26.350 --> 10:27.580
+here that we have a live CD.
+
+10:28.150 --> 10:33.220
+We have list in sort of a list has other objects that are being represented.
+
+10:34.090 --> 10:40.420
+When we created these all of these classes, now we have a problem here because you notice that there's
+
+10:40.420 --> 10:43.300
+this class that doesn't have a name.
+
+10:43.810 --> 10:49.780
+So for us here, we're going to call this whether we'll see that this object is being called somewhere.
+
+10:49.790 --> 10:55.510
+That's why this weather class here, it's empty or it has some problem because it's saying, well,
+
+10:55.720 --> 10:58.300
+this list is a list of an empty type.
+
+10:58.480 --> 10:59.770
+Well, it's not empty anymore.
+
+10:59.770 --> 11:01.930
+It's going to be whether object like this.
+
+11:03.060 --> 11:09.120
+OK, that also means I'm going to change the name of this, Katie, there to something.
+
+11:10.570 --> 11:13.480
+That we just looked at her rename.
+
+11:15.620 --> 11:22.020
+I'm just going to call this, what are we called it, whether object could name anything you want,
+
+11:22.020 --> 11:23.610
+but whether object sounds great.
+
+11:24.420 --> 11:32.700
+What that means if you look at this structure here, city count card list message, let's go back to
+
+11:33.240 --> 11:37.620
+our payload, their city card message count list, right?
+
+11:37.980 --> 11:42.750
+So what are we saying that now is that this list is going to contain objects type?
+
+11:45.290 --> 11:52.340
+Whether object, which is all of this cloud degree, all that we didn't have to do any of that, the
+
+11:52.340 --> 11:54.830
+plug in that helped us out, which is really, really important.
+
+11:55.280 --> 12:00.830
+As you can see, we would have to take a long time to go and create a silly object, coordinate fields
+
+12:00.830 --> 12:01.490
+and so forth.
+
+12:01.520 --> 12:06.650
+Now some of these objects or classes, I should say data classes, we are not going to be using them,
+
+12:06.650 --> 12:10.730
+but nonetheless, it's OK to have everything set up just in case we want them as well.

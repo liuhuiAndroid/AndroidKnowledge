@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.150 --> 00:01.560
+So let's create an interface.
+
+00:01.770 --> 00:03.030
+So when I say interface.
+
+00:03.420 --> 00:08.970
+OK, that's the key word in and we call this click event.
+
+00:09.690 --> 00:10.020
+All right.
+
+00:10.560 --> 00:15.540
+And just like anything, of course, meant passing and anything else, we're just creating here a body
+
+00:15.540 --> 00:16.290
+of our interface.
+
+00:16.890 --> 00:18.780
+So we're going to create that contract.
+
+00:18.810 --> 00:23.520
+We're going to create that specific function that anybody can implement.
+
+00:23.850 --> 00:24.090
+OK.
+
+00:24.450 --> 00:32.360
+So let's say fun on click and we can pass a variable and we can pass a parameter on click a message.
+
+00:33.300 --> 00:34.800
+Can it be a string type as such?
+
+00:35.700 --> 00:40.510
+OK, and we're going to leave it as it is because the idea is not to implement inside of this event.
+
+00:40.530 --> 00:41.520
+This is an interface.
+
+00:41.820 --> 00:48.210
+The idea is that anybody who implements in this case, quote unquote inherits from click event, will
+
+00:48.210 --> 00:51.090
+have to implement the UN click.
+
+00:51.240 --> 00:57.360
+So the idea is that the implementation of this function is going to be at the class level, meaning
+
+00:57.360 --> 01:00.150
+the classic, the class that implements this click event.
+
+01:01.340 --> 01:06.350
+So let's go ahead and create a button class here, a very simple one called button.
+
+01:08.020 --> 01:15.340
+And we're going to just pass that Val for in its constructor properties here, Val, and they say Label
+
+01:15.550 --> 01:17.080
+B string type, and that's fine.
+
+01:17.320 --> 01:17.710
+All right.
+
+01:18.130 --> 01:21.740
+And how do we say that this will implement, right?
+
+01:21.820 --> 01:24.460
+So in this case, Barton will implement click event.
+
+01:24.760 --> 01:26.620
+Well, we put call in like this.
+
+01:26.620 --> 01:29.170
+Just like inheritance, I say click event.
+
+01:29.180 --> 01:32.440
+As such, the moment we do that, you notice something happens.
+
+01:33.220 --> 01:36.790
+Now class button, it has Squiggly Red Line.
+
+01:37.000 --> 01:37.810
+What does that mean?
+
+01:38.050 --> 01:45.580
+It's go ahead and hover over to see what this button is not abstract and does not implement abstract
+
+01:45.580 --> 01:46.030
+members.
+
+01:46.300 --> 01:51.370
+So it gives us here an option to say you must implement members.
+
+01:51.370 --> 01:52.690
+What members are we talking about?
+
+01:52.960 --> 01:55.900
+Well, we'll talk about the on click member function.
+
+01:56.260 --> 01:58.390
+So I'm going to go ahead and see implement.
+
+01:58.780 --> 01:59.890
+And this happens.
+
+02:00.070 --> 02:02.400
+This is happening because we're inside of a studio.
+
+02:02.410 --> 02:05.350
+It's a very smart idea, so it helps us out.
+
+02:05.980 --> 02:09.400
+So in this case, here, we have to implement that and say, OK and voila.
+
+02:09.760 --> 02:12.940
+You can see now we have override fun on Click.
+
+02:13.720 --> 02:20.200
+So this is the implementation and fact it says here to do not yet implement it because we haven't done
+
+02:20.200 --> 02:25.420
+anything to implement the on quick function from our click event interface.
+
+02:25.690 --> 02:25.990
+OK.
+
+02:26.470 --> 02:28.420
+So here just again, we got all of that.
+
+02:28.750 --> 02:31.540
+OK, just simply say print Alan.
+
+02:31.960 --> 02:40.630
+Such and here I'm going to say clicked by and we just put a label, right?
+
+02:43.400 --> 02:44.680
+It should be labeled.
+
+02:47.460 --> 02:48.090
+Typekit there.
+
+02:49.530 --> 02:59.430
+And here's a message, and I'm going to pass the message that it's been passed when we invoke or implement
+
+02:59.430 --> 03:04.980
+on click and a few things you will see in Android Studio in this idea going to see that it says here
+
+03:05.280 --> 03:06.450
+and there's AI there.
+
+03:06.450 --> 03:09.190
+What that means is that implements function.
+
+03:09.240 --> 03:10.770
+Click if you hover over.
+
+03:11.850 --> 03:17.250
+OK, if you hover over this one here is going to say is implemented by button.
+
+03:17.420 --> 03:21.270
+If you have over the second one is implemented in my control and that button.
+
+03:22.230 --> 03:24.000
+So these are just visual representation.
+
+03:24.000 --> 03:29.790
+They don't really matter much, but it's just if we're using Android Studio or any smart idea, we should
+
+03:29.790 --> 03:30.630
+get something like this.
+
+03:31.080 --> 03:39.990
+So there we go now in our main, I can say something like this foul button that says equal satiating
+
+03:39.990 --> 03:40.620
+power button.
+
+03:40.860 --> 03:41.880
+Now, be very careful.
+
+03:42.060 --> 03:45.060
+There is, of course, button from Java that Ada boutiques.
+
+03:45.300 --> 03:48.030
+This is from Java Library, so we want ours.
+
+03:48.060 --> 03:55.170
+So make sure you get the one that has your name or that has your package name that we created.
+
+03:55.290 --> 03:57.810
+There we go, and we need to pass a label.
+
+03:58.050 --> 04:02.670
+So say label in this case button like that.
+
+04:03.060 --> 04:07.950
+And then I can say button invoke the on click right.
+
+04:08.940 --> 04:10.800
+So I want to pass a message.
+
+04:11.040 --> 04:13.290
+The message is going to be a string that may say something.
+
+04:13.290 --> 04:15.690
+This is a button.
+
+04:16.800 --> 04:17.220
+All right.
+
+04:17.280 --> 04:18.090
+Let's go ahead and run.
+
+04:19.370 --> 04:21.220
+And you can see click to buy a button.
+
+04:21.230 --> 04:22.280
+And here's a message.
+
+04:22.520 --> 04:31.730
+This is a button now because we talked about how a click event at this interface, it doesn't really
+
+04:31.730 --> 04:32.930
+matter who is implementing.
+
+04:32.930 --> 04:37.850
+It could be related classes to button as we saw before, or something totally different.
+
+04:38.240 --> 04:48.800
+So if I come here and create, for instance, another class called character such a pass and foul name,
+
+04:50.510 --> 04:51.020
+such.
+
+04:51.250 --> 04:59.150
+OK, and I'm going to also implement Click Event a section, and I'm going to have the same thing saying
+
+04:59.150 --> 05:00.200
+that something has to happen.
+
+05:00.470 --> 05:02.790
+This has to be string type there.
+
+05:02.850 --> 05:06.480
+The same thing we saw before we have to implement the members.
+
+05:06.500 --> 05:12.860
+So this is a contract because the moment you implement a click event, right, you say calling click
+
+05:12.860 --> 05:17.000
+event, that means it's a contract, which means we will have to indeed implement it.
+
+05:17.000 --> 05:18.290
+Don't click function.
+
+05:18.710 --> 05:21.740
+If we had other functions at the bottom here, we will have to do the same.
+
+05:22.610 --> 05:24.430
+It is a contract you can't get out of it.
+
+05:24.440 --> 05:25.250
+That's the whole point.
+
+05:26.270 --> 05:28.820
+So in this case here you can say alt or option.
+
+05:28.820 --> 05:32.540
+Enter like this and see the option of implement members.
+
+05:32.960 --> 05:35.110
+Hit Enter, enter again.
+
+05:35.120 --> 05:36.050
+And you have it.
+
+05:36.290 --> 05:42.030
+And now I can say something different and say print l clicked by Oops.
+
+05:42.060 --> 05:53.720
+This should be inside of double quotes clicked by past name and a message and passed the message.
+
+05:55.490 --> 06:01.820
+So now we can go to Maine somewhere else, or we can call it and want to create an instance of our character,
+
+06:01.920 --> 06:07.310
+let's say Super Mario or something like this sequel to a character.
+
+06:08.420 --> 06:10.200
+Make sure we get our character.
+
+06:10.220 --> 06:11.030
+It's very important.
+
+06:11.420 --> 06:13.740
+And then when I pass a name, I believe.
+
+06:13.760 --> 06:18.410
+And then I can Super Mario that on click when he's clicked it.
+
+06:18.430 --> 06:24.050
+Whenever I send a message that says, there's an actor, let's right.
+
+06:25.740 --> 06:26.280
+And there we go.
+
+06:27.000 --> 06:31.740
+So clicked my button, here's my suitcase, the button clicked by Super Mario.
+
+06:32.130 --> 06:32.750
+Here's my shirt.
+
+06:32.790 --> 06:33.840
+This is an actor.
+
+06:33.930 --> 06:34.570
+And there you have it.
+
+06:34.590 --> 06:41.460
+So now you've created an interface at the bottom here that has a function with nobody.
+
+06:41.910 --> 06:46.590
+Because the idea is that this will be implemented at the class level, as you see here.
+
+06:47.010 --> 06:50.610
+So every time that a character or any other class.
+
+06:51.690 --> 06:54.570
+Once to take advantage of implementing this on Click.
+
+06:54.900 --> 06:58.430
+They will have to, of course, implement the click event as such.
+
+06:58.440 --> 07:04.320
+This is a very powerful paradigm in programming because it gives us a lot of flexibility as you can
+
+07:04.320 --> 07:07.140
+see anyone by anyone.
+
+07:07.140 --> 07:10.170
+I mean, any class can implement this interface.
+
+07:10.620 --> 07:12.240
+Regardless of the relationship.
+
+07:12.690 --> 07:15.780
+A character is not related to a button.
+
+07:17.470 --> 07:22.000
+At all, yet both can implement click event very well.

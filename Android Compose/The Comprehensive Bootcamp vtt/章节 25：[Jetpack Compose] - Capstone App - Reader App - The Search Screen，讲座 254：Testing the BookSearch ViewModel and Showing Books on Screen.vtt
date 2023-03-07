@@ -1,0 +1,526 @@
+WEBVTT
+
+00:00.180 --> 00:05.790
+All right, so we're ready to check out our book, search for your model in our search book in our search
+
+00:05.790 --> 00:07.820
+screen there, of course we can.
+
+00:07.890 --> 00:13.230
+The first thing we will do is go to our search screen and pass that view model.
+
+00:13.590 --> 00:15.430
+OK, so what we do we say?
+
+00:15.450 --> 00:16.290
+View model.
+
+00:17.420 --> 00:21.890
+And knows exactly what the model we have and can be booked search for tomorrow.
+
+00:22.460 --> 00:28.430
+And in this case, here, I'm going to instantiate a run away to say this is going to be a health field
+
+00:28.430 --> 00:31.340
+model as such, but there's something else we need to do.
+
+00:31.490 --> 00:40.550
+We actually have to go to our navigation reader navigation class here where we have all of our navigation
+
+00:40.550 --> 00:41.270
+mapped out.
+
+00:41.750 --> 00:48.020
+We have to instantiate precisely that view model model that is going to be passed along to our search
+
+00:48.020 --> 00:48.410
+screen.
+
+00:49.700 --> 00:55.820
+For this to work because we have a navigation attached to this app, so if you go back to reader book
+
+00:55.820 --> 01:01.760
+search screen, if you hover over hilt here, let me make sure you can see everything is going to say
+
+01:01.760 --> 01:08.000
+this returns in existing hill to view Model S. says an existing one that should tell you that we need
+
+01:08.000 --> 01:15.680
+to have created or incinerators that fuel model or creates a new one scoped to the current navigation
+
+01:15.680 --> 01:16.170
+graph.
+
+01:16.190 --> 01:18.440
+No navigation graph is currently present.
+
+01:18.710 --> 01:23.360
+Then the current scope will be used, usually a fragment or an activity.
+
+01:23.810 --> 01:28.970
+So he tells us that we need to have some sort of way to create a back view model.
+
+01:29.180 --> 01:34.310
+In the best place is the place that it has to happen is inside of our navigation.
+
+01:34.490 --> 01:37.730
+So how do we do that inside of our composable here?
+
+01:37.860 --> 01:44.420
+I remember when still we inside of our reader navigation search feel model, I'm going to see Hilton
+
+01:44.430 --> 01:45.440
+mice do this.
+
+01:46.070 --> 01:47.540
+It's going to be held to view model.
+
+01:47.540 --> 01:51.470
+And then when I pass the actual class, we created the view model.
+
+01:51.620 --> 01:55.280
+She's going to be books, social view model as such.
+
+01:56.210 --> 02:02.000
+So this then passing like this, we are creating an instance of our hill to fill model, which we can
+
+02:02.000 --> 02:09.770
+then pass here as a few model and pass our search for a model like this.
+
+02:10.310 --> 02:11.150
+We must do that.
+
+02:11.720 --> 02:14.150
+So now we go to search screen there.
+
+02:14.270 --> 02:15.470
+Where do we call it?
+
+02:15.620 --> 02:18.620
+Because we have a view model already waited to use instead of a screen?
+
+02:18.980 --> 02:22.160
+Because remember on search here, right?
+
+02:22.160 --> 02:23.720
+We have this lambda.
+
+02:24.290 --> 02:26.480
+Let's go head to search form.
+
+02:26.840 --> 02:33.920
+You can see you have this on search, which we pass the the item or the string that users have added
+
+02:33.920 --> 02:37.370
+into our input field, which is the search per se, right?
+
+02:38.180 --> 02:45.320
+And that on search here is called wear here because we passed that search query, get the value and
+
+02:45.320 --> 02:46.190
+trim around.
+
+02:46.400 --> 02:52.640
+And so we need to push, get that value and we can get that value and use it where, well, when we
+
+02:52.880 --> 02:55.730
+call it which is in this lambda right here.
+
+02:55.880 --> 02:56.600
+So here it is.
+
+02:56.600 --> 03:00.830
+It is going to be the search query search query like this.
+
+03:00.830 --> 03:04.430
+So we know we have a visual aid here.
+
+03:04.670 --> 03:05.780
+So what do you need to do here?
+
+03:05.810 --> 03:08.630
+Well, I have to view model so I can use it.
+
+03:08.900 --> 03:10.010
+I can see view model.
+
+03:10.520 --> 03:16.430
+Make sure to get that view model dot and I can go and get something else I need to do.
+
+03:16.460 --> 03:18.800
+Let's go back to the view model.
+
+03:19.280 --> 03:24.320
+Notice the this function here should not be private because I need to use it.
+
+03:24.320 --> 03:25.580
+I need to call it right.
+
+03:26.150 --> 03:29.150
+So I'm going to change that to just function like this.
+
+03:29.510 --> 03:32.490
+Then go back to our reader there.
+
+03:32.510 --> 03:35.720
+Now I'm going to have access to it so that search books in pass.
+
+03:35.870 --> 03:38.210
+Well, I search query like that.
+
+03:38.960 --> 03:45.110
+Or if I want to be more, yes, a query, it's going to be equal to a search query.
+
+03:45.350 --> 03:47.240
+Now we have a book list here.
+
+03:47.510 --> 03:50.930
+Let's click and see a book list right now just has this gibberish.
+
+03:51.410 --> 03:58.400
+But what we want to do with our book list really is we want to also have our review model, and I want
+
+03:58.400 --> 03:59.540
+to say it's equal to the hilt.
+
+04:00.200 --> 04:01.340
+The model as such.
+
+04:02.310 --> 04:05.720
+So now it has its own instance of this view model of piracy.
+
+04:06.030 --> 04:08.880
+Let's see if we can get some data from our review model.
+
+04:08.970 --> 04:13.590
+Copy this and comment that out, I guess get rid of all of this.
+
+04:13.890 --> 04:20.370
+Let me put inside of this variable here so I can say view models that look at this.
+
+04:21.480 --> 04:28.740
+I have access to this list, which you can see it's a list of item object, which is that book object
+
+04:28.740 --> 04:29.100
+really?
+
+04:29.490 --> 04:29.940
+Very good.
+
+04:30.600 --> 04:35.280
+So if that's the case, then that means then I should have this list of books is going to be a list
+
+04:35.280 --> 04:36.000
+of items.
+
+04:36.630 --> 04:36.900
+Right?
+
+04:37.110 --> 04:41.880
+But you're going to have a problem here because his book row, if we go to if you have over, is going
+
+04:41.880 --> 04:46.800
+to say change primer, book to book row to item and we shall do that.
+
+04:48.280 --> 04:56.740
+So now book here will expect a book item, which means then some problem will happen here because the
+
+04:56.740 --> 04:57.940
+book item itself.
+
+04:58.840 --> 05:04.570
+It's a bigger object, which means let's see if I command click the See.
+
+05:04.570 --> 05:10.720
+The book item contains a lot of information about the book, so it calls other objects as well.
+
+05:11.260 --> 05:14.800
+Access Info Screen, most of which we're not interested in.
+
+05:14.980 --> 05:19.810
+What we're interested in is this volume object because this volume here info.
+
+05:19.960 --> 05:21.620
+Let's go back to our code.
+
+05:22.630 --> 05:30.220
+So the following info is that object that contains the information and want what title, author, publisher,
+
+05:30.370 --> 05:31.690
+description and so forth.
+
+05:31.870 --> 05:37.570
+So the item again represents each one of these items, which we call it a book, right?
+
+05:37.720 --> 05:40.030
+We would call it a book per se, but it's not really.
+
+05:40.210 --> 05:46.210
+It's a book wrapped inside of another object or that contains many other properties and so forth.
+
+05:46.480 --> 05:50.260
+So we're just going to go probing and get what we need, which is this volume info.
+
+05:51.180 --> 05:52.140
+That's the reason why.
+
+05:52.590 --> 05:58.140
+And that's the reason why when we come back here, this is not going to work was going to say book that
+
+05:58.140 --> 06:02.850
+title, that makes no sense because now it's not just a book that we created, it's actually an item
+
+06:02.850 --> 06:03.300
+object.
+
+06:03.780 --> 06:07.490
+So let's get rid of all of this, let's say book dot.
+
+06:08.250 --> 06:15.330
+Now I'm going to go and get the volume info because that's what we need and then say, Dot title like
+
+06:15.330 --> 06:17.580
+this and then do the same.
+
+06:19.000 --> 06:23.260
+Volume info and get the authors like that.
+
+06:24.710 --> 06:32.120
+So now we accessing each one of these properties or fields inside of this volume info, which really
+
+06:32.120 --> 06:37.130
+is the actual book, you can get all of these other fields in which will do player testing things out
+
+06:37.130 --> 06:37.820
+here to make sure.
+
+06:38.450 --> 06:39.740
+Well, hopefully we see something.
+
+06:39.800 --> 06:40.910
+OK, let's see if this works.
+
+06:41.810 --> 06:43.280
+Let's go ahead and run this.
+
+06:43.580 --> 06:43.970
+OK?
+
+06:46.500 --> 06:47.040
+Let's see.
+
+06:47.250 --> 06:47.730
+Let's go.
+
+06:48.990 --> 06:53.770
+Now you can see, first of all, this is good because that means we're getting information from the
+
+06:54.390 --> 06:56.040
+the API, which is really good.
+
+06:56.040 --> 07:01.200
+So we have the authors and some of the authors are known and existing.
+
+07:01.200 --> 07:04.110
+That's good and the reason why you see it's Android for dummies.
+
+07:04.140 --> 07:11.520
+So it's Android books related is because we have, if you remember correctly, if we go back to our
+
+07:11.520 --> 07:15.960
+book search, we have this search book, we pass it Android.
+
+07:15.960 --> 07:21.690
+If I say Flutter and let's go ahead and run again, you will see we should see something different.
+
+07:23.930 --> 07:27.830
+Well, it's going to be right now that Android is going to be flutter related books.
+
+07:29.200 --> 07:32.530
+And the picture is going to be the same because we haven't really changed that much.
+
+07:32.560 --> 07:34.690
+OK, wait, in the last letter.
+
+07:34.870 --> 07:35.330
+This is great.
+
+07:35.350 --> 07:36.850
+So we're getting the correct information.
+
+07:36.850 --> 07:42.670
+We're getting whatever we're passing here to load the books right?
+
+07:42.700 --> 07:44.740
+Get the books related to our query.
+
+07:45.160 --> 07:47.350
+Now let's see if we add something here.
+
+07:47.890 --> 07:53.260
+I'm going to say Android again or less is something different and say money to save money.
+
+07:53.260 --> 07:54.400
+Related Books enter.
+
+07:55.840 --> 08:01.150
+And just like that, ladies and gentlemen, you can see that we're able to get the information, the
+
+08:01.150 --> 08:02.990
+correct information now it's about money.
+
+08:03.070 --> 08:03.970
+This is great.
+
+08:04.090 --> 08:06.030
+How do we get the images then?
+
+08:06.040 --> 08:14.890
+Because remember, we do have for each book like go through and you can see we get to the imaging links
+
+08:14.890 --> 08:15.340
+like this.
+
+08:15.340 --> 08:19.930
+We can go and get the small thumbnail or another field called thumbnail.
+
+08:20.590 --> 08:21.640
+How do we get that image?
+
+08:21.670 --> 08:26.490
+Well, it's really simple now because go back to a reader, book there.
+
+08:27.100 --> 08:29.050
+I actually go to book row.
+
+08:30.010 --> 08:34.660
+We are hard coding our image here, aren't we?
+
+08:35.020 --> 08:38.190
+So what we can do actually, let me get rid of all of this.
+
+08:38.230 --> 08:40.900
+In fact, let me just keep that for now.
+
+08:41.200 --> 08:44.140
+Image URL is going to be a type of string.
+
+08:45.430 --> 08:57.460
+And then I'm going to just say, if this case or a book that volume info, that image links.
+
+08:57.730 --> 09:02.050
+So what I'm doing now, I'm traversing through to get to what I want.
+
+09:02.050 --> 09:02.890
+So volume.
+
+09:03.190 --> 09:04.680
+That is the book itself.
+
+09:04.690 --> 09:08.050
+I got title and everything, and I want to go and get to the images.
+
+09:08.080 --> 09:12.360
+Well, scroll down is going to be image links that it's on object, right?
+
+09:12.550 --> 09:17.440
+And then I'm going to go inside and get either small thumbnail or thumbnail and then image links.
+
+09:17.440 --> 09:18.130
+What do we want?
+
+09:18.160 --> 09:21.580
+Well, let's say I want the small thumbnail.
+
+09:21.700 --> 09:28.840
+If that is empty, then means is equal to true like this.
+
+09:29.410 --> 09:34.080
+Then then I'm going to just have this image because I know its goal is going to be there.
+
+09:34.090 --> 09:37.240
+In fact, I'm going to actually get a different image from Unsplash.
+
+09:37.240 --> 09:40.390
+That way is something a little bit more generic and so forth.
+
+09:40.390 --> 09:44.560
+For that book, then we can have something default showing like that.
+
+09:44.950 --> 09:53.470
+I'm going to say else then else that I'm going to say book volume info, image links, that small thumbnail.
+
+09:54.630 --> 10:00.380
+Say to string like this, apparently I don't have to do that, and I'm going to have some kind of issues,
+
+10:00.380 --> 10:01.860
+let's see what can we do?
+
+10:01.880 --> 10:03.230
+Let's simplify the expression.
+
+10:03.230 --> 10:03.710
+Sure.
+
+10:04.490 --> 10:04.910
+There we go.
+
+10:05.300 --> 10:08.300
+So now we have this image URL that we can pass in here.
+
+10:09.110 --> 10:16.160
+So depending on the situation, if it goes and looks at the image small thumbnail of this book and there's
+
+10:16.160 --> 10:19.250
+nothing there, I'm going to just have a generic image else.
+
+10:19.610 --> 10:24.620
+Well, general, it's going to be equal to whatever we're getting from our API.
+
+10:24.790 --> 10:25.720
+OK, let's see if this works.
+
+10:25.730 --> 10:26.180
+Let's write.
+
+10:28.110 --> 10:28.760
+OK, let's see.
+
+10:30.140 --> 10:35.020
+And voila, there is still working because I changed to flatter, but if I change to something else
+
+10:35.020 --> 10:43.790
+to say World War, not very peaceful here, clear way they go can see we have it.
+
+10:44.000 --> 10:45.280
+It's working very good.
+
+10:45.290 --> 10:50.060
+So if I say something else, software
+
+10:52.880 --> 10:59.210
+development you should see and goes in factories that information.
+
+11:00.200 --> 11:00.870
+Wonderful.
+
+11:00.890 --> 11:03.410
+Well, congratulations if you were able to get to this point.
+
+11:03.440 --> 11:04.490
+This is very exciting.
+
+11:04.490 --> 11:09.170
+At least it makes me always excited to see all these things working when things are working, when things
+
+11:09.170 --> 11:16.100
+are not working, it's never exciting, but it's also part of the job of becoming a developer.
+
+11:16.140 --> 11:19.760
+It's like things will never work all the time, so we have to kind of fight for it.
+
+11:20.030 --> 11:21.620
+But in any case, this is good.
+
+11:22.250 --> 11:24.080
+All right, I'll see you next.

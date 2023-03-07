@@ -1,0 +1,232 @@
+WEBVTT
+
+00:02.280 --> 00:06.300
+So we have a weather navigation, you can see that we haven't used it anywhere.
+
+00:06.420 --> 00:07.410
+So how do we use that?
+
+00:07.530 --> 00:09.060
+Well, we have to go to our main activity.
+
+00:09.330 --> 00:10.680
+This is where everything is.
+
+00:11.010 --> 00:12.030
+It's called posé.
+
+00:13.760 --> 00:17.070
+All right, so in our main activity here, I'm going to restructure a few things.
+
+00:17.100 --> 00:18.600
+First of all, I'm going to get rid of all of this.
+
+00:20.040 --> 00:22.980
+And because now we got rid of that.
+
+00:23.100 --> 00:29.700
+That means our greetings is going to go away, which is OK because that's just boilerplate code that
+
+00:29.700 --> 00:30.270
+we don't want.
+
+00:30.510 --> 00:33.360
+OK, so first, I'm going to structure this a little bit different.
+
+00:33.360 --> 00:34.860
+I'm going to create a function here.
+
+00:34.860 --> 00:44.490
+Actually, let's make this a composable first and then it's called this weather app like that.
+
+00:45.570 --> 00:52.680
+And what I'm going to do is let's get rid of all of that, in fact, and we get all of this out here.
+
+00:55.890 --> 00:56.370
+OK.
+
+00:56.400 --> 00:56.880
+Very good.
+
+01:02.830 --> 01:10.690
+And I'm going to make it the surface here, I'm going to pass a modifier and then we say, fill max
+
+01:10.690 --> 01:21.400
+with and if I want to kill two birds with one stone, I know that's a very rough wording, but it works,
+
+01:21.400 --> 01:22.450
+meaning that I want to.
+
+01:22.720 --> 01:29.620
+I just say fill max size, which will take care of everything height and width.
+
+01:30.070 --> 01:31.140
+OK, there we go.
+
+01:31.150 --> 01:35.230
+So now we are saying the whole surface is going to take up the entire space of this great.
+
+01:37.070 --> 01:37.480
+All right.
+
+01:37.520 --> 01:40.190
+So inside here, now I'm going to create a column.
+
+01:41.390 --> 01:41.650
+OK.
+
+01:42.380 --> 01:48.500
+And I must say vertical arrangement and sea arrangement center.
+
+01:49.490 --> 01:50.270
+And
+
+01:53.630 --> 01:55.630
+let's say horizontal alignment.
+
+01:55.640 --> 01:58.040
+I'm going to say alignment center, horizontal like that.
+
+01:58.760 --> 02:01.730
+And here is where I'm going to call this other.
+
+02:02.790 --> 02:09.510
+Composable called weather navigation, which we created, which is which one this guy here.
+
+02:10.840 --> 02:15.700
+So what we're doing now is that the moment we call weather app, which we're not calling anywhere,
+
+02:16.360 --> 02:17.560
+yes, we're going to call it here.
+
+02:18.490 --> 02:25.300
+Weather app, such so the moment we call Weather App, Weather app will know that, OK, it's going
+
+02:25.300 --> 02:30.220
+to call the weather forecast theme passing the surface and everything we've done there.
+
+02:30.550 --> 02:35.080
+And then most importantly then is going to set up our weather navigation and we know that our weather
+
+02:35.080 --> 02:41.870
+navigation has the nav controller in this case, the Alarm Pranav controller it has now hosted.
+
+02:41.940 --> 02:48.380
+At this point, we only have one composable, which is the splash screen, and it knows enough nav host
+
+02:48.380 --> 02:51.700
+that should say it knows where to start.
+
+02:51.730 --> 02:58.060
+He knows that we start at the splash screen and of course composable is called and then we should see
+
+02:58.240 --> 02:59.020
+the splash screen.
+
+03:00.350 --> 03:03.700
+This is how we set up our navigation no app.
+
+03:04.070 --> 03:09.600
+Now it's important to start with their navigation because everything else comes after that.
+
+03:09.620 --> 03:10.430
+In my opinion.
+
+03:10.640 --> 03:10.910
+Right.
+
+03:11.450 --> 03:16.460
+Instead of building out the entire application with no navigation, I like to start with their navigation
+
+03:16.460 --> 03:22.640
+first so that it's much easier because we can start adding all of that is screens as we go through,
+
+03:22.820 --> 03:23.090
+right?
+
+03:23.120 --> 03:24.560
+We said of our nav host.
+
+03:24.920 --> 03:29.260
+We only have one composable here, one screen, right?
+
+03:29.270 --> 03:30.770
+One destination, if you will.
+
+03:31.250 --> 03:37.330
+But obviously, we're going to add more destinations later because we've created a few screens here.
+
+03:37.340 --> 03:39.470
+We have main screen about screen and so forth.
+
+03:41.230 --> 03:41.560
+OK.
+
+03:43.130 --> 03:47.510
+Very well, now, moment of truth, let's go ahead and run this app real quick.
+
+03:47.590 --> 03:50.890
+Hopefully, we can see something working during this run.
+
+03:53.920 --> 04:00.850
+Now, remember, I do have an actual device that is running in your case, you would have an emulator
+
+04:00.850 --> 04:06.610
+and so forth, but I have a device which will be prompt to work in a second here.
+
+04:07.390 --> 04:13.150
+And if all goes well on your emulator or on your device, you will see we have a splash screen.
+
+04:13.540 --> 04:15.910
+That means then our navigation works.
+
+04:16.630 --> 04:18.160
+Congratulations if you got to this point.
+
+04:18.310 --> 04:23.170
+Now, if you're not having problems, remember you have to follow exactly what we did before.
+
+04:23.650 --> 04:29.110
+Number one, you have to make sure that we have all the dependencies we created or I showed you earlier
+
+04:29.110 --> 04:30.130
+how to put it together.
+
+04:30.520 --> 04:35.650
+And you know where to go to get all that information, go to GitHub, the repo that I've shown you earlier.
+
+04:35.680 --> 04:36.780
+That's very, very important.
+
+04:36.790 --> 04:37.360
+Otherwise.
+
+04:38.020 --> 04:41.350
+Unfortunately, things are not going to work and then follow exactly what I did.
+
+04:41.500 --> 04:46.990
+Like creating, of course, enough controller in this case, the weather or navigation, and make sure
+
+04:46.990 --> 04:49.690
+we passing the starting point and so forth.
+
+04:50.290 --> 04:51.520
+It's very important.
+
+04:51.910 --> 04:53.800
+OK, so we are making real good progress.
+
+04:54.250 --> 04:55.840
+Obviously, this is not what we want.
+
+04:55.930 --> 05:02.950
+What we want to happen is we want to have a splash screen that looks something like this.
+
+05:03.190 --> 05:06.130
+It's something that is a little bit more, has a little bit more pizzazz.
+
+05:06.130 --> 05:14.110
+And most importantly, we're going to add a animation so that we have that splash screen look and feel.
+
+05:14.770 --> 05:16.240
+And that's what we're going to be doing next.

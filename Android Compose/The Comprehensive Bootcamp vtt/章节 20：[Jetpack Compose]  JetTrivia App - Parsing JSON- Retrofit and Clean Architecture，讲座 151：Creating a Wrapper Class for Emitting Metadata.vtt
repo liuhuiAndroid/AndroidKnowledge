@@ -1,0 +1,502 @@
+WEBVTT
+
+00:00.920 --> 00:06.830
+So we've created our Provide Question API, which in this case we're saying creating a retrofit builder
+
+00:07.280 --> 00:15.680
+and passing integration converter and that will convert the JSON into serialized JSON object, which
+
+00:15.680 --> 00:20.210
+then are internally connected to our actual to our models.
+
+00:20.330 --> 00:21.980
+Your question in question item.
+
+00:22.760 --> 00:24.830
+So all of that, it's going to be done internally.
+
+00:25.130 --> 00:29.480
+Otherwise, if we had to do this ourselves would have to create a lot of different classes just to get
+
+00:29.480 --> 00:30.200
+things to work.
+
+00:30.590 --> 00:31.280
+It's not worth it.
+
+00:31.310 --> 00:34.010
+So using a library is always a good idea.
+
+00:34.230 --> 00:35.840
+Retrofit fits the bill.
+
+00:37.430 --> 00:37.700
+All right.
+
+00:37.700 --> 00:42.740
+So what do we do next is we're going to create a repository.
+
+00:42.740 --> 00:45.020
+So instead of a repository here, I'm going to right click.
+
+00:45.990 --> 00:52.260
+You class, and let's call this question repository as such.
+
+00:53.190 --> 01:01.160
+No, because we have hilt, I'm going to inject say at inject constructor, I such and because it's
+
+01:01.170 --> 01:07.650
+repository, I need it that question API, because the Question API will know how to go and get that
+
+01:07.650 --> 01:10.260
+information that we need, which is the data OK?
+
+01:10.860 --> 01:13.470
+Or at least you have this structure that will allow us to do so.
+
+01:13.920 --> 01:16.110
+So let's go ahead and imported that inject.
+
+01:16.440 --> 01:20.910
+And here I'm going to say private valve and it's going to be an API.
+
+01:21.210 --> 01:22.230
+Just call our.
+
+01:25.210 --> 01:26.680
+Question API section.
+
+01:28.910 --> 01:29.330
+Very good.
+
+01:30.110 --> 01:30.450
+All right.
+
+01:30.470 --> 01:38.390
+So this is where we then are able to again, if we go back to model, let's go to question if I were
+
+01:38.390 --> 01:41.270
+going to invoke this question, I get all questions.
+
+01:41.420 --> 01:44.680
+Think of these as a Dow Wright data access object.
+
+01:44.690 --> 01:46.310
+That's what really, that's what it is.
+
+01:46.310 --> 01:50.840
+We just call this API we could have for a while, call it Dow, because this is what connects directly
+
+01:50.840 --> 02:00.320
+to get all questions by invoking the get and go to this and go to this path, which stand in the background
+
+02:00.320 --> 02:04.670
+calls retrofit to get the data from our JSON API.
+
+02:05.420 --> 02:06.320
+That's what it is, really.
+
+02:06.860 --> 02:12.410
+So in our question repository here, this is where, first of all, we get to go and create a private.
+
+02:14.490 --> 02:20.220
+Vow here called it's going to be a list of questions.
+
+02:20.550 --> 02:20.840
+OK.
+
+02:21.450 --> 02:30.870
+And in this case, this is going to be an array list or a list of question item.
+
+02:33.190 --> 02:33.640
+Like that?
+
+02:35.820 --> 02:36.120
+OK.
+
+02:37.080 --> 02:44.130
+And in the beginning, can I just have an empty list as such now, although this will work because indeed
+
+02:44.130 --> 02:48.750
+we're getting in a list of question items right from our API.
+
+02:48.930 --> 02:56.250
+But we need to think a little bit about what is it that we are trying to get or what other information
+
+02:56.250 --> 03:01.440
+we may need, especially when we are dealing with getting information from the internet or getting the
+
+03:01.440 --> 03:05.070
+information from anywhere, really data in our applications.
+
+03:05.610 --> 03:08.700
+So let me show you something real quick in a little presentation.
+
+03:09.330 --> 03:13.880
+So the way things are, we would have an array list of question items as you see there.
+
+03:13.890 --> 03:17.890
+So that will be coming from a JSON data source in this case.
+
+03:17.890 --> 03:26.880
+Is going to be an API somewhere remotely or could it be in a file or a JSON internally or a JSON file
+
+03:26.880 --> 03:29.660
+internally inside of our app or a database?
+
+03:29.670 --> 03:30.530
+It doesn't really matter.
+
+03:30.730 --> 03:35.160
+So again, that information and then of course, we're expecting to get an array list of questions.
+
+03:35.520 --> 03:41.550
+One thing we need to think about is is OK, can we attach a little bit more information to what a data
+
+03:41.550 --> 03:42.510
+that we were receiving?
+
+03:43.590 --> 03:49.800
+Because at this point here, if we just pass in a list as such a release containing a question item,
+
+03:50.190 --> 03:51.210
+it's totally fine.
+
+03:51.210 --> 03:51.930
+It works great.
+
+03:52.200 --> 03:58.320
+But in this case, we can't add any metadata about the response itself we're getting from the server.
+
+03:58.800 --> 04:04.680
+For instance, if there is an exception that happens as the data is being pulled in right or want to
+
+04:04.680 --> 04:10.890
+know the status of this process of fetching data from our database or from our data source, I would
+
+04:10.890 --> 04:17.490
+just call it right and many other things that we we may want to attach to this array list.
+
+04:18.360 --> 04:21.170
+The way things are right now, it's virtually impossible.
+
+04:21.240 --> 04:22.740
+You can make it work, but it's going to be.
+
+04:23.490 --> 04:28.770
+We'll have to do a little bit more work and necessary work to make it so that we can pass those pieces
+
+04:28.770 --> 04:34.860
+of data information that we may need in our interface to know exactly what's going on with this payload
+
+04:34.980 --> 04:36.210
+of data that we were receiving.
+
+04:37.050 --> 04:42.360
+What do we need to do is to wrap this ArrayList into a different object?
+
+04:43.080 --> 04:43.380
+Right?
+
+04:43.440 --> 04:45.990
+So in this case, could call it data or exception.
+
+04:45.990 --> 04:48.480
+What this does, it can see you have angled brackets there.
+
+04:48.990 --> 04:54.900
+What this does is that we can pass first a T in this case going to be generic, which is very convenient
+
+04:55.110 --> 05:00.150
+because that means we can pass any Typekit that we want in place of that generic can pass in our list
+
+05:00.150 --> 05:03.490
+of question items, which is exactly what we have there, right?
+
+05:03.840 --> 05:10.110
+And on top of that, we can then pass a Boolean that we can toggle if loading is true or loading is
+
+05:10.110 --> 05:18.360
+false, so that when we transpose this data onto our user interface or composable, we can then extract
+
+05:18.360 --> 05:19.080
+that information.
+
+05:19.080 --> 05:26.520
+So if it's if load, for instance, is true because we had added that information in our data or we
+
+05:26.540 --> 05:32.850
+wrapped everything in the inside of this main object, right then we can extrapolate that information
+
+05:32.850 --> 05:39.810
+to say if it's true that it's still loading, then we can show some sort of user show something together
+
+05:40.320 --> 05:46.440
+so they know something is still loading if there are problems that happen, for instance, certain exceptions
+
+05:46.440 --> 05:46.950
+have happened.
+
+05:47.160 --> 05:49.320
+We can also pass them, as you see there.
+
+05:49.770 --> 05:56.640
+So now not only can I pass the actual data as I see a free list or could it be a real list of strings
+
+05:56.910 --> 05:59.730
+or could be a list of person objects?
+
+05:59.740 --> 06:02.700
+Whatever it is, doesn't matter because it's a it's a generic right.
+
+06:03.180 --> 06:09.480
+We can also pass the Boolean so we can say OK if it's loading or not, and any other exception.
+
+06:10.080 --> 06:16.920
+Also virtually, we can pass any other type we wanted just so we can wrap our array list here because
+
+06:16.920 --> 06:20.310
+we know we're getting information from the web or from a data source.
+
+06:20.520 --> 06:27.360
+We can wrap it with more metadata or more information around it so we can extrapolate when we are now
+
+06:27.360 --> 06:28.980
+using this data.
+
+06:29.980 --> 06:36.100
+Into our composable now again, it looks like overkill, because like I said, he could have just we
+
+06:36.130 --> 06:39.940
+could have just snapped at a red list item and call it good.
+
+06:40.270 --> 06:47.350
+But this process of wrapping our data into another class that allows us to add more data to that class,
+
+06:47.350 --> 06:51.100
+right, so we can grab it and get different parts of the data.
+
+06:51.670 --> 06:55.060
+It's partially part of the clean architecture.
+
+06:55.210 --> 06:59.470
+Let's go ahead and put this data or exception structures so we can see how it all works.
+
+07:00.310 --> 07:00.580
+All right.
+
+07:00.580 --> 07:05.710
+So we are going to take a little break from our question repository because we need to create another
+
+07:05.710 --> 07:07.810
+structure here, write the wrapper class.
+
+07:08.320 --> 07:10.030
+So instead of a data, I'm going to right click.
+
+07:11.370 --> 07:16.980
+And say coddling classes such as call these data or exception as such.
+
+07:17.360 --> 07:22.860
+OK, now we're going to make this a data class because it's just a simple data class data exception.
+
+07:23.250 --> 07:25.110
+Now what is that we want to do here?
+
+07:25.140 --> 07:26.790
+Now we're going to use generics.
+
+07:27.030 --> 07:33.390
+Now I've talked about generics before, but essentially generics allows us to name and play, make our
+
+07:33.390 --> 07:40.380
+class as generic as possible, meaning we can pass different types in place when we want to implement
+
+07:40.380 --> 07:40.860
+this class.
+
+07:41.160 --> 07:46.560
+So for instance, here I'm going to put in side of angle brackets when I put a team and I want to also
+
+07:46.560 --> 07:52.590
+put a Boolean and then I'm going to put an E for it to say it's going to be an exception type like this
+
+07:54.540 --> 07:55.510
+Kotlin exception.
+
+07:55.530 --> 07:56.070
+That's fine.
+
+07:56.700 --> 08:00.210
+And then because this is a data class, we don't even need the body.
+
+08:00.300 --> 08:03.690
+Let's go ahead and pass in the constructor primary constructor here.
+
+08:04.410 --> 08:05.550
+So what I'm going to do?
+
+08:05.940 --> 08:11.970
+Well, again, what I'm doing here, I'm just saying this data or S. class data class here would allow
+
+08:11.970 --> 08:13.200
+any template type.
+
+08:13.200 --> 08:14.220
+So this could be string.
+
+08:14.520 --> 08:15.800
+This could be a person type.
+
+08:15.810 --> 08:17.250
+This could be any type that we want.
+
+08:17.610 --> 08:21.840
+Boolean, of course, is going to be bullying only, and it's going to be of type exception.
+
+08:22.620 --> 08:25.000
+That means then this is going to be a wrapper class.
+
+08:25.500 --> 08:29.970
+So I'm going to pass here, say VAR for the data field.
+
+08:30.030 --> 08:33.780
+I'm going to pass the T make it notable like this.
+
+08:35.070 --> 08:39.520
+And for the Boolean here, it's going to be loading.
+
+08:40.230 --> 08:41.460
+Or I could see loading.
+
+08:41.460 --> 08:42.390
+State doesn't matter.
+
+08:42.390 --> 08:43.410
+So loading it's fine.
+
+08:43.680 --> 08:45.120
+It's going to be a Boolean type.
+
+08:50.990 --> 08:52.260
+OK, Nullarbor.
+
+08:52.730 --> 08:58.700
+And it's always know the first and e this is going to be for our exception when I say E!
+
+08:59.630 --> 09:02.170
+And also not like that, right?
+
+09:02.270 --> 09:02.750
+There we go.
+
+09:02.990 --> 09:04.940
+So this is what we are going to use.
+
+09:05.390 --> 09:10.160
+And the great thing again about this is that is that whenever we're getting data in this case, in our
+
+09:10.160 --> 09:16.760
+question repository here, instead of just passing in a real list of questions like this, we can wrap
+
+09:16.760 --> 09:25.220
+of this as I showed it earlier into this data or exception, which means then I can then pass metadata
+
+09:25.220 --> 09:26.780
+as I get information.
+
+09:26.780 --> 09:30.880
+I can see, for instance, for data property, I'm going to pass any type here.
+
+09:30.890 --> 09:38.270
+In this case, it's conveniently we can pass this whole list here of question as this tea type.
+
+09:38.660 --> 09:44.600
+That way, then if I want to get the information to show, I can say data or exception dot data.
+
+09:46.080 --> 09:48.720
+And I would have access to this list.
+
+09:51.550 --> 09:56.320
+What I mean by that now is that we have to change a few things here.
+
+09:56.560 --> 09:57.360
+We'll get to wrap.
+
+09:57.370 --> 10:00.100
+I'm going to say data or exception.
+
+10:01.460 --> 10:02.050
+There we go.
+
+10:02.130 --> 10:04.240
+And I can pass all of this.
+
+10:05.320 --> 10:07.180
+I can't just remove that, actually.
+
+10:11.370 --> 10:15.720
+In our angler brackets there, that's the first data, the tea.
+
+10:17.140 --> 10:18.810
+It wasn't finalized like that.
+
+10:20.260 --> 10:26.230
+And then I'm going to pass me just a Boolean could be anything and then I'm going to pass an exception.
+
+10:26.660 --> 10:30.640
+So this case just going to be exception, calling exception as such.
+
+10:31.450 --> 10:34.750
+And then I'm going to just have an open and empty.
+
+10:36.200 --> 10:45.890
+An empty constructor like this place in your line, so it's more feasible now we wrapped our ArrayList
+
+10:46.340 --> 10:47.210
+question here.
+
+10:47.660 --> 10:54.140
+What if we added that inside of our data or exception type so that our list of questions is going to
+
+10:54.140 --> 11:00.470
+come as this type, data or exception, which means it's going to have to data if there's data, but
+
+11:00.470 --> 11:05.270
+also we can pass a Boolean to say, Oh, it's still loading or not loading and an exception if there
+
+11:05.270 --> 11:05.960
+are issues.
+
+11:06.980 --> 11:11.480
+So in the next video, we'll continue constructing our question repository here, which really is not
+
+11:11.480 --> 11:14.810
+going to require a lot of things because it's a very simple application.
+
+11:14.840 --> 11:19.880
+All we doing, just getting information and we're not editing it, we're not deleting, we're not updating,
+
+11:19.880 --> 11:22.400
+we're just getting the information from an API.
+
+11:22.730 --> 11:24.470
+But this is an important concept.
+
+11:24.740 --> 11:29.340
+So I would like you to take a look at this and implement any time you find yourself in a situation where
+
+11:29.340 --> 11:30.650
+we're getting data of some sort.
+
+11:30.950 --> 11:31.280
+Right?
+
+11:31.670 --> 11:34.700
+You wrap that into some structure like it is.
+
+11:34.970 --> 11:41.390
+That way you can pass bits of information along with your main information, which in this case is our
+
+11:41.410 --> 11:41.930
+ArrayList.

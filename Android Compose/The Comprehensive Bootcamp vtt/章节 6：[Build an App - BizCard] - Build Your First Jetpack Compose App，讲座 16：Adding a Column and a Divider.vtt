@@ -1,0 +1,448 @@
+WEBVTT
+
+00:00.600 --> 00:06.870
+Because we are looking ahead and seeing exactly how all of these pieces of the user interface are going
+
+00:06.870 --> 00:07.740
+to be laid out.
+
+00:07.770 --> 00:11.250
+We understand that we have at the top here the image, which is this one, it doesn't look that great
+
+00:11.250 --> 00:12.730
+yet, but we'll get there.
+
+00:12.830 --> 00:14.460
+Then we have the names actually.
+
+00:14.460 --> 00:19.080
+Before that, we have this divider and then we have names and all this information.
+
+00:19.350 --> 00:22.620
+So how do we lay things out as such, right?
+
+00:22.620 --> 00:26.130
+Because this is a vertical layout, if you will.
+
+00:26.430 --> 00:29.420
+Well, we can do that by using a column.
+
+00:29.430 --> 00:34.200
+So a column is yet another composable function that allows us to lay things out vertically.
+
+00:34.470 --> 00:42.040
+So what we need to do is inside of our card before we start putting together a surface and so forth.
+
+00:42.060 --> 00:43.020
+We're going to do this.
+
+00:43.020 --> 00:49.090
+We are going to add a column of, say, column start typing column like such an overlap.
+
+00:49.380 --> 00:55.590
+So this column here we can pass, of course, modifiers and other properties parameters that will modify
+
+00:55.590 --> 01:00.240
+or will know how to layout this column or the contents of this column.
+
+01:00.240 --> 01:03.630
+So what do we need to do next is get all of this information here.
+
+01:03.690 --> 01:08.970
+Our surface, which is at this point, the image and cut that we're put inside of his column.
+
+01:09.450 --> 01:10.810
+Now we have that problem there.
+
+01:10.830 --> 01:11.310
+That's OK.
+
+01:11.320 --> 01:12.090
+We'll get there.
+
+01:12.420 --> 01:14.460
+So what do we want to make sure that happen?
+
+01:14.460 --> 01:20.490
+Is that his column, we can modify it or we can make it so that he knows exactly how to lay its children
+
+01:20.520 --> 01:20.880
+out.
+
+01:21.180 --> 01:23.550
+So what are the children of this column?
+
+01:23.580 --> 01:25.290
+Well, in this case, we just have one child.
+
+01:25.530 --> 01:28.490
+Well, actually three two, that is surface.
+
+01:28.500 --> 01:29.430
+And then we have the image.
+
+01:29.580 --> 01:30.900
+But are we going to have other things here?
+
+01:30.930 --> 01:37.380
+So instead of our column here, we're going to pass another modifier modifier such and then I'm going
+
+01:37.380 --> 01:43.430
+to say that I want the height total height of all of this contents inside here of about 300 db.
+
+01:43.890 --> 01:44.160
+OK.
+
+01:44.520 --> 01:45.090
+That's very good.
+
+01:45.480 --> 01:48.820
+And the other thing I want to do notice I'm outside the modifier now.
+
+01:48.840 --> 01:50.010
+This is a different property.
+
+01:50.010 --> 01:50.790
+I'm going to be passing.
+
+01:51.030 --> 01:53.370
+There's a property called vertical arrangement.
+
+01:53.400 --> 01:59.100
+This is very important because we can specify how do we want these items inside of his column to be
+
+01:59.100 --> 02:00.270
+arranged vertically?
+
+02:00.750 --> 02:01.020
+Right?
+
+02:01.320 --> 02:07.800
+So when I say arrange ment like this and we have a few options, well, we want from top to bottom.
+
+02:08.080 --> 02:08.850
+OK, that's fine.
+
+02:09.090 --> 02:11.430
+But there's another one, too, which is horizontally.
+
+02:11.430 --> 02:15.120
+How do we want all of these items inside here to be indeed laid out?
+
+02:15.210 --> 02:21.690
+And when, say, horizontally, I want all these items to be aligned, say our alignment center horizontally,
+
+02:21.810 --> 02:24.000
+like so in the middle, but horizontally center.
+
+02:24.570 --> 02:25.200
+OK, let's see.
+
+02:25.200 --> 02:26.910
+Let's build and refresh.
+
+02:27.300 --> 02:29.790
+And the moment you do that, something happens.
+
+02:29.820 --> 02:36.390
+Everything changes all the difficulties we're having, which meant we were having this whole profile
+
+02:36.390 --> 02:38.850
+picture, taking the entire view.
+
+02:39.120 --> 02:43.410
+Now, it no longer does that because we wrapped it inside of a column.
+
+02:43.410 --> 02:48.330
+So we are now saying, well, whatever we have inside of this surface, which in this case is the image,
+
+02:48.780 --> 02:56.670
+it's going to take mainly the parents arrangements, if you will, of how to be displayed inside of
+
+02:56.670 --> 02:57.210
+itself.
+
+02:57.510 --> 03:02.820
+And I can see that solving a problem because it no longer is outside by its own.
+
+03:03.030 --> 03:07.170
+It's inside of a column and we've arranged things to be laid out.
+
+03:07.170 --> 03:10.380
+How they will be laid out inside of his column might really good.
+
+03:10.710 --> 03:12.300
+OK, so this is exactly what we want.
+
+03:12.540 --> 03:17.340
+In fact, if I show you here side by side, you can see it is indeed what we want.
+
+03:17.970 --> 03:18.260
+All right.
+
+03:18.420 --> 03:23.130
+So next up is let's go ahead and see if we can add this divider here.
+
+03:23.400 --> 03:24.060
+How do we do that?
+
+03:24.330 --> 03:28.830
+Well, before we move forward, there's another concept I need to show you real quick here.
+
+03:29.010 --> 03:29.290
+OK?
+
+03:29.310 --> 03:32.450
+And again, we will go into details at a later time.
+
+03:32.460 --> 03:35.040
+This is just for us to get situated with compose.
+
+03:35.520 --> 03:36.690
+The process is very simple.
+
+03:37.170 --> 03:38.820
+Sure, everything is working fine.
+
+03:38.820 --> 03:41.400
+We're able to see default previews and everything is great.
+
+03:41.400 --> 03:45.840
+But you notice that our code is starting to get a little bit cramped together, right?
+
+03:46.350 --> 03:48.210
+It's always a good way of coding.
+
+03:48.210 --> 03:54.930
+If we can create pieces of user interfaces that can then be called so that they are a little bit independent,
+
+03:55.080 --> 04:00.600
+which means we can actually remove this entire surface here, right?
+
+04:00.600 --> 04:03.570
+Which in this case contain this image outside here.
+
+04:03.750 --> 04:06.060
+Right that way, it's its own entity.
+
+04:06.270 --> 04:11.220
+In fact, if you look here, let me go ahead and minimize this a little bit.
+
+04:11.460 --> 04:12.930
+We have our surface here.
+
+04:13.170 --> 04:18.360
+What I can do is I'm gonna go ahead and select all of this.
+
+04:18.510 --> 04:19.410
+Let's right click.
+
+04:19.590 --> 04:21.360
+I'm going to go to refactor.
+
+04:21.630 --> 04:25.740
+I'm going to go to a function to create its own function, and it's analyzing everything.
+
+04:25.740 --> 04:30.480
+And now what I'm going to do, I'm going to name this whole function right, because it's going to extract
+
+04:30.480 --> 04:33.900
+this into a different function, a composable, as you see there.
+
+04:34.200 --> 04:36.180
+So I'm going to call this this call.
+
+04:36.180 --> 04:41.900
+This create image profile like this hit enter and just like magic.
+
+04:41.960 --> 04:48.360
+Notice now it's just calling create image profile there, and the composable is outside here on its
+
+04:48.360 --> 04:48.630
+own.
+
+04:48.990 --> 04:49.350
+All right.
+
+04:50.010 --> 04:50.670
+They have it in.
+
+04:50.670 --> 04:56.280
+So if we go ahead and of course, building refresh again, nothing will have changed in terms of what
+
+04:56.280 --> 04:56.790
+we see.
+
+04:56.790 --> 04:59.550
+But we know that we have compartmentalize our code a little bit.
+
+05:00.290 --> 05:05.270
+As you see, everything is still the same, but again, the code is a little bit different in that we
+
+05:05.270 --> 05:07.250
+have compromise our code.
+
+05:07.700 --> 05:09.290
+We created a different piece.
+
+05:10.020 --> 05:16.060
+Different composable function that sits on its own and can be called upon as you see there.
+
+05:16.440 --> 05:22.580
+OK, and anything we can do, we can also obviously parse parameters to these create image profile so
+
+05:22.580 --> 05:29.200
+we can make this image profile more independent per se more customizable, one of which is to pass the
+
+05:29.210 --> 05:32.900
+modifiers and let's say modifier like that going to make it a modifier.
+
+05:33.230 --> 05:37.580
+Now, if I leave it as it is right now, notice is going to have a problem because it going to say we
+
+05:37.580 --> 05:40.080
+need to pass them under fire for an order for this to work.
+
+05:40.100 --> 05:46.340
+But we can also say that, you know what, we are not going to require this modifier to be passed along,
+
+05:46.340 --> 05:51.590
+meaning if we want to call create image profile, it's an option to add a modifier.
+
+05:51.680 --> 05:57.260
+How do we do that to make it an optional, which I say is equal to modifier like this?
+
+05:57.680 --> 06:00.620
+The moment you do that notice we can call create image profile.
+
+06:00.860 --> 06:05.330
+We can obviously pass a modifier five over can see, says Modifier.
+
+06:05.600 --> 06:08.360
+It's an option to pass it as a parameter, but it's not required.
+
+06:08.590 --> 06:08.930
+All right.
+
+06:09.410 --> 06:16.040
+So that means that if indeed something is passed along, what we can do, we can use that modifier variable
+
+06:16.040 --> 06:22.280
+parameter and invoke inside our surface or anywhere else that's needed inside here.
+
+06:22.400 --> 06:26.570
+But for now, we're just going to keep it as a race because that's not the idea of showing you this,
+
+06:26.630 --> 06:30.170
+but just to get you thinking a little bit about what can be done.
+
+06:30.260 --> 06:30.980
+All right, there we go.
+
+06:31.250 --> 06:37.370
+So again, nothing really will change if I refresh everything, and that's always a good news.
+
+06:37.730 --> 06:38.930
+OK, what is next there?
+
+06:38.930 --> 06:40.210
+We want to do next.
+
+06:40.220 --> 06:43.640
+We want to add this divider here.
+
+06:43.700 --> 06:44.210
+Very good.
+
+06:44.480 --> 06:45.620
+How do we do this?
+
+06:45.650 --> 06:46.370
+You may ask.
+
+06:46.400 --> 06:47.630
+Well, it's very simple.
+
+06:47.840 --> 06:54.020
+So right below there, I'm going to just say something like, yes, there is a composable I can call
+
+06:54.020 --> 06:55.100
+call divider.
+
+06:55.370 --> 06:55.880
+Look at that.
+
+06:56.060 --> 06:58.400
+And the divider, if you hit enter, there it is.
+
+06:58.400 --> 07:03.740
+If you have over again, like any other composable that comes with jetpack compose, we haven't created
+
+07:03.740 --> 07:04.370
+this ourselves.
+
+07:04.400 --> 07:07.100
+It's just prebuilt for us to use again.
+
+07:07.430 --> 07:12.130
+Notice modifier we can pass modifier so we can modify just like any other composer.
+
+07:12.140 --> 07:13.130
+Composable, I should say.
+
+07:13.250 --> 07:13.490
+All right.
+
+07:13.910 --> 07:16.790
+So we can pass the color thickness and start indent.
+
+07:17.120 --> 07:22.250
+And he also tells us a divider is a thin line that groups content enlists in layout.
+
+07:22.760 --> 07:23.060
+OK.
+
+07:23.570 --> 07:28.150
+So if we leave, as is right now, let's go ahead and refresh.
+
+07:28.160 --> 07:29.060
+See what's going to happen.
+
+07:29.450 --> 07:33.230
+It should have some default values that comes with so we don't have to worry about.
+
+07:33.410 --> 07:36.950
+And then if you want to change thickness, you can change the color.
+
+07:36.980 --> 07:37.760
+We can do so.
+
+07:38.150 --> 07:39.620
+But for now, let's see what's going to happen.
+
+07:39.980 --> 07:42.680
+And while I can see there it is, it's very, very, very small.
+
+07:42.690 --> 07:46.250
+I'm going to just zoom in, exaggerate things a little bit.
+
+07:46.250 --> 07:47.510
+So hopefully you can see.
+
+07:47.960 --> 07:48.680
+And there it is.
+
+07:48.980 --> 07:49.280
+OK.
+
+07:49.790 --> 07:50.360
+It's there.
+
+07:50.930 --> 07:51.590
+And there you have it.
+
+07:52.250 --> 07:52.640
+All right.
+
+07:53.180 --> 07:53.600
+Very good.

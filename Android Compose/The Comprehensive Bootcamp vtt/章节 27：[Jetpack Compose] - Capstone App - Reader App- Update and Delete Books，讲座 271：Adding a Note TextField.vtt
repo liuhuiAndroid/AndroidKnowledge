@@ -1,0 +1,313 @@
+WEBVTT
+
+00:00.060 --> 00:01.410
+All right, let's go ahead and continue.
+
+00:01.650 --> 00:05.760
+Now we are going to add at least this text field.
+
+00:06.500 --> 00:10.400
+Yeah, I'm going to actually call it show simple.
+
+00:12.340 --> 00:21.790
+Form because we need that form, and I'm going to pass the book, which is going to be view model data
+
+00:25.060 --> 00:26.920
+and just get the first one.
+
+00:28.900 --> 00:32.250
+Parts of the land and air cook and book.
+
+00:36.580 --> 00:44.380
+And here, amnesty and book, of course, another credited here here Google idea is equal to book Item
+
+00:44.380 --> 00:47.700
+I.D. So make sure that I'm getting the correct book here.
+
+00:47.730 --> 00:48.010
+OK.
+
+00:51.460 --> 00:57.580
+And what I need to do next, I'm going to pass a knife controller looks very strange because we haven't
+
+00:57.580 --> 00:58.500
+created anything about it.
+
+00:58.510 --> 00:59.470
+Let's go ahead and create that.
+
+00:59.830 --> 01:06.310
+And I like doing this because then it's it's way simpler for us to create the actual composer composable
+
+01:06.640 --> 01:10.300
+as you see it passes and all of the parameters that we need.
+
+01:10.840 --> 01:12.730
+Very, very handy here.
+
+01:12.730 --> 01:16.090
+I'm going to actually create another simple form.
+
+01:16.510 --> 01:18.400
+OK, so I'm done here.
+
+01:18.400 --> 01:20.290
+I'm going to create a simple form.
+
+01:20.950 --> 01:23.710
+Add composable font called it simple.
+
+01:27.070 --> 01:31.390
+Form such and I'm going to pass modifier.
+
+01:39.000 --> 01:45.420
+And Louis Bass loading bullion, which now going to you, which we're not going to use, but I'm going
+
+01:45.510 --> 01:47.670
+to pass it in a way so we can have that.
+
+01:47.680 --> 01:55.050
+I'm going to put default values can be a strain and be a great book.
+
+01:57.610 --> 02:00.820
+And then on a search like this.
+
+02:03.150 --> 02:04.620
+The passive strain.
+
+02:07.750 --> 02:09.310
+And it's just been a unit.
+
+02:10.000 --> 02:15.730
+So the simple form we're going to call inside here, simple form.
+
+02:15.760 --> 02:16.660
+And we're going to get to it.
+
+02:17.350 --> 02:19.780
+OK, so what do I want in the simple form?
+
+02:19.840 --> 02:25.590
+Well, let's put a column first and then here, let's create a few variables.
+
+02:25.640 --> 02:33.940
+So let's text field value from number save singable.
+
+02:33.940 --> 02:36.910
+That is an immutable state.
+
+02:39.420 --> 02:43.450
+Of passenger default value, right?
+
+02:44.310 --> 02:45.330
+It, you know, the state.
+
+02:51.560 --> 02:54.280
+Involve a keyboard controller.
+
+02:57.420 --> 03:00.980
+Local soft keyboard controller that current.
+
+03:03.080 --> 03:11.000
+And then it's not right, this one here, we have to add the experimental, composable composed like
+
+03:11.000 --> 03:11.330
+that.
+
+03:13.320 --> 03:24.270
+And so a valid just to check and say, remember going to use our text field to value the value, to
+
+03:24.270 --> 03:35.970
+do the calculations here in the text field value, that value trim is not empty like that, it's not
+
+03:35.970 --> 03:36.510
+empty.
+
+03:36.540 --> 03:38.340
+This is going to be true and we can use that.
+
+03:38.550 --> 03:40.000
+This has to be outside.
+
+03:40.020 --> 03:43.320
+That's why this OK.
+
+03:43.620 --> 03:45.670
+Right now, I'm going to use an input field.
+
+03:45.670 --> 03:48.750
+They were created before and passed in.
+
+03:49.230 --> 03:51.450
+First of all, states are going to be text field.
+
+03:54.040 --> 04:01.840
+The label is going to be I say, enter your thoughts, enable just say true.
+
+04:02.170 --> 04:08.290
+Then I'm going to pass on action keyboards here to keyboard actions.
+
+04:09.820 --> 04:11.140
+Let's just use a lambda.
+
+04:13.300 --> 04:14.650
+And what is it we want to do?
+
+04:14.710 --> 04:23.290
+First, we're going to check if if it's not valid, then just return keyboards or return nothing, really.
+
+04:23.590 --> 04:30.460
+And then I'm going to call the on search, which would then pass our text field value trimmed back value.
+
+04:30.760 --> 04:36.910
+And then, of course, the screen and a keyboard controller can hide that like this.
+
+04:37.660 --> 04:45.670
+And also in the past, if you like a modifier here, so feel maxed width, give it a height of about
+
+04:45.670 --> 04:52.240
+140 dpi and padding of about three dpi.
+
+04:52.750 --> 04:55.000
+And also a background color.
+
+04:55.930 --> 05:04.480
+I say color white and I can pass circle shape here for the shape.
+
+05:04.750 --> 05:07.470
+That's something you can also do and it can continue.
+
+05:07.480 --> 05:11.080
+I can say I want to add another padding here of this pattern.
+
+05:11.410 --> 05:16.180
+I want horizontal padding to be about 20 dpi.
+
+05:18.130 --> 05:21.430
+Vertical to be a 12 DP.
+
+05:21.910 --> 05:24.790
+OK, so what are we doing here, just setting up structure there?
+
+05:25.090 --> 05:27.220
+All right, let's go to back to our simple form.
+
+05:29.420 --> 05:36.500
+And search is going to be actually lamda for us, so I'm just going to put like this and let's pass
+
+05:36.500 --> 05:38.180
+a few of the arguments.
+
+05:38.510 --> 05:41.300
+So let's add a default value because we need that.
+
+05:41.390 --> 05:43.080
+Where do we get that default value?
+
+05:43.100 --> 05:48.050
+Well, we're going to put in if statement and say if looked at notes.
+
+05:52.080 --> 06:00.810
+Is not empty like that or to make it more beautiful, I can just say, no, it's got to strain.
+
+06:02.220 --> 06:04.530
+And then it's not empty.
+
+06:04.770 --> 06:09.780
+If that's the case, then I'm just going to say our default values are going to be a book that notes
+
+06:10.050 --> 06:17.190
+and to string like this else when I say no thoughts of.
+
+06:18.600 --> 06:25.260
+OK, we need to pass the experimental compose UI there, because this simple form, he's using that.
+
+06:25.260 --> 06:30.930
+So we need to pass that along as well and here as well and add that.
+
+06:31.380 --> 06:34.080
+And here we're going to have our actual note.
+
+06:34.770 --> 06:39.360
+It's going to be passed around now because we are going to need the state of that note.
+
+06:39.420 --> 06:42.210
+So I'm going to create at the top here.
+
+06:42.450 --> 06:54.780
+A vowel notes text to get the actual note put inside of a member and some immutable state of just empty.
+
+06:55.350 --> 07:01.830
+And so I'm going to set it up here, so I take notes to extract value and then set it to.
+
+07:03.810 --> 07:07.290
+This note or rather, this note sent.
+
+07:08.470 --> 07:11.920
+Said, or to this note that we're getting from our form.
+
+07:12.550 --> 07:12.770
+OK.
+
+07:13.060 --> 07:14.410
+Let's see.
+
+07:15.600 --> 07:21.030
+If we run this, we hopefully are going to see something should be able, hopefully to see this.
+
+07:23.710 --> 07:24.100
+OK.
+
+07:24.130 --> 07:24.670
+Let's see.
+
+07:25.360 --> 07:25.840
+Click.
+
+07:26.500 --> 07:27.040
+All right.
+
+07:27.380 --> 07:28.240
+It looks really great.
+
+07:28.930 --> 07:31.690
+We can add a note of it, Anna.
+
+07:32.680 --> 07:38.320
+We don't see anything because we didn't add anything to to see what happens when we hit enter.
+
+07:38.680 --> 07:39.940
+But at least there we go.
+
+07:40.570 --> 07:46.990
+It shows something that is if there is notes that they were left before, we should get those notes
+
+07:46.990 --> 07:47.770
+inside here.
+
+07:47.900 --> 07:49.150
+OK, that's why we say here.
+
+07:49.390 --> 07:51.930
+Look, that notes that string to get that.
+
+07:51.940 --> 07:54.790
+If this is empty, then we get that note.
+
+07:55.090 --> 07:57.700
+Alice, we are going to say no facts available.
+
+07:58.030 --> 07:58.390
+All right.
+
+07:58.400 --> 07:59.560
+So great.
+
+07:59.660 --> 07:59.920
+Good.
+
+07:59.980 --> 08:04.870
+This is good progress, and we're going to continue and add this structure here later.
+
+08:05.170 --> 08:08.890
+And then we're going to move on, of course, until we were able to update a note.

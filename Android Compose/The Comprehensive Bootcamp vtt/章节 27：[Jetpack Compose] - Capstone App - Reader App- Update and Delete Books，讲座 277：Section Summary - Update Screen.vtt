@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00.130 --> 00:02.290
+Right, so lots of progress.
+
+00:02.340 --> 00:04.320
+We just finished update screen.
+
+00:04.410 --> 00:09.370
+So we're able to do a lot of things here, constructed this entire update structure.
+
+00:09.390 --> 00:12.300
+The screen here at the top, we have the book we have.
+
+00:12.300 --> 00:14.250
+Enter your thoughts text field.
+
+00:14.520 --> 00:21.530
+We're able to toggle between started date and mark as read and get that logic going there.
+
+00:21.570 --> 00:27.570
+And we have this nice reading bar that we created with a very cool animation there.
+
+00:27.600 --> 00:32.940
+Of course, we're able to update this book, and we were also able to delete the book right?
+
+00:32.950 --> 00:39.100
+And all of that happens live the front end, but then propagate it into the back end to actually delete
+
+00:39.100 --> 00:39.390
+the book.
+
+00:39.600 --> 00:46.620
+And we follow this strict user experience architecture where we pop up a message saying, OK, are you
+
+00:46.620 --> 00:51.960
+sure you want to delete this to give the user a chance to back out of this decision if they wish to
+
+00:51.960 --> 00:52.340
+do so?
+
+00:52.340 --> 00:58.740
+OK, so we are done with our update and now we're going to go back to homescreen because we need to
+
+00:58.740 --> 01:00.600
+restructure a few things there.
+
+01:01.230 --> 01:02.370
+All right, let's go ahead and do that.

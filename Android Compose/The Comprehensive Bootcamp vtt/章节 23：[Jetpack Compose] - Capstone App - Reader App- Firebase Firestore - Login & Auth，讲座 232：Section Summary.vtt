@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.210 --> 00:05.520
+All right, so we're doing great, we have done a lot of work so far so we can safely say that we put
+
+00:05.520 --> 00:10.260
+together the the first three screens that are solid.
+
+00:10.590 --> 00:16.530
+We understand that the users can actually go from the beginning where you can see a splash screen and
+
+00:16.530 --> 00:22.500
+they're taken, of course, to the logging screen, where they can either log in or create an account.
+
+00:22.500 --> 00:24.780
+So we've done all of this gracefully.
+
+00:24.930 --> 00:26.070
+And we're so happy.
+
+00:26.220 --> 00:33.720
+So this section, we were able to even go further by adding the Firebase Auth to create authorization
+
+00:33.720 --> 00:40.470
+for users so we can log in users so we can create user accounts and were also able to bypass the log
+
+00:40.470 --> 00:41.010
+in screen.
+
+00:41.010 --> 00:46.590
+Because Ada is that when users come into our apps, if they already have an account they have logged
+
+00:46.590 --> 00:50.850
+in before, it makes no sense to always ask them to log in again.
+
+00:50.910 --> 00:54.600
+That is not a good user experience, so they're with Firebase.
+
+00:54.600 --> 01:00.990
+We can check to see if there is indeed a user already locked in or has already logged in into our app.
+
+01:01.260 --> 01:07.140
+And we can do that and check if that's the case, then we can send those users to the correct screen.
+
+01:07.140 --> 01:08.790
+So we bypassed all of that.
+
+01:08.970 --> 01:09.210
+OK?
+
+01:09.690 --> 01:17.190
+And of course, we were able to save an actual user into our faster database, which is a separate bucket,
+
+01:17.190 --> 01:21.990
+if you will, of data where we can actually create a database and add our users.
+
+01:22.020 --> 01:28.740
+And this will become more apparent later, because now this user can have other properties that we may
+
+01:28.740 --> 01:33.870
+want, such as the profession, last name, avatar, whatever else do we want?
+
+01:34.260 --> 01:35.610
+OK, so this is real good.
+
+01:36.000 --> 01:39.810
+That's what we've been doing and we finalize in this section.
+
+01:39.810 --> 01:41.370
+So what's next?
+
+01:41.400 --> 01:44.880
+Well, next, we're going to tackle the home screen now.
+
+01:45.240 --> 01:51.090
+I like to look at the home screen as pieces of composable, so I do type.
+
+01:51.090 --> 01:55.980
+You can see we should have that top bar there, which will contain, of course, different pieces of
+
+01:55.980 --> 01:56.580
+compose walls.
+
+01:57.030 --> 02:03.360
+And then at the bottom, we have another layer, another composable, which will contain a few composable
+
+02:03.360 --> 02:08.520
+say, all right, so have a text left and then we have some sort of an avatar and then the name.
+
+02:09.330 --> 02:16.530
+And then here is going to be the section where we are going to show a card that contains some information
+
+02:16.530 --> 02:18.360
+about the book and so forth.
+
+02:18.600 --> 02:22.080
+This is where all the books that we are reading are going to show.
+
+02:22.570 --> 02:24.750
+And then, of course, inside, that's what I'm saying.
+
+02:24.750 --> 02:26.870
+We have that card there in this section.
+
+02:26.870 --> 02:31.140
+In the bottom here, we have a few other things, mostly reputation in terms of the user interface.
+
+02:31.140 --> 02:32.400
+So we still have that card.
+
+02:32.700 --> 02:37.240
+But now there are some differences because here is where we're going to add all the books that they
+
+02:37.260 --> 02:37.980
+haven't been read.
+
+02:37.980 --> 02:46.860
+So we just have on our list of to do rather with books that we will be reading, reading lists and the
+
+02:46.860 --> 02:48.960
+right to the bottom right.
+
+02:49.020 --> 02:55.200
+You can see we have that plus sign or plus icon inside of a circle.
+
+02:55.320 --> 02:56.940
+That's a floating action button.
+
+02:56.940 --> 03:04.170
+That is what we're going to be able to click and take them to a screen where they can search for a book
+
+03:04.170 --> 03:05.550
+and add a book and so forth.
+
+03:05.580 --> 03:11.760
+So the main screen at the home screen here, there is a lot of moving parts and we're going to tackle
+
+03:11.910 --> 03:15.610
+each piece one by one and put it this whole thing together.
+
+03:15.630 --> 03:20.730
+So this is how you should think about an application, whatever you building, don't think as a whole.
+
+03:20.940 --> 03:26.280
+First, I obviously think as a whole first and then start cutting, breaking things down.
+
+03:26.280 --> 03:29.220
+So you have manageable pieces.
+
+03:29.950 --> 03:33.180
+OK, so that's what are we going to be doing next?
+
+03:33.330 --> 03:35.040
+We're going to tackle the home screen.

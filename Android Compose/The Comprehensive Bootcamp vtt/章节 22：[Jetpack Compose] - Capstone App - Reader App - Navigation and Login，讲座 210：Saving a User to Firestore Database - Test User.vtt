@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.270 --> 00:04.860
+All right, so now that we have everything set up, let's go ahead and test the waters and see if we
+
+00:04.860 --> 00:07.740
+can at least write something to our cloud firestorm.
+
+00:07.830 --> 00:11.880
+So first of all, we need to go back to our console.
+
+00:12.890 --> 00:14.580
+So we should probably be somewhere here.
+
+00:15.060 --> 00:17.760
+And what you need to go wanting to do is to the left.
+
+00:18.720 --> 00:21.170
+Let's go and find a fire store database.
+
+00:21.180 --> 00:25.140
+This is what we need and we need to enable it in order to get started somewhere.
+
+00:25.140 --> 00:26.580
+I would say create a database.
+
+00:26.940 --> 00:32.700
+And in this case, just let's start with in the start in test mode, because that's what we're doing.
+
+00:33.300 --> 00:37.560
+And I say next and then here, I'm going to just keep as it is right here.
+
+00:37.590 --> 00:43.740
+I mean, I'm in the U.S. so if you are somewhere else in the world, just find the one that is closer
+
+00:43.740 --> 00:44.410
+to you, right?
+
+00:44.910 --> 00:46.020
+Toggle one of these.
+
+00:46.200 --> 00:48.990
+OK, so you are in Europe, you got a few.
+
+00:49.500 --> 00:53.730
+So I'm going to just use my U.S. centralized search and say, enable.
+
+00:54.300 --> 00:57.420
+So what this will do is going to provision cloud firestorm.
+
+00:57.430 --> 01:03.570
+So we were able then to call it and add and delete and get information from our database.
+
+01:04.290 --> 01:05.370
+So it may take a few seconds.
+
+01:06.180 --> 01:11.260
+Once you do that, you can see now we have the Cloudflare store data.
+
+01:11.280 --> 01:13.380
+This is where our database will be.
+
+01:13.800 --> 01:18.750
+Let's go ahead and see if we can actually add some data to I want you to be so create a little database
+
+01:18.750 --> 01:19.920
+and add some information.
+
+01:19.950 --> 01:22.240
+So here I'm gonna say file db, right?
+
+01:22.590 --> 01:22.880
+Right.
+
+01:22.950 --> 01:24.300
+Invoke the Firebase.
+
+01:24.690 --> 01:25.230
+This is good.
+
+01:25.230 --> 01:30.480
+That means things are working perfectly with added all the dependencies because we're able to see these
+
+01:30.480 --> 01:31.080
+classes there.
+
+01:31.080 --> 01:39.540
+So Firebase Fire Store, I say get instance like that and then wants to have that instance here.
+
+01:39.540 --> 01:46.100
+I'm going to let's start by creating a user and save file user.
+
+01:46.110 --> 01:58.740
+I'm going to use a mutable map, such as there to be a string as the key and any for the value and equal
+
+01:58.830 --> 02:00.590
+hash map, i s..
+
+02:02.100 --> 02:09.480
+Then we're going to add some data into our immutable map and say user for the key I'm going to have.
+
+02:09.480 --> 02:10.560
+Let's see first.
+
+02:12.330 --> 02:16.170
+Name such and the vile, you can say.
+
+02:18.320 --> 02:23.660
+Joe, neither here, let's say last name.
+
+02:27.250 --> 02:35.520
+James, like that, OK, we can add more of key value pairs into our user mutable map there.
+
+02:35.530 --> 02:39.640
+Remember mutable map or in hash map in this case is what it's needed.
+
+02:39.650 --> 02:45.280
+That's the type that is required to pass data onto our forest or their base.
+
+02:46.000 --> 02:46.210
+Right.
+
+02:46.210 --> 02:53.110
+So once we have that, then we can use our DB reference and say, Dot, we need to create a collections.
+
+02:53.120 --> 02:57.700
+A collection would be something like a table, and we don't have any collection.
+
+02:57.700 --> 03:01.180
+We're going to create that collection by passing a path here.
+
+03:01.420 --> 03:02.170
+So users.
+
+03:02.460 --> 03:02.620
+Right?
+
+03:03.430 --> 03:05.590
+And then I'm going to attach the add.
+
+03:06.870 --> 03:13.140
+I can see this ad allows us to pass data could be any type, but usually you want to pass immutable
+
+03:13.140 --> 03:16.140
+map or hash map and going to pass our user.
+
+03:16.710 --> 03:17.040
+OK?
+
+03:17.640 --> 03:22.560
+And then I'm going to attach the add on to access listener.
+
+03:22.570 --> 03:24.480
+So if there something happens.
+
+03:25.200 --> 03:34.020
+So in this case here, I'm just going to say log D. And let's just say this is going to be F.B. for
+
+03:34.020 --> 03:40.530
+the tag, and I'm just going to pass the EITI because we have this idea as a document reference, which
+
+03:40.530 --> 03:44.040
+should have information about the document that we've just added.
+
+03:45.000 --> 03:49.770
+And I'm going to get the ID like that on failure.
+
+03:51.300 --> 04:03.270
+They add on failure listener going do the same thing, except now we have the I.T. just like that.
+
+04:03.940 --> 04:10.770
+OK, and let's move all of these inside right there, and let's go ahead and run.
+
+04:12.680 --> 04:15.650
+So if all goes well, we should be able to see.
+
+04:17.080 --> 04:18.620
+First of all, everything ran.
+
+04:18.640 --> 04:19.810
+Let's go ahead and Logcat.
+
+04:20.290 --> 04:25.500
+And you can see there go, we have added one user, Go back here.
+
+04:25.540 --> 04:26.440
+Let's go and refresh.
+
+04:30.740 --> 04:36.530
+And voila, can see there is first named Jill should be Joe, but it's OK.
+
+04:36.740 --> 04:39.500
+Less name James, so things are working.
+
+04:39.770 --> 04:46.700
+We're able to create a collection and then add a document to this case key value pair, first name and
+
+04:46.700 --> 04:47.630
+last name, and so forth.
+
+04:48.070 --> 04:53.030
+Ideally, we could have added more key value pairs here, but this this is fine.
+
+04:53.060 --> 04:54.080
+So all is good.
+
+04:54.350 --> 04:55.040
+Always working.

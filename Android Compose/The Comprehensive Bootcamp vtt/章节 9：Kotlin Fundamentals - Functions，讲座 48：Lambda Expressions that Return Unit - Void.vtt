@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00.690 --> 00:06.180
+Well, sometimes we don't want to return anything from our function, so these functions may just want
+
+00:06.180 --> 00:08.770
+to display something and not return anything.
+
+00:08.880 --> 00:09.510
+How do we do that?
+
+00:09.510 --> 00:12.270
+How to create a lambda expression that returns nothing?
+
+00:12.300 --> 00:15.670
+First, let's start with a normal function and named function.
+
+00:15.690 --> 00:17.670
+It's a fun show name.
+
+00:18.120 --> 00:18.380
+OK.
+
+00:18.430 --> 00:24.620
+And this one, I'm just going to pass a name and it's going to be string type and turn anything.
+
+00:24.630 --> 00:27.660
+I'm just going to say print name like this.
+
+00:28.110 --> 00:29.250
+We've seen this many times.
+
+00:29.580 --> 00:35.310
+If I say show name and pass Paul, we should see Paul make sense.
+
+00:35.910 --> 00:38.670
+Now, how do we transform this into a lambda?
+
+00:38.880 --> 00:41.700
+Notice we are passing a parameter, right?
+
+00:41.700 --> 00:42.960
+But we're not returning anything.
+
+00:43.470 --> 00:44.070
+How do you do that?
+
+00:44.550 --> 00:47.320
+Well, we're going to follow the same structure.
+
+00:47.340 --> 00:54.030
+So when you say file name, of course we going to pass a string that is the parameter type.
+
+00:54.330 --> 00:59.500
+And then since we're not returning anything, what we do is we still have to pass this arrow and then
+
+00:59.510 --> 01:00.360
+we're going to say unit.
+
+01:00.660 --> 01:04.380
+So unit in Scotland means void or nothing.
+
+01:04.800 --> 01:10.910
+OK, so we're not going to return anything and then we're going to say equals and then put their order
+
+01:10.920 --> 01:11.370
+lambda.
+
+01:11.820 --> 01:17.400
+And then here we're just going to say our string here, I'm going to say name and band.
+
+01:18.030 --> 01:20.760
+I'm just going to say print name like that.
+
+01:21.000 --> 01:21.390
+That's it.
+
+01:21.840 --> 01:28.260
+So now if I call this name like that pass in, Paul will see that the same thing will happen.
+
+01:28.350 --> 01:31.410
+We see Paul change this to James.
+
+01:31.770 --> 01:34.470
+Of course, you're going to see that the same thing will happen.
+
+01:35.220 --> 01:36.570
+And again, you will.
+
+01:36.750 --> 01:45.300
+You remember earlier we said, if we're passing just one parameter, we don't have to have this argument
+
+01:45.300 --> 01:47.610
+here, right this now.
+
+01:47.610 --> 01:52.340
+If we were passing one parameter, one type here, we don't have to pass in this parameter.
+
+01:52.350 --> 01:57.030
+I s. we can get rid of all of that and we will have it right.
+
+01:57.270 --> 01:57.700
+Exactly.
+
+01:57.720 --> 02:02.790
+If you put in a new line, you can see that it is there and he knows exactly what type it is because
+
+02:02.790 --> 02:05.220
+we have specified the types we're passing here.
+
+02:05.430 --> 02:06.000
+Oh, nice.
+
+02:06.360 --> 02:10.230
+So in this case, I'll just say it, and it's going to be the same thing.
+
+02:10.440 --> 02:14.220
+We're just using the it variable that is created in our lambda.
+
+02:14.820 --> 02:15.180
+All right.
+
+02:15.660 --> 02:21.210
+And remember, because we're just printing something, I can't actually put that inside of a string
+
+02:21.210 --> 02:30.750
+of some sort to say, hello, my name is like this so we can do all sorts of things that we've been
+
+02:30.750 --> 02:31.530
+doing before.
+
+02:31.770 --> 02:32.970
+Hello, my name is James.
+
+02:32.970 --> 02:36.210
+If you change, of course, James, you know, see the different name.

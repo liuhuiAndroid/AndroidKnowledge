@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00.450 --> 00:04.440
+So in this section, we're going to build a note app from scratch.
+
+00:05.070 --> 00:10.640
+Now the main point here is that we are going to see not only how to put together the user interface,
+
+00:10.650 --> 00:12.180
+we're going to always learn something new.
+
+00:12.420 --> 00:17.670
+But most importantly, we're going to learn how to use different mechanism, different tools that we
+
+00:17.670 --> 00:27.150
+have to handle state of our data to separate our state even further away from the composable functions.
+
+00:27.570 --> 00:35.640
+So that's the main point of the section here, which is to learn how to further hoist our state from
+
+00:35.640 --> 00:40.890
+our compatibles so that we have a single source of truth for our data and state.
+
+00:41.550 --> 00:43.290
+So this is the app we're kind of building.
+
+00:43.440 --> 00:48.660
+It's very simple, as you see in the beginning, will have some, some dummy data that you see there.
+
+00:48.660 --> 00:54.240
+But if I click on each one of these, you can see they are deleted so I can go ahead and add, let's
+
+00:54.240 --> 01:01.470
+say hello there and say this is my note.
+
+01:02.630 --> 01:04.730
+Then we can go ahead and save as we save.
+
+01:04.850 --> 01:07.100
+You can see that was added.
+
+01:07.130 --> 01:07.820
+Hello, there.
+
+01:07.820 --> 01:10.100
+This is my note came in at as many.
+
+01:12.160 --> 01:13.510
+That's gibberish, but that's OK.
+
+01:14.230 --> 01:17.450
+So and there, though, it was at it again.
+
+01:17.590 --> 01:20.020
+Click or tap any one of these.
+
+01:20.290 --> 01:22.690
+We will be able to delete very well.
+
+01:22.740 --> 01:24.280
+So let's go ahead and get started.

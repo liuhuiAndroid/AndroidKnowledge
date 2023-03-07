@@ -1,0 +1,529 @@
+WEBVTT
+
+00:01.660 --> 00:04.930
+So I hope you were able to put together this structure here.
+
+00:04.960 --> 00:12.130
+There are two things, of course, there's this text, which is really easy this week and then we have
+
+00:12.730 --> 00:14.980
+a more complex structure here, but not really.
+
+00:14.980 --> 00:18.790
+So that is that it will have, of course, a scrollable view.
+
+00:18.910 --> 00:23.200
+So a lazy column looks like would be the best candidate.
+
+00:23.200 --> 00:30.310
+And then you create, of course, a row write a card that we then have a row with all of this information.
+
+00:31.210 --> 00:38.170
+OK, so hope you really stopped took as long as you need to put this together because it's very important
+
+00:38.170 --> 00:40.570
+to actually do these exercises when I ask you to do.
+
+00:41.020 --> 00:42.550
+OK, let's go ahead and tackle this.
+
+00:43.390 --> 00:49.270
+First, we are going to position ourselves, so we are going to add to that, of course, inside of
+
+00:49.930 --> 00:51.160
+right below here.
+
+00:51.880 --> 00:52.930
+Going to put a text.
+
+00:57.920 --> 00:58.730
+They will say.
+
+01:01.900 --> 01:09.820
+This week like that, and of course, I'm going to style it a little bit and use topography.
+
+01:10.000 --> 01:12.240
+I'm going to use a subtitle for this one.
+
+01:12.370 --> 01:13.180
+Subtitle one.
+
+01:15.600 --> 01:17.230
+Can have a font weight.
+
+01:17.310 --> 01:19.800
+I want this to be bold.
+
+01:22.040 --> 01:22.880
+And, Eric, well.
+
+01:23.360 --> 01:28.640
+And so next, I'm going to add this structure here, which is, first of all, I'm going to create a
+
+01:28.640 --> 01:33.470
+surface because I want to enclose everything if I make this bigger.
+
+01:33.500 --> 01:37.970
+You can see that I do have this very nice arch there.
+
+01:39.240 --> 01:40.230
+Pass a modifier.
+
+01:45.290 --> 01:50.690
+I say, Phil Max Width as well as Phil Mac's height.
+
+02:02.640 --> 02:04.320
+And then what I'm going to do.
+
+02:07.610 --> 02:10.040
+When add color, background color.
+
+02:14.760 --> 02:18.150
+Use hex color here
+
+02:21.750 --> 02:22.320
+like that.
+
+02:22.710 --> 02:23.100
+OK.
+
+02:24.690 --> 02:29.130
+And then, of course, I'm going to pass a shape because I need that nice shape when I use the rounded
+
+02:29.970 --> 02:34.230
+corner shape and a size.
+
+02:36.910 --> 02:39.620
+About 14 dpi for all of the sites.
+
+02:40.160 --> 02:41.750
+All right, very good.
+
+02:41.780 --> 02:44.780
+So inside of here, it's where I'm going to pass a lazy column.
+
+02:45.870 --> 02:52.440
+Because we get to use that lazy column to show the scroll of view, but most importantly, the lazy
+
+02:52.440 --> 02:56.900
+column allows us to actually create as many rows as we want.
+
+02:56.940 --> 03:02.520
+As the data source is growing, it doesn't matter because lazy column knows how to recycle those views
+
+03:02.520 --> 03:03.690
+and make everything efficient.
+
+03:03.990 --> 03:04.680
+Very handy.
+
+03:05.020 --> 03:16.200
+It's going to pass a modifier here, say padding or about two deep, and then I'm going to actually
+
+03:16.200 --> 03:17.220
+pass the content.
+
+03:21.550 --> 03:23.800
+Padding and say padding values.
+
+03:25.980 --> 03:28.620
+All around, over one, one over by one.
+
+03:29.010 --> 03:35.160
+So what this means is that this pattern is going to be applied to the items inside of of our lazy column.
+
+03:35.640 --> 03:36.030
+All right.
+
+03:36.300 --> 03:37.950
+And of course, we have a lambda there.
+
+03:38.220 --> 03:39.360
+OK, very good.
+
+03:40.050 --> 03:43.370
+So for our lazy column, going to pass items, right?
+
+03:43.390 --> 03:49.830
+So there's different flavors of this method items I want the one that accepts a list of items in this
+
+03:49.830 --> 03:51.750
+case, some items.
+
+03:56.240 --> 04:00.120
+Set that to our data, right?
+
+04:00.320 --> 04:03.440
+And get to the list, which is going to be a list of weather.
+
+04:04.010 --> 04:04.370
+All right.
+
+04:05.090 --> 04:08.930
+And then, of course, infrared lambda in this case here I'm going to see.
+
+04:11.950 --> 04:17.710
+Item is going to be whether items like this or we can start using them.
+
+04:18.400 --> 04:23.350
+So what I'm going to do here for now, I'm just going to put a text so you can see that I'm going to
+
+04:23.350 --> 04:29.680
+pass our item, which is going to be whether item object and I'm going to get, let's see.
+
+04:29.680 --> 04:38.530
+I want to just go get the temp and the max say to string like this so we can see.
+
+04:41.170 --> 04:48.420
+And just like that, you can see we get all of the highs for Istanbul in Fahrenheit, right?
+
+04:48.430 --> 04:55.480
+One two three four five six seven So what happens here is that it goes and loops through all of these
+
+04:56.710 --> 05:04.330
+forecasts and we are getting, of course, the max for each one of these objects that we have for the
+
+05:04.330 --> 05:05.200
+seven day forecast.
+
+05:06.560 --> 05:07.460
+OK, very good.
+
+05:07.490 --> 05:13.880
+So we know we're getting good data in case we weren't sure, but at least now we know everything is
+
+05:13.880 --> 05:19.300
+working fine, so now we can actually work on the the row.
+
+05:19.700 --> 05:22.250
+So we want something that looks like this, this structure here.
+
+05:22.340 --> 05:23.060
+How do we do that?
+
+05:23.180 --> 05:30.680
+Well, this is much easier now because now I can create something like whether Detail Row and I'm going
+
+05:30.680 --> 05:32.990
+to pass or whether object.
+
+05:38.570 --> 05:40.520
+Say he's equal to weather item like this.
+
+05:41.390 --> 05:43.370
+And let's go ahead and create this puppy.
+
+05:44.430 --> 05:49.440
+Now, if you look at our weather bureau here, we noticed that we have something that we need to look
+
+05:49.440 --> 05:55.170
+into, which is that icon we said before, if you look back, you will notice that for us to be able
+
+05:55.170 --> 05:57.880
+to create an icon, we need a an image.
+
+05:57.880 --> 06:02.670
+You are out there just copy base and go to our weather.
+
+06:03.150 --> 06:06.030
+I'm going to paste there because we're going to be using that.
+
+06:06.420 --> 06:10.620
+OK, so let's just change that to weather icon like this.
+
+06:11.130 --> 06:12.540
+So it works.
+
+06:13.110 --> 06:20.070
+Now what I'm going to do inside here, well, what I'm going to do is I'm going to restructure this
+
+06:20.130 --> 06:22.260
+structure, create this structure, this rope.
+
+06:23.160 --> 06:23.430
+OK.
+
+06:24.120 --> 06:29.190
+And as you see here, the moment you look something like this, there's different ways to think of in
+
+06:29.190 --> 06:31.880
+terms of how you're going to create such structure.
+
+06:31.890 --> 06:37.500
+You can create a card, but I like using surface in this case because I can change it to my liking by
+
+06:37.500 --> 06:38.970
+the card would have worked as well.
+
+06:39.480 --> 06:43.860
+OK, let's go ahead and look at putting together the surface.
+
+06:45.540 --> 06:47.220
+So surface.
+
+06:51.390 --> 06:54.760
+And I'm going to say padding for a modifier here.
+
+06:55.200 --> 06:59.070
+Looks like it can just say modifier padding.
+
+07:05.200 --> 07:06.010
+Three deep.
+
+07:08.490 --> 07:13.280
+And then Phil Max with OK.
+
+07:17.570 --> 07:18.920
+And next, what I can do.
+
+07:19.880 --> 07:29.270
+Let's pass a shape because I need, I say, circle shape and what I want to do also instead of just
+
+07:29.270 --> 07:31.550
+having a generic circle shack shape.
+
+07:32.150 --> 07:37.910
+And what I want to do also, instead of having a generic circle shape, I'm going to create, I'm going
+
+07:37.910 --> 07:42.900
+to customize it even further by saying as follows Dot copy method.
+
+07:42.980 --> 07:49.820
+So what this allows us is what this allows us to do is to create a customizable, a customized shape,
+
+07:49.820 --> 07:55.280
+which means, as you see, I can change the top start corner size if I want to crop it, if I want to
+
+07:55.280 --> 08:01.250
+make it harder, if I want to make it more circular, more curved or more sharp and so forth.
+
+08:01.280 --> 08:02.970
+So this is really, really good.
+
+08:03.020 --> 08:11.840
+So what I want to do is I want to change the top end corner, passing the corner size right dpi there
+
+08:12.140 --> 08:19.160
+and I want to see make it to be six that dpi, which means the top end is going to be here.
+
+08:19.850 --> 08:21.380
+So I want it to be a little bit sharper.
+
+08:21.650 --> 08:26.330
+Anywhere else is going to be around like you see there, but here I want it to be sharper.
+
+08:27.260 --> 08:28.250
+That's what I'm doing there.
+
+08:29.060 --> 08:31.210
+How cool is that, right?
+
+08:31.490 --> 08:38.270
+And then I'm going to make sure that the color when I just make it color that white like this.
+
+08:44.310 --> 08:49.680
+And then I'm going to add a row, why, because all of these are going to be inside of a room.
+
+08:49.770 --> 08:50.910
+So I'm going to create that room.
+
+08:52.430 --> 08:58.790
+OK, so from my room, when I put him under fire here, I'm going to Max.
+
+09:00.990 --> 09:02.550
+Phil, let's see.
+
+09:03.360 --> 09:09.390
+Phil, Max, if you type with like this good and then
+
+09:12.810 --> 09:20.700
+I'm going to say vertical or alignment on the center vertically and horizontal arrangement.
+
+09:21.360 --> 09:23.010
+I want a space in between.
+
+09:23.790 --> 09:27.660
+The reason why is because I want to make sure that because we're going, I'm going to have a longer
+
+09:27.660 --> 09:28.110
+rule.
+
+09:28.110 --> 09:31.410
+So many items, I want to have space in between all of them.
+
+09:32.970 --> 09:33.420
+OK.
+
+09:34.970 --> 09:35.450
+Very good.
+
+09:36.860 --> 09:42.890
+So now I'm going to start constructing the internal items like what's inside of this row?
+
+09:43.790 --> 09:48.040
+So the first thing is going to be this what I want to do.
+
+09:48.050 --> 09:52.910
+I just want to see Thursday, Friday, Saturday, Sunday and so forth the days of the week.
+
+09:53.480 --> 09:57.680
+We know that we are able to get that information from our primary date.
+
+09:58.040 --> 09:58.370
+Right.
+
+09:58.970 --> 10:00.260
+So I'm going to do something here.
+
+10:00.440 --> 10:03.110
+First of all, it's all going to be a text.
+
+10:03.590 --> 10:04.040
+Correct?
+
+10:04.190 --> 10:04.760
+Yes.
+
+10:05.180 --> 10:11.990
+So, OK, so what I'm going to do, I'm going to use the format date that we used before and then when
+
+10:11.990 --> 10:16.850
+I pass the weather and go get the date for the date.
+
+10:17.700 --> 10:18.050
+Right?
+
+10:18.560 --> 10:18.950
+Very good.
+
+10:19.700 --> 10:27.140
+So what I'm going to do next is I'm going to split right once I get this formatted date, which is going
+
+10:27.140 --> 10:29.570
+to look exactly like this.
+
+10:30.740 --> 10:34.040
+What I want instead, I want to get just that.
+
+10:34.520 --> 10:35.540
+The first part, right?
+
+10:35.960 --> 10:39.710
+So what I'm going to do, I'm going to split from where we have the comma.
+
+10:40.580 --> 10:42.950
+And just get this first part there.
+
+10:44.600 --> 10:51.800
+Oh, look how clever this is, so then I can go like they start split function and pass the Daily Mirror
+
+10:52.310 --> 10:54.440
+saying, Where do they split from?
+
+10:54.740 --> 10:59.810
+Or by this case, I want to split by the comma.
+
+11:00.380 --> 11:06.980
+And then when that's split, what happens is that it will spit out or it will create a list in this
+
+11:06.980 --> 11:11.270
+case, and the list will contain this first side index zero.
+
+11:11.630 --> 11:14.390
+And the rest is going to be index one.
+
+11:15.020 --> 11:17.510
+What I want is whatever it's inside of the list.
+
+11:18.020 --> 11:20.540
+In this case, the first item, which is the index zero.
+
+11:20.930 --> 11:24.080
+That's why I can go ahead and do something like this.
+
+11:24.470 --> 11:26.810
+Just invoke to get index zero.
+
+11:27.080 --> 11:30.800
+So now I should only get this Thursday.
+
+11:31.960 --> 11:34.480
+From this entire date.
+
+11:36.010 --> 11:36.270
+Right.
+
+11:37.500 --> 11:43.830
+And while I'm here, I'm going to also do some modifying here using modifier.
+
+11:44.940 --> 11:46.170
+I want padding
+
+11:48.390 --> 11:50.800
+and start padding.
+
+11:50.820 --> 11:54.090
+Let's just give it about five dpi.
+
+11:54.120 --> 11:58.320
+Just give some space in the beginning, meaning to pull this in a little bit to the right.
+
+11:59.010 --> 11:59.280
+OK.
+
+11:59.340 --> 12:00.510
+Let's see if this works.
+
+12:05.700 --> 12:06.510
+OK, very good.
+
+12:06.660 --> 12:13.230
+So we have our rose, right small, but that will change Wednesday, Thursday, Friday, Saturday,
+
+12:13.230 --> 12:15.750
+Monday, Sunday, Monday, Tuesday.
+
+12:17.160 --> 12:23.220
+Now what we want to do next is to continue adding these other items there now about.
+
+12:23.700 --> 12:25.740
+Let's go ahead and tackle this image.
+
+12:26.070 --> 12:33.990
+It's very simple, as you've seen before, all we have to do because we have reused or created pieces
+
+12:34.050 --> 12:35.850
+of composable that we can reuse.
+
+12:37.140 --> 12:44.520
+All I can do now is right after a text that we just created, I can call the weather image state.
+
+12:47.210 --> 12:53.220
+State images such and past the image, you're out, right?
+
+12:55.230 --> 12:59.040
+And it will take care of everything now for around this.
+
+13:01.700 --> 13:02.930
+Very nice, right?
+
+13:03.020 --> 13:10.610
+It's all the way to the right, that's fine, because remember, we're inside of this row and we made
+
+13:10.610 --> 13:15.800
+sure that the vertically alignment is center vertically and arrangement spacing between.
+
+13:15.800 --> 13:17.000
+That's why it's giving that space.
+
+13:17.030 --> 13:17.480
+That's OK.
+
+13:17.720 --> 13:21.500
+We will as we add more items inside of our row.
+
+13:21.830 --> 13:29.120
+While all of these items widgets, that is, they will reformat themselves and look like this farewell.
+
+13:29.120 --> 13:35.300
+So we're making real progress in the next video will continue adding other widgets, as you see here.

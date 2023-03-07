@@ -1,0 +1,466 @@
+WEBVTT
+
+00:00.720 --> 00:04.200
+Now, it's time for us to look at constructing our splash screen.
+
+00:04.440 --> 00:05.370
+It's going to be very simple.
+
+00:05.370 --> 00:06.930
+We're going to add a little animation.
+
+00:07.110 --> 00:07.710
+It's going to be fun.
+
+00:08.010 --> 00:14.010
+That's what splash screens are supposed to be fun, quick and and to the point, right?
+
+00:14.040 --> 00:14.600
+Very simple.
+
+00:15.320 --> 00:18.540
+So let's go to our main weather splash screen.
+
+00:18.540 --> 00:18.930
+That is.
+
+00:19.020 --> 00:20.160
+So this is where we are.
+
+00:20.220 --> 00:24.480
+You can see it works fine because we have splash screens showing there, but that's not what we want.
+
+00:24.870 --> 00:27.990
+Want something more elaborate because we are awesome developers.
+
+00:28.740 --> 00:32.460
+So first thing's first, we're going to use our surface, our good friend surface, because it allows
+
+00:32.460 --> 00:38.580
+us to create all sorts of widgets, create all sorts of fields, create the user interface that we need.
+
+00:38.590 --> 00:42.990
+It's a canvas, most the most basic canvas, if you will.
+
+00:43.350 --> 00:49.590
+So I'm going to pass a modifier here real quick, and I want to add a padding like that, and I want
+
+00:50.010 --> 00:54.750
+about 15 deep looks like I have an issue here.
+
+00:55.680 --> 01:00.240
+It didn't take my modifier as a modifier like this.
+
+01:04.780 --> 01:07.180
+Let's also imports our deep.
+
+01:07.660 --> 01:08.110
+Very good.
+
+01:09.640 --> 01:16.090
+And I am also going to add something else, I'm going to say size.
+
+01:22.440 --> 01:23.610
+Put this in the line.
+
+01:24.070 --> 01:28.860
+And also, I'm going to add a size, I wanted to control this size of this.
+
+01:30.620 --> 01:33.980
+Canvas or face 335bhp?
+
+01:36.080 --> 01:36.980
+And then.
+
+01:41.310 --> 01:49.120
+I'm going to also pass a shape that I want this to have, it's going to be a circle shape, very convenient.
+
+01:49.140 --> 01:53.310
+Give it color, let's say color white.
+
+01:54.690 --> 01:56.220
+And I want to add a border.
+
+01:57.390 --> 02:02.520
+His forehead, when he supporters stroke and went past the width of this border is going to be about
+
+02:02.520 --> 02:08.190
+two dpi and give it a color of color.
+
+02:12.530 --> 02:13.440
+Light Grey.
+
+02:13.490 --> 02:14.090
+A such.
+
+02:15.680 --> 02:16.130
+All right.
+
+02:16.910 --> 02:17.820
+So what are we doing here?
+
+02:17.840 --> 02:20.030
+We can try to create this structure here.
+
+02:20.870 --> 02:27.890
+OK, so inside of this structure, of course, what I want is I want to create I have this icon and
+
+02:27.890 --> 02:29.720
+of course, a text, something like that.
+
+02:30.320 --> 02:36.260
+Well, that tells me two things that tells me that I should have a structure, a layout structure widget
+
+02:36.260 --> 02:37.880
+that will allow me to do so.
+
+02:38.660 --> 02:39.770
+I had two things vertically.
+
+02:40.640 --> 02:42.170
+And yes, a column.
+
+02:42.170 --> 02:43.430
+Is it the best candidate?
+
+02:43.880 --> 02:44.600
+So column.
+
+02:49.830 --> 02:55.950
+And it would have passed if you arguments here, pass a modifier, this modifier here, I'm going to
+
+02:55.950 --> 03:02.880
+say I want to padding to modifier padding of about one dpi, so not too much.
+
+03:04.390 --> 03:05.080
+And then,
+
+03:08.470 --> 03:12.250
+let's say horizontal alignment of same alignment.
+
+03:16.980 --> 03:19.470
+Compose alignment, I want this to be center.
+
+03:21.950 --> 03:22.710
+Let's try again.
+
+03:25.840 --> 03:35.320
+Senator, horizontally and our vertical arrangement arrangement centers arrangement
+
+03:37.750 --> 03:38.860
+appears to be center as such.
+
+03:40.900 --> 03:44.760
+OK, so that means all the contents are going to be in a middle per se.
+
+03:45.430 --> 03:45.850
+All right.
+
+03:46.090 --> 03:49.210
+And let's go ahead and give it.
+
+03:49.240 --> 03:56.360
+Put a text first just to see if we are on the right track and say, Find the Sun like this.
+
+03:56.410 --> 03:58.510
+Let's go ahead and run.
+
+03:58.660 --> 04:03.010
+So control are or shift 10 four windows.
+
+04:06.860 --> 04:08.030
+OK, that looks good.
+
+04:08.360 --> 04:14.990
+We have that nice circle with the stroke, right, the border stroke, I should say.
+
+04:15.410 --> 04:16.100
+And looking good.
+
+04:16.340 --> 04:18.110
+So that's not what we want.
+
+04:18.110 --> 04:20.720
+We will also want to make sure that we have this icon here.
+
+04:20.750 --> 04:27.430
+Now we could create or use the icons that compose already comes with, but they're very limited.
+
+04:27.470 --> 04:37.010
+So I do have the few icons that I have as pages, as images that we can add into a project.
+
+04:37.190 --> 04:40.320
+Again, you should have and will have access to all of this.
+
+04:40.320 --> 04:43.160
+So what are we going to do in our tribal here?
+
+04:43.190 --> 04:49.640
+This is where all of our assets that we want to use in our app, we add in this case, images and so
+
+04:49.640 --> 04:49.940
+forth.
+
+04:50.390 --> 04:51.890
+I'm going to copy them over.
+
+04:51.890 --> 04:55.160
+So we have them again, all these assets you should have access to.
+
+04:55.460 --> 05:01.790
+If anything, you can go to the kit repository and get them all of those assets and add to your project.
+
+05:02.690 --> 05:02.950
+All right.
+
+05:02.950 --> 05:04.580
+So I'm going to copy them over there.
+
+05:04.590 --> 05:05.090
+A few.
+
+05:06.160 --> 05:06.950
+OK, there we go.
+
+05:06.970 --> 05:10.090
+So we have a few of these assets, I'm going to just click on them.
+
+05:10.570 --> 05:12.940
+This is humidity, which you're going to use later.
+
+05:13.480 --> 05:17.020
+And there's the pressure and so forth.
+
+05:17.030 --> 05:20.770
+So I want to probably use this sunny.
+
+05:21.460 --> 05:22.540
+I'm going to use this one.
+
+05:23.360 --> 05:26.620
+I God, that looks exactly like that, right?
+
+05:26.740 --> 05:29.440
+That's why I'm going to be doing and we have all that information.
+
+05:31.140 --> 05:33.690
+So how do we create or add an image?
+
+05:34.050 --> 05:41.430
+Well, luckily, we do have a widget or a composable we can use if I go ahead and say image as such
+
+05:41.940 --> 05:45.660
+can see there's different flavors of image composable functions here.
+
+05:46.200 --> 05:52.140
+The one we want is the first one, which allows us to pass a painter object.
+
+05:52.710 --> 05:54.130
+OK, so hit enter.
+
+05:54.360 --> 05:59.100
+And then here I'm going to pass the actual object or the actual image.
+
+06:00.110 --> 06:00.710
+So how do we do that?
+
+06:00.740 --> 06:05.420
+Well, first of all, because we know we said we want to pass a painter object near, say, painter
+
+06:05.810 --> 06:06.950
+like that in my lap.
+
+06:08.920 --> 06:11.490
+And here I'm going to pass a painter, a resource ID.
+
+06:12.170 --> 06:18.170
+What that means is we need to go and fetch this ID that we get from trouble to get the image.
+
+06:19.190 --> 06:19.580
+Very good.
+
+06:19.880 --> 06:20.520
+How do we do that?
+
+06:20.540 --> 06:26.900
+Well, to do so, we all we do, we have to invoke the R class resource class.
+
+06:27.110 --> 06:34.160
+Now it's important to remember that it's kind of very interesting to get that class because if you wait
+
+06:34.160 --> 06:38.720
+for a second, you say, Ah, again, see, now we have all these hours and you've got to be careful
+
+06:38.720 --> 06:46.280
+because the order we want is our R, as I call it, which means it's going to be the R that is coming
+
+06:46.280 --> 06:49.040
+from our packages.
+
+06:49.190 --> 06:50.840
+So I'm going to go and find.
+
+06:53.360 --> 06:58.940
+You need to go and find where it says something, calm that Bob and Jack weather forecast.
+
+06:58.970 --> 07:03.650
+Now this has to be your own if you changed the package name.
+
+07:04.100 --> 07:07.670
+Then you to find it, do not get any of these other offers.
+
+07:07.670 --> 07:14.300
+You have to get this one because we want to be able to get resources of our project from our projects.
+
+07:14.720 --> 07:15.350
+Does that make sense?
+
+07:15.590 --> 07:21.560
+So get the R to import that has your package name of your entire app.
+
+07:22.040 --> 07:22.580
+Very important.
+
+07:23.060 --> 07:23.300
+OK.
+
+07:23.720 --> 07:30.380
+And then right now, then when you say Typekit to access, you can go in and say, Travel a lot and
+
+07:30.380 --> 07:31.610
+we're going to go and get this.
+
+07:32.060 --> 07:36.200
+See, now we have access to all of the drivers that are inside of our travel folder.
+
+07:36.710 --> 07:38.570
+So I wanted the Sun like this.
+
+07:40.110 --> 07:41.040
+OK, very convenient.
+
+07:41.140 --> 07:41.550
+Very good.
+
+07:42.090 --> 07:49.290
+And because we need to pass a content description for visually impaired users, we can see that this
+
+07:49.290 --> 07:51.270
+is a sunny icon.
+
+07:52.590 --> 07:52.820
+OK?
+
+07:54.660 --> 07:54.990
+There we go.
+
+07:55.020 --> 08:00.270
+Now I want to do something else to this image because I want to make sure that it's small and is it
+
+08:00.270 --> 08:05.070
+fits correctly so what I can do, it can pass a modifier of force after words.
+
+08:06.420 --> 08:13.200
+And then I'm going to use the size to say, I want this to be about five foot 95 96 deep.
+
+08:15.450 --> 08:15.780
+OK.
+
+08:16.590 --> 08:20.040
+And before even that, I'm going to also pass the content scale.
+
+08:23.920 --> 08:24.750
+Like this?
+
+08:27.240 --> 08:35.700
+And I'm going to say content scale, I want this to fit their different variables I can pass here,
+
+08:36.270 --> 08:36.600
+right?
+
+08:36.880 --> 08:42.900
+I can say crop field bonds, full height inside and on and so forth, and you can explore all of those
+
+08:42.900 --> 08:45.840
+if you want to buffet is perfect because everything is going to fit perfectly.
+
+08:46.590 --> 08:49.860
+OK, let's see now how this will look.
+
+08:51.210 --> 08:51.750
+That's right.
+
+08:56.600 --> 08:57.080
+Uh huh.
+
+08:57.570 --> 09:00.720
+Well, looks very nice, almost like what we have here.
+
+09:01.380 --> 09:06.270
+That means then it was something else we need to do because see, find this on in this case here we
+
+09:06.270 --> 09:10.110
+have this different color and it looks much better this way.
+
+09:10.110 --> 09:12.030
+So we need to work on our text.
+
+09:12.360 --> 09:12.930
+That's very easy.
+
+09:13.200 --> 09:15.750
+All we have to do now, we have to style our text.
+
+09:16.170 --> 09:17.490
+So when I say style.
+
+09:20.170 --> 09:30.100
+And I'm going to use material theme and use typography when they use H5 like this to be slightly larger.
+
+09:30.580 --> 09:38.020
+I'm going to give a color this color in this case, if you want to color light gray, right?
+
+09:38.260 --> 09:40.270
+So it's going to be something like that, hopefully.
+
+09:40.300 --> 09:41.050
+Let's go ahead and run.
+
+09:41.500 --> 09:43.000
+Different ways to run this course.
+
+09:44.340 --> 09:45.120
+It's right there.
+
+09:48.890 --> 09:49.240
+Aha!
+
+09:49.520 --> 09:52.190
+Now it looks better, looks exactly what we have here.
+
+09:53.420 --> 09:59.960
+But again, so once we have the structure, the navigation, which was very important, you can see
+
+09:59.960 --> 10:03.620
+now we can just focus on beautifying our user interfaces.
+
+10:04.010 --> 10:10.730
+That is the beauty of compose in many ways, is because it's easy to put things together now, whatever
+
+10:10.730 --> 10:13.490
+you can imagine in terms of the user interface.
+
+10:13.790 --> 10:20.630
+You can actually build it once you understand how to lay things out using columns, how to leverage
+
+10:20.630 --> 10:24.350
+the libraries that come with this toolkit compose it.
+
+10:24.350 --> 10:30.380
+You can do all sorts of things, add images, you can scale those images, you can modify things using
+
+10:30.380 --> 10:32.060
+modifier and so forth.
+
+10:32.330 --> 10:34.220
+And just like that, we have this structure there.

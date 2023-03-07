@@ -1,0 +1,883 @@
+WEBVTT
+
+00:01.170 --> 00:06.750
+OK, so it's time for us to look at this enter a bill, which is a text field, text fields can be a
+
+00:06.750 --> 00:11.040
+little bit complicated because there are few moving parts that we need to really understand.
+
+00:11.290 --> 00:13.350
+I mean, overall, it's not that bad.
+
+00:13.410 --> 00:15.330
+OK, let's let's take a look at this.
+
+00:15.960 --> 00:22.050
+So the idea is when we add value here and reveal we want to make sure that, of course, we want to
+
+00:22.050 --> 00:28.890
+make sure that this value is propagated everywhere, meaning all of the other composable functions need
+
+00:28.890 --> 00:33.480
+to be aware of it one way or the other, because that's what drives everything, right?
+
+00:34.170 --> 00:38.640
+If we add a number here, the entire bill right to the actual amount.
+
+00:39.150 --> 00:45.720
+Only then will we be able to say split and have meaningful values, meaningful values.
+
+00:45.720 --> 00:48.840
+I mean, meaningful total per person and so forth.
+
+00:49.420 --> 00:51.840
+On top of that, we have the tip right.
+
+00:51.900 --> 00:59.100
+We have two slide left or right to get the percentage of tip that we want to pay or add to our bill.
+
+00:59.640 --> 01:01.020
+So there's a lot of moving parts here.
+
+01:01.020 --> 01:09.330
+So we need to be careful where we put things and how the that thing compares or interacts with other
+
+01:09.810 --> 01:12.060
+variables, other states in this app.
+
+01:12.990 --> 01:15.330
+So what do we need to do, actually?
+
+01:15.360 --> 01:19.830
+There are different ways to do this, especially when it comes to creating text fields.
+
+01:20.520 --> 01:25.440
+Now we could right away just go ahead and create a text field here, or we could do a different kind
+
+01:25.440 --> 01:32.070
+of text field so we can use, for instance, the outline text field and go from there.
+
+01:32.280 --> 01:33.310
+And that's totally fine.
+
+01:33.330 --> 01:37.470
+We can do that and pass all these variables that we need and go from there.
+
+01:37.860 --> 01:40.350
+But I'm not going to do that, at least not in this example.
+
+01:40.650 --> 01:48.660
+What are we going to do is we are going to create instead of a project site here of our inside of our
+
+01:48.660 --> 01:50.940
+package, I'm going to create yet another package.
+
+01:50.970 --> 01:53.550
+So right click, say new.
+
+01:54.670 --> 02:00.640
+Package, this is good, it's just a separate code might separate all the classes that we create that
+
+02:00.640 --> 02:00.970
+are.
+
+02:02.170 --> 02:07.600
+Related, we put in one package, so this package I'm going to call components.
+
+02:08.080 --> 02:13.720
+This is just a place where we can create components, which means usually you create widgets or functions
+
+02:13.720 --> 02:16.960
+in this case, composable functions that do a certain thing, right?
+
+02:17.230 --> 02:19.300
+So you can put that inside of a components.
+
+02:20.020 --> 02:30.130
+And so now I'm going to create a new class or Kotlin class or file here, just say file and components.
+
+02:32.720 --> 02:33.100
+All right.
+
+02:33.340 --> 02:36.190
+So all the components we want, we can add them here.
+
+02:36.910 --> 02:37.240
+OK.
+
+02:39.540 --> 02:46.380
+So the one component I'm going to create here, say, at composable, of course, and then I'm going
+
+02:46.380 --> 02:49.170
+to say, fine, I'm going to say input field.
+
+02:50.040 --> 02:50.390
+OK.
+
+02:52.550 --> 02:53.950
+A section, all right.
+
+02:54.520 --> 02:56.620
+So what are we going to be passing here?
+
+02:56.650 --> 03:00.520
+Well, we're going to be passing a few things because remember this imput field want to make sure that
+
+03:00.520 --> 03:07.420
+it can be used anywhere, OK, so it will encapsulate all the behaviors of a text field.
+
+03:07.990 --> 03:10.780
+And we can customize as we see fit.
+
+03:12.710 --> 03:15.040
+All right, so I'm going to pass, first of all, a modifier.
+
+03:19.490 --> 03:22.900
+So I passed the wrong one, you see, is the reflection.
+
+03:23.410 --> 03:26.540
+A want that we want a different kind of modifier, which is nice.
+
+03:26.570 --> 03:28.240
+Keep typing modifier.
+
+03:29.050 --> 03:31.240
+Get the Android X compose UI.
+
+03:31.360 --> 03:31.930
+There we go.
+
+03:33.220 --> 03:39.550
+And because I want to make sure that this modifier here is not required.
+
+03:39.550 --> 03:49.240
+So I'm going to add, say, modifier a sash to say this is a default parameter that if they if users
+
+03:49.420 --> 03:54.430
+don't add a modifier when they call input field composable, right, it's OK.
+
+03:54.430 --> 03:56.500
+We're just going to use whatever we have inside here.
+
+03:56.650 --> 03:58.090
+So this is optional.
+
+03:58.480 --> 04:01.240
+That's how you make a modifier optional.
+
+04:02.350 --> 04:06.910
+OK, now still inside here, we need to pass a few other parameters.
+
+04:07.300 --> 04:14.680
+Now, every input field has to have some sort of state because the idea really is to be listening to
+
+04:14.860 --> 04:22.720
+what is being typed here and we can validate and we can see if it's time for us to get rid of the.
+
+04:23.750 --> 04:28.790
+Keyboard and so forth, so there's a lot of things that are happening, so we need to control that.
+
+04:29.180 --> 04:39.200
+So what I'm going to add here, I see it as a parameter is value state, OK, the value state of our
+
+04:40.070 --> 04:40.670
+text field.
+
+04:41.930 --> 04:46.100
+Now, because everything is about state in this case, that means we have to pass a variable that is
+
+04:46.340 --> 04:48.500
+allowed or is supposed to mutate.
+
+04:48.800 --> 04:53.840
+But most importantly, it's a it's supposed to hold values.
+
+04:55.350 --> 04:58.890
+Who's reads and writes are observed by a composer.
+
+04:59.410 --> 05:05.070
+Right, so any function that it's calling this function here, this composable can react to those values.
+
+05:05.100 --> 05:05.850
+That's the whole idea.
+
+05:06.120 --> 05:11.250
+So I can pass one here by saying mutable state like that.
+
+05:11.580 --> 05:16.110
+And again, pass type that it will conform to, which is going to be string.
+
+05:17.130 --> 05:17.430
+OK.
+
+05:21.780 --> 05:26.790
+In this case, also, I'm going to pass just a few minutes later, label ID, you will see all of this
+
+05:26.860 --> 05:27.220
+later.
+
+05:27.220 --> 05:30.510
+I'm going to be a string and then I'm going to pass enabled.
+
+05:32.410 --> 05:40.180
+Which is going to be a bullion, so let's say bullion as such, and then I'm going to pass is single
+
+05:41.050 --> 05:43.050
+line as to.
+
+05:43.660 --> 05:50.320
+It's also going to be important to say in this case, whenever I want to call this input field, I can
+
+05:50.320 --> 05:54.370
+set up to say, OK, I want this input field to be just single line.
+
+05:54.370 --> 06:02.500
+Meaning when they enter text, it's never going to expand to allow multiple lines of text as it's been
+
+06:02.500 --> 06:02.890
+entered.
+
+06:04.540 --> 06:04.840
+All right.
+
+06:06.160 --> 06:07.720
+And then I'm going to say keyboard
+
+06:10.210 --> 06:17.410
+type, because remember because remember being an input text field, there are different kinds of keyboard
+
+06:17.410 --> 06:17.800
+types.
+
+06:17.800 --> 06:25.510
+So we need to in this case, set up the keyboard or at least tell the compose compiler what keyboard,
+
+06:25.510 --> 06:27.520
+what kind of keyboard we want.
+
+06:27.760 --> 06:36.880
+So I'm going to just go ahead and say for the sake of time was a keyboard type like this and say it's
+
+06:36.880 --> 06:40.150
+going to be equal to keyboard type.
+
+06:44.640 --> 06:45.450
+Not ASCII.
+
+06:45.510 --> 06:46.620
+We want no.
+
+06:46.860 --> 06:49.350
+Which is saying we want to be able to just enter numbers.
+
+06:49.620 --> 06:55.150
+Now we could also make it more flexible in that users can pass the time.
+
+06:55.170 --> 06:56.130
+But this is fine.
+
+06:58.010 --> 06:58.280
+All right.
+
+06:58.310 --> 06:59.450
+And next, I'm going to pass the.
+
+07:01.110 --> 07:04.350
+I am e action like this.
+
+07:04.650 --> 07:05.370
+What is this?
+
+07:05.670 --> 07:11.790
+Well, I am action if you hover over it says signals the keyboard, what type of action should be displayed?
+
+07:12.770 --> 07:13.100
+Right.
+
+07:13.670 --> 07:16.100
+And we will see how this work, for instance.
+
+07:17.060 --> 07:22.250
+So in this case, our enemy action.
+
+07:22.580 --> 07:23.360
+You just said it.
+
+07:23.390 --> 07:25.670
+What a way to say I am action.
+
+07:26.180 --> 07:28.220
+There are different actions or Skoda's next.
+
+07:28.220 --> 07:28.820
+There's none.
+
+07:29.240 --> 07:31.220
+And in this case, it was going to use the next.
+
+07:31.280 --> 07:34.190
+So when something is entered, we want to show.
+
+07:34.310 --> 07:36.050
+OK, what should they do?
+
+07:36.200 --> 07:39.950
+They being the users like then should show at the bottom here.
+
+07:40.250 --> 07:46.070
+If the keyboard, if the keyboard is showing, should show at the bottom, say next or go or whatever
+
+07:46.070 --> 07:46.670
+or enter.
+
+07:46.940 --> 07:48.230
+So we specifying that.
+
+07:50.560 --> 07:50.850
+OK.
+
+07:52.360 --> 07:55.300
+And then I'm going to pass on action again.
+
+07:55.900 --> 07:57.790
+And when I say keyboard actions.
+
+08:01.020 --> 08:05.220
+There's and I'm going to set that directly to, say, keyboard actions.
+
+08:06.810 --> 08:10.440
+I don't want at Lambda, I just want to get a default keyboard actions.
+
+08:10.620 --> 08:10.920
+All right.
+
+08:11.880 --> 08:17.190
+So this is what we may potentially pass and when we invoke our input field.
+
+08:18.360 --> 08:18.720
+All right.
+
+08:18.720 --> 08:24.780
+So now that we have our parameters created, now we go inside of our input.
+
+08:25.170 --> 08:26.790
+Now we go inside of this composable.
+
+08:26.940 --> 08:29.850
+So the contents of this composable, what do we want to show?
+
+08:30.120 --> 08:35.070
+Well, we want to show the outline in this case, outline text field.
+
+08:35.370 --> 08:38.970
+That is what we want through different kind of text fields we're going to use outlined.
+
+08:39.840 --> 08:48.390
+So for value here, we are really creating a safe value state to get the value such right.
+
+08:49.710 --> 08:54.630
+And every text field, be it outlined or any other kind.
+
+08:54.630 --> 09:00.990
+If it's text field, we have this call, we have this parameter or argument, we have to pass.
+
+09:01.290 --> 09:05.340
+It's a callback that is triggered when the input service updates to text.
+
+09:06.330 --> 09:06.600
+Right.
+
+09:06.810 --> 09:11.100
+So what we want, what is that we want to happen as we update the text?
+
+09:11.790 --> 09:16.380
+Well, in this case, I'm just going to go ahead and pass elaborate on the value text.
+
+09:16.710 --> 09:19.610
+And I'm going to say the state, right?
+
+09:19.640 --> 09:23.670
+It's going to be in this an integer it get the value and when to pass it.
+
+09:24.420 --> 09:25.920
+I'm going to make it equal to it.
+
+09:26.070 --> 09:30.180
+So whatever we getting from our text field?
+
+09:31.480 --> 09:38.230
+Here we're going to just pass into our values state, which is what we have created at the top here.
+
+09:39.070 --> 09:40.990
+The actual value as they type.
+
+09:42.400 --> 09:46.670
+And if you have over a line text field, there's so many things you can pass, right?
+
+09:46.690 --> 09:51.040
+One of which is we can pass a label and value and so many other things.
+
+09:51.430 --> 09:52.330
+All right, let's continue.
+
+09:52.690 --> 09:57.030
+So make sure we are inside of the parenthesis here.
+
+09:57.040 --> 09:58.390
+This is where we pass the parameters.
+
+09:58.780 --> 09:59.530
+Yes, we are.
+
+09:59.530 --> 10:01.330
+I'm going to say comma in.
+
+10:01.330 --> 10:04.330
+Let's add something else for the label of this.
+
+10:07.370 --> 10:15.020
+For the label of for the label argument notice, here it is indeed a label that we can just enter and
+
+10:15.020 --> 10:16.250
+put sort of a lambda here.
+
+10:16.550 --> 10:25.070
+I'm going to say passing in a text in this text is going to have what is going to be have a label ID.
+
+10:25.490 --> 10:29.600
+So essentially, we're going to have some sort of like this, something like says, enter a bill like
+
+10:29.600 --> 10:29.840
+that.
+
+10:30.110 --> 10:33.500
+OK, so we are customizing our input fields.
+
+10:33.500 --> 10:36.570
+So when we call input field, as you will see later, we can pass.
+
+10:36.590 --> 10:40.850
+What is it that we want to show for a label in passive state and so forth?
+
+10:41.630 --> 10:41.930
+All right.
+
+10:42.670 --> 10:43.670
+I hope this is not too bad.
+
+10:44.330 --> 10:49.190
+And then I'm going to say leading icon if I want to this case, yes, I do.
+
+10:49.640 --> 10:53.240
+But again, simplifies our life and we invoke the icon.
+
+10:53.690 --> 10:54.230
+Look at this.
+
+10:54.470 --> 11:01.490
+This is all coming from compose, so we can actually add an icon from here.
+
+11:02.630 --> 11:03.060
+Very good.
+
+11:03.320 --> 11:06.390
+So I'm going to use the image vector.
+
+11:06.410 --> 11:08.780
+There are different icon.
+
+11:10.000 --> 11:17.620
+Functions there, image factor in this case, I can then invoke the icons right from Andrew compose
+
+11:17.620 --> 11:18.830
+material icons.
+
+11:18.850 --> 11:27.760
+All this comes, you know, by default and then I can't go to a foul, default or field.
+
+11:28.060 --> 11:32.440
+I'm going to go to rounded OK and say, I'm going to say attach.
+
+11:34.180 --> 11:34.800
+Let's see.
+
+11:37.560 --> 11:39.000
+Attach money.
+
+11:39.360 --> 11:40.620
+Now here's a problem.
+
+11:41.340 --> 11:45.960
+Some of the material icons are not included.
+
+11:47.910 --> 11:54.540
+From the get go in our project, that means then we'll have to include them in our project.
+
+11:55.410 --> 12:01.770
+The reason being is because these icons can be heavy in a sense that can actually add more bytes to
+
+12:01.770 --> 12:04.560
+your project overall size of your project.
+
+12:04.810 --> 12:07.680
+So that's the reason why they're not readily available.
+
+12:08.280 --> 12:11.220
+Some of them are, but most of them are not OK.
+
+12:11.820 --> 12:16.860
+So if you want to get more, I will have to actually add to that dependency, which will allow us to
+
+12:16.860 --> 12:18.030
+get all those icons.
+
+12:18.390 --> 12:20.490
+And how do we do that then show you?
+
+12:21.510 --> 12:22.620
+So we'll have to open.
+
+12:23.150 --> 12:27.280
+Let's make sure that we don't have errors here.
+
+12:27.300 --> 12:30.150
+So for now, I'm just going to add something different.
+
+12:30.330 --> 12:30.560
+All right.
+
+12:30.570 --> 12:31.680
+So we don't have an error.
+
+12:32.580 --> 12:34.560
+Let's see running or refresh.
+
+12:34.720 --> 12:36.900
+OK, so we have something and let's finalize this.
+
+12:36.910 --> 12:43.050
+We need to put in a description because of visually impaired users.
+
+12:43.060 --> 12:45.810
+So we need to add description of images and icons.
+
+12:45.810 --> 12:50.580
+Are we adding I'm going to say money icon, even though it's a refresh.
+
+12:50.580 --> 12:51.090
+That's okay.
+
+12:51.570 --> 12:51.840
+All right.
+
+12:51.840 --> 12:58.530
+So we're going to open our project and then we're going to go to Gradle scripts and then we're going
+
+12:58.530 --> 13:03.750
+to go to there's two grails as the jet, the app project Gradle and there is a module grade.
+
+13:03.750 --> 13:04.980
+Also, click on this one.
+
+13:05.430 --> 13:10.200
+And what we want to do is scroll down anywhere here, and most likely, you're going to see all of this.
+
+13:10.210 --> 13:10.800
+So it's OK.
+
+13:10.830 --> 13:14.700
+We'll come back to all of this and we'll fix or update things.
+
+13:14.700 --> 13:17.820
+But for now, what are we going to do somewhere at the bottom here?
+
+13:17.850 --> 13:26.400
+What I like to do is add to four slashes to say comment and then say icons and then what you are going
+
+13:26.400 --> 13:26.630
+to do.
+
+13:26.640 --> 13:28.830
+I'm going to say implementation such.
+
+13:30.200 --> 13:31.310
+OK, wait for a second.
+
+13:31.520 --> 13:38.720
+Get rid of that and put it in sort of double quotes and start typing something like this Android not
+
+13:38.720 --> 13:39.620
+compose.
+
+13:40.760 --> 13:41.120
+OK.
+
+13:41.900 --> 13:43.070
+Same material.
+
+13:43.490 --> 13:48.750
+I know this because I have on the project and then emcee material.
+
+13:48.770 --> 13:50.150
+Make sure you type exactly.
+
+13:50.750 --> 13:52.220
+Dash icons.
+
+13:52.760 --> 13:56.030
+Dash extended and then.
+
+13:58.150 --> 14:03.610
+We put Colin and then you see dollar sign, say, compose.
+
+14:05.380 --> 14:06.570
+Version like this.
+
+14:08.050 --> 14:10.630
+OK, so once you're done, let's go ahead and say sink.
+
+14:11.050 --> 14:18.040
+So what are we doing here, we added, is dependency, which will allow the cradle, which is the mastermind
+
+14:18.070 --> 14:22.990
+of the entire project, to go and fetch listed dependency at this.
+
+14:24.130 --> 14:30.940
+To go and fetch this in the repository that is really far away and get all those material icons that
+
+14:30.940 --> 14:31.540
+we need.
+
+14:32.260 --> 14:32.560
+OK.
+
+14:33.190 --> 14:38.860
+I can only use this if you need certain icons at the default project doesn't give you.
+
+14:40.180 --> 14:44.290
+So it may take a little while you can look at the bottom here, Gradle is working, doing its work,
+
+14:44.290 --> 14:46.990
+just wait and come back when it's done.
+
+14:49.240 --> 14:51.940
+All right, after a few moments, you will see that everything is good.
+
+14:52.060 --> 14:53.140
+Nothing is.
+
+14:54.100 --> 14:56.200
+Everything has stopped and that's good.
+
+14:56.260 --> 14:57.000
+No errors.
+
+14:57.010 --> 14:57.400
+Nothing.
+
+14:57.820 --> 14:59.710
+OK, let's close out of this.
+
+15:00.250 --> 15:02.110
+Now back to our components.
+
+15:02.290 --> 15:04.630
+Let's go back to our icons, Randy.
+
+15:04.870 --> 15:05.980
+We don't want to refresh.
+
+15:05.980 --> 15:08.590
+We want something special, which is money.
+
+15:08.830 --> 15:10.120
+Say money.
+
+15:12.230 --> 15:14.120
+They we go attach money.
+
+15:14.150 --> 15:18.800
+Now we have access to a plethora of icons, which is what we want.
+
+15:19.250 --> 15:19.970
+All right, there we go.
+
+15:21.110 --> 15:27.560
+OK, so continuing right, then I'm going to put the this pass another parameter here or argument,
+
+15:27.680 --> 15:29.390
+which is single line.
+
+15:29.750 --> 15:35.660
+This is you see now the the thought process here because we're passing all of these parameters and then
+
+15:35.660 --> 15:38.120
+we are using them because this is going to be customized.
+
+15:38.120 --> 15:39.350
+We're going to call anywhere we want.
+
+15:39.590 --> 15:44.330
+We can pass this parameters and then we to construct our outline to text field passing.
+
+15:44.960 --> 15:47.900
+With these parameters, we're passing on this case arguments.
+
+15:47.910 --> 15:49.160
+We're going to be passing, right?
+
+15:49.880 --> 15:52.970
+So here, I'm just going to say is single line.
+
+15:52.970 --> 15:57.080
+So I'm going to pass whatever the users or whatever is passed here.
+
+15:57.530 --> 16:06.230
+When we invoke input field to you, then I'm going to say text style that we want to show here.
+
+16:06.230 --> 16:10.940
+I'm just going to say text style, and I put a font size.
+
+16:13.530 --> 16:15.750
+About 18 got ESP.
+
+16:16.260 --> 16:24.570
+That's another unit to use when it comes to test text, I should say you should use ESP instead of DPI.
+
+16:24.960 --> 16:25.260
+OK.
+
+16:26.890 --> 16:33.280
+And we want a color say color when I use material theme.
+
+16:38.240 --> 16:43.940
+Colors, and I'm going to use the on background, so this is really good and will make sense later on
+
+16:43.940 --> 16:48.890
+background is the color that is used throughout the app.
+
+16:49.010 --> 16:54.080
+Whether it's in dark mode or in a light mode, it will still show this text.
+
+16:54.530 --> 16:54.800
+Right?
+
+16:55.310 --> 16:55.640
+All right.
+
+16:55.640 --> 16:57.900
+Let's continue here again.
+
+16:57.950 --> 17:02.960
+We still need sort of outlined text fields, so there are a lot of things that we can actually customize.
+
+17:02.960 --> 17:07.730
+If you have over again, you can see all of these parameters that we've looked at.
+
+17:07.790 --> 17:11.720
+So textile, when we look at that enabled and so forth.
+
+17:12.140 --> 17:12.380
+Right.
+
+17:12.410 --> 17:14.960
+And let's go and add yet another one.
+
+17:15.380 --> 17:17.840
+In this case, I want to add the enabled.
+
+17:21.450 --> 17:27.510
+And for enabled, I'm going to say I want this to be enabled, so I'm going to pass whatever we're getting
+
+17:27.870 --> 17:31.200
+from the user or from where this is being called.
+
+17:31.650 --> 17:33.060
+And then we're past the keyboard.
+
+17:35.350 --> 17:36.190
+Options.
+
+17:36.850 --> 17:37.170
+OK?
+
+17:37.720 --> 17:47.950
+In the say, keyboard options such and there was a keyboard inside plastic keyboard type that we are
+
+17:47.950 --> 17:48.490
+passing.
+
+17:48.970 --> 17:49.930
+Keyboard type.
+
+17:50.200 --> 17:50.560
+OK.
+
+17:50.780 --> 17:55.990
+So setting up and then I'm going to say I am in action.
+
+17:55.990 --> 17:58.630
+It's going to be the me action that we've passed.
+
+17:59.110 --> 18:01.750
+And that's that and they're going to continue.
+
+18:02.230 --> 18:09.080
+I say keyboard actions, and now I'm going to say on action, which is exactly what we passed.
+
+18:09.100 --> 18:16.210
+You can see now all of these parameters, all of these primaries are now visible or not are now highlighted
+
+18:16.450 --> 18:17.710
+because we are using them.
+
+18:18.490 --> 18:22.040
+So it doesn't look like much, but we did the groundwork here.
+
+18:22.060 --> 18:27.070
+Now we can use this input field anywhere, as you will see in the next video, and pass everything in
+
+18:27.310 --> 18:30.250
+and pass all these arguments and we should be good.
+
+18:30.680 --> 18:32.500
+Now it looks like I need to look.
+
+18:32.770 --> 18:35.560
+It looks like our modifier here is not being called.
+
+18:35.980 --> 18:41.770
+Let's go to you have over again the old text text field.
+
+18:42.760 --> 18:45.040
+We should pass the modifier.
+
+18:45.350 --> 18:47.500
+Yes, let's come down here.
+
+18:48.720 --> 18:57.330
+After text, I'm just going to say modifier when I said to our modifier that we're passing potentially
+
+18:58.410 --> 18:59.910
+and say that.
+
+19:01.720 --> 19:11.440
+Padding, just use some padding here somewhere at the bottom, padding about 10 deep and start.
+
+19:13.330 --> 19:23.500
+Looks like we need to import TP, the unit and start is also going to be 10 dpi and is also going to
+
+19:23.500 --> 19:25.230
+be 10 dpi.
+
+19:25.240 --> 19:30.940
+So essentially we're saying whenever we call this input field, we're going to create this outline text
+
+19:30.940 --> 19:35.660
+field and we're going to add some sort of padding around it.
+
+19:36.850 --> 19:42.730
+So in the next video, we are going to actually use this input inside of our main where we are constructing
+
+19:42.730 --> 19:43.600
+our user interface.

@@ -1,0 +1,430 @@
+WEBVTT
+
+00:00.240 --> 00:04.920
+So we see that we have our input field there, but remember our search form.
+
+00:05.250 --> 00:12.210
+We do have courses on search, which we can add as a lambda, so this will capture whatever it's clicked.
+
+00:12.210 --> 00:14.600
+Whenever we're done, right click on action there.
+
+00:15.330 --> 00:15.870
+Say done.
+
+00:16.170 --> 00:21.660
+We're going to get the value inside of our search bar there and do whatever we want.
+
+00:21.720 --> 00:26.310
+So this is real convenient because now I can say like this oops.
+
+00:26.310 --> 00:28.550
+Let's see my be in the wrong place.
+
+00:28.560 --> 00:30.780
+Let's make sure we have search.
+
+00:30.780 --> 00:31.160
+Right?
+
+00:31.170 --> 00:31.830
+Has to be here.
+
+00:32.120 --> 00:33.240
+Hi, there we go.
+
+00:33.270 --> 00:35.040
+Now I have access to that, so I'm here.
+
+00:35.040 --> 00:35.970
+I can say logged.
+
+00:37.710 --> 00:41.220
+And we should be able to see this I.D. there.
+
+00:41.610 --> 00:44.220
+It's just going to be there's the string that is being added.
+
+00:45.030 --> 00:45.300
+All right.
+
+00:45.570 --> 00:47.060
+So let's go ahead and run real quick.
+
+00:49.430 --> 00:53.030
+OK, so let's go to a search and I say gibberish.
+
+00:53.570 --> 00:54.230
+Hit enter.
+
+00:54.710 --> 00:57.050
+And you can see we have that gibberish.
+
+00:57.680 --> 01:04.610
+OK, this is good because the idea is to take this information attached to our your and get data in
+
+01:04.610 --> 01:05.330
+this case, books.
+
+01:06.170 --> 01:06.470
+All right.
+
+01:06.860 --> 01:13.820
+We get there, continue and put together these simple structure, which is going to be just a scrollable
+
+01:13.820 --> 01:17.780
+area in this case, just a lazy column which will contain books.
+
+01:18.180 --> 01:22.280
+Just a card containing the name of a book and the image and so forth.
+
+01:22.610 --> 01:29.060
+So it's nothing really hard to do, but we're going to do it because we want to be as thorough as possible.
+
+01:29.840 --> 01:36.050
+But if you want a challenge, you could just pause this video, stop this video and go and create something
+
+01:36.050 --> 01:36.470
+like this.
+
+01:36.800 --> 01:37.850
+It's just lazy column.
+
+01:38.180 --> 01:44.900
+Create a row white card and add these pieces of information, text and image.
+
+01:45.380 --> 01:45.960
+You can do that.
+
+01:45.980 --> 01:46.440
+Go ahead.
+
+01:46.520 --> 01:47.750
+Actually, go ahead and do that.
+
+02:02.320 --> 02:09.660
+All right, so after our landed, they're still inside of this, our column there.
+
+02:10.490 --> 02:15.680
+Here is where I'm going to put a spacer and let's say put a modifier.
+
+02:17.150 --> 02:20.900
+I'm going to the height, not height end, but height.
+
+02:21.290 --> 02:21.590
+Nice.
+
+02:21.860 --> 02:23.450
+Such a low about.
+
+02:26.160 --> 02:33.360
+Thirteen deep, because I want to have some spacing between the text field and this structure.
+
+02:33.720 --> 02:34.800
+They are lazy column.
+
+02:35.310 --> 02:36.700
+Yeah, yeah.
+
+02:36.760 --> 02:43.620
+Their book list like this and we have has enough controller like that.
+
+02:43.710 --> 02:46.350
+Let's go ahead and create this composable.
+
+02:52.920 --> 02:55.080
+So what is this book list going to do?
+
+02:56.760 --> 03:05.760
+Well, we are going to create a lazy column as such, and let's just use a lambada because it's much
+
+03:05.760 --> 03:06.240
+easier.
+
+03:07.740 --> 03:17.040
+And in this case, here we are going to say, let's pass a modifier because we want to make this a little
+
+03:17.040 --> 03:23.050
+bit larger modifier and would say, fill max.
+
+03:23.310 --> 03:24.480
+Let's say fill max.
+
+03:26.580 --> 03:36.090
+Size so that both of them, height and width, are covered, and I'm going to pass content
+
+03:38.430 --> 03:39.100
+padding.
+
+03:39.390 --> 03:45.770
+I'm going to add to, say, padding values, in this case going to be about six dpi.
+
+03:46.350 --> 03:54.480
+If you have over padding values, in this case, it just covers all four edges of this lacy column.
+
+03:54.630 --> 03:58.500
+So that's another way of of creating the full padding.
+
+03:59.790 --> 04:04.620
+OK, so inside here, it's where I'm going to pass in this case, a list of items that I want to see.
+
+04:04.950 --> 04:10.350
+But before I do that, let's just create a quick list of something here.
+
+04:11.550 --> 04:13.020
+In fact, I can.
+
+04:13.050 --> 04:17.340
+Let's go to our most recent reader at home.
+
+04:17.580 --> 04:21.360
+I think I already have a list of books that I can use.
+
+04:21.540 --> 04:22.300
+OK, there we go.
+
+04:22.320 --> 04:22.890
+This is good.
+
+04:24.060 --> 04:25.320
+It's going to be very helpful.
+
+04:27.890 --> 04:31.040
+So I'm going to create that just added there so we can use it.
+
+04:34.410 --> 04:34.960
+There you go.
+
+04:36.820 --> 04:44.620
+And so right here, I can then say items as price list items.
+
+04:46.490 --> 04:48.570
+I set those items to.
+
+04:50.200 --> 04:53.020
+Our list of books in this case.
+
+04:55.740 --> 04:59.990
+Then we have a lambada and it's a book.
+
+05:02.630 --> 05:09.560
+And so now we're going to pass a row here, so it's going to be a book row, which will require a book.
+
+05:12.360 --> 05:14.340
+And I'm going to pass in half controller as well.
+
+05:14.550 --> 05:14.830
+All right.
+
+05:14.850 --> 05:17.550
+Let's again create this book row.
+
+05:18.180 --> 05:19.410
+You get the gist now.
+
+05:20.700 --> 05:22.200
+So for our book row here.
+
+05:22.960 --> 05:23.520
+All right.
+
+05:23.660 --> 05:28.950
+We are going to just create a card by saying a modifier.
+
+05:31.940 --> 05:36.290
+Make this clickable item needs to be clickable, get to God.
+
+05:37.040 --> 05:40.850
+And then I'm going to say Phil Max with.
+
+05:43.350 --> 05:49.780
+And then I'm going to give you a height of about 100 dpi.
+
+05:51.870 --> 05:56.310
+Let's just give the padding of three dpi as such.
+
+05:58.230 --> 05:58.730
+All right.
+
+05:58.740 --> 06:01.140
+And while I'm here, let's give it.
+
+06:01.410 --> 06:07.320
+Of course, the shape we want, it's going to be rectangle
+
+06:10.890 --> 06:17.880
+shape like this, and I'm going to give an elevation of about seven dpi.
+
+06:19.860 --> 06:25.740
+And inside we going to add a row in this row is just going to be first is going to be an image and then
+
+06:25.740 --> 06:31.590
+this column there, so Rome going add a column because that's what we're going to need in a bit.
+
+06:32.520 --> 06:43.080
+So for our role for, let's say, modifier say, padding about five deep and vertical alignment?
+
+06:45.360 --> 06:48.160
+Yeah, top good.
+
+06:49.000 --> 06:51.690
+And so kind of add an image.
+
+06:53.250 --> 06:58.710
+So let me create a foul here called image URL.
+
+07:00.150 --> 07:04.240
+Let's get that image we had before and pass it in here.
+
+07:05.520 --> 07:07.320
+OK, for now, at least.
+
+07:07.350 --> 07:09.330
+And then I'm going to pass out an image.
+
+07:12.020 --> 07:18.920
+Here I'm going to use a painter and lets you remember.
+
+07:21.890 --> 07:29.570
+Painter, image painter, this from Coyle, we want data, actually, which is going to be our image,
+
+07:29.600 --> 07:30.110
+you're out.
+
+07:30.320 --> 07:36.470
+This all will change later because all these images will come from the actual book object.
+
+07:36.650 --> 07:41.510
+OK, so here is going to be going to say look image.
+
+07:43.060 --> 07:46.210
+So we've put together this structure here, this image.
+
+07:46.510 --> 07:49.310
+Now we need to put this structure right.
+
+07:49.330 --> 07:50.920
+That's going to be in our column.
+
+07:51.760 --> 08:02.320
+And so I'm going to just add in this text is going to say because they book the title, right?
+
+08:05.130 --> 08:05.940
+To screen.
+
+08:10.450 --> 08:20.050
+And then I'm going to add overflow ellipses like this, so if there's the title is longer than it can
+
+08:20.050 --> 08:21.640
+fit here, it's just going to have ellipses.
+
+08:22.360 --> 08:25.000
+And then I'm going to do the same thing for the others.
+
+08:27.290 --> 08:29.390
+This one we're going to have actually.
+
+08:35.690 --> 08:37.100
+Change a few things here.
+
+08:37.280 --> 08:38.360
+Can I say, author?
+
+08:45.770 --> 08:50.030
+Book Times authors such.
+
+08:56.570 --> 09:02.990
+And I'm going to say clip instead of a flow, if it's too much and.
+
+09:04.550 --> 09:06.950
+Let's give it a style of material
+
+09:09.200 --> 09:12.490
+theme topography.
+
+09:13.340 --> 09:14.570
+Give a caption as such.
+
+09:14.880 --> 09:20.630
+OK, we'll come back and change, make it even more beautiful, but that looks good for now.
+
+09:23.880 --> 09:28.440
+OK would add another say to do.
+
+09:30.070 --> 09:32.620
+Add more fields later.
+
+09:33.940 --> 09:34.300
+All right.
+
+09:35.620 --> 09:41.710
+So this row book row is being called here, if we run because we're passing this dummy data of list
+
+09:41.710 --> 09:44.120
+of books, we should be able to see something.
+
+09:44.140 --> 09:45.070
+Let's go ahead and run.
+
+09:53.400 --> 09:55.230
+Go there and nice.
+
+09:55.500 --> 10:00.830
+So we have a few books and everything is looking good, right?
+
+10:00.840 --> 10:04.770
+So for our image, we can actually make it even better.
+
+10:05.460 --> 10:06.930
+Let's add a modifier.
+
+10:11.040 --> 10:14.940
+And they say with pretty smart fire, let's kill about 80
+
+10:17.820 --> 10:24.120
+and then I say max height, take up all the space.
+
+10:24.600 --> 10:30.000
+I'm going to give a padding and padding.
+
+10:30.000 --> 10:35.760
+It's going to be about four dpi, so we're going to give this nice padding at the end.
+
+10:36.220 --> 10:36.510
+OK.
+
+10:42.180 --> 10:44.160
+OK, I'm using my phone now.
+
+10:44.550 --> 10:44.970
+Click.
+
+10:47.010 --> 10:47.370
+Nice.
+
+10:47.700 --> 10:48.750
+So it's looking really good.
+
+10:49.830 --> 10:54.820
+This is wonderful, we can go ahead and try to search something and very good.
+
+10:54.840 --> 10:57.360
+So we have the infrastructure set up.
+
+10:57.600 --> 10:57.930
+OK?
+
+10:58.950 --> 11:03.000
+What are we going to do next is we're going to take a little break from the user interface for a bit
+
+11:03.000 --> 11:08.480
+and get the data to upload into our application here.
+
+11:08.490 --> 11:11.460
+So we need to go and look at our API.
+
+11:11.580 --> 11:18.480
+Google Books API, which is the one that we're going to be using to fetch or search books that we can
+
+11:18.480 --> 11:21.540
+then populate here and add it to our database.

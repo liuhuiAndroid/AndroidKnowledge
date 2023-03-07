@@ -1,0 +1,187 @@
+WEBVTT
+
+00:01.370 --> 00:08.000
+Let's work on the card for each one of these books, so we still have a few items we need to show here.
+
+00:09.490 --> 00:10.960
+It's going to be very simple, let's go back.
+
+00:11.200 --> 00:16.570
+Get rid of our book search repository navigation, let's focus on our search screen.
+
+00:17.440 --> 00:22.360
+So notebook row here has come down, so we have author.
+
+00:23.020 --> 00:26.860
+And let's see what else we need.
+
+00:28.140 --> 00:32.040
+Let's say fonts or font style.
+
+00:40.030 --> 00:41.530
+They font style.
+
+00:42.700 --> 00:44.050
+I want to make that italic.
+
+00:45.540 --> 00:47.170
+That's be good.
+
+00:48.940 --> 00:51.560
+And let's just copy and paste a few.
+
+00:51.580 --> 00:53.800
+These just test this.
+
+00:55.990 --> 00:58.090
+These are just text.
+
+01:01.620 --> 01:03.300
+OK, so let's work on this.
+
+01:03.720 --> 01:08.010
+Give us some space in between so we don't get lost.
+
+01:09.810 --> 01:10.050
+All right.
+
+01:10.050 --> 01:13.000
+So Arthur, we have an author that's not good.
+
+01:13.020 --> 01:14.160
+Well, let's see.
+
+01:14.340 --> 01:17.610
+Copy and paste a few times.
+
+01:20.220 --> 01:23.850
+OK, so the next let's use date.
+
+01:23.880 --> 01:29.190
+So what are we doing next is just going around and finding the information we want to show.
+
+01:29.270 --> 01:33.000
+I'm going to get the published date and maybe publisher at some point.
+
+01:33.090 --> 01:33.650
+Maybe not.
+
+01:33.660 --> 01:34.740
+Maybe that's not important enough.
+
+01:34.740 --> 01:36.330
+So depends on what you want to add.
+
+01:36.750 --> 01:38.160
+You can add whatever you want here.
+
+01:39.450 --> 01:41.040
+OK, let's start with that first one.
+
+01:41.790 --> 01:45.090
+So date published date?
+
+01:45.240 --> 01:46.320
+We have access to that.
+
+01:47.130 --> 01:53.040
+And by the way, we need to spend some time and let's acknowledge something real quick here.
+
+01:53.220 --> 01:54.630
+How easy things are right now.
+
+01:54.960 --> 02:02.070
+Notice that we didn't have to do much in terms of combining the JSON and the codling object that we
+
+02:02.130 --> 02:06.420
+represent in this case model a book, right?
+
+02:06.810 --> 02:10.140
+All of that conversion happened in the back with retrofit.
+
+02:10.470 --> 02:15.840
+So now we can just say, book that volume info that published date and get that information just like
+
+02:15.840 --> 02:16.350
+that, OK?
+
+02:16.620 --> 02:17.640
+That's a really, really good.
+
+02:17.730 --> 02:22.560
+So Retrofit is a really nice library for things such as these.
+
+02:22.800 --> 02:29.160
+We can do a lot of other things with it, but I hope you seeing the power of using retrofit now.
+
+02:29.160 --> 02:33.210
+The setting up, of course, can take a little bit of getting used to, but once you have a set up,
+
+02:33.960 --> 02:34.440
+you don't.
+
+02:34.650 --> 02:36.090
+OK, OK, so we have date.
+
+02:36.420 --> 02:38.120
+And what else are we going to?
+
+02:38.220 --> 02:39.810
+I was going to change italic.
+
+02:39.810 --> 02:40.710
+That's fine.
+
+02:41.490 --> 02:43.350
+Let's change this to caption.
+
+02:43.350 --> 02:44.940
+That's totally fine as well.
+
+02:45.210 --> 02:46.140
+OK, what's next?
+
+02:47.400 --> 02:48.540
+How about category?
+
+02:48.540 --> 02:54.960
+I'm just going to say move everything when I say book categories.
+
+02:55.380 --> 02:56.120
+That's about it.
+
+02:56.190 --> 02:57.390
+I don't want anything else.
+
+02:57.970 --> 02:58.830
+Just remove that.
+
+02:59.670 --> 02:59.960
+Okay.
+
+02:59.970 --> 03:02.280
+Let's go ahead and save and run.
+
+03:03.790 --> 03:06.760
+I love how we have author date.
+
+03:07.780 --> 03:09.610
+When was this released?
+
+03:10.990 --> 03:12.310
+And there you have it.
+
+03:14.110 --> 03:15.700
+I think that's how you say Einstein.
+
+03:16.990 --> 03:17.470
+Let's go.
+
+03:18.540 --> 03:19.140
+There you go.
+
+03:19.920 --> 03:23.940
+So you can search for any book that you want.
+
+03:25.410 --> 03:28.500
+How to read well or get.

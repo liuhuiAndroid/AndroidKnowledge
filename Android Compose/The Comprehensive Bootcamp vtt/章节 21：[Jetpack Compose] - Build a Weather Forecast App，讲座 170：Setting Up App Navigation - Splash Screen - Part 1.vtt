@@ -1,0 +1,520 @@
+WEBVTT
+
+00:00.490 --> 00:03.190
+So our weather app will have a lot of different screens.
+
+00:04.120 --> 00:09.820
+You can see here we have the entry point screen, we have the search screen and we have favorites we
+
+00:09.820 --> 00:11.530
+have about selig's and so forth.
+
+00:11.920 --> 00:17.200
+So when you look at this, this is very overwhelming because we have so many things, so many moving
+
+00:17.200 --> 00:17.590
+parts.
+
+00:17.590 --> 00:21.040
+As you see now we are going to divide and conquer here.
+
+00:21.040 --> 00:26.440
+We're going to start small and build up as we continue to build this application.
+
+00:27.280 --> 00:28.600
+So let's start small.
+
+00:28.780 --> 00:32.020
+So how is this navigation going to work?
+
+00:32.020 --> 00:36.070
+Because we need to go from one screen to the next and so forth.
+
+00:36.640 --> 00:38.470
+So we're going to start small.
+
+00:38.800 --> 00:46.090
+We are going to put together a navigation system that will allow us to navigate between screens.
+
+00:46.510 --> 00:49.840
+The first screen that user will see, it's going to be a splash screen.
+
+00:49.840 --> 00:55.570
+So the screen is going to be a very quick to show and quick to disappear screen.
+
+00:55.590 --> 00:59.110
+So instantly shows does a little bit of animation.
+
+00:59.410 --> 01:05.500
+And then it takes us to the main screen where users can see all of the information about a particular
+
+01:05.500 --> 01:05.950
+city.
+
+01:06.250 --> 01:07.090
+And it's.
+
+01:08.240 --> 01:09.350
+Weather and so forth.
+
+01:09.830 --> 01:15.560
+So this is the basic structure now because we have many other screens in which we'll take care of it
+
+01:15.560 --> 01:15.970
+later.
+
+01:16.460 --> 01:23.300
+We will have to create will have to create a broader structure that will allow us to add all of these
+
+01:23.300 --> 01:25.760
+other screens later when we need to.
+
+01:26.360 --> 01:31.250
+Let's go ahead and put together a navigation structure first, that it's easier for us later to add
+
+01:31.280 --> 01:34.610
+other other screens onto the navigation.
+
+01:35.740 --> 01:36.580
+Let's go ahead and do that.
+
+01:37.710 --> 01:40.680
+Instead of an navigation here, we're going to create an application structure.
+
+01:41.190 --> 01:42.330
+Well, we need two things.
+
+01:42.330 --> 01:51.000
+One is going to create an enum class, which will list all of the possible screens that we want to add
+
+01:51.000 --> 01:52.830
+into our app project.
+
+01:53.550 --> 01:54.960
+OK, let's go ahead and do it so we can see.
+
+01:54.970 --> 01:57.750
+So I'm going to create a new Kotlin class.
+
+01:58.140 --> 02:01.590
+And this is going to be just enum when you call this.
+
+02:03.810 --> 02:07.020
+Weather screens like this.
+
+02:08.200 --> 02:14.060
+I can see its income, which means we can add a list of whatever we want, and I'm going to do that.
+
+02:14.070 --> 02:17.330
+So the first one is going to be a splash screen.
+
+02:18.140 --> 02:28.750
+And the second one, I'm going to have a main screen or such and about screen favorite screens, and
+
+02:29.150 --> 02:31.640
+I'm going to use a settings screen as well.
+
+02:31.670 --> 02:33.950
+Now is it necessary to do this way?
+
+02:34.040 --> 02:40.190
+Not really, but it's always nice to separate the concerns to have one place that is dedicated for all
+
+02:40.190 --> 02:43.520
+of the enumerated screens and so forth, as you will see later.
+
+02:44.330 --> 02:51.110
+It's a way better to do this as opposed to having to add all of these routes, all of these routes in
+
+02:51.110 --> 02:54.200
+our navigations when we are putting everything together.
+
+02:54.770 --> 03:01.790
+OK, so this is really great because then if our app changes our managers, whoever is managing our
+
+03:01.790 --> 03:07.190
+project, they decided that we need to add a different screen is much easier to come here in one place
+
+03:07.490 --> 03:09.500
+and add that screen, etc..
+
+03:10.150 --> 03:10.870
+OK, OK.
+
+03:11.300 --> 03:17.030
+So next, I'm going to create the actual another class here, which is going to be our weather navigation.
+
+03:17.540 --> 03:21.770
+So a class called this weather navigation.
+
+03:23.680 --> 03:23.980
+All right.
+
+03:23.990 --> 03:25.910
+So what is this weather navigation going to do?
+
+03:26.240 --> 03:32.480
+Well, first of all, this weather navigation is going to be the class that will have the nav controller,
+
+03:32.480 --> 03:38.060
+which is going to be a class that comes with compose jetpack compose that will control has the capability
+
+03:38.060 --> 03:42.080
+of controlling the navigation to any screen that we may have.
+
+03:42.590 --> 03:47.450
+So it's going to be a structure that we can create with nav controller, the control that allows us
+
+03:47.450 --> 03:52.880
+to say, OK, now we're a screen a when we click, we want to navigate to screen B and so forth.
+
+03:53.200 --> 04:00.080
+OK, so the first thing we're going to do here, I'm going to say Wow, sat nav controller and it's
+
+04:00.080 --> 04:02.270
+going to be enough controller Typekit like this.
+
+04:03.140 --> 04:09.730
+We're actually going to say he's equal to remember now we're having a problem here because this if you
+
+04:09.740 --> 04:13.160
+have, I was going to say, Well, this has to be inside of a composable.
+
+04:13.340 --> 04:13.940
+That's true.
+
+04:14.180 --> 04:19.790
+That's why I'm going to change this to just a function to say that this is indeed composable.
+
+04:20.180 --> 04:23.030
+Actually, that's not everything that we must do.
+
+04:23.300 --> 04:25.790
+We must also say composable like this.
+
+04:28.280 --> 04:34.700
+OK, now it all works if you have a overegging seat, says creates an IV host controller that handles
+
+04:34.700 --> 04:36.920
+the adding of Decompose Navigator.
+
+04:37.160 --> 04:39.050
+Well, next, what do we need to do?
+
+04:39.080 --> 04:40.910
+We have to control it, but we have to have that.
+
+04:40.910 --> 04:46.430
+Navajos, Navajos, as the name implies, to be the host of all of our composable in this case.
+
+04:46.460 --> 04:49.190
+All of our screens means users can go to.
+
+04:49.610 --> 04:51.780
+So I'm going to say nav hosts.
+
+04:51.800 --> 04:56.030
+As such, we need that nav controller space on a controller, right?
+
+04:56.330 --> 05:04.730
+Because it will need to know how to do things like go to or navigate to X composable or screen.
+
+05:05.180 --> 05:08.960
+Now we're going to have some problems right away because if you have over time, hosts is going to say,
+
+05:08.960 --> 05:15.230
+Well, I need some more information, one of which is I want a starting point, a star destination.
+
+05:15.230 --> 05:21.200
+So I'm going to actually go ahead and say, start destination like this, because then I've hosted needs
+
+05:21.380 --> 05:22.310
+a starting point.
+
+05:22.670 --> 05:26.270
+Where do we start in this whole navigation realm, right?
+
+05:26.570 --> 05:29.690
+What is the first screen I'm going to show to the user?
+
+05:30.290 --> 05:35.710
+Well, in this case, I'm going to say whether I'm going to go use the weather screens, right.
+
+05:35.720 --> 05:36.950
+He needs the route.
+
+05:38.030 --> 05:44.120
+In this case, I want the search, actually is the splash screen not name.
+
+05:45.770 --> 05:50.810
+Notice that we haven't created the actual screen, but we're just adding here this is going to be the
+
+05:50.810 --> 05:55.280
+route was, say, the address to where to get that splash screen.
+
+05:55.490 --> 06:00.920
+Once we done that, then if you see that we now have, let's put this in line.
+
+06:01.700 --> 06:05.810
+You can see now we can create that actual nav graph builder.
+
+06:05.810 --> 06:13.730
+So now we can create the actual screens composable that needs to be attached in our nav host.
+
+06:14.270 --> 06:15.530
+Remember these nav host?
+
+06:15.530 --> 06:22.970
+Think of a place where are we going to put all of these screens because now will know how to host that
+
+06:22.970 --> 06:23.660
+navigation?
+
+06:23.690 --> 06:29.990
+That's why the naming nav host navigation host it hosts all of the navigation.
+
+06:30.380 --> 06:37.400
+We must pass the controller nav controller, so we need to know how to navigate nav control and knows
+
+06:37.400 --> 06:37.970
+how to do that.
+
+06:38.330 --> 06:42.080
+And we have to pass a starting point right at the start destination.
+
+06:42.470 --> 06:45.580
+We start at splash screen and then inside.
+
+06:45.590 --> 06:52.240
+Oh, now in this lambda, this is where we construct our navigation right in the form of composable.
+
+06:52.850 --> 06:55.730
+The first one, I'm going to say composable, right?
+
+06:56.210 --> 06:59.450
+And you can see if you say composable, says Route one pass to route.
+
+06:59.450 --> 07:01.760
+Where is this composable?
+
+07:03.080 --> 07:04.010
+That we want to go to.
+
+07:05.540 --> 07:12.560
+Right then I'm going to say weather again, actually weather screens when a splash screen name, just
+
+07:12.560 --> 07:13.390
+like what we did here.
+
+07:13.400 --> 07:17.900
+So here we are saying the start, this is going to be this rout, but now we're going to create an actual
+
+07:17.900 --> 07:22.520
+composable that needs to be shown when we hit, they start this nation.
+
+07:24.030 --> 07:26.970
+OK, and then, of course, another lambda here it is composable.
+
+07:27.270 --> 07:33.300
+This is where then I'm going to create the actual composable, the actual screen.
+
+07:33.660 --> 07:41.490
+So when say, whether we haven't created this splash screen like that and I'm going to pass it and have
+
+07:41.490 --> 07:44.160
+controller because we will need that later?
+
+07:45.330 --> 07:45.570
+OK.
+
+07:46.450 --> 07:46.620
+Right.
+
+07:46.680 --> 07:47.610
+So they will go.
+
+07:47.700 --> 07:48.630
+So we don't have that.
+
+07:48.630 --> 07:50.130
+We can create that rule inside.
+
+07:50.130 --> 07:52.920
+I'm going to combine and create a new in class.
+
+07:53.490 --> 07:59.100
+It's going to be a file is going to be composable and I'm going to pasting the name that I just created,
+
+07:59.100 --> 08:05.130
+whether splash screen actually has to be splash and splash like that.
+
+08:05.880 --> 08:07.320
+And I'm going to create a composable.
+
+08:07.620 --> 08:14.160
+Yes, it is indeed a composable such a fun and I'm going to use the same name.
+
+08:14.160 --> 08:14.790
+That's fine.
+
+08:17.870 --> 08:20.270
+And then here I'm going to pass enough controller.
+
+08:25.710 --> 08:28.140
+Like that, that's the type that's needed in my.
+
+08:28.860 --> 08:30.340
+So for now, I'm just going to port.
+
+08:30.390 --> 08:31.290
+I had a text.
+
+08:32.540 --> 08:34.320
+A very sad text, it says.
+
+08:36.300 --> 08:38.280
+Splash screen like this?
+
+08:40.230 --> 08:44.560
+Let's go back to the controller like that, everything should be good.
+
+08:47.600 --> 08:53.210
+Right when I say splash like this, splash with an Asian.
+
+08:54.290 --> 08:57.800
+And we have to import locally whether a splash screen.
+
+08:59.480 --> 09:03.050
+Let's type again, weather splash screen.
+
+09:07.720 --> 09:10.640
+That's because I didn't change there as well.
+
+09:10.670 --> 09:11.020
+OK.
+
+09:12.420 --> 09:15.720
+Let's say whether splash screen like this.
+
+09:15.930 --> 09:16.290
+Very good.
+
+09:16.980 --> 09:19.680
+OK, so just quick recap here what we've done.
+
+09:20.040 --> 09:22.500
+We created this weather navigation composable.
+
+09:22.920 --> 09:26.640
+This is going to host all of the navigation that we need to do in our app.
+
+09:26.940 --> 09:34.470
+And notice that I created this inam here just for simplicity, where I list out all of the possible
+
+09:34.470 --> 09:35.580
+screens we're going to need.
+
+09:36.030 --> 09:39.530
+First one is going to be a splash screen, which, as you see, we've just use that.
+
+09:39.600 --> 09:42.090
+So we created this weather navigation.
+
+09:42.090 --> 09:47.520
+We have to have enough controller, which controls the whole navigation allows us to say, OK, let's
+
+09:47.520 --> 09:50.560
+go navigate to X screen, right?
+
+09:51.150 --> 09:54.240
+And all of that is being driven instead of a nav host.
+
+09:54.240 --> 09:55.080
+It's our nav host.
+
+09:55.080 --> 10:01.530
+We have to pass that nav controller because it needs that control to know how to navigate to X screen,
+
+10:01.980 --> 10:03.840
+and we have to pass a starting destination.
+
+10:03.870 --> 10:07.650
+Where do we start in this in this navigation?
+
+10:07.680 --> 10:11.330
+Well, we start at splash screen, but that's not everything.
+
+10:11.340 --> 10:13.710
+Then inside we create the actual graph.
+
+10:13.860 --> 10:18.610
+This is inside of our nav host because our nav host hosts all of navigation.
+
+10:18.660 --> 10:20.130
+What are these navigation?
+
+10:20.370 --> 10:22.530
+Well, these are composable just screens.
+
+10:22.860 --> 10:23.970
+So we see composable.
+
+10:23.970 --> 10:25.830
+We pass the route.
+
+10:25.980 --> 10:26.900
+In this case throughout.
+
+10:26.910 --> 10:28.080
+It's going to be weather screen.
+
+10:28.080 --> 10:29.010
+Splash that name.
+
+10:29.340 --> 10:29.610
+OK.
+
+10:29.760 --> 10:30.870
+This is the best way to do it.
+
+10:31.230 --> 10:36.990
+And then we construct and then we pass the actual screen and composable where we can show.
+
+10:37.290 --> 10:40.620
+In this case, we just have a text splash screen.
+
+10:42.940 --> 10:43.340
+All right.
+
+10:43.850 --> 10:44.660
+That's all we doing.
+
+10:44.900 --> 10:50.180
+And this is wonderful, that means every time we want to add a new screen, we can go to our weather
+
+10:50.180 --> 10:50.540
+screen.
+
+10:50.540 --> 10:54.020
+We add that screen here, right just as an inch.
+
+10:54.680 --> 11:01.970
+And then our weather navigation, you can create the same thing and that composable can copy that and
+
+11:01.970 --> 11:02.800
+paste it all here.
+
+11:02.840 --> 11:08.540
+Change the route here instead of splash screen could be something else, as you will see, and then
+
+11:08.540 --> 11:14.750
+create the actual composable, which in this case, we created a splash screen like this obviously will
+
+11:14.750 --> 11:17.750
+create something new to where users can go to.
+
+11:18.410 --> 11:19.670
+All right, I'm going to get rid of this.
+
+11:20.090 --> 11:22.970
+And that's the structure that we need to put together.

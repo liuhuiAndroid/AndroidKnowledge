@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00.360 --> 00:06.770
+All right, so now let's create our repository, so let's go to a repository and create in your class
+
+00:07.260 --> 00:12.090
+just a normal class that's called, let's say, book repository.
+
+00:13.710 --> 00:19.500
+And this repository, we're going to inject our Dow or our book API, right, makes sense because we
+
+00:19.500 --> 00:21.630
+need that so we can access the data.
+
+00:22.260 --> 00:23.790
+So when they say at inject.
+
+00:25.980 --> 00:35.940
+This constructor and I'm going checked for private Val API, which is going to be our books API.
+
+00:37.290 --> 00:37.550
+OK.
+
+00:38.010 --> 00:38.330
+Right?
+
+00:38.370 --> 00:45.480
+So inside here, I'm going to create a suspend function again and say, get books, so get books.
+
+00:45.510 --> 00:50.580
+Of course, going to call the get books or get all books from our books API.
+
+00:51.060 --> 00:55.440
+So this is the public interface per se of our books API.
+
+00:57.790 --> 01:01.000
+So I'm going to pass into the search query term.
+
+01:02.160 --> 01:08.340
+And it's going to be just a string, and it's going expect to we're going to expect to receive a list
+
+01:08.910 --> 01:10.500
+containing items.
+
+01:11.010 --> 01:15.090
+OK, now why is it a list containing item this item here?
+
+01:15.120 --> 01:16.560
+Let's go ahead and import.
+
+01:17.660 --> 01:20.870
+It's going to be our item model there.
+
+01:21.440 --> 01:22.220
+Why is that?
+
+01:22.490 --> 01:23.690
+Me just finalized, is this.
+
+01:24.140 --> 01:25.250
+What we need this?
+
+01:25.250 --> 01:29.510
+Because remember when everything comes in, this is the list.
+
+01:29.570 --> 01:35.570
+Actually, they will contain the volume info which contains the information about the book or the books
+
+01:35.570 --> 01:36.090
+in this case.
+
+01:36.090 --> 01:41.390
+So it's going to have a list of all of these items, meaning we're going to get a list of all of this.
+
+01:42.720 --> 01:43.710
+Which is what we want.
+
+01:45.170 --> 01:50.390
+So when we return, we're we're getting this case, there's going to be a list of items, as we said,
+
+01:51.200 --> 01:56.300
+this would work, OK, but we need to be a little bit more clever because the idea really, especially
+
+01:56.300 --> 02:04.520
+when we getting information from somewhere database or a server API and so forth, we want to be able
+
+02:04.520 --> 02:11.240
+to wrap it around a different wrapper class, which will allow us to add more information about that
+
+02:11.240 --> 02:19.220
+data, which means let's say we want to check to see if as we get this information, these books to
+
+02:19.220 --> 02:27.860
+see if the loading status is loading or not loading or downloading, or if it's their loading status
+
+02:28.130 --> 02:31.160
+is idle or running and so forth, right?
+
+02:31.190 --> 02:32.990
+Or maybe there are exceptions.
+
+02:32.990 --> 02:39.530
+Something happened, and we want to know that there's no way for us to get to add or attach that information
+
+02:39.770 --> 02:41.960
+in a list such as such thing.
+
+02:42.200 --> 02:46.490
+So we're going to create we're going to use a wrapper class that we're going to create, which will
+
+02:46.490 --> 02:53.030
+allow us to not only wrap this information, which is important, but we can wrap other things such
+
+02:53.030 --> 02:55.100
+as OK, if it's loading, right?
+
+02:55.100 --> 03:01.820
+A bullion and an exception in any other thing we want when we get this information from the API.
+
+03:02.720 --> 03:07.220
+So what I'm going to do is instead of a data here, I'm going to create yet another class.
+
+03:08.360 --> 03:12.230
+It's going to be just a class and it's going to be a data class, actually.
+
+03:13.800 --> 03:19.650
+Let's call this data or exception as such, so.
+
+03:19.950 --> 03:26.070
+So the types that I'm going to pass in our data or exception are going to be T in this case, T for
+
+03:26.070 --> 03:26.550
+template.
+
+03:26.550 --> 03:27.660
+So this is generics.
+
+03:27.840 --> 03:32.640
+So this can be anything we want could be a list of items, which is what we're going to be using.
+
+03:32.970 --> 03:34.770
+Could be just strings, could be whatever we want.
+
+03:35.100 --> 03:42.810
+And then we're going to pass a Boolean because we want to check or to keep track of whether we're loading
+
+03:42.810 --> 03:43.260
+or not.
+
+03:43.800 --> 03:44.010
+Right?
+
+03:44.400 --> 03:45.800
+And then I'm going to pass an exception.
+
+03:45.810 --> 03:50.400
+E is going to be just an exception, a general exception like this.
+
+03:51.540 --> 03:55.800
+And then, you know, constructor here, I'm going to say, fine, it's going to be data.
+
+03:55.980 --> 03:59.910
+So data is going to be the type that we passing along and could be.
+
+04:01.020 --> 04:02.580
+And it could also be null.
+
+04:03.390 --> 04:05.420
+And then I'm going to create the Boolean.
+
+04:05.460 --> 04:08.130
+So this is going to be loading code name, whatever you want.
+
+04:08.460 --> 04:10.170
+It's going to be a Boolean type.
+
+04:11.310 --> 04:18.570
+And I'm going to also say this is not and VAR E. That's going to be the exception, and that could also
+
+04:18.570 --> 04:19.080
+be null.
+
+04:20.580 --> 04:21.570
+All right, there we go.
+
+04:21.660 --> 04:25.740
+So this will allow us then say, for instance, data or exception.
+
+04:26.370 --> 04:31.100
+When we get information, we're going to attach to our data variable, which is going to be any type,
+
+04:31.220 --> 04:33.540
+be a string list or whatever we want.
+
+04:33.930 --> 04:40.530
+And then we can say, Oh, by the way, as we wrap this information, this data list of books, in this
+
+04:40.530 --> 04:43.380
+case, we also want attach loading status.
+
+04:43.470 --> 04:44.310
+Oh, it's loading.
+
+04:45.060 --> 04:45.570
+It's true.
+
+04:45.600 --> 04:45.930
+Great.
+
+04:46.350 --> 04:49.050
+Well, we also are going to attach an exception if that happens.
+
+04:50.450 --> 04:50.740
+OK.
+
+04:51.020 --> 04:57.320
+So now, instead of going this way, I'm going to say something like data or exception.
+
+04:58.190 --> 04:58.670
+And.
+
+05:00.660 --> 05:07.890
+Wrap all of this inside as such, and then of course, we'll have to negotiate it actually, before
+
+05:07.890 --> 05:11.610
+we do that, let's just continue here because we pass.
+
+05:13.000 --> 05:18.460
+So the first is going to be in a list of items in that next we're going to pass what?
+
+05:18.970 --> 05:21.460
+Well, we can pass a Boolean here to say Boolean.
+
+05:23.080 --> 05:25.570
+And then for the exception, let's put this in the new line.
+
+05:25.570 --> 05:26.560
+Maybe it's going to be better.
+
+05:27.220 --> 05:31.000
+And then for the exception, I'm just going to say exception like this.
+
+05:31.840 --> 05:37.450
+It looks like overkill, too much going on, but this is the way you should always do because like I
+
+05:37.450 --> 05:43.040
+said, we can attach more information, not just the list at the top of my career.
+
+05:43.060 --> 05:53.680
+Another private val called data or exception type here and set that to data or exception just to initialize
+
+05:53.680 --> 05:53.890
+it.
+
+05:54.490 --> 06:01.300
+And we're past a list of items, our items, by the way.
+
+06:02.050 --> 06:08.530
+And then I'm going to pass a Boolean and then I'll have an exception type like this.
+
+06:09.160 --> 06:12.400
+I can then at some point say data or exception.
+
+06:12.670 --> 06:18.340
+To look at this, I can attach into our data type a list expecting a list of items.
+
+06:18.910 --> 06:24.320
+I can also say data dot e for exception is a data dot.
+
+06:24.580 --> 06:29.340
+Loading and say is equal to true something like that if it's loading.
+
+06:29.680 --> 06:30.050
+All right.
+
+06:30.130 --> 06:31.840
+So this gives us that flexibility.
+
+06:32.260 --> 06:32.590
+All right.
+
+06:33.040 --> 06:35.530
+So this is exactly what we're going to do inside.
+
+06:35.770 --> 06:38.320
+I'm going to say throw, get books.
+
+06:38.860 --> 06:44.620
+Let's say, try and catch exception.
+
+06:47.740 --> 06:52.310
+All right, so we're going to try first, so here I'm going to say data or exception because we are
+
+06:52.430 --> 06:53.780
+starting everything.
+
+06:54.110 --> 06:54.590
+And what's it?
+
+06:54.590 --> 07:01.100
+Loading I'm going to say to try to say Yes, it is loading and then I'm going to say data or exception.
+
+07:01.220 --> 07:09.710
+That data, I'm going to say is equal to say that to our API, which is going to be our books API Dot,
+
+07:09.710 --> 07:12.770
+get all books and pass the query.
+
+07:13.070 --> 07:15.980
+In this case, it's going to be the search query like this.
+
+07:16.280 --> 07:22.640
+But for that, then again, to say that get items, which is like the list items that we need and what
+
+07:22.640 --> 07:25.850
+I can also do here, I can say if our data.
+
+07:28.060 --> 07:34.870
+Data or exception that lets it data, let's see data or exception.
+
+07:37.790 --> 07:42.830
+Let's get the actual data or exception right to that data.
+
+07:43.760 --> 07:46.820
+If that is empty.
+
+07:48.460 --> 07:50.590
+Or actually is not empty, right?
+
+07:52.540 --> 07:56.120
+Perhaps we need to do like this, right?
+
+07:56.680 --> 07:59.560
+If not empty, then I can say data or exception.
+
+07:59.980 --> 08:03.100
+That loading said that to false.
+
+08:04.930 --> 08:12.160
+What this does is that if we're checking in our front end and our composable, if we are still loading,
+
+08:12.460 --> 08:16.390
+if it's false, then we can stop, for instance, this circle indicator, right?
+
+08:16.780 --> 08:24.520
+And so for our exception here, I'm just going to actually say data dot for exception, I'm going to
+
+08:24.520 --> 08:25.000
+pass.
+
+08:25.240 --> 08:27.190
+Well, this exception that we're getting.
+
+08:28.140 --> 08:33.300
+And then I brought him here, we're going to return not all list, we're going to return our data or
+
+08:33.300 --> 08:40.620
+exception as a whole object because we are going to be able to say check not just for the actual list,
+
+08:40.950 --> 08:42.330
+then check for loading.
+
+08:42.660 --> 08:45.300
+Or the exception if there is indeed an exception.
+
+08:45.660 --> 08:53.010
+And while we're here, I can create another suspend function, which is going to be for when we want
+
+08:53.010 --> 09:04.950
+to get book information somewhere, suspend, get book info such they have to pass, book ID string.
+
+09:05.880 --> 09:10.860
+And here we're going to do the same thing data or exception in a pass.
+
+09:11.280 --> 09:16.290
+We want an item book like this.
+
+09:18.570 --> 09:21.540
+And voila, it looks like this is not looking good.
+
+09:21.570 --> 09:22.020
+Oh, right.
+
+09:22.050 --> 09:23.850
+Because they need to pass other things as well.
+
+09:24.330 --> 09:33.780
+So pass a bullion and pass an exception so we can see data or exception in this case and say dot loading
+
+09:34.860 --> 09:37.530
+is equal to true.
+
+09:40.700 --> 09:50.510
+And then I'm just going to say API Dot, get info, books and parks, book ID, such.
+
+09:53.280 --> 10:02.130
+And in this case, two separate things here, it can create yet another terror or exception just for
+
+10:02.130 --> 10:02.890
+this other guy.
+
+10:02.910 --> 10:06.930
+They read about it doesn't matter, but let's see.
+
+10:10.330 --> 10:14.650
+Say book info data.
+
+10:16.930 --> 10:26.500
+Book you full day, no exception, think it's better in this, we'll expect, of course, just an item,
+
+10:26.500 --> 10:27.250
+not a list.
+
+10:29.290 --> 10:30.190
+So we can use that.
+
+10:30.610 --> 10:35.440
+So with that, then we can specialize everything into one, so now I can just use that.
+
+10:36.460 --> 10:41.800
+For loading and then I can say our book for that data.
+
+10:42.880 --> 10:49.780
+It's going to set to that perspective just to list, OK, then here and then say, even if I want to
+
+10:49.780 --> 10:53.140
+can say if book info.
+
+10:54.920 --> 10:57.380
+That data is.
+
+10:59.890 --> 11:06.060
+Say that to strain and is not empty.
+
+11:07.050 --> 11:12.410
+That's the case once it data or book you for that exception.
+
+11:13.920 --> 11:17.130
+Loading said that to false because we don't.
+
+11:18.750 --> 11:28.770
+And then else and when it's exceptional when, say, book info, data, pass the E and just pass our
+
+11:28.770 --> 11:31.260
+E that we getting from our exception there.
+
+11:32.160 --> 11:32.430
+All right.
+
+11:32.540 --> 11:32.720
+All right.
+
+11:32.760 --> 11:39.660
+So we have this setup should be ready for us to use whenever we are ready to use our repository, but
+
+11:39.930 --> 11:45.090
+really consider using this Kleenex architecture as such, because then as you see, it allows you to
+
+11:45.090 --> 11:49.800
+add more metadata to our payload that we're getting from our response.

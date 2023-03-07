@@ -1,0 +1,370 @@
+WEBVTT
+
+00:00.270 --> 00:06.300
+They imagined I have this sentence here that says if amount is equal to a thousand, then you are wealthy
+
+00:06.300 --> 00:08.310
+else, you aren't getting by just fine.
+
+00:08.520 --> 00:14.700
+The idea is I want to transform this sentence here into a branch of computer programming.
+
+00:14.730 --> 00:18.920
+I want to compare in number if the number is equal to thousand.
+
+00:19.050 --> 00:20.250
+Then I want to print something.
+
+00:20.250 --> 00:21.210
+I say you're wealthy.
+
+00:21.270 --> 00:25.740
+If that number is not equal to a thousand, when I say you are getting by, just fine.
+
+00:25.770 --> 00:26.460
+How do we do that?
+
+00:26.610 --> 00:29.020
+Well, the idea of branching is very interesting.
+
+00:29.100 --> 00:32.580
+There is another variable that we haven't talked about.
+
+00:32.760 --> 00:34.440
+This variable is called a bullion.
+
+00:34.440 --> 00:41.070
+A bullion is just like a bit right in that it holds either true or false.
+
+00:41.190 --> 00:46.740
+And when we talk about conditions and when we talk about a branching that is the center of everything
+
+00:46.740 --> 00:51.960
+because we are comparing two things or more things and then hoping for a result, right?
+
+00:51.960 --> 00:54.090
+And the result is either going to be true or false.
+
+00:54.360 --> 00:54.630
+Right.
+
+00:54.810 --> 00:56.970
+You either have a thousand dollars or not.
+
+00:57.270 --> 01:01.650
+Of course, there's some other intricacies in between, of course, but the basis of everything here
+
+01:01.650 --> 01:06.560
+is that we have to have this condition in order to have a condition we are expecting to have a result
+
+01:06.570 --> 01:06.660
+of.
+
+01:06.660 --> 01:08.900
+This result is indeed a bullion white.
+
+01:09.090 --> 01:11.340
+That's what's going to regulate this condition.
+
+01:11.610 --> 01:17.670
+So in codling, we can say if, write, hit, enter and then we have the parentheses inside here will
+
+01:17.670 --> 01:19.230
+could pass in an expression.
+
+01:19.320 --> 01:24.000
+So instead of this parentheses, we're going to add the condition if what then to what?
+
+01:24.330 --> 01:26.400
+That's where the condition goes.
+
+01:26.430 --> 01:34.170
+So when I say if amount is equal, how do we say equal while equal, we use double equal sign to say
+
+01:34.170 --> 01:36.870
+equal right amount is equal to a thousand.
+
+01:37.080 --> 01:39.300
+Now we have a problem here, but we'll fix that.
+
+01:39.340 --> 01:42.090
+Then we're going to run a certain code block.
+
+01:42.300 --> 01:45.550
+So we put inside of curly braces like that.
+
+01:45.570 --> 01:50.490
+So if this expression here returns true, then whatever it's inside here will run and then we can say
+
+01:50.490 --> 01:52.480
+else that create another block.
+
+01:52.500 --> 01:53.190
+This will run.
+
+01:53.520 --> 01:56.520
+Let's create this amount of value so we can drive everything.
+
+01:56.520 --> 01:59.460
+So say amount is equal to 900.
+
+01:59.760 --> 02:06.390
+OK, so inside here I'm going to say print, you are getting by else and I say print.
+
+02:06.690 --> 02:08.880
+Actually, I'm sorry this goes down here.
+
+02:09.180 --> 02:10.620
+I just put it there.
+
+02:10.830 --> 02:15.300
+And then here and then say, Print, you are wealthy.
+
+02:15.870 --> 02:19.560
+OK, let's go ahead and run and see, and you can see you're getting by.
+
+02:19.590 --> 02:20.370
+Why is that?
+
+02:20.520 --> 02:26.280
+Well, the reason being is because the amount of value is not high, so it's not equal to a thousand.
+
+02:26.370 --> 02:28.380
+It's less in this case than 100.
+
+02:28.620 --> 02:28.890
+OK.
+
+02:29.130 --> 02:32.850
+So that's why print you are getting by, it's going to run.
+
+02:33.120 --> 02:35.390
+This is never run high.
+
+02:35.400 --> 02:36.900
+So we branched now.
+
+02:37.350 --> 02:43.620
+If statement we were able to branch to make sure that one thing runs, if it's true, if it's false,
+
+02:43.620 --> 02:47.040
+that thing does run, we branch out to another statement.
+
+02:47.190 --> 02:50.980
+This is a very simple example, but it is a very crucial.
+
+02:51.000 --> 02:58.800
+And one of the most basics of computer science of programs in general, because all we're doing, we're
+
+02:58.800 --> 03:00.330
+comparing data in this case.
+
+03:00.330 --> 03:00.960
+What is data?
+
+03:01.080 --> 03:02.190
+This is our data.
+
+03:02.250 --> 03:02.800
+900.
+
+03:02.800 --> 03:04.490
+The amount is data we're comparing.
+
+03:04.500 --> 03:08.880
+OK, if amount is equal to a thousand this case, this is very simplistic, of course, then you are
+
+03:08.880 --> 03:09.290
+wealthy.
+
+03:09.300 --> 03:11.190
+If that's not true, then this happened.
+
+03:11.250 --> 03:16.590
+Right now, I can go further to say before this &amp;lsquo, this is the last resort.
+
+03:16.680 --> 03:26.400
+I can also add here and else, if such if amount is greater than or equal to 1000, this is when I'm
+
+03:26.400 --> 03:27.240
+going to say print.
+
+03:27.630 --> 03:30.750
+Wow, you are very wealthy.
+
+03:30.880 --> 03:32.930
+This one this what do you think is going to happen?
+
+03:32.940 --> 03:36.030
+Obviously, the same thing's going to happen because you are getting by.
+
+03:36.030 --> 03:37.470
+It's a 900 now.
+
+03:37.470 --> 03:38.970
+If I say 1000.
+
+03:39.090 --> 03:40.570
+It's saying, here you're wealthy.
+
+03:40.590 --> 03:41.070
+Why?
+
+03:41.100 --> 03:45.840
+Because the first if statement was safe, amount is equal to 1000.
+
+03:46.020 --> 03:47.760
+It's going to say you're wealthy.
+
+03:47.940 --> 03:52.350
+This amount here 1000, it's only equal to 1000.
+
+03:52.350 --> 03:55.010
+It's not greater than or equal to.
+
+03:55.020 --> 03:57.180
+That's why this never runs doesn't make sense.
+
+03:57.360 --> 04:01.890
+So in this case here, we want to always to see this running.
+
+04:01.920 --> 04:04.300
+That means they will have to change the logic here.
+
+04:04.320 --> 04:08.400
+So going to just get rid of all of this altogether, because that's not needed because they will cover
+
+04:08.520 --> 04:14.370
+both a person who has 1000 or and a person who has over 1000.
+
+04:14.610 --> 04:14.850
+Right.
+
+04:15.070 --> 04:16.380
+So that will cover what we want.
+
+04:16.590 --> 04:20.370
+So now if I write this, we should see, Wow, you're very wealthy.
+
+04:20.520 --> 04:20.850
+All right.
+
+04:21.120 --> 04:27.540
+Now, if you want to create a more branched tree, here we can use the when expression.
+
+04:28.170 --> 04:33.480
+OK, so I can say something like this when and then I'm going to pass the value that's going to be controlling
+
+04:33.480 --> 04:35.760
+this entire condition, right?
+
+04:36.000 --> 04:37.330
+Which is amount.
+
+04:37.350 --> 04:43.800
+So now we can say here, if a mount, for instance, is $1, you know, we have a breath of conditions
+
+04:43.800 --> 04:45.240
+that we can catch.
+
+04:45.720 --> 04:49.530
+We can even say if it's 100, the amount that is past, it's 100.
+
+04:49.530 --> 04:53.850
+We can say dash great and sign like there's an arrow, right?
+
+04:54.150 --> 04:57.240
+When, say, print, you have 100.
+
+04:57.600 --> 04:59.700
+I can continue if it's one.
+
+05:00.800 --> 05:07.910
+Or I can even say 125 and say, print, you are getting there, right?
+
+05:07.920 --> 05:13.400
+I can continue for many, many, many other numbers so I can catch in this case when we use the one
+
+05:13.400 --> 05:18.050
+expression, we have this possibility of catching many different cases, right?
+
+05:18.140 --> 05:23.510
+So I can even go 999 print really close.
+
+05:23.750 --> 05:30.410
+And then I'm going to say a thousand print rich, but not there and anything over.
+
+05:30.710 --> 05:32.870
+Let's say something like that.
+
+05:33.230 --> 05:35.900
+I say print, you've made it.
+
+05:36.920 --> 05:42.560
+And here I can say else in, you know, the case I can just say, can pass here an expression.
+
+05:42.560 --> 05:50.150
+If we wanted to also say print can say amount, right and put that same amount.
+
+05:50.480 --> 05:53.880
+It's just not going to work something like that.
+
+05:53.960 --> 05:54.170
+OK.
+
+05:54.380 --> 06:00.320
+So this is just an example to show you that when we use the when expression, we can catch more conditions
+
+06:00.320 --> 06:00.560
+here.
+
+06:00.560 --> 06:01.890
+So if the amount is 100.
+
+06:01.910 --> 06:03.730
+This will print it down to five.
+
+06:03.740 --> 06:05.270
+This will print nine hundred ninety nine.
+
+06:05.270 --> 06:06.560
+This will print and so forth.
+
+06:06.950 --> 06:12.590
+You comment this out, you know it's going Randy's going to see rich, but not there because of course,
+
+06:12.590 --> 06:14.800
+we have one thousand and one thousand.
+
+06:14.810 --> 06:17.210
+It's this one is going to say which we're not there.
+
+06:17.360 --> 06:17.690
+All right.
+
+06:18.050 --> 06:23.210
+So this is the beginning of an amazing journey when it comes to programming, because then you will
+
+06:23.210 --> 06:29.060
+see you have a lot of options, a lot of things you can do to create this branching right using an if
+
+06:29.060 --> 06:29.510
+statement.
+
+06:29.930 --> 06:33.080
+And of course, in this case, also when expression here.
+
+06:33.380 --> 06:36.050
+OK, so what I want to do is to play around with this concept.
+
+06:36.140 --> 06:41.730
+Think, for instance, of an expression that you want to branch, right?
+
+06:41.780 --> 06:46.520
+So let's say if age is ten years old, you want to print X.
+
+06:46.520 --> 06:52.550
+If ages 12, you want to print Y and so forth so you can get used to using when.
+
+06:52.850 --> 06:55.460
+And of course, the if expression as well.

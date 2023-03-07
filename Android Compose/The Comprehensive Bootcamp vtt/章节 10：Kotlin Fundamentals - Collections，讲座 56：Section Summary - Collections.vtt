@@ -1,0 +1,100 @@
+WEBVTT
+
+00:01.020 --> 00:02.950
+So in this section, we have learned a lot.
+
+00:03.000 --> 00:09.720
+We've talked about collections, we now understand what a collection is and most importantly, we understand
+
+00:09.720 --> 00:12.960
+that there are immutable and immutable collections, right?
+
+00:13.110 --> 00:19.020
+So we learn how to invoke methods on lists in this case or a collection to do things for us.
+
+00:19.030 --> 00:21.990
+All of these comes with Coughlin, which is really helpful.
+
+00:22.350 --> 00:27.850
+We learn about sets, which is another type of collection, so it sets and maps and lists.
+
+00:28.740 --> 00:30.720
+We learn how to initialize the lists.
+
+00:30.760 --> 00:33.750
+We also learn how to create empty collections.
+
+00:34.230 --> 00:39.360
+And the last thing we did was learning how to use filters in the collection, which is really powerful,
+
+00:39.360 --> 00:46.320
+because then you can cipher through a bunch of data to find certain item or items, for that matter.
+
+00:46.800 --> 00:50.800
+So when it comes to collections in Scotland, especially, there's so much you can do.
+
+00:50.850 --> 00:55.800
+There's an article I found online called Scotland Collection Functions Cheat Sheet.
+
+00:56.370 --> 00:57.810
+So this is really helpful.
+
+00:58.350 --> 01:00.450
+It's really popular, as you can see here.
+
+01:01.200 --> 01:07.450
+So I would really recommend you actually go and look for this article.
+
+01:07.470 --> 01:11.460
+In fact, I'll have a link and the resources for you to take a look.
+
+01:11.730 --> 01:12.690
+If not, you can just go.
+
+01:12.690 --> 01:15.540
+And Google Scotland collection functions cheat sheet.
+
+01:15.990 --> 01:21.330
+The writer really takes the time to explain everything about collections in Scotland and many things
+
+01:21.330 --> 01:23.640
+that he can do with collections.
+
+01:23.940 --> 01:28.800
+So it's very thorough and I think it will be worth your time.
+
+01:29.130 --> 01:35.160
+So go through it, and at the bottom of this article, you will have the actual cheat sheet.
+
+01:35.580 --> 01:38.190
+So let's go down and you can have there.
+
+01:38.190 --> 01:41.890
+It is a cheat sheet and you can magnify it so he can take a look.
+
+01:41.910 --> 01:47.970
+So I really encourage you to take a look at this for, if anything, just so you know the possibilities
+
+01:48.720 --> 01:50.640
+with collections and Coughlin.
+
+01:51.030 --> 01:52.020
+OK, very good.
+
+01:52.260 --> 01:52.890
+Have fun.
+
+01:52.890 --> 01:59.490
+I enjoy collections because it is just so much fun, especially when you start creating more advanced
+
+01:59.490 --> 02:00.780
+programs or applications.
+
+02:00.780 --> 02:02.460
+It's it's really it really gets fun.
+
+02:02.880 --> 02:03.930
+OK, very good.
+
+02:04.290 --> 02:05.220
+I'll see you next time.

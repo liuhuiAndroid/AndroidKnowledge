@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00.330 --> 00:08.190
+Also, in extreme cases that we may need, will in large numbers we can use along along size bit is
+
+00:08.190 --> 00:09.600
+64 bits.
+
+00:09.690 --> 00:11.400
+That's extremely, extremely large.
+
+00:11.700 --> 00:15.720
+Now here's one thing all variables initialized with the interim value.
+
+00:15.720 --> 00:23.220
+So if I say, for instance, a foul number like this and when I set this to one automatically, this
+
+00:23.220 --> 00:27.870
+is an integer because we are explicitly saying that number will hold one.
+
+00:27.990 --> 00:28.800
+So it's an integer.
+
+00:28.920 --> 00:38.940
+However, if I for some reason end up saying something like this foul and I say one long and give it
+
+00:38.970 --> 00:40.800
+say one and add L.
+
+00:41.190 --> 00:43.500
+This is no longer an integer, right?
+
+00:43.500 --> 00:47.670
+This one long here is actually going to be a long value.
+
+00:47.940 --> 00:48.510
+Same thing.
+
+00:48.510 --> 00:54.510
+If I went to and say, well, this is no longer an integer because this will be represented internally
+
+00:54.510 --> 00:55.200
+as along.
+
+00:55.470 --> 00:56.430
+So if you put an L?
+
+00:56.550 --> 00:58.740
+That would mean this is a long value.
+
+00:59.100 --> 00:59.340
+OK.
+
+00:59.670 --> 01:05.640
+But the great thing about codling is that all variables initialize integer values not exceeding the
+
+01:05.640 --> 01:07.580
+maximum value of integers.
+
+01:07.600 --> 01:11.130
+In this case, 32 bits have the inferred type int.
+
+01:11.350 --> 01:11.620
+Right.
+
+01:11.640 --> 01:15.060
+So if the initial value exceeds this value, then the type is long.
+
+01:15.270 --> 01:15.610
+All right.
+
+01:15.630 --> 01:22.050
+So we can specify the type putting L to say this is a long or it will be inferred if the value we are
+
+01:22.050 --> 01:26.970
+adding here is really large bigger than what integer could fit.
+
+01:27.690 --> 01:33.570
+So the moral of the story is that if you really need big, big numbers, of course you going to use
+
+01:33.840 --> 01:34.390
+longs.
+
+01:34.560 --> 01:37.710
+But I guess in most cases, you'll be fine with the integers.
+
+01:37.950 --> 01:38.310
+All right.
+
+01:39.150 --> 01:44.280
+A lot of theory, but I think it's important at least to have some ideas of what these types do and
+
+01:44.280 --> 01:45.060
+what they carry.
+
+01:45.240 --> 01:50.130
+And of course, I'm not going into full details of these these concepts, but what it can do, we can
+
+01:50.130 --> 01:55.260
+actually do some research about coddling types of basic types as they called, and you can learn more
+
+01:55.260 --> 01:55.680
+about them.

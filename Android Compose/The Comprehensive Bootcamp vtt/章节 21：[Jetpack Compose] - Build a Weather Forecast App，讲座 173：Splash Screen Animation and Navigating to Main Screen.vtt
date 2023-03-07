@@ -1,0 +1,565 @@
+WEBVTT
+
+00:00.360 --> 00:04.530
+Splash screen is looking really good, but traditionally the splash screen has to splash.
+
+00:04.650 --> 00:10.560
+That's why it's a splash screen, which means you should either have some sort of animation that terminates
+
+00:10.560 --> 00:17.460
+into the next screen, or it should just show for a little bit and then go to the next screen.
+
+00:17.640 --> 00:20.100
+Either way, it should not stay there.
+
+00:20.580 --> 00:21.310
+So how do we do that?
+
+00:21.330 --> 00:25.010
+Well, what are we going to do is we're going to create a splash screen.
+
+00:25.020 --> 00:30.510
+In a sense, we're going to have an animation that will kind of enhance this image and then retract.
+
+00:31.350 --> 00:36.270
+And then once that animation is over, we're going to then navigate to the main screen.
+
+00:37.280 --> 00:37.580
+All right.
+
+00:38.180 --> 00:40.880
+So back to our animation right there.
+
+00:41.120 --> 00:43.840
+I should say back to our weather splash screen there.
+
+00:44.540 --> 00:46.820
+What are we going to do here is at the top?
+
+00:47.450 --> 00:52.490
+First of all, let's go ahead and get rid of unnecessary things here.
+
+00:52.490 --> 00:53.930
+Remove redundant qualifier.
+
+00:54.740 --> 00:59.840
+So at the top of our function weather function here, I'm going to create a variable.
+
+01:00.530 --> 01:02.270
+It's going to be viral scale.
+
+01:02.420 --> 01:03.450
+So what is this scale?
+
+01:03.470 --> 01:10.220
+Well, the scale is going to be used to control the state of our animation, but most importantly,
+
+01:10.400 --> 01:16.880
+the scaling of this structure that we created because we want to create this scale effect that scales
+
+01:16.880 --> 01:17.810
+up and down.
+
+01:18.410 --> 01:22.970
+So we're going to put that into a variable, but not just any variable when it leaves, remember?
+
+01:23.780 --> 01:28.990
+So much so that the composable function will know how to deal with this, right?
+
+01:29.700 --> 01:36.590
+We will know to be triggered to change to recompose if changes are noticed in this variable, right?
+
+01:37.070 --> 01:43.700
+And then I'm going to use another type here called Animated Table, or I need a table that one.
+
+01:44.420 --> 01:47.460
+And then inside, I'm going to pass the initial value.
+
+01:47.480 --> 01:52.820
+So we need to pass initial values going to be at zero f whenever you have issues or you want to understand
+
+01:52.820 --> 01:59.120
+exactly what a function or what certain Class D documentation, what it means or what he does.
+
+01:59.510 --> 02:03.190
+I always like to hover over right as if I have over says this anywhere.
+
+02:03.200 --> 02:09.080
+Table function creates a float value holder, so that automatically animates its value when the values
+
+02:09.080 --> 02:12.500
+changed via animator, which will see in a second.
+
+02:12.650 --> 02:19.710
+So we have our scale variable, which is attached this any table with zero as as its initial value.
+
+02:19.710 --> 02:25.190
+To use that, we have to pass that value inside of our surface because the idea is that the surface
+
+02:25.430 --> 02:28.840
+which holds this column image and text and so forth.
+
+02:28.850 --> 02:35.990
+So all of this, we want to scale it depending on the time the surface in this case, which is this
+
+02:36.080 --> 02:42.440
+where we created right, which includes the image as well as the text we want to scale that.
+
+02:42.890 --> 02:45.500
+So we need to pass this value.
+
+02:46.860 --> 02:51.930
+Which will be changing in a second here, depending once we put together the animation.
+
+02:52.470 --> 02:56.010
+And we need to pass that inside of a surface and how do we do that?
+
+02:56.430 --> 03:03.030
+Well, we understand that our modifier here, among many other things, are other things we can pass
+
+03:03.030 --> 03:09.360
+along with it, one of which is going to be the scale so we can actually pass a scale.
+
+03:09.720 --> 03:13.440
+In this case, we would have had to scale down value.
+
+03:14.100 --> 03:18.990
+That means even though the scales at zero at this point, in fact, if it were run, which we won't
+
+03:18.990 --> 03:20.940
+see anything because this is going to scale to zero.
+
+03:21.480 --> 03:21.780
+Right?
+
+03:22.290 --> 03:29.310
+But the idea is that later in a bit here we are going to attach this scale to change, depending on
+
+03:29.310 --> 03:31.590
+the animation as the animation happens.
+
+03:31.920 --> 03:33.300
+All option enter.
+
+03:33.600 --> 03:39.720
+And we're going to put everything in one lines to organize our code now to create an animation right
+
+03:39.720 --> 03:42.120
+after our variable where we created that variable.
+
+03:42.900 --> 03:48.810
+Here, I'm going to create a new structure called launched effect hit enter.
+
+03:49.170 --> 03:53.280
+And we need to pass a key and just say true and the block the block.
+
+03:53.280 --> 03:58.940
+In this case, what I'm going to do is I'm going to put the extra block of code that we're going to
+
+03:58.940 --> 03:59.340
+be using.
+
+03:59.460 --> 03:59.790
+OK.
+
+04:00.180 --> 04:03.610
+So what is this launch effect if you have over again?
+
+04:03.630 --> 04:09.420
+It's going to say one light effect enters the composition it will launch block into the compositions,
+
+04:09.420 --> 04:11.870
+coverage and tax context, right?
+
+04:12.360 --> 04:18.870
+What it means is that when this happens, the moment this is called, enter this composition to create
+
+04:19.140 --> 04:19.830
+this view.
+
+04:19.860 --> 04:22.910
+So users can, you know, act with what happens this block?
+
+04:22.920 --> 04:24.270
+What are we going to write inside now?
+
+04:24.480 --> 04:29.850
+This cowritten like the back end or the background workings, right?
+
+04:30.000 --> 04:35.310
+Asynchronous background workings, things that happen in the background and so forth and will be cancelled.
+
+04:35.310 --> 04:39.000
+And a real launched window like the effect is were composed with a different key.
+
+04:39.570 --> 04:45.960
+So all in all, we say, whenever we want to parse certain processes, in this case, this process of
+
+04:45.960 --> 04:52.680
+animating something, changing the structure of our view, we are going to pass instead of this launch
+
+04:52.680 --> 04:58.440
+effect because we get to this core team scope, which allows us to do this work that usually needs to
+
+04:58.440 --> 05:00.600
+be done away from the user interface.
+
+05:00.840 --> 05:05.400
+Now, when it comes to routines, there's a lot to learn and it's a it's a big topic.
+
+05:05.640 --> 05:07.590
+But essentially, this is what are we doing here?
+
+05:07.950 --> 05:12.970
+So inside here, this is when we can just use our scale variable rate.
+
+05:13.230 --> 05:14.550
+We created at the top there.
+
+05:15.780 --> 05:21.600
+And then we're going to say, don't animate too, because remember, the scale is.
+
+05:22.590 --> 05:28.050
+Implicitly, in Anima table type, it's why we passing this anywhere table initial value zero.
+
+05:28.410 --> 05:32.160
+That's why we can't actually use the animal to function.
+
+05:33.410 --> 05:37.490
+So we can then pass the target in this case, what is the target value?
+
+05:37.820 --> 05:43.460
+The target value could be anything but we're going to say zero zero nine f, OK.
+
+05:44.420 --> 05:47.450
+And then next, we're going to pass animation spec.
+
+05:48.290 --> 05:52.820
+What kind of the animation we're trying to create trying to have here?
+
+05:52.950 --> 05:59.560
+They're different kind of animation, but in this case, I'm going to use twin spark like that, OK?
+
+05:59.600 --> 06:05.120
+And even put the name named art means the animation spec say twin.
+
+06:05.900 --> 06:11.270
+If you have over again a twin, there's different kind of animations it says creates a twin spec configured
+
+06:11.270 --> 06:14.150
+with the given duration delay in easing curve.
+
+06:14.990 --> 06:19.700
+Now the parameters were going to pass in this twin, as you see here, could be duration in Millis,
+
+06:20.060 --> 06:22.190
+which is the duration of the animation spec.
+
+06:22.520 --> 06:28.160
+And then we can pass daily delay millis the amount of time in milliseconds that animation waits before
+
+06:28.160 --> 06:35.470
+starting and then easing the easing the easing curve that will be used to interpolate between starting.
+
+06:35.480 --> 06:40.190
+And so essentially, we're going to pass all of these values that we need to pass here because animation
+
+06:40.190 --> 06:45.980
+will interpolate between two values to the target and the initial value zero two zero point zero nine.
+
+06:46.430 --> 06:48.440
+In this case, I'm going to say duration.
+
+06:48.740 --> 06:49.400
+How long?
+
+06:49.850 --> 06:52.540
+Just say 800 milliseconds.
+
+06:52.940 --> 07:00.020
+OK, so point eight seconds really pass easing, white easing.
+
+07:00.020 --> 07:01.070
+Of course it is at.
+
+07:01.500 --> 07:02.600
+I can pass it there.
+
+07:02.600 --> 07:07.060
+So now I can invoke different kinds of easings, right?
+
+07:07.070 --> 07:09.200
+So I'm going to overshoot, for instance.
+
+07:10.010 --> 07:10.850
+That's what I need.
+
+07:10.850 --> 07:14.210
+Overshoot interval later to interpolate between those two values.
+
+07:14.690 --> 07:21.020
+And then I'm going to say here, I'm going to pass the tension and then I'm going to say, get interpolation
+
+07:21.020 --> 07:21.890
+and pass it.
+
+07:22.070 --> 07:26.570
+So looks like very complicated code in the sense, but not really.
+
+07:26.570 --> 07:32.900
+So we just creating this structure that will allow us to scale this value here, which is inanimate
+
+07:32.900 --> 07:33.320
+table.
+
+07:33.530 --> 07:40.250
+OK, so we animate to be passing the target to the target zero point zero nine from zero this initial
+
+07:40.250 --> 07:45.110
+value, and we need to parse the kind of specs of the animation, what kind of animation we want.
+
+07:45.440 --> 07:47.270
+Well, it's going to be a twin, a twin.
+
+07:47.270 --> 07:53.600
+In this case, we need to parse situation in merely how many, how long will it animate and the easing,
+
+07:53.600 --> 07:56.450
+what type of of the animation we really want to wait.
+
+07:56.840 --> 07:58.700
+In this case, we just want overshoot Interpol.
+
+07:58.700 --> 08:05.630
+Later, we're going to interpolate between the initial value and the target value with tension of eight
+
+08:05.630 --> 08:05.770
+f.
+
+08:05.780 --> 08:09.020
+So obviously, if you want to see the difference, you can change this tension.
+
+08:09.710 --> 08:14.630
+I'm assuming greater the number, of course, the more attention it will show we are using overshoot
+
+08:14.630 --> 08:22.250
+into later and past attention and then get interpolation past it, which is the float that we get from
+
+08:22.250 --> 08:23.510
+our limit out there.
+
+08:23.990 --> 08:28.400
+So see, now our scale variable is going to interpolate is going to change.
+
+08:28.400 --> 08:31.740
+It's going to, in this case, create that animation we want.
+
+08:32.510 --> 08:33.410
+I see if that's true.
+
+08:33.440 --> 08:33.980
+Let's run.
+
+08:36.320 --> 08:40.730
+He saw very, very, very little there, very little what's happening.
+
+08:40.760 --> 08:44.030
+Maybe I added a a different.
+
+08:45.370 --> 08:49.390
+And instead of there we go, the target is really small.
+
+08:49.420 --> 08:55.420
+That's why you see you saw that, so in sort of 0.09 to see zero point nine.
+
+08:55.510 --> 08:58.030
+Aha, now you saw the difference that's going to run again.
+
+08:59.540 --> 09:00.060
+Voila!
+
+09:00.200 --> 09:04.760
+You can see it works, so the smaller this number, of course, the smaller the animation.
+
+09:04.970 --> 09:08.420
+We had zero point nine zero point zero nine.
+
+09:08.420 --> 09:10.820
+You can see it's very small and that doesn't make any sense.
+
+09:10.820 --> 09:16.700
+But if we put zero point zero nine rather zero point nine, you will see that we're going to get the
+
+09:16.700 --> 09:17.420
+results that we want.
+
+09:18.760 --> 09:19.940
+Well, I forget.
+
+09:20.410 --> 09:25.780
+So that's exactly what one want, what we really want to happen is once this animation is over.
+
+09:26.170 --> 09:33.310
+Right about here, we want to also delay for a few milliseconds and then Navigator's next screen.
+
+09:34.550 --> 09:41.840
+So because we still inside of this launch, the fact we get to invoke certain functions, such as delay
+
+09:42.350 --> 09:49.190
+while the different flavors here, then here we pass the milliseconds of the time we want to delete
+
+09:49.310 --> 09:53.360
+by two thousand milliseconds and put out for long.
+
+09:53.750 --> 09:57.350
+This is about two seconds that we want to wait.
+
+09:57.950 --> 10:03.950
+Once the animation is done and then we're got to do something else, what do we want to do here is we
+
+10:03.950 --> 10:10.340
+want to go to a different screen, which screen well and say navigator or nav control, I should say.
+
+10:10.790 --> 10:14.720
+And now, before I even move forward, let's see what's happened here.
+
+10:14.720 --> 10:16.200
+I have no nav controller.
+
+10:16.220 --> 10:17.060
+Where does that come from?
+
+10:17.540 --> 10:22.520
+Well, it comes from here because we made sure to pass this nav controller along.
+
+10:22.520 --> 10:29.330
+So we have this capability of, say, now controller because is the controller, he knows how to do
+
+10:29.330 --> 10:37.040
+things such as pop back stack, who are moving the screen that users are seeing to go back or navigate
+
+10:37.160 --> 10:45.650
+to somewhere right where we want to go now, make sure there's a lot of different overload functions
+
+10:45.650 --> 10:45.920
+here.
+
+10:46.250 --> 10:50.420
+Make sure you get the root right because we are going to be his route.
+
+10:50.600 --> 10:51.370
+That's where we're going.
+
+10:51.380 --> 10:56.540
+So use the route one there to navigate to whatever we want to go.
+
+10:56.990 --> 10:57.890
+Where do you want to go?
+
+10:58.010 --> 11:01.460
+We want to go to weather screens.
+
+11:01.880 --> 11:03.410
+Look how wonderful this is.
+
+11:03.620 --> 11:03.980
+Oops.
+
+11:05.270 --> 11:06.030
+Screens.
+
+11:06.350 --> 11:09.170
+Remember want to go to our enemies?
+
+11:09.530 --> 11:12.260
+And then I'm going to say main screen that name.
+
+11:13.950 --> 11:14.520
+Just like that.
+
+11:14.580 --> 11:15.540
+That's where we want to go.
+
+11:16.200 --> 11:22.890
+Now let's go back to our weather, actually weather navigation to make sure that we have that composable
+
+11:22.890 --> 11:28.890
+the screen, we don't have that, which means I'm going to copy this and create right because we have
+
+11:28.890 --> 11:34.290
+to go to our weather navigation, which has an app host and we have to add in that's going to go to
+
+11:34.320 --> 11:41.070
+because if we just call a navigation a screen that hasn't been created, then we would have a problem.
+
+11:41.820 --> 11:42.150
+All right.
+
+11:42.450 --> 11:48.720
+So I'm going to change a few things here back in just going to changes to main screen and then here
+
+11:49.080 --> 11:51.960
+it's going to be main screen.
+
+11:52.980 --> 11:54.030
+And we haven't created that.
+
+11:54.030 --> 11:55.710
+Let's go ahead and create a main screen.
+
+11:56.160 --> 12:04.080
+That means then we go to our screens again and let's go ahead and create a new class.
+
+12:04.170 --> 12:07.530
+It's just going to be a file called this main screen.
+
+12:08.820 --> 12:13.140
+And it's going to be a composable call this main screen.
+
+12:15.690 --> 12:19.080
+And as always, we're going to pass our knife controller, as we've learned.
+
+12:19.440 --> 12:21.030
+It's a good friend to have around.
+
+12:22.110 --> 12:28.470
+And for now, it's just put a text here that says main screen.
+
+12:29.580 --> 12:31.710
+OK, so now we have our main screen.
+
+12:31.710 --> 12:35.340
+We know that we are not going to be calling something that doesn't exist.
+
+12:35.610 --> 12:36.600
+That doesn't exist.
+
+12:37.060 --> 12:40.710
+Let's go ahead and import that if you can do it right.
+
+12:41.290 --> 12:41.460
+What?
+
+12:42.210 --> 12:45.090
+We want this main screen there.
+
+12:45.210 --> 12:45.660
+Oops.
+
+12:46.410 --> 12:47.940
+Make sure we get that one.
+
+12:48.480 --> 12:50.670
+And we should be good now if we will run this.
+
+12:51.150 --> 12:57.390
+Hopefully, after two milliseconds after our animation, we should go to the main screen.
+
+12:58.670 --> 12:59.360
+And there.
+
+13:01.320 --> 13:02.740
+Well, there we go.
+
+13:03.570 --> 13:04.620
+We have our main screen.

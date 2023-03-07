@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.930 --> 00:03.690
+There's something that is bothering me a little bit, not too much.
+
+00:04.110 --> 00:09.870
+You notice that our field here doesn't take the entire span of this container and we want that.
+
+00:09.990 --> 00:11.130
+So how do we change that?
+
+00:11.610 --> 00:13.050
+Well, let's go back to our components.
+
+00:13.050 --> 00:16.980
+That's where we have created this outline field, which is inside of this input.
+
+00:17.430 --> 00:18.090
+Composable?
+
+00:18.150 --> 00:18.420
+OK.
+
+00:18.930 --> 00:25.260
+So you notice here where we have our modifier, we can actually obviously continue right, tag along
+
+00:25.410 --> 00:30.180
+and say, fill max with that.
+
+00:30.990 --> 00:37.440
+And if we refresh or run or refine this, we should be able to see the result that we want, which is
+
+00:37.440 --> 00:40.680
+going to be something like this all the way, like that.
+
+00:41.490 --> 00:50.640
+And while I can see it works great, I can add a value here again and who have split click and it's
+
+00:50.640 --> 00:51.300
+looking really good.
+
+00:53.070 --> 00:59.160
+All right, so that was a small thing that I wanted to clear out because it was just bugging him a little
+
+00:59.160 --> 01:01.590
+bit and I'm sure it was may have been bugging you as well.
+
+01:02.490 --> 01:02.760
+All right.
+
+01:02.760 --> 01:07.620
+So while we're here, we can go back to our main here because we know that between these buttons, we
+
+01:07.620 --> 01:10.590
+want to add yet another text.
+
+01:11.130 --> 01:15.480
+The text that's going to be holding the actual split value.
+
+01:16.440 --> 01:19.740
+So let's see Roe have our buttons.
+
+01:20.190 --> 01:24.210
+So in the middle here, this is where I'm going to say text.
+
+01:27.410 --> 01:30.590
+It's going to pass on a tax there, and I'm going to say.
+
+01:31.850 --> 01:33.140
+For now, let's just put.
+
+01:36.300 --> 01:36.690
+Three.
+
+01:40.870 --> 01:43.150
+And let's pass a modifier.
+
+01:48.470 --> 01:53.360
+And I'm going to align this test this text here and use a line.
+
+01:54.830 --> 01:56.360
+And alignment.
+
+02:00.280 --> 02:02.380
+Senator, vertically such.
+
+02:03.990 --> 02:06.630
+And let's tag along, keep it patting.
+
+02:08.510 --> 02:10.920
+And I'm going to use this overload here.
+
+02:11.240 --> 02:15.930
+So start, I'm going to give about nine dpi.
+
+02:16.790 --> 02:21.170
+And it's going to be about nine dpi as well.
+
+02:21.560 --> 02:21.890
+OK.
+
+02:22.890 --> 02:23.550
+Let's see.
+
+02:29.870 --> 02:30.770
+That's something.
+
+02:30.800 --> 02:32.120
+Well, it's very good.
+
+02:33.230 --> 02:39.620
+Now the idea, obviously, is as we go up, we want to change his value to go up quick minus going to
+
+02:39.620 --> 02:40.070
+go down.
+
+02:40.460 --> 02:43.430
+Now as an exercise, because we have seen this before.
+
+02:43.760 --> 02:46.700
+I would like you to for now, just as a testing.
+
+02:46.700 --> 02:55.550
+I want you to implement this up, adding more people and removing people, meaning we are going to discriminate
+
+02:55.550 --> 02:56.150
+and increase.
+
+02:56.150 --> 03:01.880
+So click plus, we want to see this number going up minus this going down.
+
+03:02.180 --> 03:04.610
+But also, I want you to make sure that there's a range.
+
+03:05.090 --> 03:10.690
+So the default value of Split here has to be one because we don't want to split it with zero, right?
+
+03:10.700 --> 03:12.110
+That's not that makes no sense.
+
+03:12.560 --> 03:17.120
+So when it gets to one, it matter how many times we click, minus it's not going to go below one.
+
+03:18.160 --> 03:20.950
+OK, so take some time and think about it.
+
+03:21.400 --> 03:23.500
+See if you can come up with a good solution.

@@ -1,0 +1,601 @@
+WEBVTT
+
+00:00.610 --> 00:04.240
+So we figure out how to update and everything is working beautifully.
+
+00:04.400 --> 00:06.280
+Now how do we delete a book?
+
+00:07.330 --> 00:09.860
+Now we could go ahead and write a code to delete a book.
+
+00:09.880 --> 00:15.820
+It's not very hard, of course, because we can just invoke the Firebase, our store and go ahead and
+
+00:15.820 --> 00:16.150
+delete.
+
+00:16.330 --> 00:17.710
+Of course, passing that book.
+
+00:18.370 --> 00:18.940
+And we're done.
+
+00:19.870 --> 00:25.600
+But it's always a good idea to make sure that users know that they are going to be delete some deleting
+
+00:25.600 --> 00:30.730
+something and so give them an option to say no, I changed my mind.
+
+00:31.150 --> 00:38.170
+What I mean by that is we're going to show an alert dialog so that we can tell the user, OK, what
+
+00:38.170 --> 00:39.160
+are you about to do?
+
+00:39.880 --> 00:44.470
+You can reverse this action, which means, are you sure you really want to delete this?
+
+00:44.980 --> 00:45.200
+OK.
+
+00:46.240 --> 00:46.990
+That's what I'm going to do.
+
+00:47.350 --> 00:51.010
+So let's go back down here to where we have a rounded button.
+
+00:51.730 --> 00:52.060
+OK.
+
+00:53.710 --> 00:59.860
+And I'm going to create a vowel here, call open dialogue.
+
+00:59.920 --> 01:01.600
+It's going to be another state.
+
+01:02.260 --> 01:03.040
+Say, remember?
+
+01:06.590 --> 01:08.510
+And say mutable state.
+
+01:12.450 --> 01:14.820
+State of like this, a false.
+
+01:16.730 --> 01:17.050
+OK.
+
+01:17.230 --> 01:25.610
+Because that's needed in a second, he will say here, I'm going to see if open dialogue that value
+
+01:26.150 --> 01:31.310
+is true, then I'm going to say invoke the show.
+
+01:33.910 --> 01:37.020
+Alert, sexual alert.
+
+01:39.010 --> 01:43.120
+Dialogue and this will take a title.
+
+01:46.560 --> 01:47.910
+Which I'm going to say something.
+
+01:47.940 --> 01:50.070
+Are you sure?
+
+01:50.610 --> 01:52.240
+In fact, I'm going to do something different.
+
+01:52.260 --> 01:59.280
+I say string resource resource unless they are not going to be straying over to the string.
+
+02:00.240 --> 02:04.560
+And let's go ahead and import this dot app name for now.
+
+02:04.860 --> 02:06.520
+So let's go ahead to the string there.
+
+02:06.750 --> 02:07.780
+What does it take me there?
+
+02:07.800 --> 02:08.170
+Let's go.
+
+02:08.190 --> 02:09.870
+Just go and open it ourselves.
+
+02:10.530 --> 02:13.830
+Our resource, go to values, go to strings.
+
+02:14.370 --> 02:15.360
+I'm going to add.
+
+02:18.240 --> 02:19.410
+Another string here.
+
+02:23.160 --> 02:24.330
+Call this, sure.
+
+02:24.900 --> 02:25.230
+OK.
+
+02:25.590 --> 02:27.420
+And I'm going to say, are you
+
+02:31.350 --> 02:37.080
+sure you want to delete this book?
+
+02:39.670 --> 02:47.130
+I'm going to create another one new one there called it something else to the action.
+
+02:52.250 --> 03:02.090
+This action is not reversible like this, so it's nice to put all of our strength inside of this drink
+
+03:02.480 --> 03:05.180
+screens example that where we can invoke it from anywhere.
+
+03:06.230 --> 03:06.610
+All right.
+
+03:06.620 --> 03:15.980
+So instead of app here is going to be sure like that and I'm going to say plus add a new line plus again
+
+03:16.550 --> 03:20.810
+and then I'm going to pass yet another string resource.
+
+03:22.350 --> 03:27.450
+Are I straying and action like this?
+
+03:27.960 --> 03:28.230
+OK.
+
+03:29.190 --> 03:31.860
+At the bottom, I'm just going to create a composable
+
+03:34.110 --> 03:42.480
+and it's going to be fun call show alert dialog we created and let's pass a few parameters.
+
+03:44.610 --> 03:45.360
+So title.
+
+03:47.980 --> 03:48.680
+A string.
+
+03:52.370 --> 03:59.150
+I'm going to pass the open dialogue, which is going to be a mutable state.
+
+04:03.630 --> 04:08.600
+Bullion type like this and then on, yes.
+
+04:09.360 --> 04:10.140
+Pressed.
+
+04:13.490 --> 04:16.940
+In the past and lambada, they're like this.
+
+04:17.360 --> 04:17.660
+All right.
+
+04:18.050 --> 04:20.000
+So alert dialogues and compose.
+
+04:20.570 --> 04:23.290
+They kind of have to put a little bit of work for them to work.
+
+04:23.300 --> 04:24.890
+So this is how you have to do it.
+
+04:25.250 --> 04:32.420
+So first, I'm going to check if open dialogue that we're passing the value right is true, then where
+
+04:32.480 --> 04:33.890
+we can create a low dialogue.
+
+04:33.890 --> 04:41.720
+Someone say alert dialogue and I'm calling the alert dialogue from our composable here, from our from
+
+04:41.720 --> 04:42.200
+campus.
+
+04:43.610 --> 04:45.440
+So have dismissed request.
+
+04:45.620 --> 04:46.820
+We're going to deal with that.
+
+04:48.470 --> 04:56.390
+And then I need to pass the title, which is also it's going to be another lambda and I'm going to pass
+
+04:56.600 --> 05:01.400
+the text that we want to show another lambda.
+
+05:03.020 --> 05:07.130
+And I'm going to pass buttons, which also is another lambda.
+
+05:07.980 --> 05:09.560
+OK, let's convert all like this.
+
+05:09.560 --> 05:11.840
+I think I won't need that anymore.
+
+05:11.900 --> 05:12.230
+All right.
+
+05:12.380 --> 05:13.730
+So let's fill the blank.
+
+05:13.760 --> 05:14.810
+So for your title?
+
+05:15.920 --> 05:22.430
+Let's pass a text that says delete book like lists change.
+
+05:22.430 --> 05:23.820
+Maybe this sort of title?
+
+05:23.820 --> 05:24.200
+Let's.
+
+05:25.740 --> 05:29.130
+Call this message, I think it's probably more appropriate because.
+
+05:30.570 --> 05:31.570
+The titles were here.
+
+05:31.590 --> 05:34.170
+OK, so the message here for the text.
+
+05:35.460 --> 05:42.360
+I was getting a text and pass our message, and then for the buttons, lots and a row because we don't
+
+05:42.370 --> 05:47.490
+have the choice of saying yes, I want to delete and no, I don't want to delete.
+
+05:49.080 --> 05:50.970
+So what I say, modifier?
+
+05:56.040 --> 06:01.170
+Patting all of about eight deep.
+
+06:09.830 --> 06:20.780
+Horizontal arrangement, I want to center and then text button, and I just passed on, yes, pressed
+
+06:21.200 --> 06:21.800
+like this.
+
+06:22.250 --> 06:23.360
+And of course, I want to invoke.
+
+06:25.350 --> 06:30.810
+That function and the text title here is going to be of this button.
+
+06:31.680 --> 06:33.600
+I'm just going to say yes.
+
+06:35.710 --> 06:37.560
+And create yet another text button.
+
+06:37.600 --> 06:47.410
+This is going to be, we'll say, text no as such, and we want to happen when we say no one click on
+
+06:47.410 --> 06:50.800
+this button, which is going to say open dialogue that value.
+
+06:51.400 --> 06:52.600
+You said that false.
+
+06:53.200 --> 06:56.050
+What that means, we're just going to close that dialogue.
+
+06:56.560 --> 06:56.860
+All right.
+
+06:56.950 --> 06:57.910
+That's about it.
+
+06:57.910 --> 06:59.670
+About show alert dialog.
+
+07:00.220 --> 07:02.110
+Let's go where this is called now.
+
+07:02.110 --> 07:03.460
+This is just going to be a message.
+
+07:05.200 --> 07:11.890
+Like that, and we're going to add, of course, a lambada looks like.
+
+07:13.840 --> 07:20.110
+There's something else I need to pass, right, I need to pass the open dialogue, but that needs to
+
+07:20.110 --> 07:24.010
+go through our lambda right to click on.
+
+07:24.010 --> 07:26.020
+Yes, pressed what is ever going to happen?
+
+07:26.470 --> 07:31.900
+Well, once they said yes, I want to delete this item.
+
+07:32.350 --> 07:35.170
+This is when we go ahead and delete it.
+
+07:35.200 --> 07:42.400
+How do we do that and say Firebase, if I store get instance and then go to collection, this case is
+
+07:42.400 --> 07:48.650
+going to be books and then I need to get that document and I'm going to pass.
+
+07:48.670 --> 07:54.700
+Of course, the book ID, because that is the ID we need to delete to get the actual book we want to
+
+07:54.700 --> 07:55.090
+delete.
+
+07:57.610 --> 08:08.740
+And then we just say delete, and we are going to attach the add on complete listener as such.
+
+08:11.020 --> 08:12.220
+And here I'm going to say if.
+
+08:15.380 --> 08:24.270
+It is successful, then I'm going to say open dialogue like that mutable state.
+
+08:25.500 --> 08:32.230
+Value and said that to false, this just go ahead and kills that, that lock removes the dialogue.
+
+08:33.570 --> 08:41.280
+And right after that is I'm going to say NAF controller will say that navigate, get the correct one.
+
+08:41.790 --> 08:44.650
+I want to say leaders screen.
+
+08:44.670 --> 08:49.650
+I want to go to reader home screen like this.
+
+08:49.980 --> 08:50.730
+Now here's the thing.
+
+08:51.060 --> 08:57.900
+If you use the NAF controller that pop back, I think Max Stack that will also work.
+
+08:58.260 --> 09:00.150
+But it's not going to recompose.
+
+09:00.360 --> 09:07.170
+He's not going to do the composition of the main screen reader home screen, which then will give us
+
+09:07.170 --> 09:09.170
+updates of the books, right?
+
+09:09.240 --> 09:12.720
+So we want to recompose the screen because it's going to call back right.
+
+09:12.720 --> 09:18.690
+The main screen is going to go ahead and call our back database and then get the correct books and so
+
+09:18.690 --> 09:18.960
+forth.
+
+09:19.290 --> 09:25.650
+So you don't want to do this if you want to see the changes that we may have had in our books on my
+
+09:25.650 --> 09:26.030
+screen.
+
+09:26.040 --> 09:31.890
+So we kind of recompose the screen by saying navigate to the screen so we can show the most up-to-date
+
+09:32.430 --> 09:34.100
+slate of the books back can.
+
+09:34.100 --> 09:35.670
+Where to put a little note here for you.
+
+09:35.910 --> 09:38.160
+So, you know, OK, let's see.
+
+09:38.160 --> 09:38.910
+Let's save this.
+
+09:44.430 --> 09:46.950
+OK, let's perhaps get a different book.
+
+09:49.200 --> 09:53.430
+OK, let me let me see if I can delete that one so I can say delete.
+
+09:54.530 --> 09:55.370
+Let's go back.
+
+09:55.880 --> 09:57.380
+Something is not right.
+
+09:58.130 --> 09:59.460
+We're not able to delete.
+
+09:59.510 --> 10:01.880
+Maybe I did not call something.
+
+10:01.880 --> 10:05.600
+I didn't call what I was supposed to call the day night call, right?
+
+10:05.630 --> 10:10.820
+What happens here is that I forgot to actually, you know, around rounded button here, I'm going to
+
+10:10.820 --> 10:19.020
+have to say open dialogue and value and said that to true.
+
+10:19.520 --> 10:20.600
+I have to do that.
+
+10:20.750 --> 10:22.400
+So the dialogue is open.
+
+10:22.510 --> 10:23.270
+This is very important.
+
+10:23.540 --> 10:25.340
+That's why we have that state there.
+
+10:25.550 --> 10:27.440
+OK, let's give it a try.
+
+10:30.110 --> 10:31.820
+OK, let's go ahead here.
+
+10:32.480 --> 10:33.470
+Delete, voila!
+
+10:33.650 --> 10:34.820
+Says here, delete book.
+
+10:35.120 --> 10:36.670
+Are you sure you want to delete this book?
+
+10:36.740 --> 10:38.480
+This action is not reversible.
+
+10:38.690 --> 10:39.440
+If I say no.
+
+10:39.640 --> 10:40.460
+Nothing happens.
+
+10:40.700 --> 10:41.210
+Go back.
+
+10:41.510 --> 10:42.260
+I say yes.
+
+10:43.160 --> 10:47.300
+Takes us back here and you concede we no longer see that running book.
+
+10:48.180 --> 10:48.410
+Right?
+
+10:48.440 --> 10:53.510
+If I delete this one to just click, that one could say delete.
+
+10:53.780 --> 10:55.810
+Say yes back.
+
+10:55.850 --> 10:57.860
+And see, we no longer have those books.
+
+10:57.860 --> 11:01.770
+That means back in our code or back in our database here.
+
+11:01.790 --> 11:03.290
+We see you only have two books now.
+
+11:04.010 --> 11:05.780
+I guess those are the books that we have left.
+
+11:06.380 --> 11:11.060
+A little dialogue is very strange, like I say, to make it work because we have to have the state as
+
+11:11.060 --> 11:11.630
+you see here.
+
+11:11.960 --> 11:18.230
+And then we have to check if the state is true and then we can call that dialogue.
+
+11:18.230 --> 11:20.300
+I created this show a little dialogue.
+
+11:20.760 --> 11:23.630
+I brought him here and we passed the string, the message.
+
+11:23.630 --> 11:30.290
+And importantly, we have to pass that state because we still have to check if the value of that state
+
+11:30.290 --> 11:32.690
+is true or false for all of this to work.
+
+11:33.230 --> 11:37.050
+And while I'm here, I actually forgot here on this miss request.
+
+11:37.070 --> 11:43.280
+I'm just going to have open dialogue again value and say that to false light because we dismissing it,
+
+11:43.280 --> 11:47.300
+getting rid of that title of the seller dialogue, right?
+
+11:47.900 --> 11:53.930
+And so we go along, we pass the title, the text buttons, because the dialogue will need those buttons
+
+11:53.930 --> 11:56.340
+right to either say yes or no.
+
+11:56.360 --> 11:59.300
+We can add as many buttons as we want, but usually to honor.
+
+11:59.670 --> 12:00.860
+OK, very good.
+
+12:00.860 --> 12:02.870
+In fact, check can see if I click anywhere else.
+
+12:03.290 --> 12:04.640
+This doesn't go away, right?
+
+12:04.820 --> 12:07.290
+Because we hadn't added this.
+
+12:07.290 --> 12:12.680
+So if I go ahead and rerun this real quick, you will see now we're going to be able to dismiss when
+
+12:12.680 --> 12:18.800
+we because we've added the own dismissed request to say toggle this to false, which means get rid of
+
+12:18.800 --> 12:18.950
+it.
+
+12:19.910 --> 12:25.580
+So now you'll see if I click here, delete, you know, toggle anywhere else, and then we get out of
+
+12:25.580 --> 12:26.750
+there, OK?
+
+12:27.020 --> 12:33.290
+It's important to add as well, and don't forget to actually on your button to set that to true in order
+
+12:33.290 --> 12:35.000
+for you to be able to see that dialog.
+
+12:35.010 --> 12:39.290
+Otherwise, as you saw, you won't be able to see it if you don't said that's true because it's not
+
+12:39.290 --> 12:39.840
+going to open.
+
+12:40.580 --> 12:40.900
+OK.
+
+12:41.510 --> 12:42.290
+And there you have it.
+
+12:42.340 --> 12:47.870
+We're able to delete and update an item updates to work seconds.
+
+12:47.870 --> 12:48.800
+They started reading.
+
+12:48.800 --> 12:49.560
+That's fine.
+
+12:49.580 --> 12:54.710
+Update We go here, click back again, and can see those updates are showing.
+
+12:55.280 --> 12:55.730
+OK.
+
+12:56.150 --> 12:57.350
+It's really, really good.
+
+12:57.890 --> 13:00.370
+Our app is is coming to an end.
+
+13:00.380 --> 13:04.280
+We're getting close to finishing this app and go celebrate.

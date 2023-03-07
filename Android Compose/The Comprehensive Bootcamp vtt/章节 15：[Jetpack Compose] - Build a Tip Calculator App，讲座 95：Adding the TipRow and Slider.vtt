@@ -1,0 +1,580 @@
+WEBVTT
+
+00:00.570 --> 00:06.450
+All right, so moving on, let's go continue moving on, let's go ahead and see if we can continue and
+
+00:06.450 --> 00:08.190
+add the tip row here.
+
+00:08.880 --> 00:15.030
+So we know that this is going to be a row because we have tip tax and then we have to the right here
+
+00:15.060 --> 00:18.930
+on the same like really 33, which is going to be the tip amount.
+
+00:18.930 --> 00:22.560
+It's going to be calculated as we slide left in down the slider down.
+
+00:22.650 --> 00:27.060
+OK, so this is going to be a rule just like what we had at the top and we'll split, which is this
+
+00:27.060 --> 00:27.300
+here?
+
+00:27.810 --> 00:32.490
+And also because we're still testing things you notice we have this if statement there, right to see
+
+00:32.490 --> 00:36.990
+if the state of our form or in this case or text field is valid.
+
+00:37.330 --> 00:37.580
+Right.
+
+00:37.590 --> 00:43.440
+So what I can do see here, go back to her right.
+
+00:43.440 --> 00:49.470
+So since we're still working on debugging and we're still working on our user interface, this validate
+
+00:49.470 --> 00:55.290
+here it's a little bit over the top, which means we can actually get rid of this if statement for now.
+
+00:55.290 --> 00:59.250
+So I'm just going to go ahead and forward slashes there.
+
+00:59.580 --> 01:02.730
+Feckless start from the bottom so we know exactly where it is.
+
+01:02.730 --> 01:06.300
+And so click here the end of this call brace.
+
+01:07.410 --> 01:11.040
+And let's see where that ends this l state right there.
+
+01:11.040 --> 01:13.020
+So I'm just going to go ahead and do this.
+
+01:19.160 --> 01:21.470
+And let's go ahead and also do that.
+
+01:22.790 --> 01:24.590
+So let's go and run real quick.
+
+01:28.220 --> 01:33.410
+So what this will do, it won't look at the validated state because we just testing things out, so
+
+01:33.410 --> 01:37.850
+we want to be able to see right away when we run, see how our user interface is coming.
+
+01:39.030 --> 01:41.980
+OK, so now every time we're just going to see everything there.
+
+01:42.000 --> 01:44.380
+OK, let's go back to our code.
+
+01:44.430 --> 01:50.410
+So what we want to do again, we want to put this structure here, which is this tip and add the number,
+
+01:50.410 --> 01:52.830
+OK, I will go for our tip amount.
+
+01:53.880 --> 01:58.950
+OK, so let's see this row and right about there.
+
+01:59.490 --> 02:01.260
+OK, so right about there.
+
+02:01.260 --> 02:04.200
+I'm just going to say tip row.
+
+02:04.320 --> 02:05.250
+I say row.
+
+02:06.790 --> 02:08.830
+And to add a modifier real quick here.
+
+02:13.720 --> 02:14.830
+Put in your line
+
+02:17.590 --> 02:22.890
+and I'm going to put a padding in for now, let's see.
+
+02:23.800 --> 02:25.990
+So we have our row that's going to start.
+
+02:26.020 --> 02:30.490
+First of all, I'm going to put a text out, say text like this.
+
+02:34.970 --> 02:36.230
+Pass it a modifier.
+
+02:39.960 --> 02:44.100
+And I will not align this tax use alignment.
+
+02:49.770 --> 02:51.900
+The alignment first.
+
+02:57.920 --> 03:02.210
+We want this to be center vertical vertical, you should say.
+
+03:03.510 --> 03:04.470
+OK, that's good.
+
+03:04.920 --> 03:09.570
+And then what we want to do because it's in a row, we want to give some sort of space right this space
+
+03:09.570 --> 03:10.110
+here.
+
+03:10.950 --> 03:11.340
+So.
+
+03:13.030 --> 03:14.590
+Right after this tax.
+
+03:18.340 --> 03:19.510
+I'm going to add a spacer.
+
+03:24.290 --> 03:25.440
+Say Modifier.
+
+03:26.270 --> 03:29.530
+Give it a width of about 200 dpi.
+
+03:31.160 --> 03:35.330
+Then I'm going to add another text, which is going to be theirs.
+
+03:37.110 --> 03:41.760
+Now let's just put three like that.
+
+03:49.230 --> 03:52.890
+And we want the same thing to happen and pass this modifier here.
+
+04:01.670 --> 04:02.210
+Should be good.
+
+04:02.490 --> 04:03.560
+OK, let's see.
+
+04:05.960 --> 04:06.860
+Now split.
+
+04:08.450 --> 04:09.320
+It's refreshing.
+
+04:10.580 --> 04:14.420
+OK, so we can see in there we go.
+
+04:14.450 --> 04:15.470
+Let's see.
+
+04:18.120 --> 04:18.990
+He looks really nice.
+
+04:19.470 --> 04:25.470
+Looks this text there less now what we want to code is make sure it's.
+
+04:27.450 --> 04:30.660
+I put text this should be tip.
+
+04:32.900 --> 04:33.170
+OK.
+
+04:35.920 --> 04:36.770
+All right, there you go.
+
+04:36.820 --> 04:37.370
+It looks good.
+
+04:37.390 --> 04:42.370
+Now let's go ahead and give some space of some padding around this entire row because at this point
+
+04:42.760 --> 04:43.720
+this is not looking good.
+
+04:44.290 --> 04:48.280
+And I'm going to give you more space and our emulator can be in the background.
+
+04:48.280 --> 04:49.540
+So we have more space than OK.
+
+04:50.230 --> 04:51.520
+If we need it, we'll call it.
+
+04:53.200 --> 04:57.280
+So instead of all row here, we haven't passed anything as arguments.
+
+04:57.370 --> 04:59.230
+Let's change that first one.
+
+04:59.230 --> 05:04.360
+We're going to say modify your password, modify here because when I change a few things, something
+
+05:04.360 --> 05:10.450
+modifier versus padding and I want.
+
+05:12.920 --> 05:21.380
+To say horizontal padding, just a general horizontal padding, analysts give about three deep.
+
+05:31.880 --> 05:33.680
+And let's keep an eye out of padding here.
+
+05:43.430 --> 05:44.840
+Let's give vertical padding.
+
+05:45.410 --> 05:47.300
+Of about 12 dpi.
+
+05:52.680 --> 05:54.990
+OK, so refresh.
+
+05:57.630 --> 05:57.920
+OK.
+
+05:58.240 --> 05:59.400
+Looks much, much better.
+
+05:59.490 --> 06:04.770
+You can see just a little differences, but we can keep tweaking everything.
+
+06:04.870 --> 06:06.360
+But at this point, that's fine.
+
+06:06.420 --> 06:07.080
+This continue.
+
+06:07.560 --> 06:10.740
+OK, so we are done with this pro tip.
+
+06:11.100 --> 06:12.840
+Let's go ahead and add this.
+
+06:14.230 --> 06:20.890
+Another row here, which is going to contain the actual percentage in this case of which is going to
+
+06:20.890 --> 06:27.490
+contain the percentage, which is which is going to contain the tip percentage by the user is wanting
+
+06:27.490 --> 06:28.000
+to give.
+
+06:31.520 --> 06:39.500
+Now looking at the structure here, remember these two, so have the slider and we have the text.
+
+06:39.740 --> 06:40.880
+They should go together.
+
+06:41.510 --> 06:42.740
+If that's the case, then they need.
+
+06:42.740 --> 06:44.170
+We don't need a row here.
+
+06:44.180 --> 06:46.910
+We need another column because it's going to be top to bottom.
+
+06:47.180 --> 06:48.380
+So let's go ahead and do that.
+
+06:49.100 --> 06:49.850
+Back to our code.
+
+06:52.390 --> 06:58.030
+Right where we finish that tomorrow, right here, and let's go ahead and say column.
+
+07:02.490 --> 07:09.540
+And let's just say vertical alignment or arrangement, that is when I say arrangements are going to
+
+07:09.540 --> 07:13.980
+be center everything inside of this to be in the middle.
+
+07:17.640 --> 07:20.400
+And give it a horizontal alignment.
+
+07:21.720 --> 07:24.020
+And I want this to be center horizontally.
+
+07:24.750 --> 07:25.110
+OK?
+
+07:25.530 --> 07:26.700
+Setting up everything.
+
+07:27.120 --> 07:31.260
+And so inside of our column here, first of all, I'm going to add a text because if you look within
+
+07:31.260 --> 07:36.480
+this text here, very simple, the process, I'm hoping you feel this way as well.
+
+07:37.110 --> 07:49.290
+And for a text here, it's just going to be again, say so far this at 33 percent, OK, and then here
+
+07:49.290 --> 07:56.370
+is where are we going to put a spacer because we also want to give some space between the percentage
+
+07:56.370 --> 07:57.780
+and our slider.
+
+07:58.680 --> 08:04.890
+So you can see the theme is always the same or you can see we follow the same theme here.
+
+08:04.890 --> 08:08.070
+So a width of.
+
+08:10.100 --> 08:11.300
+Actually, I need height.
+
+08:14.070 --> 08:22.260
+So modifier one, the height in this case, right, of about 14 dpi.
+
+08:22.680 --> 08:23.760
+You can play with that.
+
+08:24.030 --> 08:24.630
+That's fine.
+
+08:24.930 --> 08:26.970
+So here is where we put our slider.
+
+08:27.240 --> 08:27.630
+OK.
+
+08:28.590 --> 08:31.140
+This structure here to create a slider.
+
+08:31.290 --> 08:32.130
+It's very simple.
+
+08:32.130 --> 08:36.750
+There's one out of the box that we can do two once a slider.
+
+08:37.710 --> 08:41.140
+There we go, make sure we get this first letter here.
+
+08:41.160 --> 08:44.280
+You can see its Android acts compose material.
+
+08:44.310 --> 08:45.990
+That's exactly what we're looking for him to enter.
+
+08:46.350 --> 08:51.480
+And you can see also that the same things happened when we were trying to put together when we were
+
+08:51.480 --> 08:54.660
+putting together the filled text field, right?
+
+08:54.900 --> 09:00.330
+Because the slider, you know, as you slide left and right, it has to consume certain values.
+
+09:00.570 --> 09:06.420
+And we have to also get the own value change because we changing values as we start left and right.
+
+09:06.810 --> 09:10.070
+So that is what we need to take a look at.
+
+09:10.080 --> 09:11.370
+That is what we need to get.
+
+09:11.730 --> 09:14.820
+So in this case here, I'm going to just say slider position.
+
+09:14.820 --> 09:17.760
+So it's going to be a state which you haven't created yet.
+
+09:21.000 --> 09:28.830
+And then the full on change, one value change that is this is going to be a lambada and we're going
+
+09:28.830 --> 09:32.970
+to pass into and a new vowel as such.
+
+09:33.390 --> 09:33.690
+All right.
+
+09:33.840 --> 09:35.610
+So we're going to do some work here in a second.
+
+09:35.850 --> 09:36.210
+Now.
+
+09:41.610 --> 09:44.490
+So for a slight opposition state here, what do we need to do?
+
+09:44.520 --> 09:45.460
+I'm going to copy this.
+
+09:45.490 --> 09:48.600
+I'm going to go at the top of our function here.
+
+09:50.360 --> 09:52.720
+And we're going to wait another state, OK?
+
+09:54.620 --> 09:55.640
+Some might say foul
+
+09:59.210 --> 10:05.030
+I could use by delegates or I could use what we have been doing, we say is equal to remember.
+
+10:10.910 --> 10:12.950
+And then I'm going to say mutable state.
+
+10:19.040 --> 10:25.880
+And for each value and the type they were going to pass, he was going to be a float with a zero f a
+
+10:25.880 --> 10:30.320
+sash to say that this slider here, I think, have one too many.
+
+10:32.140 --> 10:32.680
+Move that.
+
+10:35.270 --> 10:35.660
+Here we go.
+
+10:36.710 --> 10:43.010
+So to say again that our SLATTER position sticks as it was so, so as I was saying, our Slatter position
+
+10:43.010 --> 10:48.950
+here will take a state, obviously, and the state's values, multiple state values are going to be
+
+10:49.910 --> 10:53.630
+there will be floats as we move left or right.
+
+10:53.990 --> 10:56.690
+This state is going to be the value.
+
+10:56.690 --> 11:00.080
+Of course, the state value is going to be a float.
+
+11:00.500 --> 11:06.050
+We have a problem here because we actually are wrapping this latter position with what it will say.
+
+11:06.050 --> 11:12.440
+That means we have to get the value so that our U.S. So once you do that, then you see that we run
+
+11:12.440 --> 11:16.490
+out of that issue here on values change.
+
+11:16.490 --> 11:20.840
+We have this parameter that's passing and we have instead of a lambda so we can use that.
+
+11:21.380 --> 11:25.940
+So for now, I'm going to say log D because when I see those values changing, there's nothing more
+
+11:25.940 --> 11:30.050
+satisfying than seeing values changing because that just means things are working.
+
+11:31.250 --> 11:31.460
+All right.
+
+11:31.550 --> 11:33.680
+Just pass that along there.
+
+11:34.250 --> 11:37.670
+And this is going to be slider.
+
+11:37.850 --> 11:40.340
+Such can use any tag you want.
+
+11:40.730 --> 11:44.090
+Let's go ahead and actually run this and see.
+
+11:46.270 --> 11:51.340
+On the emulator or in this case or my actual device, my real device, and see if this is actually going
+
+11:51.340 --> 11:51.730
+to work.
+
+11:52.670 --> 11:53.500
+It's open lock.
+
+11:56.860 --> 11:57.940
+Slider such.
+
+12:00.640 --> 12:01.190
+All right.
+
+12:01.270 --> 12:02.270
+This is very exciting.
+
+12:02.290 --> 12:09.760
+He can see there is a slider there, and if he can start sliding and he can see the values are changing
+
+12:10.000 --> 12:12.250
+and they are all float values.
+
+12:13.600 --> 12:14.530
+OK, that's very good.
+
+12:14.890 --> 12:19.090
+But what we need to do also notice as you try to change nothing, really.
+
+12:19.360 --> 12:26.110
+The slider doesn't really slide, although the values are changing, but we don't see that thing happening,
+
+12:26.110 --> 12:27.290
+this slider changing.
+
+12:27.310 --> 12:32.290
+The reason why is because while we have the value, but we are not doing much with it, what we want
+
+12:32.290 --> 12:37.990
+to do really is to set a slider position, value or state.
+
+12:37.990 --> 12:41.250
+In this case, that value.
+
+12:41.260 --> 12:43.900
+We're going to set that to our new value.
+
+12:43.900 --> 12:45.960
+That makes sense because that's what we doing.
+
+12:45.970 --> 12:52.000
+We start from zero in the beginning and as we slide, as we change the value, we want to update our
+
+12:52.000 --> 12:54.250
+slider state the actual value.
+
+12:55.000 --> 12:55.390
+All right.
+
+12:55.510 --> 13:02.920
+So that's what we need to do to our fresh for to see the physical change instead of just the internal
+
+13:02.920 --> 13:03.340
+change.
+
+13:04.920 --> 13:06.090
+Of this new value here.
+
+13:07.260 --> 13:09.660
+OK, now we can see why the.
+
+13:10.740 --> 13:14.040
+And at the bottom, we can see that the values are changing.
+
+13:15.540 --> 13:15.990
+Very good.
+
+13:16.080 --> 13:17.550
+So we are making real good progress.
+
+13:17.580 --> 13:21.480
+You can see was really easy to put together a slider, but there's some work we need to do here.
+
+13:21.780 --> 13:25.260
+For instance, we need to make sure that we don't have floats.
+
+13:25.260 --> 13:30.420
+So that means we need to multiply by a certain multiplier number to make it so that the percentages
+
+13:30.420 --> 13:32.070
+actually look as percentages.
+
+13:32.430 --> 13:34.440
+But that's easy and we're going to do next.
+
+13:34.950 --> 13:37.190
+And you can see also the tip it's looking good.
+
+13:37.200 --> 13:40.290
+Everything is starting to look pretty much like what we have here.

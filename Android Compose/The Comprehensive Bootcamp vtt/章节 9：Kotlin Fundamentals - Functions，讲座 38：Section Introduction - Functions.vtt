@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00.180 --> 00:06.180
+In programming, a function is a set of instructions bundle together to achieve a certain outcome superior
+
+00:06.180 --> 00:12.630
+is to put together a structure where we can add the statements, we can add logic, we can add everything
+
+00:12.630 --> 00:19.990
+we need to create a basic unit of a program per se to achieve certain result, to have a certain outcome.
+
+00:20.010 --> 00:21.690
+So we've seen function before.
+
+00:21.960 --> 00:25.660
+This is a function fun that stands for functions of fun.
+
+00:25.680 --> 00:29.880
+In this case, will be the key word used in codling to create a function to start the functions they
+
+00:29.880 --> 00:31.680
+find and then the name of the function.
+
+00:31.950 --> 00:35.860
+And then we have their parentheses and of course, the body, right?
+
+00:36.120 --> 00:39.930
+The part of the function is enclosed in a set of curly braces.
+
+00:40.230 --> 00:42.530
+Then we call actually another function, right?
+
+00:42.570 --> 00:46.020
+This is given by the Scotland Library called print.
+
+00:46.020 --> 00:47.370
+And then we say Hello world.
+
+00:47.880 --> 00:49.770
+So that is indeed a function figure here.
+
+00:50.010 --> 00:50.670
+Still the same.
+
+00:51.030 --> 00:57.090
+So we enclosing certain logic in this case, we just have one statement there, which is a print function
+
+00:57.090 --> 01:01.110
+called And we're passing Hello World, but we can have multiple things inside there.
+
+01:01.410 --> 01:05.250
+The idea is the function of always contain certain logic.
+
+01:05.610 --> 01:05.900
+Right?
+
+01:05.910 --> 01:09.480
+It's going to bundle up that logic in one entity, if you will.
+
+01:09.900 --> 01:13.530
+Let's go back to our code and starting to put together these functions.

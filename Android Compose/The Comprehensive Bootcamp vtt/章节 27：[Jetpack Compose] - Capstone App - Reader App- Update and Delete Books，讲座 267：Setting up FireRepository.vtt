@@ -1,0 +1,568 @@
+WEBVTT
+
+00:00.300 --> 00:06.150
+So now it's time for us to go back to our home screen here and get the books from our Firebase database
+
+00:06.150 --> 00:12.150
+for our basic five story, I should say and get those books there, we've added and add them back to
+
+00:12.150 --> 00:13.350
+our main screen here.
+
+00:13.590 --> 00:14.430
+That's the whole idea.
+
+00:14.970 --> 00:17.310
+OK, let's put together this structure first.
+
+00:18.060 --> 00:25.140
+Well, if we're getting something from anywhere in this case, our database, well, we need a repository
+
+00:25.170 --> 00:27.150
+and then we're going to need a few models.
+
+00:27.150 --> 00:31.080
+So all of that's going to be back inside of our.
+
+00:31.110 --> 00:32.370
+Let's go back to our screens.
+
+00:32.910 --> 00:34.740
+It's going to be back to sort of our home.
+
+00:35.400 --> 00:38.970
+So in fact, let's go ahead and create a codling class.
+
+00:38.970 --> 00:48.780
+If you model here, say home screen view model and you can see how nice it is to have this organizations
+
+00:49.230 --> 00:50.610
+that we have structure here, right?
+
+00:50.730 --> 00:56.250
+Because it helps to know exactly where we are, where we want to be and what to add each one of these
+
+00:56.250 --> 00:56.730
+classes.
+
+00:57.330 --> 00:57.630
+OK.
+
+00:58.380 --> 01:06.510
+So I'm going to say at Helt, the model and two I have before I forget here, this is going to inherit
+
+01:06.510 --> 01:07.770
+from view model.
+
+01:08.160 --> 01:09.840
+Let's give it this for now.
+
+01:09.840 --> 01:13.650
+So we get that help inject constructor
+
+01:16.200 --> 01:20.580
+support and it's going to be private.
+
+01:22.760 --> 01:23.720
+Repository.
+
+01:27.720 --> 01:34.460
+And it's going to be a new repository called Fire Repository Search.
+
+01:35.070 --> 01:35.400
+OK.
+
+01:35.640 --> 01:38.870
+It's going to we're going to have problem here, but we'll fix that later.
+
+01:38.880 --> 01:39.990
+So there's going to be a new model.
+
+01:40.440 --> 01:45.750
+Let's go ahead and create this repository right of ways that we don't have that error.
+
+01:46.680 --> 01:47.100
+OK.
+
+01:47.160 --> 01:49.210
+So where are we going to create a repository?
+
+01:49.230 --> 01:51.970
+We're going to create inside of our repositories there.
+
+01:51.990 --> 01:55.230
+So I'm going to right click and it's just a class.
+
+01:56.410 --> 01:59.260
+Can call fire repository.
+
+02:02.090 --> 02:04.330
+And we don't have to annotate with anything.
+
+02:04.370 --> 02:14.510
+However, we're going to inject now constructor here or private vow, a type called query book.
+
+02:14.810 --> 02:18.200
+Now there's going to be special because it's going to be of query type.
+
+02:18.710 --> 02:20.420
+Now what is the query we're going to get?
+
+02:20.510 --> 02:23.020
+We're going to get the Firebase firestorm.
+
+02:23.030 --> 02:24.590
+Query this guy there.
+
+02:24.770 --> 02:25.910
+Let's make sure we get that.
+
+02:26.000 --> 02:27.410
+Now, let's not forget.
+
+02:27.470 --> 02:30.110
+So this point, let's just go ahead and import that.
+
+02:30.230 --> 02:30.770
+That's very good.
+
+02:32.000 --> 02:37.490
+Now, let's not forget one thing our dependency injection model there, because we have to have that
+
+02:38.240 --> 02:44.150
+structure, that provider that we need for our Firebase provider there.
+
+02:44.330 --> 02:46.370
+So I'm going to say at Singleton.
+
+02:48.480 --> 02:53.880
+And that provides and then the function.
+
+02:55.950 --> 02:58.100
+They provide power.
+
+03:00.430 --> 03:08.530
+Five Book Depository, and when I said this directly to fire repository that is going to passed the
+
+03:08.530 --> 03:15.580
+query book here now the query is very interesting because we're just going to use the Firebase Fire
+
+03:15.580 --> 03:24.190
+story and say, get instance and then I'm going to say you got collection and I'm going to pass the
+
+03:24.190 --> 03:26.530
+book or books collection.
+
+03:26.530 --> 03:31.990
+So I'm setting it up right here directly for our query because this is what we did in the past for a
+
+03:32.200 --> 03:38.590
+our story instance and go to our collection books because we want to query this collection books when
+
+03:38.590 --> 03:43.090
+we receive the dependency injection of Firebase for a book repository.
+
+03:43.330 --> 03:47.920
+All right, let's go back to our Firebase repository just to make sure let's get rid of that.
+
+03:49.120 --> 03:50.410
+Now what's going to happen here?
+
+03:50.710 --> 03:55.720
+Here's where we're going to get the books, so I'm going to put just like we've done before.
+
+03:56.110 --> 04:05.980
+Suspend function, call this get all books from database long name, but it's descriptive and we're
+
+04:05.980 --> 04:06.700
+going to go with that.
+
+04:07.480 --> 04:11.650
+And so here I can go ahead and say, I want a list of my books.
+
+04:11.680 --> 04:13.000
+Remember the distinction here?
+
+04:13.120 --> 04:19.630
+I'm going to see a list of books because that's what we used to save our data, not item or anything
+
+04:19.630 --> 04:20.350
+else, right?
+
+04:20.590 --> 04:22.030
+So we have two things going here.
+
+04:22.300 --> 04:24.970
+So and book is what I'm going to be using to retrieve that back.
+
+04:26.410 --> 04:28.660
+Now I could go ahead and just see a list.
+
+04:28.930 --> 04:32.410
+That's what we're getting here of and books, it's like that.
+
+04:32.770 --> 04:33.640
+That's totally fine.
+
+04:33.910 --> 04:40.450
+However, I want to wrap that inside of one of those wrappers classes, so that will allow us to add
+
+04:40.450 --> 04:41.800
+more information to it.
+
+04:42.140 --> 04:42.370
+Right?
+
+04:42.760 --> 04:45.220
+Such as loading an exception, so forth.
+
+04:45.430 --> 04:49.830
+So for that, I'm going to go to our data instead of resources.
+
+04:49.840 --> 04:51.860
+I could use that, but I'm going to create a new one.
+
+04:52.240 --> 04:54.640
+Something different so you can play with.
+
+04:55.030 --> 04:56.050
+So I'm going to call this.
+
+04:56.200 --> 04:57.670
+It's going to be a data class.
+
+04:58.570 --> 05:01.270
+Call this data or exception.
+
+05:02.890 --> 05:03.190
+Right.
+
+05:03.200 --> 05:04.510
+So I already have that.
+
+05:04.510 --> 05:07.270
+So I don't want to bore you into coding it.
+
+05:07.450 --> 05:11.950
+And I've been using this throughout the course, so you should be familiar with this.
+
+05:11.950 --> 05:17.230
+But essentially what we're doing here, we're creating a data or exception data class, which essentially
+
+05:17.230 --> 05:22.270
+we're passing if you force a template type, which means this is generic.
+
+05:22.690 --> 05:29.680
+This can be anything and bullet, and we can also add a boolean true or false, which means it's that
+
+05:29.680 --> 05:30.100
+loading.
+
+05:30.250 --> 05:32.380
+And of course, the occasional exception.
+
+05:32.860 --> 05:33.160
+OK.
+
+05:33.340 --> 05:35.680
+And then we're setting it up to say, OK, the variable.
+
+05:36.400 --> 05:42.850
+The property data in this case is going to receive that type wherever we pass here and for loading,
+
+05:43.060 --> 05:48.310
+we're going to receive that bullying whatever pass here and for exception, they're going to pass this
+
+05:48.310 --> 05:49.960
+exception that we may receive.
+
+05:51.170 --> 05:53.720
+That's how a robber class coming back here.
+
+05:53.990 --> 06:02.720
+What I'm going to do is I'm going to use the wrapper class right by saying data or exception.
+
+06:03.500 --> 06:08.510
+And then in this case, I'm going to put the list for our data list of what M books.
+
+06:08.690 --> 06:10.010
+Remember, this is very important.
+
+06:10.460 --> 06:14.180
+And then when you pass a Boolean and an exception.
+
+06:14.450 --> 06:15.440
+That's what I'm expecting.
+
+06:15.440 --> 06:20.750
+When I say, get all books from database and inside here, I'm going to create a variable of type data
+
+06:21.080 --> 06:25.250
+or exception and let's say data, just initialize it.
+
+06:26.320 --> 06:34.060
+And let's a list of books like that and then bullion and an exception.
+
+06:34.390 --> 06:34.770
+All right.
+
+06:34.780 --> 06:37.570
+So we have this narrow exception, which we can then add.
+
+06:38.200 --> 06:39.190
+List of books?
+
+06:40.180 --> 06:42.250
+True or false and or exception?
+
+06:42.370 --> 06:42.670
+All right.
+
+06:43.210 --> 06:47.500
+So then I'm going to say, try here and catch substantially what we've been doing.
+
+06:47.660 --> 06:55.720
+So it's repeating ourselves here, but it's OK to say exception when I guess use the Firebase store
+
+06:56.170 --> 06:58.900
+exception, tailored classes there.
+
+06:59.470 --> 07:03.850
+And what I'm going to do with this exception, well, I'm going to use our data or exception and pass
+
+07:03.850 --> 07:07.150
+it exception that we're getting here.
+
+07:09.360 --> 07:14.460
+By the way, here I'm going to return, hopefully by this time, I'm going to have data or exception
+
+07:14.460 --> 07:15.500
+object rate.
+
+07:16.050 --> 07:18.240
+So here is where we get that information, right?
+
+07:18.660 --> 07:19.750
+So what is I'm going to do here?
+
+07:19.770 --> 07:23.400
+Well, first of all, I'm going to say data or exception.
+
+07:23.400 --> 07:31.470
+I'm going to say loading to true because in case I want to check in our composable if data is being
+
+07:31.470 --> 07:34.410
+loaded, I can use this rare exception.
+
+07:34.620 --> 07:40.270
+And look, if it's loading is true, then I can show the the loading widget.
+
+07:40.530 --> 07:45.090
+OK, and then here I'm going to say data or exception data.
+
+07:45.090 --> 07:46.290
+So I'm going to say that to white.
+
+07:46.290 --> 07:49.560
+Well, this is where we're going to pass this list of books.
+
+07:49.770 --> 07:50.730
+Where is this coming from?
+
+07:50.910 --> 07:55.200
+Well, it's going to be coming from our backend database, firestorm.
+
+07:56.490 --> 07:57.810
+Now, how do we get that?
+
+07:57.840 --> 07:59.910
+Well, here is where magic happens.
+
+08:00.240 --> 08:04.200
+You remember that we passed the query books, right?
+
+08:04.440 --> 08:05.420
+This is the quote books.
+
+08:05.520 --> 08:05.790
+Notice.
+
+08:05.790 --> 08:07.760
+This is a query type.
+
+08:07.770 --> 08:09.060
+It's a very special type.
+
+08:09.120 --> 08:14.430
+Make sure this is from a collection reference, right from Firebase five story.
+
+08:14.440 --> 08:19.710
+It's very important because it has all the information we need to query our database, you'll see.
+
+08:20.130 --> 08:24.510
+So now can can use that query book in this case, quite a book.
+
+08:24.990 --> 08:27.560
+I can say, don't get like that.
+
+08:27.570 --> 08:29.800
+It's important, and then I'm going to use that await.
+
+08:30.210 --> 08:31.470
+I like this now.
+
+08:31.470 --> 08:34.110
+If you don't see this are wait, we're not able to get this week.
+
+08:34.590 --> 08:41.790
+Make sure you've implemented the Catlin Core Routines place services to Gradle, which means let's go
+
+08:41.790 --> 08:42.450
+to our Gradle.
+
+08:43.740 --> 08:46.620
+This is very important because you are going to be very frustrated.
+
+08:46.620 --> 08:49.920
+If this doesn't work, you see, make sure you have this.
+
+08:49.920 --> 08:51.930
+You should have, of course, all of this in a way.
+
+08:51.930 --> 08:57.990
+But in some case, make sure you have this Kotlin Cortines play service like that in order for you to
+
+08:57.990 --> 09:00.180
+be able to see this await.
+
+09:01.080 --> 09:04.470
+So then I'm going to say documents.
+
+09:05.010 --> 09:08.640
+Look at that and I'm going to map those documents.
+
+09:10.240 --> 09:15.790
+So in this case here, I'm going to be passing documents not like this, right?
+
+09:17.910 --> 09:21.090
+I'm going to have a document snapshot and I can do all sorts of things with it.
+
+09:21.540 --> 09:22.380
+What is it I want to do?
+
+09:22.410 --> 09:28.520
+Well, I'm going to use that document snapshot and say to object right to what object?
+
+09:28.530 --> 09:33.090
+Well, I'm going to map it to an ebook of Java.
+
+09:33.090 --> 09:33.540
+Like this?
+
+09:34.230 --> 09:36.480
+And of course, we'll have to unwrap like that.
+
+09:36.780 --> 09:38.640
+We'll look at how beautiful this is.
+
+09:39.910 --> 09:40.180
+Right.
+
+09:40.390 --> 09:48.400
+So we leveraged the things that freebies Firestorm has like passing this query object and say, get
+
+09:48.400 --> 09:51.760
+in because we have the quality and the dependency I told you about.
+
+09:52.360 --> 09:54.310
+We can await this.
+
+09:54.310 --> 09:59.650
+Wait here or wait like a see, it's part of the core routine task, right?
+
+10:00.190 --> 10:03.790
+So it says awaits the completion of the task without blocking a thread.
+
+10:03.820 --> 10:04.450
+Aha.
+
+10:04.690 --> 10:06.760
+Very important because we're going to block any threads.
+
+10:07.000 --> 10:12.290
+We just want to do this work behind without bothering anybody, and they don't want us to get that information.
+
+10:12.290 --> 10:17.170
+We can say documents going to get documents and I'm going to invoke did that math, which then I'm going
+
+10:17.170 --> 10:19.740
+to have this lambda with documents snapshots.
+
+10:19.780 --> 10:22.330
+These are the actual documents that we're getting from here.
+
+10:22.330 --> 10:23.860
+So these documents in our books?
+
+10:24.070 --> 10:24.820
+That's what we're saying.
+
+10:25.510 --> 10:27.040
+When we get those, what do we do?
+
+10:27.070 --> 10:34.030
+Well, we are going to make them all map them into books, objects, which is exactly what we want,
+
+10:34.030 --> 10:36.110
+because remember, this is what we're doing.
+
+10:36.630 --> 10:42.640
+Like, we creating a list of books, objects because as they come in like this, they're not going to
+
+10:42.640 --> 10:47.230
+be book objects, they're going to be hash maps or whatever else.
+
+10:47.260 --> 10:47.520
+Right?
+
+10:48.810 --> 10:49.890
+Look how beautiful this is.
+
+10:50.370 --> 10:54.630
+So that means, yeah, that's what we did, we put in the book object list.
+
+10:54.720 --> 11:01.080
+We added that to our accession data exception object and go inside it into our data and add that which
+
+11:01.080 --> 11:03.390
+is what exactly what it's been expected there.
+
+11:03.480 --> 11:16.620
+And here, because I can say happily, if the data or exception that data is null or empty, if not
+
+11:16.740 --> 11:22.200
+right, because I have an exclamation point there, then I'm going to say data or exception that loading
+
+11:23.790 --> 11:24.720
+said that to false.
+
+11:25.290 --> 11:26.100
+Yep, we're done.
+
+11:26.100 --> 11:27.600
+So no more loading.
+
+11:27.720 --> 11:29.010
+Happening now.
+
+11:29.040 --> 11:32.040
+This, of course, get old books from their base.
+
+11:32.340 --> 11:33.540
+It's ready to be used.
+
+11:35.130 --> 11:40.950
+In our view model, once we created, in fact, we created the model so we can set it up because look
+
+11:40.950 --> 11:48.360
+at this have reference to farm fire repository and we can get the books exciting.

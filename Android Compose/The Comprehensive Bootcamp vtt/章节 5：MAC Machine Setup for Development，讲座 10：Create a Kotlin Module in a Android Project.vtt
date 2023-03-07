@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00.240 --> 00:07.620
+So let me show you how to create a module inside of this Android Studio compose project, right?
+
+00:07.830 --> 00:13.830
+This module will allow us to create a houghtaling file that we were able to play around with codling
+
+00:13.830 --> 00:16.770
+separately from the Android application.
+
+00:16.920 --> 00:23.220
+So what you need to do is open our project, tap there, and let's make sure that the app is selected.
+
+00:23.430 --> 00:24.950
+See right click, say new.
+
+00:24.960 --> 00:26.910
+We want a module, a click there.
+
+00:26.910 --> 00:30.940
+And in this case here we need to specify the template we want to use for a module.
+
+00:30.960 --> 00:34.420
+Well, what we want is Java or Kotlin Library.
+
+00:34.440 --> 00:36.960
+Click on that and of course, quizzes in the library.
+
+00:36.990 --> 00:39.330
+We actually need to pass a name this case.
+
+00:39.330 --> 00:42.600
+I'm going to say my Kotlin or any name you want.
+
+00:42.900 --> 00:43.150
+OK.
+
+00:43.170 --> 00:43.980
+And you can leave.
+
+00:43.980 --> 00:49.290
+The class name of such language obviously has to be codling and not Java because we are interested in
+
+00:49.290 --> 00:51.090
+codling and then just say finish.
+
+00:51.090 --> 00:57.480
+And we'll take a little bit for the Gradle to process and sync everything up and create the actual module.
+
+00:57.630 --> 00:57.990
+OK.
+
+00:58.110 --> 01:03.120
+So after a few moments, you will see that there is a new folder at the bottom here of the project,
+
+01:03.240 --> 01:08.430
+the closed project, you can see it's kind of separate from the app by Android app, so this tells us
+
+01:08.430 --> 01:12.420
+that this is indeed a separate module, but it's still part of the whole project.
+
+01:12.450 --> 01:17.010
+So let's click there and our my Kotlin and you can see there is a folder called Java.
+
+01:17.160 --> 01:22.080
+And then also there is a folder or in this case, what we call a package with this name there and then
+
+01:22.080 --> 01:22.710
+my class.
+
+01:22.860 --> 01:27.300
+So I'm going to double click my class, and what I'm going to do here is actually I'm going to get rid
+
+01:27.300 --> 01:31.210
+of all of that and I'm just going to go ahead and say fun function.
+
+01:31.230 --> 01:36.000
+You can see now right away, Android Studio comes up with suggestions, which is very helpful.
+
+01:36.010 --> 01:37.430
+And so we just hit enter.
+
+01:37.440 --> 01:40.910
+And then I'm going to say Main has to be that name main.
+
+01:40.920 --> 01:43.670
+And the moment you start typing Maine, you can see to the left.
+
+01:43.680 --> 01:50.850
+Here we have this play button, which means then this is the entry point to any codling file, right?
+
+01:50.970 --> 01:55.170
+So it's a function such I'm going to put curly braces around that.
+
+01:55.230 --> 02:01.320
+So now I'm going to say print and then inside here, I'm going to just say Hello, Colin, like this?
+
+02:01.510 --> 02:03.030
+OK, so that's very simple.
+
+02:03.210 --> 02:06.770
+We've created a module and in there we have a class, right?
+
+02:06.780 --> 02:11.550
+And even though we got rid of that class, we just went straight and added a fun main.
+
+02:11.570 --> 02:14.700
+And then we pass in print and pass a string inside.
+
+02:14.730 --> 02:18.980
+Notice if you coming from different programming language notice in Kotlin, we don't need to put semicolons.
+
+02:19.080 --> 02:21.180
+Those are optional, which is really nice.
+
+02:21.360 --> 02:21.640
+OK.
+
+02:21.660 --> 02:23.850
+So how do we run this so we can see something right?
+
+02:23.860 --> 02:26.820
+We just want to print Hello Kotlin somewhere in our console.
+
+02:26.880 --> 02:29.400
+So as you see here, we have this play button.
+
+02:29.400 --> 02:32.370
+So click on that and we're going to click on or run my class.
+
+02:32.520 --> 02:37.140
+Like this and you will see that Gradle is building and running at the bottom here.
+
+02:37.170 --> 02:42.630
+So doing all the work in the background so that this is right now, obviously in the beginning, this
+
+02:42.630 --> 02:48.300
+may take a little bit of time, but once all is done, you can see that hello indeed is working.
+
+02:48.300 --> 02:51.540
+So hello, Kotlin is displayed at the bottom here.
+
+02:51.580 --> 02:57.690
+OK, and they console very good, so we're able to attach a module into our Kotlin Android project so
+
+02:57.690 --> 03:00.480
+that we can separately play around with Coughlin.
+
+03:00.510 --> 03:00.850
+OK.
+
+03:00.870 --> 03:06.780
+So in this case here, just for finding, let's say, vowel name, for instance, is equal to Joe and
+
+03:06.780 --> 03:08.430
+I can't invoke inside here.
+
+03:08.430 --> 03:15.510
+Instead of calling, I'm going to first put the dollar sign and say, Name this while there goes.
+
+03:15.540 --> 03:19.210
+Now we're invoking this variable that has Joe so we can run again.
+
+03:19.230 --> 03:20.040
+We should see.
+
+03:20.250 --> 03:21.330
+Hello, Joe.
+
+03:21.390 --> 03:22.080
+There we have it.
+
+03:22.200 --> 03:28.380
+OK, it's very simple, but I want to show you how you would run Kotlin inside of an Android project.

@@ -1,0 +1,448 @@
+WEBVTT
+
+00:01.170 --> 00:06.350
+All right, so before we go into adding notes and notes, let's go ahead and see if we can add or at
+
+00:06.350 --> 00:11.480
+least be able to see some sort of dummy data showing at the bottom because we have data source.
+
+00:11.900 --> 00:12.790
+Let's use that.
+
+00:12.830 --> 00:16.190
+But before we do that, of course, we need to have that infrastructure right, which is going to be
+
+00:16.190 --> 00:17.330
+at the bottom somewhere.
+
+00:18.530 --> 00:21.770
+Bottom of the button, I'm going to have this list.
+
+00:25.670 --> 00:31.340
+So right there after that scope there, just put enter.
+
+00:31.820 --> 00:34.850
+First of all, I'm going to add it a fighter because I need that nice divider.
+
+00:35.630 --> 00:38.810
+And let's give put a modifier here.
+
+00:40.520 --> 00:44.270
+I want padding about 10 deep.
+
+00:46.840 --> 00:54.340
+And then let's add a lazy column, because that's what we use to load a list of items.
+
+00:54.940 --> 00:57.610
+OK, let's use that to move our past items.
+
+00:57.730 --> 01:00.130
+In this case, make sure you pick the correct one.
+
+01:00.550 --> 01:07.570
+I'm going to use these this items items list there, and I'm going to pass what and when I pass notes
+
+01:08.380 --> 01:12.490
+list there and another lambda say note.
+
+01:13.210 --> 01:15.940
+And here, for now, I'm just going to say text and pass.
+
+01:16.150 --> 01:24.250
+They note that title because this note is going to be an object, whereas this note's coming from,
+
+01:24.610 --> 01:28.690
+well, we should be passing along in notes screen.
+
+01:29.560 --> 01:32.860
+So whatever this is called, we're going to pass that notes list and voila.
+
+01:34.000 --> 01:42.160
+So because I know I have at the bottom here in this note screen preview, I can actually pass that source
+
+01:42.160 --> 01:51.610
+of data notes that are source and then I'm going to get the load notes as such should go ahead and split
+
+01:51.760 --> 01:52.270
+this.
+
+01:52.330 --> 01:53.800
+Let's go ahead and refresh.
+
+01:55.180 --> 02:02.860
+And voila, you can see now we have our list of those notes dummy data I get.
+
+02:03.070 --> 02:06.760
+Obviously, that's not what we're going for, but at least we know things are working.
+
+02:06.760 --> 02:10.600
+At least we're able to get information, get the data that we want.
+
+02:11.830 --> 02:12.210
+OK.
+
+02:12.640 --> 02:13.540
+This is exciting.
+
+02:14.170 --> 02:18.970
+Now, if you want to run this actually to see something, we need to go back to remain active because
+
+02:18.970 --> 02:23.200
+remember, this is what it's called when we actually run into see on the screen.
+
+02:23.590 --> 02:23.860
+All right.
+
+02:24.370 --> 02:25.360
+So this is a mistake.
+
+02:25.690 --> 02:27.370
+We all make notes.
+
+02:28.090 --> 02:32.080
+Data source and load notes.
+
+02:32.590 --> 02:33.370
+Let's go ahead and run.
+
+02:35.610 --> 02:36.300
+And there you have it.
+
+02:36.660 --> 02:40.740
+We have the same thing we saw, but at least now we know that things are working.
+
+02:42.120 --> 02:46.420
+OK, so back to our code, let's get rid of that now.
+
+02:46.470 --> 02:51.840
+This is not what we're going for, so we need to add some sort of a role that it looks nice, something
+
+02:51.840 --> 02:52.290
+like this.
+
+02:52.620 --> 02:54.420
+Nothing out of this world, but something nice.
+
+02:54.960 --> 02:57.810
+So at the bottom here, I'm going to create another function.
+
+02:58.440 --> 03:09.930
+So at composable, it's a function and it's going to be a note row and I'm going to pass the modifier
+
+03:09.930 --> 03:15.360
+because we should always do this an optional one that I'm going to be passing.
+
+03:15.780 --> 03:17.400
+And it's finalized like that.
+
+03:18.060 --> 03:18.360
+Good.
+
+03:19.710 --> 03:22.580
+And let's pass the note, right?
+
+03:22.620 --> 03:23.580
+We actually need to note.
+
+03:24.060 --> 03:32.310
+We can show it's going to be a note object type and add on note clicked because we want to make sure
+
+03:32.310 --> 03:36.330
+that when we click each row, something happens.
+
+03:36.330 --> 03:41.210
+I'm going to pass the note object so we can do whatever we want to do with it.
+
+03:41.250 --> 03:42.330
+So you need to like that.
+
+03:43.570 --> 03:45.250
+OK, I hope this is making sense.
+
+03:45.670 --> 03:51.550
+So we always passing the responsibility policy to the calling function.
+
+03:52.540 --> 03:52.840
+All right.
+
+03:52.990 --> 03:53.650
+So there we go.
+
+03:53.890 --> 03:55.120
+So what I want to do here?
+
+03:55.210 --> 03:59.410
+I'm just going to start putting a surface that always helps.
+
+04:00.620 --> 04:01.990
+Yeah, modifier.
+
+04:01.990 --> 04:08.110
+I'm going to use the modifier we're passing, so we customize things the right way for dpi all around.
+
+04:09.010 --> 04:13.030
+And then what I want to do, I'm going to use the clip function here.
+
+04:13.030 --> 04:16.750
+What this that is is going to allow us to clip using a shape.
+
+04:17.110 --> 04:22.150
+And then here I'm going to see I want to clip it with the rounded corners shape.
+
+04:23.080 --> 04:27.370
+And the beauty here is just I can't specify the size that I want to clip.
+
+04:27.820 --> 04:34.150
+If you look closely, you can see that I only clipped the top end like that, right?
+
+04:34.870 --> 04:36.460
+So I can say top end.
+
+04:36.580 --> 04:42.370
+I want to clipped by three dpi and then the bottom.
+
+04:42.370 --> 04:44.620
+And if I need to, I can do.
+
+04:44.710 --> 04:50.080
+Or let's say, bottom start just to be dramatic here by the same three dpi.
+
+04:51.670 --> 04:52.180
+Very cool.
+
+04:52.690 --> 04:54.250
+And then I'm going to say that.
+
+04:55.770 --> 04:56.910
+Feel Max width.
+
+04:57.660 --> 04:58.200
+Let's give it.
+
+04:59.970 --> 05:00.660
+Color.
+
+05:01.930 --> 05:02.920
+Let's say, Carla.
+
+05:03.850 --> 05:07.030
+This is going to be the color for the entire surface.
+
+05:08.470 --> 05:14.170
+So I'm going to say zero x and f f the f e.
+
+05:16.330 --> 05:17.230
+And six.
+
+05:19.330 --> 05:25.510
+eBay, again, you can change by clicking once you have that hex, you can come click on the gutter
+
+05:25.510 --> 05:28.240
+and change to your color, but that's that that looks good.
+
+05:28.540 --> 05:34.090
+Before I even go in for, let's also add elevation what 60p?
+
+05:34.240 --> 05:37.930
+So next, I'm going to add a column such.
+
+05:39.400 --> 05:46.900
+And for this column here, I'm going to say a modifier, and I'm going to make this clickable because
+
+05:46.900 --> 05:48.670
+I need that click event.
+
+05:48.910 --> 05:49.750
+We'll see later.
+
+05:50.140 --> 05:52.540
+And I want to also give a padding.
+
+05:55.320 --> 05:56.430
+Say horizontal.
+
+05:58.130 --> 06:05.030
+Of about 14 deep and vertical padding of about six deep.
+
+06:07.530 --> 06:15.630
+And continuing here, what I want to do is I want to say horizontal alignment alignment is going to
+
+06:15.630 --> 06:17.640
+be start all the way to the right.
+
+06:18.420 --> 06:18.740
+OK.
+
+06:19.650 --> 06:22.590
+And now I'm just going to have fun by putting text.
+
+06:23.910 --> 06:29.820
+The first text I'm going to add here is going to be the note that title.
+
+06:31.170 --> 06:37.850
+And let's put a style, I'm going to use material theme topography.
+
+06:39.930 --> 06:42.840
+Subtitle one, actually, two,
+
+06:46.440 --> 06:47.820
+then another text.
+
+06:49.740 --> 06:52.200
+There's going to be note description.
+
+06:57.750 --> 07:03.720
+Give it a style like this, and the last one is going to be.
+
+07:04.500 --> 07:09.480
+Note, I want the entry date now for the entry date here.
+
+07:10.050 --> 07:14.010
+I can do more because it will come in as gibberish.
+
+07:14.220 --> 07:14.730
+No.
+
+07:14.820 --> 07:15.700
+So what are we going to do?
+
+07:15.720 --> 07:18.060
+I'm going to say dot and what format?
+
+07:18.090 --> 07:19.560
+Use a formatter here.
+
+07:19.590 --> 07:25.290
+So it's very important because as you can see, format or type is going to be daytime format or object.
+
+07:25.710 --> 07:31.400
+So I'm going to start typing date type, format, object and then I'm going to invoke the Aave pattern.
+
+07:31.410 --> 07:41.370
+This of patterns allow us to show dates in a different format so it can say, for instance, July 18th
+
+07:41.910 --> 07:46.800
+or Wednesday, July 23.
+
+07:46.890 --> 07:52.010
+Can even have years of 1999, something like this.
+
+07:52.240 --> 07:54.830
+So that's what we are trying to pass here to say.
+
+07:54.840 --> 07:56.610
+OK, what is the pattern that we want to pass now?
+
+07:57.000 --> 08:01.050
+Now there are a lot of patterns, right for date time format.
+
+08:01.470 --> 08:06.990
+You can say daytime formatter patterns on Google, you can find a lot of them and they will look like
+
+08:06.990 --> 08:08.820
+something like this e
+
+08:11.130 --> 08:15.990
+comma space D and then m m m like this.
+
+08:16.860 --> 08:17.100
+OK.
+
+08:18.600 --> 08:27.210
+So this will give us a nice format of the day of the week and then the date and the month or so, and
+
+08:27.210 --> 08:30.090
+then we still inside of our text there.
+
+08:30.210 --> 08:33.150
+I can go back and put in a style
+
+08:36.720 --> 08:44.550
+material scene, typography and I a caption make it smaller.
+
+08:45.690 --> 08:45.990
+Right.
+
+08:46.000 --> 08:52.230
+So if you go here and let's go ahead and refresh, we should see something different, hopefully.
+
+08:53.460 --> 08:56.970
+Of course, you won't see anything different because we're not calling different note of row.
+
+08:58.140 --> 08:59.100
+What a waste of time.
+
+08:59.370 --> 08:59.820
+OK.
+
+09:00.270 --> 09:02.700
+So here I'm going to hold note row.
+
+09:03.000 --> 09:04.560
+Sorry, I'm just smiling here.
+
+09:04.920 --> 09:08.570
+And we're past our note and therefore on click.
+
+09:08.580 --> 09:13.380
+For now, I am just not going to do anything because we don't want to deal with it until later.
+
+09:13.390 --> 09:15.330
+So let's go ahead and refresh one more time.
+
+09:15.660 --> 09:24.990
+Hopefully, we should see something pleasing to the eye and one that very nice can see.
+
+09:24.990 --> 09:29.610
+It looks really, really nice because we changed that.
+
+09:29.610 --> 09:31.230
+Make this perhaps bigger.
+
+09:31.650 --> 09:36.480
+You can look at it now because we changed the clip.
+
+09:37.020 --> 09:40.820
+We say the bottom start and top end, right?
+
+09:41.130 --> 09:44.370
+These we added that clip and looks really nice.
+
+09:44.760 --> 09:47.280
+But most importantly, look at the data that we have now.
+
+09:47.280 --> 09:51.470
+We have the actual title of our entry.
+
+09:51.480 --> 09:56.200
+We have the description, the actual entry and the date.
+
+09:56.700 --> 09:59.160
+It's it's Thursday, the 28th of October.
+
+10:00.030 --> 10:00.300
+All right.
+
+10:00.300 --> 10:01.260
+So things are looking good.
+
+10:01.560 --> 10:10.380
+In fact, if I go ahead and run now this app on my emulator or in your case, when your phone is my
+
+10:10.380 --> 10:13.950
+case actually is on the phone, you can see that we have these nice entries.
+
+10:14.280 --> 10:18.990
+All of these are dummy data, but nonetheless we have this infrastructure set up for us.
+
+10:20.140 --> 10:28.330
+OK, so what's left to do now is to be able to add something like this and then save it when we save
+
+10:28.330 --> 10:31.000
+it, we want to be able to add to this list.
+
+10:31.930 --> 10:32.200
+OK.
+
+10:32.440 --> 10:34.720
+That's what we're going to be looking at next.

@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00.780 --> 00:01.130
+Wow.
+
+00:01.860 --> 00:09.150
+We've done a lot of things in this section, so we've actually built from scratch an awesome app, a
+
+00:09.360 --> 00:13.270
+weather forecast app with a lot of screens, as you see.
+
+00:13.290 --> 00:16.740
+So congratulations for getting to this point.
+
+00:17.070 --> 00:22.470
+And I'm very excited that you were here and that you stuck with it and you got this done.
+
+00:22.620 --> 00:28.230
+So a lot of moving parts, and I hope you found it helpful and I hope you were inspired to continue
+
+00:28.440 --> 00:32.420
+learning more about Compose again.
+
+00:32.430 --> 00:34.230
+He learned a lot to learn more about Compose.
+
+00:34.500 --> 00:40.620
+Of course, you learn about defending rejection and clean architecture, using a few models, repositories
+
+00:40.620 --> 00:45.690
+and different ways of thinking about putting together your apps, which is very helpful.
+
+00:46.050 --> 00:52.050
+You'll learn about Broom database, how to save data into a database and retrieve that data right?
+
+00:52.050 --> 00:57.390
+And do all the operations, crud operations, create, read, update, delete and so forth.
+
+00:57.990 --> 01:05.160
+And of course, we'll learn how to use Retrofit, which allows us to do all those HTTP calls and and
+
+01:05.220 --> 01:11.250
+get to Jason and create objects that we can then use in our apps that represent that data.
+
+01:11.790 --> 01:19.290
+And I would like to thank you for taking the time to go through this section to go through this part
+
+01:19.290 --> 01:21.230
+of building this full fledged application.
+
+01:21.230 --> 01:26.850
+And as always, I would like to invite you to continue working on this application or something similar
+
+01:26.850 --> 01:32.000
+to this, because now you have the tools that will allow you to actually go and do more work, right?
+
+01:32.250 --> 01:35.070
+Build applications that you want to build.
+
+01:35.820 --> 01:36.210
+All right.
+
+01:36.540 --> 01:39.810
+Thank you so much again, and I'll see you next time.

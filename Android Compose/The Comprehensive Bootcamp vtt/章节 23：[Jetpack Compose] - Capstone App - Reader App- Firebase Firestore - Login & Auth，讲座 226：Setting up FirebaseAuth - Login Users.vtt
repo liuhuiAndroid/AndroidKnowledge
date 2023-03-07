@@ -1,0 +1,706 @@
+WEBVTT
+
+00:00.510 --> 00:06.480
+So in order for us to be able to log in users or create account, we need to go back to our console
+
+00:06.480 --> 00:12.640
+for our base or just go to where you query the app in our console and to the left here.
+
+00:12.660 --> 00:17.340
+We have different services, so we want to go to authentication, so click there.
+
+00:17.880 --> 00:23.790
+And of course, you will have to get started to start to to start authenticating your users.
+
+00:24.180 --> 00:30.480
+There are different ways or different forms of authenticating users so we can use Google, Facebook
+
+00:30.480 --> 00:34.830
+gameplay, Apple, Microsoft, Twitter and so forth, or phone or anonymous.
+
+00:35.160 --> 00:37.090
+We're just going to use the email and password.
+
+00:37.110 --> 00:40.110
+So click there and you will have to enable it.
+
+00:40.500 --> 00:40.800
+OK.
+
+00:41.040 --> 00:47.130
+So in this case, I want to enable it to allow users to sign up using their email address and password.
+
+00:47.370 --> 00:51.600
+OK, now you could also enable the the email link.
+
+00:52.050 --> 00:52.970
+We're not going to do that.
+
+00:52.990 --> 00:55.830
+So it's OK as we have it here, right?
+
+00:56.100 --> 00:58.260
+Notice this is going to be inside of was signing method.
+
+00:58.620 --> 00:58.860
+OK.
+
+00:59.370 --> 01:00.660
+Well, let's say safe.
+
+01:02.260 --> 01:06.460
+And you can see now you should see the email and password enabled.
+
+01:06.970 --> 01:11.950
+If you go to our users right, you should see that there is no users for this project yet.
+
+01:12.250 --> 01:17.950
+So as we authenticate or create new users here, they will be added here.
+
+01:18.880 --> 01:24.070
+So you could also add one user here, let's go ahead and add one ourselves so we can see if we can log
+
+01:24.070 --> 01:24.280
+in.
+
+01:25.260 --> 01:32.790
+So I'm going to see me at Mi.com and add a password here, tester, that's OK, I'm going to add this
+
+01:32.790 --> 01:33.150
+user.
+
+01:34.220 --> 01:35.930
+And you can see the user was added.
+
+01:36.530 --> 01:37.340
+OK, very good.
+
+01:37.730 --> 01:42.740
+So now how do we then go through the process of let's start with the logging in the user?
+
+01:42.770 --> 01:47.300
+Now we could go here and write the code for logging in, which is fine.
+
+01:47.540 --> 01:53.360
+But again, we are smart enough now to understand that it's always a good idea to take out these functionalities
+
+01:53.360 --> 01:57.110
+to put in a separate file that can be accessed from anywhere.
+
+01:57.140 --> 02:00.380
+OK, so let's put all of that into a view model.
+
+02:00.380 --> 02:04.190
+That way, we can just invoke the view model and have access to that.
+
+02:04.340 --> 02:06.430
+Now this is going to be more apparent now.
+
+02:06.440 --> 02:15.050
+The reason why I have for each screen, I have a dedicated folder or a dedicated package because now
+
+02:15.500 --> 02:22.310
+in our login screen, how far they would go, I can now right click and add a new.
+
+02:23.740 --> 02:32.700
+Cuddling class, this case, I'm going to call this log in screen view model such.
+
+02:33.400 --> 02:34.430
+Look how neat this is.
+
+02:34.450 --> 02:37.030
+Now it's all inside of log in package.
+
+02:38.270 --> 02:41.270
+Along with the reader, log in screen, very handy.
+
+02:41.570 --> 02:46.670
+All right, let's get rid of some of these that we are not really interested in seeing at this point.
+
+02:46.790 --> 02:50.240
+So we have a clean works play workspace there.
+
+02:50.450 --> 02:52.100
+OK, so we're going to leave both of these.
+
+02:53.090 --> 02:53.420
+All right.
+
+02:53.780 --> 02:59.390
+So in this case here, I'm not going to use the dependency injection because it's a very simple fuel
+
+02:59.390 --> 03:03.650
+model, but I still need to invoke the view model.
+
+03:03.840 --> 03:04.390
+Why such?
+
+03:04.820 --> 03:05.110
+OK.
+
+03:06.230 --> 03:08.790
+To say that extends if you model so we can start using it.
+
+03:08.990 --> 03:11.280
+I'm going to create a few variables here.
+
+03:11.850 --> 03:18.570
+Now I want to always have some sort of a state, so I know if things are working to our advantage,
+
+03:18.570 --> 03:24.210
+meaning if we are actually able to load stuff and we can look at that state, a loading state, for
+
+03:24.210 --> 03:31.230
+instance, there are different ways to create a loading state or state of our data as it's connecting
+
+03:31.230 --> 03:33.090
+or receiving data from somewhere.
+
+03:33.240 --> 03:34.230
+I'm going to do it this way.
+
+03:34.230 --> 03:35.520
+So this is a different way.
+
+03:35.520 --> 03:36.390
+It would say foul.
+
+03:36.390 --> 03:46.260
+Create a loading state here, and I'm going to use this mutable state flow instead of just mutable state
+
+03:46.440 --> 03:48.690
+to ball state flow.
+
+03:48.780 --> 03:53.820
+This mutable state flow and mutable state, they are pretty much the same, except with flow.
+
+03:54.060 --> 03:59.380
+It's a little bit different because it deals with other things that mutable state may not deal with.
+
+03:59.400 --> 04:03.570
+So we're just going to go with Mirabal state flow here just because we want to.
+
+04:04.080 --> 04:04.380
+All right.
+
+04:04.650 --> 04:08.540
+Now, in this case, I need to pass something here to start off.
+
+04:08.550 --> 04:13.200
+So I'm going to pass this loading state and say, not idle.
+
+04:13.530 --> 04:16.440
+No, we haven't created this loading state class.
+
+04:16.440 --> 04:19.710
+It looks like some sort of static class of some sort.
+
+04:20.220 --> 04:21.330
+Yes, you're right.
+
+04:22.350 --> 04:23.090
+That's what it is.
+
+04:23.130 --> 04:24.270
+So bottom here me.
+
+04:24.270 --> 04:27.150
+Go ahead and create a class.
+
+04:27.420 --> 04:29.190
+It's going to be an enum like this.
+
+04:30.270 --> 04:33.120
+Let's extract to a different folder or file.
+
+04:33.690 --> 04:35.310
+Let's just track two different file.
+
+04:35.430 --> 04:38.190
+Click there and I can keep instead of a log in.
+
+04:38.190 --> 04:39.000
+That's fine.
+
+04:39.180 --> 04:39.920
+And there we go.
+
+04:39.930 --> 04:42.450
+We have our loading state.
+
+04:42.720 --> 04:44.610
+So it's going to be an enum here.
+
+04:44.610 --> 04:48.180
+We're going to put a few states that we may want.
+
+04:48.510 --> 04:49.980
+In fact, let's change this.
+
+04:50.250 --> 04:55.530
+Just a data class for now submits a data class loading state.
+
+04:56.220 --> 04:58.140
+And I say this is going to be enum here.
+
+04:58.210 --> 04:59.790
+So, OK, we're going to fix all of that.
+
+04:59.790 --> 05:02.490
+So let's pass a few values here.
+
+05:03.090 --> 05:09.690
+The constructor, the primary constructor that we start, is going to be status, which we haven't seen
+
+05:09.690 --> 05:09.990
+yet.
+
+05:10.160 --> 05:11.220
+So, OK, we're going to get there.
+
+05:11.760 --> 05:14.010
+And Val, I'm going to say message.
+
+05:16.720 --> 05:21.850
+It's going to be a strange type and maybe that knowable, if I can, just going to make it known right
+
+05:21.850 --> 05:22.120
+away.
+
+05:22.960 --> 05:27.440
+All right now inside here, I'm going to create an enum class that will be status.
+
+05:27.490 --> 05:28.620
+So this will control.
+
+05:28.630 --> 05:31.090
+Of course, we'll have a list of all this status.
+
+05:31.450 --> 05:34.060
+So I can just put a bunch of different status here.
+
+05:34.060 --> 05:39.160
+I can say, for instance, running success failed.
+
+05:39.310 --> 05:42.160
+Loading We can't get rid of running this loading and running.
+
+05:42.160 --> 05:43.600
+It's the same thing, pretty much.
+
+05:43.930 --> 05:45.090
+And idle.
+
+05:45.640 --> 05:49.690
+OK, so we can pass through different states that we want to keep track of.
+
+05:50.320 --> 05:54.700
+I'm going to create a companion object so we can actually use it directly.
+
+05:54.700 --> 05:56.980
+So it's a companion object and such.
+
+05:58.240 --> 06:07.210
+And then I'm going to say Val idle, this case is going to be equal to loading stayed in there past
+
+06:07.210 --> 06:14.830
+the status of idle like this can do the same thing with others can add as many as it want.
+
+06:15.040 --> 06:18.580
+I can add all of them in this case and see success.
+
+06:18.820 --> 06:22.000
+It's going to be equal to success and pass out.
+
+06:22.000 --> 06:22.630
+Loading.
+
+06:26.210 --> 06:32.360
+Status loading and so forth, so I could continue on and on to get, in fact, it was still here, let's
+
+06:32.360 --> 06:37.490
+just do all of them and say failed.
+
+06:39.870 --> 06:40.710
+It's going to be failed.
+
+06:41.130 --> 06:46.290
+So all we're doing here, we're creating this loading state class, which has this companion object
+
+06:46.290 --> 06:51.990
+here, which means just a static object that we can access directly.
+
+06:52.560 --> 06:59.070
+And when we access the idol value, we are going to load the state to say the state is idle.
+
+06:59.850 --> 07:01.770
+If success would do the same and so forth.
+
+07:02.520 --> 07:11.370
+So this is just a good way for us to wrap our state, our data should say into a state so that way we
+
+07:11.370 --> 07:14.160
+can check to see where we are in the process.
+
+07:15.250 --> 07:15.480
+All right.
+
+07:16.290 --> 07:16.620
+Very good.
+
+07:16.650 --> 07:19.980
+So now you see that this looks good.
+
+07:20.010 --> 07:21.150
+So I'm saying he's loading.
+
+07:21.150 --> 07:26.370
+State at first is going to be immutable state flow and then it's going to be idle in the beginning.
+
+07:27.150 --> 07:27.630
+Nothing.
+
+07:27.650 --> 07:30.000
+Meaning nothing is happening is just idle.
+
+07:30.930 --> 07:32.310
+That's the state now.
+
+07:32.340 --> 07:36.360
+Next, I'm going to create a private variable variable here.
+
+07:36.540 --> 07:37.410
+Call this off.
+
+07:37.890 --> 07:45.870
+Now this is going to be a special one because is going to be a firebase like such as object right from
+
+07:45.870 --> 07:46.260
+Google.
+
+07:46.580 --> 07:48.210
+And I said it to Firebase.
+
+07:50.130 --> 07:56.100
+Get this Firebase Kotlin extension and I'm going to get it off like that.
+
+07:56.430 --> 08:01.500
+What I'm doing here is, are we invoking the Firebase author we have access to to the authentication
+
+08:02.430 --> 08:02.940
+library?
+
+08:02.970 --> 08:05.340
+Next, here I'm going to create another private variable.
+
+08:05.490 --> 08:12.090
+So I'm going to use another kind of internal private variable here called loading and I'm going to use
+
+08:12.090 --> 08:15.930
+a different type was immutable live data.
+
+08:16.080 --> 08:17.980
+So I know I'm using different types here.
+
+08:18.270 --> 08:21.030
+In fact, as it is right now, I won't need this.
+
+08:21.030 --> 08:22.050
+I'm going just get rid of that.
+
+08:22.170 --> 08:24.970
+I'm actually going to use internally the loading.
+
+08:24.990 --> 08:31.770
+Really, I'm not going to use outside of this so we can enable this if we want later to do something
+
+08:31.770 --> 08:34.080
+else where we can check the state right.
+
+08:34.320 --> 08:36.330
+But for now, I'm just going to not use that.
+
+08:36.510 --> 08:38.910
+OK, I might create a new one that I'm going to use internally.
+
+08:39.480 --> 08:45.780
+But nevertheless, this was good to learn how to at least hook this up, right?
+
+08:45.780 --> 08:47.800
+So we have mutable list live data.
+
+08:47.850 --> 08:55.260
+Again, another type here that allows us to hold this data in the reactive data that can be passed along
+
+08:55.260 --> 08:59.850
+because it has state and so can be recomposed in our composable functions.
+
+09:00.570 --> 09:05.070
+And so the first file is going to be false for immutable life data.
+
+09:05.520 --> 09:12.330
+OK, so in this case, I'm going to create then the interface variable that can be used somewhere else
+
+09:12.330 --> 09:12.960
+if we need to.
+
+09:13.620 --> 09:14.580
+I'm going to say loading.
+
+09:16.020 --> 09:17.370
+It's going to be live data.
+
+09:18.960 --> 09:20.370
+It's actually going to pass the type.
+
+09:20.370 --> 09:21.510
+It's going to be just a Boolean.
+
+09:22.080 --> 09:23.860
+Now we could have used mutable state.
+
+09:23.880 --> 09:24.450
+That's fine.
+
+09:24.660 --> 09:28.590
+I'm using different types, so hopefully we can see that we can interchange.
+
+09:28.590 --> 09:29.490
+Daniel can use them.
+
+09:29.700 --> 09:31.470
+But usually you want to just pick one and go for it.
+
+09:31.950 --> 09:32.190
+All right.
+
+09:32.190 --> 09:37.160
+So we have live data here, and I'm going to set that to our loading or loading data.
+
+09:37.170 --> 09:39.390
+I'm going to set that into our loading there.
+
+09:39.390 --> 09:45.780
+So what I'm doing here is that this is going to be used internally and this is a something variable
+
+09:45.780 --> 09:48.630
+that can be used outside of this class.
+
+09:48.960 --> 09:49.620
+Right now.
+
+09:49.620 --> 09:58.890
+Inside here, I'm going to create a function called create user with email and password.
+
+09:59.040 --> 10:03.210
+Yes, I know a very long function name.
+
+10:04.020 --> 10:05.220
+And so what are we going to do here?
+
+10:05.250 --> 10:10.830
+Yes, we are going to be loading or creating the user with email and password.
+
+10:11.370 --> 10:15.960
+And also, we're going to create another one, another function when I create or log in user.
+
+10:16.050 --> 10:17.460
+I would call it, let's see.
+
+10:17.460 --> 10:23.670
+Make sure let's call this sign in with email and password.
+
+10:25.130 --> 10:25.670
+As such.
+
+10:26.750 --> 10:27.980
+OK, so we have two of them.
+
+10:28.340 --> 10:30.700
+Let's start with this one here.
+
+10:30.710 --> 10:34.820
+I'm going to actually put that on top there, right?
+
+10:34.910 --> 10:40.550
+So to sign in, sign a user with email and password, we need to pass a few parameters.
+
+10:40.850 --> 10:42.110
+First of all, it's going to be email.
+
+10:42.230 --> 10:43.520
+It's going to be a string.
+
+10:44.270 --> 10:49.610
+And yes, you guessed it the password, which is also going to be a string type asset.
+
+10:49.910 --> 10:50.330
+Very good.
+
+10:50.540 --> 10:52.490
+So what is there we're going to be doing here?
+
+10:52.760 --> 11:01.370
+Well, luckily we do have our US, which essentially allows us to get to our authentication library
+
+11:01.370 --> 11:05.270
+and get all these functionalities to log the user into all sort of things.
+
+11:05.630 --> 11:07.280
+So in this case, we're going to use that.
+
+11:07.430 --> 11:14.960
+So I'm going to put inside of a try and catch because things could go wrong and catch such and pass
+
+11:14.960 --> 11:15.350
+here.
+
+11:15.620 --> 11:18.650
+He, for exception, passing an exception as such.
+
+11:19.700 --> 11:23.780
+And if something happens, Lagarde is going to pass the message.
+
+11:23.780 --> 11:27.020
+So he likes that message.
+
+11:27.740 --> 11:28.100
+Done.
+
+11:29.060 --> 11:30.200
+And this is going to be.
+
+11:31.770 --> 11:32.400
+AFB.
+
+11:34.810 --> 11:35.230
+OK.
+
+11:35.470 --> 11:38.590
+So how do we sign in with email and password?
+
+11:38.650 --> 11:44.440
+Like I said, we can use, of course, our auth object there because they us look at that, it's a Firebase
+
+11:44.440 --> 11:47.610
+auth object, which is very helpful.
+
+11:47.620 --> 11:51.880
+I can go ahead and just say that, look how easy this is.
+
+11:51.880 --> 11:55.360
+I can go ahead and say, sign in with.
+
+11:59.030 --> 12:05.720
+With look at this, all of these different methods we can call sign in with email and password, that
+
+12:05.720 --> 12:08.780
+is exactly what I want and I'm going to pass the email.
+
+12:09.690 --> 12:15.310
+She's going to be to email and pass the password, I said.
+
+12:16.250 --> 12:24.530
+And I can go ahead and say, add on complete listener, which in this case, it's going to give me some
+
+12:24.530 --> 12:27.650
+information that I may need, which is going to be a task like that.
+
+12:27.860 --> 12:28.620
+This object?
+
+12:28.670 --> 12:29.030
+Oops.
+
+12:29.090 --> 12:33.860
+Add on cancel has to be add on complete listener.
+
+12:34.430 --> 12:35.570
+OK, there we go.
+
+12:36.050 --> 12:37.180
+So now we have this task.
+
+12:37.190 --> 12:40.790
+If you have over, it's going to be an information that I may want to use.
+
+12:40.800 --> 12:50.150
+For instance, I can say that if task actually, if you go task like this, you can see it's a type.
+
+12:50.660 --> 12:58.040
+It's a task type that contains auth result object, which means it's going to give the information about
+
+12:58.040 --> 13:01.100
+whether this user was indeed a locked-in or not.
+
+13:01.370 --> 13:06.260
+So I can see if is successful, I have that variable there.
+
+13:06.710 --> 13:07.490
+That's true.
+
+13:07.700 --> 13:11.120
+Then we can do something to do here to do here.
+
+13:11.120 --> 13:15.160
+I'm going to say, take them home.
+
+13:15.170 --> 13:17.000
+So I'm going to take the users to the home screen.
+
+13:17.740 --> 13:18.350
+Else?
+
+13:18.350 --> 13:20.330
+Well, we're out of luck.
+
+13:22.070 --> 13:28.430
+Else, I'm just going to log them and say something that they'll pass in the task.
+
+13:30.080 --> 13:31.340
+That result.
+
+13:31.880 --> 13:33.890
+And to string AFB like this.
+
+13:34.520 --> 13:40.820
+Now all of this is actually not a good idea to put all of that just in a function like this, right?
+
+13:41.300 --> 13:46.100
+Remember, because we're going to be dealing with going somewhere.
+
+13:46.130 --> 13:51.170
+Meaning we have to go to our authentication, our father basically reconnecting somewhere else in this
+
+13:51.170 --> 13:51.440
+case.
+
+13:51.800 --> 14:01.070
+We need to pass along all of this that we've written has to be passed inside of a few model scope.
+
+14:01.460 --> 14:01.730
+Right.
+
+14:01.730 --> 14:05.300
+Because we need to pass that through a routine right away.
+
+14:05.600 --> 14:11.210
+We are able to run this process away from the main threat here.
+
+14:11.230 --> 14:17.900
+I'm going to just put say equal to view model, scope dot launch like that.
+
+14:18.530 --> 14:22.960
+And so everything is now going to be inside of these scopes.
+
+14:22.980 --> 14:24.310
+If you click here, let's see.
+
+14:24.320 --> 14:27.740
+Make sure that, yeah, all is enclosed there.
+
+14:29.150 --> 14:34.490
+So this will know exactly that it needs to run in a different scope and a different core routine so
+
+14:34.490 --> 14:35.660
+that we don't run into issues.

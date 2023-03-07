@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">渣普天气</string>
+    <string name="about_app">Weather App v.0.1</string>
+    <string name="api_used">Weather API by: 和风天气</string>
+</resources>

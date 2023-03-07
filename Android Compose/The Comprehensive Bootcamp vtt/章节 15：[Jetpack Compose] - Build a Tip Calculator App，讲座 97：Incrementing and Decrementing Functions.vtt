@@ -1,0 +1,238 @@
+WEBVTT
+
+00:01.560 --> 00:05.040
+Now we're going to work on the logic, but we're going to start small.
+
+00:05.100 --> 00:10.590
+So we're going to start with this split, these two buttons here we have minus and plus.
+
+00:10.960 --> 00:12.600
+OK, so it is simple.
+
+00:12.600 --> 00:18.900
+We want to make sure that when we click minus in this case to subtract, we want to subtract a number
+
+00:19.350 --> 00:20.880
+and if we go upwards.
+
+00:21.150 --> 00:23.120
+Plus, we're going to add more people.
+
+00:23.130 --> 00:28.740
+In this case, where he was saying that we want to split three ways four ways five, six, seven, 10,
+
+00:28.980 --> 00:29.970
+10 ways and so forth.
+
+00:30.390 --> 00:31.590
+OK, let's look at that logic.
+
+00:31.890 --> 00:34.530
+And all of that is found inside of a round button.
+
+00:34.530 --> 00:42.420
+So if I go back to our bill form, we'll see that we have input there and we have a row.
+
+00:43.350 --> 00:47.220
+And let's start with our first button here, which is the minus button.
+
+00:47.970 --> 00:51.180
+So all of that is going to happen inside of our own click.
+
+00:52.080 --> 00:53.610
+So what is it that we want to happen?
+
+00:53.820 --> 00:58.200
+Remember that in this case here, we need to always think of this state.
+
+00:58.200 --> 01:04.860
+We want to keep this state or the counter in this case of the people or the amount or we are going to
+
+01:04.860 --> 01:05.580
+split by.
+
+01:06.300 --> 01:07.960
+So what do we need to do again?
+
+01:07.980 --> 01:11.730
+You may have guessed, wouldn't create yet another state at the top here.
+
+01:12.690 --> 01:19.380
+And this is going to be what I call the let's say Val say, split by.
+
+01:21.040 --> 01:23.710
+State, OK and say, remember?
+
+01:26.250 --> 01:33.570
+State of it's going to an integer just pass this pass one hour on click run button here, what is that?
+
+01:33.570 --> 01:34.230
+We want to happen.
+
+01:34.500 --> 01:43.110
+So we want to say split by the value, the state, that value in this case, we want to set it to a
+
+01:43.110 --> 01:43.950
+certain value.
+
+01:44.400 --> 01:48.000
+But when you think about this first, what do we want to happen?
+
+01:48.270 --> 01:54.300
+Is that this value here when we click, let's say, if we have, first of all, it always should have
+
+01:54.300 --> 01:54.670
+one.
+
+01:54.690 --> 01:58.230
+That's important because we don't want to split by zero.
+
+01:58.350 --> 02:03.900
+We need to put some sort of a range to say, OK, if we get to one as they click miners, we need to
+
+02:03.900 --> 02:04.560
+stop at one.
+
+02:04.590 --> 02:06.330
+So here I'm going to put an if statement.
+
+02:06.450 --> 02:13.920
+Let's put it in the near line with say if, if split by state that value current one that we may have
+
+02:14.550 --> 02:16.020
+is greater than one.
+
+02:17.220 --> 02:20.250
+Then in that case, then split by value.
+
+02:23.870 --> 02:26.720
+I'm just going to say minus one, so I'm going to subtract.
+
+02:27.760 --> 02:34.090
+Might be that would work else, I'm just going to say it's played by, it's going to be equal to one.
+
+02:34.570 --> 02:41.710
+So we're saying here the value of our split by state is going to be equal depending on whether to value,
+
+02:41.710 --> 02:43.210
+current value is greater than one.
+
+02:43.240 --> 02:48.580
+If it is greater than one, then yes, we're going to subtract minus one, because that means we haven't
+
+02:48.580 --> 02:49.420
+hit zero yet.
+
+02:50.140 --> 02:57.520
+Else, if it is indeed less than one right, then which is going to say this is going to be one, that's
+
+02:57.520 --> 03:01.780
+what we're going to pass inside here because this is just a dummy data, we added here.
+
+03:01.790 --> 03:05.670
+So I'm going to say split by that value as such.
+
+03:05.800 --> 03:06.640
+Let's see if this works.
+
+03:06.640 --> 03:07.480
+We'll go ahead and run.
+
+03:07.930 --> 03:10.390
+OK, so now we see one here.
+
+03:10.390 --> 03:16.930
+The reason being is because we said the first state of the first value, the default values are going
+
+03:16.930 --> 03:20.170
+to be one less actually changes to zero, which are very good.
+
+03:20.590 --> 03:27.310
+That means then if I try to go minus not, it's not going to happen if I change this just for testing
+
+03:27.310 --> 03:27.940
+purposes.
+
+03:29.070 --> 03:30.870
+If I say, for instance, three.
+
+03:32.250 --> 03:33.090
+Let's run again.
+
+03:36.580 --> 03:43.780
+Because of what we've just done here, the safe statement and checking the values, you will see that
+
+03:43.780 --> 03:47.380
+we are going to be able to subtract the value.
+
+03:49.280 --> 03:55.160
+So now is this three, if I go down right, there we go, but if I get one, try to keep going, it's
+
+03:55.160 --> 03:56.600
+not going to accept that value.
+
+03:57.500 --> 03:57.830
+Very good.
+
+03:57.860 --> 03:58.970
+That's exactly what we want.
+
+03:59.420 --> 04:02.740
+Let's go back and put one here.
+
+04:05.110 --> 04:07.040
+Here, there's really not much work to do.
+
+04:07.250 --> 04:08.360
+But just for fun.
+
+04:08.360 --> 04:10.880
+What we can do, we can put a cap, right?
+
+04:11.450 --> 04:16.250
+Let's say we want to make sure that they split by state that value.
+
+04:16.250 --> 04:21.620
+In this case, we'll check to see if it's less than a certain range.
+
+04:21.980 --> 04:26.420
+So I can use Cartland to calculate a range or to give us a range.
+
+04:26.690 --> 04:33.260
+Let's create here and say Val range, be equal to it.
+
+04:34.900 --> 04:41.740
+Range like this, and they can pass here, start, it's going to be one and and inclusive, let's say,
+
+04:41.740 --> 04:43.610
+100 just to be dramatic.
+
+04:43.670 --> 04:49.570
+OK, so now we can use that range to compare if split buying value is less than.
+
+04:49.720 --> 04:57.160
+And then I'm going to say split value or split by value, then I'm going to be able to say split by
+
+04:57.160 --> 04:58.150
+value again.
+
+04:59.560 --> 05:04.310
+Plus, one makes sense because we're within the range.
+
+05:04.420 --> 05:07.360
+So let's say value like this to get the actual value.
+
+05:08.200 --> 05:09.370
+OK, let's go ahead and run.
+
+05:10.650 --> 05:11.350
+OK, let's see.
+
+05:12.670 --> 05:15.130
+And it's working for go.
+
+05:16.320 --> 05:20.700
+Lower, we can see works stops at one end, very good.
+
+05:20.910 --> 05:24.630
+So our split buttons here are indeed working.

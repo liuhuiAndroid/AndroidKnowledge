@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00.300 --> 00:04.120
+So in Scotland, there is another type of class called data class.
+
+00:04.320 --> 00:07.080
+So they do class, as the name implies, it is a simple class.
+
+00:07.290 --> 00:13.740
+All he does is to hold data, so there's no concerns about trying to inherit to make it special in any
+
+00:13.740 --> 00:14.060
+way.
+
+00:14.130 --> 00:17.370
+So the main use is just to hold data.
+
+00:17.730 --> 00:24.000
+For instance, if we want to create a class called person write that will create personal object.
+
+00:24.270 --> 00:30.990
+We can just create that class a session, set data class like this and pass a name and I can say person
+
+00:31.230 --> 00:31.830
+and pass.
+
+00:31.860 --> 00:40.460
+Of course, the primary constructor can pass your file name, be a string type, or I can say file last
+
+00:40.470 --> 00:50.220
+name, and it's also going to be a string and also can continue and say, I want age to be an integer
+
+00:51.090 --> 00:54.840
+and I don't have to even create a body for this class.
+
+00:55.680 --> 01:04.590
+So now, instead of Maine or anywhere else, I can just go ahead and say file person is equal to person
+
+01:04.590 --> 01:05.190
+I search.
+
+01:05.640 --> 01:08.160
+And of course, I can go ahead and initialize this person.
+
+01:08.550 --> 01:09.390
+Put in your line.
+
+01:09.390 --> 01:10.500
+I'm going to say name.
+
+01:11.190 --> 01:14.250
+It's going to be Joe.
+
+01:16.880 --> 01:20.960
+Last name, Paul.
+
+01:23.110 --> 01:23.860
+An age.
+
+01:26.020 --> 01:26.560
+23.
+
+01:27.670 --> 01:27.930
+All right.
+
+01:28.360 --> 01:38.050
+And now I can say print n person, I S. If I run this, we're going to see that person now is in this
+
+01:38.050 --> 01:40.920
+format because this is a data class.
+
+01:40.930 --> 01:47.830
+That means when Caitlyn compile this, it's going to just have some standard functionality and some
+
+01:47.830 --> 01:52.690
+utility functions that are automatically given to this data class.
+
+01:53.350 --> 01:58.510
+In fact, if I come here and I say person to access the variable, you can see that we have copy.
+
+01:58.840 --> 02:00.610
+We have equals access code.
+
+02:00.620 --> 02:05.980
+So it just drives a few of the functions that a normal class would have.
+
+02:07.300 --> 02:10.300
+And this to string here is, of course, added as well.
+
+02:10.300 --> 02:17.080
+That's the reason why whenever we say print just person, you can see the representation that it has
+
+02:17.290 --> 02:20.500
+six person names going to be equal to Joe.
+
+02:20.770 --> 02:22.990
+Last name ball age 23.
+
+02:23.290 --> 02:31.210
+In many cases, this is how actually you will see this class being used or created in Kotlin, something
+
+02:31.210 --> 02:37.330
+that is simple and it's going to just hold data in this case, a data person like this, then you just
+
+02:37.330 --> 02:38.240
+go straight and do that.
+
+02:38.800 --> 02:40.760
+And with this, you can do all sort of things right.
+
+02:40.760 --> 02:42.940
+They can create as many persons as I want.
+
+02:43.150 --> 02:49.750
+So I can, for instance, say Val list of people is equal to.
+
+02:51.180 --> 03:01.310
+List of this is indeed a and immutable list, so I can say person to person first and I can go ahead
+
+03:01.310 --> 03:05.720
+and create another person right away inside here and pass the name
+
+03:08.600 --> 03:19.130
+and last name Shaffer continue age 54.
+
+03:20.150 --> 03:23.570
+Copy this and create another one.
+
+03:23.960 --> 03:26.330
+Or I can just do what we did before.
+
+03:27.440 --> 03:28.070
+File.
+
+03:30.870 --> 03:44.520
+Not only goes to that person there and they can come down here and say, Wow, Rudy can be equal to
+
+03:44.520 --> 03:46.460
+this person, I could have done this as well.
+
+03:46.470 --> 03:49.050
+Of course, just passing like that.
+
+03:49.050 --> 03:52.860
+But this is way better and looks better so I can pass here.
+
+03:53.310 --> 03:54.870
+I'd only object.
+
+03:56.070 --> 03:57.960
+And Rudy like that.
+
+03:58.380 --> 03:58.740
+All right.
+
+03:59.040 --> 03:59.670
+So there we go.
+
+03:59.790 --> 04:02.760
+So we have this simple list containing person types.
+
+04:03.330 --> 04:10.980
+So I can, of course, say list of and invoke the for each, for example, remember that lambda and
+
+04:10.980 --> 04:12.660
+for each person that I get.
+
+04:13.910 --> 04:14.750
+I can say print.
+
+04:17.380 --> 04:23.940
+And that that print this person in form of it, right, it's a person type.
+
+04:24.240 --> 04:28.870
+The other thing we can do, we can change it to something a more readable.
+
+04:28.890 --> 04:33.270
+I can say person and add, of course, the arrow.
+
+04:33.480 --> 04:33.810
+OK.
+
+04:33.870 --> 04:34.710
+This is a lambda.
+
+04:34.800 --> 04:38.910
+So person, then it's going to be the object person, the person.
+
+04:38.910 --> 04:41.520
+I can invoke that age like this.
+
+04:42.360 --> 04:43.320
+So if I run.
+
+04:45.660 --> 04:53.510
+You can get all of the ages, so 23, 54, 54 looks like it isn't like this shadow it, we can just
+
+04:53.510 --> 04:56.150
+change this to a different name, let's say.
+
+04:57.240 --> 05:01.230
+Item and then going to change that, of course, like this.
+
+05:01.890 --> 05:05.550
+The problem we were having is that it was being shadowed by this person.
+
+05:05.550 --> 05:09.540
+They were created there, so trying to get just two unique variables.
+
+05:09.990 --> 05:10.370
+All right.
+
+05:10.380 --> 05:12.960
+This is going to work still can run this.
+
+05:12.960 --> 05:15.360
+You can see that we have the same results.
+
+05:16.460 --> 05:21.080
+All right, so whenever you want to just create a a class that it doesn't need much.
+
+05:21.260 --> 05:24.620
+All it needs to do is to hold data such as this one here.
+
+05:24.890 --> 05:33.010
+You just append data, say data class and the class name and pass in the primary constructor pass all
+
+05:33.020 --> 05:37.340
+these parameters here, which are the fields being created and set up.

@@ -1,0 +1,190 @@
+WEBVTT
+
+00:00.270 --> 00:05.640
+So now I'm going to show you how to create a Houghtaling module separate from our Android project,
+
+00:05.640 --> 00:09.540
+which is within an Android project, as you see here in my Test app.
+
+00:09.960 --> 00:14.490
+But we can create that module so we can actually run Kotlin separately.
+
+00:14.820 --> 00:15.120
+OK.
+
+00:15.270 --> 00:16.110
+So it's very simple.
+
+00:16.200 --> 00:18.540
+Click on the app or highlight the app.
+
+00:18.660 --> 00:20.310
+Right click and say New.
+
+00:20.430 --> 00:21.960
+We want to create a new module.
+
+00:22.050 --> 00:28.350
+Click there and make sure that the Java or Kotlin library is selected, because essentially that's what
+
+00:28.350 --> 00:28.800
+we're doing.
+
+00:29.040 --> 00:35.430
+So when you select that Java or Kotlin library and then here I'm going to give it a name when to test
+
+00:35.580 --> 00:36.540
+or whatever name you want.
+
+00:36.900 --> 00:39.450
+Class name can live as it is for now.
+
+00:39.480 --> 00:41.930
+So it should be Kotlin language and we get.
+
+00:42.120 --> 00:43.350
+So let's go ahead and say finish.
+
+00:43.740 --> 00:47.070
+Now, this may take a few moments, so take your time and wait for a bit.
+
+00:47.520 --> 00:48.570
+Well, they didn't take that long.
+
+00:48.600 --> 00:51.200
+You can see now we have this test folder here now.
+
+00:51.390 --> 00:56.790
+You know, see, you want to see these my tester playground on yours because this is just something
+
+00:56.790 --> 00:58.920
+I added earlier but ignored those.
+
+00:58.920 --> 01:04.440
+But what we are interested in is that we have this test modules, so you will see that we have these
+
+01:04.440 --> 01:09.780
+Java folder, which when we open, we're going to have another folder where we hold this package.
+
+01:09.780 --> 01:16.860
+And the reason why this is this is Java is because Kotlin and Java are interoperable, meaning they
+
+01:16.860 --> 01:17.860
+can work together.
+
+01:18.000 --> 01:20.700
+And also codling actually runs on top of Java.
+
+01:20.730 --> 01:22.470
+OK, but that's a lot of technicalities.
+
+01:22.860 --> 01:25.030
+But anyway, we have them inside here.
+
+01:25.050 --> 01:29.730
+This example that text or test, I should say in my class, this is what we created.
+
+01:30.120 --> 01:31.050
+It's a very double click.
+
+01:31.290 --> 01:34.680
+There is the class so we can actually get rid of this class thing.
+
+01:34.680 --> 01:41.300
+And by the way, just go ahead and write fun and you can see it should show us some sort of a help here.
+
+01:41.340 --> 01:41.830
+It's OK.
+
+01:41.850 --> 01:43.140
+You mean function?
+
+01:43.290 --> 01:45.900
+Yes, you just hit enter incompletes for herself.
+
+01:46.080 --> 01:51.960
+Now we then are going to write main, because that is the name of the function that is first called
+
+01:51.960 --> 01:56.370
+when we run any Coughlin project or file.
+
+01:56.730 --> 02:01.830
+And you can see the moment we add the main you can see now we have this green arrow to say that we can
+
+02:01.830 --> 02:03.180
+play it or you can run it.
+
+02:03.480 --> 02:03.750
+OK.
+
+02:04.120 --> 02:04.650
+There we go.
+
+02:04.650 --> 02:05.730
+Let's finalize.
+
+02:05.730 --> 02:06.610
+And then there we go.
+
+02:06.610 --> 02:09.330
+OK, so now we can just say something like this is just a test.
+
+02:09.810 --> 02:14.970
+And once they print and say Hello, world famous hello world.
+
+02:15.420 --> 02:15.690
+All right.
+
+02:15.810 --> 02:16.350
+There you have it.
+
+02:16.620 --> 02:17.460
+Now let's see.
+
+02:17.460 --> 02:18.450
+How do we run this?
+
+02:18.450 --> 02:19.120
+Well to run this?
+
+02:19.140 --> 02:19.980
+You can see here.
+
+02:20.310 --> 02:29.150
+You can click on the run button and then say, Run my class there or debug, I'm going to use the run
+
+02:29.370 --> 02:30.840
+my class if you run.
+
+02:31.110 --> 02:35.550
+You can see at the bottom here, Gradle will run in the back end just to provision everything and make
+
+02:35.550 --> 02:36.420
+sure everything is great.
+
+02:36.660 --> 02:37.600
+And voila!
+
+02:37.620 --> 02:39.150
+You can see it says here.
+
+02:39.150 --> 02:41.970
+Hello, world is showing at the bottom here.
+
+02:42.180 --> 02:42.550
+There you go.
+
+02:42.570 --> 02:45.640
+That means our first call-in module is running.
+
+02:45.660 --> 02:53.850
+So this is how we would create a court in module inside of an Android project so that we can run separately
+
+02:53.850 --> 02:57.270
+from our app or, in this case, our project.
+
+02:57.510 --> 02:58.020
+Very good.
+
+02:58.110 --> 03:00.480
+So there you have it, and I'll see you next.

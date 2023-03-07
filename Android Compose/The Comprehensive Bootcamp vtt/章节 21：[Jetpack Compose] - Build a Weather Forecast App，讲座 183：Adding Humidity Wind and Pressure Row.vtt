@@ -1,0 +1,235 @@
+WEBVTT
+
+00:01.090 --> 00:06.770
+All right, let's move on and create this section here, so it's going to be a row, as you see.
+
+00:07.130 --> 00:12.200
+And it's easy to put together, I think now because we want to divide up all of the composable.
+
+00:12.200 --> 00:21.290
+So we're going to create a new composable wind pressure through quite a long name.
+
+00:21.290 --> 00:21.860
+But that works.
+
+00:21.860 --> 00:23.090
+I'm going to pass a weather.
+
+00:24.590 --> 00:31.700
+Here it's going to be data zero day, and at least actually I think I already have the weather item,
+
+00:31.700 --> 00:33.590
+I think we call a weather item.
+
+00:34.380 --> 00:34.940
+Very good.
+
+00:37.280 --> 00:45.260
+And there we go, so now let's go ahead and create this precious composable weather item.
+
+00:45.770 --> 00:48.830
+OK, so what's going to happen with our weather item?
+
+00:49.490 --> 00:55.730
+Well, in this case here, I'm going to create a row in my past, my fire.
+
+01:01.350 --> 01:03.660
+Padding of about 12 dpi.
+
+01:06.020 --> 01:08.210
+Phil Max with.
+
+01:13.660 --> 01:20.110
+And let me say vertical alignment to one center vertically.
+
+01:20.320 --> 01:20.800
+Oops.
+
+01:28.460 --> 01:32.630
+And I want arrangement space between.
+
+01:33.380 --> 01:39.770
+So I'm creating this outer row, but then inside for each one of these items, I'm going to have another
+
+01:39.770 --> 01:43.940
+row right or icon and then the number.
+
+01:46.210 --> 01:50.920
+So another row site here, and we actually have.
+
+01:54.280 --> 01:54.940
+Tomorrow.
+
+02:03.320 --> 02:04.640
+It's a passive modifier.
+
+02:10.050 --> 02:12.020
+It before patting.
+
+02:13.370 --> 02:16.070
+And first thing I'm going to add here is an icon.
+
+02:18.660 --> 02:20.680
+And we already added these.
+
+02:20.700 --> 02:24.120
+I'm going to say painter resource, and I'm going to say.
+
+02:25.230 --> 02:32.550
+For IDR Dot Tribal and guests to humidity first.
+
+02:33.240 --> 02:36.960
+Aha, we need to import our wonderful are.
+
+02:38.330 --> 02:39.950
+Let's start over because.
+
+02:46.280 --> 02:49.070
+Get Drabble humidity.
+
+02:50.660 --> 02:53.120
+This needs to be a painter.
+
+02:53.570 --> 02:54.140
+There we go.
+
+02:59.720 --> 03:06.080
+And this is going to be, say, humility icon the modifier.
+
+03:11.880 --> 03:12.720
+TDP.
+
+03:16.550 --> 03:18.920
+And then after that, I'm going to pass a text.
+
+03:24.240 --> 03:25.260
+That's going to be.
+
+03:29.010 --> 03:36.470
+Learn to use our weather and get humidity, say, to a string.
+
+03:38.750 --> 03:40.490
+Looks like we don't need that.
+
+03:45.200 --> 03:49.310
+And I'm going to put a percentage of such.
+
+03:53.740 --> 03:55.080
+Let's give us style.
+
+04:04.870 --> 04:06.500
+Could caption, OK?
+
+04:08.720 --> 04:14.450
+And all of this going to be pretty much the same for all of them, so with minor changes.
+
+04:15.350 --> 04:20.180
+Let's just add that and this is going to be pressure.
+
+04:23.910 --> 04:24.750
+Pressure.
+
+04:26.790 --> 04:28.260
+And pressure.
+
+04:29.870 --> 04:32.150
+I say PCI for pressure.
+
+04:34.030 --> 04:35.230
+That's fine.
+
+04:35.620 --> 04:37.330
+Let's go ahead and do that.
+
+04:38.980 --> 04:40.510
+And this is going to be wind.
+
+04:49.070 --> 04:50.210
+Miles per hour.
+
+04:51.050 --> 04:51.380
+All right.
+
+04:51.860 --> 04:54.500
+Let's go ahead and run and see if we can see something, hopefully.
+
+04:56.490 --> 04:56.790
+OK.
+
+04:57.150 --> 04:57.450
+All right.
+
+04:57.600 --> 05:01.900
+That's nice, except it's not where we want it to be, it's right up there.
+
+05:01.900 --> 05:03.840
+That means I want this to be down here.
+
+05:04.440 --> 05:12.690
+The problem here, it seems to me that our humidity pressure, I'm calling outside of our column.
+
+05:12.690 --> 05:16.410
+So then I put a right inside there, I believe.
+
+05:16.440 --> 05:17.220
+Let's see.
+
+05:17.490 --> 05:19.350
+Yes, that's the column.
+
+05:19.830 --> 05:21.180
+Yes, I think that would work.
+
+05:22.320 --> 05:24.150
+The outer one.
+
+05:24.300 --> 05:24.900
+Let's see.
+
+05:26.670 --> 05:27.000
+OK.
+
+05:27.180 --> 05:28.350
+Looks at way, way better.
+
+05:28.530 --> 05:30.060
+That's exactly where we want it to be.
+
+05:30.540 --> 05:32.400
+And it looks just like this.
+
+05:32.970 --> 05:33.780
+As you can see there.
+
+05:34.140 --> 05:34.650
+All right.
+
+05:35.400 --> 05:35.970
+Very good.
+
+05:36.300 --> 05:36.900
+Very good indeed.
+
+05:37.140 --> 05:37.410
+All right.
+
+05:37.590 --> 05:40.440
+So next we are going to add this divider there.
+
+05:40.440 --> 05:41.370
+It's very easy.
+
+05:41.380 --> 05:43.550
+So just go back right there.
+
+05:43.560 --> 05:47.370
+I'm going to say the Vidar like that.
+
+05:49.440 --> 05:49.650
+And.
+
+05:50.500 --> 05:50.970
+Very good.
+
+05:51.300 --> 05:54.810
+Just like that, our app is starting to look really nice.

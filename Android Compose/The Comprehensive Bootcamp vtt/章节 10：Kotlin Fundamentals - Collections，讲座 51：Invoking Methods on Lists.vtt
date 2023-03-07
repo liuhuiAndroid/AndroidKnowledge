@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00.450 --> 00:07.080
+There's so many things we can do with a list or lists in general, we can't invoke certain methods on
+
+00:07.080 --> 00:07.380
+them.
+
+00:07.500 --> 00:11.100
+So we looked at this remove that, so we passing in the index zero.
+
+00:11.250 --> 00:13.620
+It's going to be removing item index zero.
+
+00:14.010 --> 00:19.800
+So the other thing we can do is we can say immutable or mutable list, either at least would work.
+
+00:20.040 --> 00:23.880
+And I can say, for instance, let's go out here and actually print.
+
+00:24.070 --> 00:30.150
+I might say something like number of elements.
+
+00:31.110 --> 00:35.820
+It's going to be equal to my mutable list.
+
+00:36.220 --> 00:38.590
+No list in this case doesn't matter which really.
+
+00:39.030 --> 00:40.530
+And I'm going to say size.
+
+00:40.710 --> 00:41.050
+OK.
+
+00:41.070 --> 00:45.090
+This is the size of this mutable list at this point.
+
+00:45.370 --> 00:51.780
+You run, you can see number of elements is 434, and that is not correct.
+
+00:51.870 --> 00:54.210
+That's because I have to say print.
+
+00:55.410 --> 00:57.660
+So we can break the line should be four.
+
+00:57.690 --> 00:58.170
+There we go.
+
+00:58.890 --> 01:03.180
+The number of elements is indeed four because we have one two three four.
+
+01:03.450 --> 01:05.670
+Let's say we want to get we've seen this before.
+
+01:05.700 --> 01:05.920
+Let's see.
+
+01:05.920 --> 01:09.600
+Say we want to get first or second or the fourth element.
+
+01:09.750 --> 01:11.130
+First of all, let's get rid of this.
+
+01:11.250 --> 01:12.030
+So we don't add.
+
+01:12.060 --> 01:14.910
+Now, if I run this, this result is going to change.
+
+01:15.510 --> 01:15.990
+Why?
+
+01:16.020 --> 01:19.230
+Because we've removed that one item, right?
+
+01:19.680 --> 01:25.500
+And earlier we were adding something which this would have made this to have about five elements.
+
+01:25.860 --> 01:27.930
+And so we removed one that then becomes four.
+
+01:28.230 --> 01:32.140
+But since we're not adding anything less, we're moving from the original list.
+
+01:32.190 --> 01:33.330
+Then, of course, we're going to have three.
+
+01:33.510 --> 01:33.780
+All right.
+
+01:34.200 --> 01:36.450
+So let's see what else I want to do.
+
+01:36.750 --> 01:39.480
+Let's say I want to get the second element.
+
+01:39.750 --> 01:40.380
+What do we do?
+
+01:40.410 --> 01:42.150
+Well, when a copy that.
+
+01:42.480 --> 01:47.100
+I'm going to say it's a second element.
+
+01:47.490 --> 01:51.810
+What we do is, we say mutable and we can easily get method.
+
+01:51.870 --> 01:53.550
+Here you can see right away Awaits says get.
+
+01:53.820 --> 01:56.870
+We need to pass an index, which is type int.
+
+01:57.280 --> 01:57.480
+Right?
+
+01:57.810 --> 02:00.280
+So what is the index for the second element?
+
+02:00.300 --> 02:03.240
+Well, we know the first index is going to be zero.
+
+02:03.450 --> 02:05.850
+So the second element is going to be at one index one.
+
+02:05.850 --> 02:08.910
+So let's say one like this and we should get one.
+
+02:09.480 --> 02:14.220
+Second element in this case, let's say print out and it's forty.
+
+02:14.580 --> 02:15.870
+Is that true, right?
+
+02:15.900 --> 02:20.340
+It is true because remember, we will remove this first element.
+
+02:20.520 --> 02:20.820
+Right.
+
+02:20.820 --> 02:22.980
+So now we're going to have zero one.
+
+02:23.130 --> 02:28.680
+If I remove that, we should have 30 for second element is indeed 34.
+
+02:28.950 --> 02:34.680
+As you can see here, we have a little complaint that says Replace, get call with indexing operator.
+
+02:35.100 --> 02:35.760
+What is this?
+
+02:35.880 --> 02:36.600
+Well, let's see.
+
+02:37.110 --> 02:44.520
+So if I right click there and say, show when I click the replace call with index operator like that.
+
+02:44.670 --> 02:45.760
+This also works.
+
+02:45.780 --> 02:48.240
+So there are two ways to get values using indices.
+
+02:48.450 --> 02:54.900
+It seems like Kotlin in this case in our Android Studio, it likes this way, which is to add the square
+
+02:54.900 --> 02:57.660
+brackets and say and put in the index number.
+
+02:58.020 --> 02:58.800
+Either way, works.
+
+02:59.070 --> 03:04.260
+Now, let's say we want to get the index of element, let's say Element two.
+
+03:04.500 --> 03:05.250
+How do we do that?
+
+03:05.430 --> 03:06.810
+Well, we can do something like this.
+
+03:07.080 --> 03:10.860
+You can say something like index of element.
+
+03:12.030 --> 03:17.790
+And I can break the line to say I want to say to, for instance, scape that is that break.
+
+03:18.270 --> 03:23.730
+What we're doing here is that we're breaking to say that we wanted this to to be inside of parentheses
+
+03:23.730 --> 03:24.450
+when it's printed.
+
+03:24.810 --> 03:30.930
+But because we're inside of string as we do this and we are concatenating or we interpolating, if we
+
+03:30.930 --> 03:35.190
+were to add to just the double quotes, just normally that wouldn't work.
+
+03:35.190 --> 03:42.270
+So we have to say backslash to break, to say that whatever it's inside here, these quotes will have
+
+03:42.270 --> 03:44.760
+to actually appear inside as quotes.
+
+03:45.150 --> 03:50.520
+So that index of Element two in this case, zero one, two, four or five, we can just go ahead and
+
+03:50.520 --> 03:51.660
+say mutable size.
+
+03:51.990 --> 03:54.210
+There's a method we can call or function.
+
+03:54.210 --> 03:54.820
+Say diet.
+
+03:54.990 --> 04:02.040
+We can say index of past element element in this case is going to be forty five, so we're going to
+
+04:02.040 --> 04:04.680
+get the actual index, etc. Let's run this.
+
+04:05.260 --> 04:10.620
+And so it says here, index of Element two is to sort of zero one two.
+
+04:11.160 --> 04:13.840
+Actually, that's element forty five, not to my bed.
+
+04:14.400 --> 04:14.970
+And there we go.
+
+04:15.270 --> 04:16.020
+And there you have it.
+
+04:16.200 --> 04:19.830
+So go ahead and explore more if you would like to.
+
+04:20.040 --> 04:25.680
+And the way I like to do this, if you just start typing my list and so that you can see there is a
+
+04:25.680 --> 04:30.570
+lot of methods that we can actually go and start to explore.
+
+04:30.600 --> 04:33.570
+For instance, there is the add we've seen before.
+
+04:33.570 --> 04:36.180
+We can add something to a specific index.
+
+04:36.420 --> 04:38.100
+We can remove that.
+
+04:38.290 --> 04:42.720
+We can also access by passing index and then get the element on that index.
+
+04:43.260 --> 04:46.350
+We can use a replace in so many other.
+
+04:46.360 --> 04:52.890
+So go ahead and play around with these concepts and see other methods you can call on your list.

@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.180 --> 00:03.270
+It Android, in order to preserve this data, we use room.
+
+00:03.450 --> 00:04.990
+Now what is this thing called room?
+
+00:05.100 --> 00:12.990
+So room is part of Jetpack Remember, which is a set of tools that allow us to build modern, efficient,
+
+00:12.990 --> 00:14.490
+consistent applications.
+
+00:14.640 --> 00:21.600
+According to the definition, the room persistence library provides an abstraction layer over skylight
+
+00:21.900 --> 00:27.740
+to allow for more robust database access while harnessing the full power of super light.
+
+00:28.000 --> 00:28.890
+Well, verifiable.
+
+00:29.280 --> 00:36.180
+What this really means is that room takes away all of the difficulties Android developers had to go
+
+00:36.180 --> 00:40.960
+through had to endure when creating databases in the past.
+
+00:40.980 --> 00:48.570
+Android developers would have to use SQLite classes in order to create a database in Android, which
+
+00:48.570 --> 00:54.840
+had a lot of different classes, a lot of moving parts, and there was no an abstraction layer.
+
+00:55.050 --> 01:02.550
+Abstraction layer really just means something that hides all the complicated stuff, if you will, now
+
+01:02.550 --> 01:03.250
+with room.
+
+01:03.270 --> 01:04.780
+All of that is gone.
+
+01:04.800 --> 01:10.290
+All of that hard work that develops had to do to just create a simple database.
+
+01:10.530 --> 01:17.280
+It's gone before we go into looking at room and how to create a database so that we can persist or in
+
+01:17.280 --> 01:21.810
+this case, safe notes data onto our device.
+
+01:22.170 --> 01:28.620
+We need to talk about another concept which is part of building scalable application.
+
+01:29.020 --> 01:32.580
+OK, so this concept is called dependency injection.
+
+01:32.610 --> 01:35.790
+Now, you may have heard of this or may not have heard of this.
+
+01:35.970 --> 01:41.490
+Either way, it's OK, so I'll try to briefly explain go through a few examples what this is and the
+
+01:41.490 --> 01:44.070
+importance of dependency injection.
+
+01:44.340 --> 01:51.750
+Well dependency happens when an object requires another object for it to function or to add more functionality
+
+01:51.750 --> 01:52.260
+to it.
+
+01:53.220 --> 01:54.600
+Quite a good example.
+
+01:55.110 --> 02:01.590
+But simple is this so we have a class called car and we have another class called engine.
+
+02:01.800 --> 02:06.700
+The idea here is that car depends on engine for it to function in this case here.
+
+02:06.720 --> 02:11.280
+We say that there is a dependency between car and engine.
+
+02:11.460 --> 02:17.430
+Now there are different ways to structure this concept in code, which I'm going to show you here.
+
+02:17.850 --> 02:19.310
+One way is not that great.
+
+02:19.320 --> 02:22.620
+The other way is actually the best way to move forward.
+
+02:22.860 --> 02:26.820
+Now you may ask, why am I even touching dependency injection?
+
+02:26.820 --> 02:32.820
+Well, dependency injection is a huge topic, and there are a lot of libraries which we'll talk about
+
+02:32.820 --> 02:33.210
+later.
+
+02:33.600 --> 02:40.860
+And in Android development, this is highly recommended and and its use throughout Android development
+
+02:41.280 --> 02:46.680
+and other types of development as well, because it gives us a lot of advantages, as you will see in
+
+02:46.680 --> 02:46.950
+a bit.
+
+02:47.100 --> 02:49.410
+Understanding this concept is very important again.
+
+02:49.650 --> 02:56.730
+This is a vast topic, so I'll just give you the basics so that we are on the same page and again,
+
+02:56.730 --> 02:57.990
+start seeing the big picture.
+
+02:58.920 --> 03:03.750
+OK, let's go back to code so I can show you dependency injection and its advantages.

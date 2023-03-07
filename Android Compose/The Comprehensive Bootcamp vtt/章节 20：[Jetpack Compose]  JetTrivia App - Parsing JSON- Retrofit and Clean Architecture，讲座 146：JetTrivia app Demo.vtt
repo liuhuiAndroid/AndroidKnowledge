@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.330 --> 00:04.410
+All right, so in this section, we are going to build a jet trivia app.
+
+00:04.770 --> 00:07.380
+So this application will look something like this.
+
+00:07.590 --> 00:11.050
+It's very simple, but most importantly, we're going to be learning a few things.
+
+00:11.050 --> 00:15.600
+So we're going to start learning about clean architecture, at least the introduction, what it means
+
+00:15.870 --> 00:18.120
+and how to structure app in such a manner.
+
+00:18.660 --> 00:26.160
+We're also going to learn how to pass the JASON using Retrofit, which is a library that abstracts out
+
+00:26.160 --> 00:33.090
+all the heart aches, all of the things that one needs to do in order to pass Jason apps from the web.
+
+00:33.420 --> 00:33.690
+OK.
+
+00:33.750 --> 00:37.860
+And of course, we are going to continue learning about UI design in compose.
+
+00:38.070 --> 00:42.570
+So as always, we are going to introduce new things as we build an app.
+
+00:43.230 --> 00:46.890
+So this is what we are going to be building a trivia application.
+
+00:47.160 --> 00:49.470
+Let me give you a quick demo of the app.
+
+00:50.390 --> 00:57.320
+So here's a quick demo of the app here, so as we go through the app, as we answer the questions we
+
+00:57.320 --> 01:00.740
+are, we are immediately pulled into the next question.
+
+01:00.740 --> 01:05.810
+So here here have Question two out of four thousand eight hundred seventy five questions about a lot
+
+01:05.810 --> 01:06.320
+of questions.
+
+01:06.500 --> 01:08.360
+So so you can see the layout here.
+
+01:08.360 --> 01:14.090
+We have the actual question or the actual statement that we could be true or false, and we have the
+
+01:14.090 --> 01:15.530
+options at the bottom here, OK?
+
+01:16.130 --> 01:18.740
+All of this is coming in from a JSON file.
+
+01:19.250 --> 01:22.850
+So in this case, if I say next, if I select what I selected, then that works.
+
+01:23.270 --> 01:27.920
+And let's say true, well, that's great and can see.
+
+01:28.100 --> 01:34.280
+Also, at certain point, I start having this meter that is showing that it's very small.
+
+01:34.520 --> 01:39.170
+So as I get the answers correct, looks like I'm real good at this.
+
+01:40.580 --> 01:42.890
+You can see that that meter is changing.
+
+01:43.160 --> 01:43.610
+OK.
+
+01:43.910 --> 01:47.440
+This is because I've worked on this, so I know this is wrong.
+
+01:47.450 --> 01:50.870
+You can see it has this red color to say This is wrong.
+
+01:51.830 --> 01:52.130
+I can't.
+
+01:52.130 --> 01:52.550
+I wa.
+
+01:52.550 --> 01:59.510
+Perhaps there we go and we can continue in as our meter shows.
+
+01:59.510 --> 02:05.210
+Here are the certain at certain point we're going to start seeing the actual score of the game.
+
+02:05.480 --> 02:07.100
+This is what we are going to be building.

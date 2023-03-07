@@ -1,0 +1,382 @@
+WEBVTT
+
+00:00.420 --> 00:05.520
+So building software, it involves a lot of things per se to go right.
+
+00:06.180 --> 00:13.380
+And if you think about trying to build something that is big, write software like Microsoft Windows
+
+00:13.380 --> 00:20.670
+or the operating system that runs on your phone or anything that is worthwhile, even not at that scale,
+
+00:20.670 --> 00:22.110
+but it's software that works.
+
+00:22.320 --> 00:26.470
+An application, for instance, there are a lot of things that would have to happen in our code.
+
+00:26.490 --> 00:33.750
+There is a lot of compartmentalized pieces of code that needed to happen and work together so that we
+
+00:33.750 --> 00:35.580
+can have an application, for instance.
+
+00:36.120 --> 00:43.860
+So it is important to find ways in which we can have code snippets or, in this case, entities of codes
+
+00:44.160 --> 00:45.540
+that by themselves.
+
+00:45.540 --> 00:50.220
+They can do something and they can also interact with other parts of your code.
+
+00:51.180 --> 00:55.710
+So this is the basic concept of object oriented programming.
+
+00:55.710 --> 01:04.650
+The object oriented programmer, or OPI, relies mostly on creating these entities called objects that
+
+01:04.950 --> 01:11.250
+by themselves, they can live, but they can also interact with other objects in a bigger system in
+
+01:11.250 --> 01:11.670
+this case.
+
+01:11.910 --> 01:13.200
+In our application?
+
+01:13.380 --> 01:14.670
+So let's start small.
+
+01:14.880 --> 01:16.110
+What is an object now?
+
+01:16.110 --> 01:21.120
+If we think of a car, a car contains a lot of different pieces, if you will, for it to be a car.
+
+01:21.450 --> 01:24.180
+So it has an engine inside of this engine.
+
+01:24.210 --> 01:25.200
+We have other things.
+
+01:25.200 --> 01:31.470
+Of course it has wheels, we have brake system, the car has electric system and so forth.
+
+01:32.040 --> 01:41.730
+So in a bigger picture, that is what a car is really right is a collection of different little systems
+
+01:41.730 --> 01:42.730
+that work.
+
+01:42.780 --> 01:46.020
+And together they become a car that you and I can drive.
+
+01:46.290 --> 01:51.750
+But we have to understand even deeper if we take a step back, if we look at a car in this case, if
+
+01:51.750 --> 01:57.060
+we think conceptually what a car is, a car has to have some sort of properties.
+
+01:57.510 --> 02:02.850
+So a property would be, for instance, you know, attributes or or feels right.
+
+02:03.120 --> 02:05.010
+Those would be the characteristics of the car.
+
+02:05.040 --> 02:11.580
+This is more of the outside view of what a car is for a car, for instance, could have a collar, could
+
+02:11.580 --> 02:14.910
+have a model year and so forth.
+
+02:14.970 --> 02:16.910
+And then we have what a car does.
+
+02:16.920 --> 02:23.430
+So these would be the behaviors of our car could start, our car could start driving, a car can accelerate
+
+02:23.730 --> 02:26.700
+and decelerate can break in all these things.
+
+02:26.940 --> 02:32.700
+Conceptually, before we have an actual car, we have to have some sort of a map that will dictate what
+
+02:32.790 --> 02:39.160
+the actual car would look like and what it would do so in object oriented programming.
+
+02:39.180 --> 02:45.120
+This would be a class or a class essentially is a map or a blueprint of an object.
+
+02:46.360 --> 02:52.600
+So in this case, we have a plan which is a class that then we can instantiate that into an object,
+
+02:52.600 --> 02:54.670
+which will be the actual car.
+
+02:55.420 --> 03:02.320
+So it is important to have classes which in turn are instantiated into object because then we can build
+
+03:02.440 --> 03:03.310
+these entities.
+
+03:03.310 --> 03:09.130
+In this case, these objects that can interact with other objects to create a bigger system, to create
+
+03:09.130 --> 03:10.870
+a bigger application and go from there.
+
+03:11.200 --> 03:17.860
+Now you notice here, depending on which programming language you coming from or, you know, attributes
+
+03:17.860 --> 03:20.190
+property fields is the same thing.
+
+03:20.200 --> 03:23.420
+Behavior functions, methods is the same thing.
+
+03:23.440 --> 03:27.370
+So essentially, what we're talking about when talk about behavior functions or method, we're talking
+
+03:27.370 --> 03:33.400
+about what the car does as explained before and attributes property fields aren't the characteristics
+
+03:33.640 --> 03:34.270
+of the car.
+
+03:34.330 --> 03:40.540
+OK, let's go back to our code so we can see how can we create a class in codling and instantiate it
+
+03:40.540 --> 03:41.800
+to create an actual object?
+
+03:42.150 --> 03:43.630
+OK, so back to our code here.
+
+03:44.170 --> 03:46.420
+We're going to go outside of our function.
+
+03:46.750 --> 03:48.520
+OK, this is going to create a class.
+
+03:48.820 --> 03:51.280
+All you say is you say class.
+
+03:51.580 --> 03:52.150
+There it is.
+
+03:52.990 --> 03:54.540
+Say class and we're going to give it a name.
+
+03:54.550 --> 04:01.240
+So classes follow a certain naming convention, which is that means they have to have an upper case
+
+04:01.270 --> 04:02.050
+first letter.
+
+04:02.260 --> 04:07.870
+So in this case, it was say car, and then we create kind of the basis like that as a class.
+
+04:07.900 --> 04:09.460
+This is not an object yet.
+
+04:09.610 --> 04:16.420
+So we need to actually create the map, the blueprint, the plan of what a car in the real world in
+
+04:16.420 --> 04:23.800
+this case, when becomes an object, when we instantiated what properties and methods will have.
+
+04:23.830 --> 04:24.100
+Right.
+
+04:24.340 --> 04:29.050
+So let's go and define a property and say Val, and they're going to say color and it's going to be
+
+04:29.050 --> 04:30.280
+a string type.
+
+04:30.670 --> 04:35.050
+And as we know, we need to initialize with something going to be red.
+
+04:35.270 --> 04:40.300
+Now how do we instantiate this class into an object to actually use it?
+
+04:40.840 --> 04:42.520
+Well, we go up in Maine.
+
+04:43.120 --> 04:51.970
+I'm going to say, Val, my this to say car is equal to a car like this and put parentheses like that.
+
+04:52.000 --> 04:53.950
+So now we have our car object.
+
+04:53.980 --> 05:00.880
+This is the actual object we've created so I can go ahead and say print, for instance, and say car
+
+05:02.080 --> 05:03.460
+dot color.
+
+05:03.460 --> 05:04.410
+So I have car.
+
+05:04.450 --> 05:11.980
+Dot Dot is the accessory operator here, so we're accessing something from our car object color.
+
+05:12.100 --> 05:19.810
+And what do you think is going to print it, see this kind of run and red because we set the color property
+
+05:19.810 --> 05:25.390
+of this car in our class to rent and it can set another property as a final model.
+
+05:25.630 --> 05:31.030
+It's also going to be a strange I'm going to set that to x m d, something like that.
+
+05:31.030 --> 05:32.170
+I don't even know what that is.
+
+05:32.500 --> 05:33.070
+It's OK.
+
+05:33.670 --> 05:35.060
+So I can do the same thing right now.
+
+05:35.110 --> 05:35.800
+Print here.
+
+05:35.830 --> 05:42.850
+And once we've instantiate the object, I want to say model actually should say car that model if Iran
+
+05:42.850 --> 05:45.820
+can see x empty as the model of the car market.
+
+05:46.000 --> 05:50.650
+So we have created a class very simple, say, class and the name of the class.
+
+05:50.800 --> 05:55.030
+And of course, we have curly braces to say, OK, now we're going to start the body of the class.
+
+05:55.420 --> 05:58.120
+So we have our properties or fields or attributes.
+
+05:58.220 --> 05:58.510
+OK.
+
+05:58.930 --> 05:59.530
+Same thing.
+
+05:59.680 --> 06:02.890
+Now let's go ahead and give some behavior, some function, right?
+
+06:03.010 --> 06:06.250
+What this card does or can do and what's say fun?
+
+06:06.280 --> 06:07.210
+Ah, there we go.
+
+06:07.390 --> 06:08.290
+And it's a drive.
+
+06:08.380 --> 06:10.150
+Well, this car must drive.
+
+06:10.420 --> 06:10.780
+So what?
+
+06:10.780 --> 06:13.600
+We want to happen when we drive?
+
+06:14.050 --> 06:20.680
+Well, we want it for now, going to see print land like this and say drive.
+
+06:21.580 --> 06:30.520
+So if I come here as a car dot drive, I'm invoking the drive method function in this case, which is
+
+06:31.360 --> 06:32.450
+a behavior of this car.
+
+06:32.470 --> 06:34.510
+So a car has these properties.
+
+06:34.630 --> 06:40.000
+It has this behavior, which is to drive what a car can do if I run this.
+
+06:40.450 --> 06:43.120
+We can see drive, vroom.
+
+06:43.630 --> 06:45.010
+Now we have a problem here.
+
+06:45.340 --> 06:50.500
+The problem is that, well, we can't really change the properties, which is not very exciting because
+
+06:50.500 --> 06:54.130
+we want to be able to change our properties of our class or object.
+
+06:54.850 --> 06:55.480
+So how do we do that?
+
+06:55.630 --> 06:58.210
+Well, first of all, we need to change the vowel to VAR.
+
+06:58.220 --> 07:02.440
+You remember, this vowel is immutable, VAR is mutable.
+
+07:02.440 --> 07:05.020
+So I'm going to say VAR, VAR like this.
+
+07:05.740 --> 07:12.170
+Now I can come up here right after where we instantiate it would create the actual object of car there.
+
+07:12.190 --> 07:14.290
+I can say car that color.
+
+07:14.290 --> 07:16.870
+I can now set this to something different.
+
+07:16.900 --> 07:26.830
+Blue makes a car dot model in this to aim the f like that.
+
+07:26.950 --> 07:33.640
+If I run this, you will see because overwriting what we have set before, we're going to get something
+
+07:33.640 --> 07:34.000
+different.
+
+07:34.210 --> 07:34.970
+This is drive.
+
+07:34.990 --> 07:36.070
+Of course, it's going to be different.
+
+07:36.100 --> 07:42.370
+Let's go ahead and print actually something real nice here that says color like that model.
+
+07:44.440 --> 07:45.020
+So better.
+
+07:45.040 --> 07:45.400
+Let's go ahead.
+
+07:45.400 --> 07:45.490
+And.
+
+07:45.550 --> 07:45.790
+Run.
+
+07:46.240 --> 07:49.150
+OK, so car color, blue model, MDF.
+
+07:49.450 --> 07:49.820
+There we go.
+
+07:49.840 --> 07:51.280
+So now it's way better.
+
+07:51.640 --> 07:58.540
+Notice, like I said, because we changes to VAR, the properties we can now access those and edit those
+
+07:58.540 --> 08:01.420
+or mutate those change those, which is very exciting.
+
+08:01.420 --> 08:04.030
+And it can still, of course, invoke a drive if we want to.

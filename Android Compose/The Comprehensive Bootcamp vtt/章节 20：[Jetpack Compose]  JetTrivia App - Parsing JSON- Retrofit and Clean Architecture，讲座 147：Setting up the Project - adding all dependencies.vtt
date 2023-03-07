@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.870 --> 00:08.910
+So I created a new project, Jack Trivia, and nothing is new here as you see an activity composed by
+
+00:08.910 --> 00:15.780
+hello and all the same thing, all the boilerplate code that we get when we create a new compose project.
+
+00:16.110 --> 00:21.300
+So I would like you to go and create a new project and name whatever you want, but I would prefer your
+
+00:21.600 --> 00:24.060
+name to trivia or something similar to that.
+
+00:24.360 --> 00:26.680
+I've set up the project already.
+
+00:26.700 --> 00:33.450
+That way, you don't have to really deal with dependencies, at least the basic dependencies.
+
+00:33.840 --> 00:39.750
+So if you tap the build.gradle, the app Gradle notice, I've added a few things here you can see at
+
+00:39.750 --> 00:42.030
+the top of the dagger hilt, right?
+
+00:42.030 --> 00:46.230
+Because we're going to be using dependency injection in this section.
+
+00:46.530 --> 00:50.820
+And of course, I have the codling capped as well added there in our plugins.
+
+00:51.480 --> 00:54.870
+And if you scroll down, will see a few things that have added already.
+
+00:54.990 --> 00:58.950
+So I have this Cortines, all of these dependencies that are needed, right?
+
+00:59.430 --> 01:05.120
+I have this whole routine lifecycle scopes that are added as well, and I have the dagger hilt.
+
+01:05.910 --> 01:11.040
+This one is top and a few other implementations for capped to cats there and so forth.
+
+01:11.250 --> 01:18.210
+So this is what we need so that we are at least set up for a dagger hilt dependency and so forth, as
+
+01:18.210 --> 01:21.090
+well as co-writing scopes and Cortines in general.
+
+01:21.630 --> 01:26.370
+OK, now I understand there is a lot of things here, but one of the things that I've put together,
+
+01:26.370 --> 01:32.730
+in fact, for all of the projects we are going to build or build, depending whether you've been following
+
+01:32.730 --> 01:38.070
+us along all of the projects, you can find them in my on my GitHub accounts.
+
+01:38.250 --> 01:41.160
+Peter shown in this case, I go to jet trivia.
+
+01:41.520 --> 01:45.300
+You can go to our app, right to go to this jet trivia app.
+
+01:45.300 --> 01:49.920
+You can see who have built their Gradle, and you should see exactly what I just showed you.
+
+01:49.950 --> 01:54.420
+So this is the plugins that we have there and all the dependencies.
+
+01:54.420 --> 01:59.550
+So I would really encourage you to come here and and copy all of this as it is at this point, so that
+
+01:59.550 --> 02:02.580
+you don't have to type yourself all of these dependencies.
+
+02:03.330 --> 02:05.940
+I encourage you to do that and make sure everything is correct.
+
+02:06.180 --> 02:10.800
+And of course, depending on when you're watching this video, these version may be higher.
+
+02:11.130 --> 02:11.790
+That's fine.
+
+02:11.790 --> 02:14.190
+And just go ahead and update them.
+
+02:14.460 --> 02:14.730
+OK.
+
+02:14.760 --> 02:16.440
+Hopefully, that doesn't break your code.
+
+02:16.440 --> 02:18.720
+If does, then we can address that.
+
+02:19.110 --> 02:21.400
+But that is what I wanted to show you.
+
+02:21.750 --> 02:31.170
+If I go to the actual below Gradle for the project, you'll see that I had this helt version 239.
+
+02:31.530 --> 02:36.240
+So at the time of this recording, that is the version again, maybe higher so you change accordingly.
+
+02:36.570 --> 02:39.780
+And the compose version is one that oh, that four OK.
+
+02:39.870 --> 02:44.160
+And also made sure to add remember, this is a different building Gradle.
+
+02:44.550 --> 02:45.780
+This is not the app.
+
+02:45.780 --> 02:46.830
+This is the module.
+
+02:47.130 --> 02:47.760
+We added.
+
+02:48.060 --> 02:52.950
+I should have changed this to one five four two one or higher, depending on when you're watching this.
+
+02:53.280 --> 02:58.170
+And you may most likely also have to change the version of the tools.
+
+02:58.350 --> 02:59.340
+Build Gradle there.
+
+02:59.940 --> 03:00.240
+OK.
+
+03:00.540 --> 03:05.760
+And make sure, most importantly, you have to pass this class path for dagger hilt to work as well.
+
+03:06.090 --> 03:06.630
+Very important.
+
+03:06.660 --> 03:08.220
+All of that can be found.
+
+03:08.490 --> 03:14.730
+Of course, if you go back to our app, in this case, I want to go back just to trivia because I need
+
+03:14.730 --> 03:16.410
+to get to the Gradle.
+
+03:16.440 --> 03:21.260
+Let's see this build a Gradle and you can see exactly what I'm talking about.
+
+03:21.270 --> 03:29.790
+So for added these compose and health version, as well as the class path here for dagger built a section.
+
+03:31.430 --> 03:34.910
+Make sure you do that, so you have a good starting point.

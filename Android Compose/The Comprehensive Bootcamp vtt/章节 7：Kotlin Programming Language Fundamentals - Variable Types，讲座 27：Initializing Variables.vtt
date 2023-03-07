@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00.390 --> 00:01.930
+You noticed something interesting here.
+
+00:01.950 --> 00:05.490
+So when we went back, let's go back here when we say far name.
+
+00:05.970 --> 00:07.200
+Let's just get rid of this.
+
+00:07.680 --> 00:09.060
+Let's use the foul.
+
+00:09.120 --> 00:10.500
+Just kind of changes to name.
+
+00:10.830 --> 00:14.100
+Of course, this is going to have some issues, name like that.
+
+00:14.370 --> 00:14.670
+OK.
+
+00:14.790 --> 00:18.180
+When we do this, we say foul name is equal to John.
+
+00:18.300 --> 00:19.070
+What are we doing here?
+
+00:19.080 --> 00:23.040
+We are signing this and foul variable to John, to something.
+
+00:23.280 --> 00:24.960
+So we are initializing.
+
+00:25.080 --> 00:27.100
+That's the lingo we use in programming.
+
+00:27.120 --> 00:30.270
+We initializing this variable to hold something in memory.
+
+00:30.330 --> 00:35.220
+But there are different ways to initialize a variable, so variables must be initialized to something
+
+00:35.220 --> 00:36.120
+before they're used.
+
+00:36.270 --> 00:41.850
+What I mean by that is that I obviously cannot just have something like that and go down and say, name
+
+00:42.060 --> 00:44.100
+is equal to James.
+
+00:44.220 --> 00:44.530
+OK.
+
+00:44.550 --> 00:46.170
+First of all, this is immutable.
+
+00:46.200 --> 00:47.460
+So this is not going to work.
+
+00:47.700 --> 00:52.010
+But even if I change this to VAR to make it immutable, we're still going to have a problem because
+
+00:52.050 --> 00:55.980
+going to say this variable must either have a type annotation or be initialized.
+
+00:56.190 --> 00:57.210
+What does that really mean?
+
+00:57.900 --> 01:04.890
+Well, that means if we want to initialize in a different way our Val James, we don't want to add anything
+
+01:05.160 --> 01:06.960
+to initialize it with the string, right?
+
+01:07.110 --> 01:09.870
+In this case, there is another way to initialize a variable.
+
+01:09.940 --> 01:15.150
+OK, which is a little bit more explicit, explicit in the sense that we are going to tell the compiler
+
+01:15.150 --> 01:17.190
+what type of variable this is.
+
+01:17.310 --> 01:24.210
+Meaning what kinds of objects or of things, quote unquote, this variable is going to hold.
+
+01:24.390 --> 01:32.340
+So if I say Val name and then I put call in like this and I say String, OK, like that, then I have
+
+01:32.550 --> 01:36.000
+less problems, less hover over the variable name must be initialized.
+
+01:36.120 --> 01:41.610
+So even though I have said that the type that is expected to be sort out of her name, it's going to
+
+01:41.610 --> 01:42.570
+be string type.
+
+01:42.570 --> 01:43.500
+So this is a type.
+
+01:43.680 --> 01:48.240
+Meaning what kind of contents are expected to be held in the file name?
+
+01:48.420 --> 01:53.760
+We still have to do some more work to initialize it, which means even though we say what type, we
+
+01:53.760 --> 01:56.430
+need to say OK, we initialize it with something.
+
+01:56.430 --> 01:57.050
+So it's not.
+
+01:57.170 --> 01:58.020
+Not nothing.
+
+01:58.140 --> 02:03.330
+OK, so here I'm going to say James, for instance, OK, this is one way of doing it.
+
+02:03.450 --> 02:06.420
+Now you notice we have an issue here and that an issue.
+
+02:06.420 --> 02:08.370
+I should say it's just a recommendation.
+
+02:08.520 --> 02:10.950
+Notice that string looks great out.
+
+02:10.950 --> 02:16.530
+What does that mean if you hover over, say, explicitly, given type is redundant, here is redundant
+
+02:16.530 --> 02:22.160
+because it's saying, Well, yeah, if you put James in double quotes, I know being in the compiler
+
+02:22.170 --> 02:24.690
+that this is indeed a string, so you don't really need to do this.
+
+02:24.810 --> 02:30.870
+But in the back end, that's what the compiler is doing is explicitly you will know exactly what type
+
+02:30.870 --> 02:32.070
+is expected for Val.
+
+02:32.100 --> 02:36.480
+So I can just get rid of that altogether and go back to what we had.
+
+02:36.690 --> 02:37.020
+OK.
+
+02:37.170 --> 02:43.800
+So but I wanted to show you different ways to initialize a variable, even though the compiler is smart
+
+02:43.800 --> 02:51.690
+enough to say that is not needed because I will infer from what we're setting that this obviously is
+
+02:51.690 --> 02:56.940
+a string that is another concept when it comes to initializing variables in Scotland.
+
+02:57.180 --> 03:01.260
+Now the other thing is, even though let's go back to what we had before, unless a string is equal
+
+03:01.260 --> 03:04.530
+to James, even though these compiler says this, this is redundant.
+
+03:04.920 --> 03:11.100
+I want you to think in those terms at least to have a picture image in your head because you will see
+
+03:11.100 --> 03:16.500
+once we talk about advanced concepts in Kotlin, such as classes and object and so forth, you will
+
+03:16.500 --> 03:22.380
+see that this is going to be more apparent when you are declaring variables or instantiating objects.
+
+03:22.440 --> 03:23.430
+Will school get there?
+
+03:23.440 --> 03:24.900
+But I just wanted to get started.
+
+03:25.050 --> 03:26.340
+So you know how to read this?
+
+03:26.340 --> 03:31.980
+What this means is create a variable in a memory called name and it's going to be immutable, which
+
+03:31.980 --> 03:34.420
+means you cannot mutated or change it.
+
+03:34.470 --> 03:38.850
+And the types that are expected to be held that are variable are going to be string types.
+
+03:39.180 --> 03:44.400
+And then I'm going to initialize for the first thing that this variable is going to have is the string
+
+03:44.400 --> 03:44.880
+James.
+
+03:45.360 --> 03:45.660
+OK.

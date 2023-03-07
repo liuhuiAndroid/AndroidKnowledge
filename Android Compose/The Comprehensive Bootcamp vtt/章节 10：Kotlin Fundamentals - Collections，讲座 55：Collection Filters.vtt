@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.300 --> 00:05.700
+So when we have a collection, most often we want to do something with our collection, so we've seen
+
+00:05.880 --> 00:12.210
+ways in which we can go and retrieve items or elements from our collection, ways in which we can add
+
+00:12.210 --> 00:13.350
+elements and so forth.
+
+00:13.620 --> 00:16.340
+But let's say we've given a collection such as this right.
+
+00:16.350 --> 00:18.030
+It's a list of strings.
+
+00:18.150 --> 00:21.210
+It contains names James, Paul or Gina and so forth.
+
+00:21.300 --> 00:26.850
+And we want to go through and just retrieve, for instance, a name.
+
+00:27.180 --> 00:35.050
+And we want to be able to filter this list to see if, for instance, Paul is in the list or Rafael
+
+00:35.050 --> 00:38.700
+or Gina or James or whatever else we want to filter.
+
+00:38.880 --> 00:41.190
+Well, there is a method we can call.
+
+00:41.390 --> 00:42.840
+That's the beauty of collections, right?
+
+00:42.870 --> 00:49.140
+So if I say my list and say that we can go ahead and call the filter there, there's different kinds
+
+00:49.140 --> 00:49.800
+of filters.
+
+00:50.010 --> 00:53.850
+But we weren't the first one and you can see here it says Filter.
+
+00:53.850 --> 00:55.950
+And we have this curly braces there.
+
+00:55.950 --> 00:59.610
+And whenever you see something like this, you'd know that this is indeed a lambda.
+
+00:59.610 --> 01:02.730
+Functions are very nice, so they're everywhere.
+
+01:03.000 --> 01:03.270
+OK?
+
+01:03.630 --> 01:04.140
+Hit Enter.
+
+01:04.560 --> 01:08.480
+And if you hit enter again, you're going to see the it argument being passed there.
+
+01:08.490 --> 01:09.980
+So this is what we call it predicate.
+
+01:09.990 --> 01:13.380
+In fact, you can see that it says it's a predicate and is a string.
+
+01:13.380 --> 01:17.430
+So we're passing it in a string as an argument there, which is it.
+
+01:18.150 --> 01:20.070
+And then it returns a boolean.
+
+01:20.490 --> 01:22.380
+OK, so the party is going to be Boolean.
+
+01:22.380 --> 01:24.450
+So in this case here, what do we want to do?
+
+01:24.480 --> 01:28.710
+We want to say, for instance, if it's a white string that will be passing.
+
+01:28.710 --> 01:35.520
+So in this case, could be any of these is equal to, for instance, Paul, if that's true, what's
+
+01:35.520 --> 01:42.630
+going to happen is a new list will be created that will contain Paul if indeed Paul is part of this
+
+01:42.630 --> 01:42.900
+list.
+
+01:43.170 --> 01:46.470
+So it will be nice for us to put that in a new variable.
+
+01:46.470 --> 01:48.990
+I'm going to say found like this.
+
+01:49.440 --> 01:57.270
+So now if I say print found C and run should C, we have a list or an array of Paul.
+
+01:57.810 --> 02:03.660
+So when we filter, what happens is a new list is created containing that element.
+
+02:03.810 --> 02:06.480
+If found, if not, then it's going to show.
+
+02:06.600 --> 02:12.480
+In fact, if I changes to Paolo or Paul zero ones, you see there because it's not part of this list,
+
+02:12.660 --> 02:16.680
+we should see an empty list that's created that contains nothing.
+
+02:17.280 --> 02:18.260
+We can do all sort of things.
+
+02:18.270 --> 02:23.100
+Let's say we want to return any element that has more than five letters, for instance.
+
+02:23.430 --> 02:24.480
+Well, we can do that.
+
+02:24.640 --> 02:25.380
+We can come here.
+
+02:25.380 --> 02:28.340
+And because I t in this case, it's a string.
+
+02:28.350 --> 02:32.790
+I can actually also invoke a method on that so I can say length.
+
+02:32.970 --> 02:37.810
+So the length is in return and int and you can see here there's this documentation.
+
+02:38.250 --> 02:45.300
+It says length is a vowel of type that returns the length of these character segments.
+
+02:45.690 --> 02:45.990
+All right.
+
+02:45.990 --> 02:46.440
+So there we go.
+
+02:46.440 --> 02:52.910
+So if I say it, length is greater, let's say, than four, and let's go ahead and run right?
+
+02:52.920 --> 03:00.330
+So it only returns a new list that has names that have more than four letters.
+
+03:00.600 --> 03:04.830
+James and Rafael in this case, Gina has four, so that's not more than four.
+
+03:05.100 --> 03:06.450
+Paul also has four.
+
+03:06.840 --> 03:07.020
+Nine.
+
+03:07.030 --> 03:07.680
+More than four.
+
+03:07.980 --> 03:08.930
+You can do all sorts of things.
+
+03:08.940 --> 03:16.140
+You can also say I want to filter this list by, say, ends with.
+
+03:16.320 --> 03:16.650
+Right.
+
+03:16.660 --> 03:24.720
+So I'm going to try to find all of the names that end with, let's say, this character here.
+
+03:25.080 --> 03:26.280
+L Well, that's right.
+
+03:26.790 --> 03:30.360
+And you can see Paul and Rafael because they end with L L.
+
+03:30.660 --> 03:38.900
+It says a suffix right the end, but we can also pass prefix and we can also do starts with look at
+
+03:38.910 --> 03:41.470
+it, that's going to be a prefix, right with L.
+
+03:41.470 --> 03:42.570
+Let's see if that's going to work.
+
+03:42.780 --> 03:47.490
+Of course it will work, but we should see nothing because there are no names that start with L.
+
+03:47.850 --> 03:48.570
+Then there we have it.
+
+03:48.570 --> 03:50.790
+You can see that we have an empty list there.
+
+03:51.150 --> 03:55.470
+Now one thing you will notice also, we can further filter things here.
+
+03:55.470 --> 04:01.350
+So if I say it starts with and passed the prefix right, we want something that starts with R.
+
+04:01.710 --> 04:04.320
+If we run this again, we'll see that we're going to get Rafael.
+
+04:05.010 --> 04:05.910
+OK, there's Rafael.
+
+04:06.060 --> 04:11.030
+However, if I change this are to lowercase r like this, what do you think is going to happen like
+
+04:11.040 --> 04:13.860
+a run and we get an empty list?
+
+04:14.070 --> 04:17.430
+The reason being is because this filter is case sensitive.
+
+04:17.710 --> 04:18.060
+OK?
+
+04:18.210 --> 04:23.370
+So it has to be exactly the same as what we may have in our list of.
+
+04:23.730 --> 04:30.150
+So we can also, if you have already starts with a can hover over tells exactly what is expected or
+
+04:30.150 --> 04:33.310
+what parameters are passed, what arguments are expected.
+
+04:33.340 --> 04:33.600
+OK.
+
+04:34.080 --> 04:39.360
+So here we you pass prefix past the string, which is this are in this case.
+
+04:39.720 --> 04:45.360
+And then we can also pass the ignore case to either B Boolean to either be true or false.
+
+04:45.840 --> 04:54.450
+So if you say ignore case and say true such, then what's going to happen is this one you will see that
+
+04:54.450 --> 04:58.110
+it will catch Rafael because we said, just ignore the case.
+
+04:58.470 --> 04:59.790
+Now the beauty here also is that.
+
+04:59.970 --> 05:05.250
+Condition, what we call the predicate who can make it even more complicated, meaning we can cipher
+
+05:05.250 --> 05:06.330
+through even more.
+
+05:06.630 --> 05:14.280
+I can see we want to return any item in our lists here that starts with are ignoring the case.
+
+05:14.640 --> 05:18.060
+And also I want to see two ends like this.
+
+05:18.360 --> 05:18.720
+OK.
+
+05:19.110 --> 05:25.390
+I can say it that ends with, let's say, l like this.
+
+05:25.410 --> 05:27.210
+Now I've changed a few things here.
+
+05:27.240 --> 05:30.840
+You notice, first of all, here we have this Screwfix and we have double quotes.
+
+05:31.260 --> 05:31.830
+In this case.
+
+05:31.830 --> 05:33.690
+Here we have single quotes.
+
+05:33.720 --> 05:34.320
+What is this?
+
+05:34.350 --> 05:40.080
+Well, the difference here is that you see here we have a character characters and Caitlin must be inside
+
+05:40.080 --> 05:44.280
+of a single quotes, whereas strings have to be inside of double quotes.
+
+05:44.640 --> 05:45.900
+It's very important distinction.
+
+05:46.530 --> 05:48.360
+OK, so let's run this and see what's going to happen.
+
+05:49.230 --> 05:55.500
+It's as empty here again is because it's looking at this al and is saying, Well, there's nothing that
+
+05:55.500 --> 05:57.410
+ends with Al uppercase.
+
+05:57.750 --> 06:06.180
+If we go back and say ignore, put in your line, say true and run again should be able to see Raphael.
+
+06:06.870 --> 06:07.530
+And there you have it.
+
+06:08.160 --> 06:13.470
+So you can make this as complex as you want to cipher through exactly what are you looking for in our
+
+06:13.470 --> 06:13.830
+list?

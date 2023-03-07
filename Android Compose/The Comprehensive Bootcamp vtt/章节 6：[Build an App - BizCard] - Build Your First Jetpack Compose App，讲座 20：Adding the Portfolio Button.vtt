@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.270 --> 00:04.410
+I hope you were able to add the button here just below the miles compose.
+
+00:04.770 --> 00:05.630
+It's pretty simple.
+
+00:05.640 --> 00:11.040
+All you have to do is just say button such and you should have an option to create a button hit enter.
+
+00:11.040 --> 00:12.060
+And then there you have it.
+
+00:12.420 --> 00:12.990
+Very simple.
+
+00:13.410 --> 00:16.230
+One of the main parameters that is passing is don't click with.
+
+00:16.230 --> 00:22.440
+The idea is that a button needs to retrieve or needs to listen to an event and respond to that event.
+
+00:22.740 --> 00:23.340
+It makes sense.
+
+00:23.760 --> 00:29.070
+So that's why your click is right away, given that there is needed to do here, there's a code block
+
+00:29.070 --> 00:30.330
+here that needs to be filled.
+
+00:30.540 --> 00:31.060
+What is that?
+
+00:31.060 --> 00:32.970
+If we want to happen when the buttons click?
+
+00:33.210 --> 00:38.460
+First of all, as it is the button right now, notice it says button and then hers and click and there
+
+00:38.460 --> 00:40.310
+is the arrow scope.
+
+00:40.320 --> 00:44.440
+So this is where we are going to add the contents inside of these buttons.
+
+00:44.480 --> 00:49.530
+In this case, we're going to pass a text because we want to give this button label, say, text.
+
+00:49.830 --> 00:52.830
+This is going to be saying what is going to sit in its portfolio.
+
+00:53.070 --> 00:57.150
+And as always, we can all was pass other parameters.
+
+00:57.540 --> 01:01.230
+In this case, let's say style and style this button and simplify.
+
+01:01.230 --> 01:07.830
+I'm going to use material theme again, and I'm going to go to typography and button.
+
+01:08.040 --> 01:12.750
+So there is a typography for button when we talk about typography in general, trigger by the font,
+
+01:13.050 --> 01:14.250
+the types and so forth.
+
+01:15.000 --> 01:19.260
+So let's go ahead and refresh and see what will transpire from this.
+
+01:19.770 --> 01:20.610
+And there you have it.
+
+01:20.790 --> 01:22.680
+So you see there is a button.
+
+01:23.010 --> 01:23.910
+Let's go ahead and run this.
+
+01:23.910 --> 01:26.490
+You see on our emulator.
+
+01:27.040 --> 01:27.670
+And there you have it.
+
+01:27.960 --> 01:28.440
+Very nice.
+
+01:28.480 --> 01:31.320
+I'm going to make this a little bigger and close that down a little bit.
+
+01:31.680 --> 01:32.100
+OK.
+
+01:32.580 --> 01:33.400
+It's looking very good.
+
+01:33.420 --> 01:36.150
+There's a button, and all of this is given to us.
+
+01:36.160 --> 01:37.060
+So click.
+
+01:37.080 --> 01:39.120
+You can see there is that ripple effect.
+
+01:39.360 --> 01:41.010
+We didn't have to do anything, really.
+
+01:41.310 --> 01:42.930
+All of that is just there for us.
+
+01:43.350 --> 01:46.050
+So in this case, here, I'm going to show you on click so on, click.
+
+01:46.050 --> 01:47.160
+We want something to happen.
+
+01:47.310 --> 01:51.840
+But for now, I'm just going to see emoji log D like this.
+
+01:52.080 --> 01:58.500
+And if you see that just hit enter, this is going to allow us to log a few message into our debug console.
+
+01:58.920 --> 02:04.320
+So I'm just going to say here clicked and I'm going to change this to clicked like that.
+
+02:04.830 --> 02:06.120
+This is the tag.
+
+02:06.450 --> 02:07.770
+And now I'm going to go down here.
+
+02:07.920 --> 02:09.110
+Open now, Logcat.
+
+02:09.120 --> 02:11.860
+This is why we're going to see all of the messages coming from our app.
+
+02:11.880 --> 02:17.550
+I'm going to change this to debug because this is d for debug unless we run this.
+
+02:17.910 --> 02:18.180
+OK?
+
+02:18.920 --> 02:19.280
+OK.
+
+02:19.590 --> 02:20.610
+So of smaller.
+
+02:20.970 --> 02:26.340
+So now if I click can see clicked with this card clicked.
+
+02:26.610 --> 02:29.430
+Now we know when we click the button, something happens.
+
+02:29.430 --> 02:32.490
+In this case, we just logging out this message to the console.
+
+02:32.820 --> 02:33.210
+Great.
+
+02:33.300 --> 02:39.870
+So we made a lot of progress here, and I hope you're still seeing how things work, at least at a very
+
+02:39.870 --> 02:40.390
+high level.
+
+02:40.410 --> 02:43.260
+And I have to remind you again that I don't want you to get too worried.
+
+02:43.500 --> 02:49.200
+This is just to get you started real quick to see this little bit of what's possible with compose and
+
+02:49.200 --> 02:51.780
+to realize that there are a few things that I'm leaving out.
+
+02:51.780 --> 02:57.360
+And it's all intentional because we cannot promise that we will get back to all of these, all the intricacies
+
+02:57.720 --> 02:58.740
+of compose.
+
+02:58.780 --> 03:00.010
+We'll talk about them later.
+
+03:00.030 --> 03:04.890
+But now just just trying to get something running so we can actually feel good about ourselves.
+
+03:05.460 --> 03:05.880
+Very OK.
+
+03:06.000 --> 03:08.860
+So we getting really close to finishing, finalizing our app.
+
+03:08.910 --> 03:12.930
+The next thing we're going to do is to make sure that when this button portfolio is clicked, we're
+
+03:12.930 --> 03:20.760
+going to show a list that will have some dummy data pertaining to our portfolio or this person's or
+
+03:20.760 --> 03:22.140
+this developer's portfolio.
+
+03:22.290 --> 03:23.970
+OK, so I'll see in the next video.

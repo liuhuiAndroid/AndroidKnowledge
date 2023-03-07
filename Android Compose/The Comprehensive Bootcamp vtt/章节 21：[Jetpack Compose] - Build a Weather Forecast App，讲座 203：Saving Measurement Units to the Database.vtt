@@ -1,0 +1,376 @@
+WEBVTT
+
+00:00.420 --> 00:06.540
+So next, let's go ahead and add this pattern there for very simple, right where we finish.
+
+00:09.930 --> 00:11.640
+Let's see, have.
+
+00:13.930 --> 00:14.920
+Our column.
+
+00:23.140 --> 00:26.830
+Right to one side of our column here, let's create a button.
+
+00:45.560 --> 00:47.510
+And let's add a modifier.
+
+00:53.880 --> 01:02.670
+About three deep, and I'm going to align everything here, center horizontally or center horizontally
+
+01:02.670 --> 01:03.180
+like that.
+
+01:04.500 --> 01:08.670
+That's in no way another way of doing it or just importing, as you see at the top.
+
+01:09.180 --> 01:11.970
+We're importing this aligned companion central recently.
+
+01:12.150 --> 01:13.050
+OK, that's fine.
+
+01:13.410 --> 01:19.740
+Or if we don't like that idea, we can just do what we usually do, which is going to be alignment.
+
+01:23.180 --> 01:26.630
+Android compose central horizontally.
+
+01:26.990 --> 01:27.330
+Right?
+
+01:27.350 --> 01:30.590
+So but because that was important, we can just get rid of that.
+
+01:31.070 --> 01:32.120
+And this works as well.
+
+01:32.660 --> 01:33.050
+OK.
+
+01:33.670 --> 01:35.720
+Just different ways of doing the same thing, really.
+
+01:36.110 --> 01:39.310
+And let's put a shape or add a shape here.
+
+01:39.320 --> 01:46.280
+I want rounded corners, shape and 34 sort so really rounded.
+
+01:50.230 --> 01:55.900
+And I'm going to give colors and I'm going to change the button defaults, colors, right?
+
+01:57.010 --> 02:04.900
+So to do that, I'm going to use the button defaults, Android defaults, their say button colors.
+
+02:05.350 --> 02:06.540
+It always does this.
+
+02:06.550 --> 02:10.220
+He just goes and gets this whole package there.
+
+02:10.960 --> 02:11.740
+We don't want that.
+
+02:16.420 --> 02:20.520
+And then I'm going to say background color.
+
+02:22.450 --> 02:23.230
+Zero X.
+
+02:24.600 --> 02:28.250
+F e f b e for two.
+
+02:30.600 --> 02:33.490
+OK, and then so here I'm going to.
+
+02:36.240 --> 02:37.320
+Then add a text.
+
+02:41.810 --> 02:44.120
+They will just say save
+
+02:48.050 --> 02:51.230
+and let's go ahead and I want to fire.
+
+02:55.550 --> 02:57.800
+Padding around the deep.
+
+03:05.950 --> 03:10.450
+Given white collar of the text in this Al-Sadd of font size.
+
+03:14.340 --> 03:16.220
+Oh, about 17 SB.
+
+03:18.570 --> 03:20.880
+Bought that, I'm sure we could go ahead and run.
+
+03:25.460 --> 03:26.420
+Let's go to settings.
+
+03:28.290 --> 03:30.800
+All right, there you go, save, OK.
+
+03:30.830 --> 03:35.000
+That's where we get so Celsius Fahrenheit toggle button is working and everything.
+
+03:35.000 --> 03:37.190
+So now it's time for us to actually save something.
+
+03:37.470 --> 03:42.570
+Right now we have our Settings View model that we created earlier, so we haven't used that.
+
+03:42.860 --> 03:43.160
+OK.
+
+03:43.640 --> 03:47.750
+And this has the insert, update, delete, delete, all and so forth.
+
+03:47.920 --> 03:51.950
+Some of these I'm not we're not going to use, but it's always nice to have the full picture so you
+
+03:51.950 --> 03:54.590
+can see how all of this is put together.
+
+03:54.920 --> 04:01.820
+It's a very similar again from first, similar to what we did before for favorites, but I do it in
+
+04:01.820 --> 04:03.170
+a way so you can see.
+
+04:03.740 --> 04:04.100
+All right.
+
+04:05.150 --> 04:09.190
+So setting screen here where there's all of this happened.
+
+04:09.350 --> 04:17.510
+First of all, whenever we click on our save button, we have this on click or clickable event here
+
+04:17.570 --> 04:18.650
+or click event, it should say.
+
+04:19.040 --> 04:20.170
+So what is going to happen?
+
+04:20.270 --> 04:21.860
+First of all, we need to go and get.
+
+04:22.910 --> 04:26.840
+The settings of your model, right, and we have that passed along.
+
+04:28.590 --> 04:34.740
+Here so we have a Settings View model and is indeed a hit few model or hilt of your model, I should
+
+04:34.740 --> 04:35.040
+say.
+
+04:36.180 --> 04:44.370
+So what we want to do is because we're just changing back and forth one item or one field per say.
+
+04:44.820 --> 04:50.580
+Again, we're using databases because it's what we know so far and that's what we have at our disposal
+
+04:50.580 --> 04:50.850
+here.
+
+04:51.090 --> 04:51.960
+We're going to use that.
+
+04:51.960 --> 04:57.660
+But there are other infrastructure that we can use to say smaller pieces of data, such as data storage
+
+04:57.660 --> 04:58.110
+and so forth.
+
+04:58.110 --> 04:59.280
+But we're not going to get into that.
+
+05:00.000 --> 05:05.190
+We're going to just use their base, even though it may be a little bit of an overkill.
+
+05:05.430 --> 05:05.970
+That's fine.
+
+05:06.520 --> 05:11.700
+Right now, I'm going to say settings get the view model and then I'm going to.
+
+05:11.700 --> 05:13.830
+First of all, I'm going to do something very strange.
+
+05:13.840 --> 05:19.050
+I'm going to delete everything in our review model right to start because the idea what are we going
+
+05:19.050 --> 05:27.090
+to do is when we change this Celsius, or I should say this toggle button to change to Celsius, from
+
+05:27.090 --> 05:28.740
+Celsius to Fahrenheit and so forth.
+
+05:29.490 --> 05:35.910
+When we save what we want to do, want to delete the previous setting, they may have had added or saved
+
+05:36.600 --> 05:42.390
+to save this new one because in our database, our table just want allowed to have one setting at a
+
+05:42.400 --> 05:42.630
+time.
+
+05:42.630 --> 05:43.290
+That makes sense.
+
+05:43.770 --> 05:48.180
+This is just a way that a feature will be easier to put this together.
+
+05:49.350 --> 05:54.070
+So I'm going to delete everything I'm going to before anything, and then I'm going to call settings
+
+05:54.070 --> 05:58.170
+if you want again and I'm going to say insert unit, right?
+
+05:59.260 --> 06:05.560
+And then I'm create a unit, make sure we create a unit object that's ours and that unit cuddling,
+
+06:05.560 --> 06:06.730
+that's a totally different thing.
+
+06:07.090 --> 06:07.350
+All right.
+
+06:08.080 --> 06:09.310
+So we want the model.
+
+06:09.560 --> 06:11.130
+We don't want this other one either.
+
+06:11.140 --> 06:13.730
+So the model and then I'm going to create that unit.
+
+06:13.750 --> 06:19.900
+So first of all, we need to ask the unit property and where do we get that unit property?
+
+06:19.900 --> 06:24.520
+Will that unit property is going to be the choice state here?
+
+06:25.000 --> 06:26.470
+Looks like we have a little problem.
+
+06:28.120 --> 06:28.780
+OK, there we go.
+
+06:29.290 --> 06:35.920
+So the choice is going to be the state that we created, which will contain either imperial or metric.
+
+06:37.000 --> 06:43.510
+So that also is going to be happening as we click right Celsius or metric or, in this case, Celsius
+
+06:43.510 --> 06:44.350
+or Fahrenheit.
+
+06:45.600 --> 06:50.910
+So as we click, we're changing this state, which will at some point or at any point in time, will
+
+06:50.910 --> 06:53.580
+have either have imperial or metric.
+
+06:54.820 --> 06:59.650
+So we're going to use that right to pass on to our database, because that is what it's going to have
+
+06:59.950 --> 07:02.920
+the most current state of our choice.
+
+07:03.490 --> 07:09.640
+So it's a choice state like that and believe it or not, that's it.
+
+07:10.600 --> 07:16.330
+So now I'm going to say this, and let's run this one thing I want to show you here is that in Android
+
+07:16.330 --> 07:20.610
+Studio, you can actually see your database schema as you database tables and so forth.
+
+07:20.620 --> 07:23.830
+To do so, you will have to go to app inspection.
+
+07:23.830 --> 07:26.110
+And if you don't see this, tap here, it's very simple.
+
+07:26.500 --> 07:35.450
+All you do is is you go at the top where says view and you go to tool windows and click on app inspection.
+
+07:35.470 --> 07:38.660
+I'm not going to click right now because I already have it, so click.
+
+07:38.680 --> 07:41.530
+App inspection and you should have at the bottom of this app inspection.
+
+07:42.130 --> 07:48.160
+Now, when you click on that, we'll take you a little bit, by the way, and then you will see that
+
+07:48.160 --> 07:51.970
+we have this database where they're going to base and see my fave table.
+
+07:52.390 --> 07:53.550
+And this is the master table.
+
+07:53.560 --> 07:56.590
+We don't need to look into that, but we need to look at the settings.
+
+07:57.100 --> 07:58.270
+Let's click on Settings.
+
+07:58.660 --> 08:00.610
+Let's double click to actually see everything.
+
+08:01.000 --> 08:03.970
+Notice Settings doesn't have anything yet, right?
+
+08:04.120 --> 08:07.450
+But if we go to favorites Typekit, you can see Favorites San Diego.
+
+08:07.450 --> 08:09.430
+At this point, that's all we have in our favorites.
+
+08:09.450 --> 08:12.790
+In fact, if you go to look a favorites, we should see San Diego.
+
+08:13.720 --> 08:20.950
+If I add just a side note here, let's say Seattle again, that's added.
+
+08:21.430 --> 08:26.740
+Actually, that added, I'm going to add now, and if you go here, obviously you can see we have Seattle.
+
+08:26.920 --> 08:29.680
+And if you refresh, you should see Seattle there.
+
+08:29.890 --> 08:35.860
+So this is a really good tool to see how the base tables and everything, how things are being saved,
+
+08:35.920 --> 08:37.420
+how what we have in there.
+
+08:37.810 --> 08:38.440
+So are settings.
+
+08:38.440 --> 08:40.360
+If you double click to notice has nothing now.
+
+08:40.840 --> 08:45.010
+So let's go ahead and save a state or a unit, I should say.
+
+08:45.520 --> 08:46.360
+Let's go to settings.
+
+08:47.210 --> 08:51.250
+I'm going to go to save Celsius saved.
+
+08:51.400 --> 08:53.050
+Go ahead and run this once again.
+
+08:53.920 --> 09:00.970
+Go and save like this should delete everything and save Celsius, which is metrics.
+
+09:01.630 --> 09:02.000
+All right.
+
+09:02.020 --> 09:02.680
+So it's working.

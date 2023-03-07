@@ -1,0 +1,133 @@
+WEBVTT
+
+00:01.170 --> 00:03.160
+Let's see if we can add an image here.
+
+00:03.570 --> 00:11.540
+Because remember, we have that set up in our inside of this card white card, we have the image there
+
+00:11.550 --> 00:13.290
+paint or we are using Croyle.
+
+00:13.480 --> 00:17.330
+Remember image paint or to allow us to get images from the internet.
+
+00:17.400 --> 00:17.670
+Right?
+
+00:19.590 --> 00:25.890
+So later, you will see that you get it, will get images and we'll get books from this API, Google
+
+00:25.890 --> 00:27.060
+APIs dot com.
+
+00:27.300 --> 00:30.030
+This allows us to pass in a query.
+
+00:30.040 --> 00:33.660
+For instance, Android will get all the books, Android books and so forth.
+
+00:33.660 --> 00:39.030
+So and we'll get these images, of course, metadata from these API.
+
+00:39.360 --> 00:43.890
+So I'm going to get a link here of a thumbnail of this image that's copied this.
+
+00:43.920 --> 00:45.240
+Let's see if I can do this.
+
+00:46.410 --> 00:50.370
+Let's copy that, and let's paste it all in in here.
+
+00:50.400 --> 00:56.160
+OK, so this is the API image that we're going to be using later, but I'm just hard coding it so we
+
+00:56.160 --> 00:58.410
+can see, hopefully an image here.
+
+00:58.540 --> 01:03.420
+Obviously, we'll have to actually run on device in order for us to see this.
+
+01:03.870 --> 01:04.530
+So let's see.
+
+01:06.450 --> 01:07.560
+OK, there you go.
+
+01:09.210 --> 01:09.840
+It's working.
+
+01:10.200 --> 01:12.690
+You can see we have the nice image there.
+
+01:13.290 --> 01:22.110
+Now if in case you don't see this image loading because if you look at this one, if I right click and
+
+01:22.110 --> 01:31.440
+open in a new tab, you'll see that this is not a secure place, which means Android Studio may not
+
+01:31.440 --> 01:36.040
+like that to run links that are not secure to get images.
+
+01:36.930 --> 01:41.960
+So if you find that problem something, you don't see the actual image there.
+
+01:42.000 --> 01:45.420
+What do you need to do is you need to go to manifest file.
+
+01:46.260 --> 01:49.230
+And here you just have to start typing something like this.
+
+01:51.240 --> 01:54.900
+And you're going to see this uses clear text traffic.
+
+01:55.530 --> 01:55.830
+OK.
+
+01:56.160 --> 02:01.560
+So what these days, as you see here, it says, declare that this application may use clear text traffic,
+
+02:01.560 --> 02:04.380
+such as a strip rather than a steps.
+
+02:04.860 --> 02:05.190
+OK.
+
+02:05.610 --> 02:09.420
+It's going to allow us to use unsafe links.
+
+02:09.450 --> 02:15.150
+Now, of course, it's kind of debatable whether you want to allow your app to do this, but in this
+
+02:15.150 --> 02:16.320
+case, it's OK.
+
+02:16.350 --> 02:20.040
+We're going to say true, it's OK because we know exactly where these links are coming from.
+
+02:20.050 --> 02:21.960
+It's Google, so it's OK.
+
+02:22.170 --> 02:22.530
+All right.
+
+02:23.440 --> 02:28.540
+So that's one case that you don't end up seeing an image showing here.
+
+02:29.350 --> 02:36.640
+And of course, you can test out with any image link image from the internet and then check if you're
+
+02:36.640 --> 02:37.900
+going to be able to see that image.
+
+02:37.960 --> 02:38.260
+All right.
+
+02:38.260 --> 02:40.510
+So in this case, here again, let's go ahead and refresh.
+
+02:41.590 --> 02:43.510
+We should be able to still see that image there.
+
+02:43.690 --> 02:49.660
+So that gives us the full picture of how this car Liscard would look like.

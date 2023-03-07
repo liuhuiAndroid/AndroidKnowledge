@@ -1,0 +1,328 @@
+WEBVTT
+
+00:01.140 --> 00:06.900
+So we are able to sign users in and go to homescreen, which is wonderful, but now we want to be able
+
+00:06.900 --> 00:09.150
+to create a user ourselves.
+
+00:09.420 --> 00:09.690
+Right.
+
+00:10.380 --> 00:16.560
+Because the idea, of course, is to either log in or create an account in this case, create that user.
+
+00:17.040 --> 00:17.280
+All right.
+
+00:17.970 --> 00:18.750
+How do we do this?
+
+00:18.990 --> 00:21.870
+Well, we are going to do the same thing.
+
+00:22.020 --> 00:28.440
+Let's go back to our login screen view model and create yet another function.
+
+00:28.440 --> 00:29.820
+In fact, we already did that.
+
+00:29.880 --> 00:30.790
+It's at the bottom there.
+
+00:30.790 --> 00:32.460
+So let me just close this.
+
+00:32.580 --> 00:33.360
+So we have space.
+
+00:34.260 --> 00:36.780
+OK, so we are going to do the same thing.
+
+00:37.830 --> 00:40.080
+Create user with email and password.
+
+00:40.470 --> 00:48.480
+I'm going to pass here email, yellow card and password string type as well.
+
+00:48.480 --> 00:53.790
+And of course, just like we did before home and like, that's what this is going to be about lambda
+
+00:53.790 --> 00:54.630
+when we invoke it.
+
+00:55.320 --> 00:55.920
+All right.
+
+00:56.430 --> 00:56.850
+Very good.
+
+00:56.880 --> 00:58.060
+So what do we do here?
+
+00:58.080 --> 01:03.720
+I'm going to first look at the loading states and say if because we could want to make sure that we
+
+01:03.720 --> 01:09.960
+can use that to check if it's loading and we can tell the user that, hey, things are happening in
+
+01:09.960 --> 01:10.530
+the back end.
+
+01:10.680 --> 01:13.080
+So just hang in, hang in there.
+
+01:14.130 --> 01:14.460
+All right.
+
+01:14.460 --> 01:18.750
+So I'm going to say loading value is false.
+
+01:20.340 --> 01:21.240
+So it's not loading.
+
+01:21.270 --> 01:26.430
+If that's the case, then I'm going to set loading that value to true.
+
+01:26.430 --> 01:31.970
+To say, now you're loading because we're inside here, right to do work and then I'm going to use auth
+
+01:31.980 --> 01:39.120
+our Firebase off object and you invoke the Create user with email and password.
+
+01:39.750 --> 01:40.530
+How convenient?
+
+01:40.660 --> 01:48.690
+Pass the email and pass the password, and I'm going to say that add on.
+
+01:50.510 --> 01:53.390
+Complete listener like this.
+
+01:55.040 --> 01:57.170
+Or make it is a dunk.
+
+01:57.210 --> 02:00.860
+There is our task, beautiful friend task with Arthur result.
+
+02:01.640 --> 02:02.900
+So we the same thing.
+
+02:03.800 --> 02:06.050
+Let me change this to task.
+
+02:08.980 --> 02:09.220
+All right.
+
+02:09.410 --> 02:10.850
+It's easy to spot.
+
+02:10.970 --> 02:18.200
+I say if the task is successful, then we're in good hands.
+
+02:18.650 --> 02:20.680
+In this case, we just couldn't go home, right?
+
+02:20.870 --> 02:27.740
+Go back to our home screen because everything is good and we could put else, of course, here, but
+
+02:27.740 --> 02:28.340
+it's fine.
+
+02:28.340 --> 02:29.330
+We don't know what else.
+
+02:29.330 --> 02:30.860
+We kids just for now, stay logged.
+
+02:31.640 --> 02:32.660
+Passing the task.
+
+02:38.920 --> 02:41.890
+Sold that to strange like this.
+
+02:42.820 --> 02:48.220
+So we need to then say Loading said the value to false.
+
+02:48.250 --> 02:50.830
+So yep, we are done loading.
+
+02:50.850 --> 02:54.010
+So put back this false, we aren't loading anymore.
+
+02:54.610 --> 02:54.940
+All right.
+
+02:54.940 --> 02:58.540
+So believe it or not, that's all for now, at least.
+
+02:58.840 --> 03:03.820
+So let's go back to our reader log login screen and we have to do there, and let's get rid of this
+
+03:03.820 --> 03:07.690
+to do because we've done with that here we are going to do what?
+
+03:07.750 --> 03:08.840
+Well, do the same thing.
+
+03:08.840 --> 03:18.190
+If you model invoked to create with email and password pass or a password and pass, actually first
+
+03:18.190 --> 03:18.670
+email.
+
+03:22.210 --> 03:26.010
+And then past the password, such.
+
+03:26.940 --> 03:32.970
+And then we know this is we can pass on the trailing lamp, therefore our home sat nav controller,
+
+03:33.720 --> 03:34.430
+navigate.
+
+03:34.470 --> 03:37.830
+Make sure we get the route option.
+
+03:37.830 --> 03:38.790
+This is very important.
+
+03:38.910 --> 03:41.580
+Otherwise, you're going to end up errors with the readers.
+
+03:44.920 --> 03:48.460
+Screens, I see reader screens.
+
+03:48.490 --> 03:54.370
+There we go, that guy in Enam and say reader home screen, that name.
+
+03:55.570 --> 03:56.980
+And that's that.
+
+03:58.240 --> 04:01.510
+All right, let's see if this is true, this actually works, let's run.
+
+04:03.620 --> 04:03.870
+OK.
+
+04:03.920 --> 04:04.670
+Moment of truth.
+
+04:04.940 --> 04:12.020
+OK, so we are going to sign up so quick, they're going to sign up, let's say James at Mi.com.
+
+04:14.000 --> 04:15.860
+OK, that I say enter.
+
+04:17.010 --> 04:20.970
+So everything went well because I was able to go home, that's really good.
+
+04:21.570 --> 04:26.910
+If you go back to our console refresh, we should see that new user that we have added.
+
+04:28.960 --> 04:33.100
+And there you go, there's James added, It's wonderful.
+
+04:33.640 --> 04:38.530
+This is really good news, in fact, I think Logcat should have a few things here as well.
+
+04:38.890 --> 04:39.640
+Well, maybe not.
+
+04:39.670 --> 04:43.110
+Let's see if b it's OK.
+
+04:43.120 --> 04:45.510
+I think Lockhart is asleep, but it's OK.
+
+04:45.520 --> 04:51.760
+We know that everything worked fine because we can see that James was added, and most importantly,
+
+04:51.760 --> 04:54.940
+we were able to take the user to the correct screen.
+
+04:55.480 --> 04:57.490
+So at this point, there are a few things we need to do.
+
+04:57.760 --> 05:06.100
+First, when we create a user, we are going to have to create a user in a different place.
+
+05:06.310 --> 05:10.120
+What I mean by that is is follow if we go back to our console.
+
+05:10.330 --> 05:13.090
+We see that, of course, we have these authentication.
+
+05:13.090 --> 05:15.520
+So we have our users here for authentication.
+
+05:15.910 --> 05:21.340
+However, we want to be able to move some of this user, at least some part of this users, and add
+
+05:21.640 --> 05:25.240
+some other metadata, some other information to these users if we wish to do so.
+
+05:25.810 --> 05:32.020
+We want to move that to our Firebase 05 store database here, which means we're going to have a user's
+
+05:32.530 --> 05:41.860
+collection here and we can add that user that was just added or it was just authenticated into our collection
+
+05:41.860 --> 05:42.160
+here.
+
+05:42.190 --> 05:45.550
+Our database, because here is different.
+
+05:46.620 --> 05:53.910
+From here, and this will become more apparent later, because then what do we want to do is for each
+
+05:53.910 --> 05:55.290
+user that we add here.
+
+05:55.320 --> 05:58.950
+Like I said, we can add more metadata, more information about this user.
+
+05:59.550 --> 06:03.690
+But most importantly, we're going to be able to add, for instance, the last name for one, you do
+
+06:03.690 --> 06:06.090
+so the profession, whatever else we want.
+
+06:06.300 --> 06:11.910
+But most importantly, we want to be able to add this connection between the user and the books that
+
+06:11.910 --> 06:12.570
+they have.
+
+06:12.780 --> 06:19.650
+And we are only able to do so if we have the users attached to our database as well.
+
+06:21.230 --> 06:26.870
+So that is the fact process, so that's what are we going to be doing next, which is as users are created
+
+06:27.050 --> 06:28.190
+or authenticated?
+
+06:28.370 --> 06:28.740
+Right?
+
+06:28.760 --> 06:32.900
+In this case, we want to also right away do something else.
+
+06:32.900 --> 06:34.220
+We want to create a function.
+
+06:34.260 --> 06:34.600
+Right.
+
+06:35.120 --> 06:36.020
+Great function there.
+
+06:36.410 --> 06:44.270
+You know, if you model that will create or add into our users database here, that user that we're
+
+06:44.270 --> 06:45.530
+just now created.
+
+06:46.970 --> 06:49.520
+OK, so that's what we will do next.

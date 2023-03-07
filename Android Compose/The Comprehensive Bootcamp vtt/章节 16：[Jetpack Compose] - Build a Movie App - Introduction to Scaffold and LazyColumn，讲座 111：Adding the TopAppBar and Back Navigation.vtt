@@ -1,0 +1,304 @@
+WEBVTT
+
+00:00.330 --> 00:06.000
+So when we go to details here, we're going to add the actual top bar as well, so that would look something
+
+00:06.000 --> 00:12.030
+like this, and we're going to add a an arrow to signify that the users can tap on that and go back.
+
+00:12.540 --> 00:15.240
+So just to make our app uniform, right?
+
+00:15.240 --> 00:17.520
+So to do that, let's go to our details.
+
+00:18.360 --> 00:24.420
+What I'm going to do instead of having all of this, I'm just going to let's go ahead and comment all
+
+00:24.420 --> 00:29.400
+of this out first so we can get some of the pieces that we may need later.
+
+00:29.460 --> 00:29.790
+OK.
+
+00:30.450 --> 00:34.610
+So the first thing I want to add here is going to be a scaffold.
+
+00:35.290 --> 00:35.550
+Right?
+
+00:36.480 --> 00:39.420
+That structure, that's the scaffold.
+
+00:39.540 --> 00:45.150
+Remember the structure that we have, the material structure that allows us to create a uniform user
+
+00:45.150 --> 00:45.570
+interface.
+
+00:45.880 --> 00:48.510
+OK, so set top bar.
+
+00:51.570 --> 00:56.070
+Right for a top bottom and just to use the top bars, and we have.
+
+00:58.700 --> 00:59.960
+And let's go back to home.
+
+01:01.450 --> 01:03.750
+Essentially, I'm going to borrow all of this.
+
+01:03.770 --> 01:04.640
+Let's see.
+
+01:08.450 --> 01:13.060
+In fact, this column agenda is a little bit too aggressive, let's just use something else.
+
+01:14.610 --> 01:16.050
+She's like, great for now.
+
+01:19.090 --> 01:21.280
+Let's just get right.
+
+01:28.230 --> 01:35.760
+OK, so in here, I'm actually going to create a row.
+
+01:36.570 --> 01:45.600
+The next thing I want to add here is going to be an icon, so say icon like this and to use the image
+
+01:45.600 --> 01:55.320
+factor, I'd say icons that default and save arrow back description.
+
+01:55.320 --> 01:56.280
+Just say Arrow.
+
+01:59.260 --> 02:06.700
+Back such then, I'm going to put a modifier here because I want to make this clickable, so I'm going
+
+02:06.700 --> 02:13.150
+to say modifier fire, clickable like this, and when it's clicked, that's when I'm going to add some
+
+02:13.150 --> 02:13.880
+information here.
+
+02:13.900 --> 02:14.230
+OK.
+
+02:14.950 --> 02:15.300
+All right.
+
+02:15.310 --> 02:16.210
+So there we go.
+
+02:16.240 --> 02:17.650
+When we click, we want to go back.
+
+02:17.650 --> 02:19.060
+So we have the nav.
+
+02:19.060 --> 02:21.060
+So let's go back in just code.
+
+02:21.130 --> 02:25.370
+Same thing that we did before pop back like this, right?
+
+02:25.390 --> 02:26.140
+When that clicked.
+
+02:27.730 --> 02:31.060
+And for our role, I'm going to say my alignment.
+
+02:32.620 --> 02:36.190
+I want horizontal arrangement.
+
+02:39.460 --> 02:41.170
+You want to start.
+
+02:42.010 --> 02:43.840
+Everything has to be to the left.
+
+02:44.590 --> 02:47.230
+And so here I'm going to put a space there because.
+
+02:48.840 --> 02:52.350
+I want to make sure that the movie title there.
+
+02:55.000 --> 03:01.360
+He's about 100 are deep, so to push this movie to the right.
+
+03:01.960 --> 03:03.460
+OK, let's see what else.
+
+03:03.490 --> 03:03.850
+All right.
+
+03:03.910 --> 03:05.560
+Right inside here.
+
+03:05.570 --> 03:06.610
+This is our content.
+
+03:06.730 --> 03:10.420
+This is where I can go back and put that text that we have.
+
+03:12.160 --> 03:14.410
+Or actually just put a Texas says.
+
+03:16.140 --> 03:19.710
+Our movie data is essentially what we had before here.
+
+03:20.700 --> 03:21.780
+Just copy this.
+
+03:23.970 --> 03:25.380
+OK, let's go ahead and run this.
+
+03:28.020 --> 03:34.200
+Great, they were going to say click and while the avatar we can click now that arrow, we want to take
+
+03:34.200 --> 03:36.050
+him back again.
+
+03:38.310 --> 03:44.220
+Obviously, we can just put all of this back right at the surface if we want inside of our.
+
+03:47.730 --> 03:48.600
+Body here.
+
+03:48.960 --> 03:53.340
+Just get rid of that one comment at all.
+
+03:56.210 --> 03:57.800
+OK, here we go.
+
+03:58.550 --> 03:59.420
+Let's go ahead and run.
+
+04:01.340 --> 04:05.390
+All right, there you go, you can see we still have back, we don't want that back, of course, so
+
+04:05.390 --> 04:10.850
+can get rid of this button altogether because everything is only set up for us.
+
+04:13.380 --> 04:16.080
+Let's make it all look nicer.
+
+04:16.220 --> 04:17.130
+Let's go ahead and run.
+
+04:19.620 --> 04:21.610
+So now we're just setting things up here.
+
+04:21.630 --> 04:22.160
+Nothing, really.
+
+04:22.170 --> 04:22.620
+No.
+
+04:23.430 --> 04:24.360
+OK, there we go.
+
+04:24.600 --> 04:25.950
+So everything is working.
+
+04:25.950 --> 04:30.450
+So now we have this very nice uniform user interface.
+
+04:30.840 --> 04:33.400
+So we click, you know, stellar, get in our style.
+
+04:33.400 --> 04:34.350
+I can go back.
+
+04:34.920 --> 04:35.790
+And there you have it.
+
+04:36.360 --> 04:36.630
+OK.
+
+04:36.900 --> 04:41.070
+Of course, you can work around, make this even better look good.
+
+04:41.070 --> 04:44.310
+But we will get there so we can change the color if you want.
+
+04:44.310 --> 04:53.280
+We can just see color just transparent so that it doesn't have any background color procedures transparent.
+
+04:55.590 --> 04:56.120
+There we go.
+
+04:56.130 --> 04:57.960
+So it's movies go.
+
+04:57.960 --> 05:01.380
+Of course, in our details, we haven't changed and it's still the same.
+
+05:01.470 --> 05:03.690
+OK, we can play around with everything we want.
+
+05:04.020 --> 05:09.630
+And also the other thing we can do, you know, top body, if I have over, you can say, for instance,
+
+05:09.630 --> 05:17.250
+elevation for elevation, I can't say zero dpi, so no elevation whatsoever.
+
+05:19.200 --> 05:21.750
+And now we should see just white.
+
+05:23.580 --> 05:23.890
+OK.
+
+05:24.090 --> 05:24.690
+It's very nice.
+
+05:25.080 --> 05:26.910
+So you can play around into all sort of things.
+
+05:27.240 --> 05:35.070
+And of course, we're going to keep working here and I can do the same thing tour details if it's zero
+
+05:35.070 --> 05:36.000
+elevation.
+
+05:40.240 --> 05:41.890
+Color transparent.
+
+05:45.640 --> 05:46.960
+Now we have something uniform.
+
+05:51.950 --> 05:52.850
+OK, there we go.
+
+05:53.090 --> 05:53.990
+And we have that.
+
+05:54.380 --> 05:54.680
+All right.
+
+05:54.830 --> 05:57.580
+Just options, and we may change that later.
+
+05:57.590 --> 06:03.830
+But the most important thing here is that we were able to put together a very simple application well
+
+06:03.920 --> 06:12.410
+to look at how to structure our app and how to navigate between screens using the navigation component,
+
+06:12.410 --> 06:16.640
+which is really, really important and very useful, as you can see here, right?
+
+06:16.700 --> 06:23.090
+So we are going to continue working on this movie app, right, and displaying movies here and perhaps
+
+06:23.090 --> 06:29.210
+make this even better by creating a data class which will have more properties that we can then add
+
+06:29.510 --> 06:30.830
+to our details here.
+
+06:31.760 --> 06:32.660
+OK, congratulations.
+
+06:33.080 --> 06:33.920
+And I'll see you next.

@@ -1,0 +1,223 @@
+WEBVTT
+
+00:00.970 --> 00:06.100
+All right, so next, what are we going to be doing is we're going to add another function of functionality,
+
+00:06.100 --> 00:11.530
+I should say, where users are going to be able to save to favorites, certain CDs.
+
+00:11.890 --> 00:18.400
+So for instance, if users go and search for San Diego, you will see to the left top left.
+
+00:18.400 --> 00:25.570
+There is that heart, that icon there, which signifies that they can click on that icon and then save,
+
+00:26.530 --> 00:32.020
+of course, that in this case, San Diego to our favorite cities, which is going to be in a different
+
+00:32.020 --> 00:32.440
+screen.
+
+00:32.560 --> 00:32.800
+OK.
+
+00:33.160 --> 00:41.050
+And later, when they click on our more icon action icon, there they can see about settings and favorites
+
+00:41.050 --> 00:41.530
+and so forth.
+
+00:42.010 --> 00:43.180
+They click on favorites.
+
+00:43.180 --> 00:47.110
+They're going to see, of course, our favorite cities are going to see they're going to be taken to
+
+00:47.110 --> 00:51.610
+the favorite cities or favorite screen where you can see all of their favorite screens.
+
+00:51.670 --> 00:51.910
+All right.
+
+00:52.270 --> 00:54.280
+All of the favorite CDs they have saved.
+
+00:54.760 --> 00:58.810
+And of course, at that point, they can delete if they wish to do so and so forth.
+
+00:59.140 --> 01:04.420
+And the great thing about our favorite is that when they click on each one of the favorites like, let's
+
+01:04.420 --> 01:11.380
+say, concordant, for instance, they'll take him back to main screen and show all the data pertaining
+
+01:11.380 --> 01:13.720
+to Concord in this case and all the forecast.
+
+01:14.510 --> 01:19.720
+OK, so this is the structure we're going to be using or we're going to be creating now for that.
+
+01:19.840 --> 01:22.600
+Obviously, we'll have to save this data.
+
+01:22.640 --> 01:23.830
+The CDC somewhere.
+
+01:24.090 --> 01:24.310
+Right.
+
+01:24.360 --> 01:28.000
+This is where we're going to use the room database right now.
+
+01:28.000 --> 01:34.660
+Room database, as I said before, is a structure is a layer that was created to abstract out all of
+
+01:34.660 --> 01:39.430
+the complexities that comes with creating databases in Android.
+
+01:39.760 --> 01:42.900
+So as I said, it's a cumbersome process.
+
+01:42.910 --> 01:48.190
+And so with the room database, we no longer have to suffer, quote unquote, when it comes to creating
+
+01:48.190 --> 01:50.260
+databases and saving and doing all sorts of things.
+
+01:50.530 --> 01:57.610
+So and on top of that, we're going to use a structure, a a an architecture that will help us in the
+
+01:57.610 --> 01:58.090
+long run.
+
+01:58.090 --> 02:02.860
+And I would like to invite you to always think of this terms and I may be repeating myself, but I think
+
+02:03.100 --> 02:10.630
+it's also important to rehash this concept, which is to create a structure and architecture that is
+
+02:10.630 --> 02:18.100
+clean and easy to use for future additions or future things that you do as your apps grow.
+
+02:18.850 --> 02:23.350
+What I mean by that is as follows We're going to follow this structure as you see here in this diagram,
+
+02:23.680 --> 02:27.470
+when we create our own, their basal room database is going to be at the lower level.
+
+02:27.490 --> 02:33.730
+If you look at this diagram and within the room database, we're going to have access to the sequel,
+
+02:33.730 --> 02:34.090
+right?
+
+02:34.930 --> 02:36.520
+Which is actual database, right?
+
+02:36.760 --> 02:39.220
+So this is the abstraction in a single light.
+
+02:39.280 --> 02:44.320
+That's where our entities in this case, tables or table in this case is going to have one table.
+
+02:44.680 --> 02:47.350
+That's where all of that is right now.
+
+02:47.350 --> 02:51.550
+We see here at the bottom, we have this Dow Dow stands for data access.
+
+02:51.550 --> 02:57.520
+Objects, essentially is an interface that allows to connect directly with its sequel Light that events
+
+02:57.520 --> 02:57.860
+like this.
+
+02:57.860 --> 03:00.190
+So it's the lower level, if you will.
+
+03:00.580 --> 03:04.900
+So all of that is abstract out inside of a room database interface.
+
+03:05.440 --> 03:11.290
+So to manage local data, we're going to use SQL like data source and use that data access object to
+
+03:11.320 --> 03:18.700
+get the data and then expose that and to top to our repository repositories is another way for us to
+
+03:18.700 --> 03:22.030
+have a single source of truth for all app data, right?
+
+03:22.090 --> 03:27.280
+We call this clean API for UI to communicate with in this case repository.
+
+03:27.300 --> 03:35.080
+It's not necessary in the grand scheme of things, but it's an important layer per se in this architecture
+
+03:35.500 --> 03:42.130
+that we, if we need to have data coming from other places, all is dealt with in our repository.
+
+03:42.520 --> 03:42.820
+OK.
+
+03:43.360 --> 03:45.690
+And one level up, we're going to have the view model.
+
+03:45.700 --> 03:51.340
+And if you want, all can have mutable state life data flows doesn't matter or the structure that we're
+
+03:51.340 --> 03:56.020
+going to be using to make our data life, if you will.
+
+03:56.410 --> 04:01.420
+But the idea is that we have this view model, which also is going to hold all of the data needed for
+
+04:01.420 --> 04:02.170
+the user interface.
+
+04:02.620 --> 04:07.960
+So this interface is actually going to react to the data that we get through with your model.
+
+04:09.050 --> 04:16.790
+OK, so this live data is just a a a type of data, but could be flow mutable state, it doesn't matter.
+
+04:16.900 --> 04:17.150
+Right?
+
+04:17.570 --> 04:24.230
+So that is what is going to notify the UI because the UI is going to be observing the life data in this
+
+04:24.230 --> 04:31.280
+case or mutable state or flow to say, OK, we have data data exchange, then show it in our user interface.
+
+04:32.060 --> 04:35.270
+And a type, of course, is the UI controller activity fragment.
+
+04:35.270 --> 04:38.270
+In this case, it's going to be a composable function.
+
+04:38.380 --> 04:38.600
+Right.
+
+04:38.600 --> 04:44.990
+So the composable function will react, react to the data that is received and display the information
+
+04:44.990 --> 04:45.560
+as needed.
+
+04:46.370 --> 04:53.570
+So that is the architecture that you should always think in using should always think in these terms
+
+04:53.570 --> 04:59.780
+because it separates everything into different layers and it's much easier to debug it, much easier
+
+04:59.780 --> 05:05.960
+to extend as you application, get more complicated, you need more and it's easier to deal with this
+
+05:06.020 --> 05:08.840
+whole room database concept here.
+
+05:09.530 --> 05:14.960
+So this is what we're going to be following in the next videos so that we have our own database working.
+
+05:16.250 --> 05:17.180
+Let's go ahead and get started.

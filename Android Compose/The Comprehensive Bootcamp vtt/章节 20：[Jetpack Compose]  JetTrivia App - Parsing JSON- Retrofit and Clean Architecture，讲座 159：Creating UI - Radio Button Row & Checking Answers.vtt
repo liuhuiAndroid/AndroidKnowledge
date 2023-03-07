@@ -1,0 +1,661 @@
+WEBVTT
+
+00:00.660 --> 00:01.740
+OK, let's continue.
+
+00:01.860 --> 00:05.070
+So we have our row here, and it ends right here.
+
+00:05.340 --> 00:13.910
+See, right, then I'm going to put comma and then I'm going to say vertical alignment alignment.
+
+00:14.430 --> 00:18.680
+Such wind is to be center vertically aligned.
+
+00:18.780 --> 00:19.720
+All the items there.
+
+00:19.740 --> 00:23.610
+OK, so we should be done now with at least the.
+
+00:24.810 --> 00:29.580
+This structure here, right, we have this very nice border there.
+
+00:30.090 --> 00:35.310
+Now we have to look at the contents inside, so we have here a radio button and then whoever the text
+
+00:35.400 --> 00:36.280
+of that radio button.
+
+00:36.300 --> 00:37.260
+So we're going to create that.
+
+00:38.310 --> 00:43.650
+So inside here, I'm going to say radio button, there is such function radio button there.
+
+00:43.890 --> 00:47.250
+So we have two paths selected and on click it makes sense.
+
+00:48.000 --> 00:54.630
+So for the selected here, what do we need to do is we need to look at the state of the answer, meaning
+
+00:55.710 --> 01:00.570
+if we go back to our payload, we have a question and we want to get to this answer.
+
+01:01.140 --> 01:01.560
+So.
+
+01:02.460 --> 01:08.100
+We are going to look at OK, if the answer in this case is Louisiana and we need to figure out OK in
+
+01:08.100 --> 01:08.790
+our choices.
+
+01:09.970 --> 01:11.290
+Where is Louisiana?
+
+01:11.530 --> 01:17.380
+And if that is what was selected, if that's true, then we know that they have gotten the correct answer.
+
+01:17.410 --> 01:20.420
+They have selected the correct answer to do that.
+
+01:20.440 --> 01:25.600
+We are talking about state, which means we need to retrieve or get that state, which is very important.
+
+01:25.990 --> 01:30.250
+So back at the top here, I'm going to create another vowel when I call.
+
+01:31.060 --> 01:32.920
+Let's call this answer state.
+
+01:33.070 --> 01:34.720
+As such, remember?
+
+01:35.620 --> 01:41.200
+And then of course, we are going to use again and the question to drive everything there.
+
+01:41.260 --> 01:46.240
+We're going to pass the question, you know, remember five over it says we can pass the item that we
+
+01:46.240 --> 01:47.110
+want to calculate.
+
+01:47.320 --> 01:48.220
+So you can see here.
+
+01:48.640 --> 01:49.660
+So we pass question.
+
+01:49.810 --> 01:52.750
+And then and then we going say mutable state.
+
+01:54.940 --> 01:59.110
+Of and it's going to be and into time that we're going to be receiving.
+
+01:59.950 --> 02:00.600
+We'll see them.
+
+02:00.950 --> 02:04.000
+Second, why and that could be notable.
+
+02:04.000 --> 02:06.700
+Analysts just say no to start with.
+
+02:07.990 --> 02:12.630
+In the beginning to answer, state does not have anything, but we know it's going to be governed,
+
+02:12.930 --> 02:17.940
+who is going to be driven by the question because the question answer will have the information we want.
+
+02:17.950 --> 02:21.820
+We can access the choices as well as the answer, and we can compare those.
+
+02:22.510 --> 02:28.780
+So now you will understand why I have this index that are passing along in our choices because remember,
+
+02:29.770 --> 02:31.840
+all these choices are inside of the list.
+
+02:32.410 --> 02:33.580
+A list has an index.
+
+02:33.580 --> 02:38.560
+So I if I want to check to see if Oklahoma is exactly the answer.
+
+02:38.980 --> 02:42.220
+Well, I can see check or choices in this case.
+
+02:43.220 --> 02:44.120
+Index zero.
+
+02:44.390 --> 02:49.020
+It's going to be Oklahoma, so I'm accessing Oklahoma by state index zero, surpassing zero.
+
+02:49.580 --> 02:56.270
+And then I can look up the answer field to see if it's the same as Oklahoma, right, and go through
+
+02:56.270 --> 03:00.080
+all of them to find if the user has indeed found the correct answer.
+
+03:00.470 --> 03:01.610
+That's why we have this index.
+
+03:01.970 --> 03:06.470
+So now what you can do here, instead of a selected right because we have the state, I'm going to say
+
+03:06.470 --> 03:12.500
+Answers State it's immutable and we see that value has to be equal to index.
+
+03:13.460 --> 03:17.990
+If that is true, then indeed what they've selected is true, which means is correct.
+
+03:18.500 --> 03:23.150
+So then on, click here.
+
+03:23.540 --> 03:24.230
+What do we do?
+
+03:24.740 --> 03:31.460
+We're going to use a function call, update answer and we're going to pass the index.
+
+03:31.490 --> 03:33.920
+So this update answer what it will do.
+
+03:34.250 --> 03:35.510
+You will as well.
+
+03:35.930 --> 03:40.580
+So this applet answer will update the answer to see, OK, now we passed this index and we go to the
+
+03:40.610 --> 03:41.870
+next index if need be.
+
+03:42.560 --> 03:45.230
+So this applied answer, we need to create it, but you have to.
+
+03:45.230 --> 03:50.600
+It's going to be special because it also has to be driven with a state.
+
+03:50.870 --> 03:52.610
+So I'm going to go up again.
+
+03:53.180 --> 03:57.950
+Let's say vowel update answer as such, and it's going to be a lamp.
+
+03:57.950 --> 04:00.320
+They're going to say it like this.
+
+04:00.860 --> 04:02.900
+It's going to return nothing.
+
+04:04.580 --> 04:11.320
+Let's say that to remember, right, we can also set up and remember with lambdas or with functions
+
+04:11.340 --> 04:12.020
+that spirit.
+
+04:12.350 --> 04:12.680
+All right.
+
+04:12.710 --> 04:20.690
+So in this case here, of course, I'm still going to be governed by our question object question item
+
+04:20.690 --> 04:26.070
+with such an insight here, I'm going to create another lambda, which will allow us to then have the
+
+04:26.530 --> 04:31.820
+is bit integer there will that is controlling our index to check.
+
+04:32.850 --> 04:34.770
+For the correct choice here.
+
+04:36.030 --> 04:42.280
+So how do we check for the correct choice to say, OK, if indeed the index is zero and the answers
+
+04:42.300 --> 04:48.660
+is Louisiana, which is going to be Oklahoma or in this case, if index is zero one to Louisiana and
+
+04:48.660 --> 04:51.690
+the answer is also Louisiana, then that is correct.
+
+04:51.780 --> 04:52.050
+Right.
+
+04:52.350 --> 04:53.890
+That's what we're trying to do here.
+
+04:53.910 --> 04:55.860
+I'm just going to say answer state
+
+04:58.590 --> 04:59.040
+value.
+
+04:59.040 --> 05:01.440
+I'm going to set that to this.
+
+05:02.250 --> 05:05.730
+So we're getting the answer, the correct answer.
+
+05:07.180 --> 05:14.170
+By passing in these implicit variable there, which is going to be the which is going to be the index,
+
+05:14.170 --> 05:15.070
+the correct index.
+
+05:15.790 --> 05:21.940
+So if that's the case, then I'm going to have to check with the choices.
+
+05:22.600 --> 05:27.610
+So now I'm going to say the following what's say correct answer?
+
+05:29.310 --> 05:34.320
+State, which have we haven't created this go ahead and created just right above here.
+
+05:34.590 --> 05:35.010
+Wow.
+
+05:36.330 --> 05:37.830
+Correct answer.
+
+05:38.640 --> 05:39.270
+State.
+
+05:41.140 --> 05:42.160
+I say remember.
+
+05:43.810 --> 05:49.180
+So again, we are going to pass a question object.
+
+05:51.160 --> 05:56.500
+So I'm going to say it's going to be a mutable state of it's going to be a boolean Typekit as if we
+
+05:56.500 --> 05:57.220
+want to check.
+
+05:57.520 --> 06:01.270
+We're going to either return true or false as, say, Boolean.
+
+06:01.750 --> 06:05.710
+It's going to be knowledgeable and it's going to pass null in the beginning.
+
+06:06.970 --> 06:07.290
+OK.
+
+06:07.690 --> 06:10.330
+So our correct answer that value.
+
+06:10.970 --> 06:19.120
+OK, I'm going to say that two choices state and the choices state is indeed Alice, which means I can
+
+06:19.120 --> 06:20.980
+pass index what index?
+
+06:21.050 --> 06:22.510
+We're past it.
+
+06:22.930 --> 06:24.580
+That's been passed around, right?
+
+06:25.180 --> 06:30.730
+And then I'm going to say, if that's equal to question that answer.
+
+06:32.850 --> 06:37.890
+So I'm going to go through all the choices states remember these choices state we created here, it's
+
+06:37.890 --> 06:40.850
+going to have a mutable list of choices.
+
+06:40.860 --> 06:42.900
+Essentially, it's going to have all of these guys here.
+
+06:43.470 --> 06:49.950
+And so we're checking here now to see, well, if choices state would pass passing the index, for instance,
+
+06:49.950 --> 06:51.060
+indexed one.
+
+06:51.090 --> 06:54.660
+That's what they chose to use or chose index one, right?
+
+06:54.930 --> 06:57.420
+Which means it's going to be Florida 01, right?
+
+06:57.780 --> 07:04.260
+If it's equal to question that answer question that answer Louisiana, then we are setting our correct
+
+07:04.260 --> 07:06.810
+answer value bullying to true.
+
+07:07.590 --> 07:13.500
+But in this case, you know, this is going to be false because it's not going to be Louisiana where
+
+07:13.680 --> 07:14.970
+they have chosen Florida.
+
+07:15.900 --> 07:19.140
+That's why then correct answer state values are going to be false.
+
+07:20.740 --> 07:23.500
+And then we're going to update that into the update answer.
+
+07:25.850 --> 07:26.450
+This makes sense.
+
+07:26.540 --> 07:32.900
+So here we are checking to see if the choice that was clicked or selected, it is indeed what.
+
+07:34.120 --> 07:34.840
+Is the answer?
+
+07:35.500 --> 07:38.110
+If yes, then it's true, if not, then it's false, then we know.
+
+07:39.130 --> 07:40.070
+All right, so that happens.
+
+07:40.070 --> 07:41.450
+Don't click all there.
+
+07:41.770 --> 07:45.520
+The checking I get so is still inside of our radio button.
+
+07:45.640 --> 07:50.080
+I'm going to pass a few modifiers here or a modifier should say.
+
+07:53.260 --> 07:54.340
+Give her padding.
+
+07:59.050 --> 08:04.480
+And let's give a start patting of about 16 deep.
+
+08:09.360 --> 08:10.650
+And let's keep colors.
+
+08:11.670 --> 08:17.670
+It's beautiful for our radio button colors, in fact, if you have over, you can actually pass the
+
+08:17.670 --> 08:22.290
+colors with your button color so it can change things around with our radio buttons.
+
+08:22.920 --> 08:28.050
+Radio button default, I should say default defaults that colors.
+
+08:28.200 --> 08:32.400
+So we're going to change a few things I see.
+
+08:36.590 --> 08:39.710
+Always upends this, so let's get rid of all of that.
+
+08:45.510 --> 08:52.620
+And then here we're going to pass, for instance, selector so selected color that is, I want to say
+
+08:52.620 --> 08:53.770
+something different.
+
+08:53.790 --> 08:59.550
+So I'm going to put an if statement here to say, well, if the answer is correct, then I'm going to
+
+08:59.550 --> 09:02.310
+change the color to something else.
+
+09:02.310 --> 09:03.740
+Else is going to be another color.
+
+09:03.750 --> 09:05.610
+So I'm going to be fine here.
+
+09:06.630 --> 09:17.400
+Correct answer state that value is true and index is also.
+
+09:20.440 --> 09:22.090
+And index, let's see.
+
+09:28.380 --> 09:30.630
+And index.
+
+09:35.230 --> 09:37.360
+It's also equal to answer.
+
+09:39.360 --> 09:45.030
+States that value that we know all is good, that means we are going to.
+
+09:47.900 --> 09:48.800
+Say color.
+
+09:50.140 --> 09:57.570
+Dark green, you know, say, copy and change the alpha here, so it's a little bit dimmer, zero dark
+
+09:57.610 --> 10:01.000
+to f like that.
+
+10:05.480 --> 10:06.380
+And they else.
+
+10:08.810 --> 10:17.100
+That means something is not right is false, and I say color that red and dim it down a little bit with
+
+10:17.120 --> 10:17.690
+alpha.
+
+10:21.360 --> 10:23.580
+Also, zero down to Earth like this.
+
+10:31.310 --> 10:36.950
+Remember this in this for loop, for each index, we still have to answer text.
+
+10:37.280 --> 10:43.190
+That means we still have this text that we can add to show something like this.
+
+10:43.190 --> 10:49.280
+So we've created a structure here and the radio button now we can go ahead and show the actual text.
+
+10:49.310 --> 10:57.050
+So for now, all of that will happen where remember, we still inside a red button and right after which
+
+10:57.050 --> 11:00.830
+is actually a radio button, you can see ends there in this.
+
+11:01.910 --> 11:12.470
+Radio button and right here and radio button right here, let's put a text for now so we can see.
+
+11:14.660 --> 11:15.800
+So let's go ahead and say.
+
+11:18.670 --> 11:20.470
+Answer text.
+
+11:23.190 --> 11:23.590
+All right.
+
+11:23.610 --> 11:25.440
+So for now, this should be good.
+
+11:25.530 --> 11:28.440
+Let's go ahead and make sure that this is called somewhere.
+
+11:29.490 --> 11:34.560
+And I'm going to just not add anything for those.
+
+11:35.610 --> 11:37.230
+That way, we don't run into issues.
+
+11:39.220 --> 11:39.670
+OK.
+
+11:41.150 --> 11:44.420
+So going back to questions composable there.
+
+11:45.690 --> 11:46.980
+Get rid of all of this.
+
+11:47.160 --> 11:51.210
+So once everything is good, I'm going to.
+
+11:53.640 --> 11:56.590
+Put in if set me here just to be safe and we're safe.
+
+11:56.910 --> 11:59.550
+Questions, questions.
+
+12:03.100 --> 12:04.540
+Is not known.
+
+12:07.390 --> 12:11.170
+That's true, then I'm going to go ahead and invoke the questions.
+
+12:13.360 --> 12:15.780
+Display and pass.
+
+12:16.890 --> 12:21.540
+Our questions as such, so hearing this question.
+
+12:22.970 --> 12:28.670
+And first, just to get the first one, that's fine, because that's what we need.
+
+12:30.300 --> 12:31.180
+OK, for now.
+
+12:31.830 --> 12:36.510
+And let's go ahead and run this, hopefully to see if we are able to see something.
+
+12:37.080 --> 12:40.710
+Let's go ahead and run this and they have it.
+
+12:41.100 --> 12:44.940
+OK, so we have a first question, as you see here.
+
+12:44.970 --> 12:46.560
+What's the meaning of all this?
+
+12:47.940 --> 12:48.330
+Forget.
+
+12:48.450 --> 12:54.180
+So this is real good, but seems like I'm not getting the correct text, right?
+
+12:54.190 --> 12:58.890
+I'm not getting the correct question, I should say, because the question should be this one.
+
+12:59.280 --> 13:00.270
+What is the problem?
+
+13:00.270 --> 13:00.570
+What?
+
+13:00.960 --> 13:04.560
+OK, let's go back to our trivia home.
+
+13:04.560 --> 13:05.940
+No actually questions.
+
+13:07.380 --> 13:11.730
+And right below we're passing the question question item.
+
+13:14.960 --> 13:15.980
+Right, there we go.
+
+13:16.010 --> 13:20.270
+That's the problem, because here should we be calling question?
+
+13:23.130 --> 13:25.350
+That question is section.
+
+13:26.280 --> 13:31.110
+OK, so I'm getting the question object and invoking the question properly.
+
+13:32.640 --> 13:33.390
+Let's try it again.
+
+13:34.500 --> 13:37.860
+And notice that we should see a little circle.
+
+13:40.110 --> 13:41.820
+There you go, it's thinking, and voila.
+
+13:41.970 --> 13:49.320
+So LDL F2 was banned in Australia, and we can't either say, Well, see, it even works now because
+
+13:49.320 --> 13:51.030
+it says this is not false.
+
+13:51.570 --> 13:52.850
+So this is wrong.
+
+13:52.860 --> 13:57.180
+If I go through and he can see it changed colour, it's quite hard to see.
+
+13:57.510 --> 13:58.260
+But the.
+
+13:58.420 --> 14:03.780
+But if you run this on your emulator, you can see that that should show the correct colour, which
+
+14:03.780 --> 14:05.670
+is some sort of green.
+
+14:06.240 --> 14:06.550
+OK.
+
+14:07.580 --> 14:08.450
+So it's again.
+
+14:09.500 --> 14:14.570
+Of course, we're just getting one answer or one question because we have a hard coded everything.
+
+14:14.900 --> 14:17.120
+So click can see there is that green there.
+
+14:17.780 --> 14:19.430
+All right, so this is working.
+
+14:19.640 --> 14:21.340
+Of course, there are a few things we need to change.
+
+14:21.350 --> 14:26.810
+For instance, the background, we see that white there, but that's that's just cosmetics, and we
+
+14:26.810 --> 14:28.790
+can always work on that and change that.
+
+14:29.150 --> 14:32.240
+But at least now we know things are working.
+
+14:32.520 --> 14:37.520
+We know that when we click, we are checking to see if something is valid.
+
+14:37.750 --> 14:42.530
+If the question or if the answer is correct, if it's false, then of course we have the right.
+
+14:42.530 --> 14:44.660
+As you saw here, click on false.
+
+14:44.870 --> 14:45.980
+This is incorrect.
+
+14:46.010 --> 14:46.700
+That's why it's red.
+
+14:48.080 --> 14:49.460
+All right, so we're making good progress.
+
+14:49.760 --> 14:53.450
+So go ahead and rewatch this videos if there is something that you didn't quite get.
+
+14:53.780 --> 14:57.260
+If you have questions, of course you know what to do, but it's fairly simple.
+
+14:57.260 --> 15:00.770
+Straightforward, really, if you think about it, the logic at least.
+
+15:01.100 --> 15:02.090
+OK, very good.
+
+15:02.120 --> 15:08.390
+So let's go ahead and move on and continue to build out our question display to make it even better
+
+15:08.750 --> 15:13.340
+because there are so many questions we want to display and other parameters or arguments we're going
+
+15:13.340 --> 15:14.390
+to be passing along.

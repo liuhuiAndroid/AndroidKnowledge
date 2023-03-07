@@ -1,0 +1,490 @@
+WEBVTT
+
+00:00.450 --> 00:07.920
+OK, so we were able to get rid of Inam because he doesn't allow us to pass in or emit information data
+
+00:07.920 --> 00:10.780
+as we go through each one of those types, right?
+
+00:10.860 --> 00:13.800
+The success, we want to be able to emit data that we want.
+
+00:14.280 --> 00:14.610
+OK.
+
+00:15.060 --> 00:20.340
+And we realize that having an abstract class and implement it for each of two classes.
+
+00:20.790 --> 00:24.300
+So we transformed all of the types in our enemies.
+
+00:24.990 --> 00:30.970
+Remember this all the names that we transform them into something into data classes?
+
+00:30.990 --> 00:34.260
+Of course, we got rid of a few, but the same concept is there.
+
+00:34.680 --> 00:34.950
+OK?
+
+00:35.190 --> 00:38.490
+When we do that, we were able then to, of course, pass in the data.
+
+00:38.760 --> 00:46.680
+In this case, to omit data inside as a property, which means then when we go through the process of
+
+00:46.680 --> 00:53.520
+loading and getting data, for instance, if success we can pass that fetched that information, we
+
+00:53.520 --> 00:55.650
+can pass the information as we go through.
+
+00:56.040 --> 00:56.340
+OK.
+
+00:56.850 --> 01:00.320
+So in this case, you can see if success is detected.
+
+01:00.330 --> 01:06.090
+We pass that information along and along to be admitted and so forth.
+
+01:06.660 --> 01:06.960
+All right.
+
+01:07.350 --> 01:08.310
+So this is really good.
+
+01:08.520 --> 01:14.400
+However, we noticed by extending our result abstract class here we acquire this liberty, which is
+
+01:14.400 --> 01:21.450
+to be able to emit information, emit data as we go through in our state machine so we can present the
+
+01:21.450 --> 01:22.800
+states differently.
+
+01:23.280 --> 01:28.920
+But then we notice that we have an issue instead of our when expression here, because now we have to
+
+01:28.920 --> 01:35.460
+pass it else because the compiler assumes that all these states are not exhaustive, meaning it assumes
+
+01:35.460 --> 01:39.840
+there must be more than what we have added here.
+
+01:40.410 --> 01:43.560
+That's why we must pass something else, not to solve this.
+
+01:44.070 --> 01:47.190
+We use another class type called sealed.
+
+01:47.430 --> 01:49.350
+So what sealed will provide.
+
+01:49.590 --> 01:52.260
+It will provide best really of the both world.
+
+01:53.010 --> 01:58.170
+So we'll get the freedom of representing our states differently, right and meeting data and so forth.
+
+01:58.740 --> 02:02.070
+But we will also get rid of the restrictions we have within arms.
+
+02:02.670 --> 02:04.110
+So it's going to be a win win.
+
+02:04.350 --> 02:05.790
+Now what is a sealed class?
+
+02:05.880 --> 02:12.420
+OK, a sealed class is an abstract class, right with a restricted class hierarchy, which mean classes
+
+02:12.420 --> 02:16.390
+that inherit from it have to be in the same file as a seal class.
+
+02:16.580 --> 02:18.240
+Now they have to be.
+
+02:18.240 --> 02:23.820
+The same file is no longer true because now you can actually have these classes in a different file.
+
+02:24.270 --> 02:30.570
+But in most cases, you will see when we create this sealed classes, anything that inherits from it,
+
+02:30.780 --> 02:33.960
+usually we put them inside of the same file or close to it.
+
+02:34.140 --> 02:35.130
+That way, it makes sense.
+
+02:35.130 --> 02:36.630
+It's readable and it works.
+
+02:36.630 --> 02:43.080
+But these classes don't have to be in the same file as the abstract class.
+
+02:43.440 --> 02:46.380
+In this case, the old class again, as the name implies.
+
+02:46.410 --> 02:53.280
+Sealed means this class is going to be restricted, which is fine because this also allows us freedom
+
+02:53.280 --> 02:55.500
+in state representation, which is what we gain.
+
+02:55.890 --> 02:58.860
+So how do we change or how do we create a silk class?
+
+02:58.890 --> 03:03.570
+Well, all we do, we remove these abstract in, say, sealed and remember.
+
+03:05.140 --> 03:09.700
+Now, one thing to remember is that a sealed class still is.
+
+03:10.840 --> 03:11.980
+An abstract class.
+
+03:12.400 --> 03:19.540
+Now, once we changed the sealed, you see that when we go to our branch, look at this now else no
+
+03:19.540 --> 03:20.410
+longer is necessary.
+
+03:20.410 --> 03:25.090
+If you have always going to say when is exhaustive, so else is redundant.
+
+03:25.330 --> 03:25.840
+Why?
+
+03:25.870 --> 03:31.630
+Because we made it seal to see all of these states that we created here are exhaustive.
+
+03:31.660 --> 03:34.870
+That's why we no longer need that so we can actually just get rid of that.
+
+03:35.440 --> 03:35.910
+And voila!
+
+03:36.640 --> 03:38.800
+And just like that, we've solved the problem.
+
+03:39.190 --> 03:43.110
+If we run this, we see the results are still the same.
+
+03:43.120 --> 03:48.310
+But we know now that we've solved all the problems, all the limitations of Inam.
+
+03:48.550 --> 03:54.040
+And also, we've solved the limitation of having to add an Alice branch here because the compiler would
+
+03:54.040 --> 03:56.020
+think that this is not exhaustive list.
+
+03:56.620 --> 04:01.210
+And the great thing about sealed classes, as you see here, this is very simplistic.
+
+04:01.750 --> 04:05.680
+Sill classes can also nest data classes, right?
+
+04:05.800 --> 04:11.890
+Can test classes, objects and also other solid classes like, let's say, we create a different sealed
+
+04:11.890 --> 04:12.370
+class.
+
+04:12.640 --> 04:14.080
+Let's write about here.
+
+04:14.080 --> 04:15.640
+I'm going to go ahead and say something like this.
+
+04:16.420 --> 04:17.350
+OK, seal class.
+
+04:17.350 --> 04:19.960
+I'm going to call this failure just as an example.
+
+04:20.350 --> 04:26.440
+And this one here will implement result like this under seal class here.
+
+04:27.070 --> 04:32.860
+And so what I'm going to do here, then inside here, I'm going to actually have another data classes
+
+04:32.980 --> 04:37.900
+which will implement this value here, which this one implements this result, right?
+
+04:39.070 --> 04:45.460
+So in this case, I can say from inside data class costume failure, for instance, and I'm going to
+
+04:45.460 --> 04:46.660
+pass a message here.
+
+04:46.900 --> 04:47.740
+Exception.
+
+04:47.800 --> 04:48.250
+All right.
+
+04:48.380 --> 04:49.150
+Let's look.
+
+04:50.320 --> 04:51.580
+Sure, that's fine.
+
+04:52.060 --> 04:57.940
+And of course, this will go ahead and inherit from failure like this.
+
+05:00.220 --> 05:00.480
+OK.
+
+05:01.610 --> 05:02.940
+Some customizing things here.
+
+05:02.950 --> 05:10.510
+I'm going to say data class another one and say another custom failure.
+
+05:11.980 --> 05:18.490
+Let's say Val, another custom failure in this case here.
+
+05:20.620 --> 05:23.620
+It's going to be a pointer exception.
+
+05:23.950 --> 05:28.240
+Doesn't really matter, we can just pass any type just to show you differences here.
+
+05:29.590 --> 05:36.490
+These two obviously will inherit a failure such as closes down.
+
+05:37.150 --> 05:43.390
+And the moment these are added, you can see right away inside of our when if you have a over is going
+
+05:43.390 --> 05:49.450
+to say hey, when expression must be exhausted, add necessary is another constant failure is custom
+
+05:49.450 --> 05:51.510
+failure branches or else branch c.
+
+05:52.060 --> 05:57.070
+So it tells right away that, OK, something was added in our sealed right classes.
+
+05:57.370 --> 06:02.480
+And so we need those need to be added and I can go ahead and say, add like this, but we don't want
+
+06:02.480 --> 06:02.950
+to else.
+
+06:03.390 --> 06:09.550
+I want to add the other failures so I can just go ahead and get rid of this.
+
+06:10.990 --> 06:23.290
+And say is failure, I say, is failure that another custom failure as such, if that's the case, I'm
+
+06:23.290 --> 06:32.170
+going to print Alan to load, state that another custom failure and then again, say not to string like
+
+06:32.170 --> 06:32.500
+this.
+
+06:33.190 --> 06:39.910
+And I can say, is failure, not custom failure.
+
+06:40.240 --> 06:41.080
+And say that.
+
+06:42.040 --> 06:43.750
+And then that's the case.
+
+06:44.710 --> 06:48.820
+I'm going to say print, Allen said.
+
+06:48.820 --> 06:49.390
+Result.
+
+06:50.910 --> 06:51.840
+Custom failure.
+
+06:51.990 --> 06:57.870
+And then I'm going to pass a message or just say to a string like this to show there, and then we can
+
+06:57.870 --> 07:02.100
+go to our repository and add those functions or just one.
+
+07:02.220 --> 07:03.420
+And you can add the other one.
+
+07:03.540 --> 07:09.300
+So you see, it's a fun custom failure like this.
+
+07:10.950 --> 07:17.150
+I can see loads of state you're going to be equal to failure.
+
+07:18.030 --> 07:22.770
+Dot, let's use the another custom failure like this.
+
+07:24.040 --> 07:28.130
+And pass the data, say another custom failure.
+
+07:28.180 --> 07:33.310
+It's going to be a null point point exception like this.
+
+07:33.880 --> 07:36.670
+Something went wrong.
+
+07:37.300 --> 07:37.660
+All right.
+
+07:38.110 --> 07:39.310
+And then the next one?
+
+07:39.820 --> 07:40.330
+Fun.
+
+07:40.480 --> 07:44.560
+Another custom failure.
+
+07:46.750 --> 07:50.680
+And again can say load state sequel to failure.
+
+07:54.880 --> 07:55.300
+That.
+
+07:57.780 --> 08:03.870
+This case is customer failure, let's just say this is custom failure.
+
+08:06.080 --> 08:06.380
+All right.
+
+08:06.530 --> 08:09.410
+Custom failure and then.
+
+08:10.620 --> 08:12.150
+Plaster cast him failure.
+
+08:12.390 --> 08:20.220
+It's going to be an I o exception, and I'm just going to pass custom failure.
+
+08:20.910 --> 08:22.230
+This is just an example, by the way.
+
+08:22.590 --> 08:22.860
+All right.
+
+08:22.860 --> 08:25.830
+So then our repository repository is ready.
+
+08:26.250 --> 08:28.050
+I can go out here.
+
+08:28.650 --> 08:32.220
+I can add these guys to say some repository, right?
+
+08:33.030 --> 08:33.810
+And say.
+
+08:36.730 --> 08:38.290
+Another custom failure.
+
+08:39.850 --> 08:40.210
+Right.
+
+08:40.900 --> 08:44.350
+And then get a result just to show it was a result.
+
+08:45.010 --> 08:48.910
+I'm just going to say repository, not get current state.
+
+08:49.720 --> 08:51.550
+And then again, repository.
+
+08:53.320 --> 09:02.980
+Custom failure and then get positive, get results, pass results, value here, repository, not get
+
+09:02.980 --> 09:03.640
+current state.
+
+09:04.750 --> 09:05.110
+All right.
+
+09:05.440 --> 09:09.010
+So if we run this, we should see these other states showing.
+
+09:09.580 --> 09:13.690
+OK, so you can see loading data and then we get the Java exception.
+
+09:14.080 --> 09:16.510
+And then we get the null pointer exception.
+
+09:16.720 --> 09:19.750
+Something went wrong and then we get the custom failure.
+
+09:20.350 --> 09:25.690
+And just like that, you were able to leverage sealed classes even further.
+
+09:26.470 --> 09:31.870
+So what we've learned so far, where we learned about enum classes, so I showed you how to use enum
+
+09:31.870 --> 09:36.370
+classes to create a a decent state machine.
+
+09:36.580 --> 09:36.880
+OK.
+
+09:37.060 --> 09:40.690
+But then but next we encountered a limitation in enum classes.
+
+09:40.910 --> 09:44.200
+We noticed that they lack the freedom to represent our state differently.
+
+09:44.200 --> 09:49.210
+Meaning if you want to omit information in data in our states, we couldn't do that with Enum.
+
+09:49.540 --> 09:52.780
+So we solved this by using abstract classes.
+
+09:53.260 --> 10:00.280
+And then we realized that even though abstract classes are better than in arms in those terms, because
+
+10:00.280 --> 10:02.310
+the restriction that informs Pose.
+
+10:02.800 --> 10:07.720
+But then we realized that we've lost something by using abstract class in that.
+
+10:07.960 --> 10:15.910
+Now, when we use our when expression, we have to pass the Else. Right Alice branch, which is not
+
+10:15.910 --> 10:16.300
+ideal.
+
+10:16.690 --> 10:21.430
+We change that to a sealed class and that gave us the best of both worlds.
+
+10:21.430 --> 10:24.040
+So now we don't have the restrictions of enemies.
+
+10:24.280 --> 10:29.020
+Also, we don't have these exhaustive options when we use the when expression.
+
+10:29.230 --> 10:29.650
+OK.
+
+10:29.800 --> 10:37.690
+So I hope this gave you a little bit of an idea, but understanding why we would use it and how to improve
+
+10:37.690 --> 10:43.210
+our state machine here in this concept here, it's used a lot in codling.
+
+10:43.210 --> 10:48.940
+So I would take some time to look into this to really understand what's going on because it really will
+
+10:48.940 --> 10:50.830
+help you in your Kotlin.
+
+10:51.340 --> 10:53.890
+Android development or as you use codling in general.
+
+10:54.850 --> 10:56.070
+OK, thank you.
+
+10:56.080 --> 10:56.770
+I'll see you next.

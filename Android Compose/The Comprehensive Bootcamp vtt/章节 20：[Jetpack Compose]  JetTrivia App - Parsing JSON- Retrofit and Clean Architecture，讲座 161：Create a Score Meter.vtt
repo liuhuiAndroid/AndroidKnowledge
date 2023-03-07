@@ -1,0 +1,322 @@
+WEBVTT
+
+00:00.510 --> 00:05.310
+Next, we're going to look at this meter, right score meter, as you see here, so the idea is that
+
+00:05.760 --> 00:09.870
+we're going to have this pill like structure.
+
+00:10.080 --> 00:18.690
+And inside we're going to have a linear gradient that will that will be filling up as we get our questions
+
+00:19.170 --> 00:19.650
+answered.
+
+00:19.990 --> 00:26.730
+OK, so it's very simple and at the end is going to show the actual score as we get our answers correct.
+
+00:27.150 --> 00:30.270
+So instead of questions here what it can do.
+
+00:30.300 --> 00:32.790
+Let me close this down.
+
+00:34.570 --> 00:35.560
+So we have more space.
+
+00:36.730 --> 00:38.140
+We're going to create another composable.
+
+00:40.020 --> 00:41.400
+I preview first.
+
+00:46.160 --> 00:54.890
+And then when I call this show progress and I'll have to pass a score, it's going to be an inch.
+
+00:55.310 --> 00:58.550
+And for now, it's going to be 12, just so we have something.
+
+00:59.480 --> 01:02.270
+And then here I'm going to create a row.
+
+01:05.640 --> 01:07.350
+And pass the modifier.
+
+01:11.800 --> 01:13.900
+You a general pattern of three deep.
+
+01:19.500 --> 01:28.230
+And, Phil, my max width as well as height, I'm just going to give it about 45 deep, so I'm putting
+
+01:28.230 --> 01:29.970
+together this structure here first.
+
+01:29.970 --> 01:32.270
+It's going to just have a row inside of it.
+
+01:32.280 --> 01:33.480
+I'm going to add other items.
+
+01:33.810 --> 01:35.610
+OK, OK.
+
+01:35.610 --> 01:46.050
+So next, I'm going to actually save border the width of this border, let's say four deep and I'm going
+
+01:46.050 --> 01:47.610
+to add a brush.
+
+01:53.900 --> 01:54.440
+So again.
+
+01:55.730 --> 02:02.030
+I want to now put together this structure here, this border, just like we did before here I.
+
+02:03.800 --> 02:07.180
+And so I say brush linear gradient.
+
+02:07.210 --> 02:12.820
+There are different kinds of gradients, but we use linear and we have has two colors here.
+
+02:12.830 --> 02:15.040
+It's going to be a list of colors, a list of.
+
+02:16.300 --> 02:17.710
+And we're past the colors.
+
+02:17.990 --> 02:19.720
+Well, nothing very exciting here.
+
+02:19.730 --> 02:29.440
+I'm going to go with colors when I use the same and light purple and again and light purple like this.
+
+02:29.730 --> 02:31.090
+OK, so I'm using the same colors.
+
+02:34.310 --> 02:41.150
+This pasta shape, and I'm going to say rounded corners, shape, it's going to be about 34 dpi.
+
+02:41.690 --> 02:42.560
+All corners.
+
+02:44.750 --> 02:45.140
+All right.
+
+02:45.140 --> 02:51.290
+I'm going to say that clip clip the shape is going to be rounded corners shape.
+
+02:52.370 --> 02:58.940
+So top start percent is going to be 50 so rounder than usual.
+
+03:00.710 --> 03:03.660
+And so the same thing we did before.
+
+03:03.740 --> 03:06.020
+Nothing should be surprising here.
+
+03:06.020 --> 03:13.370
+Bottom two percent then let's give a background and say color that transparent.
+
+03:16.420 --> 03:19.090
+Continue here still, instead of our row, by the way.
+
+03:19.570 --> 03:21.910
+Let's give a vertical alignment.
+
+03:26.170 --> 03:28.230
+A line, a center of vertically.
+
+03:31.010 --> 03:31.430
+All right.
+
+03:34.290 --> 03:34.680
+OK.
+
+03:34.740 --> 03:37.500
+There is you can see we have the structure.
+
+03:38.040 --> 03:44.880
+So what we need to do next is to make it so that inside now we're going to have we are going to have
+
+03:44.880 --> 03:47.640
+this gradient that will dynamically grow.
+
+03:48.150 --> 03:52.740
+OK, so what I'm going to use because I want to make sure that it looks exactly like this, which means
+
+03:52.740 --> 03:58.470
+it's going to be inside who will look like it's inside of this pill like structure user interface.
+
+03:58.840 --> 03:59.040
+OK.
+
+03:59.610 --> 04:05.520
+So I figured the best way to do this actually will be to use a button because a button will have all
+
+04:05.520 --> 04:08.190
+the properties that I want, even though I don't want to click event.
+
+04:08.520 --> 04:13.590
+But it will have this round corner, which I can't use, and then I'm going to restructure two button
+
+04:13.590 --> 04:13.980
+side.
+
+04:14.130 --> 04:15.360
+So it looks something like that.
+
+04:16.270 --> 04:16.530
+OK.
+
+04:18.450 --> 04:20.040
+It's just a design choice.
+
+04:20.550 --> 04:20.970
+All right.
+
+04:21.000 --> 04:28.300
+So inside of our row here, I'm going to say Button don't need to pass anything, you know, click so
+
+04:28.380 --> 04:29.100
+it content.
+
+04:30.160 --> 04:31.240
+Content padding.
+
+04:32.860 --> 04:38.070
+And we'll say padding values and parts in this gear, just one that deep.
+
+04:39.070 --> 04:44.340
+So if you have it over here, it's going to say when we pass it content padding, that means the content
+
+04:44.340 --> 04:49.420
+inside is going to create a padding of all along, all four edges.
+
+04:49.780 --> 04:51.520
+So that's what we need.
+
+04:51.700 --> 04:57.760
+You will see later because we are trying to create something inside that will look very natural inside
+
+04:57.760 --> 05:00.010
+of our pill like structure there.
+
+05:00.820 --> 05:01.120
+OK.
+
+05:01.180 --> 05:07.300
+Let's add modifier fill max with this point that was going to live right as it is.
+
+05:07.750 --> 05:11.680
+And the background color when it is brush.
+
+05:12.340 --> 05:14.920
+And in this case, I'm going to have to pass a gradient.
+
+05:15.640 --> 05:20.290
+The reason why, as I see this is the idea, is that we're going to have this very nice gradient of
+
+05:20.290 --> 05:22.570
+that color kind of pink to purple.
+
+05:23.740 --> 05:29.920
+Now, I could pass the grade in here, but I'm going to create a vowel outside so we can for it, I
+
+05:29.920 --> 05:32.320
+say vowel gradient.
+
+05:36.160 --> 05:44.840
+Can you use a brush and linear gradient in this case, going to pass the list of colors?
+
+05:45.790 --> 05:53.170
+And I have already these colors when I just talked about what color the first color is going to be zero
+
+05:53.170 --> 05:53.650
+x.
+
+05:54.220 --> 05:58.790
+F f you to pass the f because that is the alpha.
+
+05:59.230 --> 06:01.240
+The opacity or transparency of the color.
+
+06:01.720 --> 06:04.990
+Then I'm going to say this long.
+
+06:08.460 --> 06:09.780
+75 like this.
+
+06:11.030 --> 06:12.800
+And then pass another color.
+
+06:15.190 --> 06:17.740
+This has to be color and colors.
+
+06:18.130 --> 06:19.110
+All right, there we go.
+
+06:19.120 --> 06:23.500
+So now I have migrating here, so it's going to be, as you can see, there are the colors are showing
+
+06:23.500 --> 06:28.330
+here, this kind of pink tuchus, I would say light purple.
+
+06:29.350 --> 06:35.680
+So that gradient is going to be passed right here now because we're using a button and button has many
+
+06:35.680 --> 06:37.060
+other properties we have over.
+
+06:37.060 --> 06:42.730
+For instance, you will see it has content padding, which we added border shapes, elevation and traction
+
+06:42.730 --> 06:44.890
+enables and many other things.
+
+06:45.370 --> 06:49.990
+The other thing I want to do is, for instance, I want to make sure that this button is enabled to
+
+06:49.990 --> 06:52.330
+false because I don't want this to be clickable.
+
+06:53.200 --> 07:03.010
+So after our brush here or background, I can go ahead and say enabled to follow because clickable and
+
+07:03.010 --> 07:09.040
+elevation, I'm going to just give and null because I don't want to show any material elevation at all.
+
+07:09.640 --> 07:10.000
+All right.
+
+07:10.000 --> 07:14.790
+And then I'm going to change the colors because buttons have certain colors, like when they're on the
+
+07:14.800 --> 07:15.700
+clipped and so forth.
+
+07:15.700 --> 07:21.850
+So we want to kind of turn that off everything off so that we just have a structure like this.
+
+07:22.420 --> 07:29.140
+So I'm going to use buttons, button colors I see go ahead and import that.
+
+07:35.450 --> 07:36.620
+And for the background.
+
+07:38.890 --> 07:46.090
+Once they color that transparent, get rid of all of that and disabled the green color at all, it's
+
+07:46.090 --> 07:47.830
+going to be color, not transparent.
+
+07:48.400 --> 07:49.180
+Let's take a look.
+
+07:51.030 --> 07:51.540
+All right.
+
+07:51.690 --> 07:52.270
+Very good.
+
+07:52.290 --> 07:53.280
+It's looking really good.

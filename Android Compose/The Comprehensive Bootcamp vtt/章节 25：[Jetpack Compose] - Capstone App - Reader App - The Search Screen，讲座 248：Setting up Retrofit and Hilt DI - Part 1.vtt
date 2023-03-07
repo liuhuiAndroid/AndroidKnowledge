@@ -1,0 +1,679 @@
+WEBVTT
+
+00:00.420 --> 00:02.190
+Here is our API.
+
+00:02.220 --> 00:04.770
+We are going to be using to get books.
+
+00:05.100 --> 00:10.890
+OK, so this is Google APIs like comic book books like such, and you can pass a query.
+
+00:10.890 --> 00:14.730
+For instance, if you want to Android books, you can say Android you can enter.
+
+00:15.240 --> 00:18.170
+Then we should get a payload containing Android books.
+
+00:18.210 --> 00:19.260
+So there's a lot of books.
+
+00:19.260 --> 00:26.640
+You can see total items that say no, and you can see you have an array, a list containing all of the
+
+00:26.640 --> 00:27.360
+books, right?
+
+00:27.570 --> 00:30.930
+So these objects are the books, right?
+
+00:31.380 --> 00:32.430
+So this is we're going to do.
+
+00:32.640 --> 00:35.330
+And if you want to say Flutter, that's an example.
+
+00:35.370 --> 00:40.530
+You can click there and you can see we have books containing books about Flutter.
+
+00:40.920 --> 00:44.100
+And the great thing about each one of these books object, right?
+
+00:44.220 --> 00:49.010
+It contains a few data points there, properties of kind tag.
+
+00:49.380 --> 00:54.660
+We are going to be interested in some of these properties, not all of them, but most important ones
+
+00:54.660 --> 01:00.720
+are going to be volume info and so have the title of the book authors is in array or list.
+
+01:00.810 --> 01:04.650
+In this case, there's only one person or one author, but it could be more than one.
+
+01:05.460 --> 01:07.170
+Their publisher published date.
+
+01:07.170 --> 01:12.450
+And of course, we have descriptions, so we're going to be able to pull in an actual book and then
+
+01:12.450 --> 01:13.890
+make that into an object.
+
+01:14.250 --> 01:17.640
+To do so, we're going to use the help of Retrofit.
+
+01:17.940 --> 01:22.050
+Retrofit is a type safe HP client for Android and Java.
+
+01:22.560 --> 01:30.480
+So this is really helpful because it kind of abstract out all of the complexity that come with trying
+
+01:30.480 --> 01:36.000
+to do HTP requests in Android, in development in general.
+
+01:36.330 --> 01:40.500
+So I really encourage to use the retrofit is really simple to set up, as you will see.
+
+01:40.800 --> 01:45.690
+And if you've been following us along, we've done this a few times, but I'm just going to show you
+
+01:45.690 --> 01:51.120
+a few things along the way so that perhaps you can brush up on this.
+
+01:51.600 --> 01:51.930
+All right.
+
+01:52.080 --> 01:54.900
+So we need, of course, to add to this dependency.
+
+01:55.140 --> 01:56.970
+A few of dependencies, I should say.
+
+01:57.150 --> 02:02.880
+If you scroll down here, you'll see it will tell us this document will tell us a few other things that
+
+02:02.880 --> 02:10.320
+we may need in order to actually be successful at getting the information, the JSON into the account,
+
+02:10.320 --> 02:14.010
+into our apps so we can connect that to our objects.
+
+02:14.640 --> 02:19.380
+So we will need JSON serialization library for that.
+
+02:19.830 --> 02:21.720
+So let's go ahead and set that up.
+
+02:22.560 --> 02:29.850
+So back to a project, I will go to our Build Gradle that app, which you can see just go to the second
+
+02:29.850 --> 02:31.470
+one that says that app.
+
+02:32.940 --> 02:39.840
+What I will do is I'm going to add some dependencies there, so have them already.
+
+02:40.500 --> 02:43.830
+Again, you won't need to pause this video and type all of this.
+
+02:44.430 --> 02:51.600
+You should be have access to all of this in GitHub because you should have access to all of the code
+
+02:51.930 --> 02:52.590
+for this course.
+
+02:52.800 --> 02:53.070
+All right.
+
+02:53.400 --> 02:57.030
+So what we have here, we have retrofit, which is the library, I added.
+
+02:57.330 --> 02:58.170
+And we have OK.
+
+02:58.170 --> 03:05.280
+HTP essentially is another library that works with retrofit to do those calls right to calls to the
+
+03:05.280 --> 03:05.730
+server.
+
+03:05.730 --> 03:08.760
+In this case, our API to get information so just helps a lot.
+
+03:09.270 --> 03:13.860
+And then we have these JSON converter also, which works with JSON and so forth.
+
+03:14.430 --> 03:14.820
+All right.
+
+03:14.820 --> 03:15.900
+Let's go ahead and sync.
+
+03:16.770 --> 03:17.100
+All right.
+
+03:17.730 --> 03:20.070
+So we'll look at our payload here.
+
+03:21.030 --> 03:22.860
+Our API, this JSON.
+
+03:23.520 --> 03:24.600
+There's a lot of information.
+
+03:24.600 --> 03:33.330
+So we need a way to transform this into a module that we can use as an object calling object so that
+
+03:33.330 --> 03:35.680
+we can have some sort of like a book for say.
+
+03:35.730 --> 03:36.060
+OK.
+
+03:36.330 --> 03:37.620
+So there's a lot of things here.
+
+03:37.890 --> 03:39.890
+So what do you want to do really?
+
+03:39.910 --> 03:46.980
+Just copy this link so we can automatically create those model class, copy those.
+
+03:47.400 --> 03:49.470
+And let's open our project.
+
+03:50.370 --> 03:51.420
+Let's go to our models.
+
+03:52.140 --> 03:53.210
+Right click there.
+
+03:53.220 --> 03:53.910
+What do you want to do?
+
+03:53.910 --> 03:56.310
+Is want to right click in, say, new?
+
+04:11.210 --> 04:17.090
+You will have this option of saying calling data class file from JSON, so click there, right?
+
+04:17.840 --> 04:21.050
+And then right click inside here from Retrieve.
+
+04:21.110 --> 04:24.810
+In this case, retrieve content from HTP URL.
+
+04:25.400 --> 04:26.420
+This is what you want to do.
+
+04:26.420 --> 04:28.730
+And then we're going to paste that URL.
+
+04:28.760 --> 04:31.940
+My section say OK, may take a few seconds.
+
+04:32.150 --> 04:34.280
+So it pulls in the entire payload.
+
+04:34.670 --> 04:41.900
+And so this plug in is really helpful because it will go ahead and create all the classes that it needs.
+
+04:42.290 --> 04:48.140
+That structure that we need so that we can then have objects or classes in this case that we can turn
+
+04:48.140 --> 04:52.700
+them into actual objects to represent this Jason tree.
+
+04:53.330 --> 04:54.410
+So let's give it a name.
+
+04:54.440 --> 04:55.980
+Can you name anything you want?
+
+04:56.000 --> 04:59.450
+But I'm going to just call this book like that.
+
+05:00.590 --> 05:00.710
+OK?
+
+05:01.790 --> 05:04.280
+They generate that going to take a few seconds.
+
+05:04.730 --> 05:05.450
+And voila!
+
+05:05.660 --> 05:09.410
+You can see it went ahead and generated a bunch of classes here.
+
+05:09.710 --> 05:15.290
+So what it did, really, it looked at this entire tree and looked at the relationship.
+
+05:15.290 --> 05:17.810
+So it looked at, for instance, this item.
+
+05:17.900 --> 05:24.740
+It said, OK, we have first of all, this object currently braces there and then we have this property.
+
+05:24.740 --> 05:27.800
+So it created one object that will enclose everything.
+
+05:28.310 --> 05:31.220
+And then it looked at all of this properties added all of that.
+
+05:31.550 --> 05:32.660
+And then it went.
+
+05:32.660 --> 05:34.910
+It's looked at, for instance, this items.
+
+05:35.120 --> 05:39.260
+We looked at it and said, OK, this is a list of a list of what?
+
+05:39.590 --> 05:41.270
+Well, it's a list of objects.
+
+05:41.480 --> 05:44.420
+So create another object in deed for all of that.
+
+05:44.660 --> 05:51.200
+That's reason why we see all of these different classes right now if you go to book.
+
+05:51.260 --> 05:53.080
+Book is going to be the central of everything.
+
+05:53.090 --> 05:54.110
+It's a book in this case.
+
+05:54.110 --> 05:57.500
+Like I said, it's going to be this whole payload here.
+
+05:57.980 --> 06:03.290
+You know this because you see there is kind as property and there's total items as properties are true
+
+06:03.980 --> 06:04.380
+indeed.
+
+06:04.700 --> 06:09.680
+There's total items and there's kind in there is the items, which is a list of item.
+
+06:10.010 --> 06:12.290
+If you control or command, click.
+
+06:13.870 --> 06:17.830
+In this case, we can click this item here, it's going to be what?
+
+06:20.460 --> 06:25.250
+Each one of these items inside of which instantly eats out a book per se.
+
+06:25.480 --> 06:29.190
+OK, so should have kind ID tag and volume info.
+
+06:29.940 --> 06:30.420
+Let's see.
+
+06:30.660 --> 06:32.820
+All of that and we have the value info.
+
+06:33.090 --> 06:36.120
+The value info, of course, is a type of volume info.
+
+06:36.240 --> 06:42.720
+So if I go back here, it's going to have that value info, double click Whyalla Info.
+
+06:42.810 --> 06:44.820
+That's where we have our authors.
+
+06:45.150 --> 06:47.610
+That's why we have a description, image links and so forth.
+
+06:47.820 --> 06:49.890
+So it created all of that for us.
+
+06:50.820 --> 06:52.380
+OK, we'll get back to this.
+
+06:53.280 --> 06:55.230
+Let's clear things up here.
+
+06:55.440 --> 06:57.270
+And the next thing we are want to do?
+
+06:57.330 --> 07:01.380
+Let's create a constant class.
+
+07:02.100 --> 07:05.100
+So let's go to utils command new.
+
+07:05.940 --> 07:07.740
+I created codling class.
+
+07:07.780 --> 07:12.120
+This is just going to be let's make it an object so that it's easy to manage.
+
+07:12.720 --> 07:14.070
+Call these constants.
+
+07:15.660 --> 07:15.960
+OK.
+
+07:16.770 --> 07:18.930
+So what is our Constance going to have?
+
+07:18.960 --> 07:24.660
+Well, for now, just going to have a say constant vowel here and call this base,
+
+07:27.450 --> 07:30.360
+underscore your L like this?
+
+07:31.230 --> 07:35.390
+And let's go to our browser.
+
+07:35.420 --> 07:36.540
+I'm going to copy that.
+
+07:37.890 --> 07:43.860
+First of all, I'm going to add all of it in the comment outline there and paste it again there.
+
+07:44.370 --> 07:45.180
+This is the base.
+
+07:45.180 --> 07:50.580
+We want to have a basic rule and you will see once you start putting together, retrofit and so forth
+
+07:50.580 --> 07:58.470
+to retrofit once the base URL so that then we can pass queries into retrofit to get the data we want.
+
+07:59.490 --> 08:02.130
+What this means is all of this needs to go.
+
+08:02.700 --> 08:08.160
+I'm going to get rid of all of that, and all I have is just this last four slash after V1.
+
+08:08.910 --> 08:11.220
+Okay, because all of this is actually a path.
+
+08:11.430 --> 08:14.460
+And then we have a query and we pass that query.
+
+08:14.710 --> 08:21.570
+OK, and all of this is going to happen once we are dealing with retrofit and retrofit will need this
+
+08:21.570 --> 08:25.230
+piece, these pieces of information to go and factually correct data.
+
+08:25.800 --> 08:26.730
+So that's all.
+
+08:27.090 --> 08:28.350
+Our bases are done.
+
+08:28.890 --> 08:29.280
+OK.
+
+08:29.670 --> 08:33.210
+Next, why do we need to do is let's go to our network.
+
+08:34.800 --> 08:38.220
+And we need to create a new class here, Coughlin class.
+
+08:38.790 --> 08:40.920
+And this is actually going to be an interface.
+
+08:41.100 --> 08:44.940
+We're going to call this book's API as such.
+
+08:45.690 --> 08:48.060
+What this will do, it's almost like a DAO.
+
+08:48.090 --> 08:49.250
+Really, that's what it is.
+
+08:49.260 --> 08:51.000
+So it's data access object.
+
+08:51.330 --> 08:58.590
+This is going to be responsible for creating the infrastructure that will connect to our retrofit and
+
+08:58.590 --> 09:00.000
+get information right.
+
+09:00.450 --> 09:02.250
+In this case, get books and so forth.
+
+09:03.270 --> 09:03.550
+Right.
+
+09:03.570 --> 09:10.020
+So we're going to append or add this at Singleton to say this is just going to be a singleton class
+
+09:10.680 --> 09:13.710
+singleton from Java effects such.
+
+09:14.430 --> 09:20.140
+So now I'm going to say at get a such and what is it I'm going to do here?
+
+09:20.160 --> 09:22.410
+Well, I'm going to pass a value.
+
+09:22.460 --> 09:28.830
+Now this, I get, it's going to be from somewhere I'm going to import and there's value I'm going to
+
+09:28.830 --> 09:30.600
+pass is volumes.
+
+09:31.590 --> 09:41.220
+OK, you'll see in a bit here, let's say suspend function and call called Get all books such.
+
+09:41.850 --> 09:52.470
+And then I'm going to say at query retrofit query like this and I'm going to pass the query character
+
+09:52.620 --> 09:57.370
+such as this and the handyman to say query for retrofit.
+
+09:57.420 --> 09:58.440
+It's going to be.
+
+09:59.760 --> 10:05.520
+Actually, a strain would be passing and we expect to receive a book.
+
+10:06.200 --> 10:07.530
+Oh, it's a lot of things here.
+
+10:07.770 --> 10:14.880
+First of all, let's make sure this get is actually able to us to be at get like this.
+
+10:15.150 --> 10:15.600
+There we go.
+
+10:16.320 --> 10:16.610
+All right.
+
+10:16.620 --> 10:18.780
+So let's go and import to that.
+
+10:19.500 --> 10:25.620
+So what are we doing here is very simple is that we st get this is from retrofit, we see volumes.
+
+10:25.620 --> 10:30.750
+So essentially we're going to append his volumes in our path.
+
+10:31.080 --> 10:31.410
+Right?
+
+10:31.890 --> 10:37.050
+And then I'm going to say Q for the actual query, say query.
+
+10:37.440 --> 10:39.980
+And then I'm going to say, what is the query going to pass?
+
+10:39.990 --> 10:47.190
+So it's going to be a string that you're going to be passing through the our search bar that we created.
+
+10:47.600 --> 10:47.810
+OK.
+
+10:48.030 --> 10:52.150
+This doesn't belong there, and this will return a book.
+
+10:52.170 --> 10:53.970
+What is this book command click?
+
+10:54.210 --> 11:01.500
+It's going to be this whole payload, really, because you see here we have items kind it total items.
+
+11:01.860 --> 11:03.900
+The order is a little bit different, but that doesn't matter.
+
+11:04.290 --> 11:09.720
+So we are saying we're going to get this entire payload when we search for something right, we need
+
+11:09.720 --> 11:18.480
+to get, say something else and say at get again, retrofit and say suspend its pass, suspend function
+
+11:18.480 --> 11:24.390
+because we want to make sure that we are using the core routines and so forth so that we don't run these
+
+11:24.720 --> 11:26.700
+processes on main thread.
+
+11:27.570 --> 11:28.590
+I'd get here.
+
+11:28.620 --> 11:30.540
+I'm going to pass something here.
+
+11:30.540 --> 11:32.430
+The value is going to be volumes.
+
+11:33.000 --> 11:34.920
+Now I'm going to pass forward slash.
+
+11:35.490 --> 11:36.810
+This is going to be a query.
+
+11:37.920 --> 11:39.210
+So I need to go to a path.
+
+11:39.690 --> 11:43.020
+In this case, I'm going to pass an ID, which is going to be a book ID.
+
+11:43.140 --> 11:47.250
+So this is going to be used for when we want to actually query book ID.
+
+11:47.370 --> 11:54.780
+We'll see in a bit book info such and now I'm going to see at path.
+
+11:55.050 --> 12:00.540
+It's just going to be a path that we don't have to go to in order to get that information.
+
+12:00.550 --> 12:07.350
+So in this case, and where Pash passed the book ID as the parameter, such has to be exactly the same,
+
+12:07.530 --> 12:11.410
+same that we pass there and then it's going to be book ID.
+
+12:13.470 --> 12:17.520
+It's going to be a string value and we expect to get item.
+
+12:18.690 --> 12:22.920
+Now remember has to be our item from our model classes.
+
+12:23.310 --> 12:24.510
+And what is this item again?
+
+12:25.380 --> 12:31.620
+We click going to be this item, which will contain, of course, at the end, the volume info which
+
+12:31.620 --> 12:33.390
+has the information bar book.
+
+12:33.990 --> 12:37.200
+So we're saying now we're going to go and get one of these.
+
+12:37.920 --> 12:41.800
+So now that we have a book CPI or Dow, we need to do what?
+
+12:41.820 --> 12:43.140
+Well, we need to go to our module.
+
+12:43.440 --> 12:46.440
+That module that is and here we're going to create a provider for it.
+
+12:46.890 --> 12:52.800
+It makes sense single singleton and then pass at provides.
+
+12:53.550 --> 12:58.800
+And then I'm going to say fine, provide book API such.
+
+13:00.260 --> 13:03.350
+And this function is going to provide a book's API.
+
+13:03.420 --> 13:08.090
+So it's going to, in this case, return in this case eBooks API.
+
+13:08.930 --> 13:13.340
+So I'm going to go ahead and say the body once they return.
+
+13:13.880 --> 13:20.030
+This is when I say this is where I'm going to set up our retrofit because we need to create the actual
+
+13:20.030 --> 13:27.620
+retrofit object, which will be able to get to our API and do all the work that it needs to do.
+
+13:28.190 --> 13:28.500
+All right.
+
+13:28.520 --> 13:35.390
+So I'm going to return here and I say, Retrofit, OK, dad builder.
+
+13:36.950 --> 13:42.930
+OK, and then I'm going to pass, say, dot based URL and you have to pass the base URL.
+
+13:43.310 --> 13:50.120
+We call this base you r l c u r l will have to import that.
+
+13:50.780 --> 13:51.980
+And then we're going to continue.
+
+13:52.530 --> 13:56.000
+We're going to let's just see constant.
+
+13:58.770 --> 14:04.350
+That base CRL, that would have worked because I'm sure it's just import imported our base or El.
+
+14:06.660 --> 14:07.980
+So let's just get rid of that.
+
+14:09.660 --> 14:16.380
+OK, so let's continue to build our retrofit object here, and then I'm going to add this.
+
+14:18.240 --> 14:26.010
+Converter factory, because we need to convert what we're getting into objects that we can then attach
+
+14:26.130 --> 14:29.550
+to codling, right, so we can have Cartland object.
+
+14:29.910 --> 14:32.040
+So we're going to use the JSON.
+
+14:34.500 --> 14:43.680
+Converter factory and create that, and then we're going to build and then we're going to say, create
+
+14:44.280 --> 14:47.000
+once we build going to create what we're going to create that service.
+
+14:47.010 --> 14:52.710
+In this case, it's going to be our books app class that Java like this.
+
+14:53.310 --> 15:00.470
+So now this is going to provide our books API, which you can see it knows how to then go and get,
+
+15:00.480 --> 15:01.780
+for instance, equerry.
+
+15:02.220 --> 15:06.290
+We pass it query and then we get a book object, right?
+
+15:06.750 --> 15:12.390
+And then later we can also pass it a book ID and get and get that book item.

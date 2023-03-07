@@ -1,0 +1,409 @@
+WEBVTT
+
+00:01.670 --> 00:05.300
+So still in this row here where we have this here reading.
+
+00:06.870 --> 00:13.480
+The speaker, what we want to do is we want to add right next to it, we can add this structure here.
+
+00:13.750 --> 00:14.560
+There's two things.
+
+00:14.620 --> 00:21.610
+So that's what are going to be adding because we know that this we have this icon and also we have this
+
+00:21.610 --> 00:21.980
+text.
+
+00:22.000 --> 00:23.580
+So this is a column.
+
+00:23.590 --> 00:26.170
+So we are going to add yet another column right here.
+
+00:26.320 --> 00:31.570
+I say column when add an icon because icons start.
+
+00:32.850 --> 00:36.850
+Field and I want this account.
+
+00:37.050 --> 00:38.460
+Circle like that.
+
+00:41.400 --> 00:43.800
+And for a description, I'm just going to say.
+
+00:46.010 --> 00:51.980
+Profile, OK, let's pass a modifier here.
+
+00:54.410 --> 01:01.610
+Make this clickable because we want to when this is clicked, we want to go to the stats screen.
+
+01:02.240 --> 01:09.710
+We want to go to the stats screen and I want to make sure that this this side of this is controlled.
+
+01:09.980 --> 01:17.450
+So I'm going to say size of about 45 db, so a little bit smaller than usual, and I'm going to give
+
+01:17.450 --> 01:18.980
+it tint color.
+
+01:19.550 --> 01:19.840
+All right.
+
+01:19.970 --> 01:20.840
+It's a color.
+
+01:21.390 --> 01:26.840
+So let's just use material theme and pass here.
+
+01:27.050 --> 01:38.060
+Colors, you know, a secondary variant section and right below it, I'm going to pass the text, which
+
+01:38.060 --> 01:42.950
+is going to have, in this case, a name which we're going to add in a second.
+
+01:42.950 --> 01:47.780
+Let's add modifier right away so we can modify all of this.
+
+01:50.450 --> 01:51.320
+Give it padding.
+
+01:51.530 --> 01:56.630
+About two deep and then let's go ahead and add a style.
+
+02:00.280 --> 02:06.880
+His material theme, go to typography, and I want this to be over a line so a little bit smaller.
+
+02:07.510 --> 02:08.470
+Let's give a color.
+
+02:11.640 --> 02:20.190
+Just give it read and let's give a font size about 15 Aspie.
+
+02:21.660 --> 02:27.420
+And this makes sure that the max lines here is just going to be one of the reason being is because we
+
+02:27.420 --> 02:29.790
+want to make sure that we don't have too many lines.
+
+02:30.210 --> 02:35.180
+If the name is too long, we're going to maybe add ellipses or something like that.
+
+02:35.230 --> 02:36.590
+That's what we're going to do next here.
+
+02:36.600 --> 02:37.830
+I'm going to say overflow.
+
+02:37.830 --> 02:46.590
+If the text overflows, I'm going to say I want to clip it so that that way it always fits the correct
+
+02:46.590 --> 02:48.920
+amount of letters, right?
+
+02:48.930 --> 02:56.250
+And then you can see here, I want to add this nice divider there or this nice line across just to give
+
+02:56.250 --> 02:57.030
+it a little pizzazz.
+
+02:57.240 --> 02:59.780
+Well, to do that, it's fairly simple.
+
+02:59.790 --> 03:00.090
+Call you.
+
+03:00.090 --> 03:03.120
+Do you just call divider like this?
+
+03:03.420 --> 03:07.560
+And if you have over, of course, you can pass in a modifier, column thickness and so forth.
+
+03:07.560 --> 03:15.000
+But we to get the default colors and thickness as you see, the thickness for default is one dpi.
+
+03:16.140 --> 03:16.450
+All right.
+
+03:16.470 --> 03:18.990
+Let's see if this actually looks like something.
+
+03:18.990 --> 03:19.620
+Let's refresh.
+
+03:23.490 --> 03:28.980
+OK, so it's starting to look OK, and let's see, go back here.
+
+03:29.610 --> 03:29.930
+Very good.
+
+03:30.270 --> 03:31.500
+But what we want really.
+
+03:31.530 --> 03:32.280
+We don't want this.
+
+03:32.280 --> 03:35.280
+We want to give some sort of space between these two.
+
+03:35.550 --> 03:37.350
+So there's different ways to do this.
+
+03:37.620 --> 03:43.730
+What I'm going to do is let's add a spacer between the section title.
+
+03:43.770 --> 03:53.730
+This and this column where we have that in name so we can come right here and put a spacer and for the
+
+03:53.730 --> 03:55.710
+modifier here, I'm going to say modifier.
+
+03:57.020 --> 04:05.550
+And same with let's just actually pass a fraction here so we can control it depending on what's depending
+
+04:05.550 --> 04:06.480
+on the screen size.
+
+04:07.170 --> 04:08.260
+OK, that's very nice.
+
+04:08.310 --> 04:15.810
+You can see now they are separated, so if I go ahead and zoom out, I can see this is exactly what
+
+04:15.810 --> 04:16.230
+we want.
+
+04:16.290 --> 04:20.670
+Of course, it's still at the bottom here, but this will be pulled up once we have all the information
+
+04:20.670 --> 04:21.360
+we need at a bottom.
+
+04:22.080 --> 04:22.440
+All right.
+
+04:22.560 --> 04:23.860
+So very good progress.
+
+04:23.880 --> 04:30.210
+Now the thing to remember also, we can see here that it seems like since we hear that this name here
+
+04:30.390 --> 04:33.240
+has to come from our user, that it's logged in.
+
+04:33.540 --> 04:37.170
+So how do we get the user that is logged in and hopefully get the name?
+
+04:37.740 --> 04:41.100
+Well, because we know Firebase is our friend.
+
+04:41.400 --> 04:44.160
+What we can do really is up here.
+
+04:44.160 --> 04:46.080
+I can say something like this.
+
+04:46.080 --> 04:49.200
+I can say file current user
+
+04:52.530 --> 04:53.340
+name such.
+
+04:54.120 --> 05:03.990
+And I'm going to say the following I'm going to put an if statement to say if Firebase both get instance
+
+05:04.710 --> 05:14.880
+that current user the email quite a long statement here is null or empty in this case, if it's not
+
+05:14.880 --> 05:17.970
+because we have this exclamation point there.
+
+05:18.450 --> 05:26.640
+If that's the case, then I'm going to say, get the Firebase off again, get instance, get the current
+
+05:26.640 --> 05:33.870
+user, I'm going to get the email right and then what I want to do with that email, I want to split
+
+05:33.870 --> 05:41.940
+it right because I want to split it by the ad side so I can get just the first.
+
+05:43.700 --> 05:44.900
+Index of all of it.
+
+05:44.990 --> 05:48.680
+Meaning I will get in this case, if the email is as such.
+
+05:49.100 --> 05:57.470
+Me at Gmail dot com, I'm going to split by act like this so I can just get me.
+
+05:58.460 --> 06:00.050
+Let's go ahead and fix that.
+
+06:00.060 --> 06:00.950
+Replace with that.
+
+06:01.310 --> 06:01.790
+There we go.
+
+06:02.840 --> 06:08.750
+Here, in any other case, what I want to happen and I'm just going to add something that says not available.
+
+06:08.840 --> 06:15.980
+So if there's no name or we can't find the actual name of this person just going to add in, not available
+
+06:16.100 --> 06:16.450
+there.
+
+06:17.270 --> 06:21.440
+All we can do also, we can extract this because it's been used a few times.
+
+06:22.100 --> 06:24.530
+Put that in a refactor that, you know, variable.
+
+06:25.690 --> 06:31.390
+Introducing a variable where we can use that just like this get much better.
+
+06:32.680 --> 06:37.300
+So now we have this current username dependent situation, we're going to have something going to get
+
+06:37.300 --> 06:42.940
+something that is what we pass here like that.
+
+06:44.400 --> 06:48.210
+Probably have to call a Nullarbor like this.
+
+06:48.510 --> 06:53.670
+Let's go ahead and run real quick, so at least we can hopefully see all of this in action.
+
+07:03.190 --> 07:04.060
+OK, there we go.
+
+07:04.330 --> 07:05.800
+Have a logged in user.
+
+07:06.160 --> 07:12.370
+And while I can see J is there because J is the user that is connected or that is locked in.
+
+07:13.450 --> 07:18.950
+Now we want something to happen when we click on our J icon there.
+
+07:19.270 --> 07:25.060
+What do we want to do is we want to be able to take the user to the stats screen so we can do that.
+
+07:25.420 --> 07:28.080
+So the code profile there, how do we do that?
+
+07:28.090 --> 07:29.630
+Well, we have the nav controller.
+
+07:30.040 --> 07:31.080
+I just don't have control.
+
+07:31.090 --> 07:31.930
+That's the beauty.
+
+07:32.230 --> 07:32.800
+I love it.
+
+07:33.230 --> 07:36.110
+And let's go to our root string there.
+
+07:36.130 --> 07:37.600
+It's important, I say readers.
+
+07:38.950 --> 07:42.530
+Screens, I'm going to go to stats.
+
+07:43.150 --> 07:50.320
+Actually, it's got to navigation, navigation if I can type correctly reader navigation to make sure
+
+07:50.320 --> 07:51.700
+we have these stats.
+
+07:52.180 --> 07:52.720
+You see what?
+
+07:52.720 --> 07:58.870
+I have the stats screen here, which means if you were to try, we would have failed miserably.
+
+07:59.380 --> 08:01.570
+So let's see.
+
+08:01.900 --> 08:07.840
+We are stats screen and this can be reader stats.
+
+08:10.610 --> 08:11.240
+Screen.
+
+08:12.080 --> 08:12.950
+Let's go there.
+
+08:12.980 --> 08:20.600
+That way, we can just pass our nav controller like this, and I can say again because we we're constructing
+
+08:20.600 --> 08:21.380
+everything here.
+
+08:22.160 --> 08:27.260
+Let's say it's important that there's going to be
+
+08:32.840 --> 08:34.490
+that screen, right?
+
+08:34.670 --> 08:35.810
+We'll come back to that later.
+
+08:36.080 --> 08:36.470
+Problem.
+
+08:36.470 --> 08:40.310
+Let's get rid of that and make sure this is correct.
+
+08:40.610 --> 08:41.420
+Yes, it is.
+
+08:41.930 --> 08:46.670
+So now back to our reader home screen, this should work.
+
+08:46.670 --> 08:50.420
+So we should be able to take the user to our start screen.
+
+08:50.960 --> 08:51.590
+Is that true?
+
+08:51.690 --> 08:52.730
+Let's go ahead and.
+
+08:55.790 --> 08:58.910
+Like changes, I think I will have to restart everything.
+
+08:59.000 --> 08:59.600
+Let's see.
+
+09:02.090 --> 09:03.480
+Right, I have to rebuild the app.
+
+09:03.500 --> 09:03.920
+It's OK.
+
+09:04.100 --> 09:05.840
+Let's just click there and rebuild everything.
+
+09:07.200 --> 09:07.480
+OK.
+
+09:07.500 --> 09:07.980
+Let's see.
+
+09:08.010 --> 09:08.400
+Click.
+
+09:08.770 --> 09:08.970
+Well.
+
+09:10.070 --> 09:10.580
+It works.
+
+09:10.940 --> 09:12.290
+All right, let's go ahead and continue.

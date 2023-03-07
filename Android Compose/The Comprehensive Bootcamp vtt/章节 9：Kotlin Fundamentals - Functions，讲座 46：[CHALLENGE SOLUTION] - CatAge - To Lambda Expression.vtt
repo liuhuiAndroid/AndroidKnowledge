@@ -1,0 +1,76 @@
+WEBVTT
+
+00:00.570 --> 00:04.710
+Let's go ahead and create a lambda expression equivalent to this calculator at age.
+
+00:04.830 --> 00:08.670
+I'm very sure you were able to do it, but let's go ahead and see how we can do it together.
+
+00:09.510 --> 00:10.350
+So it's say foul.
+
+00:10.680 --> 00:14.340
+I'm going to follow the same thing we have here, so I'm going to add the lambda name.
+
+00:14.640 --> 00:21.750
+So Val, this is, say, tat age for now and then we need to pass the types.
+
+00:21.960 --> 00:24.750
+So in this case, I'm just going to have to pass age.
+
+00:25.140 --> 00:26.580
+It's going to be ain't like that.
+
+00:26.790 --> 00:30.450
+And then the return type is going to be an integer, right?
+
+00:30.870 --> 00:32.130
+Remember, we don't do like that.
+
+00:32.130 --> 00:34.890
+We actually put an arrow like this.
+
+00:35.250 --> 00:40.860
+And then we say, and then we say equal, and then we open our lambda expression.
+
+00:40.980 --> 00:41.820
+This is our lambda.
+
+00:41.820 --> 00:43.180
+So inside here, we're going to pass.
+
+00:43.200 --> 00:50.010
+Of course, our parameter, which is age, and then we go to body such and the body was just going to
+
+00:50.010 --> 00:52.890
+say age times.
+
+00:53.400 --> 00:54.030
+Seven.
+
+00:54.750 --> 00:55.350
+And there you have it.
+
+00:56.130 --> 01:00.150
+So now if you call Kat age somewhere here, let's get rid of this.
+
+01:00.730 --> 01:05.190
+It's a print Kat age and pass in this case.
+
+01:05.760 --> 01:06.210
+Three.
+
+01:06.810 --> 01:08.910
+Go Run should get 21.
+
+01:09.240 --> 01:10.410
+There we go three times.
+
+01:10.410 --> 01:11.310
+Seven is 21.
+
+01:11.850 --> 01:12.300
+All right.
+
+01:12.450 --> 01:13.020
+There you have it.

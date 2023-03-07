@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.150 --> 00:02.460
+Now we have created a primary goal instructor there.
+
+00:02.490 --> 00:09.230
+We pass these values, which are the properties of this class, of course, because we set far or foul,
+
+00:09.240 --> 00:10.140
+that could work as well.
+
+00:10.530 --> 00:16.980
+You notice something that here I cannot just go into writing code here right right away because it assumes
+
+00:16.980 --> 00:20.490
+that this is still part of the premier constructor.
+
+00:21.090 --> 00:27.240
+So there is a concept called initialization, so we can initialize these values or these properties
+
+00:27.630 --> 00:30.750
+by putting instead of init block because they need to block.
+
+00:31.200 --> 00:34.920
+Then we can write some code here to initialize those values or do something else.
+
+00:34.920 --> 00:39.420
+But usually we won't initialize some values or, in this case, properties.
+
+00:39.600 --> 00:48.490
+So I could say, for instance, color is equal to green and a model going to be set to something else.
+
+00:48.510 --> 00:50.430
+Let's change this to something else, in fact.
+
+00:50.700 --> 00:55.560
+So once we do this, you can see now we still have green because it's what we did.
+
+00:55.560 --> 00:59.660
+In fact, lets me change this to something else yellow.
+
+01:01.020 --> 01:01.560
+Let's run.
+
+01:02.190 --> 01:08.210
+So when we instantiate this first car, we notice that we pass green and for a model, we pass Al-Alam.
+
+01:08.220 --> 01:11.850
+But because the first thing that is run is this it need to block.
+
+01:12.210 --> 01:17.040
+We say color is this model is that Iran with that?
+
+01:17.250 --> 01:22.590
+OK, now what happens if we get rid of this because we initializing it right, we don't need to actually
+
+01:22.740 --> 01:25.740
+initialize inside of our constructor.
+
+01:26.190 --> 01:26.990
+I think it's going to happen.
+
+01:27.110 --> 01:27.840
+Run this again.
+
+01:28.390 --> 01:28.680
+Right?
+
+01:29.040 --> 01:29.460
+There we go.
+
+01:29.730 --> 01:34.080
+So when we passed the initialization here, whatever we have.
+
+01:35.210 --> 01:43.100
+Set to happen or set the priorities to be in our instantiation of the object, it's ignored because
+
+01:43.100 --> 01:49.940
+we passed the initialization first and you can see now, says yellow kayleigh mamombe yellow cake aluminum
+
+01:49.940 --> 01:55.790
+for both cars that we initialized earlier or instantiated, as I should say.
+
+01:56.000 --> 02:00.020
+So I'm going to get rid of this real quick if I run this now.
+
+02:00.080 --> 02:02.870
+Notice now we're going to get exactly what we need.
+
+02:04.330 --> 02:04.700
+All right.
+
+02:04.720 --> 02:09.910
+So we're creating different cars now in the neat part here we can do some if statement I can say, for
+
+02:09.910 --> 02:16.620
+instance, if color is equal to green, I want to print Alan.
+
+02:16.900 --> 02:18.490
+Yay, green.
+
+02:19.510 --> 02:23.590
+Else just say print and color.
+
+02:24.310 --> 02:25.930
+It's not green.
+
+02:25.930 --> 02:30.130
+So this color is going to be whatever color is passed into our properties.
+
+02:30.580 --> 02:31.540
+Let's go ahead and run.
+
+02:31.810 --> 02:32.530
+OK, yay.
+
+02:32.530 --> 02:33.010
+Green.
+
+02:33.550 --> 02:34.760
+Purple is not green.
+
+02:34.780 --> 02:38.790
+This is for each one of these colors, and you can see there it is, right?
+
+02:38.800 --> 02:39.670
+So this is green.
+
+02:39.670 --> 02:41.230
+That's why it's so green.
+
+02:41.500 --> 02:43.180
+And then this is color purple.
+
+02:43.390 --> 02:45.190
+It says purple is not green.
+
+02:45.670 --> 02:51.400
+And then of course, goes ahead and shows the properties for each one of these cards that we printed
+
+02:51.400 --> 02:51.790
+out here.
+
+02:52.030 --> 02:56.170
+So in this case here, I could also say for interchange, right, it's a car.
+
+02:56.170 --> 02:57.100
+Got color.
+
+02:57.640 --> 02:58.990
+Change this to something.
+
+02:59.530 --> 03:02.740
+Say Black and say car that model.
+
+03:02.740 --> 03:08.140
+In this case, change this to some other models, such if I were to run.
+
+03:08.140 --> 03:12.820
+This, of course, is going to override what we set through our constructor there.
+
+03:12.820 --> 03:13.750
+So now we have black.
+
+03:13.960 --> 03:18.940
+Q Well, you may say, OK, yeah, of course this is possible because in our class we set all of the
+
+03:18.940 --> 03:21.100
+properties I know constructor here.
+
+03:21.310 --> 03:22.450
+We added far.
+
+03:23.200 --> 03:25.870
+What happens will say, Val, is I still going to work?
+
+03:26.080 --> 03:32.410
+No, it won't work because these properties here are not immutable, which means we can't access them
+
+03:32.650 --> 03:33.130
+that way.
+
+03:33.160 --> 03:39.190
+If we want to make sure that the color is the one, the only one that can be modified, right, we can
+
+03:39.190 --> 03:43.870
+just say it's VAR so we can directly modify it for model.
+
+03:44.890 --> 03:48.700
+We can close it to say that this is not going to be modified directly.
+
+03:48.700 --> 03:51.940
+If we want to modify it, we should have other means to do so.
+
+03:52.150 --> 03:56.050
+So that's another way of protecting your classes, and we'll talk more about that.

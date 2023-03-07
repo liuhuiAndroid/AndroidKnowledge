@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.360 --> 00:07.310
+Now, one thing you'll notice, if you run this again, you'll see something that it's OK but could
+
+00:07.330 --> 00:07.800
+be improved.
+
+00:07.800 --> 00:08.550
+So if I click.
+
+00:09.780 --> 00:13.830
+This blank and then something happens now, although it works fine, that's great.
+
+00:13.920 --> 00:18.750
+But for user interface, it's be nice to give some sort of indication that something is working in the
+
+00:18.750 --> 00:19.290
+background.
+
+00:19.290 --> 00:20.160
+Something is loading.
+
+00:20.160 --> 00:23.730
+And so we should just wait until something happens, right?
+
+00:24.000 --> 00:30.630
+Same thing happens if I say money, for instance, it just goes and shows it was quick.
+
+00:30.630 --> 00:36.180
+But it's nice sometimes to show that there's an indication that something is happening to back and background
+
+00:36.180 --> 00:38.310
+so users can wait for a bit.
+
+00:38.610 --> 00:38.850
+OK.
+
+00:39.750 --> 00:40.710
+So how do we do this now?
+
+00:40.860 --> 00:47.250
+Are different ways to do this, the way we have things set up right now in our book search view model
+
+00:47.250 --> 00:47.640
+here.
+
+00:47.920 --> 00:54.660
+I will want let us do how we usually do, which means we're not going to wrap this inside of another
+
+00:54.810 --> 00:58.770
+class where we can like a resource in this case, right?
+
+00:58.790 --> 01:09.760
+Or we can then have access to this states and so forth can just create a variable here called is loading.
+
+01:09.840 --> 01:17.820
+It's going to be a Boolean type and let's say by mutable state of say, true.
+
+01:18.990 --> 01:19.590
+To start with.
+
+01:19.650 --> 01:19.920
+Right.
+
+01:20.580 --> 01:22.170
+And this is loading.
+
+01:22.560 --> 01:24.300
+I can't say, for instance.
+
+01:24.780 --> 01:26.940
+So at the top here, I can say, is loading.
+
+01:29.420 --> 01:40.570
+That is, loadings go to try to set it to true first and then once we are done with our list here,
+
+01:40.600 --> 01:48.950
+I am going to say if this list is not empty, then I'm going to say is loading.
+
+01:51.860 --> 01:52.700
+Set it to false.
+
+01:54.020 --> 01:55.550
+Because we no longer need to be loading.
+
+01:56.120 --> 02:01.430
+And we're going to do the same thing when if something happens like it, it isn't ever going to say
+
+02:01.430 --> 02:01.960
+false.
+
+02:01.970 --> 02:07.070
+And of course, you can also say false there, as well as if there's an exception just to get rid of
+
+02:07.070 --> 02:07.250
+that.
+
+02:07.790 --> 02:15.050
+OK, now if we go to read our books, our search screen, they can just play around with something here.
+
+02:15.120 --> 02:24.860
+And so, for instance, if I write a few model that is loading is true, then I'm going to just say
+
+02:24.950 --> 02:27.680
+linear progress indicator.
+
+02:29.960 --> 02:30.470
+Like that?
+
+02:33.320 --> 02:43.070
+Else then, we're good to go then, and we just can't take all of this and add it there, and we no
+
+02:43.070 --> 02:43.940
+longer need this.
+
+02:43.940 --> 02:47.480
+This was just for us to play around and see what's going on.
+
+02:48.980 --> 02:55.070
+Now we're going to get some, hopefully some something that will tell users that something is working
+
+02:55.070 --> 02:59.270
+in the background, so they have some sort of visual aid as to what's happening.
+
+03:00.290 --> 03:01.790
+Instead of just a blank screen.
+
+03:05.790 --> 03:06.270
+Let's see.
+
+03:07.690 --> 03:08.110
+Oops!
+
+03:08.140 --> 03:10.750
+Looks like I'm having some issues, what did I do wrong?
+
+03:11.950 --> 03:12.580
+Right?
+
+03:12.670 --> 03:13.960
+Let's go back.
+
+03:16.280 --> 03:17.210
+Book search.
+
+03:17.720 --> 03:18.110
+Right.
+
+03:18.200 --> 03:20.390
+So I found it to be.
+
+03:21.670 --> 03:29.080
+Problematic whenever we are, I signing a value such as this interview model scope, whenever we if
+
+03:29.080 --> 03:30.400
+we pass dispatcher.
+
+03:30.400 --> 03:34.390
+So every time I remove the dispatcher, it seems to work less run again.
+
+03:41.520 --> 03:48.420
+And you can see there it is, it showed there can go back here and click, OK, so there's that nice
+
+03:49.380 --> 03:50.160
+animation there.
+
+03:50.520 --> 03:55.730
+The other thing I can do instead of calling here, let's put it back what we had before, I can just
+
+03:55.740 --> 04:01.220
+remove that because we know that in the beginning, it's set to true.
+
+04:01.230 --> 04:06.070
+So we don't really need to add that at this point here, which is what triggers that problem.
+
+04:06.090 --> 04:08.490
+OK, let's go ahead and run again.
+
+04:10.850 --> 04:17.170
+And you can see well, let's see if we search for Android again, you can search for whatever you want
+
+04:17.180 --> 04:20.930
+and that just went straight and showed the books.
+
+04:21.150 --> 04:22.100
+Okay, let's see.
+
+04:30.910 --> 04:31.170
+OK.
+
+04:31.900 --> 04:32.380
+Very nice.
+
+04:32.410 --> 04:34.420
+So we're getting all the information that we need.

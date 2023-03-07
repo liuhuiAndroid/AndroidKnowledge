@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00.270 --> 00:01.620
+All right, making good progress.
+
+00:01.650 --> 00:05.670
+Next, we're going to add this sunset and sunrise row there.
+
+00:05.820 --> 00:10.030
+Now I want you to pause the video and see if you can structure this.
+
+00:10.560 --> 00:11.550
+OK, go ahead and do that.
+
+00:29.870 --> 00:30.200
+All right.
+
+00:30.530 --> 00:31.730
+I hope you were able to do that.
+
+00:32.840 --> 00:33.350
+Let's do it.
+
+00:34.520 --> 00:34.760
+All right.
+
+00:34.860 --> 00:37.400
+It's always I'm going to put under here.
+
+00:37.460 --> 00:38.370
+Say Sunset.
+
+00:39.470 --> 00:42.110
+Sunset, sunrise.
+
+00:43.880 --> 00:48.620
+Ro, OK, I'm going to pass the same thing, the passed, which is the weather
+
+00:51.380 --> 00:58.130
+data and at least get that first one, that's totally fine and let's create it.
+
+01:00.180 --> 01:00.460
+OK.
+
+01:00.650 --> 01:01.680
+Let's talk about them there.
+
+01:05.890 --> 01:06.550
+All right.
+
+01:06.670 --> 01:09.010
+So, as you know, going to put together a row.
+
+01:11.070 --> 01:12.290
+And modifier
+
+01:14.630 --> 01:18.080
+Phil Max with this.
+
+01:20.950 --> 01:22.000
+And give it padding.
+
+01:23.920 --> 01:33.240
+I want top to be about 15 dpi and bottom to be about 60.
+
+01:33.670 --> 01:36.100
+OK, give that nice separation.
+
+01:37.450 --> 01:41.630
+And of course, inside we're going to create another couple of rows.
+
+01:41.630 --> 01:44.230
+So this first row and then the second row.
+
+01:45.610 --> 01:54.940
+So then to create an oval room and for now, the strongest possible image pasta painter paint a resource
+
+01:55.810 --> 01:56.380
+such
+
+01:59.260 --> 02:01.450
+travel and sunrise.
+
+02:01.540 --> 02:03.700
+We're going to get that sunrise first.
+
+02:05.530 --> 02:06.700
+Give it a modifier.
+
+02:14.710 --> 02:20.690
+Twenty five of size, right, and then price in a text.
+
+02:32.930 --> 02:34.940
+And for this text, amateur use format.
+
+02:36.210 --> 02:37.740
+Date time.
+
+02:38.170 --> 02:38.580
+Right.
+
+02:39.030 --> 02:40.620
+And then we're past the weather.
+
+02:46.380 --> 02:48.360
+It's Sunrise like this.
+
+02:57.970 --> 02:58.900
+Give it style.
+
+03:04.230 --> 03:07.510
+You know, topography and make it caption so small.
+
+03:09.480 --> 03:09.840
+All right.
+
+03:09.960 --> 03:10.350
+Let's.
+
+03:12.590 --> 03:13.940
+Copy this through.
+
+03:21.490 --> 03:22.990
+That's going to be sunset
+
+03:25.900 --> 03:31.660
+at sunset and sunset like this.
+
+03:31.780 --> 03:33.340
+So just changing a few things there.
+
+03:34.000 --> 03:34.250
+All right.
+
+03:34.270 --> 03:36.040
+Let's go ahead and run this to see.
+
+03:40.620 --> 03:41.940
+OK, that looks really good.
+
+03:43.680 --> 03:48.900
+Now, one thing I'm going to do, I'm going to reverse what is shown before sunset.
+
+03:50.160 --> 03:56.430
+Let's add alignment for this row the main row
+
+03:58.710 --> 03:59.750
+horizontal.
+
+04:02.970 --> 04:03.900
+Arrangement.
+
+04:08.350 --> 04:12.280
+Space in between its use of vertical alignment
+
+04:14.620 --> 04:16.000
+center, such.
+
+04:18.150 --> 04:25.190
+Well, so doing this allows us to separate them horizontally so that we have that middle space there.
+
+04:25.240 --> 04:35.630
+So it looks really nice if we wanted, we can make perhaps this little bit larger, maybe 30 or sunrise
+
+04:35.640 --> 04:36.150
+and.
+
+04:38.890 --> 04:39.940
+I like that much better.
+
+04:40.240 --> 04:42.280
+And throw for sunset as well.
+
+04:42.760 --> 04:46.360
+All right, so those are way better sites, and I like the way things look.
+
+04:50.750 --> 04:54.560
+OK, now you may ask, where is this format to date time coming from?
+
+04:54.570 --> 05:01.850
+Well, if we remember, we added, or at least I added here again, it's just a format function, so
+
+05:01.850 --> 05:03.590
+we pass and each timestamp.
+
+05:04.040 --> 05:08.410
+We then use simple data format to pass the pattern we want to see.
+
+05:08.420 --> 05:14.240
+So this is so you can see here one or nine a.m. 10:36 AM and so forth, right?
+
+05:14.540 --> 05:17.660
+So that is just a helper function, if you will.
+
+05:19.540 --> 05:22.420
+OK, so we are looking really good.
+
+05:22.600 --> 05:27.250
+It's starting to look really like what we have here, so it's it's very exciting.
+
+05:27.250 --> 05:27.760
+I like that.
+
+05:28.630 --> 05:33.550
+Next, I would like you to add this text that says this week and then maybe you can start.
+
+05:33.970 --> 05:38.650
+We're looking through and getting all of the forecast for this week, right?
+
+05:38.680 --> 05:39.820
+Seven day forecast.
+
+05:40.150 --> 05:45.970
+It's very easy because if you look at what we have, right, so have the list.
+
+05:46.420 --> 05:53.020
+Really, this list should have count of seven, which means seven days and look through as you look
+
+05:53.020 --> 05:59.770
+through, you create a row a row like this, which will have the date or actually actually the day.
+
+06:00.010 --> 06:01.000
+And then an image.
+
+06:01.000 --> 06:05.140
+We've created that image function or image composable.
+
+06:05.470 --> 06:10.090
+And then you have your description of that weather to date.
+
+06:10.400 --> 06:12.340
+OK, and then we have high and low.
+
+06:13.180 --> 06:15.520
+OK, so go ahead and try to figure out something like this.
+
+06:15.520 --> 06:17.800
+It's not that hard, especially in compose.
+
+06:18.130 --> 06:24.430
+The most important thing here is to understand that we have a row, as you see there, that will contain
+
+06:24.430 --> 06:31.900
+all of these items and of course, a nice a nice card circular card, as you see also there.
+
+06:32.230 --> 06:36.280
+If you want, you can clip as well, just like we have here and do all sort of thing.
+
+06:36.290 --> 06:41.070
+So go ahead and pause these video pauses lectures and see if we can figure that out.
+
+06:41.070 --> 06:41.950
+Do you have the data?
+
+06:42.250 --> 06:46.600
+You have the knowledge at this point, it should have at least a little bit of knowledge to do this.
+
+06:46.720 --> 06:47.470
+Go ahead and do that.
+
+06:47.480 --> 06:53.040
+And remember, you have a column, a lazy column that we can use to do this right.
+
+06:53.050 --> 06:57.790
+So please pause this video for a while and tackle this exercise.

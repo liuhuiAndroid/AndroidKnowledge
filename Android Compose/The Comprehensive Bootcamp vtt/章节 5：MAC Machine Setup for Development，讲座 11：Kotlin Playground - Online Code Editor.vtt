@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.360 --> 00:05.010
+There is another option if you want to run cattle in code, right?
+
+00:05.340 --> 00:10.590
+So if you go to Google and type cattle in playground, this should show up.
+
+00:10.710 --> 00:15.840
+So I'm going to click this first link and should take us to a page like this.
+
+00:15.870 --> 00:17.930
+Now you may not see this.
+
+00:17.940 --> 00:23.130
+In fact, you may see something a little bit different with a little bit of code or comments at the
+
+00:23.130 --> 00:23.590
+top here.
+
+00:23.610 --> 00:26.350
+The reason why it's like this is because I've been here before.
+
+00:26.520 --> 00:29.020
+And so it's saved what I had written before.
+
+00:29.320 --> 00:35.100
+So you probably are going to have something like this that says hello, world of some sort and some
+
+00:35.100 --> 00:37.050
+code or comment at the top of me.
+
+00:37.230 --> 00:37.980
+That doesn't matter.
+
+00:38.070 --> 00:41.480
+What matters is that this it's what you call Scotland playground.
+
+00:41.490 --> 00:46.760
+So it's a place where you can come and write code Kotlin code and run it and see the results.
+
+00:46.770 --> 00:51.180
+So it's really simple and easy and fast if you want just something real quick.
+
+00:51.180 --> 00:56.970
+Instead of going through the IDP Android Studio, as I showed you, you can come straight here and start
+
+00:57.120 --> 00:58.260
+typing Kotlin code.
+
+00:58.530 --> 00:59.730
+So it's a really great place.
+
+01:00.000 --> 01:00.960
+It's a playground, right?
+
+01:00.960 --> 01:04.860
+So you go and play with some ideas and learn stuff in this case, codling.
+
+01:05.430 --> 01:07.290
+So in this case, here you can do the same thing.
+
+01:07.290 --> 01:11.340
+If you see that we have the fun main and it's a function, right?
+
+01:11.550 --> 01:15.600
+And then inside you have this print L.N. or print could be print as well.
+
+01:15.600 --> 01:16.650
+The print Ellen works.
+
+01:16.920 --> 01:19.280
+In fact, if I go like this, I think this will work.
+
+01:19.340 --> 01:19.920
+I see.
+
+01:20.370 --> 01:21.210
+Yes, it will work.
+
+01:21.210 --> 01:25.160
+Print Alan its print line, which means going to go to a different line each time.
+
+01:25.170 --> 01:27.990
+But anyway, print, he's going to print Hello World.
+
+01:27.990 --> 01:33.810
+As you see there, if I say print Alan, slightly different, of course, going to print a new line
+
+01:33.810 --> 01:37.560
+every time we want to print something else anyway.
+
+01:38.070 --> 01:43.350
+OK, so that's the main point here is that we can do the same thing we did in our Android Studio.
+
+01:43.530 --> 01:45.840
+I can say foul, just say name.
+
+01:46.020 --> 01:48.600
+Set it to something, James.
+
+01:48.840 --> 01:52.590
+OK and change here and invoke James the variable.
+
+01:52.590 --> 01:56.370
+I can just put the dollar sign and say name.
+
+01:56.820 --> 01:59.670
+It even has code suggestion, which is real handy.
+
+02:00.210 --> 02:00.540
+All right.
+
+02:00.540 --> 02:03.430
+And going to go ahead and run, we should see in the second.
+
+02:03.450 --> 02:05.100
+Hello, James, forget it.
+
+02:05.100 --> 02:06.240
+So that's another option.
+
+02:06.450 --> 02:12.060
+And there are a lot of things you can do with in codling playground, I should say, one of which is
+
+02:12.060 --> 02:14.520
+you can share this code here for click here.
+
+02:14.790 --> 02:17.640
+You can embed medium embed out of places.
+
+02:17.640 --> 02:18.300
+There is a code.
+
+02:18.300 --> 02:22.800
+You can actually copy this and send to your friends or somebody to look at your code.
+
+02:23.280 --> 02:23.550
+OK.
+
+02:23.850 --> 02:28.170
+So really, there's hands on as examples and so forth, but I like this option as well.
+
+02:28.500 --> 02:33.600
+If you want to exploit it more than welcome or you can just stick it to Android Studio.
+
+02:33.630 --> 02:34.560
+It doesn't really matter.
+
+02:35.250 --> 02:35.590
+All right.
+
+02:35.610 --> 02:36.200
+There you have it.
+
+02:36.210 --> 02:40.050
+You have another option, which is codling playground.

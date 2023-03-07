@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00.630 --> 00:04.750
+OK, so let's go ahead and add this other button or icon there.
+
+00:04.770 --> 00:05.430
+Sign out.
+
+00:06.540 --> 00:10.380
+So that's going to be right after we have a retitle.
+
+00:11.160 --> 00:20.960
+So outside I'm going to add a spacer first because I want to give some sort of space between this title
+
+00:20.970 --> 00:22.320
+with the icon.
+
+00:23.250 --> 00:31.770
+Let's give a modifier in this case whose width of about 115 can play around with this.
+
+00:32.640 --> 00:32.980
+All right.
+
+00:33.000 --> 00:36.810
+And next here, I'll have to add, of course, this icon.
+
+00:36.810 --> 00:43.680
+But I have to think about it because remember, I'm constructing this reader app bar, which is going
+
+00:43.680 --> 00:45.990
+to be used in different places, potentially.
+
+00:46.520 --> 00:46.770
+Right?
+
+00:46.980 --> 00:51.600
+So if there is show profile is true, that means I am on main screen.
+
+00:51.600 --> 00:57.120
+If that's not true, then I'm not going to have that profile, which means I have to change a few things,
+
+00:57.680 --> 00:57.990
+right?
+
+00:58.020 --> 01:00.420
+Some things are not going to be shown there.
+
+01:00.810 --> 01:06.480
+This here, it's actually going to be inside of our actions, an icon button.
+
+01:07.170 --> 01:13.320
+And when this is clicked, what I wanted to do is I want to make sure that we exit or we lock the user
+
+01:13.320 --> 01:13.650
+out.
+
+01:14.560 --> 01:19.830
+Was a firebase going to get instance here and say, sign out.
+
+01:21.650 --> 01:22.070
+I this.
+
+01:23.980 --> 01:29.290
+But I want something else to happen the moment they're signed out, because if we are signed out, we
+
+01:29.290 --> 01:30.370
+want to go somewhere.
+
+01:31.120 --> 01:37.120
+I can then say, don't run to have this run block here to say, OK, whenever this happens, I want
+
+01:37.120 --> 01:41.980
+to run this unit of code here and let's say enough controller because I have control.
+
+01:42.400 --> 01:44.440
+I have access to it and would navigate.
+
+01:45.310 --> 01:45.670
+Oops.
+
+01:46.090 --> 01:47.980
+Let's make sure that we get the correct one.
+
+01:47.980 --> 01:52.150
+Navigate to here, let's say, leader screens.
+
+01:52.630 --> 01:56.160
+I'm going to go back to our login screen as such.
+
+01:57.310 --> 02:04.000
+So inside, of course, of our button, let's go ahead and add this icon there.
+
+02:05.580 --> 02:07.180
+Now, there are different ways to do this.
+
+02:07.200 --> 02:16.110
+Now I can add an image here and then go to our resource troubles and invoke an icon such as this OK,
+
+02:17.110 --> 02:22.800
+which means then I have to go and find an icon like this on line somewhere and then add it to my project,
+
+02:22.800 --> 02:23.550
+which is fine.
+
+02:24.270 --> 02:25.710
+But there's a different way to do so.
+
+02:25.980 --> 02:34.320
+We can actually import or have an icon's dependency, which will allow us to have more icons than when
+
+02:34.320 --> 02:41.790
+we say, like these icons, these are icons that come with Android X rank and say default, for instance,
+
+02:42.030 --> 02:46.380
+and we want to get something like this log out if we have something.
+
+02:46.380 --> 02:52.710
+But in this case, because these icons are limited because icons take a lot of space in your project.
+
+02:53.040 --> 03:01.230
+So when the project is created, Android Studio doesn't dump all of the icons possible into our icons,
+
+03:01.650 --> 03:03.150
+library and dependency.
+
+03:03.450 --> 03:09.480
+So we'll have to actually add that dependency to have all of those icons, at least most of the icons,
+
+03:09.480 --> 03:09.780
+anyway.
+
+03:10.530 --> 03:17.760
+So let's come out with go to build a cradle, and I'm going to add this dependencies here that he should
+
+03:17.760 --> 03:20.130
+have discovered you should have access to it.
+
+03:20.130 --> 03:25.140
+So I'm going to just add here now, one of the things to remember is that if you add this dependency
+
+03:25.140 --> 03:33.040
+of material icons extended, which has a lot of icons, it will weigh on your project.
+
+03:33.060 --> 03:37.590
+So I think there is I think it's about 18 megabytes, which is a lot.
+
+03:38.160 --> 03:45.690
+So some people don't recommend you to add all of the material icons to your project because that's a
+
+03:45.690 --> 03:46.540
+lot of space.
+
+03:46.580 --> 03:47.130
+That's a lot.
+
+03:47.730 --> 03:48.900
+But in this case, we're going to use it.
+
+03:48.900 --> 03:54.900
+But just keep that in mind that it's a lot of icons that will be added to your project, which will
+
+03:54.900 --> 03:56.400
+make your project a little bit heavier.
+
+03:57.470 --> 04:00.900
+I get out of here, go back to their home and let's see.
+
+04:00.900 --> 04:03.450
+So now I can say something like this icons
+
+04:05.940 --> 04:10.260
+and I can say default, or I can even say field, right?
+
+04:10.680 --> 04:17.370
+And I want let's see if we can get if I saw the same menu, for instance, look, I can get all these
+
+04:17.370 --> 04:18.240
+different material.
+
+04:20.440 --> 04:21.640
+Icons, that's very good.
+
+04:22.060 --> 04:27.270
+But we don't want that, we want, let's say, log out, maybe log out there, it is very good, so
+
+04:27.270 --> 04:28.150
+we have access to that.
+
+04:28.420 --> 04:28.730
+All right.
+
+04:28.750 --> 04:32.450
+Let's actually add in sort of an icon like this.
+
+04:33.400 --> 04:35.320
+And then this icon log out.
+
+04:37.820 --> 04:43.970
+And this should be better, and this is going to be logout.
+
+04:44.390 --> 04:47.390
+OK, let's go ahead and run this real quick and see.
+
+04:48.260 --> 04:48.490
+All right.
+
+04:48.510 --> 04:50.720
+Let's go ahead and run this real quick and see.
+
+04:52.070 --> 04:52.820
+OK, there we go.
+
+04:52.910 --> 04:53.580
+This is nice.
+
+04:53.600 --> 04:54.650
+We have that button.
+
+04:55.220 --> 05:01.040
+Notice that if I go ahead and click right now, it should go ahead and get I signed out.
+
+05:01.790 --> 05:04.670
+And take us to lock in the screen.
+
+05:05.060 --> 05:07.670
+OK, let's go ahead and click and voila.
+
+05:07.940 --> 05:09.680
+Now we're sign out and we out.

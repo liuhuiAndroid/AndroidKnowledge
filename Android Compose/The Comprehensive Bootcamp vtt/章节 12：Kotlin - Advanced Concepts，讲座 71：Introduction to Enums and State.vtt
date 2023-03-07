@@ -1,0 +1,553 @@
+WEBVTT
+
+00:00.120 --> 00:07.290
+And Caitlin and many other languages will have another different type of class called Enam Inam is short
+
+00:07.290 --> 00:15.930
+for enumerated type, so an enumerated type is another word for enumerate, so to enumerate means to
+
+00:15.930 --> 00:17.580
+list things one by one.
+
+00:18.150 --> 00:23.350
+So in this case, here, let's go ahead and create that type class like that, and then we can give
+
+00:23.350 --> 00:24.180
+it a name.
+
+00:24.510 --> 00:31.500
+In this case, I'm going to use a result as the name, and we'll see later how and we'll see later why
+
+00:31.500 --> 00:37.410
+we're using result because we are going to expand this example into other types of classes.
+
+00:37.600 --> 00:38.700
+OK, but let's start small.
+
+00:38.820 --> 00:39.750
+So have there.
+
+00:39.750 --> 00:48.120
+And then we open Calabrese braces, and here is where we add that list of that list of types.
+
+00:48.690 --> 00:55.480
+And it is customary or best practices to write all the title inside of this item class in all caps.
+
+00:55.500 --> 01:02.340
+So success comma separating the list, if you will, and then I'm going to use.
+
+01:05.460 --> 01:06.240
+Failure.
+
+01:09.120 --> 01:10.210
+Error as such.
+
+01:10.860 --> 01:16.740
+OK, so now we have our inner how do we use this, the idea really behind it in this case, is to kind
+
+01:16.740 --> 01:20.190
+of see if we can garnish some sort of state of the program.
+
+01:20.210 --> 01:21.120
+So we see a result.
+
+01:21.330 --> 01:26.460
+Let's say we're using an application that goes and download things from the internet remotely.
+
+01:26.460 --> 01:28.830
+So we want to get some sort of results.
+
+01:28.830 --> 01:34.080
+So if result that we're getting is success right in this in, then we want to do something.
+
+01:34.290 --> 01:36.570
+If it's failure to do something, it was error.
+
+01:36.810 --> 01:40.440
+Of course we do something else, that's kind of example.
+
+01:40.920 --> 01:42.940
+So in this case, here we have the class inam.
+
+01:43.230 --> 01:48.390
+You know, our main we can use it by doing the following list create a function actually not in the
+
+01:48.390 --> 01:50.490
+main, let's say, outside create a function.
+
+01:52.350 --> 01:52.830
+Get.
+
+01:54.220 --> 01:54.820
+Result
+
+01:58.570 --> 02:00.790
+in this get result, we're going to have a type.
+
+02:00.850 --> 02:05.320
+I'm going to say a result and they're going to be a result type.
+
+02:06.800 --> 02:10.640
+OK, our resolve to make sure we have our package there.
+
+02:12.080 --> 02:14.470
+OK, so what are we going to do in this function?
+
+02:14.500 --> 02:17.800
+Well, we are going to return something.
+
+02:17.800 --> 02:19.510
+What do we want to return in this case?
+
+02:19.900 --> 02:27.250
+The return, when can we use the one expression when a result as result changes?
+
+02:27.250 --> 02:33.970
+As a result, it's going to be type of enum class depending on what type we have success, failure error.
+
+02:34.240 --> 02:39.340
+We want to show something and you will see that we have this squiggly red line, if you have a over,
+
+02:39.640 --> 02:44.770
+is going to say something to the fact one expression must be executed and necessary success failure
+
+02:44.770 --> 02:45.100
+error.
+
+02:45.460 --> 02:50.920
+So we're going to go ahead and add the else branch first, because that's needed, and then I'm going
+
+02:50.920 --> 02:52.150
+to click on one again.
+
+02:53.320 --> 02:54.220
+All option.
+
+02:54.220 --> 02:57.370
+Enter, we're going to say add remaining branches.
+
+02:57.370 --> 03:01.180
+This just helps us to get all of the branches that are needed.
+
+03:01.180 --> 03:03.160
+We can type them all out ourselves.
+
+03:03.160 --> 03:05.890
+But these I.D. helps us.
+
+03:06.550 --> 03:12.010
+Of course, if you're using a different ID or different code editor or if using Kotlin Playground,
+
+03:12.130 --> 03:14.080
+you have to type all of these yourself.
+
+03:14.620 --> 03:15.610
+OK, so there we go.
+
+03:15.880 --> 03:17.860
+Now we have all of the results.
+
+03:18.070 --> 03:19.870
+For now, I'm just going to remove the else.
+
+03:20.320 --> 03:23.210
+OK, so there we have it, so we have to do here.
+
+03:23.250 --> 03:25.990
+That means we have to actually add something for now.
+
+03:25.990 --> 03:28.660
+If success, I'm just going to say print l end.
+
+03:29.710 --> 03:31.330
+And when I say success
+
+03:34.270 --> 03:36.880
+for failure, let's say print and.
+
+03:41.710 --> 03:49.780
+Family failure a little bit harsh, but that's OK, and for error, what was a print error?
+
+03:50.500 --> 03:51.760
+OK, very upset.
+
+03:51.770 --> 03:53.980
+We have all the cases that we need to have.
+
+03:54.220 --> 03:57.430
+So on main, we can call first.
+
+03:57.430 --> 04:01.390
+We got to say Val, create a variable here and say input.
+
+04:01.960 --> 04:08.050
+OK, set that to two result, not error, for instance.
+
+04:08.380 --> 04:14.170
+And then I'm going to feed that into or get a result or something to get result in passing our result.
+
+04:14.880 --> 04:16.780
+Passing our input like this.
+
+04:18.930 --> 04:19.860
+Let's go ahead and run.
+
+04:20.460 --> 04:25.620
+OK, so obviously he's going to go ahead and say our right if I change this to a different input, less
+
+04:25.620 --> 04:31.590
+a success to run as you will see or as you would expect, this will say success.
+
+04:32.070 --> 04:38.790
+Now, in an application, a more robust application, we want to we would want to separate everything
+
+04:38.790 --> 04:44.370
+into different pieces, which means we can create a repository because we imagining that we are getting
+
+04:44.370 --> 04:46.590
+data from somewhere remotely right.
+
+04:46.980 --> 04:50.460
+So we're going to create a repository which is going to be a classic, as the name implies.
+
+04:50.730 --> 04:56.070
+It will contain the actual data X-Class I'm going to call repository.
+
+04:56.250 --> 05:02.070
+I want to be sure that this class doesn't create too many instances of itself, because the more instances
+
+05:02.070 --> 05:08.820
+we create over class, meaning the more objects of that class we have in memory and it can affect performance
+
+05:09.030 --> 05:09.720
+in the long run.
+
+05:10.020 --> 05:16.350
+So there is a way in Scotland that we can make sure that certain class is not allowed to create many
+
+05:16.350 --> 05:17.490
+inserts of itself.
+
+05:18.420 --> 05:21.720
+To do that with, say, object, what say object?
+
+05:21.720 --> 05:28.140
+And we type in name of the class we want in this case, where the repository then this will tell the
+
+05:28.140 --> 05:34.890
+compiler that this is indeed a class repository that is kind of like singleton, meaning we won't be
+
+05:34.890 --> 05:37.180
+able to create many instances of it.
+
+05:37.200 --> 05:42.000
+So there will only be one instance of repository which makes sense because the idea here is that we
+
+05:42.010 --> 05:48.570
+factually data from somewhere as an example, and then we don't have to recreate this repository as
+
+05:48.570 --> 05:49.260
+when we want it.
+
+05:49.410 --> 05:53.130
+So here I'm going to create a property for this class or a field.
+
+05:53.520 --> 06:00.090
+I'm going to use private to say that this vowel here or this, this property cannot be accessed outside
+
+06:00.090 --> 06:01.740
+of this class.
+
+06:02.210 --> 06:09.330
+Say, and let's say load state or load state is going to be of type result.
+
+06:09.840 --> 06:10.230
+OK.
+
+06:11.760 --> 06:17.550
+And in the beginning, I'm going to set it to result that failure.
+
+06:18.510 --> 06:23.340
+In fact, what I can do, I'm going to add another go back to our Inam here.
+
+06:23.340 --> 06:28.790
+I'm going to add another state here called idle, right?
+
+06:28.800 --> 06:29.910
+So nothing really is happening.
+
+06:29.910 --> 06:30.660
+It's just idle.
+
+06:30.930 --> 06:40.890
+OK, so when we do that, of course, and the say result idle and then just put your print idle, OK?
+
+06:41.190 --> 06:42.920
+And so that's what we're going to do.
+
+06:42.930 --> 06:45.840
+So in our repository, we create a load state variable.
+
+06:46.740 --> 06:50.400
+And then we pass the failure from our.
+
+06:50.700 --> 06:55.820
+And in this case, actually, we're going to pass the idle, as I said, the first state, OK.
+
+06:56.400 --> 07:01.770
+And then we are going to add because we are understanding the were trying to simulate something that
+
+07:01.770 --> 07:04.140
+goes infectious data somewhere remotely.
+
+07:04.500 --> 07:09.920
+So here I'm going to create another private VAR now because I want to change this.
+
+07:09.930 --> 07:16.200
+In fact, let's make this also VAR because we want these to be able to be we want these to be immutable
+
+07:16.680 --> 07:22.350
+and I want to say data fetched like this and this.
+
+07:22.350 --> 07:27.270
+For now, this is going to be a string and I'm going to make it null to begin with.
+
+07:27.300 --> 07:32.160
+Now this is going to be a problem because we must do something to make this Nullarbor.
+
+07:32.170 --> 07:34.390
+We have to put the exclamation point that section.
+
+07:34.840 --> 07:35.740
+OK, there we go.
+
+07:35.760 --> 07:36.990
+So we're making progress here.
+
+07:37.350 --> 07:39.870
+Max, I'm going to create a function for you, actually.
+
+07:39.870 --> 07:44.130
+But let's start with one and let's say start fetch.
+
+07:45.210 --> 07:49.980
+OK, so what is that we want to happen, we want to happen when the fact starts.
+
+07:50.100 --> 07:55.230
+Well, when we starting to fetch something, we want to change the states, I'm going to say load state
+
+07:55.440 --> 08:00.480
+in this case is going to be equal to load state or actually result.
+
+08:00.930 --> 08:01.290
+OK.
+
+08:01.650 --> 08:09.780
+And I'll add a new one here, another state called Loading, which means in our Inam, we have to create
+
+08:09.960 --> 08:12.510
+that state here loading a such.
+
+08:14.290 --> 08:24.490
+OK, so now as a result, loading like this and as it's loading the data variable, they're fetched
+
+08:24.490 --> 08:27.550
+at this point, just going to be data like this.
+
+08:27.940 --> 08:28.330
+All right.
+
+08:28.630 --> 08:36.010
+Because we started fetching, says Loading, would change the state and then we pass some data to our
+
+08:36.730 --> 08:41.740
+data fetched property and we can do the same thing for other states.
+
+08:41.870 --> 08:43.360
+It's a fun way.
+
+08:43.960 --> 08:56.230
+When they finished, fetch this and then I'm going to say load state, I'm going to attach it to result.
+
+08:57.540 --> 09:03.360
+Success once we know the result is success, what we can do here, we can say that affect and just give
+
+09:03.360 --> 09:09.540
+it, and not because we know that we already got the data like so it's good, so we just go back to
+
+09:09.540 --> 09:09.810
+normal.
+
+09:10.230 --> 09:12.690
+What happens if there's an error was fun
+
+09:15.600 --> 09:16.200
+error.
+
+09:17.910 --> 09:22.410
+And if that's the case, I'm just going to say load state and said that will result.
+
+09:24.550 --> 09:27.430
+Either error or failure, either one of those work.
+
+09:27.460 --> 09:34.030
+I'm going to use error and what we can do again, I can just create another function here just that
+
+09:34.030 --> 09:37.240
+will get current state.
+
+09:38.760 --> 09:41.230
+OK, this function obviously will return.
+
+09:42.670 --> 09:43.720
+Our result.
+
+09:44.940 --> 09:49.250
+Type, and I'm just going to return the load.
+
+09:49.440 --> 09:51.720
+State said concept here is very simple.
+
+09:51.720 --> 09:58.290
+We have a repository that will take care abstract out all of the process that we have of getting information.
+
+09:58.410 --> 10:00.930
+We assuming it is information will of this.
+
+10:00.930 --> 10:05.400
+Obviously coming from somewhere could be a database could be an API somewhere.
+
+10:05.580 --> 10:07.620
+We have no control over.
+
+10:07.890 --> 10:12.420
+So now we can use this repository instead of what we did earlier here.
+
+10:12.420 --> 10:17.790
+I'm going to get rid of all of this now because we attached to this class repository object to say,
+
+10:17.790 --> 10:19.290
+OK, we just want to one instance.
+
+10:19.710 --> 10:26.340
+We don't have to instantiate notice that in May now I can just directly say repository, that's that
+
+10:26.460 --> 10:29.370
+and then access any functions that we created.
+
+10:30.210 --> 10:35.040
+So I'm going to start with start fetch, then I'm going to say, get a result.
+
+10:35.250 --> 10:38.490
+Look at this result is waiting for a result.
+
+10:39.270 --> 10:44.750
+In this case, I'm going to say a repository again and I'm going to get current state.
+
+10:45.030 --> 10:46.050
+Where is this coming from?
+
+10:46.230 --> 10:48.600
+Well, if you notice at the bottom here, I have this.
+
+10:48.930 --> 10:56.010
+Get current state because as we go through the process here in all this function, we are actually setting
+
+10:56.010 --> 10:58.800
+up that state right when we say start fetch.
+
+10:58.830 --> 11:04.260
+We set the load state, this this field here to resolve that.
+
+11:04.260 --> 11:04.680
+Loading.
+
+11:05.590 --> 11:07.900
+And we say that effect is equal to data and so forth.
+
+11:08.770 --> 11:15.940
+So when we say get current state, it will get the current state because we are returning the load state,
+
+11:16.150 --> 11:21.820
+which has been going through the process here, inciting sort fetch, Phoenix Dispatch and so forth.
+
+11:22.690 --> 11:24.310
+So that's why we can't pass that.
+
+11:24.310 --> 11:29.440
+To get resolved themselves with salt needs a result tag, which is an enormous point, and we get the
+
+11:29.440 --> 11:30.040
+current state.
+
+11:30.250 --> 11:30.990
+And voila!
+
+11:32.650 --> 11:33.040
+All right.
+
+11:33.910 --> 11:36.880
+So I'm going to continue repository again.
+
+11:37.690 --> 11:45.630
+And let's see once they finish their also call again, get a result and pass result here.
+
+11:45.640 --> 11:51.820
+It's going to be a repository, not get current state repository again.
+
+11:52.270 --> 11:56.230
+That error result in the same thing.
+
+11:56.740 --> 12:04.420
+And then finally, I can just say get state that final once it gets resolved and pass a result.
+
+12:05.140 --> 12:06.910
+OK, so we can stop here.
+
+12:07.150 --> 12:09.100
+Let's go ahead and run this and see what's going to happen.
+
+12:09.100 --> 12:09.850
+So I'm going to run.
+
+12:11.390 --> 12:17.300
+This wall should simulate the process of fetching data and go through all that, so we're able to pull
+
+12:17.300 --> 12:24.200
+together a very simple state machine, if you will, because we are controlling this state of a process
+
+12:24.440 --> 12:31.490
+of a fictitious process that will allow us to go and fetch something from the internet on API or somewhere
+
+12:32.390 --> 12:33.440
+or a database.
+
+12:33.530 --> 12:34.220
+It doesn't matter.
+
+12:34.380 --> 12:34.650
+Right?
+
+12:34.670 --> 12:37.550
+So we start from a state idol and then success error.
+
+12:37.760 --> 12:41.750
+But we are passing through this process, these states, as they change.
+
+12:42.770 --> 12:46.070
+Build upon this concept at this point we're using in arms.
+
+12:46.450 --> 12:51.830
+Next, we're going to look at the shortcomings of using in for such a state management.
+
+12:52.010 --> 12:58.730
+So in the next lectures, we will start deciphering internally shortcomings of using enemies as we are
+
+12:58.730 --> 13:02.240
+doing here to control this state, as you see here.
+
+13:03.110 --> 13:08.210
+It looks great now, but there are some pitfalls that we need to be aware of, and we're going to learn
+
+13:08.630 --> 13:10.850
+how to use other tools to fix that.

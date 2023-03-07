@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00.720 --> 00:05.310
+OK, so next, let's set up the dye, so dependency injection with the hilt.
+
+00:07.190 --> 00:12.020
+Right at the top of our package here, I'm going to click create a new.
+
+00:12.990 --> 00:15.420
+Class is going to be cut in class.
+
+00:16.200 --> 00:20.570
+This is going to be trivia application.
+
+00:20.860 --> 00:21.120
+Right?
+
+00:22.050 --> 00:27.510
+And it's going to be at the root of our package, their application, and we're going to pass and we're
+
+00:27.510 --> 00:28.680
+going to make it a hilt.
+
+00:29.040 --> 00:39.750
+So we at hilt Android app, this is going to tie everything with and make sure that also we are inheriting
+
+00:39.750 --> 00:42.150
+from application Android.
+
+00:42.210 --> 00:42.720
+Like this?
+
+00:43.320 --> 00:52.980
+OK, our application level class, which will govern this entire application and give Hilde the capability
+
+00:52.980 --> 00:58.500
+of binding all the dependencies throughout the entire application, the entire app project here.
+
+00:59.020 --> 00:59.250
+OK.
+
+00:59.700 --> 01:06.510
+That means then we have to go to our manifest here and make it official by saying Android name and pass
+
+01:06.510 --> 01:11.670
+our trivia application like this to say that indeed we have registering these three year application
+
+01:11.670 --> 01:19.020
+hilt Android app here in our Android Manifest file, which means that the entire app will have access
+
+01:19.290 --> 01:21.090
+would allow the binding to happen.
+
+01:21.360 --> 01:26.010
+And why, while we here, let's add to the user's permission and say internet, because we will need
+
+01:26.400 --> 01:32.420
+internet permission for us to be able to retrieve data from our JSON.
+
+01:33.370 --> 01:34.530
+So we're done here.
+
+01:36.150 --> 01:37.680
+Get rid of the application as well.
+
+01:38.040 --> 01:40.890
+Next inside of our D-I here, this is what we're going to create.
+
+01:40.890 --> 01:41.940
+Our app model.
+
+01:42.180 --> 01:43.410
+Our app module.
+
+01:43.770 --> 01:45.720
+So this is going to be actually just an object.
+
+01:45.870 --> 01:46.410
+That's fine.
+
+01:46.800 --> 01:51.870
+And when I call this app module, such.
+
+01:53.530 --> 02:00.230
+And I'm going to say at module to say this is a dagger or held module, and I'm going to put that.
+
+02:00.670 --> 02:09.250
+And also, I'm going to add here, I install in to say this is going to get a pass to singleton component.
+
+02:10.020 --> 02:11.800
+All right, class such.
+
+02:12.220 --> 02:17.350
+And here is where we add all the providers that we need for the application, right?
+
+02:17.350 --> 02:22.510
+So we can pass, for instance, providing the repository, we can provide the Dow.
+
+02:22.510 --> 02:27.640
+We can provide and provide the class that will ease things, a retrofit.
+
+02:27.820 --> 02:33.250
+And while I'm here, also inside of our hotels here, I'm going to create a class.
+
+02:35.350 --> 02:36.080
+Or a file?
+
+02:36.880 --> 02:39.970
+And let's create this one call constants.
+
+02:41.860 --> 02:45.670
+So here is where I'm going to just add a few questions here.
+
+02:45.670 --> 02:51.940
+So I'm going to do I'm just make this an object such that way, there's no instantiation.
+
+02:51.950 --> 02:53.670
+It's just a singleton, right?
+
+02:54.280 --> 02:57.580
+And here, I'm going to say, caused a vowel.
+
+02:59.640 --> 03:02.280
+It's a constant and I'm going to call this a base.
+
+03:02.580 --> 03:03.870
+You are allies.
+
+03:04.110 --> 03:06.270
+So this is why we're going to add the URL.
+
+03:08.100 --> 03:12.150
+To our Jason, this.
+
+03:13.780 --> 03:16.540
+Now, because in retrofit, things are a little bit different.
+
+03:16.570 --> 03:16.930
+Right?
+
+03:16.960 --> 03:20.350
+You will see is that even though this is the main real?
+
+03:20.380 --> 03:24.700
+In fact, I going to put that inside of a comment, so we have access to that.
+
+03:25.150 --> 03:29.650
+So we are actually going to get rid of this part, the last part, because we're going to pass that
+
+03:29.650 --> 03:30.370
+as a path.
+
+03:30.730 --> 03:36.520
+So we're going to stop at the last forward slash like you see here to say this is indeed a base URL.
+
+03:36.700 --> 03:38.620
+Whatever comes after is just a path.
+
+03:39.010 --> 03:40.120
+We're going to use that in a second.
+
+03:40.540 --> 03:46.780
+So now we have a constant that means then we can create a an interface, which is going to be our the
+
+03:46.780 --> 03:47.340
+API.
+
+03:47.350 --> 03:52.780
+They're going to be using to create a call that needs to happen to get this information here.
+
+03:52.900 --> 03:53.620
+This JSON.
+
+03:54.190 --> 03:59.620
+So instead of our network here, I'm going to create a new class and this is going to be an interface
+
+04:00.160 --> 04:05.470
+when I call this to say, let's say the question API.
+
+04:07.310 --> 04:09.380
+The say question API as such.
+
+04:09.890 --> 04:11.930
+So again, this question API is an interface.
+
+04:12.200 --> 04:15.170
+We want this to be a singleton sequence at Singleton.
+
+04:16.190 --> 04:20.300
+All we want to pass here is ad get noticed.
+
+04:20.300 --> 04:21.740
+This get is from retrofit.
+
+04:22.160 --> 04:26.570
+This is what we're going to be using as a see go back to our retrofit.
+
+04:27.180 --> 04:28.600
+See, that's where we pass.
+
+04:28.600 --> 04:29.600
+So we're passing here.
+
+04:30.110 --> 04:34.610
+So we're saying here we're going to pass the path where we can get the information in this case.
+
+04:34.790 --> 04:36.920
+Go pass the JSON.
+
+04:37.220 --> 04:39.200
+So we use that to get the annotation.
+
+04:39.410 --> 04:41.120
+And then here we're going to pass the value.
+
+04:41.180 --> 04:48.930
+This is where we pass the world that Jason may have to import that like this.
+
+04:48.940 --> 04:50.430
+So this is all from HTP.
+
+04:50.990 --> 04:53.390
+This is all from retrofit HTP.
+
+04:54.200 --> 04:55.300
+Now we're not done.
+
+04:55.310 --> 05:00.680
+So we're going to say suspend because we know that this has to be outside of the main thread had to
+
+05:00.680 --> 05:01.430
+have in the background.
+
+05:01.430 --> 05:06.290
+So we're going to make this spendable function when I call this get all questions.
+
+05:06.320 --> 05:09.650
+So what I'm doing here, I'm just getting all the questions for my trivia.
+
+05:09.950 --> 05:15.110
+And of course, this is going to be a question type that we're going to be wanting to receive.
+
+05:15.440 --> 05:21.950
+What that means if I go to our module here, I'm just going to get in list containing question items,
+
+05:21.950 --> 05:28.880
+which is going to be the actual data class that contains an instance of a question answer, category
+
+05:28.880 --> 05:30.350
+choices and the question.
+
+05:30.740 --> 05:32.090
+It's an interface in this case.
+
+05:32.090 --> 05:33.410
+That means that we don't have it.
+
+05:33.650 --> 05:37.940
+That means we have to we don't have to create the body of this get or question.
+
+05:38.290 --> 05:40.490
+This is going to be created at the class level.
+
+05:41.240 --> 05:44.990
+So having this all this structure, get rid of some of this.
+
+05:45.470 --> 05:47.590
+We are now ready to go to our app model.
+
+05:47.600 --> 05:51.050
+We'll need to create, instantiate or retrofit.
+
+05:51.200 --> 05:58.970
+Now that's going to be done because we want this to be as close as as close as possible to a clean architecture
+
+05:58.970 --> 06:04.840
+to have all this compartmentalised classes that do one thing only in our app model.
+
+06:04.850 --> 06:11.330
+Here we are going to create a provider that will provide us the retrofit right object, the builder
+
+06:11.330 --> 06:11.900
+that we need.
+
+06:12.150 --> 06:17.330
+OK, so can I say that this is inside of our app module, right?
+
+06:17.330 --> 06:22.210
+So I'm going to say it's going to be a singleton because we don't want a repetition or we want it.
+
+06:22.220 --> 06:26.300
+We don't want many instances of this class to be floating around.
+
+06:26.630 --> 06:31.130
+And this is going to be a provider because it's going to provide something in our dependencies.
+
+06:31.490 --> 06:36.080
+So I say fun and I say provide notice the naming convention here.
+
+06:36.410 --> 06:45.680
+Question API like this and of course, is going to inherit from question API that we created, which
+
+06:45.680 --> 06:49.400
+means then the body here where it needs to return.
+
+06:50.300 --> 06:51.440
+Let's say retrofit.
+
+06:52.970 --> 06:55.190
+OK, that builder.
+
+06:56.230 --> 07:05.820
+And then to build everything in your line, that baseline line or base early to pass that base URL.
+
+07:06.070 --> 07:09.630
+We have that based URL, which is our from constants.
+
+07:10.630 --> 07:17.470
+And I'm going to get the base URL and then we are going to do something else because we need it to pass
+
+07:17.470 --> 07:21.370
+in that converter to make it easy for us to convert.
+
+07:21.790 --> 07:29.920
+What are we getting, for instance, from our JSON here into objects, into objects that we can then
+
+07:29.920 --> 07:33.330
+convert them into the object that we create here?
+
+07:33.340 --> 07:35.170
+Like a question, item or question there?
+
+07:35.560 --> 07:42.970
+We need to pass along the converter here since they dot add converter factory or such.
+
+07:42.970 --> 07:45.400
+And when I say, Gee Sun like this.
+
+07:46.790 --> 07:47.570
+Converter.
+
+07:49.990 --> 07:52.990
+Factory as such that create.
+
+07:54.730 --> 07:55.030
+All right.
+
+07:55.120 --> 07:58.240
+So I'm creating that, which means I'll have to import that now.
+
+07:58.360 --> 07:59.230
+This is possible.
+
+07:59.470 --> 08:03.400
+We're getting advice from retrofit because we added this dependency earlier.
+
+08:03.640 --> 08:05.020
+OK, very good.
+
+08:05.020 --> 08:12.040
+And then I'm going to say, build that build that is and then I'm going to create that service.
+
+08:12.620 --> 08:13.140
+Aha.
+
+08:13.150 --> 08:15.570
+So I'm putting all in one place.
+
+08:15.580 --> 08:20.140
+I'm going to create that service and to pass the class that is responsible to create that service.
+
+08:20.290 --> 08:22.170
+So I'm going to say question API.
+
+08:22.750 --> 08:26.260
+It's going to be your C class at Java as such.
+
+08:27.740 --> 08:33.170
+So we're adding this in our module, because remember, this will allow us to create this provider to
+
+08:33.170 --> 08:37.380
+provide this dependency to anybody who needs this dependency.
+
+08:37.400 --> 08:42.290
+So the whole project will have access to this dependency, which is great and this is going to be a
+
+08:42.290 --> 08:48.260
+singleton, which means which means we're just going to have one instance created of our of our providers
+
+08:48.260 --> 08:48.560
+here.
+
+08:48.860 --> 08:49.120
+Right.
+
+08:49.130 --> 08:51.440
+I'll retrofit, which is what exactly what we want.
+
+08:51.680 --> 08:52.340
+So there we go.
+
+08:52.580 --> 08:55.280
+Now again, remember this base URL here.
+
+08:55.550 --> 08:56.240
+Notice the difference.
+
+08:56.240 --> 08:57.890
+We just have to base URL.
+
+08:58.190 --> 09:04.850
+I said earlier we got rid of the path because we needed that path to show inside of our question API
+
+09:05.150 --> 09:08.890
+that needs to be passed because then it will know it's OK.
+
+09:08.900 --> 09:11.900
+Get what we're going to get this path here.
+
+09:13.260 --> 09:17.520
+So he's going to spend this path to.
+
+09:18.660 --> 09:25.380
+These bases are out to get the whole payload in this case here, retrofit is really straightforward
+
+09:25.380 --> 09:34.110
+because we just have one path, but in a complex API JSON API, you can see that he can perform a lot
+
+09:34.110 --> 09:35.550
+of different requests, right?
+
+09:35.580 --> 09:41.110
+You can put other functions here in this API, for instance, if you want to get in passing ID to get
+
+09:41.110 --> 09:47.460
+a certain item in a database through the API and so forth so you can do things like this, it's much
+
+09:47.460 --> 09:53.910
+easier because then we can append other things or other paths, if you will, or IDs and so forth.
+
+09:54.300 --> 09:55.050
+But this is simple.
+
+09:55.200 --> 09:57.330
+So it works even better, too.
+
+09:57.750 --> 09:58.140
+All right.
+
+09:58.140 --> 09:59.990
+So we are making good progress here.
+
+10:00.000 --> 10:06.420
+I know there aren't a lot of things visually that we can see and feel good about ourselves, but this
+
+10:06.420 --> 10:12.270
+is the setting up and it's important to make sure that everything is set up and then we move forward
+
+10:12.690 --> 10:13.140
+like that.

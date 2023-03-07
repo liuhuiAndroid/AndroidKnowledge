@@ -1,0 +1,421 @@
+WEBVTT
+
+00:00.120 --> 00:06.870
+So in order to create an actual user that will be added into our users database, we're going to do
+
+00:06.870 --> 00:07.710
+something really cool.
+
+00:07.740 --> 00:16.200
+Let's go back to our login screen view model and where we create user with email right after we know
+
+00:16.200 --> 00:17.580
+that this is successful.
+
+00:20.090 --> 00:26.930
+We're going to do as follow, let's say, foul, I'm going to create a variable called display name.
+
+00:27.590 --> 00:33.020
+OK, so what I'm going to do here is let's take this task object.
+
+00:34.130 --> 00:39.260
+This task object has a lot of information, as you will see someone say task that I'm going to get the
+
+00:39.260 --> 00:46.580
+result and then I'm going to go ahead and get the user that was just created right like this.
+
+00:46.940 --> 00:49.370
+And then I'm going to go and get the email that user.
+
+00:49.970 --> 00:51.470
+But I don't want just email.
+
+00:51.560 --> 00:55.820
+What I'm going to do is the email is usually something like this me.
+
+00:56.810 --> 01:01.160
+See me at Gmail.
+
+01:02.650 --> 01:03.090
+Dot com.
+
+01:03.790 --> 01:07.390
+What I'm going to do is said I want to just get the name right.
+
+01:07.780 --> 01:09.130
+The username of the person.
+
+01:10.500 --> 01:14.910
+And then create a display name and then get rid of anything else after that.
+
+01:16.170 --> 01:16.470
+All right.
+
+01:17.250 --> 01:24.870
+So to do that, I'm going to use the split function can pass regular expression there to say, where
+
+01:24.870 --> 01:26.070
+do we want to split this from?
+
+01:26.340 --> 01:29.520
+I want to split things from the at character.
+
+01:29.540 --> 01:31.480
+In fact, let me just put inside of a character.
+
+01:31.500 --> 01:32.610
+Perhaps this will be better.
+
+01:33.540 --> 01:34.740
+Say at like this.
+
+01:35.190 --> 01:39.810
+OK, now we have some issues here because we need to make sure that we replace with safe.
+
+01:41.010 --> 01:50.760
+And so what this will return actually will return an array that will divide everything from this side.
+
+01:51.900 --> 01:52.380
+Like this?
+
+01:52.860 --> 01:54.060
+So what I'm going to do now.
+
+01:54.300 --> 01:59.070
+This is going to be index zero and the rest is going to be index one, so I just won the index zero,
+
+01:59.070 --> 02:01.860
+which is going to be the actual display, name or username.
+
+02:02.280 --> 02:02.540
+All right.
+
+02:02.970 --> 02:06.780
+So I'm just going to go ahead and say, get the index zero item.
+
+02:07.380 --> 02:09.990
+Looks like we need to replace with safe like this.
+
+02:11.640 --> 02:11.940
+OK.
+
+02:13.730 --> 02:14.090
+All right.
+
+02:14.780 --> 02:22.280
+So now I should have something just like this me for the display name, and I'm going to use that then
+
+02:22.280 --> 02:27.170
+to pass it along this other method, I'm going to create another function called Create.
+
+02:29.930 --> 02:37.070
+User and when it passed, the display name was go ahead and create this, create user function and there
+
+02:37.070 --> 02:38.150
+it is, was created.
+
+02:38.810 --> 02:40.610
+And what is that want to happen here?
+
+02:40.880 --> 02:44.390
+One, we're going to obviously add this user.
+
+02:45.670 --> 02:47.320
+As an object here in our database.
+
+02:47.590 --> 02:50.230
+But for that, we need a few pieces of information.
+
+02:50.830 --> 02:58.870
+Number one, as we add these users, we also want to be able to have a field right that will be that
+
+02:58.870 --> 03:00.580
+will contain the user ID.
+
+03:01.450 --> 03:08.440
+If you go back to our authentication here, you'll see that our User ID or our users, they all have
+
+03:08.440 --> 03:09.940
+this you ID here.
+
+03:10.790 --> 03:12.850
+So this is their ID, unique ID.
+
+03:13.540 --> 03:14.860
+So we want to get married.
+
+03:15.340 --> 03:21.220
+And so when we create this it or we're going to be adding into our user base, we want to attach it
+
+03:21.460 --> 03:23.350
+just like we have first name and last name.
+
+03:23.680 --> 03:25.600
+We want to attach it as a user ID.
+
+03:27.300 --> 03:27.650
+OK.
+
+03:27.810 --> 03:28.770
+For this user.
+
+03:29.520 --> 03:30.420
+So how do we do this?
+
+03:30.750 --> 03:34.440
+Well, I'm going to say Val, let's say user ID.
+
+03:35.040 --> 03:41.910
+I can get that from us object because it knows everything really and say current user and get the UI
+
+03:41.910 --> 03:45.510
+ID because it has the reference of the current user.
+
+03:45.510 --> 03:51.720
+It's logged in because at this point we have logged in user and off holds that user ID with it.
+
+03:53.350 --> 03:54.280
+Like an obsession?
+
+03:54.550 --> 03:59.470
+OK, let's go ahead and replace like this, no labels.
+
+04:00.190 --> 04:02.650
+OK, so next, now we are going to create.
+
+04:02.830 --> 04:08.590
+Then the user that we want to pass along here so we can then save it.
+
+04:08.800 --> 04:10.870
+How do we create that user object?
+
+04:10.930 --> 04:16.480
+Now, remember to save anything into our user database here and into our.
+
+04:17.500 --> 04:19.960
+There are certain types that need to be created.
+
+04:20.110 --> 04:21.760
+In this case, we need a hash map.
+
+04:22.300 --> 04:26.560
+So for now, I'm just going to create a vowel called user.
+
+04:27.880 --> 04:30.730
+It's just going to be a mutable.
+
+04:33.730 --> 04:35.260
+Map of.
+
+04:39.560 --> 04:42.370
+Can have string and any like this.
+
+04:42.380 --> 04:47.900
+We're going to change this in a way, but then I can see user for the key, I'm going to say.
+
+04:50.010 --> 04:57.420
+User underscore I.D. When I said that to a user ID that we're passing, we've got there.
+
+04:59.760 --> 05:00.540
+To string.
+
+05:00.690 --> 05:02.550
+It looks like that's what's going to happen.
+
+05:03.360 --> 05:06.050
+And I'm going to say user again.
+
+05:08.600 --> 05:18.680
+Let's just say display name for now, display name like this, and this is going to be display name
+
+05:19.010 --> 05:19.940
+that we're passing there.
+
+05:20.550 --> 05:25.250
+OK, I can just go ahead and see like this or just say to a string, I'm going to just say to string
+
+05:26.330 --> 05:27.260
+to specify the type.
+
+05:27.500 --> 05:27.790
+All right.
+
+05:28.280 --> 05:33.170
+So now we have our user, which is going to be a map, which are the type, which is the type that is
+
+05:33.170 --> 05:34.610
+needed for Firebase.
+
+05:35.330 --> 05:38.510
+So now it's easy for me to go and do the following.
+
+05:39.140 --> 05:42.950
+I'm going to say Firebase stingier to Firebase Firestorm.
+
+05:42.950 --> 05:44.240
+That's what we need, by the way.
+
+05:44.900 --> 05:50.390
+Say Dot, get instance like this and I'm going to create a collection and the collection is going to
+
+05:50.390 --> 05:52.060
+be users.
+
+05:52.670 --> 05:53.030
+OK?
+
+05:54.140 --> 05:58.460
+And then when I see that ad in this case, when add our user.
+
+05:59.780 --> 06:05.810
+So now this create user is going to be called any time the moment that when we create a user with emailing
+
+06:06.170 --> 06:15.050
+and password, the moment we know this task is successful, we are going to remove all the junk from
+
+06:15.050 --> 06:23.330
+our email and so forth and get the first item before the at sign to make that our display name.
+
+06:23.330 --> 06:30.320
+And we're going to pass that along to our Create user, which in turn takes that wraps it inside of
+
+06:30.350 --> 06:32.180
+a mutable map of.
+
+06:32.600 --> 06:33.980
+And then we're passing the user ID.
+
+06:34.340 --> 06:34.940
+And with that.
+
+06:35.390 --> 06:37.670
+So now we should have a user when we add this.
+
+06:37.940 --> 06:41.570
+That's going to have a user play name or display name and a user ID.
+
+06:42.050 --> 06:44.300
+Of course, later we're going to add other fields and so forth.
+
+06:44.300 --> 06:45.560
+But this is just for testing.
+
+06:45.920 --> 06:47.060
+Let's go ahead and run this.
+
+06:51.410 --> 06:52.400
+All right, let's go ahead.
+
+06:52.430 --> 06:56.420
+We need to sign up again, because that's that's how all of this will work.
+
+06:57.110 --> 06:57.950
+And.
+
+06:59.840 --> 07:01.040
+Say Rafael.
+
+07:03.550 --> 07:04.800
+I mean, come.
+
+07:07.950 --> 07:09.570
+Let's go ahead and say click.
+
+07:10.900 --> 07:17.500
+And while we went home, that means everything worked, and we should have we go back to our users when
+
+07:17.500 --> 07:21.430
+a refresh for goes well, we should see, another user added.
+
+07:21.460 --> 07:26.370
+In fact, I think I didn't have to refresh at all because I was a user who was already added there.
+
+07:26.380 --> 07:27.040
+I think, OK.
+
+07:27.070 --> 07:27.490
+There we go.
+
+07:27.790 --> 07:28.420
+There it is.
+
+07:28.600 --> 07:34.360
+You see, there's Rafael and we have the user I.D., which is awesome in these user ID.
+
+07:34.520 --> 07:36.430
+Be 80g Jay-Z.
+
+07:36.670 --> 07:38.710
+Let's go to our arth.
+
+07:39.950 --> 07:42.020
+And she'd have the same ID.
+
+07:43.150 --> 07:43.720
+Awesome.
+
+07:44.260 --> 07:48.020
+You'll see the advantages will have later to what we have right now.
+
+07:48.040 --> 07:49.060
+This is really, really good.
+
+07:49.930 --> 07:50.290
+All right.
+
+07:50.680 --> 07:51.430
+Congratulations.
+
+07:51.510 --> 07:52.510
+So it wasn't that hard.
+
+07:52.750 --> 07:58.600
+You see here, once we have this system, all of the parts put together, right?
+
+07:59.920 --> 08:06.910
+It's really easy to get everything around everything up and start using it so you can look at the far
+
+08:06.910 --> 08:07.810
+base of our story.
+
+08:07.820 --> 08:08.770
+It's really easy to use.
+
+08:08.770 --> 08:09.250
+It's not real.
+
+08:09.250 --> 08:10.300
+They're hardly setting up.
+
+08:10.300 --> 08:14.680
+Can, you know, take a little bit of time and you have to be a little bit careful?
+
+08:14.950 --> 08:21.610
+But once everything is set up, it's really, really easy to create to use the back end here, create
+
+08:22.090 --> 08:22.910
+all database.
+
+08:22.930 --> 08:23.800
+Users database.
+
+08:23.800 --> 08:29.470
+We can create other collections, obviously, but we have this database, which has collections, we
+
+08:29.470 --> 08:35.710
+have users and so forth, and we can create authenticate users and create users and log them in.
+
+08:36.070 --> 08:37.530
+And all of that is given.
+
+08:37.550 --> 08:43.360
+We didn't have to create all of these infrastructure ourselves, which is really awesome.
+
+08:43.840 --> 08:44.140
+All right.
+
+08:44.140 --> 08:50.230
+So we're able then to actually create our users and add them into our users.
+
+08:51.720 --> 08:52.530
+Collection here.

@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.510 --> 00:03.510
+All right, so next, let's continue here and add the rest.
+
+00:03.970 --> 00:10.110
+OK, so after a spacer, we are going to add the description.
+
+00:12.140 --> 00:19.670
+Now the description here, if you go, let's go back to our source here, description can be a very
+
+00:19.670 --> 00:23.150
+long amount of test text, right?
+
+00:23.480 --> 00:30.350
+So what do we need to do is we need to get what we need to make sure that this is inside of a scrollable
+
+00:30.710 --> 00:38.000
+view per say, used one four many times, which is the lazy column, so we can use that as a lazy column.
+
+00:38.570 --> 00:39.200
+Go ahead.
+
+00:39.210 --> 00:40.940
+Let's add a modifier here.
+
+00:44.490 --> 00:49.330
+My fire pattern is pretty deep.
+
+00:49.500 --> 00:51.120
+All around, I think that's OK.
+
+00:51.600 --> 00:56.040
+And then inside and I say, item, just use that lamp right there.
+
+00:56.940 --> 01:03.180
+So here again, say text and pass the text, which is going to be the.
+
+01:08.820 --> 01:13.740
+Book data, uh, description like this.
+
+01:21.170 --> 01:24.350
+OK, let's go ahead and run and just see how things will look.
+
+01:27.520 --> 01:28.480
+OK, there we go.
+
+01:28.510 --> 01:29.830
+I can see it scrollable.
+
+01:30.310 --> 01:32.380
+And life is great, but it's not that great.
+
+01:33.340 --> 01:39.070
+No one, you can see that we have these HD metal tags because some of these text come.
+
+01:39.430 --> 01:44.020
+Some of this text is being probably passed or scraped from websites.
+
+01:44.210 --> 01:49.720
+OK, so we do have that HTML tag those estimable tags there, so we want to clean that up.
+
+01:50.050 --> 01:51.970
+Luckily, we do have a way to do so.
+
+01:52.600 --> 01:55.360
+So right inside here, let me go ahead and create.
+
+01:56.290 --> 02:02.350
+Actually, I would say I would say Val called this clean description.
+
+02:04.240 --> 02:07.090
+OK, so what I'm going to do, I'm going to use a call.
+
+02:07.330 --> 02:11.890
+HTML compact like this is from Android X core text.
+
+02:12.460 --> 02:18.910
+And when you invoke this from HTML in passing to source what is the source can to be book data.
+
+02:19.950 --> 02:27.630
+That description, as such, let's say, to string, it looks like we need to pass something there,
+
+02:27.630 --> 02:28.860
+just don't wrap that in.
+
+02:29.040 --> 02:32.670
+Get rid of that, OK, and then I'm going to pass.
+
+02:34.110 --> 02:37.500
+And then here I'm going to pass the flags.
+
+02:37.640 --> 02:39.810
+What's that about flags?
+
+02:40.320 --> 02:51.330
+Well, I'm going to say HTML compact, say, from mill mode legacy like this and say to string.
+
+02:52.290 --> 02:55.020
+OK, so now I can use that clean.
+
+02:56.230 --> 03:05.230
+Text inside here, if I run this, you will see that we no longer will see all of these Ishmael tags.
+
+03:05.830 --> 03:07.600
+So got a lot of text?
+
+03:08.110 --> 03:08.920
+That's wonderful.
+
+03:09.700 --> 03:14.530
+But you're not going to be able to see all those tags anymore in any of these.
+
+03:15.330 --> 03:15.820
+Let's go ahead.
+
+03:15.820 --> 03:16.510
+And this one.
+
+03:17.920 --> 03:18.910
+No more tags.
+
+03:19.240 --> 03:19.600
+Very good.
+
+03:19.870 --> 03:20.160
+All right.
+
+03:20.170 --> 03:22.720
+But this looks nothing like what we have here.
+
+03:22.730 --> 03:28.270
+So we want to create this little structure here so that we have the scrollable controlled in one place.
+
+03:29.080 --> 03:30.250
+So what are we going to do?
+
+03:30.970 --> 03:35.110
+Our lazy column here is actually going to be inside the surface.
+
+03:35.470 --> 03:38.590
+So I'm going to come here and say, surface, whoops.
+
+03:38.650 --> 03:42.070
+Not there outside.
+
+03:42.170 --> 03:44.020
+Actually, this could be inside, too.
+
+03:46.250 --> 03:56.200
+Well, I'm going to say surface, and let's pass a few things here, modifier, and I'm going to give
+
+03:56.200 --> 03:57.160
+it a height.
+
+03:57.850 --> 04:00.880
+Now, this height has to be a little bit different.
+
+04:00.880 --> 04:02.920
+Looks like I have a different modifier here.
+
+04:02.920 --> 04:07.060
+Let's say modifier gold padding, so we get the correct one.
+
+04:07.090 --> 04:07.390
+OK?
+
+04:09.250 --> 04:10.100
+Pass a height.
+
+04:10.120 --> 04:14.500
+So the height we're going to pass here is going to be a little bit different in that we are going to
+
+04:14.500 --> 04:20.470
+get the height from our resources display metrics because we want to control this height.
+
+04:20.860 --> 04:28.390
+I slide here, I'm going to zero several local dams and I'm going to say local context.
+
+04:31.950 --> 04:32.280
+OK.
+
+04:32.340 --> 04:39.720
+To get a contest, go to current in court resources, which will know exactly the size of our screen,
+
+04:39.720 --> 04:40.710
+all the dimensions.
+
+04:41.070 --> 04:41.340
+Right.
+
+04:41.760 --> 04:44.460
+And then we see that display metrics.
+
+04:45.150 --> 04:54.240
+OK, so then here what I'm going to pass is going to be local dams that height in pixels get a deep
+
+04:54.810 --> 04:56.040
+right the unit.
+
+04:56.640 --> 05:02.100
+And then I'm going to say multiply that by a multiplier was going to be zero point zero nine.
+
+05:02.100 --> 05:05.140
+So I'm going to make it small that way.
+
+05:05.160 --> 05:10.800
+This will grow to size depending on the screen size of the device.
+
+05:11.310 --> 05:11.730
+There we go.
+
+05:11.940 --> 05:13.950
+I had to add the f four float.
+
+05:14.460 --> 05:15.120
+OK, there we go.
+
+05:15.130 --> 05:16.110
+So that should be good.
+
+05:16.980 --> 05:27.090
+I'm going to also say dot padding of about four dpi going to add a shape around it.
+
+05:27.790 --> 05:39.540
+Uh, make it this rectangle or right rectangle shape such that I'm going to add a border border stroke
+
+05:40.350 --> 05:43.110
+width is going to be about one dpi.
+
+05:44.700 --> 05:45.570
+Give a color.
+
+05:47.940 --> 05:49.260
+Got a great it's fine.
+
+05:51.030 --> 05:51.480
+OK.
+
+05:51.810 --> 05:52.500
+Should be good.
+
+05:55.600 --> 06:01.450
+OK, so then all of this, I'm going to add, put it all inside there.
+
+06:01.630 --> 06:03.010
+OK, let's run this and see.
+
+06:06.370 --> 06:06.670
+OK.
+
+06:07.400 --> 06:10.940
+OK, looks much better right now.
+
+06:10.960 --> 06:18.860
+There's something about this category, I think, I think what I will do for all categories, I may
+
+06:18.860 --> 06:21.070
+pass also overflow here.
+
+06:23.280 --> 06:24.410
+I'm going to say.
+
+06:27.430 --> 06:28.420
+Overflow.
+
+06:30.830 --> 06:37.190
+Ellipses and for that to work, of course, we need to pass the max lines for, say, Max.
+
+06:39.750 --> 06:42.210
+Give me about three.
+
+06:43.080 --> 06:44.220
+OK, I think that's going to help.
+
+06:46.830 --> 06:47.460
+Let's run.
+
+06:48.210 --> 06:49.050
+Let's go check.
+
+06:51.720 --> 06:52.020
+OK.
+
+06:52.140 --> 06:55.860
+It looks much better like that, so that we don't have all of that stuff.
+
+06:56.700 --> 06:57.150
+All right.
+
+06:57.150 --> 06:57.600
+Very good.
+
+06:58.170 --> 07:04.500
+So what do you do next is add these two buttons I save and cancel.
+
+07:05.040 --> 07:08.160
+Now you may think, Well, how am I going to create a buttons like this?
+
+07:08.190 --> 07:10.710
+Well, it's very simple because we've already done this.
+
+07:11.010 --> 07:17.460
+OK, so think back to when we were creating this structure here that we have in the beginning right
+
+07:17.910 --> 07:18.270
+here.
+
+07:18.330 --> 07:18.870
+Remember this?
+
+07:19.710 --> 07:22.320
+Yes, that's exactly the same thing.
+
+07:22.680 --> 07:22.980
+All right.
+
+07:22.980 --> 07:24.960
+Go ahead and do that, and I'll see you next.

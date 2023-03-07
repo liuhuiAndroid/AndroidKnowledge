@@ -1,0 +1,496 @@
+WEBVTT
+
+00:00.450 --> 00:02.160
+So here's what we're going to do next.
+
+00:02.220 --> 00:04.260
+We're going to create a very simple application.
+
+00:04.680 --> 00:10.830
+What are we going to have a button of some sort or tappable UI widget?
+
+00:11.220 --> 00:17.250
+And when that is tapped like this circle is tapped, we want to increment the amount of money we'll
+
+00:17.250 --> 00:18.390
+see at the top there.
+
+00:18.630 --> 00:25.380
+So it's a very simple app, but it will give us some insights into compose and how certain things work.
+
+00:26.190 --> 00:27.510
+All right, let's go ahead and get started.
+
+00:28.200 --> 00:30.520
+So back in our project, let's clean things up.
+
+00:30.570 --> 00:32.670
+So there are a lot of things that we no longer need.
+
+00:33.660 --> 00:35.820
+In this case, I'm just going to get rid of all of this.
+
+00:38.590 --> 00:38.910
+OK.
+
+00:39.550 --> 00:45.550
+And then get rid of this switch just for testing purposes, I'm going to get rid of this composable
+
+00:46.090 --> 00:49.390
+as well, which means this needs to go.
+
+00:49.870 --> 00:50.920
+Can't do that anymore.
+
+00:51.010 --> 00:51.310
+OK.
+
+00:51.910 --> 00:52.180
+All right.
+
+00:52.180 --> 00:58.240
+So the first thing I'm going to do here inside of our set content we are passing, of course, the composed
+
+00:58.240 --> 01:04.210
+theme I don't have a surface we've talked about is taking over the entire screen at this point because
+
+01:04.210 --> 01:06.820
+we have max height and max width.
+
+01:07.150 --> 01:10.990
+We add some padding and at this point, let's just get rid of that because we're not going to need that.
+
+01:11.350 --> 01:12.970
+Of course, forget our comma there.
+
+01:13.510 --> 01:20.410
+OK, now one thing I want to do is, in fact, let's come back now.
+
+01:20.420 --> 01:26.200
+One thing I want to do is I want to remove this surface outside into its own place.
+
+01:26.320 --> 01:29.260
+So I'm going to create another composable here.
+
+01:29.260 --> 01:29.920
+So say at.
+
+01:31.720 --> 01:39.700
+Space at composable are such a fun call, is my app OK?
+
+01:41.530 --> 01:48.160
+And then for this, my app here, what I'm going to do, I'm going to get this entire surface there,
+
+01:48.220 --> 01:52.600
+but this is going to be our canvas for, say, I'm going to put it here as such.
+
+01:54.220 --> 01:54.520
+OK.
+
+01:56.340 --> 02:02.540
+And then for now, inside here, let's just say text and say hello.
+
+02:05.680 --> 02:09.160
+OK, I'm going to call my app, of course, inside here.
+
+02:09.280 --> 02:11.260
+My app has a composable.
+
+02:11.650 --> 02:12.190
+Very good.
+
+02:12.760 --> 02:15.490
+And then also my app here.
+
+02:15.490 --> 02:18.940
+So this is just a very simple way of organizing our composable.
+
+02:19.210 --> 02:24.460
+So we want to have it inside here because we want to be able to see in our preview here.
+
+02:24.460 --> 02:25.780
+So I'm going to go ahead and refresh.
+
+02:32.570 --> 02:36.110
+And there you have it, so we get what we are looking for.
+
+02:36.350 --> 02:41.690
+And the other thing you see to the right bottom right here, we can actually toggle the present.
+
+02:41.930 --> 02:44.090
+We can actually toggle the views here.
+
+02:44.090 --> 02:48.140
+I can maximize or zoom in or minimize zoom out.
+
+02:48.590 --> 02:52.280
+So in this case, if I go to click the Zoom to fit screen, click here.
+
+02:52.320 --> 02:56.990
+I can see it's going to go ahead and zoom to fit this real estate we have.
+
+02:57.530 --> 02:57.830
+OK.
+
+02:59.150 --> 03:02.210
+All right, so we have everything looking good, so there is the color.
+
+03:02.330 --> 03:04.310
+Primary color, because that's where we chose.
+
+03:04.820 --> 03:11.480
+The other thing I can do if I want to, for instance, add a customized color, I can get rid of this
+
+03:12.140 --> 03:15.890
+and I can invoke color classes that and pass.
+
+03:18.750 --> 03:21.840
+And pass in its constructor, I'm going to pass the.
+
+03:23.770 --> 03:31.060
+Code that will represent different culture that I want, right, so to pass the tax code as they seek
+
+03:31.510 --> 03:34.630
+to pass a hex code here, which will represent a color.
+
+03:35.020 --> 03:39.610
+The first thing they have to do this is zero X. And then I already have the I'm just going to.
+
+03:40.450 --> 03:42.370
+And then I already have the color somewhere.
+
+03:42.500 --> 03:43.270
+Go and find it.
+
+03:44.640 --> 03:45.970
+And I'm going to add it there.
+
+03:46.620 --> 03:52.140
+The other thing I'm going to add, I'm going CFF to begin with like this.
+
+03:53.370 --> 03:55.090
+And then the actual color, OK?
+
+03:56.220 --> 03:57.960
+Looks like this.
+
+03:58.410 --> 03:59.220
+All right, there we go.
+
+03:59.250 --> 04:01.290
+So these colors here, it doesn't matter, really.
+
+04:01.290 --> 04:04.830
+You can put whatever you want, but I just found that color to be great.
+
+04:04.830 --> 04:07.650
+So I'm going to go ahead and refresh this real quick to see the differences.
+
+04:08.640 --> 04:09.590
+OK, so there we go.
+
+04:09.600 --> 04:11.340
+We have that very nice color there.
+
+04:11.460 --> 04:11.850
+Very good.
+
+04:12.270 --> 04:13.080
+So that was a test.
+
+04:13.080 --> 04:15.270
+I'm going to get rid of this and continue.
+
+04:15.600 --> 04:17.280
+Now the next thing I want.
+
+04:17.340 --> 04:18.530
+So what is all I want to do?
+
+04:18.540 --> 04:23.070
+First of all, when I create a circle inside here, the different ways to create a circle.
+
+04:23.280 --> 04:29.220
+So I'm going to create yet another composable here, say at composable such.
+
+04:31.260 --> 04:35.670
+It's call safe fun, and I say create.
+
+04:37.260 --> 04:37.980
+Circle.
+
+04:39.560 --> 04:40.100
+Like this?
+
+04:41.480 --> 04:41.630
+OK.
+
+04:42.860 --> 04:45.110
+And inside here, I'm going to create a circle.
+
+04:45.170 --> 04:46.310
+How do I create a circle?
+
+04:46.560 --> 04:52.370
+As I said, there are different ways, but the basics is that we need to have some sort of the baseline
+
+04:52.370 --> 04:54.140
+or we have to have some sort of.
+
+04:55.280 --> 04:58.520
+The main composable we can call and then we can modify it.
+
+04:59.270 --> 05:04.430
+So let's start with a card or something and say, card it like this, so it is a composable hit enter.
+
+05:05.240 --> 05:08.690
+And for now, also I'm going to go ahead and make this reviewable.
+
+05:08.690 --> 05:10.970
+So that way I can also preview to the right here.
+
+05:11.510 --> 05:21.350
+So at preview such and in this card here, if you hover over, you will see that there are a lot of
+
+05:21.830 --> 05:23.360
+arguments that we can pass.
+
+05:24.500 --> 05:30.470
+Most important one, we have this modifier and we have the shape and background and so forth.
+
+05:31.040 --> 05:35.930
+And one thing that is very important the order in which these are added is very important as well.
+
+05:36.930 --> 05:39.870
+OK, so let's start with the modifier, because, well, allow us to modify.
+
+05:40.090 --> 05:41.640
+I didn't even play our card.
+
+05:42.720 --> 05:49.860
+OK, so I hear I'm going to pass the same modifier as such, and the I.D. will help us just hit enter
+
+05:50.130 --> 05:54.990
+and then pass modifier, and then we can call whatever one can use padding.
+
+05:55.170 --> 06:01.650
+Just put three that deep right and I can chain or a modifier I've shown before.
+
+06:02.040 --> 06:09.720
+So what I want to do is, for instance, I can see dot background and give it color to the background.
+
+06:10.290 --> 06:10.920
+All sort of things.
+
+06:12.180 --> 06:15.750
+But the other thing I want to do, I will stop with the modifier for now if I hover over here.
+
+06:15.960 --> 06:17.140
+There are other things we can pass.
+
+06:17.160 --> 06:18.360
+The other one is shape.
+
+06:18.870 --> 06:25.080
+What shape do I want this to have or to take so I can come here with Colin?
+
+06:25.260 --> 06:27.720
+Or I should say, and what's a shape?
+
+06:28.260 --> 06:30.620
+Now there are different kinds of shape we can pass.
+
+06:30.990 --> 06:35.520
+In this case, I'm going to just see circle shape as such.
+
+06:36.330 --> 06:40.080
+So this card as it is right now, let's go ahead and run this or refresh.
+
+06:40.320 --> 06:41.460
+Let's see what's going to happen.
+
+06:42.030 --> 06:43.710
+You can see it's very small.
+
+06:43.950 --> 06:45.470
+There is the card, right?
+
+06:45.900 --> 06:51.420
+It doesn't have much because number one, we don't have a size and it doesn't even show the circle shape.
+
+06:51.900 --> 06:52.950
+Let's see something here.
+
+06:53.190 --> 06:58.490
+If I come back to our modifier, say Dot, I'm going to say width.
+
+06:59.640 --> 07:01.710
+I such and you say width.
+
+07:01.710 --> 07:05.220
+And also there is height so we can specify the width and height.
+
+07:06.750 --> 07:10.860
+But there's also another way of doing this, I could also pass this size.
+
+07:11.220 --> 07:13.610
+So there are overloaded sizes.
+
+07:13.620 --> 07:15.600
+Function size functions here we have this size.
+
+07:15.600 --> 07:19.320
+Here you can see we passed just one size, right?
+
+07:19.770 --> 07:23.760
+If you passed that one size, that means it's going to take up four width and height.
+
+07:24.420 --> 07:28.080
+But you can specify size for width and height.
+
+07:28.740 --> 07:30.480
+You can specify sizing and so many.
+
+07:30.780 --> 07:35.920
+Now let's go just to size and say, I want this to be about 45 that deep.
+
+07:36.210 --> 07:39.660
+OK, I section, let's refresh.
+
+07:40.980 --> 07:41.760
+And just like that.
+
+07:41.940 --> 07:44.580
+Ladies and gentlemen, you can see we have our circle.
+
+07:46.050 --> 07:46.740
+Very good.
+
+07:47.130 --> 07:54.060
+So again, because of modifier, we say padding, it's going to be about three deep and the size is
+
+07:54.060 --> 07:57.990
+going to be 45, so the smaller the size, obviously, the smaller the circle's going to be.
+
+07:58.440 --> 08:02.310
+And we say the shape of this card is going to be circle shaped.
+
+08:02.340 --> 08:03.360
+This is given to us.
+
+08:03.600 --> 08:05.670
+I can also say rectangle.
+
+08:06.830 --> 08:10.910
+Shaped like this, if you go ahead and refresh, you should see rectangle.
+
+08:11.480 --> 08:18.620
+And while you can see there is now the reason why it squares in a rectangle per say is because of the
+
+08:18.620 --> 08:23.810
+size that we gave, we we gave 45 for all of height and width.
+
+08:23.930 --> 08:25.790
+That's why we have square.
+
+08:26.630 --> 08:27.740
+OK, very well.
+
+08:27.740 --> 08:30.710
+So let's go back to circle what we had before.
+
+08:30.860 --> 08:35.630
+So instead of our trailing lambda here, that means we can add contents that we want to see inside of
+
+08:35.630 --> 08:36.110
+our card.
+
+08:36.440 --> 08:41.780
+So in this case, I can say text like this and say tat like that.
+
+08:42.050 --> 08:42.710
+Let's refresh.
+
+08:43.070 --> 08:47.750
+And you can see we have tap showing there, but we have a problem here.
+
+08:48.020 --> 08:49.790
+The tap is not in the middle.
+
+08:49.820 --> 08:52.820
+We want it to be in the middle of our card.
+
+08:53.150 --> 08:55.820
+Now there are different ways to deal with this issue.
+
+08:55.910 --> 09:03.200
+One of the quicker ways we have here to force the tap, the text we have here to be in the middle is
+
+09:03.200 --> 09:11.510
+to wrap this text into a box because a box will have because a box will have an argument, because a
+
+09:11.510 --> 09:16.850
+box will have a parameter that will allow us to set whatever is inside of his box to be in the middle.
+
+09:17.000 --> 09:17.300
+So what?
+
+09:17.300 --> 09:19.910
+I'm going to do a table and say box, and there we go.
+
+09:20.420 --> 09:24.740
+The first box there and I'm going to get all of that input inside.
+
+09:25.040 --> 09:28.670
+And if you have over it instead of a box, it is indeed a composable.
+
+09:28.670 --> 09:30.650
+Everything is pretty much a composable.
+
+09:30.890 --> 09:37.910
+Any jetpack compose and you can see we have modifier as the first parameter there and we have the content
+
+09:37.910 --> 09:38.660
+alignment.
+
+09:39.440 --> 09:44.330
+This is real good because it will allow us to align the contents inside of this box, which in this
+
+09:44.330 --> 09:45.620
+case is the text.
+
+09:46.160 --> 09:52.880
+So when I say content start typing content alignment, I'd expect an alignment object and say alignment,
+
+09:52.880 --> 09:57.470
+and there are different objects, zero different variables that we can pass.
+
+09:58.610 --> 10:03.380
+So the alignment we want is the center, OK, not top center.
+
+10:03.380 --> 10:06.710
+We want just the center as such a hit enter in Whyalla.
+
+10:07.910 --> 10:08.750
+OK, there we go.
+
+10:08.750 --> 10:12.830
+So let's see if this true, if I refresh this, I should be able to see tap now in the middle.
+
+10:14.280 --> 10:16.770
+So tap is now in the middle of our circle.
+
+10:17.040 --> 10:23.700
+That means if I make this a little bit bigger, you can see it doesn't matter how big or how small it
+
+10:23.700 --> 10:25.950
+is our card in this circle.
+
+10:26.670 --> 10:27.810
+It's always going to be in the middle.
+
+10:28.350 --> 10:29.450
+OK, there we go.
+
+10:29.460 --> 10:30.420
+And voila!

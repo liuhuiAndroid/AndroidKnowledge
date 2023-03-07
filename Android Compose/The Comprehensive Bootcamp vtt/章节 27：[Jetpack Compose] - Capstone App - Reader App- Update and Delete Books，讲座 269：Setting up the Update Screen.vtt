@@ -1,0 +1,565 @@
+WEBVTT
+
+00:01.280 --> 00:06.860
+All right, so let's look at this reading list here and added list image for each one of these books.
+
+00:07.730 --> 00:09.680
+So let's go to our book list.
+
+00:10.010 --> 00:17.060
+There you have the list of the books is good and what is they don't want to do?
+
+00:17.120 --> 00:18.560
+Well, let's look.
+
+00:20.860 --> 00:22.180
+It is horizontal.
+
+00:23.040 --> 00:25.530
+So can structure go to Liscard?
+
+00:25.530 --> 00:26.960
+That's what we want to do here.
+
+00:26.970 --> 00:31.200
+So, OK, so here we are passing just this book first.
+
+00:31.350 --> 00:32.040
+That's OK.
+
+00:32.220 --> 00:33.540
+We need something to show.
+
+00:33.990 --> 00:38.610
+They can just delete for now, all of that just say and book like this.
+
+00:39.180 --> 00:40.460
+Of course, our preview is going.
+
+00:40.830 --> 00:42.660
+It's going to look very strange.
+
+00:42.990 --> 00:43.530
+That's OK.
+
+00:44.100 --> 00:44.940
+OK, I like that.
+
+00:46.680 --> 00:51.120
+OK, so let's find image painter right here.
+
+00:51.450 --> 00:52.650
+This is no longer needed.
+
+00:52.710 --> 00:54.120
+Thank you very much for your service.
+
+00:58.210 --> 01:01.810
+Now we're going to pass the real image, say, book.
+
+01:06.260 --> 01:11.060
+And it's a photo you're able to string like this.
+
+01:13.330 --> 01:13.600
+OK.
+
+01:16.970 --> 01:22.280
+Let's give it a run, think now we should see the correct images.
+
+01:27.230 --> 01:28.220
+OK, there we go.
+
+01:28.520 --> 01:29.030
+Look at that.
+
+01:29.210 --> 01:30.200
+These are correct images.
+
+01:30.590 --> 01:31.010
+Look at this.
+
+01:31.010 --> 01:34.250
+I can actually remember I can still go and add the book.
+
+01:35.120 --> 01:37.850
+Well, this ad is programmatic flatter.
+
+01:39.680 --> 01:42.890
+And go back, we should see how we go.
+
+01:43.250 --> 01:43.760
+All right.
+
+01:43.820 --> 01:45.380
+This is great, so it's looking really good.
+
+01:45.680 --> 01:50.120
+So at this point here, all the books that we're seeing were receiving the same kind of books.
+
+01:50.300 --> 01:50.810
+It makes sense.
+
+01:50.810 --> 01:52.700
+We're just not filtering any further.
+
+01:53.240 --> 01:58.910
+But it is that, first of all, we want to be able to click on this book first and go to the edit,
+
+01:59.270 --> 02:01.250
+go to the edit or update screen.
+
+02:01.280 --> 02:02.270
+What are we going to be able to say?
+
+02:02.270 --> 02:07.420
+OK, now I'm reading this book, so this needs to go somewhere else.
+
+02:07.430 --> 02:08.990
+In this case, it's going to be up here.
+
+02:09.060 --> 02:11.500
+OK, so we need to filter through.
+
+02:11.510 --> 02:16.640
+But before that, let's go ahead and navigate to the update screen.
+
+02:16.910 --> 02:23.870
+So this case and say enough controller because I have access to traffic controllers c c dot navigate
+
+02:25.310 --> 02:26.150
+passing a route.
+
+02:26.630 --> 02:32.090
+It's going to be readers, readers, screen screens.
+
+02:32.090 --> 02:36.800
+That is an update, screen name and what I want to do.
+
+02:37.310 --> 02:39.170
+You'll see I'll have to pass something.
+
+02:39.830 --> 02:47.660
+I'm going to pass the edit, which is going to be the string this case, uh, the title of this book.
+
+02:47.840 --> 02:52.340
+Now we're not done yet because what are we doing here is that we're passing it as a parameter or argument.
+
+02:52.910 --> 02:57.020
+So that means I have to go back to our navigation.
+
+02:57.580 --> 02:58.970
+It's the same thing we did before.
+
+02:59.150 --> 03:00.680
+So here you have to tell name.
+
+03:00.680 --> 03:05.270
+So I'm going to do the same thing because we need to pass something to our composable in this case is
+
+03:05.270 --> 03:07.520
+going to be on that search screen.
+
+03:07.820 --> 03:09.380
+We don't have the details, do we?
+
+03:09.560 --> 03:10.100
+We're going to do it.
+
+03:10.760 --> 03:15.200
+So I'm going to say file update name such.
+
+03:15.200 --> 03:17.390
+In fact, yeah, they name a search.
+
+03:17.960 --> 03:26.390
+Let's say readers or reader screen's going to see update screen that name.
+
+03:26.540 --> 03:29.750
+OK, and then I'm going to create a composable, of course.
+
+03:30.560 --> 03:35.840
+And in this case, and we're past it as a route, I'm going to just actually use the update name and
+
+03:35.840 --> 03:37.460
+such because I'm going to pass something else.
+
+03:38.090 --> 03:39.410
+It's going to be the book.
+
+03:41.390 --> 03:47.870
+Item, I'd like this and then I'm going to pass arguments.
+
+03:48.710 --> 03:51.020
+It's going to be a list of them could see the list of.
+
+03:52.160 --> 03:57.440
+And in this case, I'm going to say nav arguments here and is going to be book.
+
+03:59.210 --> 04:01.910
+Item I.D., that's exactly what we had before.
+
+04:02.600 --> 04:02.900
+OK.
+
+04:04.040 --> 04:08.210
+And they're going to use the camera there to construct.
+
+04:09.300 --> 04:10.200
+To pass the type.
+
+04:10.770 --> 04:13.710
+Well, the type here is going to be a string Typekit was a type.
+
+04:16.700 --> 04:23.660
+String type like this, and then of course, we have another lambda here, so have the knife backs stack
+
+04:23.660 --> 04:24.010
+entry.
+
+04:24.030 --> 04:25.190
+This will allow us to pass.
+
+04:25.190 --> 04:30.530
+Other metadata won't say back stack or like this works.
+
+04:31.880 --> 04:38.960
+And then here I'm going to be able to say, well, back well, nav in this case, back stack entry,
+
+04:39.590 --> 04:40.420
+see arguments.
+
+04:40.430 --> 04:44.830
+This will allow us then to pass or receive that data when we go to Where Are We going?
+
+04:44.840 --> 04:46.760
+Which is going to be the book haptic screen, OK?
+
+04:47.540 --> 04:50.810
+And I'm going to say get string and pass the key.
+
+04:50.840 --> 04:54.140
+What is the key book item I.D.?
+
+04:55.760 --> 04:58.760
+I say, let past that block there.
+
+04:58.770 --> 04:59.720
+I'm going to set things up.
+
+05:00.260 --> 05:04.640
+I say and pass the book details or update screen.
+
+05:05.720 --> 05:08.360
+I'm going to pass the nav controller.
+
+05:09.750 --> 05:15.660
+It's going to be able to control that we have upstairs and then I'm going to pass the book item ID,
+
+05:16.050 --> 05:17.910
+which is going to be the book.
+
+05:19.510 --> 05:20.110
+Item.
+
+05:22.040 --> 05:26.840
+Well, actually, the itinerary passing here to two.
+
+05:29.000 --> 05:33.770
+All right, we have an issue here because our book a screen doesn't have any of those parameters, so
+
+05:33.830 --> 05:34.850
+go ahead and add those.
+
+05:35.540 --> 05:36.520
+That's fine.
+
+05:37.310 --> 05:38.240
+Add that one to.
+
+05:41.710 --> 05:48.910
+OK, now if we go there, we should see that we have these things set up, the beauty here also is kind
+
+05:48.910 --> 05:55.000
+of going to pass if you model, which is going to be the home screen view model such as, say, helped
+
+05:56.020 --> 05:56.620
+the model.
+
+05:57.880 --> 05:58.570
+We'll use that.
+
+05:58.870 --> 06:05.680
+OK, so what I'm going to do, I want to put a scaffold here because I want to structure everything.
+
+06:06.370 --> 06:10.180
+You do the same thing we did before when I say top bar past that.
+
+06:10.540 --> 06:13.150
+And then we're going to have this over our top bar.
+
+06:13.160 --> 06:16.150
+I'm going to use our reader app.
+
+06:16.390 --> 06:24.310
+Bar title is going to be update book and control is going to be enough control that we're passing before
+
+06:24.310 --> 06:25.280
+any of this.
+
+06:25.300 --> 06:30.460
+I'm going to pass a few other parameters here to customize even further when I pass an icon.
+
+06:30.610 --> 06:42.490
+It's going to be icons dot default arrow back in this pass show profile to false like this?
+
+06:42.850 --> 06:43.240
+All right.
+
+06:43.600 --> 06:44.050
+Very good.
+
+06:44.230 --> 06:48.610
+That set up that same thing we did with the other screens as well, like search screen.
+
+06:49.360 --> 06:49.720
+OK.
+
+06:50.500 --> 06:52.150
+So what do we do next here?
+
+06:52.170 --> 06:52.450
+Well.
+
+06:52.720 --> 06:57.430
+Well, we're going to do the same thing we did earlier, which is we're going to produce a new state
+
+06:57.430 --> 06:59.430
+here because we want to get those values right.
+
+06:59.440 --> 07:01.840
+When I say Val, book info.
+
+07:02.380 --> 07:03.460
+We've seen this before.
+
+07:06.380 --> 07:08.000
+We produce state.
+
+07:09.050 --> 07:15.680
+Initial, let's make sure that this state is attached to a Typekit, which is going to be a data.
+
+07:16.940 --> 07:28.600
+Let's just put that in CYA data or exception type, which is going to be a list of M books and then
+
+07:28.610 --> 07:29.480
+we're going to pass.
+
+07:29.930 --> 07:32.450
+Let's pretty new line Boolean.
+
+07:34.650 --> 07:43.500
+Line exception like this initial value, I'm just going to say directly, that's going to be data or
+
+07:43.500 --> 07:44.130
+exception.
+
+07:45.270 --> 07:54.090
+Data is going to just be, let's see, empty list, and then I'm going to say true for loading bullion
+
+07:54.660 --> 07:58.590
+and know for exception here this is going to say nothing empty there.
+
+07:58.830 --> 08:02.940
+OK, so our producer here can be a lambada.
+
+08:03.040 --> 08:04.980
+I'm going to do so like that.
+
+08:05.250 --> 08:06.820
+So and so I'm going to have value.
+
+08:06.840 --> 08:14.420
+I'm going to set that up with World View model that data, that value and done.
+
+08:14.430 --> 08:19.620
+So we're going to also extract that value, which is going to be data or exception value.
+
+08:19.950 --> 08:24.540
+If you have over an hour book info, it's going to be of this type, which is exactly what we want.
+
+08:26.030 --> 08:30.290
+OK, so I'm going to create a surface here
+
+08:33.920 --> 08:35.510
+and pass a modifier,
+
+08:38.540 --> 08:39.350
+say Phil.
+
+08:39.530 --> 08:45.110
+Max size just to hit all of them and then the padding.
+
+08:46.940 --> 08:47.870
+Three deep.
+
+08:51.940 --> 08:52.220
+OK.
+
+08:53.470 --> 08:57.640
+And I'm going to put a column in this column.
+
+08:58.120 --> 08:59.860
+Let's put a modifier.
+
+09:03.590 --> 09:08.880
+The padding is going to be top three TATP like that.
+
+09:10.620 --> 09:13.110
+Now the vertical arrangement arrangement.
+
+09:14.400 --> 09:18.510
+Top see say top like that.
+
+09:24.110 --> 09:33.650
+OK and horizontal alignment, so alignment, so centered horizontal like this can just import guys fine.
+
+09:34.760 --> 09:41.960
+So here is where we are going to just had some to see if we're getting something from our view model
+
+09:42.560 --> 09:51.140
+dot data and value that date again to a string like that.
+
+09:53.360 --> 09:54.260
+Let's call this.
+
+09:56.640 --> 09:58.710
+Info like this.
+
+09:59.160 --> 10:05.760
+OK, let's see if we run this, we're going to be able to see something when we click each one of our
+
+10:05.760 --> 10:06.180
+books.
+
+10:07.350 --> 10:08.340
+OK, let's go a quick.
+
+10:09.760 --> 10:10.250
+All right.
+
+10:10.300 --> 10:18.940
+Nothing broke, so hopefully if I say info like this, OK, looks like info.
+
+10:19.360 --> 10:19.860
+Wonderful.
+
+10:19.870 --> 10:23.710
+So as always, first goes empty, empty and then at some point get stuff.
+
+10:23.710 --> 10:24.250
+So that's great.
+
+10:24.610 --> 10:26.530
+That means then we can actually look.
+
+10:26.620 --> 10:28.570
+Let's go ahead and remove this again.
+
+10:29.440 --> 10:31.240
+We can look at book.
+
+10:31.240 --> 10:35.500
+Enfoque is going to have information about our object here, right?
+
+10:35.830 --> 10:37.070
+You can check, right?
+
+10:37.090 --> 10:45.610
+So here you can check to see if book info dot loading.
+
+10:47.170 --> 10:52.150
+If that's true, or actually probably have to say it's equal to true.
+
+10:54.450 --> 10:59.800
+OK, because the state won't say linear progress indicator as such.
+
+11:00.250 --> 11:04.330
+And then right after we say book info again and shut it off.
+
+11:04.570 --> 11:06.640
+So loading to false.
+
+11:07.210 --> 11:19.470
+And then in any other case, if I'm just going to say for now, text field model data add value data.
+
+11:19.480 --> 11:20.290
+It's a list.
+
+11:21.670 --> 11:26.050
+I'm going to say just get the first book and I want to get the title.
+
+11:27.210 --> 11:28.270
+OK, let's go ahead and.
+
+11:40.240 --> 11:40.660
+Like that?
+
+11:41.380 --> 11:44.350
+Let's go ahead and just see what will happen.
+
+11:47.040 --> 11:49.750
+Click y la.
+
+11:49.930 --> 11:53.830
+So we're getting the correct information.
+
+11:54.280 --> 11:57.380
+I think I don't have this book back set up.
+
+11:57.400 --> 12:00.550
+Let's go to update.
+
+12:00.700 --> 12:02.470
+Where do we have right?
+
+12:02.680 --> 12:11.290
+I need to say here because it is indeed going to say now controller that pop back like this.
+
+12:11.650 --> 12:12.010
+All right.
+
+12:13.810 --> 12:14.130
+That's right.
+
+12:14.140 --> 12:17.920
+Again, at least we know it's working because we're getting the correct books.
+
+12:19.150 --> 12:19.750
+This one.
+
+12:20.770 --> 12:21.120
+Oops.
+
+12:21.200 --> 12:27.310
+Looks like I'm getting a bright right makes sense because I'm just getting a hardcoded the book and
+
+12:27.310 --> 12:28.210
+just getting the first book.
+
+12:28.210 --> 12:31.840
+So that's why each time you can go back, that's working out.
+
+12:31.840 --> 12:32.290
+It's great.
+
+12:32.590 --> 12:35.290
+I just get the same book any time, so it's good.
+
+12:35.500 --> 12:36.070
+It's real good.
+
+12:36.430 --> 12:42.280
+So next, we are going to, of course, structure our update here so that we can actually sourcing the
+
+12:42.280 --> 12:44.350
+book and then go from there.

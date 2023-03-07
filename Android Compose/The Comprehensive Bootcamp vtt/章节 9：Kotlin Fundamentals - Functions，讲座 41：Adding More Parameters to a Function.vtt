@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00.270 --> 00:01.410
+All right, so here we go.
+
+00:01.770 --> 00:04.710
+Did you figure out a way to make this a little bit more dynamic?
+
+00:04.830 --> 00:09.810
+OK, so it's very simple, really, because we have this to here because we want to get multiples of
+
+00:09.810 --> 00:10.230
+two.
+
+00:10.230 --> 00:18.390
+The number is right in this range, so we can also pass here something like multiple of make this an
+
+00:18.390 --> 00:22.920
+int such and then pass here multiple off like this.
+
+00:23.220 --> 00:26.850
+That means then here I'm going to go ahead and say three, OK.
+
+00:27.090 --> 00:32.400
+And to even make this even better instead of, say, is multiple of two, because this two here is hardcoded
+
+00:32.400 --> 00:34.200
+and in this case, we pass three.
+
+00:34.210 --> 00:37.050
+So we're looking for multiples of three, not two.
+
+00:37.320 --> 00:38.280
+So that makes no sense.
+
+00:38.520 --> 00:41.070
+We can also pass here the multiple path.
+
+00:41.250 --> 00:42.930
+So we can see here that I type this wrong.
+
+00:42.980 --> 00:45.330
+Hover over and I say, rename typo.
+
+00:45.510 --> 00:48.460
+It's going to multiple of like this.
+
+00:48.480 --> 00:49.100
+That's the one.
+
+00:49.110 --> 00:49.710
+And voila!
+
+00:49.980 --> 00:52.260
+So it's changed everywhere now.
+
+00:52.590 --> 00:53.160
+So this is good.
+
+00:53.340 --> 00:58.910
+So now if I run this, you can see it changes accordingly because it says we pass first.
+
+00:58.920 --> 01:02.430
+It's going to be 11 to 1000 and multiple of its three.
+
+01:02.580 --> 01:05.640
+So the function now here we pass the parameters.
+
+01:06.000 --> 01:11.190
+And then when we call the pass arguments, including the multiple of if I change this to multiple of
+
+01:11.190 --> 01:17.670
+eleven, for instance, you will notice that no problems this function will run and will automatically
+
+01:17.670 --> 01:20.400
+dynamically change its values and go from there.
+
+01:20.580 --> 01:21.240
+And there you have it.
+
+01:21.420 --> 01:24.030
+So 11 is multiple of level 22 and so forth.
+
+01:24.600 --> 01:28.040
+And of course, at this point, we're just passing the U.S. type.
+
+01:28.080 --> 01:29.190
+We can pass string.
+
+01:29.190 --> 01:31.320
+We can pass volume, can pass any type, really.
+
+01:31.320 --> 01:32.280
+But this is just an example.
+
+01:32.490 --> 01:38.430
+In fact, what I wanted to do as an exercise is to create another function that will pass not only in
+
+01:38.430 --> 01:42.000
+somebody we're going to be passing as parameters will have strings as well.
+
+01:42.420 --> 01:44.610
+Go ahead and do that and I'll see you next.

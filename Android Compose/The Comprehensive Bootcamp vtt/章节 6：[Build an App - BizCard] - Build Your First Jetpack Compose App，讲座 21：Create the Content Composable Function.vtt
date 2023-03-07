@@ -1,0 +1,373 @@
+WEBVTT
+
+00:00.300 --> 00:05.280
+So the idea is to make sure that when we click on portfolio, we're going to see the list or a list
+
+00:05.280 --> 00:08.240
+containing projects, all of these is dummy data, of course.
+
+00:08.250 --> 00:12.060
+But what we want to do here want to make sure that, of course, all these data is going to be fake,
+
+00:12.060 --> 00:15.180
+but at least will have some sort of a complete application here.
+
+00:15.210 --> 00:17.340
+OK, so let's go ahead and do that.
+
+00:17.820 --> 00:21.590
+So for that, we are going to create yet another composable right.
+
+00:21.900 --> 00:27.570
+Different piece of code user interface code here, I'm going to say at composable.
+
+00:27.810 --> 00:34.470
+So anything that needs to show something to the user in this case, a user interface component, you
+
+00:34.470 --> 00:36.030
+have to pass at composable.
+
+00:36.480 --> 00:40.020
+OK, so once a fun for function, I'm going to call this content.
+
+00:40.290 --> 00:41.100
+All right, there we go.
+
+00:41.130 --> 00:45.990
+And for now, what I need to do, I want to make sure that I'm able to preview this one composable.
+
+00:46.050 --> 00:49.700
+To do that, we say at least start typing in preview as such.
+
+00:49.860 --> 00:50.160
+Very good.
+
+00:50.160 --> 00:51.990
+So we're going to focus on here.
+
+00:52.140 --> 00:57.510
+And so at this point, let's split this and you can see we have that preview, which is this one that
+
+00:57.510 --> 00:58.170
+we just started.
+
+00:58.210 --> 00:59.280
+Now it has nothing.
+
+00:59.370 --> 01:04.440
+And just to make sure that I don't have too much going on, I'm going to go ahead and comment this out,
+
+01:04.740 --> 01:08.370
+OK, so that we only have one preview, which is going to be this one here.
+
+01:08.520 --> 01:09.270
+There's nothing yet.
+
+01:09.420 --> 01:10.320
+OK, so what is that?
+
+01:10.320 --> 01:11.000
+We want to happen?
+
+01:11.010 --> 01:15.470
+So I'm going to use yet another composable that comes with compose called Box.
+
+01:15.510 --> 01:18.810
+So we're going to create a box that will contain all of this information.
+
+01:19.170 --> 01:25.740
+So again, when he just go ahead and say, Box and pass it modifier, I'm going to fill max height and
+
+01:25.740 --> 01:29.160
+then with a dot fill max with such.
+
+01:29.160 --> 01:36.120
+And then let's give it a padding dot because we still part of our modifier padding scheme about five
+
+01:36.120 --> 01:36.950
+dpi, I say.
+
+01:37.380 --> 01:40.470
+And then I forget to put all lambda in this case.
+
+01:40.470 --> 01:41.700
+This is the scope, right?
+
+01:41.710 --> 01:43.750
+What is going to be inside of our box there?
+
+01:43.800 --> 01:46.470
+We have to have those curly braces.
+
+01:46.950 --> 01:47.380
+OK.
+
+01:47.400 --> 01:49.080
+So inside here, what are we going to do?
+
+01:49.110 --> 01:52.260
+Well, we're going to put a surface high or no surface.
+
+01:52.270 --> 01:54.420
+So this is the canvas per se.
+
+01:54.510 --> 01:58.590
+But the great thing about surface is that obviously, like with anything we can pass and fired, we
+
+01:58.590 --> 02:01.080
+can customize our UI even further.
+
+02:01.110 --> 02:01.380
+OK.
+
+02:01.530 --> 02:04.440
+So for a surface here, I'm going to pass it and modifier.
+
+02:04.630 --> 02:07.830
+I see that padding going to give an all padding of about three that.
+
+02:08.520 --> 02:11.220
+And then I'm going to say, put that in a new line.
+
+02:11.430 --> 02:13.620
+Fill max width again.
+
+02:13.630 --> 02:15.600
+It's going to be max height.
+
+02:16.080 --> 02:16.430
+All right.
+
+02:16.440 --> 02:17.200
+So there we have it.
+
+02:17.220 --> 02:20.420
+So now inside of our surface, we can do all sorts of things.
+
+02:20.430 --> 02:26.820
+This is where we can add other UI components, but what do we want to happen in this surface?
+
+02:26.860 --> 02:28.530
+There's another thing we need to think about.
+
+02:28.770 --> 02:33.510
+If you look here, we want to have this nice aborder that is showing there, right?
+
+02:33.510 --> 02:38.040
+That's enclosing all of this content, all of this list, which we haven't looked at yet.
+
+02:38.160 --> 02:39.240
+So we need to create that.
+
+02:39.330 --> 02:40.350
+It's easy to create that.
+
+02:40.350 --> 02:44.430
+That's the reason why we have the surface because surface allows us to do all sort of thing.
+
+02:44.670 --> 02:49.980
+In fact, if you have all over, you can see a list of all of these properties, all of these parameters
+
+02:49.980 --> 02:53.820
+within paths to further customize our surface, which is great.
+
+02:53.970 --> 03:00.510
+So here after we've added Phil Max, Phil Max with, we can go ahead and say shape, for instance,
+
+03:00.810 --> 03:07.140
+what shape do we want this to have what we want to have some sort of a rounded corner shape like that
+
+03:07.380 --> 03:08.460
+in for the corner?
+
+03:08.640 --> 03:14.820
+I'm going to pass a corner cornices and pass here a six that dpi remember the higher this number we
+
+03:14.820 --> 03:18.560
+add here and the more curved this is going to be.
+
+03:18.630 --> 03:19.710
+And next, what do we need to do?
+
+03:19.740 --> 03:23.880
+We need to add a border because we want this to look like this good.
+
+03:23.890 --> 03:25.610
+It's very easy to do so.
+
+03:26.010 --> 03:31.540
+But remember, we still inside of the parameters here, like parentheses of our surface.
+
+03:31.570 --> 03:32.310
+That's very important.
+
+03:32.520 --> 03:38.550
+And let's say border state say border stroke and for border stroke, as you see we pass with and the
+
+03:38.550 --> 03:43.620
+color and you can override with other parameters as well, but we can check the first one first.
+
+03:43.860 --> 03:46.590
+So we're going to use the first override method.
+
+03:46.740 --> 03:52.650
+So I'm going to say width in this case, say a one, just two dpi, so not too thick in four color.
+
+03:52.860 --> 03:54.870
+I'm going to say is equal to color.
+
+03:55.110 --> 03:57.360
+And when the light gray like that?
+
+03:57.510 --> 03:57.750
+All right.
+
+03:57.750 --> 04:02.160
+Let's go ahead and refresh real quick to see if we are going to be able to see something at least.
+
+04:02.490 --> 04:03.180
+And there you have it.
+
+04:03.180 --> 04:05.700
+So you can see we do have our border.
+
+04:05.850 --> 04:06.810
+It's hard to see.
+
+04:07.020 --> 04:11.640
+But once we have something inside and everything is set up, it's going to be much easier.
+
+04:11.940 --> 04:13.350
+But believe me, it's there.
+
+04:13.350 --> 04:17.700
+If you can see a little bit, let's make this a little bigger or I'm going to remove my avatar so you
+
+04:17.700 --> 04:18.160
+can see.
+
+04:18.180 --> 04:21.240
+So just look around, you should see that border.
+
+04:21.360 --> 04:26.410
+In fact, if I change this to about 12 deep, you can see there it is really a large border.
+
+04:26.430 --> 04:27.210
+That's not what we want.
+
+04:27.480 --> 04:28.050
+So now what?
+
+04:28.050 --> 04:33.930
+We want to be inside here, what we want to be inside here, it's going to be yet another composable,
+
+04:34.140 --> 04:36.960
+which is we're going to call portfolio like this.
+
+04:37.350 --> 04:38.340
+We haven't created this.
+
+04:38.670 --> 04:43.890
+So this portfolio is going to take a few parameters which are going to be portfolios or I'm going to
+
+04:43.890 --> 04:51.030
+say data, OK, there's going to be a list of and we're just going to pass here, say Project one,
+
+04:52.680 --> 04:53.320
+just like that.
+
+04:53.400 --> 04:54.260
+OK, let's go ahead.
+
+04:54.270 --> 04:59.940
+I'm going to copy this, or I could just right click and say sure and go ahead and say, create composable.
+
+05:00.010 --> 05:01.420
+Function portfolio go.
+
+05:01.720 --> 05:04.720
+And voila, it's created, and that's fine.
+
+05:04.960 --> 05:05.900
+All right, very good.
+
+05:05.920 --> 05:11.980
+So now we have created another portfolio composable that is maybe a little bit strange at first.
+
+05:12.010 --> 05:12.670
+So what are we doing here?
+
+05:12.910 --> 05:17.950
+Well, we created this content composable, right, which is not being called anywhere yet, in fact.
+
+05:18.280 --> 05:20.170
+So it's going to be around somewhere here.
+
+05:20.170 --> 05:22.060
+But this is where our base card created.
+
+05:22.060 --> 05:24.640
+This card is this is the main composable.
+
+05:24.970 --> 05:29.140
+And so in our content compulsively here, we created a box inside of the box.
+
+05:29.140 --> 05:35.860
+We created surface and we banded quote-unquote this surface, meaning we customize it to have rounded
+
+05:35.860 --> 05:40.300
+corners and we added border and the light grey border color.
+
+05:40.450 --> 05:40.750
+OK.
+
+05:40.900 --> 05:43.700
+And then we passing it a portfolio in this portfolio.
+
+05:43.720 --> 05:45.270
+This is in the portfolio.
+
+05:45.280 --> 05:46.600
+Here is another composable.
+
+05:46.600 --> 05:53.140
+So you see you can create as many composable as you want and kind of add stack them on top of each other,
+
+05:53.290 --> 05:54.400
+if that makes any sense.
+
+05:54.490 --> 05:55.680
+That's how we compose.
+
+05:55.690 --> 05:59.560
+If you, if you will, our user interface declaratively.
+
+05:59.740 --> 06:00.030
+All right.
+
+06:00.040 --> 06:05.770
+So in this case, your portfolio is going to expect to receive a list of, in this case, are strings.
+
+06:06.100 --> 06:08.110
+Now we have refactor it out.
+
+06:08.380 --> 06:12.100
+So we have this composable that's been called inside here in this one.
+
+06:12.100 --> 06:13.750
+Here, of course, is going to expect that list.
+
+06:13.910 --> 06:17.240
+As we said here, it's going to be a list of strings, so we need to implement it.
+
+06:17.260 --> 06:18.700
+That's where we have that to do that.
+
+06:19.270 --> 06:26.950
+So for now, what I'm going to do for now, let's just say text, say portfolio projects, go here.
+
+06:27.190 --> 06:28.600
+OK, so we're making good progress.
+
+06:28.870 --> 06:34.450
+So next, we're going to work on our portfolio composable here, which is going to entail all of this.

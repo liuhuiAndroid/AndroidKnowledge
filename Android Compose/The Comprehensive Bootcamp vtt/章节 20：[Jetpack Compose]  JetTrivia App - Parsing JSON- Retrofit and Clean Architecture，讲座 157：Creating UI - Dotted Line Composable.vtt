@@ -1,0 +1,415 @@
+WEBVTT
+
+00:13.570 --> 00:18.200
+So next, we want to add this dotted line, as you see there.
+
+00:18.220 --> 00:21.960
+It's really small, but you can see there is that dotted dotted line.
+
+00:22.570 --> 00:27.700
+We don't have a baked that would do that, so we have to create our own.
+
+00:28.090 --> 00:33.190
+Now the beauty here is that to drive things onto the screen, right to actually move the pixels around
+
+00:33.190 --> 00:43.110
+and create customize to create customized composable such as this, it's really simple in compose as
+
+00:43.110 --> 00:43.720
+they will show you.
+
+00:44.320 --> 00:45.100
+So what are we going to do?
+
+00:45.110 --> 00:48.670
+Here is where we call after a question tracker.
+
+00:48.700 --> 00:53.020
+This is where we're going to add the dotted line.
+
+00:53.770 --> 00:58.720
+So what I'm going to do is, yes, you guessed it, I'm going to create yet another composable.
+
+00:59.410 --> 01:06.550
+So this composable here and I say at composable that and then let's call name this.
+
+01:11.810 --> 01:12.800
+It's going to be drier.
+
+01:14.470 --> 01:24.160
+Dotted line in in this case, we have to pass what we call the path effect, which I will show you in
+
+01:24.160 --> 01:28.270
+a second here, so it is indeed a type there in composable.
+
+01:30.070 --> 01:35.530
+We can also make this preview so we can hopefully see something as we go there.
+
+01:36.130 --> 01:38.170
+Let's go ahead and put this together.
+
+01:38.170 --> 01:43.300
+So how do we then dry what we are looking to dry, which is going to be a dotted line?
+
+01:43.990 --> 01:51.100
+So I'm going to go ahead and say canvas, make sure we get the canvas that has this EF four a function
+
+01:51.100 --> 01:52.640
+and is green for a composable.
+
+01:52.640 --> 01:53.680
+That's very important, right?
+
+01:54.010 --> 02:00.250
+So this canvas here, as you see, if you hover over or look at the documentation, there's a few parameters
+
+02:00.250 --> 02:05.290
+we pass that we have to own dry, which is a dry scope where we can drive things, of course, as a
+
+02:05.290 --> 02:06.940
+composable can pass, modify as well.
+
+02:07.270 --> 02:13.600
+So a component that allow you to specify an area on the screen and performs canvas drawing on this area.
+
+02:13.990 --> 02:17.140
+So it says here we must specify size with modifier.
+
+02:17.380 --> 02:17.680
+OK.
+
+02:17.710 --> 02:21.280
+So that's the first requirement, and we shall do that.
+
+02:21.550 --> 02:26.080
+So let's say modifier fill max with as such.
+
+02:27.220 --> 02:32.530
+And then on right now, because on dry, we could just go ahead and create a lambda there.
+
+02:32.530 --> 02:39.400
+But because we know its last function type that is parameter has been passed so we can actually invoke
+
+02:39.400 --> 02:43.750
+the trailing lambda as they so we get our dry scope are good.
+
+02:44.230 --> 02:46.750
+So here is where are we going to be drawing?
+
+02:46.780 --> 02:49.840
+Let's go ahead and close this so we have more space here.
+
+02:50.200 --> 02:50.530
+All right.
+
+02:50.830 --> 02:51.970
+So what is are we going to do?
+
+02:52.030 --> 02:57.370
+Well, before we do anything, let's continue adding something else here with our modifier.
+
+02:57.370 --> 03:05.710
+So I want the height of these to be around one dpi because remember, if you look at the structure here,
+
+03:05.710 --> 03:07.020
+the height is really small.
+
+03:07.030 --> 03:12.130
+We don't have a lot of height because it's really, really small like thin.
+
+03:12.250 --> 03:13.260
+That is all right.
+
+03:13.270 --> 03:14.800
+So height one, that's fine.
+
+03:15.310 --> 03:17.260
+OK, so let's go ahead and draw to draw.
+
+03:17.290 --> 03:21.880
+Well, first of all, we know that we need a line before anything, just the line.
+
+03:22.270 --> 03:22.690
+All right.
+
+03:22.690 --> 03:23.980
+Well, can we draw a line?
+
+03:24.400 --> 03:24.800
+Yes.
+
+03:24.820 --> 03:28.210
+Turns out there is already a function we can call to draw a line.
+
+03:28.390 --> 03:31.420
+All you have to do inside of this draw scope, we can say draw.
+
+03:31.780 --> 03:38.740
+Look at this can draw an arc circle image of Oval has points and so forth.
+
+03:39.380 --> 03:39.640
+Right.
+
+03:39.880 --> 03:47.320
+I want to draw a line like this and look at how wonderful this we can pass the brush, start, offset
+
+03:47.320 --> 03:48.670
+and offset or color.
+
+03:48.880 --> 03:52.870
+So we have a few overload functions here, right?
+
+03:52.960 --> 03:55.270
+So I'm going to create the pick the second one.
+
+03:55.750 --> 03:57.100
+So I'm going to pass the color.
+
+03:57.250 --> 03:58.210
+What color do I want?
+
+03:58.240 --> 04:04.590
+Well, we just want that white colour, so we see colors and get the light gray section.
+
+04:05.140 --> 04:10.090
+And then I'm going to say, Start, where am I going to start passing to offset?
+
+04:10.480 --> 04:16.500
+So offset for our offset here, let's go ahead and import offset looks like we got the wrong offset.
+
+04:16.510 --> 04:17.710
+Let's start over.
+
+04:18.170 --> 04:20.860
+Because this happens to offset.
+
+04:23.700 --> 04:24.330
+This one.
+
+04:24.510 --> 04:29.840
+OK, so for X y x, we just going to say zero f, right?
+
+04:30.390 --> 04:34.350
+And for Y is going to be also zero f so.
+
+04:35.160 --> 04:37.890
+So X and Y direction, we're not moving at all.
+
+04:38.130 --> 04:44.550
+OK, so stays in one point now for end offset.
+
+04:45.000 --> 04:48.630
+I guess I'm going to pass into the offset x y.
+
+04:48.900 --> 04:56.580
+So I'm going to say size that with OK, and the wider action is just going to be such as Y.
+
+04:56.580 --> 04:58.680
+It's fine zero f for like this.
+
+05:00.300 --> 05:02.160
+And if you hover over, that's the beauty.
+
+05:02.160 --> 05:08.790
+If you want to learn more about this function, abstract function here we can see all of the parameters
+
+05:08.790 --> 05:11.730
+or all of the arguments we can pass.
+
+05:11.730 --> 05:19.350
+We have color start the offset, right and offset and so forth says this function draws a line between
+
+05:19.350 --> 05:20.220
+the given points.
+
+05:20.220 --> 05:22.920
+Using the given paint, the line is stroked.
+
+05:23.250 --> 05:26.130
+OK, so the parameters color, we know what that is.
+
+05:26.140 --> 05:28.620
+Start first point of the line to be drawn.
+
+05:28.830 --> 05:32.730
+And second point and stroke with cap.
+
+05:32.820 --> 05:38.070
+We have path effect, which we're going to pass, which is optional effect of pattern to apply to the
+
+05:38.070 --> 05:38.430
+line.
+
+05:38.910 --> 05:43.410
+And we can even pass the alpha, the opacity to be applied to the color and so forth.
+
+05:44.370 --> 05:44.640
+All right.
+
+05:44.640 --> 05:48.600
+So next here we're going to pass is going to be the path effect.
+
+05:49.320 --> 05:53.460
+The path effects effect is going to be the path effect that we're going to be creating here.
+
+05:53.490 --> 05:59.400
+Now I could actually create this path effect right inside of this function, right?
+
+05:59.790 --> 06:05.970
+But I won't do that because we may want to create different kinds of path effects if you have over it,
+
+06:05.970 --> 06:06.600
+says effect.
+
+06:06.600 --> 06:08.910
+Apply to the geometry of drawing primitive.
+
+06:08.910 --> 06:14.980
+For example, this can be used to draw shapes as a dashed or a shaped pattern or apply treatment around
+
+06:14.980 --> 06:16.770
+the line, say, intersection and so forth.
+
+06:17.070 --> 06:19.320
+OK, so there are different kinds of effects we can use.
+
+06:19.740 --> 06:24.030
+It's like a click there's corner effect that we can use.
+
+06:24.690 --> 06:28.170
+There is Dash Path Effect, which is one we can use.
+
+06:28.170 --> 06:29.010
+We're going to be using.
+
+06:29.280 --> 06:30.710
+There is change pad effects.
+
+06:30.800 --> 06:31.800
+There's different kinds of fact.
+
+06:32.190 --> 06:36.160
+So where this is going to be called, well, we're going to call that right after a question.
+
+06:36.180 --> 06:42.540
+So I'm going to say dotted dotted line in for our effect here.
+
+06:44.160 --> 06:51.540
+And for a path effect at the top here, I'm going to create a foul path effect, and when I create one
+
+06:51.540 --> 06:52.830
+was a path effect.
+
+06:53.250 --> 06:58.680
+All of that is given folks and say that I wanted the dash path effect is that.
+
+06:59.190 --> 07:03.870
+And then when I pass a float, a rate of 10 f.
+
+07:05.680 --> 07:07.870
+And 10 f such.
+
+07:11.960 --> 07:13.610
+And then what phase is going to be?
+
+07:13.910 --> 07:21.080
+And zero f, so to learn more, we can just hover over a dash path effect and you can see here we passed
+
+07:21.080 --> 07:21.710
+the intervals.
+
+07:21.950 --> 07:24.980
+The float array sort of interval is 10 f 10 f.
+
+07:24.980 --> 07:26.270
+That's interval, we're going to add.
+
+07:27.350 --> 07:31.210
+And then we have a phase float, which is going to say zero.
+
+07:31.250 --> 07:33.440
+Now, we don't understand why that means it's OK.
+
+07:33.440 --> 07:35.300
+We can just come here and continue.
+
+07:35.630 --> 07:42.890
+It says that intervals is an array of on and off distances for the dash line segments, right?
+
+07:43.220 --> 07:47.270
+It's wonderful because even explains exactly what these parameters mean.
+
+07:48.350 --> 07:55.130
+Look, it says, for example, if intervals is 10 20 and phases 25, this will set up a dashed path
+
+07:55.460 --> 08:03.830
+like so five pixels off 10 pixels on 10 pixels of 10 pixels on Twin Peaks, us off and so forth.
+
+08:05.010 --> 08:05.280
+Right.
+
+08:05.520 --> 08:08.700
+So here was saying 10 pixels on, 10 pixels off.
+
+08:09.270 --> 08:09.600
+Right.
+
+08:09.870 --> 08:14.460
+If you look correctly, it's going to be the first that's going to be 10 pixels, then another 10 pixels
+
+08:14.460 --> 08:17.610
+off, then another one, 10 pixels on and so forth.
+
+08:17.820 --> 08:18.900
+That's what creates a dash.
+
+08:20.150 --> 08:20.870
+Isn't it wonderful?
+
+08:21.590 --> 08:26.840
+And of course, you can go ahead and change these values so you can see how the effects are changed?
+
+08:27.290 --> 08:27.530
+All right.
+
+08:27.530 --> 08:29.180
+So now we have that path effect.
+
+08:29.780 --> 08:30.670
+We're going to pass here.
+
+08:30.890 --> 08:31.460
+Ike's path.
+
+08:32.350 --> 08:33.170
+In fact, like this.
+
+08:33.260 --> 08:37.220
+Now remember, because the name of this vowel is the same as the parameter.
+
+08:37.220 --> 08:40.610
+I could just go ahead and remove this altogether and just pass the pass.
+
+08:40.620 --> 08:41.390
+The fact that's fine.
+
+08:41.930 --> 08:42.400
+All right.
+
+08:42.410 --> 08:46.580
+So if you go back to a split code here, we should be able hopefully to see something there.
+
+08:46.610 --> 08:48.320
+Let's go ahead and refresh.
+
+08:51.340 --> 08:51.640
+All right.
+
+08:51.670 --> 08:57.520
+And just like that, you can see there is that effect there, the dashes looking really good make this
+
+08:57.520 --> 08:58.900
+probably smaller.
+
+08:59.110 --> 09:02.710
+It's hard to see when it's that small and you can see there is.

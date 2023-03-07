@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeCompose.iml" filepath="$PROJECT_DIR$/.idea/modules/WeCompose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeCompose.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeCompose.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeCompose.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeCompose.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeCompose.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeCompose.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeCompose.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeCompose.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

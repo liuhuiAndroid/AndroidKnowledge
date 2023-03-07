@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00.330 --> 00:08.190
+What we really want to happen is this sense of as we are getting the questions right, this will grow
+
+00:08.970 --> 00:12.750
+right because we wanted to show like this right away, how do we do that?
+
+00:13.380 --> 00:19.500
+Well, we understand that the width of this button, which it is a button because we just use it and
+
+00:19.500 --> 00:21.570
+transformed it into something like that, OK?
+
+00:22.140 --> 00:25.530
+The width of it here, it says, fill max width.
+
+00:25.590 --> 00:31.470
+Well, what we want to do is we want to have some sort of a factory progress factory we can multiply
+
+00:31.470 --> 00:31.920
+by.
+
+00:32.340 --> 00:39.150
+And as we progress in our question answering our trivia, we want to grow that factor.
+
+00:39.450 --> 00:45.000
+Because remember in our film max here for how over we can pass the fraction, which is the float that
+
+00:45.000 --> 00:53.130
+is multiplied by, it's just a multiplier that will affect the size or the width of the entire button.
+
+00:53.880 --> 01:02.250
+Because look, if I pass here, let's say I wanted 30 percent to 0.3 f like this, what's going to happen
+
+01:02.250 --> 01:02.410
+now?
+
+01:02.410 --> 01:03.990
+We're going to see this is going to be smaller.
+
+01:04.470 --> 01:05.840
+The contents inside, right?
+
+01:05.850 --> 01:06.720
+The gradient.
+
+01:07.920 --> 01:08.310
+Voila!
+
+01:08.610 --> 01:09.750
+There you go, you can see that.
+
+01:10.470 --> 01:13.320
+So we are going to use that to our advantage.
+
+01:13.740 --> 01:18.150
+But then you will realize the thing has to come to mind is that we have to have some sort of state,
+
+01:18.840 --> 01:25.770
+right, so that as we click and say yes or select the correct answers and we go to the next question.
+
+01:26.130 --> 01:27.750
+This also has to be growing.
+
+01:29.000 --> 01:29.540
+Makes sense.
+
+01:30.090 --> 01:33.710
+So can create another foul here.
+
+01:35.420 --> 01:37.850
+We call Progress Factor.
+
+01:39.050 --> 01:45.350
+It's going to be a remember and it's going to be driven by in this case, I'm going to have to pass
+
+01:45.350 --> 01:51.020
+here the score value that we get because it is that as we increment the score, we're going to multiply
+
+01:51.080 --> 01:54.890
+that by a certain factor so we can see this progress.
+
+01:55.520 --> 01:57.650
+So here you can use any factory you want.
+
+01:57.650 --> 02:04.970
+But I found that this very tiny factor is probably the best because the smaller the factor, the more
+
+02:04.970 --> 02:13.250
+opportunities we're going to have to actually get this filled out by the time we finish with 4800 for
+
+02:13.260 --> 02:15.080
+the 800 plus questions.
+
+02:15.390 --> 02:21.470
+OK, so you can play around with this multiplier here, I'm going to say zero zero zero eight zero zero
+
+02:21.470 --> 02:22.370
+five.
+
+02:23.420 --> 02:29.000
+Affleck this actually my batch is going to be a score that's going to happen inside here.
+
+02:29.010 --> 02:30.500
+So I see mutable state.
+
+02:31.920 --> 02:34.650
+Of the value is going to be score.
+
+02:35.850 --> 02:41.100
+Multiply that by zero nine zero zero five f like this?
+
+02:43.320 --> 02:48.750
+And then it is progress factor that is what are we going to pass inside of our width?
+
+02:50.920 --> 02:52.260
+The side of this button with.
+
+02:54.680 --> 02:55.370
+That value.
+
+02:56.540 --> 03:02.420
+Remember, we can always say buy like this also have to import a few things.
+
+03:06.200 --> 03:09.930
+Like that, so that way, we don't have to go and say, I get value like that.
+
+03:09.970 --> 03:12.530
+OK, so this is just a preference, as we have seen before.
+
+03:13.250 --> 03:18.840
+So because the multiplier is really small, if air refreshes refresh this, it's not going to show anything.
+
+03:18.840 --> 03:20.450
+What's going to be really, really small?
+
+03:21.140 --> 03:25.250
+Actually, you can see a little bit, but once we put into our app, it should be very small.
+
+03:25.280 --> 03:25.580
+OK.
+
+03:26.420 --> 03:27.380
+There you have it.
+
+03:27.680 --> 03:34.130
+Now let's see if this we can add this to our main question display.
+
+03:34.640 --> 03:36.110
+So let's open up this again.
+
+03:37.670 --> 03:39.170
+So where are we going to add that?
+
+03:39.440 --> 03:45.980
+Well, we're going to add that at the top of our question question and out of there, right?
+
+03:46.640 --> 03:47.460
+But what are we going to do?
+
+03:47.480 --> 03:50.780
+Also, we want to put an if statement because people want to show it right away.
+
+03:50.960 --> 03:53.870
+We want to show it the moment they get to a certain level.
+
+03:54.230 --> 03:56.390
+OK, so let's come up here.
+
+03:57.560 --> 04:01.160
+So we have the question tracker right here.
+
+04:03.780 --> 04:07.320
+Before that, I'm going to put an if statement they will say.
+
+04:09.250 --> 04:18.260
+The question index, not value is greater or equal to three I.
+
+04:20.140 --> 04:26.890
+Then we're going to just show the progress, so we're going to wait for a bit until, ah, we have more
+
+04:26.890 --> 04:28.630
+than three questions answered.
+
+04:28.840 --> 04:31.630
+And for a score here, I'm going to score.
+
+04:32.920 --> 04:35.380
+I'm going to just going to say question that value.
+
+04:36.920 --> 04:37.880
+Question index.
+
+04:40.060 --> 04:40.940
+Get the value.
+
+04:41.600 --> 04:47.570
+So we're going to count the score by passing just the question index versus zero and as they continue.
+
+04:47.780 --> 04:49.610
+We're going to increment one and so forth.
+
+04:50.540 --> 04:54.830
+And again, you can change this to your liking, but this works for me.
+
+04:55.550 --> 04:55.900
+All right.
+
+04:55.910 --> 04:59.090
+Let's go ahead and run this an hour and a later.
+
+05:01.080 --> 05:01.860
+OK, let's see.
+
+05:02.790 --> 05:03.960
+Of course, nothing will show.
+
+05:05.810 --> 05:06.620
+For a little bit.
+
+05:09.040 --> 05:14.440
+While the moment we get to greater the three equal, greater the three right index, then we can see
+
+05:14.440 --> 05:18.370
+a little bit is starting to show they're starting to grow.
+
+05:19.030 --> 05:19.390
+All right.
+
+05:20.350 --> 05:21.370
+As we keep going.
+
+05:21.450 --> 05:21.820
+Whoops.
+
+05:26.870 --> 05:27.950
+And there we go.
+
+05:28.220 --> 05:31.970
+Well, it's working, all right, very good.
+
+05:32.450 --> 05:38.180
+The next thing we want to do is this is just for play is that inside of our button because we noticed
+
+05:38.180 --> 05:40.460
+that once we have that button, oh, what is it?
+
+05:42.620 --> 05:44.750
+Let's go to our composable show progress.
+
+05:44.750 --> 05:49.790
+That is, and you will see that now inside of this row scope.
+
+05:49.790 --> 05:56.270
+Here we can pass some sort of text as a text, which is going to be our score.
+
+05:56.510 --> 06:04.340
+So when I say text such and I say score, I'm going to actually multiply that to make it larger number
+
+06:04.340 --> 06:06.440
+score, whatever we're getting.
+
+06:06.440 --> 06:11.210
+And when I multiply that by 10, I can say that to a string.
+
+06:11.660 --> 06:22.220
+So we are able to show in our text there and then let's say modifier shape inside is going to be a rounded
+
+06:22.970 --> 06:23.900
+corner shape.
+
+06:29.040 --> 06:29.730
+GDP.
+
+06:37.610 --> 06:38.540
+And Max.
+
+06:45.450 --> 06:47.070
+Max Height.
+
+06:48.720 --> 06:56.430
+When I give it a fraction of about two zero zero zero eighty seven, I have.
+
+06:58.740 --> 07:01.020
+Because I found that that's the correct number.
+
+07:01.680 --> 07:01.960
+OK.
+
+07:02.790 --> 07:03.930
+And.
+
+07:06.850 --> 07:08.290
+Max with.
+
+07:10.270 --> 07:12.500
+It's fine takes the whole with.
+
+07:12.560 --> 07:14.490
+And let's give it a pattern.
+
+07:15.940 --> 07:19.930
+About six deep such.
+
+07:22.550 --> 07:31.790
+And people of color are going to make the text of white hopes.
+
+07:38.920 --> 07:40.000
+Takes a line.
+
+07:40.240 --> 07:45.940
+I'm going to say text a line, I want this to be in the middle of the screen.
+
+07:46.210 --> 07:46.510
+All right.
+
+07:47.980 --> 07:48.910
+Let's see.
+
+07:50.280 --> 07:56.370
+Now, this is not going to show anything less refreshed because we will have to we'll have to change
+
+07:56.370 --> 08:00.030
+our progress, just get rid of this for now.
+
+08:01.500 --> 08:03.660
+So we can see what we just added.
+
+08:06.210 --> 08:13.860
+OK, let's refresh once again, I think so you can see now at first is going to be hidden and ultimately
+
+08:13.860 --> 08:16.470
+that's fine, just a little play that I'm doing here.
+
+08:16.830 --> 08:20.070
+And then at some point these are going to start seeing their score.
+
+08:20.400 --> 08:20.700
+OK.
+
+08:20.890 --> 08:24.780
+Of course, you can change to whatever you want, but I just thought it would be really cool that you
+
+08:24.780 --> 08:27.120
+score one reveal until you're far along.
+
+08:27.780 --> 08:28.200
+All right.
+
+08:28.590 --> 08:32.160
+So let's put it back the what we had here, so we have to progress.
+
+08:35.370 --> 08:35.670
+All right.
+
+08:35.760 --> 08:36.660
+Let's go ahead and run.
+
+08:39.930 --> 08:40.940
+Let's try again.
+
+08:45.970 --> 08:51.430
+OK, it's showing the same thing we had before, and I just know by now we're not going to be able to
+
+08:51.430 --> 08:55.690
+see the actual text or the score until it's far along.
+
+08:56.140 --> 09:05.560
+But now you know that everything is working and it's great right now as an exercise when users get it,
+
+09:05.860 --> 09:07.630
+when users get the answer wrong.
+
+09:08.410 --> 09:15.160
+I know that we have here this red read here, hear what it could do is you can actually subtract one
+
+09:15.160 --> 09:20.320
+or two from their score that something will be a good exercise for you to do.
+
+09:20.590 --> 09:21.580
+You can implement that.
+
+09:22.510 --> 09:22.870
+All right.
+
+09:23.020 --> 09:29.440
+So we're making really good progress here, ladies and gentlemen, and I hope that this inspires you
+
+09:29.440 --> 09:35.680
+to go and make another application something similar or make this better because we have the data,
+
+09:36.010 --> 09:38.860
+you have the mechanics, everything is there for you.
+
+09:38.890 --> 09:42.280
+You can just go ahead and continue making this better.
+
+09:42.310 --> 09:47.710
+One of the things that you could do as an exercise and exercise actually challenge is to see how can
+
+09:47.710 --> 09:51.820
+you track, for instance, the score and save it right?
+
+09:52.300 --> 09:58.150
+And also see if you could save the state of the questions.
+
+09:58.150 --> 10:05.140
+Meaning if I get out of this app at this point, try to save the index so that next time they come back,
+
+10:05.440 --> 10:09.700
+they can go back to where they left it off in this case in this question.
+
+10:10.410 --> 10:10.600
+OK.
+
+10:11.020 --> 10:16.780
+Not that that may require a little bit of digging, so go ahead and figure out how can you save small
+
+10:16.780 --> 10:20.210
+pieces of data in this case, you just want to save the score.
+
+10:20.530 --> 10:28.060
+And if you want to save the index when they leave the app so that next time they come back, they can
+
+10:28.060 --> 10:31.900
+see their score and the score comes back, the score, the last score comes back.
+
+10:32.140 --> 10:39.970
+But also what will come back is the index, which will be passed onto the list so they can see the question
+
+10:39.970 --> 10:40.900
+where they left off.
+
+10:41.170 --> 10:41.480
+OK.
+
+10:41.500 --> 10:42.130
+Take your time.
+
+10:42.140 --> 10:44.110
+You may take a little while, but you can do it.

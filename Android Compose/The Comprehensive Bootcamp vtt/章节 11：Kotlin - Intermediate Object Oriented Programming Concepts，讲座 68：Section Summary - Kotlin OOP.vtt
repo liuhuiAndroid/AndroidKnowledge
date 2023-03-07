@@ -1,0 +1,151 @@
+WEBVTT
+
+00:00.770 --> 00:04.610
+So in this section, we worked on a lot of things.
+
+00:05.030 --> 00:06.170
+A lot of materials here.
+
+00:06.470 --> 00:10.610
+We started by understanding what object oriented programming is.
+
+00:10.850 --> 00:11.870
+What's an object?
+
+00:12.200 --> 00:20.240
+Remember went through the example of car engine and what it means to be an object, right in programming.
+
+00:20.690 --> 00:23.980
+And so we understood that class is at the center of everything.
+
+00:23.990 --> 00:29.920
+So a class, of course, contains attributes, properties of fields and also behavior and functions
+
+00:29.930 --> 00:31.220
+of what a car can do.
+
+00:31.610 --> 00:31.880
+OK.
+
+00:32.480 --> 00:35.620
+We talk about, of course, how to create a class.
+
+00:35.630 --> 00:37.490
+And then we talked about inheritance.
+
+00:37.500 --> 00:43.910
+And why is that so important to inherit or to have this capability of of inheriting from other classes,
+
+00:43.910 --> 00:49.010
+to have a super class, the parent class in the child class and the importance of all of that.
+
+00:49.490 --> 00:55.010
+We talk about overriding, of course, and how to design inheritance classes.
+
+00:55.190 --> 01:04.460
+And then we looked at interfaces as a way for us to separate the main events from the inheritance,
+
+01:04.550 --> 01:12.050
+meaning we can't abstract out brains as they click event that can be consumed by any class independent
+
+01:12.050 --> 01:14.540
+of the inheritance status.
+
+01:14.900 --> 01:21.830
+It's a really powerful mechanism that allows us to implement certain behaviors individually as a class.
+
+01:22.160 --> 01:26.930
+And we'll learn, of course, that a function that's created in an interface.
+
+01:27.620 --> 01:31.850
+It doesn't have a body because it has to be implemented at the class level.
+
+01:32.210 --> 01:36.080
+And that's the beauty of, of course, having an interface.
+
+01:37.520 --> 01:40.540
+And then we jumped into extension functions.
+
+01:40.550 --> 01:47.510
+It's very powerful because now we can leverage what already is there because we first talked about leveraging
+
+01:47.510 --> 01:53.780
+through inheritance, but with extension functions, we can actually use what Kabilang provides, for
+
+01:53.780 --> 01:59.840
+instance, the string class and create an extension function that will append text to existing string.
+
+01:59.900 --> 02:01.610
+So that was just one example.
+
+02:01.940 --> 02:08.420
+And of course, with all of this, I always encourage you to go out and learn more so that you can have
+
+02:08.420 --> 02:11.480
+a larger pool of knowledge on these topics.
+
+02:11.930 --> 02:14.420
+But at least hopefully this gets you started, OK?
+
+02:15.050 --> 02:20.840
+And again, we talked about inheritance design steps, one that you have to look for objects that have
+
+02:20.840 --> 02:21.860
+common attributes.
+
+02:23.180 --> 02:29.690
+For instance, you know, we see this car truck and vehicle as the superclass and to you have to design
+
+02:29.690 --> 02:35.630
+a class that represents the common state and behavior and three design of subclass needs behaviors.
+
+02:35.990 --> 02:41.780
+In this case, method implementations there are specific to that particular subclass type and force
+
+02:41.780 --> 02:43.450
+course finished within data classes.
+
+02:43.460 --> 02:49.760
+So if whenever you need a class that just represents or holds data, you won't have to worry too much.
+
+02:50.780 --> 02:52.940
+Cuddling has such things.
+
+02:52.940 --> 02:59.960
+So if you say data class and name of the class and pass the property as parameters to our primary constructor,
+
+03:00.230 --> 03:01.310
+then you should be good.
+
+03:01.580 --> 03:03.380
+So you've learned a lot of things.
+
+03:03.860 --> 03:09.470
+Now you understand how to create classes, how to exchange those classes, how to override methods,
+
+03:09.470 --> 03:12.170
+how to implement interfaces and so many things.
+
+03:12.560 --> 03:18.530
+I hope you starting to become more curious about this beautiful language and look forward to learning
+
+03:18.530 --> 03:21.800
+more either on your own or continuing this course.
+
+03:22.250 --> 03:29.600
+Now, obviously, there's so much to learning a language that it's virtually impossible to teach that
+
+03:29.600 --> 03:31.640
+in less than two hours, right?
+
+03:31.670 --> 03:32.480
+Or three hours.
+
+03:33.110 --> 03:39.200
+The whole idea of me putting these sections on coddling is to get you started, to get you understanding
+
+03:39.470 --> 03:41.520
+the mechanics of this programming language.
+
+03:41.540 --> 03:46.670
+So it's time to take a little break and go into relax a little bit before we go on to the next sessions.

@@ -1,0 +1,262 @@
+WEBVTT
+
+00:01.060 --> 00:04.550
+OK, so we have our reader navigation here, where is that going to be called?
+
+00:04.590 --> 00:13.900
+Well, because the reader navigation will encloses all of our destinations, all of our all of our navigation,
+
+00:13.900 --> 00:18.650
+honorable composable screens and so forth that needs to be called inside of our main right.
+
+00:18.670 --> 00:25.420
+So if I go to a main screen or main activity that is somewhere here that needs to be called, so let's
+
+00:25.420 --> 00:30.190
+go ahead and get rid of all of this stuff that we don't really need.
+
+00:30.940 --> 00:33.580
+Now let me go ahead and add a modifier as well.
+
+00:37.230 --> 00:45.690
+Phil Max size to say that this will just fill the max size for both ways, the height and the width.
+
+00:46.320 --> 00:49.410
+And while I'm here, I'm just going to head and say padding.
+
+00:51.340 --> 00:52.540
+Top of about.
+
+00:53.880 --> 00:56.130
+46 BP.
+
+00:56.760 --> 00:59.370
+OK, we'll see that in action later.
+
+00:59.820 --> 01:00.750
+OK, so we go.
+
+01:01.410 --> 01:04.260
+So, you know, surface, this is where are we going to add?
+
+01:04.380 --> 01:07.530
+Of course, the actual navigation.
+
+01:07.620 --> 01:13.050
+But I'm going to do this a little bit differently because we want to separate the concerns here.
+
+01:13.680 --> 01:19.350
+I'm going to create yet another composable here called reader app.
+
+01:20.160 --> 01:24.320
+And in fact, I'm going to get all of this.
+
+01:27.450 --> 01:31.500
+Inside here, that's what we need.
+
+01:32.340 --> 01:35.260
+Let's remove that padding because we don't need that for now.
+
+01:35.280 --> 01:36.540
+We can always change that.
+
+01:36.840 --> 01:38.580
+And then inside here, I'm going to create a column.
+
+01:39.290 --> 01:39.620
+OK?
+
+01:40.260 --> 01:42.730
+It's a vertical arrangement.
+
+01:44.340 --> 01:45.880
+I'm going to say center.
+
+01:45.900 --> 01:49.800
+And the thing has to be in the middle and horizontal.
+
+01:50.070 --> 01:54.540
+Oops, that has to be side of properties.
+
+01:54.570 --> 01:56.340
+So horizontal alignment.
+
+01:57.180 --> 01:58.830
+I want this center horizontally.
+
+01:59.340 --> 02:03.900
+Such and then here is what I'm going to call the reader navigation.
+
+02:04.290 --> 02:07.230
+OK, and of course, that's reader app.
+
+02:07.240 --> 02:16.530
+It's going to be called inside here reader app such as Make Sure We Don't Have an issues and that's
+
+02:16.530 --> 02:19.530
+OK because we don't have the reading anymore.
+
+02:20.810 --> 02:27.620
+All right, so this is how we have now set up our reader navigation to be the center of everything writing
+
+02:27.630 --> 02:29.180
+notice in our main activity now.
+
+02:29.450 --> 02:30.350
+We don't have much.
+
+02:30.830 --> 02:36.780
+We just called the reader app, which indeed calls surface creates a surface, and then we have the
+
+02:36.790 --> 02:38.480
+reader navigation enclosed.
+
+02:38.930 --> 02:44.960
+Now the beauty here is that let me get rid of all of these other screens and make sure they're a little
+
+02:44.960 --> 02:45.500
+splash.
+
+02:45.500 --> 02:48.830
+For now, I'm just going to add a text.
+
+02:51.410 --> 02:52.160
+Let's say as.
+
+02:54.400 --> 02:56.470
+Splash screen as such.
+
+02:56.720 --> 03:03.820
+OK, so you can see now because we have everything set up in our we don't navigation, we know the starting
+
+03:03.820 --> 03:09.730
+point now, our navigation here, the starting start, this destination is going to be screen search
+
+03:10.330 --> 03:12.190
+actually should be splash screen.
+
+03:12.670 --> 03:15.350
+That's a mistake, not search screen.
+
+03:15.370 --> 03:15.820
+There we go.
+
+03:16.300 --> 03:16.660
+All right.
+
+03:16.670 --> 03:17.610
+That was a mistake.
+
+03:17.620 --> 03:18.310
+Yes, fine.
+
+03:18.310 --> 03:18.850
+We fixed it.
+
+03:19.150 --> 03:20.760
+So they start this.
+
+03:20.770 --> 03:21.250
+They start.
+
+03:21.250 --> 03:24.220
+This nation has to be the splash screen.
+
+03:24.910 --> 03:31.570
+What it means, then, is that when we run this app, if all things go well, we should see the splash
+
+03:31.570 --> 03:37.600
+screen showing which mean it's going to be our readers splash screen with this text.
+
+03:38.080 --> 03:38.590
+Is that true?
+
+03:38.920 --> 03:39.940
+Well, let's hope so.
+
+03:40.140 --> 03:40.900
+Let's run this.
+
+03:41.920 --> 03:42.400
+All right.
+
+03:43.060 --> 03:43.790
+There it is.
+
+03:43.810 --> 03:46.240
+You can see it, says splash screen.
+
+03:46.330 --> 03:49.600
+Because that's the first starting point.
+
+03:49.690 --> 03:54.520
+The first destination we added into our reader navigation there.
+
+03:54.670 --> 03:55.480
+This is really good.
+
+03:55.480 --> 03:56.590
+That means everything is working.
+
+03:56.860 --> 03:59.560
+If you don't see the splash screen, then something is not right.
+
+03:59.590 --> 04:04.550
+Make sure you look at the code, make sure everything is set up dependencies and everything.
+
+04:04.720 --> 04:08.440
+But you should be able to see that now we have our splash screen.
+
+04:08.470 --> 04:13.990
+We should show as the first composable the first screen that needs to be shown here.
+
+04:15.640 --> 04:20.980
+Now, take a moment to look at this because is structuring everything like we did here.
+
+04:21.370 --> 04:27.040
+It's going to help immensely, as I said, because if you end up with an app that contains that has
+
+04:27.040 --> 04:31.480
+a lot of different screens, it's much easier to structure it this way than we.
+
+04:31.480 --> 04:37.570
+We know exactly where all of our screens are right in our or navigation.
+
+04:37.720 --> 04:45.730
+Of course, we created the nav host controller, but most importantly, if we go to our reader screens,
+
+04:45.910 --> 04:50.950
+right, this is where we added all of them to set them up that way.
+
+04:50.980 --> 04:53.620
+We we're able to use them whatever we want to use them.
+
+04:54.580 --> 04:58.210
+And again, as things grow, we can add as many screens as you want.
+
+04:58.510 --> 05:01.060
+You have just one place where we can go and get the screens.
+
+05:01.480 --> 05:08.230
+Obviously, as I said earlier, you could have just added the string names directly like that.
+
+05:08.240 --> 05:15.970
+But then that would mean every time you want to, for instance, go get our composable or change something
+
+05:15.970 --> 05:21.640
+here, we have to come here and write them and write the string ourself.
+
+05:21.910 --> 05:22.210
+OK.
+
+05:22.450 --> 05:27.490
+So having one place where we have all these string names in this casing that you know, it just helps
+
+05:27.490 --> 05:29.520
+immensely as you see, OK, very well.
+
+05:29.530 --> 05:36.250
+So we're able to at least get the navigation set up, which is really good, and we are now ready to
+
+05:36.490 --> 05:39.130
+move on and put together the actual splash screen.

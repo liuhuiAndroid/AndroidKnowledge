@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.840 --> 00:06.060
+So as things are right now, all is working fine, and we're very happy, made a lot of progress.
+
+00:06.240 --> 00:11.400
+But let's go ahead and refactor a few things here because in main screen, you see we have a lot of
+
+00:11.400 --> 00:18.480
+different composable that probably there will be OK, of course, with all of them pertain to this composable
+
+00:18.480 --> 00:21.590
+main screen, but we can refactor some of them.
+
+00:21.600 --> 00:23.100
+In fact, probably all of them.
+
+00:23.310 --> 00:27.750
+Remove them from here to somewhere else.
+
+00:28.170 --> 00:29.340
+OK, so what I'm going to do?
+
+00:30.000 --> 00:33.960
+Let me get all of that from whether and in fact, let's see.
+
+00:36.530 --> 00:41.570
+Right from weather row all the way down again, we could have left all of them here, that's totally
+
+00:41.570 --> 00:44.270
+fine, but let's just get rid of them.
+
+00:45.590 --> 00:46.790
+Add them somewhere else.
+
+00:50.290 --> 00:55.180
+So I'm going to cut all of that and we're going to go to.
+
+01:00.150 --> 01:00.750
+Widgets.
+
+01:02.670 --> 01:09.330
+Create a new codling class is to file call this.
+
+01:16.650 --> 01:21.270
+Widgets and pace it all in there.
+
+01:22.860 --> 01:24.240
+OK, so back to Main.
+
+01:30.170 --> 01:32.870
+Now, all I have to do is.
+
+01:34.830 --> 01:35.400
+Import.
+
+01:45.500 --> 01:45.890
+OK.
+
+01:46.280 --> 01:46.820
+Port.
+
+01:52.560 --> 01:53.010
+All right.
+
+01:53.540 --> 01:57.200
+All right, let's make sure everything is correct.
+
+01:57.260 --> 01:59.190
+You can just fold a few of these.
+
+02:01.050 --> 02:02.910
+For that, that's good.
+
+02:03.000 --> 02:03.870
+Let's go ahead and run.
+
+02:03.900 --> 02:05.250
+Just make sure we didn't break anything.
+
+02:08.130 --> 02:08.430
+OK.
+
+02:08.760 --> 02:11.550
+Everything still works wonderful.

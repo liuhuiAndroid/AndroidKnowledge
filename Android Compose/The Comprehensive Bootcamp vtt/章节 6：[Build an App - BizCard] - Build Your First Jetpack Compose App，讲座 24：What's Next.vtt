@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00.390 --> 00:04.230
+So we just finished putting together a little compose application here.
+
+00:04.380 --> 00:09.540
+It's very simple in the sense that it showcases a little bit of what Compose can do.
+
+00:09.570 --> 00:15.240
+Obviously, again, it's a very simplistic idea of what composing you do, but I'm hoping by going through
+
+00:15.240 --> 00:20.220
+this process of building this small application, you were able to see the power of compose and get
+
+00:20.220 --> 00:21.000
+excited about it.
+
+00:21.030 --> 00:22.080
+That's the whole idea.
+
+00:22.110 --> 00:23.550
+So what are we going to be doing next?
+
+00:23.760 --> 00:26.010
+Well, it will depend on what you want to do.
+
+00:26.220 --> 00:27.780
+So next, what are we going to do?
+
+00:27.810 --> 00:29.800
+We're going to go back to this learning hat.
+
+00:29.820 --> 00:30.150
+Right?
+
+00:30.300 --> 00:37.020
+So if you understand Kotlin, you've done the codling before and you're secure in your Kotlin knowledge,
+
+00:37.260 --> 00:40.530
+then obviously you're going to skip this part completely.
+
+00:40.530 --> 00:41.910
+And that's totally fine.
+
+00:42.000 --> 00:48.270
+And remember that these videos are always going to be here so you can always come back and go to different
+
+00:48.270 --> 00:51.900
+sections if you need to brush up on codling fundamentals.
+
+00:52.350 --> 00:56.790
+So just to let you know the next sections, we're going to dive into codling fundamentals.
+
+00:56.790 --> 01:02.070
+So really basics and run perhaps slowly until we get to some advanced concepts of the common language.
+
+01:02.070 --> 01:08.370
+And this is very important because Compose uses huddling heavily, and so understanding cuddling is
+
+01:08.370 --> 01:09.420
+going to be very helpful.
+
+01:09.540 --> 01:12.900
+If you don't know Kotlin, do not skip this section.
+
+01:12.900 --> 01:18.200
+I really believe that because then you're going to have a lot of trouble once we start with building
+
+01:18.210 --> 01:19.860
+compose applications, using cuddling.
+
+01:19.890 --> 01:22.320
+So if you're a beginner, you don't know cuddling very well.
+
+01:22.560 --> 01:25.830
+I recommend you just to go through these sections on cuddling.
+
+01:25.980 --> 01:26.220
+OK?
+
+01:26.520 --> 01:33.180
+And again, like I said, if you want to dive right through and go to jetpack compose sections, you
+
+01:33.180 --> 01:34.110
+are more than welcome.
+
+01:34.110 --> 01:37.680
+You can scroll down and find where we reach back to compose.
+
+01:37.800 --> 01:38.340
+All right.
+
+01:38.550 --> 01:43.050
+So again, let's go ahead and get started with Kotlin fundamentals.
+
+01:43.230 --> 01:43.920
+I'll see you next.
+
+01:44.640 --> 01:48.120
+OK, now we're going to go right into Kotlin fundamentals.
+
+01:48.120 --> 01:54.300
+And if you already said no Kotlin, this is an optional section or these are optional sections, but
+
+01:54.300 --> 01:56.020
+it's going to be more than one section.
+
+01:56.370 --> 01:59.490
+You can just skip all of that and go to jetpack compose.
+
+01:59.610 --> 01:59.920
+OK.
+
+02:00.210 --> 02:00.540
+All right.
+
+02:00.870 --> 02:02.040
+Let's go ahead and get started.

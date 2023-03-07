@@ -1,0 +1,325 @@
+WEBVTT
+
+00:01.610 --> 00:04.580
+All right, so we have created the database.
+
+00:04.640 --> 00:05.690
+We have the Dow.
+
+00:06.320 --> 00:10.700
+So the infrastructure, the below infrastructure is already set up, which is real good.
+
+00:10.700 --> 00:13.550
+So now we're going to move up to go to repository.
+
+00:13.640 --> 00:21.200
+Now, as I said before, to have a repository is optional in the sense that it's not part of this architecture
+
+00:21.440 --> 00:23.810
+for things to actually work properly, right?
+
+00:23.810 --> 00:30.380
+So a repository is an optional, nonetheless useful because it's the place where we can have the clean
+
+00:30.380 --> 00:37.400
+API, right, a way to cleanly communicate with anything else afterwards.
+
+00:37.460 --> 00:40.970
+Like if you want to end the user interface and so forth.
+
+00:41.660 --> 00:46.700
+So we're going to create a repository, even though it's not a structure that it's needed per se, but
+
+00:46.700 --> 00:47.450
+it's a good habit.
+
+00:48.770 --> 00:49.790
+So back to our code here.
+
+00:49.850 --> 00:59.630
+Let's go and create a new package so new you can see repository such an inside there.
+
+01:00.420 --> 01:02.390
+This created new codling class.
+
+01:04.190 --> 01:06.410
+Called Note Repository
+
+01:08.900 --> 01:17.960
+right now, here is hilt where that dependency injection really shines because this repository will
+
+01:17.960 --> 01:20.470
+have to have access to what?
+
+01:20.570 --> 01:27.230
+Yes, we have to have access to our Dow because remember, our Dow is the connector between anything
+
+01:27.230 --> 01:30.620
+else at the top here with what we have at the bottom here.
+
+01:30.620 --> 01:38.290
+So the Dow data access object, access to data from our SQL light thank from our entities and their
+
+01:38.300 --> 01:38.930
+bodies and so forth.
+
+01:39.770 --> 01:42.830
+All of that is inside of our room database structure.
+
+01:43.940 --> 01:44.890
+So how do we do that?
+
+01:44.900 --> 01:52.220
+Well, are we going to say I inject this is the beauty because now we can just invoke, add in.
+
+01:52.670 --> 01:58.970
+We can just say at inject and say constructed so we can inject a property in our constructor here,
+
+01:58.970 --> 02:03.890
+what property we want and we say private foul and I'm going to put a note.
+
+02:06.390 --> 02:09.360
+Database Dow type like this.
+
+02:11.760 --> 02:12.090
+All right.
+
+02:12.540 --> 02:12.960
+Very good.
+
+02:12.960 --> 02:19.050
+So now we'll have access to our IT note that eBay style, which is needed, of course, to access our
+
+02:19.770 --> 02:25.040
+database and query the database into all sort of things like the crud operations.
+
+02:25.050 --> 02:27.000
+So create, read, update and delete.
+
+02:27.720 --> 02:29.880
+So inside here we are going to create right?
+
+02:29.880 --> 02:35.100
+Because remember, it's going to be the second layer to our data, right?
+
+02:35.100 --> 02:39.150
+So I'm going to invoke from here the operations.
+
+02:39.300 --> 02:42.420
+So I'm going to create suspend again functions in this case.
+
+02:42.760 --> 02:44.010
+Add note.
+
+02:44.190 --> 02:48.450
+Well, to add a note, we need to pass an actual note object.
+
+02:52.010 --> 02:56.270
+And then then I'm going to just say no to database.
+
+02:58.010 --> 03:00.980
+Dow, right, because I have access to it there.
+
+03:01.250 --> 03:06.710
+That's the beauty and invoked to insert method or function and pass our note.
+
+03:07.430 --> 03:18.980
+So remember, our Dow here has the actual functions queries so we can actually insert things or deal
+
+03:18.980 --> 03:21.890
+with the underlining database, right?
+
+03:21.890 --> 03:27.320
+Because we have here you can see query and we can start selecting, for instance, old notes from the
+
+03:27.320 --> 03:30.890
+database or a certain note and so forth, right?
+
+03:32.320 --> 03:33.310
+So that is the structure.
+
+03:34.280 --> 03:41.770
+We are now connecting to our data access object, which has access to the data so can continue here.
+
+03:42.080 --> 03:45.790
+Let's finish without note again that we can just pass a note because No.
+
+03:45.800 --> 03:47.160
+Two, No, they have the same name.
+
+03:47.180 --> 03:47.750
+That's fine.
+
+03:48.610 --> 03:58.190
+I create another one, suspend again phone and say update note when it passed the note, it's going
+
+03:58.190 --> 04:06.330
+to be a note that database style again and update and pass the note right?
+
+04:08.210 --> 04:09.350
+And let's say delete.
+
+04:11.240 --> 04:20.330
+Note, it's going to be a note now that it may still delete note, pass that note and needs to be deleted,
+
+04:21.500 --> 04:26.720
+and that's fine, and we can also say suspend again, delete
+
+04:29.930 --> 04:31.460
+all notes
+
+04:34.010 --> 04:38.030
+now to delete all delete old notes.
+
+04:38.030 --> 04:39.390
+You don't have to pass anything.
+
+04:39.550 --> 04:39.980
+Said No.
+
+04:44.420 --> 04:48.470
+So we're going to say no to database to delete all.
+
+04:49.220 --> 04:49.480
+OK.
+
+04:49.730 --> 04:53.930
+And you can see, let's make sure that this is correct.
+
+04:54.350 --> 04:57.500
+You can see that some of the names are actually similar, right?
+
+04:57.510 --> 05:00.080
+So I take note, this is update I could have made.
+
+05:00.080 --> 05:03.470
+All of them have the same names because there are different classes.
+
+05:03.650 --> 05:03.950
+Right?
+
+05:04.400 --> 05:07.210
+So they are mirroring each other because it makes sense.
+
+05:07.220 --> 05:11.900
+All our repositories doing is mirroring whatever the Dow is doing, so it stays.
+
+05:11.900 --> 05:14.390
+Update here, I could also say updating and so forth.
+
+05:14.810 --> 05:19.040
+So the names of the functions could be the same and usually they tend to be the same.
+
+05:19.800 --> 05:20.000
+OK.
+
+05:21.120 --> 05:21.570
+All right.
+
+05:21.720 --> 05:27.090
+And let's see what else and get suspend, let's say, get all notes.
+
+05:27.330 --> 05:28.810
+Now how do we get old notes?
+
+05:28.830 --> 05:32.730
+Well, we have to be very mindful, of course, of the types.
+
+05:33.270 --> 05:35.730
+So when we get all notes, let's see.
+
+05:38.450 --> 05:40.010
+Here says get no same thing.
+
+05:40.280 --> 05:42.220
+Notice we're passing flu, right?
+
+05:42.710 --> 05:47.690
+It's kind of wrapping the whole list of note inside of flow so that we are able to get that state and
+
+05:47.690 --> 05:56.200
+propagate the information throughout the entire application so that we get in this case or a composable
+
+05:56.200 --> 06:01.070
+or function can listen to this state, this flow of data.
+
+06:02.060 --> 06:03.710
+So types are very important here.
+
+06:04.040 --> 06:06.680
+So that means then of course, going to do the same thing here.
+
+06:07.040 --> 06:08.500
+This is expecting a flow.
+
+06:09.620 --> 06:12.920
+Make sure we get the court lane call routines flow, I said.
+
+06:13.700 --> 06:14.690
+It's going to be the same thing.
+
+06:14.690 --> 06:21.830
+So it's list of notes, object and say note database.
+
+06:21.890 --> 06:23.930
+I'll get notes.
+
+06:24.470 --> 06:31.040
+And this is when then I'm going to say Dot flown on like this.
+
+06:32.930 --> 06:35.000
+And then I have passed the context.
+
+06:35.510 --> 06:39.030
+So I'm just going to say dispatcher that.
+
+06:40.370 --> 06:43.790
+And then we're going to say dot com fleet like that.
+
+06:44.090 --> 06:49.250
+And at this point, we can actually get rid of suspend because that's not necessary since we are actually
+
+06:49.250 --> 06:52.970
+getting a flow, since we actually getting a flow.
+
+06:53.150 --> 06:58.670
+So this will take care of all of the background threads, and we don't need to worry about it.
+
+07:00.110 --> 07:07.070
+OK, so there we go, so now we have created our repository, which is now closer, one step closer
+
+07:07.340 --> 07:14.090
+to our view, more so if you model this case doesn't have to go through and get to Dow directly, although
+
+07:14.090 --> 07:14.510
+it could.
+
+07:14.810 --> 07:17.900
+But now instead is going to go through a repository to get the data.
+
+07:18.020 --> 07:21.470
+And then, of course, inside here we can use it life data.
+
+07:21.470 --> 07:22.700
+We can use flow.
+
+07:22.700 --> 07:27.560
+In this case, that's what are going to be using what we can use, any other data structure that allows
+
+07:27.560 --> 07:29.030
+us to have that state.
+
+07:29.570 --> 07:31.520
+That's very important, especially for.
+
+07:32.790 --> 07:33.660
+Our composer was.
+
+07:34.750 --> 07:35.290
+My here.
+
+07:36.950 --> 07:38.420
+All right, so we're making good progress.
+
+07:38.570 --> 07:40.130
+Let's continue in next video.

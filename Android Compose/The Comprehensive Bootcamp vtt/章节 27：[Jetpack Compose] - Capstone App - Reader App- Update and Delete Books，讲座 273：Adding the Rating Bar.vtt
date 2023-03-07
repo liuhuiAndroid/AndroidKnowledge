@@ -1,0 +1,445 @@
+WEBVTT
+
+00:00.460 --> 00:07.240
+So this structure here, this rating bar have these stars and so forth.
+
+00:07.810 --> 00:15.490
+I already have created this composable so that you don't have to do anything or you have to worry about
+
+00:15.490 --> 00:15.600
+it.
+
+00:15.970 --> 00:19.030
+So I'm going to just show you the code a little bit here that is created.
+
+00:19.030 --> 00:20.290
+Okay, so let's go to components.
+
+00:20.290 --> 00:25.810
+That's where I added it, and I have this very simple reading bar.
+
+00:26.950 --> 00:32.650
+So see here, I'm passing my fire, have a rating and I have one press on press ratings, so I'm going
+
+00:32.650 --> 00:34.780
+to pass the actual rating as an intro.
+
+00:35.860 --> 00:40.690
+And then of course, I have a few states here for rating state selected sites.
+
+00:40.750 --> 00:43.840
+This is for animation, as we will see later.
+
+00:43.850 --> 00:50.110
+So what I'm doing here, I'm creating the size that's going to be animated for nice damping ratio of
+
+00:50.110 --> 00:51.730
+medium bouncy animation here.
+
+00:52.540 --> 00:54.110
+It's essentially the target selected.
+
+00:54.790 --> 01:01.060
+We're going to change the the size from 42 dpi to thirty four and we're going to use this spring.
+
+01:01.060 --> 01:06.100
+Animation has this kind of like jumpy kind of bounce animation.
+
+01:07.000 --> 01:08.590
+These are the states we're going to be using.
+
+01:09.070 --> 01:10.570
+OK, so and then I'll just create a row.
+
+01:10.630 --> 01:15.100
+So essentially, I'm creating this row here where all of these stars will be laid out.
+
+01:16.390 --> 01:21.940
+OK, so then a crater full look, because we know we're going to have five stars at the top, so you
+
+01:21.940 --> 01:27.400
+can maybe add 10 stars whatever you want, but five is the usually the norm.
+
+01:27.880 --> 01:33.340
+So I'm going to loop through to one five inclusive and then I'm going to paint an icon.
+
+01:34.090 --> 01:38.050
+I do have a resource called Base Line, Star added.
+
+01:38.110 --> 01:42.340
+It's added already, you know, resources go to draw.
+
+01:42.370 --> 01:43.330
+There it is, right?
+
+01:43.750 --> 01:47.140
+So you will have access to all of these so you don't have to worry about it.
+
+01:47.350 --> 01:50.050
+And so I'm calling that some creating stars.
+
+01:50.060 --> 01:56.350
+Essentially, I'm creating these stars such and passing the size, my body size that's going to be added
+
+01:56.590 --> 02:00.010
+animated and using this animated state there.
+
+02:01.420 --> 02:04.090
+And then it passed this point interop filter.
+
+02:04.120 --> 02:11.320
+If you have over, it's in special input modifier provides access to the underlying motion events or
+
+02:11.320 --> 02:13.000
+recently dispatched to compose.
+
+02:13.180 --> 02:20.150
+Essentially, what we want to do here is we want to catch the motion of, for instance, action down.
+
+02:20.170 --> 02:25.600
+So when we click on each one of these items, we want something that happens, that what we do, that's
+
+02:25.600 --> 02:26.050
+what we doing.
+
+02:26.050 --> 02:31.150
+So we want to catch that action, that event, that motion event.
+
+02:32.050 --> 02:38.200
+So then we have an app that gives us the motion event object.
+
+02:38.800 --> 02:41.320
+Then I'm going to put inside of a wine expression.
+
+02:41.320 --> 02:45.760
+So if the action is action down when we tap.
+
+02:46.900 --> 02:48.640
+On either one of these.
+
+02:49.150 --> 02:54.010
+What's going to happen, what we're going to see selected is true, meaning then that item was selected.
+
+02:54.010 --> 02:57.000
+In this case, the star will select whatever was selected it right?
+
+02:57.460 --> 03:00.370
+And then I'm going to pass the on press reading.
+
+03:00.580 --> 03:04.900
+I write this entirely of the item that was pressed.
+
+03:05.740 --> 03:08.290
+And of course, the writing state is going to change to that.
+
+03:08.290 --> 03:09.820
+I was going to be the.
+
+03:10.780 --> 03:11.320
+Value.
+
+03:12.040 --> 03:15.570
+So if I press the first one, the ratings would be one second one.
+
+03:15.610 --> 03:16.930
+Ratings every two and so forth.
+
+03:17.330 --> 03:21.580
+This, I hear remember, is from this I now for the.
+
+03:22.550 --> 03:26.930
+So we will know exactly who knows the count of the items stars that we have.
+
+03:27.140 --> 03:28.520
+That's all we're doing, OK?
+
+03:29.060 --> 03:37.490
+And Motion Up Select is false, meaning when we stop selecting or touching or tapping, then there's
+
+03:37.490 --> 03:39.230
+no more motion happening.
+
+03:39.650 --> 03:43.250
+So that's why we say select is false, meaning we haven't selected anything.
+
+03:43.880 --> 03:49.010
+And then we just pass through to say to get out of this point or interrupt filter.
+
+03:50.450 --> 03:55.640
+And because we're still inside of this icon there, we can't go ahead and pass it tint you and we got
+
+03:55.640 --> 03:56.780
+to put an if statement.
+
+03:56.780 --> 03:59.690
+So if if I meaning the.
+
+04:01.270 --> 04:08.410
+Indexes that are we are looking through to create these ratings, these stars, if I is less than reading
+
+04:08.410 --> 04:09.430
+state, might.
+
+04:10.760 --> 04:13.970
+The color is going to be this one here, so what are we going to do?
+
+04:14.150 --> 04:15.980
+We're going to have this yellow color.
+
+04:16.850 --> 04:18.920
+Else we're going to change to this color.
+
+04:19.250 --> 04:20.240
+These are different colors.
+
+04:20.570 --> 04:23.540
+So essentially, he's changing the state of the color as well.
+
+04:23.590 --> 04:30.320
+So beginning going to be like this as we click, we're going to change that start to a yellow color.
+
+04:30.590 --> 04:32.090
+So that's how this works.
+
+04:32.840 --> 04:35.830
+It's very simple, but take it time to study this a little bit.
+
+04:35.840 --> 04:39.380
+So we're going to use this rating in our reader book right here.
+
+04:40.400 --> 04:42.650
+So what's going to be driving this rating?
+
+04:43.130 --> 04:44.090
+That's the question.
+
+04:44.930 --> 04:45.950
+What's going to be driving?
+
+04:45.950 --> 04:47.420
+This rating is going to be first.
+
+04:47.450 --> 04:53.420
+It's going to be from our book because book when we save it, we will have some sort of rating this
+
+04:53.420 --> 04:54.920
+case, the rating, it's zero.
+
+04:55.310 --> 05:01.460
+So we can look at this book rating to see what we have from the database and go from there.
+
+05:02.850 --> 05:05.640
+So we have access to that book, so we can say book.
+
+05:07.510 --> 05:08.110
+Rating.
+
+05:09.420 --> 05:15.330
+I'm going to say to ENT because they come in as stables when I go to ENT and I say that.
+
+05:15.810 --> 05:21.600
+So I can have this blog where you do work, so I'm going to pass that into that we're getting from our
+
+05:21.600 --> 05:21.930
+reading.
+
+05:21.940 --> 05:23.130
+So essentially the reading.
+
+05:23.970 --> 05:27.000
+So in fact, I can just see rating.
+
+05:33.050 --> 05:33.530
+Like that?
+
+05:40.160 --> 05:41.060
+Took place like that.
+
+05:41.660 --> 05:44.480
+OK, so here I'm going to pass a rating.
+
+05:47.060 --> 05:48.170
+Impartiality.
+
+05:49.320 --> 05:54.840
+And now on press here, I'm going to pass another lamp to, in fact, let's just go and do the lambda
+
+05:55.410 --> 05:56.430
+directly like this.
+
+05:59.260 --> 06:00.850
+Looks like this needs some help.
+
+06:01.360 --> 06:03.730
+Let's say, although this.
+
+06:04.700 --> 06:10.430
+OK, so now inside here, I'm going to have that reading, so why do I need to do is I'm going to set
+
+06:10.430 --> 06:13.790
+up another value at the top here.
+
+06:13.940 --> 06:21.320
+I remember because this needs to change in our impossible and zero rating Val.
+
+06:22.760 --> 06:23.960
+It's going to be, I remember.
+
+06:26.500 --> 06:27.100
+Interval.
+
+06:30.810 --> 06:34.050
+State of it's kind of an integer, so just put it zero like this.
+
+06:34.740 --> 06:44.430
+So now we are going to use it by saying, sign it raining foul saying to white or rating in this case
+
+06:44.430 --> 06:45.090
+that we're getting.
+
+06:46.350 --> 06:52.500
+Or it in fact, let's just make this better by saying rating like that.
+
+06:52.920 --> 07:00.210
+OK, so we can take that rating we can and pass that to rating for our state because we want to make
+
+07:00.210 --> 07:03.350
+sure that this shows up in our composable right.
+
+07:03.510 --> 07:04.110
+And that's it.
+
+07:05.040 --> 07:06.030
+So let's go ahead and run.
+
+07:12.570 --> 07:12.930
+OK.
+
+07:13.530 --> 07:13.850
+Click.
+
+07:14.640 --> 07:15.840
+Voila, there it is.
+
+07:16.230 --> 07:22.380
+So now I'm going to go on my phone, tap, you see, there's that nice animation that we added it as
+
+07:22.380 --> 07:30.090
+a tap may actually change the status and changing the values of the star so that three stars and so
+
+07:30.090 --> 07:30.390
+forth.
+
+07:30.540 --> 07:30.930
+All right.
+
+07:32.360 --> 07:33.020
+Very nice.
+
+07:33.050 --> 07:36.350
+All this is happening in our writing.
+
+07:37.350 --> 07:44.940
+Composable that we created, and really, you will see something interesting here if I go to our fi
+
+07:44.970 --> 07:45.450
+store.
+
+07:47.310 --> 07:54.660
+Will change one of these sweeping I don't know which book this is, but let me add for an update now
+
+07:54.660 --> 07:55.470
+just waiting for.
+
+07:56.980 --> 07:58.690
+Let's go back to one of these books.
+
+07:58.810 --> 08:05.350
+I don't know which one was that, that's not the one it should reflect that, you see, because we changed
+
+08:05.350 --> 08:06.290
+this one to four.
+
+08:06.310 --> 08:10.330
+If I change this to three, let's say one, so you can see an update.
+
+08:11.660 --> 08:14.190
+And I go back, I know what book, which book this is.
+
+08:14.230 --> 08:15.260
+Click See.
+
+08:15.560 --> 08:20.210
+So it's getting exactly for us because that's what's driving everything really in the beginning is going
+
+08:20.210 --> 08:23.240
+to check to see if from our book reading, we have something.
+
+08:23.570 --> 08:29.690
+And when I use that, that something's this case going to be the interior to pass into our ratings.
+
+08:29.700 --> 08:34.310
+So that's why reading at first going to see it, which is going to be these, are we getting there?
+
+08:34.940 --> 08:39.590
+And then further, we're going to pass that, Lamberto, because we have that lambda for one click because
+
+08:39.590 --> 08:42.050
+we clicking right to set it up.
+
+08:42.650 --> 08:47.230
+And as we do that, we're going to set the rating value because we're going to need this later, right
+
+08:47.240 --> 08:47.860
+to save it.
+
+08:48.740 --> 08:52.430
+At some point, we're going to be saving this updates to the book.
+
+08:53.300 --> 08:58.490
+That's why we're passing rating that foul in passing this rating that we have so far in our rating bar.
+
+08:59.360 --> 09:06.590
+So case, if we go change it to three now this rating Val value is going to be three.
+
+09:08.840 --> 09:12.230
+In fact, if I come here and I say Log Lagarde.
+
+09:14.010 --> 09:15.000
+And pass our.
+
+09:16.700 --> 09:17.390
+Rating.
+
+09:19.680 --> 09:21.210
+Well, that value.
+
+09:22.070 --> 09:22.910
+We will see.
+
+09:25.650 --> 09:28.650
+Exactly what I'm talking about, let's go ahead and open a lock at.
+
+09:34.390 --> 09:34.590
+OK.
+
+09:35.210 --> 09:35.740
+This guy.
+
+09:37.020 --> 09:41.850
+I click here, you can see now forms to go.
+
+09:43.460 --> 09:46.970
+See, changing that and it's changing accordingly.
+
+09:48.880 --> 09:55.930
+I get great, so what I want you to do is to create these two buttons, delete or update and delete.
+
+09:56.290 --> 09:56.980
+It's very easy.
+
+09:57.310 --> 09:57.950
+You can do that.
+
+09:57.970 --> 10:00.130
+Go ahead and do that before we go to the next video.

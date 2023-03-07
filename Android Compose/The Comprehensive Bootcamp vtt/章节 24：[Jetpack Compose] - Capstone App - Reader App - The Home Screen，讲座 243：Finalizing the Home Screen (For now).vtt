@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00.150 --> 00:06.540
+So this is a happy day, oh, happy hour, because we have done a lot of work on our home screen, so
+
+00:06.540 --> 00:12.540
+we've put together this whole structure here, which started at the top, creating the top bar there.
+
+00:12.540 --> 00:19.320
+And then we have that section area where we have the name of the user as well as an icon, as well as
+
+00:19.320 --> 00:22.650
+the text saying, OK, you're reading your reading activity right now.
+
+00:23.070 --> 00:27.600
+And then we tackle this main area here, which contains this list card.
+
+00:28.080 --> 00:31.930
+So that was a little bit of work we had to put together, but it hopefully wasn't too much.
+
+00:31.950 --> 00:36.660
+So the idea was to put together that structure so we can reuse that code, as you see at the bottom
+
+00:36.780 --> 00:37.140
+there.
+
+00:37.410 --> 00:40.800
+And next, we're going to look at the search screen.

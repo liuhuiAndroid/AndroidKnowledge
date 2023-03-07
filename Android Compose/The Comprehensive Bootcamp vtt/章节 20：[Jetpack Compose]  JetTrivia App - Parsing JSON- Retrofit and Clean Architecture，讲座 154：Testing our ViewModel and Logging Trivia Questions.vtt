@@ -1,0 +1,535 @@
+WEBVTT
+
+00:01.740 --> 00:04.560
+So our question view model is ready to be used.
+
+00:05.370 --> 00:08.220
+Let's go ahead and look at our main activity.
+
+00:08.820 --> 00:10.960
+Let's not forget this is easy to forget.
+
+00:11.010 --> 00:19.110
+We need to also say at the top here at Android entry points so that health knows that main activity
+
+00:19.110 --> 00:25.560
+will be getting access to all of these dependencies that we've put together throughout.
+
+00:26.710 --> 00:27.060
+All right.
+
+00:27.310 --> 00:29.190
+Let's put this in code like this.
+
+00:29.880 --> 00:36.330
+So let me get rid of all of this because we don't need any of this for now.
+
+00:36.540 --> 00:38.490
+And of course, this is going to go away.
+
+00:38.560 --> 00:39.150
+That's fine.
+
+00:39.510 --> 00:47.040
+So what I'm going to do, I'm going to create a composable here called at, say, composable, and let's
+
+00:47.040 --> 00:48.420
+call this trivia.
+
+00:49.890 --> 00:51.210
+It's going to be a function, of course.
+
+00:51.840 --> 00:53.330
+Trivia home.
+
+00:53.340 --> 00:53.970
+I such.
+
+00:58.240 --> 01:00.840
+Right now, a trivia home here, we're going to pass.
+
+01:00.960 --> 01:08.610
+Yes, the view models and sea view model, it's going to be our question, the view model as such.
+
+01:09.360 --> 01:14.460
+And so inside here is where we're going to use that view model and inside of our TV.
+
+01:14.470 --> 01:22.740
+I'm going to also call a question or questions like this, which is going to be yet another composable
+
+01:23.070 --> 01:23.970
+at the bottom here.
+
+01:24.990 --> 01:25.280
+OK?
+
+01:25.740 --> 01:30.960
+And we're going to also require here a few model question this section.
+
+01:31.350 --> 01:34.980
+So inside here is what we are going to create the user interface.
+
+01:34.980 --> 01:40.170
+And of course, later I will, of course, later we are going to move all of this somewhere else.
+
+01:40.170 --> 01:41.880
+But for now, we can just test things out.
+
+01:41.880 --> 01:45.570
+So I do see questions who need a view model.
+
+01:45.570 --> 01:47.970
+So that means I need to pass here a few model.
+
+01:49.520 --> 01:50.960
+Just a few model such.
+
+01:53.240 --> 01:53.650
+All right.
+
+01:53.740 --> 01:58.350
+Passing this new model there, OK, let's test a few things, so very good.
+
+01:58.390 --> 02:00.760
+So now we have our access to our view model.
+
+02:01.390 --> 02:06.850
+If we go back to our question of your model, we know that whenever we say for our data here, we'll
+
+02:06.860 --> 02:12.250
+be turning a mutable state wrapped inside of a data or exception, which has a question the least and
+
+02:12.250 --> 02:12.760
+so forth.
+
+02:13.240 --> 02:20.050
+If you go to our question item such you notice the question item, a synthetic class that I answer category
+
+02:20.050 --> 02:22.240
+choices in a list string and question.
+
+02:22.660 --> 02:27.430
+Now you'll see that we also we have the question class data class.
+
+02:27.610 --> 02:34.260
+If you go back to our model, this is what represents the entire payload that we have here.
+
+02:34.270 --> 02:34.750
+We're getting.
+
+02:35.350 --> 02:38.770
+That's why it says ArrayList containing question items.
+
+02:39.850 --> 02:40.960
+That's the distinction here.
+
+02:41.530 --> 02:49.150
+This means insight of let's get rid of all of this means that our main activity here where we're calling
+
+02:49.160 --> 02:51.820
+a full model, we need to be aware of something.
+
+02:52.060 --> 02:57.310
+I will have to do something like this to get access to the list that we need, right?
+
+02:57.320 --> 03:05.220
+So when I say foul questions is equal to model in this case, just a few Model S. View model, right?
+
+03:05.670 --> 03:06.880
+They can invoke data.
+
+03:07.120 --> 03:14.290
+So here again, I actually have to say helt view model like this to instantiate the actual model.
+
+03:14.900 --> 03:15.250
+Very good.
+
+03:15.640 --> 03:18.760
+So now here this is wrong questions.
+
+03:19.030 --> 03:24.730
+So I can see if Model Dot and I can get data and let's see data.
+
+03:24.730 --> 03:27.100
+OK, I need to make data public, right?
+
+03:27.190 --> 03:31.900
+Remember if we go back to our question.
+
+03:33.310 --> 03:38.770
+The model, right, they need to make that data public so we can actually access it.
+
+03:40.510 --> 03:44.140
+OK, so let's see, go back to make sure, yep, now we can get to that.
+
+03:44.410 --> 03:47.020
+I'm going to say that value and go get the value.
+
+03:47.050 --> 03:49.990
+Notice the value is going to be that wrapper there or exception.
+
+03:50.080 --> 03:51.850
+This is very important, as you see.
+
+03:52.300 --> 03:56.080
+And then I'm going to get the data, which in this case, I want to get the question list ArrayList.
+
+03:56.140 --> 03:56.680
+Like this?
+
+03:56.980 --> 03:57.340
+OK.
+
+03:57.910 --> 04:00.480
+You would think that this would work, but it's not.
+
+04:00.490 --> 04:03.460
+So this I have to do something I have to say to.
+
+04:05.280 --> 04:13.230
+Mutable list that is very important because the type that we have in our question, which is what are
+
+04:13.230 --> 04:13.780
+we getting?
+
+04:14.010 --> 04:19.270
+It's an array list, so it's a different implementation of the listing if you think about it.
+
+04:19.290 --> 04:25.290
+OK, so now here we are saying we needed to convert that into a mutable list, which is needed, of
+
+04:25.290 --> 04:26.810
+course, in our composable.
+
+04:28.250 --> 04:29.330
+Because we need to mutate it.
+
+04:29.750 --> 04:30.740
+All right, very good.
+
+04:30.860 --> 04:32.600
+That's very important, that needs to happen.
+
+04:32.990 --> 04:39.590
+So in this case, here I can go ahead and say Log D. Just to see if perhaps we can see something when
+
+04:39.590 --> 04:42.950
+I say, let's just get to the questions.
+
+04:43.550 --> 04:45.080
+It's a mutable list, of course.
+
+04:45.830 --> 04:46.650
+Get it.
+
+04:46.740 --> 04:47.990
+Let's say get.
+
+04:48.110 --> 04:52.310
+Let's just start with this side just to see if this is going to work.
+
+04:52.320 --> 04:53.840
+Of course we need to add.
+
+04:54.470 --> 04:55.520
+Make it a snowball.
+
+04:56.130 --> 04:58.940
+Say size like this as the tag.
+
+05:00.110 --> 05:05.330
+And this make sure this tree veers off course called Let's go ahead and run.
+
+05:06.320 --> 05:08.130
+So it's running on my device.
+
+05:08.150 --> 05:09.650
+It doesn't matter what we see, really.
+
+05:09.650 --> 05:17.960
+Let's see, you know, a logcat cat here to see if we can actually see that information is being retrieved.
+
+05:19.130 --> 05:20.120
+All right, let's go.
+
+05:20.750 --> 05:22.910
+We call it size the tag name.
+
+05:23.360 --> 05:24.650
+Just search for it.
+
+05:25.520 --> 05:27.560
+And you can see it says here.
+
+05:27.560 --> 05:30.890
+Size questions for 48 77.
+
+05:30.900 --> 05:35.060
+So this is how many questions we have right now.
+
+05:35.060 --> 05:41.390
+The reason why you may see size for the first time is no, and then it actually gives us the correct
+
+05:41.690 --> 05:42.110
+number.
+
+05:42.110 --> 05:48.290
+The size right is because in the beginning, the user interface may be showing before it had a chance
+
+05:48.290 --> 05:50.090
+to go and getting the information right.
+
+05:50.120 --> 05:51.380
+So in this case here.
+
+05:51.980 --> 05:53.600
+That's why at first it says no.
+
+05:53.600 --> 05:57.890
+But then we get the correct information, which is the size of our list.
+
+05:58.400 --> 05:59.190
+This is real good.
+
+05:59.300 --> 05:59.780
+It's real good.
+
+05:59.780 --> 06:00.830
+That means it's working.
+
+06:00.830 --> 06:04.190
+All the work is that we put in is now paying off.
+
+06:04.550 --> 06:08.240
+That just means then I can go forward and say something like this, right?
+
+06:08.720 --> 06:10.870
+Let's put that instead of an if statement.
+
+06:10.890 --> 06:16.430
+And I say if in this case, I can say, let's just close this down.
+
+06:17.920 --> 06:19.600
+Let's see if questions.
+
+06:21.050 --> 06:26.090
+Actually, I can go to the view model itself because I want to get more information and get the data
+
+06:27.080 --> 06:36.650
+that I want to get to the loading safe value not loading is equal to true.
+
+06:38.000 --> 06:44.240
+I'm just going to say something like this Lock D loading like that.
+
+06:48.770 --> 06:49.730
+And then else.
+
+06:55.280 --> 06:56.060
+Meaning if.
+
+06:58.130 --> 06:59.790
+Loading is not true, is false.
+
+06:59.810 --> 07:05.180
+We've gotten information I can just go ahead and perhaps loop through.
+
+07:05.630 --> 07:15.920
+In this case, let's get questions dot for each such, say, question item like this for each question
+
+07:15.920 --> 07:16.490
+item.
+
+07:17.030 --> 07:22.640
+I want to do something looks like obviously we may get, so I need to write like this.
+
+07:23.300 --> 07:31.880
+I'm going to say log D. And for each one of these, each one of these question items is a question item.
+
+07:31.880 --> 07:34.790
+I'm going to get the question itself.
+
+07:35.510 --> 07:36.620
+It's call is a result.
+
+07:37.040 --> 07:40.730
+And I want to just test things out here, I'm going to say.
+
+07:44.450 --> 07:50.870
+Loading stopped all right to see what this will give us.
+
+07:51.620 --> 07:53.840
+Loading Let's see this.
+
+07:54.660 --> 07:55.760
+Let's run once again.
+
+07:55.820 --> 08:01.400
+Remember, I'm running on my device here, so it doesn't matter if you see something so as long as it's
+
+08:01.400 --> 08:04.070
+running, you may have, of course, your emulator.
+
+08:04.460 --> 08:06.920
+So just testing to see if we get information here.
+
+08:08.560 --> 08:09.680
+All right, so there we go.
+
+08:09.700 --> 08:11.590
+Now you can see I got the result.
+
+08:11.920 --> 08:16.180
+If I go and say resolved, let's start with loading.
+
+08:16.330 --> 08:16.660
+OK.
+
+08:16.990 --> 08:21.370
+See, this is perfect because now we went ahead and say the loading question.
+
+08:21.380 --> 08:23.600
+So this rain because loading was true.
+
+08:23.620 --> 08:24.310
+That's what we said.
+
+08:24.850 --> 08:25.720
+Questions Loading.
+
+08:26.080 --> 08:31.210
+And once the loading was finished, says Loading Questions Loading stopped.
+
+08:31.600 --> 08:33.820
+And then, of course, I'm going to get the results.
+
+08:33.910 --> 08:35.200
+Let's get that tag.
+
+08:36.290 --> 08:39.490
+And voila, you can see we're able to get all the questions.
+
+08:39.490 --> 08:41.200
+There are quite a lot, right?
+
+08:41.290 --> 08:42.310
+Resolved question.
+
+08:42.670 --> 08:44.860
+He was that and the the question.
+
+08:45.520 --> 08:46.840
+And there you have it.
+
+08:47.530 --> 08:48.760
+OK, so this is real good.
+
+08:49.090 --> 08:56.200
+This is real good because again, we have then all the work, right, creating the infrastructure to
+
+08:56.950 --> 09:00.170
+be able to get information from our Jason right?
+
+09:00.230 --> 09:01.840
+You know, remote server.
+
+09:02.530 --> 09:08.260
+And then we are now able to through our view model, we're able to get to that information about not
+
+09:08.260 --> 09:14.530
+only just get a list of items, we're able to get even more information because we wrapped that data
+
+09:14.530 --> 09:16.870
+that we're getting from our from our source.
+
+09:17.240 --> 09:17.370
+All right.
+
+09:17.410 --> 09:22.870
+We've wrapped it inside of another object that we call a data or exception, which means we were able
+
+09:22.870 --> 09:28.990
+to add other items, other metadata pieces of information to our data so that we were able to do something
+
+09:28.990 --> 09:29.350
+like this.
+
+09:29.680 --> 09:32.920
+We're able to check in our data if the loading is true.
+
+09:34.280 --> 09:41.810
+I hope you're seeing the power of all of these, the advantages that we now have because later we can
+
+09:41.930 --> 09:47.690
+if loading is true, we can then invoke the circle of progress and show to the user today where the
+
+09:47.690 --> 09:52.490
+users have this visual cue that indeed things are working in the background.
+
+09:52.820 --> 09:58.850
+This, indeed is the power of wrapping our main data into another class in this case data or exception
+
+09:58.860 --> 09:59.180
+class.
+
+09:59.630 --> 10:02.020
+So make sure you get to this point.
+
+10:02.030 --> 10:04.640
+You are able to see this result is very important.
+
+10:04.700 --> 10:07.340
+If not, make sure also that you are.
+
+10:07.640 --> 10:12.830
+First of all, you've set up everything correctly in our, you know, in all of the classes that we
+
+10:12.830 --> 10:17.930
+don't question the repository, the question, the model and so forth, but also the dependencies.
+
+10:18.470 --> 10:24.130
+And also make sure that you are passing in this case in our trivia home as a test.
+
+10:24.140 --> 10:30.770
+Here you are saying Heald Field models instantiating to say this is the hill to view model and everything
+
+10:30.770 --> 10:35.060
+is good to go in passing that view model and questions, which is a composable.
+
+10:35.060 --> 10:38.480
+And then we are testing things out here, so we're able to get that information.
+
+10:38.690 --> 10:40.010
+And don't forget to do this.
+
+10:40.280 --> 10:46.850
+This questions has to go through this process here because of the type compatibility, we have to convert
+
+10:46.850 --> 10:48.530
+that into mutable list.
+
+10:48.830 --> 10:50.570
+Otherwise are going to have errors.
+
+10:51.560 --> 10:51.880
+All right.
+
+10:51.890 --> 10:52.880
+And there you have it.
+
+10:53.210 --> 10:59.150
+We are able to get all those questions, which means we're able to get everything from our data, which
+
+10:59.210 --> 11:00.230
+is this guy here.
+
+11:00.500 --> 11:06.170
+So now we're home free, which means we can now start focusing on building the actual application.
+
+11:06.440 --> 11:11.210
+In this case, the user interface, which is what people interact with, which is what our app is all
+
+11:11.210 --> 11:12.140
+about, in a sense.
+
+11:12.560 --> 11:17.090
+But I hope you seeing here the power of structure in your app this way.

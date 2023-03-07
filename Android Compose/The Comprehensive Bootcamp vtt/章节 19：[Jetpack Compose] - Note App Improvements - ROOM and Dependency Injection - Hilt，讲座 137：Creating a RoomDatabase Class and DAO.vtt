@@ -1,0 +1,493 @@
+WEBVTT
+
+00:03.350 --> 00:09.230
+So we've created our note here, which is now an entity, because we are passing the annotations right
+
+00:09.350 --> 00:14.210
+from wrong to say that this is a table and give it a name and we create a primary key.
+
+00:14.540 --> 00:15.850
+We have columns and so forth.
+
+00:15.860 --> 00:19.190
+So now let's go ahead and create the actual database because this is important.
+
+00:19.490 --> 00:24.590
+We have the table for us, but actually we have to have a database and then the database will hold a
+
+00:24.590 --> 00:27.770
+table, an entity, as it's called also.
+
+00:29.180 --> 00:29.440
+All right.
+
+00:29.450 --> 00:30.110
+So what are we going to do?
+
+00:30.140 --> 00:32.540
+Let's go to our data right inside here.
+
+00:32.960 --> 00:36.200
+I'm going to right click, create a new codling class.
+
+00:37.800 --> 00:43.590
+This class is actually going to be an abstract class, we don't have it, it's OK, it's just use this
+
+00:43.590 --> 00:44.750
+interface for now.
+
+00:45.390 --> 00:47.790
+You want to call this note database.
+
+00:48.210 --> 00:50.500
+Notice the naming convention here, right?
+
+00:50.520 --> 00:53.580
+We say note that the name of the app and that basic etc. base.
+
+00:53.850 --> 00:55.680
+OK, there we go.
+
+00:56.460 --> 00:59.190
+And instead of an interface, I'm going to say abstract.
+
+01:00.240 --> 01:00.590
+All right.
+
+01:00.600 --> 01:09.000
+So this will, of course, extend our own database search, right?
+
+01:09.150 --> 01:11.310
+And we'll pass nothing in the constructor there.
+
+01:12.270 --> 01:12.610
+All right.
+
+01:12.660 --> 01:20.550
+So to make this not just a simple class, this to make this an actual database class per say, well,
+
+01:20.730 --> 01:22.860
+I'm going to say at database.
+
+01:23.010 --> 01:24.360
+And there you have it, right?
+
+01:24.450 --> 01:24.990
+Hit enter.
+
+01:25.470 --> 01:30.870
+And the great thing also about this annotation is that we can pass all this metadata or this information
+
+01:30.870 --> 01:33.900
+that it's needed to actually create that database.
+
+01:34.470 --> 01:35.370
+Look how easy this is.
+
+01:35.400 --> 01:37.350
+Now I can say entities remember entities.
+
+01:37.500 --> 01:40.410
+Same thing as tables say, what entities do I need?
+
+01:40.770 --> 01:47.400
+You look at here entities requires the parameter array so it can pass a list of entities, meaning we
+
+01:47.400 --> 01:48.690
+can have more than one table.
+
+01:49.110 --> 01:51.030
+Most applications have more than one table.
+
+01:51.360 --> 01:57.510
+In our case here we only have one input instead of square brackets there, and I must say it's going
+
+01:57.510 --> 02:02.280
+to be note and to call in there to say class like this.
+
+02:03.000 --> 02:03.270
+OK.
+
+02:03.330 --> 02:10.200
+So this is how you say that this is what we're calling so that it creates an entity that we need to
+
+02:10.200 --> 02:14.850
+pass on to our database and we can pass the other method metadata here.
+
+02:14.880 --> 02:19.740
+Other parameters and arguments pass version of our database, just say one.
+
+02:20.280 --> 02:24.090
+And then we're going to pass export schema to false by section.
+
+02:25.680 --> 02:31.980
+And because it's an abstract class, all we want to do then is to do as follow and to create a function
+
+02:32.280 --> 02:37.240
+that will give us the Dow the data access object.
+
+02:37.260 --> 02:45.810
+So I'm going to say abstract save function note now like this, right?
+
+02:46.230 --> 02:55.950
+And this is going to be of type node database now, which we haven't created yet.
+
+02:57.720 --> 02:58.830
+Again, what are we doing here?
+
+02:58.860 --> 03:03.660
+Well, next, we're going to create this Dow, which is the entity that will be which will be responsible
+
+03:04.260 --> 03:06.870
+to access to data in our SQL database.
+
+03:07.620 --> 03:11.850
+The outer class is to be able to access the data internally in our room database.
+
+03:12.360 --> 03:15.900
+We've seen how to create, of course, the entities, the tables.
+
+03:16.530 --> 03:19.830
+We just created those using the model class.
+
+03:20.400 --> 03:22.200
+All of this is inside of old room database.
+
+03:23.160 --> 03:25.170
+OK, let's go ahead and create this note.
+
+03:25.170 --> 03:26.190
+Database Dow.
+
+03:27.090 --> 03:30.270
+In fact, I can come here and just say Create.
+
+03:31.860 --> 03:33.270
+An interface, that's what we need.
+
+03:33.960 --> 03:40.470
+We're going to extract these two data, that's fine where it is in will.
+
+03:40.650 --> 03:43.710
+Now we have another node database, Dow interface there.
+
+03:44.850 --> 03:46.500
+So what is are we going to do now?
+
+03:46.500 --> 03:51.030
+This is not going to be just any other Dow then access.
+
+03:51.040 --> 03:53.370
+This has to be a room Dow.
+
+03:53.790 --> 04:00.660
+So for that again, we're going to go and pass Dow like this or add the Dow as our annotation to say
+
+04:00.660 --> 04:07.950
+this is a Dow from our Andrew room, so it knows exactly what needs to happen here so we can have access
+
+04:07.950 --> 04:09.450
+to other properties over Dow.
+
+04:10.200 --> 04:16.830
+So the idea here, remember, is so that the Dow is able to access database, which means you can read
+
+04:17.010 --> 04:19.200
+in search, delete, update and so forth.
+
+04:19.200 --> 04:21.600
+Right here is what we're going to have.
+
+04:21.600 --> 04:27.480
+The skeleton functions right that will be implemented somewhere else or call someone else to do the
+
+04:27.480 --> 04:27.870
+job.
+
+04:28.230 --> 04:29.370
+So look what I want to do here.
+
+04:29.370 --> 04:37.580
+I'm going to say at query such notice ace and axle room query, right?
+
+04:37.980 --> 04:42.570
+And then here I'm going to put a string of value that's going to say select.
+
+04:44.410 --> 04:49.980
+All actually, except means all, so everything from the table, what table?
+
+04:49.990 --> 04:53.230
+Well, look at this, I can start typing notes Ha.
+
+04:55.000 --> 04:59.360
+Because we are in this even knows to say, OK, I think you are going to go ahead.
+
+04:59.770 --> 05:03.220
+I think you want this note's table that we created earlier like this.
+
+05:03.610 --> 05:04.960
+So everything is connected.
+
+05:05.570 --> 05:05.800
+Right?
+
+05:06.010 --> 05:11.170
+And I notice that I made a mistake in our database that Dow, I can actually say shift f six.
+
+05:13.060 --> 05:18.160
+And I'm going to change the database that Dow, so now everywhere.
+
+05:18.520 --> 05:20.200
+This is called, it's going to be changed as well.
+
+05:22.400 --> 05:23.210
+All right, there we go.
+
+05:23.540 --> 05:27.650
+So we have this query here and now we're going to put a function behind it.
+
+05:27.660 --> 05:32.780
+So what are we doing with annotate this get notes function that we're going to create here?
+
+05:33.290 --> 05:33.680
+Such.
+
+05:35.440 --> 05:42.280
+And we're going to return a list of notes object like this, we're going to change this, of course,
+
+05:42.460 --> 05:45.510
+but we will see that this is what we want.
+
+05:45.610 --> 05:50.560
+So what I'm doing here is that this get notes when it's cold, somewhere, anywhere, it's going to
+
+05:50.560 --> 05:55.630
+say what is going to actually go out or go ahead and select all from our notes and return a list of
+
+05:55.630 --> 05:55.930
+notes.
+
+05:56.260 --> 05:56.710
+That's it.
+
+05:56.920 --> 06:04.330
+When we saw the definition of room as a tool or library that abstracts out, it's a it's a layer abstraction
+
+06:04.330 --> 06:06.250
+of everything else to deal with.
+
+06:06.250 --> 06:07.750
+Sequel like this is what they mean.
+
+06:08.080 --> 06:15.100
+All we have to do is pass the act out or interface here, and then we just query in passing the selection
+
+06:15.100 --> 06:15.340
+here.
+
+06:15.340 --> 06:20.760
+So select all from notes and then append that, of course, on top of of the function.
+
+06:20.770 --> 06:22.940
+So whenever this is called, it's going to return.
+
+06:22.940 --> 06:25.360
+It's a list of notes from our database.
+
+06:25.930 --> 06:29.770
+So this is to create, read, update and delete.
+
+06:30.160 --> 06:37.570
+So in this case, here next, I'm going to say, well, another query and this query here, I'm going
+
+06:37.570 --> 06:39.220
+to say again, select.
+
+06:42.830 --> 06:45.040
+All from Mike.
+
+06:45.230 --> 06:51.440
+It doesn't matter if it's upper case, but I like to put lowercase there from, I say notes table,
+
+06:52.220 --> 06:58.980
+where in this case I'd say it's going to be equal to an idea that we're going to pass.
+
+06:59.060 --> 07:00.050
+This is the syntax.
+
+07:00.050 --> 07:07.100
+So then I'm going to create a function here called get note by ID if we need to.
+
+07:07.310 --> 07:09.110
+It's nice to have these and pass that I.D..
+
+07:09.650 --> 07:11.090
+It's going to be a string Typekit say.
+
+07:11.330 --> 07:12.560
+And then what is it that we want?
+
+07:12.590 --> 07:14.150
+Well, we want to return in note.
+
+07:15.440 --> 07:17.780
+Now we want to insert something.
+
+07:17.780 --> 07:18.560
+How do we do that?
+
+07:18.590 --> 07:20.300
+Yes, there's another notation.
+
+07:20.300 --> 07:22.250
+So insert like this.
+
+07:24.380 --> 07:25.490
+And it was a fun.
+
+07:27.590 --> 07:33.590
+Search what is there one insert note type like this?
+
+07:34.650 --> 07:39.180
+We don't have to return anything right, because you're seeing something, if we inserting a note that
+
+07:39.180 --> 07:47.730
+already has something there or something happen and we need to do something if something goes wrong
+
+07:47.910 --> 07:54.690
+on conflicts, right when, say, on conflict here I'm just going to pass on conflict strategy and say
+
+07:54.690 --> 07:55.100
+replace.
+
+07:55.100 --> 08:00.300
+So if there's any issues of trying to insert something that may already exist or there are some errors,
+
+08:00.420 --> 08:03.390
+we'll just go ahead, go ahead and replace it and add this new one.
+
+08:04.020 --> 08:04.290
+All right.
+
+08:04.530 --> 08:05.390
+Let's continue here.
+
+08:05.760 --> 08:08.150
+Let's say I want to update.
+
+08:08.160 --> 08:09.450
+Yes, there's an update.
+
+08:10.350 --> 08:10.950
+There we go.
+
+08:12.330 --> 08:13.320
+So fun.
+
+08:13.830 --> 08:14.970
+Call this update.
+
+08:17.730 --> 08:19.680
+And what is that one update, just a note.
+
+08:19.980 --> 08:27.660
+Look, how easy this is simple syntax and actually would have to pass anything and we can do the same
+
+08:27.660 --> 08:32.310
+we did before still in conflict, we can say on conflict strategy.
+
+08:32.610 --> 08:34.770
+Go ahead and replace their either strategy.
+
+08:34.770 --> 08:36.000
+But we're going to just use replace.
+
+08:37.620 --> 08:37.950
+All right.
+
+08:38.370 --> 08:41.580
+We're going to continually say, want to delete everything from our database?
+
+08:42.480 --> 08:47.280
+Well, in this case, if you want to delete everything, we're just going to go and say query because
+
+08:47.280 --> 08:47.950
+we can ask.
+
+08:47.990 --> 08:48.240
+Right.
+
+08:48.270 --> 08:52.100
+It's a query put there.
+
+08:52.110 --> 08:53.130
+And let's say delete
+
+08:55.620 --> 08:56.160
+all.
+
+08:59.850 --> 09:01.320
+From our notes.
+
+09:02.430 --> 09:07.800
+Why don't need all just delete from this will delete, say notes table.
+
+09:08.130 --> 09:08.460
+All right.
+
+09:08.970 --> 09:09.690
+So fun.
+
+09:10.230 --> 09:11.880
+Delete all.
+
+09:12.810 --> 09:13.920
+We don't need to pass anything.
+
+09:14.770 --> 09:15.780
+Now, if you want to delete.
+
+09:17.600 --> 09:24.620
+And note can go ahead and say at delete, there is in notation or an annotation for that, just go ahead
+
+09:24.620 --> 09:25.700
+and delete one item.
+
+09:26.040 --> 09:26.690
+I say fun.
+
+09:28.550 --> 09:29.150
+Delete.
+
+09:32.580 --> 09:36.060
+Note, and when it passed, a note needs to be deleted like that.
+
+09:39.050 --> 09:39.590
+Angela?
+
+09:39.620 --> 09:40.130
+There we go.
+
+09:40.370 --> 09:41.720
+Now we have our Dow.
+
+09:43.530 --> 09:48.960
+Created the layer here because it's connecting directly to our database in this case also or entities
+
+09:49.230 --> 09:49.920
+or tables.
+
+09:51.450 --> 09:57.840
+So whoever wants to do something in this layer here will have to have an instance.
+
+09:59.020 --> 10:05.080
+Preferably only one instance of a Dow data access object and then start invoking update and pass that
+
+10:05.080 --> 10:05.920
+note in done.
+
+10:07.710 --> 10:13.140
+So this layer abstraction, this decoupling of responsibilities will important as you will continue
+
+10:13.140 --> 10:14.820
+to see in development.

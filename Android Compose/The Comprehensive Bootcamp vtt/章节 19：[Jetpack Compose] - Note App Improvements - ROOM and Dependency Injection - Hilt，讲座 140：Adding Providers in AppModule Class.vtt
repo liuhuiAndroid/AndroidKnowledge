@@ -1,0 +1,340 @@
+WEBVTT
+
+00:00.510 --> 00:02.340
+OK, so we are making progress here.
+
+00:02.400 --> 00:08.160
+I know it's been a lot of moving parts in setting things up, so that's why I'm taking my time here
+
+00:08.160 --> 00:13.590
+because it's really important that you understand at least the dynamics of how these things are done.
+
+00:13.890 --> 00:14.160
+OK.
+
+00:14.670 --> 00:14.890
+All right.
+
+00:14.910 --> 00:15.870
+So what are we going to do next?
+
+00:15.900 --> 00:22.560
+Well, now we're ready to go back to our app module because remember, this is where we can create the
+
+00:22.560 --> 00:26.390
+providers to create the instance of dependencies, right?
+
+00:26.460 --> 00:29.790
+The binding of dependencies that we need for health.
+
+00:30.720 --> 00:35.370
+So in this case, the first thing I'm going to add here for someone to say at Singleton because I want
+
+00:35.370 --> 00:40.530
+to make sure that whatever we create here is going to be a singleton, meaning we just get one instance
+
+00:40.530 --> 00:42.810
+of this particular item, right?
+
+00:43.380 --> 00:48.570
+And then also, I'm going to pass here at provider or pro fights, meaning this is going to be just
+
+00:48.570 --> 00:54.300
+something that it will provide in this case, something to the entire realm of dependencies.
+
+00:54.810 --> 00:59.910
+So in this case, here, I'm going to create a function that will provide notes.
+
+01:00.930 --> 01:03.030
+Now, I know very convenient.
+
+01:03.210 --> 01:07.080
+All he's going to be used internally so that we don't have to do this ourselves.
+
+01:07.440 --> 01:09.420
+So provide notes down.
+
+01:09.670 --> 01:10.590
+We're going to pass here.
+
+01:10.620 --> 01:15.300
+I'm going to say note database such.
+
+01:16.320 --> 01:19.200
+And then of course, this will extend or note.
+
+01:22.300 --> 01:30.910
+Dow like this, and then I'm going to say equal just to say it two notes database Dot Note Dow.
+
+01:31.300 --> 01:32.110
+So what are we doing here?
+
+01:32.140 --> 01:37.060
+Well, in this case here, I'm just saying that our provides notes Dow.
+
+01:37.090 --> 01:38.530
+This is going to be internal, by the way.
+
+01:38.800 --> 01:39.160
+OK.
+
+01:39.760 --> 01:44.560
+When we run this app and everything is set up, it's going to go and see app module and it will go ahead
+
+01:44.560 --> 01:47.080
+and set up a singleton which inhabit this.
+
+01:47.080 --> 01:53.500
+Provide notes now and this will provide as no apply in actual note database at Dow because we need this
+
+01:53.500 --> 01:53.820
+Dow.
+
+01:53.830 --> 01:59.440
+Remember again, because this is the data access which will give access to the database.
+
+02:00.220 --> 02:00.680
+Very good.
+
+02:00.700 --> 02:01.720
+So that's the first one.
+
+02:02.980 --> 02:07.090
+The second one, we can pass as many as we want here again, a singleton.
+
+02:07.810 --> 02:10.690
+And of course, it's going to provide provides.
+
+02:11.140 --> 02:12.790
+And then what's this going to be?
+
+02:12.820 --> 02:16.340
+Well, I'm going to say function fun, provide.
+
+02:16.360 --> 02:21.580
+This is the important one app database like this.
+
+02:21.810 --> 02:22.360
+Aha.
+
+02:22.480 --> 02:24.580
+So now we need to create the actual database.
+
+02:24.850 --> 02:30.520
+Remember, if we go back here note database, we created a structure that will create the database.
+
+02:30.520 --> 02:32.530
+We have an actual created database.
+
+02:33.900 --> 02:38.370
+So now with that module, this is why it's going to provide the creation of a database.
+
+02:38.640 --> 02:40.530
+It's going to be a singleton, right?
+
+02:40.620 --> 02:45.660
+Just one instance that will happen and then we're going to create a database.
+
+02:46.960 --> 02:52.240
+So to create an airbase, we need to pass the application context, how do we get an application context?
+
+02:52.390 --> 02:58.690
+Well, we can use at, say, application contexts like this and application context again, as his name
+
+02:58.690 --> 03:06.670
+imply, is the class that knows everything about Android application, the application class, the Android
+
+03:06.670 --> 03:10.160
+app, it knows everything about it and has access to everything.
+
+03:10.600 --> 03:16.540
+So we need that, obviously, to create database so that internally room will know how to create the
+
+03:16.540 --> 03:17.000
+database.
+
+03:17.260 --> 03:26.830
+So I'm going to say name this context, and it's going to be an actual context like this Android context
+
+03:26.830 --> 03:34.720
+like that this one is going to extend the note database such.
+
+03:37.370 --> 03:37.590
+OK.
+
+03:38.550 --> 03:46.750
+And of course, we're going to set it to say what well, we want this to return the room and we're ready
+
+03:46.770 --> 03:49.980
+to base and invoke database builder.
+
+03:50.610 --> 03:51.990
+We're now building the database.
+
+03:52.230 --> 03:56.820
+So to build databases, you notice again, this is why we needed a context, needs context and that
+
+03:56.850 --> 04:04.230
+the class this is going to be the actual database class that we created this guy here, which you will
+
+04:04.230 --> 04:07.710
+see which knows how to create database, right?
+
+04:09.490 --> 04:11.890
+You see that these entities and so forth.
+
+04:12.820 --> 04:16.330
+So we have to pass all that information, so let's start with the first ones, the first ones, but
+
+04:16.330 --> 04:17.140
+in context.
+
+04:18.010 --> 04:18.600
+There we go.
+
+04:18.610 --> 04:25.870
+And the next is going to be our class, which is no database class that Java like that.
+
+04:26.650 --> 04:30.640
+And we need to pass the name of our database so we can be it can be anything.
+
+04:30.640 --> 04:36.850
+So I'm going to say notes underscore DB like this and then I'm going to say Dot outside.
+
+04:36.850 --> 04:42.340
+I'm going to say fall back to destructive migration, and then I'm going to say that build.
+
+04:43.900 --> 04:51.040
+So when everything is compiled, I module will be run by the hilt compiler.
+
+04:51.460 --> 04:55.240
+It will come here in this app module is going to be single turn and going to say, OK, we're going
+
+04:55.240 --> 04:58.930
+to run this, provide notes down to dependencies.
+
+04:59.230 --> 04:59.500
+Right?
+
+04:59.590 --> 05:06.370
+He's going to give us detail and then it's going to give us the database that we need to actually be
+
+05:06.370 --> 05:06.820
+created.
+
+05:06.880 --> 05:11.230
+So it's going to go ahead and say, provide app database and we're going to create a room database.
+
+05:11.230 --> 05:16.210
+Using our no database class were created earlier because this is the skeleton that says this is how
+
+05:16.210 --> 05:18.400
+it has to be constructed, right?
+
+05:18.700 --> 05:21.580
+Database entity is the entity version and so forth.
+
+05:21.850 --> 05:26.660
+And we have that note database now and you will see, let's go ahead.
+
+05:26.680 --> 05:29.970
+If you go ahead here and clean, let's just clean things up.
+
+05:29.990 --> 05:32.230
+Just make sure everything is still OK.
+
+05:34.580 --> 05:39.590
+And you can see that app module and all of these are great out that just tells us that they haven't
+
+05:39.590 --> 05:40.910
+been used yet.
+
+05:41.060 --> 05:44.900
+So all of this is actually going to be used in the background.
+
+05:45.470 --> 05:47.380
+We're not going to come and invoke any of these.
+
+05:47.390 --> 05:50.570
+This is going to be done by the hilt libraries.
+
+05:50.870 --> 05:53.360
+Let's go ahead and build this or rebuild.
+
+05:57.080 --> 06:00.080
+Right now, we still have some issues here.
+
+06:00.110 --> 06:04.390
+That's because we changed the date format in our notes screen, that's fine.
+
+06:04.400 --> 06:07.910
+Let's just go ahead and comment this out and.
+
+06:09.270 --> 06:13.080
+Let's go ahead and rebuild again, we just were building the whole project to make sure that everything
+
+06:13.080 --> 06:14.400
+is OK.
+
+06:18.840 --> 06:24.390
+And because as we build earlier, you can see now that provides notes, Dow and all of these are no
+
+06:24.390 --> 06:26.190
+longer grayed out.
+
+06:26.250 --> 06:29.550
+It means then everything that we need in the back end.
+
+06:30.060 --> 06:32.300
+Hill two went ahead and created dependencies.
+
+06:32.310 --> 06:33.900
+Everything is set up for us to use it.
+
+06:36.070 --> 06:41.860
+In fact, if you come here to see a Java generated, if you open that you shouldn't ever change anything
+
+06:41.860 --> 06:48.880
+here, you can see now we have these dagger healed internal healed aggregated depths in so many things.
+
+06:48.880 --> 06:51.160
+If you open one of these, that's open.
+
+06:52.530 --> 06:56.390
+The note you can see that we have everything set up, right?
+
+06:56.590 --> 06:57.690
+Oh, I lost it.
+
+06:59.980 --> 07:02.770
+Because the build went successfully, let's go back.
+
+07:04.700 --> 07:10.590
+You can see you have to I look at that created the app module, provide database factory.
+
+07:10.830 --> 07:14.130
+All of these classes were created by hilt and dagger.
+
+07:14.160 --> 07:14.790
+This is good.
+
+07:15.060 --> 07:20.130
+So all the dependencies were created in the back in the background, so we don't have to worry about
+
+07:20.130 --> 07:20.250
+it.
+
+07:22.010 --> 07:26.390
+Again, I understand that this is taking your time and we have to set things up.
+
+07:26.420 --> 07:31.820
+I do get it, but believe me, this is really important because it actually saves us a lot of time and
+
+07:31.820 --> 07:34.070
+headaches as our obligations grow.
+
+07:35.090 --> 07:42.110
+OK, so we're getting closer to get to the point where we can start working back in code inside, I've
+
+07:42.110 --> 07:44.030
+already seen, you know, face the main activity and so forth.

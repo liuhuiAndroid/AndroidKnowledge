@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.750 --> 00:05.730
+All right, so the app is pretty much done, and now we can just go and look at a few things we can
+
+00:05.730 --> 00:12.390
+add, for instance, in our markup here, we can see that we have this this thumbs up in some of these
+
+00:12.390 --> 00:12.710
+books.
+
+00:12.720 --> 00:19.140
+So essentially, we can add an if statement that says, OK, if the rating of the book that we've given
+
+00:19.590 --> 00:25.410
+is, say, greater or equal to four right, then we can add it thumbs now.
+
+00:25.440 --> 00:27.510
+Then we can add it thumbs up or something like this.
+
+00:27.720 --> 00:29.670
+So that's just something extra we can do.
+
+00:29.760 --> 00:34.290
+I'm going to show you how to do that so you can adjust to your liking.
+
+00:35.220 --> 00:42.540
+So back to our reader states screen there and we have this column which will have this go to the actual
+
+00:42.540 --> 00:42.810
+app.
+
+00:44.040 --> 00:45.570
+So we're talking about here.
+
+00:46.140 --> 00:53.070
+So let's see, we want to add, perhaps at the end of this title there, we want to add indication that
+
+00:53.070 --> 00:54.800
+this was a good book, right?
+
+00:54.840 --> 00:58.200
+Depending on the rating for the title here, what I can do.
+
+00:58.260 --> 01:06.030
+I'm going to wrap this inside and say, let's put it inside of a row that inside there and I'm going
+
+01:06.030 --> 01:07.530
+to add horizontal.
+
+01:10.270 --> 01:11.140
+Arrangement.
+
+01:11.680 --> 01:13.450
+Want space in between?
+
+01:14.170 --> 01:15.280
+And so.
+
+01:18.310 --> 01:22.720
+And so I'm going to see say if book that reading
+
+01:25.360 --> 01:38.410
+is greater than or equal to, let's say for anything greater than or equal for, we are going to add
+
+01:38.440 --> 01:39.640
+I'm going to add a space, sir.
+
+01:40.030 --> 01:40.780
+OK with here.
+
+01:43.190 --> 01:46.190
+Safe, you know, Max, with.
+
+01:47.340 --> 01:49.260
+And I'm going to shrink it a little bit.
+
+01:49.450 --> 01:49.740
+Right?
+
+01:50.460 --> 02:00.720
+So that season zero Act eight, if this is going to help us with moving the icon, we're going to add
+
+02:01.140 --> 02:03.870
+to the end of of the row.
+
+02:04.260 --> 02:04.650
+All right.
+
+02:04.830 --> 02:07.080
+So then I'm going to say I can't.
+
+02:09.830 --> 02:13.040
+When you factor there, say I can start.
+
+02:15.910 --> 02:16.780
+Default.
+
+02:21.270 --> 02:22.410
+Let's put thumbs.
+
+02:25.310 --> 02:27.620
+Thumbs up for the content description.
+
+02:30.090 --> 02:37.350
+And we can ask what's changed tint colour, hair color that red actually say green.
+
+02:40.140 --> 02:47.580
+A copy of the zero point five that's like this.
+
+02:48.980 --> 02:55.550
+Why else we're just going to pass in a box that's empty?
+
+02:56.180 --> 02:56.930
+It's going to run.
+
+03:00.180 --> 03:02.280
+OK, let's see if we're going to have any books, right?
+
+03:02.310 --> 03:06.990
+So have a few books plus ratings you can see it shows there.
+
+03:07.230 --> 03:13.070
+You can see this one is really small because it depends on the size of our text.
+
+03:13.080 --> 03:18.900
+And as can see, let's change the structure here because I want to make sure that we have author started
+
+03:18.900 --> 03:19.880
+and finished it.
+
+03:19.920 --> 03:22.290
+That's the information that we really want to see.
+
+03:22.770 --> 03:29.530
+So all of these guys, I can get rid of some of these or actually call something else.
+
+03:29.530 --> 03:33.720
+So let's say after the author, we're going to say started.
+
+03:38.230 --> 03:42.190
+And I'm gonna pass book that started.
+
+03:43.830 --> 03:50.190
+Reading this, and I want to make to say soft wrap.
+
+03:52.160 --> 04:01.040
+True, true, I guess for all of them, you have over whether the tax should break that soft line breaks,
+
+04:01.220 --> 04:06.740
+it falls into next position as if there was an unlimited horizontal space.
+
+04:07.070 --> 04:08.200
+So there we go.
+
+04:08.210 --> 04:13.270
+So we're just going to give this nice wrap if indeed the tax is too much or too long.
+
+04:14.620 --> 04:18.730
+All right, so next here, I'm going to put the finished.
+
+04:29.840 --> 04:38.970
+And it's going to look that finished reading and less crap that instead of format date.
+
+04:39.640 --> 04:39.960
+All right.
+
+04:40.830 --> 04:42.630
+I should be good, I swear, Ryan.
+
+04:44.670 --> 04:45.810
+Yeah, it's going to look.
+
+04:47.340 --> 04:47.700
+All right.
+
+04:47.880 --> 04:48.600
+Time stamp.
+
+04:48.870 --> 04:53.430
+We need to pass the same here for this one.
+
+04:56.350 --> 04:57.630
+I have to go all over.
+
+04:57.960 --> 04:58.620
+Start over.
+
+05:03.780 --> 05:07.980
+And they would go looks much better, and this is exactly what we want.
+
+05:08.250 --> 05:08.700
+All right.
+
+05:09.060 --> 05:11.310
+So now we have the whole app done.
+
+05:11.430 --> 05:17.490
+We've done a lot of work, a lot of sweat and tears, and I hope more sweat and tears, of course.
+
+05:18.120 --> 05:23.060
+And most importantly, I hope you were able to go through this and learned a lot.
+
+05:23.100 --> 05:26.070
+And I know this was a lot, but that was the intention.
+
+05:26.070 --> 05:31.590
+The intention was to put together a full fledged application here from ground up so you can see the
+
+05:31.590 --> 05:32.650
+process OK.
+
+05:33.360 --> 05:35.370
+And what I would like you to do.
+
+05:35.520 --> 05:42.330
+Well, I would like you to continue improving on this application or maybe take some ideas that you
+
+05:42.330 --> 05:46.530
+learned about that you learn while building his application and build your own.
+
+05:46.710 --> 05:50.550
+So we've learned a lot of things here, learned how to persist.
+
+05:50.550 --> 05:59.340
+Data in Firebase for our store will learn how to authorize or how to create users right and log them
+
+05:59.340 --> 06:02.100
+in, so create them account and lock them in.
+
+06:02.370 --> 06:04.110
+We'll learn how to structure our data.
+
+06:04.110 --> 06:08.430
+That way, we can then save books, of course, that we get from an API.
+
+06:08.430 --> 06:15.450
+In this case, Google API, Google Books API, and we'll learn how to extract that data will learn how
+
+06:15.450 --> 06:22.170
+to pass that data using different tools and different libraries that really help us get this information
+
+06:22.170 --> 06:25.590
+together so we can focus more on building the application.
+
+06:25.590 --> 06:25.890
+Okay?
+
+06:26.220 --> 06:31.830
+So a lot has happened, and please take your time to go through these sections.
+
+06:31.830 --> 06:37.440
+I hope you did, and you always have access to these videos so you can always go back to watch certain
+
+06:37.440 --> 06:37.760
+parts.
+
+06:37.770 --> 06:39.000
+It didn't make much sense.
+
+06:39.600 --> 06:43.800
+And the thing I would like to say is just be patient as you go through this.
+
+06:43.800 --> 06:49.890
+If this is your first time creating or going through this programming course or you still a little bit
+
+06:49.890 --> 06:51.390
+of a beginner, this is your first time.
+
+06:51.480 --> 06:53.360
+It's not going to come easy, right?
+
+06:53.370 --> 06:54.060
+For most of us.
+
+06:54.060 --> 06:55.410
+So it takes time.
+
+06:55.410 --> 06:56.250
+It takes practice.
+
+06:56.250 --> 07:02.510
+So be patient and always have the kind of attitude of, OK, let me look for the answer.
+
+07:02.520 --> 07:06.720
+Let me try to figure out why this is not working and then ask for help.
+
+07:06.720 --> 07:07.800
+Look for help for it.
+
+07:07.860 --> 07:09.030
+There's a lot of help online.
+
+07:09.960 --> 07:15.060
+StackOverflow is the place you should be familiar with when you have issues with programming and so
+
+07:15.060 --> 07:15.270
+forth.
+
+07:15.270 --> 07:16.710
+So have that spirit.
+
+07:16.710 --> 07:17.640
+It's really going to help.
+
+07:17.640 --> 07:25.920
+Of course, you can always, always ask questions in the forum and one of us it will help you get you
+
+07:25.920 --> 07:27.240
+back in the right track.
+
+07:27.900 --> 07:32.540
+All right, so thank you again for being on this journey with me.
+
+07:32.550 --> 07:35.040
+I really appreciate it, and I hope you've learned a lot.
+
+07:36.060 --> 07:36.420
+Thanks.

@@ -1,0 +1,478 @@
+WEBVTT
+
+00:01.510 --> 00:09.670
+All right, so next, we want to be able to when users click on this icon here, the action button more
+
+00:09.850 --> 00:14.840
+we want to populate or show a dialogue that has something like this.
+
+00:14.860 --> 00:16.540
+My favorites about settings.
+
+00:17.070 --> 00:18.490
+OK, so how do we do this?
+
+00:19.060 --> 00:20.410
+Well, first of all, have to think about it.
+
+00:20.410 --> 00:29.320
+So in order for us to show something like this, in order for us to show a dialogue, we need to create
+
+00:29.320 --> 00:29.920
+a state.
+
+00:30.480 --> 00:35.610
+Now all of that has to happen inside of our app bar.
+
+00:35.710 --> 00:36.430
+So if you go.
+
+00:37.720 --> 00:39.760
+Let's go and find our weather app bar.
+
+00:39.850 --> 00:40.420
+There it is.
+
+00:40.750 --> 00:41.260
+Open it.
+
+00:43.000 --> 00:49.450
+So in our weather app out of here, we want to make sure to create a state variable.
+
+00:50.240 --> 00:56.800
+I top here and let's say Val show dialogue.
+
+00:57.930 --> 00:59.030
+It's going to be a remember.
+
+01:03.100 --> 01:04.780
+And there were multiple state.
+
+01:10.890 --> 01:14.040
+Of false to start with.
+
+01:15.900 --> 01:19.200
+We have to import remember and such.
+
+01:20.370 --> 01:23.520
+So in the beginning, this show dialogue, is it going to be false?
+
+01:23.670 --> 01:25.080
+But when do we change that?
+
+01:25.380 --> 01:30.750
+Well, we change that when we click, of course, on the icon.
+
+01:31.260 --> 01:31.980
+Where is that?
+
+01:33.320 --> 01:41.120
+Well, the icon is here, the more icon, so I'm going to say show dialogue and value.
+
+01:41.810 --> 01:43.010
+It's going to be true.
+
+01:43.700 --> 01:49.130
+This is just to remind you that when it comes to showing dialogues in compose, you have to go through
+
+01:49.130 --> 01:54.880
+this very strange process if you ask me just a little bit strange, but that's what we have.
+
+01:54.900 --> 01:55.790
+That's where we have to do.
+
+01:55.970 --> 01:59.210
+So we need to have a state of showing and.
+
+02:00.000 --> 02:01.860
+Not showing it so on or off.
+
+02:02.400 --> 02:09.090
+OK, so now we're going to put in if statement here to say if show dialogue is true, so say that value.
+
+02:09.540 --> 02:16.560
+If it's true, you can just say like that, then that's where we're going to invoke the show setting
+
+02:17.250 --> 02:19.890
+drop down menu.
+
+02:20.190 --> 02:22.680
+Yes, a long name, but it's it's going to work.
+
+02:23.250 --> 02:26.400
+So for this one, I'm going to actually pass the show dialogue.
+
+02:29.770 --> 02:35.530
+Going to be our show dialogue state, and I'm going to also pass on NAF controller.
+
+02:41.070 --> 02:43.710
+Like this, you you'll see why.
+
+02:44.160 --> 02:46.320
+Let's go ahead and create this composable.
+
+02:47.070 --> 02:51.060
+At the bottom, there are good even gave us this mutable state.
+
+02:52.990 --> 02:54.440
+Will state it's very good.
+
+02:55.160 --> 02:56.060
+It's quite an import.
+
+02:56.630 --> 02:57.020
+Very good.
+
+02:57.590 --> 03:01.580
+OK, so I'm going to create this structure here.
+
+03:01.610 --> 03:07.340
+The actual body of the dialogue that I'm going to put inside of a column.
+
+03:09.850 --> 03:10.900
+How did modifier
+
+03:14.590 --> 03:15.970
+fail, Max with.
+
+03:17.170 --> 03:19.840
+And the next thing I'm going to do.
+
+03:21.430 --> 03:24.400
+Let's say rap content size.
+
+03:25.030 --> 03:25.360
+OK.
+
+03:26.820 --> 03:27.690
+And when I say top.
+
+03:32.690 --> 03:36.170
+Sara, linemate, I want to put that at the top, so alignment.
+
+03:42.330 --> 03:49.650
+Top end that is, then I'm going to add what we call the absolute padding so that it doesn't change
+
+03:50.430 --> 03:52.260
+depending on other factors.
+
+03:52.260 --> 03:58.110
+So for the top, I'm going to give an absolute padding of about four to five dpi, right?
+
+03:58.170 --> 04:00.840
+It's going to be about 22 dpi.
+
+04:02.890 --> 04:09.430
+OK, now inside of our column here, I'm going to invoke the drop down menu.
+
+04:10.330 --> 04:18.880
+Now the drop down menu, as you see now a dropdown menu is a composable that we get from compose, which
+
+04:18.880 --> 04:21.580
+is very awesome, as you see here.
+
+04:22.030 --> 04:24.610
+And so it will require a few things.
+
+04:24.610 --> 04:29.390
+So first of all, the expanded variable here, which is a Boolean.
+
+04:29.440 --> 04:32.950
+So this will control whether we're showing it or not.
+
+04:33.280 --> 04:33.640
+OK.
+
+04:34.000 --> 04:44.530
+We have to create here another variable called expanded, let's say by remember like this?
+
+04:46.050 --> 04:47.220
+Mutable state.
+
+04:50.610 --> 04:51.390
+Say true.
+
+04:51.510 --> 04:57.870
+In the beginning like that, now we have to import a few things to make this work.
+
+04:58.650 --> 04:59.070
+There we go.
+
+04:59.520 --> 05:04.860
+And so this expanded, it's going to be called there as a state.
+
+05:09.330 --> 05:12.900
+Now on this missile request, what are we going to do?
+
+05:12.930 --> 05:21.780
+We are going to set our expandable expanded, I should say, to false because we want to dismiss that
+
+05:21.780 --> 05:22.530
+means expanded.
+
+05:22.530 --> 05:26.550
+It's going to be false, which is a state, and then it's going to be dismissed.
+
+05:26.610 --> 05:27.090
+Dismissed.
+
+05:28.020 --> 05:28.280
+OK.
+
+05:29.100 --> 05:35.430
+That's what we need to add now, because drop menu is just like any other composable.
+
+05:35.430 --> 05:37.980
+We can also pass a modifier here and say, modifier,
+
+05:40.920 --> 05:46.080
+and I'm going to give a width of this modifier drop down, right?
+
+05:47.040 --> 05:49.740
+You know, about 140 dpi.
+
+05:54.220 --> 05:55.390
+Let's give a background.
+
+06:00.110 --> 06:01.940
+Just give me a white background as such.
+
+06:02.690 --> 06:04.760
+Let's see if this works as it is so far.
+
+06:06.630 --> 06:07.980
+Well, it's working.
+
+06:08.430 --> 06:08.890
+That's good.
+
+06:09.030 --> 06:13.320
+Click, it's not very eventful, but you saw that working there.
+
+06:13.350 --> 06:13.650
+OK.
+
+06:13.710 --> 06:14.190
+No problem.
+
+06:14.730 --> 06:15.060
+All right.
+
+06:15.330 --> 06:22.320
+So next, what we want to do is we want to, of course, show each one of these items which are actually
+
+06:22.320 --> 06:23.820
+clickable items, right?
+
+06:24.540 --> 06:25.170
+How do we do that?
+
+06:25.380 --> 06:31.690
+Well, to simplify our lives, I'm going to create a list of all those items.
+
+06:32.220 --> 06:34.150
+Some with several items.
+
+06:35.160 --> 06:42.370
+That's going to be a list of elements such and then for someone to say favorites.
+
+06:43.110 --> 06:43.470
+OK.
+
+06:44.280 --> 06:46.050
+And then about.
+
+06:48.390 --> 06:52.380
+In fact, let's just start with about this.
+
+06:56.700 --> 06:57.930
+And then favorites.
+
+07:05.430 --> 07:08.490
+And then last, we don't have settings like this.
+
+07:09.990 --> 07:18.120
+So what I'm going to do then here, I'm going to use all of those when I see items.
+
+07:20.130 --> 07:20.300
+Right.
+
+07:20.870 --> 07:29.550
+When he used a for each with index, for each index, the such and so we're going to have index and
+
+07:29.550 --> 07:33.960
+we're going to have the actual text right could be asked to be anything.
+
+07:34.920 --> 07:36.300
+I just say, yes, that's fine.
+
+07:39.890 --> 07:40.790
+Texas fine.
+
+07:45.000 --> 07:46.740
+And then this is where.
+
+07:54.060 --> 07:57.270
+I'm going to call a drop down.
+
+07:59.300 --> 08:06.530
+Menu item, because remember, each one of these is going to be a menu item drop down list such.
+
+08:11.390 --> 08:18.470
+And let's see, let's make this a land grab, because that's going to help our case like that.
+
+08:18.500 --> 08:18.920
+There we go.
+
+08:19.580 --> 08:23.840
+And each dropdown menu will have, of course, on click event.
+
+08:25.930 --> 08:36.790
+And what we want to do instead of the quick event, we're going to see expanded said that to false and
+
+08:36.790 --> 08:40.090
+then we're going to say show dialogue, not value.
+
+08:43.510 --> 08:44.860
+And said that to false as well.
+
+08:45.310 --> 08:51.520
+So essentially, once we click on either one of these, we're going to get rid of this dialogue.
+
+08:53.570 --> 08:58.010
+All right, so now let's go ahead and look at creating these items there.
+
+08:58.550 --> 09:03.410
+So, all right, so now let's go ahead and create which one of these items, because remember, we are
+
+09:03.410 --> 09:05.900
+inside of a for loop really here.
+
+09:06.230 --> 09:14.120
+So we're going to create now this one of each one of these right now because I know there are three
+
+09:14.120 --> 09:17.220
+different rules per se right here.
+
+09:17.240 --> 09:21.500
+What I'm going to do for the icon, I'm going to see create an icon like this.
+
+09:22.460 --> 09:24.380
+And for the image.
+
+09:26.720 --> 09:32.300
+Description, content description, the signal for now, but now for each one of this image, because
+
+09:32.300 --> 09:34.670
+I want different images of different icons, right?
+
+09:35.240 --> 09:37.280
+I need to check to see.
+
+09:38.470 --> 09:44.230
+Which one of these, if its favorite about or settings, right, if it's favored, I'm going to have
+
+09:44.230 --> 09:50.290
+a heart that's about it going to have this information and then this tool thing, therefore settings.
+
+09:50.920 --> 09:58.180
+OK, so to do that and when to use it, when statement real quick here and going to pass the text because
+
+09:58.180 --> 10:04.870
+this text is going to be white, it's going to be each one of these texts that we have in our list.
+
+10:06.010 --> 10:11.800
+So depending on the text, if it's about first the icon.
+
+10:14.770 --> 10:16.870
+It's going to be icons that default.
+
+10:18.010 --> 10:18.970
+I'm going to add info.
+
+10:21.770 --> 10:22.130
+OK.
+
+10:23.840 --> 10:24.560
+Let's important
+
+10:28.160 --> 10:37.280
+now, if the case is favorites, then icons our default.
+
+10:39.410 --> 10:40.460
+And say favorite.
+
+10:42.580 --> 10:43.930
+Border like this.
+
+10:45.650 --> 10:48.830
+And then else we just have one more case, really.
+
+10:49.490 --> 10:54.020
+I'm just going to say it's going to be all right, Colin is the default.
+
+10:57.570 --> 10:58.200
+Settings.
+
+11:00.600 --> 11:01.020
+Like that?
+
+11:02.760 --> 11:05.080
+We don't need commerce.
+
+11:05.760 --> 11:07.500
+All right, analysts and.
+
+11:09.560 --> 11:15.920
+Tent color for each one of these colored light gray.
+
+11:17.450 --> 11:18.560
+Let's put a comment on
+
+11:21.710 --> 11:22.160
+that.
+
+11:22.940 --> 11:28.130
+And then right below that or actually altered it to the right, I'm going to add a text.
+
+11:32.930 --> 11:36.200
+So essentially now I'm adding this text here, that's part
+
+11:39.170 --> 11:45.680
+and four texts are going to be text right now inside of for a loop, so we will know to grab the correct
+
+11:45.680 --> 11:46.160
+text.
+
+11:46.670 --> 11:47.540
+So modifier.
+
+11:52.450 --> 11:56.620
+When I make this clickable and because it's still a text.
+
+11:58.480 --> 11:59.980
+Say font weight.
+
+12:04.280 --> 12:11.410
+So three hundred, I say, but wait, and that's fine, OK?
+
+12:12.460 --> 12:13.640
+We did a lot of things.
+
+12:13.660 --> 12:16.540
+Let's go ahead and see if this works and go ahead and run.
+
+12:19.190 --> 12:21.710
+OK, I can see it works, OK.
+
+12:21.800 --> 12:22.340
+It's quick.
+
+12:22.970 --> 12:24.050
+They would go say about.
+
+12:27.990 --> 12:33.180
+And you click somewhere outside the actual menu items and goes away.
+
+12:34.140 --> 12:35.430
+OK, so it's working.

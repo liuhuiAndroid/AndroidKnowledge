@@ -1,0 +1,661 @@
+WEBVTT
+
+00:01.230 --> 00:06.990
+All right, so now it's time for us to get started and putting together the application, but most importantly,
+
+00:06.990 --> 00:10.830
+we're going to add the we're going to start small and adding the things that we need.
+
+00:11.490 --> 00:11.790
+All right.
+
+00:11.790 --> 00:14.040
+So I went ahead and created a new project.
+
+00:14.040 --> 00:16.170
+A dot reader can name whatever we want.
+
+00:16.650 --> 00:20.580
+And so we have it's all set up, and now it's time for us to get started.
+
+00:20.640 --> 00:25.560
+So what I'm going to do first, of course, is we know that we will need a few things.
+
+00:25.560 --> 00:28.320
+But the main thing is that we need Firebase.
+
+00:28.320 --> 00:34.470
+So Firebase is a backend that allows us to create databases, but most importantly, allows us to scale
+
+00:34.470 --> 00:36.240
+our app quickly and easily.
+
+00:36.420 --> 00:42.360
+Now what do we need to do is to go to Firebase, Stockholm or Firebase or Google that comes if you type
+
+00:42.360 --> 00:46.080
+in, you should have a Google account in order for this to work.
+
+00:46.230 --> 00:47.040
+I'm assuming you do.
+
+00:47.040 --> 00:53.340
+If not, you have to create an account and then you should be able to go to a firebase that come Firebase
+
+00:53.340 --> 00:56.940
+at Google that is dot com with S. And I'm already logged in.
+
+00:57.090 --> 00:59.610
+That's why you have my picture there.
+
+00:59.970 --> 01:02.220
+And why do we need to do from here or just go to console?
+
+01:02.640 --> 01:05.280
+You'll see that we have here your Firebase project.
+
+01:05.290 --> 01:08.460
+See if this is the first time you probably won't have any of these.
+
+01:08.640 --> 01:10.440
+Which is fine in this case.
+
+01:10.440 --> 01:13.290
+I do have a few projects, so that's why they are there.
+
+01:13.590 --> 01:16.650
+So what do we need to do is say add project.
+
+01:16.830 --> 01:23.970
+So but in this case here, I'm just going to say, get a reader like this to name our app.
+
+01:25.060 --> 01:33.220
+OK, I say continue, and it's going to ask us to, of course, add Google Analytics for the Firebase
+
+01:33.220 --> 01:33.700
+Project.
+
+01:34.300 --> 01:35.650
+I don't want any of this.
+
+01:35.860 --> 01:41.320
+I'm just going to not add any of those sorts of say, create and now is creating the chat.
+
+01:41.320 --> 01:45.670
+A reader project Firebase projects so may take a few seconds.
+
+01:46.660 --> 01:48.520
+You can see that a reader is done.
+
+01:48.680 --> 01:50.080
+Your new project is ready.
+
+01:50.410 --> 01:55.870
+Go ahead and click there, and it should be taken to this screen here.
+
+01:55.990 --> 02:01.810
+The beauty about having a Firebase project is that you can include different platforms.
+
+02:01.810 --> 02:06.190
+You have Apple, iOS, Android have web, we have unity and so forth.
+
+02:06.200 --> 02:12.580
+So this is really good because you could have an app that is an iOS app, Android and web, but the
+
+02:12.580 --> 02:14.680
+data is still the same right to database.
+
+02:14.680 --> 02:18.040
+The back end is the same, so you can leverage the same database.
+
+02:18.460 --> 02:20.360
+OK, so what do we need to do here?
+
+02:20.380 --> 02:22.030
+Let's go ahead and click Android.
+
+02:22.210 --> 02:27.040
+As such, now we need to add a few things here in our registered app here.
+
+02:27.040 --> 02:31.050
+So notice it says we need to add the Android package name.
+
+02:31.090 --> 02:35.470
+If you click there, it's going to say your package name is generally the application ID in your app
+
+02:35.470 --> 02:37.670
+level build.gradle.
+
+02:37.690 --> 02:39.130
+Let's go to our project.
+
+02:39.310 --> 02:40.570
+Go to app level.
+
+02:40.660 --> 02:46.630
+Build that Gradle this one so you can see application and this is mine now for you.
+
+02:46.900 --> 02:48.250
+It's going to be something different.
+
+02:48.340 --> 02:48.640
+Right?
+
+02:48.850 --> 02:52.680
+So go to the second below Gradle.
+
+02:52.690 --> 02:59.350
+So the one that says module and that app like that and then go to default or find where application
+
+02:59.350 --> 02:59.840
+it is.
+
+02:59.860 --> 03:04.180
+So you want to copy that and we're going to add that has to be exactly that.
+
+03:04.420 --> 03:08.090
+OK, so go and find yours and the app nickname here.
+
+03:08.110 --> 03:08.980
+This is optional.
+
+03:08.990 --> 03:12.650
+Essentially, it's going to be the nickname we're going to see in the console.
+
+03:12.760 --> 03:19.890
+I'm going to say a reader, git, a reader, android and then the debug signing certificate.
+
+03:19.900 --> 03:21.220
+We don't need to worry about that.
+
+03:21.310 --> 03:23.410
+We're going to go ahead and just register the app.
+
+03:23.440 --> 03:23.740
+All right.
+
+03:23.740 --> 03:26.480
+So now we need to download the config file.
+
+03:26.500 --> 03:30.160
+He says Google services that JSON and then wants to be download here.
+
+03:30.400 --> 03:34.750
+We need to move that into our app module root directory.
+
+03:35.060 --> 03:36.760
+OK, let's go ahead and click here to download.
+
+03:37.510 --> 03:42.140
+And you can see here it has even an image to show us where we supposed to add.
+
+03:42.160 --> 03:46.360
+So it has to be at our root folder in our Android app.
+
+03:46.450 --> 03:49.900
+So let's go ahead and open this finder.
+
+03:50.170 --> 03:51.070
+Go to our project.
+
+03:51.250 --> 03:51.600
+All right.
+
+03:51.610 --> 03:56.320
+So what I'm going to do next is I'm going to change the view of our project here.
+
+03:56.330 --> 03:57.370
+I'm going to click there.
+
+03:57.370 --> 04:03.880
+I want to see the project so I can have access to all the files and so forth so I can see there is the
+
+04:03.880 --> 04:04.210
+app.
+
+04:04.210 --> 04:08.420
+So I'm going to add it to this root folder here, making sure it's going to be exactly like this.
+
+04:08.420 --> 04:14.950
+So you see, we have the source and we have the pro guide rules, so it's going to be at the same level
+
+04:14.950 --> 04:16.840
+as provide rules there.
+
+04:17.350 --> 04:25.090
+So I have it on my desktop and when it gets added there, I'm going to say refactor and everything.
+
+04:25.600 --> 04:26.140
+Sure.
+
+04:26.590 --> 04:27.590
+This is for my get.
+
+04:27.640 --> 04:28.190
+That's fine.
+
+04:28.210 --> 04:29.290
+And voila, there it is.
+
+04:29.590 --> 04:29.860
+OK.
+
+04:29.950 --> 04:31.180
+Just make sure it is correct.
+
+04:31.630 --> 04:31.980
+Yes.
+
+04:32.010 --> 04:32.680
+Has to be there.
+
+04:33.040 --> 04:35.170
+So this is your Google service.
+
+04:35.170 --> 04:41.110
+I decide you should keep it to yourself because this contains all of the information needed for the
+
+04:41.110 --> 04:42.830
+app, the authorizations and so forth.
+
+04:42.850 --> 04:44.590
+So don't share that with anyone.
+
+04:45.190 --> 04:49.330
+OK, so back to our configuration, I'm going to say next.
+
+04:49.690 --> 04:49.990
+All right.
+
+04:49.990 --> 04:53.380
+So now saying that we need to make some changes in our Gradle?
+
+04:53.470 --> 04:55.090
+So what do we need to do here?
+
+04:55.420 --> 05:00.310
+First of all, this has to be the project level build that Gradle, which means.
+
+05:01.970 --> 05:06.770
+Let's change this back to Android, so we can just see the files that we need.
+
+05:07.310 --> 05:10.220
+This is going to be the project level six project there to click.
+
+05:10.820 --> 05:11.960
+Let's go ahead and take a look.
+
+05:12.020 --> 05:12.860
+It has to be.
+
+05:13.310 --> 05:15.410
+Let's check that we have Google.
+
+05:15.440 --> 05:16.880
+Is that right?
+
+05:17.300 --> 05:18.040
+We have Google.
+
+05:18.050 --> 05:18.710
+That's very good.
+
+05:19.670 --> 05:25.760
+And now Independency says, we have to add this, so I'm going to just copy this such.
+
+05:27.230 --> 05:32.780
+And add at the bottom, there looks like everything is good and you can see sometimes there are some
+
+05:32.780 --> 05:36.180
+differences the way things are laid out in our cradle.
+
+05:36.200 --> 05:37.580
+But the idea is still the same.
+
+05:37.580 --> 05:38.620
+We have repositories.
+
+05:39.320 --> 05:41.030
+Make sure that, you know, build script.
+
+05:42.660 --> 05:46.440
+Will script repositories has all of that, so we should be good.
+
+05:46.680 --> 05:51.030
+We just had to have that Google repository called there while I'm here.
+
+05:51.410 --> 05:56.670
+And go ahead and change this to the newer version because it's asking.
+
+05:57.330 --> 06:02.580
+And while I'm here, he also, I'm going to change this to four, because that's the latest compose
+
+06:02.580 --> 06:03.000
+version.
+
+06:03.010 --> 06:03.270
+OK?
+
+06:03.420 --> 06:04.860
+All right, let's continue.
+
+06:05.100 --> 06:10.440
+And now in our app level bill that Gradle assisted app level, we need to add a few things.
+
+06:10.440 --> 06:12.720
+So it says, first of all, apply.
+
+06:13.350 --> 06:14.550
+We're going to add this line.
+
+06:14.550 --> 06:15.530
+I'm going to copy this.
+
+06:15.540 --> 06:16.140
+You can do that.
+
+06:16.140 --> 06:18.890
+So this let's go back now.
+
+06:18.900 --> 06:21.060
+See here, this is the app build.gradle.
+
+06:22.400 --> 06:28.880
+The top here, let's go ahead and add apply plug in in this case now because there have been some changes.
+
+06:28.900 --> 06:35.440
+What we need to do, actually, I can remove all of this and you can see just ID like this that works
+
+06:35.440 --> 06:35.860
+as well.
+
+06:36.020 --> 06:38.440
+OK, and then we're going to add this dependency here.
+
+06:38.440 --> 06:43.330
+I'm going to copy and go down to dependencies.
+
+06:43.990 --> 06:49.210
+So I would start off somewhere here, let's say Firebase Store.
+
+06:49.450 --> 06:52.480
+So I know and pacing there, they're very good.
+
+06:52.960 --> 06:56.380
+And now we're going to go ahead and says, here they want to sync our project.
+
+06:56.810 --> 06:57.070
+All right.
+
+06:57.070 --> 06:58.240
+Let's go ahead and sync.
+
+06:58.810 --> 06:59.120
+All right.
+
+06:59.140 --> 07:04.150
+After a few moments, you see that the Gradle has updated and everything should be good.
+
+07:04.450 --> 07:09.220
+Now they have a couple of dependencies for Firebase authentication and Cloud First Order.
+
+07:09.250 --> 07:10.840
+I'm going to add here.
+
+07:10.870 --> 07:15.210
+So all of that you can actually go this just say next year.
+
+07:16.600 --> 07:18.850
+So you can actually check out the documentation.
+
+07:18.880 --> 07:20.640
+You can also explore the sample.
+
+07:20.660 --> 07:23.920
+Firebase app was right click and open this link.
+
+07:24.310 --> 07:29.650
+We're going to click this Android, and there's this very nice gentleman who walks you through everything,
+
+07:29.650 --> 07:30.550
+which is really nice.
+
+07:31.120 --> 07:34.540
+But if you scroll down, you'll see exactly what you've done, right?
+
+07:34.810 --> 07:36.700
+All the dependencies we had to add.
+
+07:37.210 --> 07:42.580
+And then at the bottom, you will see that we have codling Katie X for Android.
+
+07:42.580 --> 07:49.090
+So usually there is Java on go to Kotlin and you can see that we've added this dependency to fire boom.
+
+07:49.350 --> 07:50.260
+I firebase boom.
+
+07:50.740 --> 07:57.550
+And we don't need this dependency because we're not using we're not using Google Analytics, but it
+
+07:57.550 --> 08:01.410
+says here declares dependency for any other desired Firebase products.
+
+08:01.460 --> 08:07.150
+And so say, for example, they declare the dependencies for Firebase authentication and cloud first,
+
+08:07.150 --> 08:08.350
+or which is exactly what we want.
+
+08:08.590 --> 08:10.000
+So that's where I got this from.
+
+08:10.030 --> 08:13.900
+So just copy all of that as I did and added there.
+
+08:14.170 --> 08:17.560
+So I can also add here Firebase
+
+08:23.380 --> 08:24.760
+and Fire Store.
+
+08:26.080 --> 08:29.290
+OK, so once again, let's go ahead and sync our project here.
+
+08:29.620 --> 08:31.270
+OK, it looks like everything went well.
+
+08:31.540 --> 08:37.120
+OK, so now how do I know that this is actually working, that I have everything set up with Firebase?
+
+08:37.630 --> 08:44.590
+Well, one of things you can do is actually just run this app as it is right now, and let's go to our
+
+08:44.590 --> 08:51.250
+Logcat and for debugging, we can look for Firebase a minute.
+
+08:53.900 --> 08:55.760
+Change this to a verbose.
+
+08:57.970 --> 09:01.400
+Still running looks like I have a few problems here.
+
+09:01.420 --> 09:07.720
+That's not a problem because these are versioning issues, so says the version one that 04 for composed
+
+09:07.720 --> 09:10.970
+compiler requires Kotlin one five through one.
+
+09:10.990 --> 09:12.740
+So this is something we need to do.
+
+09:13.000 --> 09:17.740
+Remember, all of these may change depending on when you're watching this video, because these versions
+
+09:17.740 --> 09:18.880
+change constantly.
+
+09:18.910 --> 09:25.660
+OK, so whatever version they are telling us to change here, we need to add that this is happening
+
+09:25.660 --> 09:30.760
+because if we go back to our build that app, I change the actually build that Gradle.
+
+09:30.790 --> 09:32.830
+This is the project level.
+
+09:32.920 --> 09:34.240
+I change to one zero four.
+
+09:34.690 --> 09:40.870
+That means then here for our plug in, I need to change to what they ask, which is one point five thirty
+
+09:40.870 --> 09:41.530
+one like this?
+
+09:42.400 --> 09:42.660
+OK.
+
+09:44.230 --> 09:46.060
+So go ahead and sink once again.
+
+09:46.600 --> 09:46.990
+OK.
+
+09:47.360 --> 09:49.240
+Looks like the sinking went well.
+
+09:49.510 --> 09:54.010
+It looks like device and lock initializing all purpose APIs for app default.
+
+09:54.010 --> 09:54.820
+That's good.
+
+09:55.300 --> 10:00.670
+Let's go ahead and actually run now and hopefully see something that will tell us that this is actually
+
+10:01.450 --> 10:03.280
+initialized and all is good.
+
+10:03.670 --> 10:04.090
+All right.
+
+10:04.750 --> 10:06.710
+You should see something like this.
+
+10:06.730 --> 10:08.650
+If you ran the your app, hello, android.
+
+10:08.650 --> 10:11.800
+But most importantly, we should see here and verbose.
+
+10:12.000 --> 10:14.050
+It would have been Firebase to search for.
+
+10:14.050 --> 10:17.980
+It concedes as Firebase initialization successful.
+
+10:17.980 --> 10:23.170
+So we know now that everything is set up for us to start looking at working with Firebase.
+
+10:23.800 --> 10:24.820
+All right, congratulations.
+
+10:24.830 --> 10:28.210
+Make sure you go through this process so that you have everything set up.
+
+10:28.600 --> 10:33.130
+Remember that these versions may be different, but each time you watch this video, so don't get hung
+
+10:33.130 --> 10:35.860
+up on these versions of all of these dependencies, OK?
+
+10:36.130 --> 10:41.680
+So what's important is that you understand how to set things up and that if you need to change those
+
+10:41.680 --> 10:43.000
+versions, you must to change.
+
+10:43.000 --> 10:49.060
+You must change those versions and make sure that if you change certain versions of certain dependencies,
+
+10:49.630 --> 10:55.330
+you will probably most likely have to change the other dependencies that remained on that dependency
+
+10:55.330 --> 10:56.110
+fragmented sense.
+
+10:56.380 --> 11:03.670
+So but the beauty is that the build.gradle Gradle here will always tell us exactly which things or which
+
+11:03.670 --> 11:06.040
+dependencies need to be need to be updated.
+
+11:06.130 --> 11:06.510
+Great.
+
+11:06.520 --> 11:11.110
+So we know that the Firebase initialization is successful.
+
+11:11.380 --> 11:14.680
+In fact, if you go back to our app here, say Continue.
+
+11:16.170 --> 11:17.700
+Can see we have our app.
+
+11:18.000 --> 11:18.540
+There we go.
+
+11:18.570 --> 11:20.560
+This is the app that we just created.
+
+11:20.580 --> 11:21.360
+That's my app.
+
+11:21.540 --> 11:27.120
+In this case, you should have a different name and so forth, but it's there so we can now do all sort
+
+11:27.130 --> 11:27.970
+of things right.
+
+11:28.020 --> 11:34.260
+We can create authentication and faster and images in so many services that we can use now.
+
+11:34.860 --> 11:41.700
+One thing I would like to point out is that inside of our Android setup with Firebase here, where we
+
+11:41.700 --> 11:48.540
+went and got our Kotlin dependencies for off in first store, if you scroll down, continue, scroll
+
+11:48.540 --> 11:48.840
+down.
+
+11:48.840 --> 11:55.920
+You will see that we have all the available libraries here, Java, Android, but we want to cut lean
+
+11:56.550 --> 11:57.180
+T.X.
+
+11:57.210 --> 11:58.190
+Android, right?
+
+11:58.200 --> 12:03.680
+So far, based here has a lot of different services this AdMob for ads.
+
+12:03.690 --> 12:09.000
+So this this is this would be the service you would add all the dependency you would add.
+
+12:09.510 --> 12:11.310
+There's analytics, as you saw before.
+
+12:11.310 --> 12:18.390
+We can add that all of these kinds that you can add all of these different services for Firebase cloud
+
+12:18.390 --> 12:22.910
+storage, remote and so many, so many, so many others, right?
+
+12:23.010 --> 12:24.900
+So this is a good reference for you to come.
+
+12:25.170 --> 12:29.250
+And most importantly, also you can come and see the versions that are up to date.

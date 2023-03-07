@@ -1,0 +1,643 @@
+WEBVTT
+
+00:00.460 --> 00:07.690
+Now that we have our basic infrastructure created, so we know that we can tackle the portfolio here
+
+00:07.690 --> 00:10.090
+to show and to hide, which is really awesome.
+
+00:10.300 --> 00:14.050
+We want to now work internally, so we want something like this.
+
+00:14.060 --> 00:20.140
+You know, this is not this is not exciting, right, to show, yes, this text like I want to do.
+
+00:20.510 --> 00:25.120
+I want to create something that's more customized and beautiful, if you will.
+
+00:25.360 --> 00:26.200
+How do we do this?
+
+00:26.710 --> 00:29.200
+Well, inside of out of here.
+
+00:29.200 --> 00:34.300
+In fact, before I even leave you, let's go ahead and get rid of the unnecessary here.
+
+00:34.480 --> 00:36.460
+Just a box concise.
+
+00:36.970 --> 00:38.260
+So let's go back to our content.
+
+00:38.800 --> 00:44.230
+You say command entry is going to take you there or control Class B and windows.
+
+00:44.710 --> 00:46.690
+And let's go to our portfolio again.
+
+00:46.960 --> 00:47.380
+Quick.
+
+00:47.950 --> 00:48.600
+And there we go.
+
+00:48.610 --> 00:50.710
+So this is where we are going to be working on.
+
+00:50.770 --> 00:57.010
+So what we want to do is we want to be able to extract and make something a little bit more memorable
+
+00:57.430 --> 00:58.510
+and less embarrassing.
+
+00:58.990 --> 00:59.440
+OK.
+
+00:59.770 --> 01:00.070
+All right.
+
+01:00.080 --> 01:01.360
+So what are we going to do?
+
+01:01.390 --> 01:06.520
+Let's get rid of that item there as serve us well, and we're going to go back to sleep mode and we're
+
+01:06.520 --> 01:09.670
+going to hide our emulator such.
+
+01:10.880 --> 01:16.520
+And for the content, I'm actually going to get rid of the preview because I want to see that more.
+
+01:17.000 --> 01:23.780
+And what I'm going to do inside here is going to tweet the card and let it pass modifier.
+
+01:23.810 --> 01:24.620
+What's new?
+
+01:26.390 --> 01:37.970
+Your general pattern of about 13 deep and feel max width such and then I'm going to pass a shape in
+
+01:37.970 --> 01:45.590
+this case is going to be a rectangle shape as such because I want it to be that shape, rectangle shape.
+
+01:46.190 --> 01:46.670
+Very good.
+
+01:47.000 --> 01:49.740
+Now, if you look at what is inside here.
+
+01:49.760 --> 01:53.040
+Notice we have some sort of two configurations.
+
+01:53.060 --> 01:57.090
+First, we have a row because things are going to be left right.
+
+01:57.110 --> 02:01.220
+And of course, here we also have things are going to be vertically aligned.
+
+02:01.230 --> 02:02.450
+So top to bottom.
+
+02:03.110 --> 02:09.860
+So the main enclosing item will be a row because I'm going to be this item, which is going to be our
+
+02:09.860 --> 02:10.700
+profile picture.
+
+02:10.940 --> 02:15.800
+And then we have this content project title and then description of sorts.
+
+02:16.250 --> 02:19.220
+So what are we going to do inside of our card?
+
+02:19.250 --> 02:21.140
+That would be that we will be creating.
+
+02:21.470 --> 02:24.260
+We're going to create a row or add a row.
+
+02:24.650 --> 02:26.240
+All of these is given, OK.
+
+02:26.690 --> 02:30.920
+And then I'm going to pass the modifier again, say modifier.
+
+02:31.310 --> 02:35.930
+And I want padding within inside there, padding inside.
+
+02:35.930 --> 02:37.790
+And I see about eight dpi.
+
+02:38.150 --> 02:41.750
+And next to one is also say background color.
+
+02:42.080 --> 02:48.070
+I'm just going to use the material theme that colors and just use the surface color.
+
+02:48.080 --> 02:50.630
+All of these colors are come from the mature theme.
+
+02:50.990 --> 02:51.950
+So we're set.
+
+02:52.340 --> 02:52.670
+All right.
+
+02:53.270 --> 02:55.070
+And then I'm going to make this clickable.
+
+02:55.580 --> 02:57.680
+And next, I'm going to also add padding.
+
+02:57.680 --> 03:01.670
+This is inside of our row of about 16 dpi.
+
+03:01.670 --> 03:02.210
+Like this?
+
+03:03.020 --> 03:03.400
+All right.
+
+03:03.410 --> 03:08.300
+So we have this row created now we have to add these contents.
+
+03:08.750 --> 03:10.630
+So we're going to use a surface again.
+
+03:10.640 --> 03:18.020
+A very good friend of ours, passing modifier size and turning the whole thing to have about 15 dpi
+
+03:18.200 --> 03:18.680
+such.
+
+03:19.280 --> 03:23.990
+And then I'm going to use the shape of the shape and I want a circle shape.
+
+03:24.560 --> 03:26.750
+But now what are we trying to do here?
+
+03:26.780 --> 03:32.870
+Well, all we're trying to do is to add this nice circle containing an image.
+
+03:33.260 --> 03:33.800
+What do you mean it?
+
+03:34.190 --> 03:35.690
+Haven't we done that before?
+
+03:36.140 --> 03:42.440
+If you look back to have our content, of course, if you look back at this, go back to here.
+
+03:42.440 --> 03:44.180
+We have this create image profile.
+
+03:44.190 --> 03:45.530
+That's exactly what you want.
+
+03:45.770 --> 03:47.690
+Here is the beauty we can reuse.
+
+03:47.900 --> 03:51.890
+Pieces of the user interface are interesting.
+
+03:52.100 --> 03:56.030
+That means then I don't have to come here and we do all of this.
+
+03:56.390 --> 04:03.140
+All I can do, which is see, I can go ahead and just call the create image profile as such and see
+
+04:03.140 --> 04:03.770
+what happens.
+
+04:04.010 --> 04:09.110
+I'm going to go ahead and make sure that I run this real quick to see what's going to happen.
+
+04:09.860 --> 04:11.230
+OK, so it's false.
+
+04:11.230 --> 04:13.510
+So we need to click to see something right?
+
+04:13.520 --> 04:15.020
+That's the deal.
+
+04:15.290 --> 04:16.790
+I'm going to go ahead and click and voila.
+
+04:17.170 --> 04:19.880
+Now make sure this is there.
+
+04:19.880 --> 04:22.490
+You can see I can scroll up and down in.
+
+04:22.490 --> 04:26.990
+Each one of these are going to show or have an actual.
+
+04:26.990 --> 04:31.010
+In this case, you can see an actual image rounded and everything.
+
+04:31.940 --> 04:39.290
+This is the beauty of creating pieces of independent function, in this case, composable because we
+
+04:39.290 --> 04:40.070
+can reuse them.
+
+04:40.280 --> 04:41.870
+Now here is the awesome part.
+
+04:41.870 --> 04:48.170
+Also, if we go to our create image profile notice, we passed the modifier vertical.
+
+04:48.200 --> 04:53.900
+This is good because that means even though it is not required, it's optional.
+
+04:54.230 --> 04:56.450
+We can actually use that to our advantage.
+
+04:57.230 --> 05:03.590
+How well I'm going to change a few things here because notice in the side of this create image profile
+
+05:04.070 --> 05:08.840
+the only place I reuse whatever we're going to be passing here in this case, it might fire is just
+
+05:08.840 --> 05:16.220
+on this surface, which is the overall the main canvas for our create in profile, this guy.
+
+05:16.760 --> 05:17.630
+That's where we're using.
+
+05:17.930 --> 05:19.550
+However, we don't use it anywhere else.
+
+05:19.790 --> 05:21.770
+So I want to use that also here.
+
+05:22.100 --> 05:24.860
+Just call that modifier as such.
+
+05:25.580 --> 05:26.870
+This is going to help me.
+
+05:26.870 --> 05:27.770
+In what way?
+
+05:27.800 --> 05:30.630
+Well, let's go back to where this has been called.
+
+05:30.650 --> 05:37.700
+Now we have a couple of places, so we have here where which is inside of our list.
+
+05:38.060 --> 05:39.410
+What is that one to happen?
+
+05:39.440 --> 05:44.930
+Well, we want to make sure that we pass, modify here to further customize our friend.
+
+05:45.350 --> 05:45.830
+Look at that.
+
+05:46.100 --> 05:50.220
+I can see modifier that size when I make it a little bit smaller.
+
+05:50.240 --> 05:52.100
+How about 100?
+
+05:52.250 --> 05:53.270
+Let's see what's going to happen.
+
+05:53.840 --> 05:54.530
+That deep?
+
+05:55.250 --> 05:56.210
+Let's see what's going to happen.
+
+05:56.570 --> 05:57.380
+And look at this.
+
+05:57.410 --> 05:59.990
+Now it's smaller than this guy, you see.
+
+06:00.320 --> 06:01.520
+This is wonderful.
+
+06:01.700 --> 06:06.710
+This is an amazing concept that you will see me use this over and over again.
+
+06:06.740 --> 06:08.300
+In fact, that's what's encouraged.
+
+06:08.480 --> 06:09.140
+That's the beauty.
+
+06:09.500 --> 06:13.020
+Now we're taking we created this great image profile a while ago.
+
+06:13.280 --> 06:15.710
+It has its own customized properties.
+
+06:16.010 --> 06:21.440
+But then we can customize it even further because we want it to be reusable anywhere we want.
+
+06:21.800 --> 06:25.670
+And here's the example, and we can continue customizing.
+
+06:25.930 --> 06:31.330
+Because we just we can pass any modifier that we want here or any property from our modifier.
+
+06:31.990 --> 06:32.530
+Wonderful.
+
+06:32.920 --> 06:39.100
+And as such, I can come down here just to show you I'm going to say text and because remember it was
+
+06:39.100 --> 06:45.250
+still inside of these lazy column, which means we have this item object here and this case just a string
+
+06:45.250 --> 06:47.320
+that we can show text there.
+
+06:47.830 --> 06:53.170
+Or I can just go ahead and just pass the actual item, say item like this same thing.
+
+06:53.500 --> 07:00.280
+We can pass named parameters or we can just say like this and pass item, which is the recommended way.
+
+07:00.310 --> 07:01.270
+Either way, it will work.
+
+07:01.540 --> 07:01.890
+All right.
+
+07:01.900 --> 07:08.300
+So now if I run this again and let's click, we should see project in each one.
+
+07:08.560 --> 07:11.080
+It's going to go in show here.
+
+07:11.650 --> 07:12.160
+All right.
+
+07:12.790 --> 07:19.090
+And if you look closely, you will see that we have this very nice card, which we created just a few
+
+07:19.090 --> 07:19.780
+seconds ago.
+
+07:20.140 --> 07:27.340
+And as we know, for each card, we can also pass the elevation right of a shape.
+
+07:27.350 --> 07:30.730
+I'm going to see elevation for type DPI.
+
+07:31.600 --> 07:32.080
+And there you go.
+
+07:32.080 --> 07:33.400
+You can see the difference there.
+
+07:33.610 --> 07:35.860
+We have this very nice elevation there.
+
+07:36.130 --> 07:42.010
+How about changing this to about seven dpi for our row just to make sure?
+
+07:42.730 --> 07:43.020
+All right.
+
+07:43.040 --> 07:43.750
+Much, much better.
+
+07:43.780 --> 07:44.260
+I like that.
+
+07:44.530 --> 07:49.270
+I guess we can play around with this patterns and all sort of things, but at least you can see now
+
+07:49.450 --> 07:51.640
+that things are working as expected.
+
+07:52.270 --> 07:55.150
+Now the other thing I'm going to do here.
+
+07:55.180 --> 07:57.790
+Remember, we are trying to make it so that we have something like this.
+
+07:57.790 --> 08:03.280
+So that means then this text here perhaps needs to change to something a little bit more exciting.
+
+08:03.550 --> 08:09.580
+So the first thing we do, let's change the font weight and we say font weight bold.
+
+08:09.700 --> 08:11.620
+So if you just start typing as such.
+
+08:12.100 --> 08:15.920
+So here I'm just say bold font weight, bold enter.
+
+08:15.920 --> 08:16.630
+And there it is.
+
+08:16.930 --> 08:22.300
+But again, remember that the idea is to have we have this one row, which we've added, so we have
+
+08:22.300 --> 08:27.320
+a row which contains this create image profile and they don't have the text.
+
+08:27.640 --> 08:33.730
+But if we add, anything else is going to be added to the right, but we want something to be added
+
+08:33.730 --> 08:34.920
+after this project.
+
+08:35.060 --> 08:35.860
+Like a bottom here.
+
+08:35.870 --> 08:36.610
+How do we do that?
+
+08:36.700 --> 08:42.100
+Well, we are going to enclose this text inside of a column.
+
+08:42.310 --> 08:49.870
+So I'm going to say column such and I'm going to select this guy and I'm going to arrow up what's selected
+
+08:49.870 --> 08:55.210
+while still holding command shift like this is going to go now inside.
+
+08:55.780 --> 08:56.080
+All right.
+
+08:56.080 --> 09:00.250
+So now we have this column here, which is exactly what we want and what we can do.
+
+09:00.370 --> 09:09.100
+Of course, I'm going to go ahead and pass a modifier here, another padding of about eight dpi or seven
+
+09:09.100 --> 09:09.460
+dpi.
+
+09:09.460 --> 09:10.240
+That's fine.
+
+09:10.750 --> 09:16.540
+And then still with our modifier, I'm going to also invoke the line limited there.
+
+09:16.840 --> 09:17.800
+The align method.
+
+09:17.800 --> 09:23.680
+In this case, I'm going to pass alignment, of course, and the alignment to say alignment, and I
+
+09:23.680 --> 09:27.010
+want this alignment to be centered vertically.
+
+09:27.280 --> 09:32.470
+So this will allow this whole column to enclose everything that is inside of it.
+
+09:32.680 --> 09:35.500
+It's going to be center vertically, which is exactly what we want.
+
+09:35.890 --> 09:36.220
+Very good.
+
+09:36.220 --> 09:41.260
+So we have in our text, the next thing we want to add is, of course, some sort of description here,
+
+09:41.260 --> 09:42.130
+something like that.
+
+09:42.520 --> 09:47.170
+So that means then we just copy this and paste it all there.
+
+09:47.170 --> 09:51.940
+And in this case, I'm just going to add a text manual text.
+
+09:51.940 --> 09:55.960
+It was a great project, something like that.
+
+09:56.920 --> 09:58.960
+And for font, it's not going to be bold.
+
+09:58.960 --> 10:08.770
+I want to change this to something less bold, no pun intended, let's say style and what's called material
+
+10:09.280 --> 10:10.300
+theme or such.
+
+10:10.870 --> 10:15.970
+Let's go to typography and then Body two is a little bit small.
+
+10:16.510 --> 10:17.170
+That should work.
+
+10:17.380 --> 10:18.370
+Let's go give it a run.
+
+10:18.910 --> 10:19.300
+All right.
+
+10:19.420 --> 10:21.580
+Let's go ahead and take a look.
+
+10:21.700 --> 10:28.750
+You can click and you see we have everything working nice, right?
+
+10:29.350 --> 10:29.940
+I did.
+
+10:30.760 --> 10:34.090
+And we have our rose and everything is looking great.
+
+10:34.540 --> 10:40.750
+Now, keep in mind that if we change this alignment or we don't add this alignment, this project one
+
+10:40.750 --> 10:44.440
+and great project, you know, this tax here would be to the top here.
+
+10:44.440 --> 10:50.530
+In fact, let me show you real quick what would happen if we don't have that run?
+
+10:51.160 --> 10:55.120
+OK, let's go portfolio and you can see is at the top there.
+
+10:55.390 --> 11:01.210
+It's not the worst thing in the world, but I want everything to be kind of centered vertically, which
+
+11:01.210 --> 11:04.300
+means all of these tax will be pushed down a little bit.
+
+11:04.750 --> 11:05.500
+This is not bad.
+
+11:05.980 --> 11:07.450
+So I'm going to go control Z.
+
+11:07.900 --> 11:09.310
+So we have that back.
+
+11:09.880 --> 11:12.220
+OK, so its final tests here?
+
+11:12.550 --> 11:13.120
+Very good.
+
+11:13.420 --> 11:13.900
+OK.
+
+11:14.110 --> 11:14.920
+So there you have it.
+
+11:15.340 --> 11:20.470
+It's working, and it's the end of our fun project here.
+
+11:20.860 --> 11:23.370
+Now again, I have to emphasize this is not the end.
+
+11:23.380 --> 11:25.240
+Obviously, this is just the beginning.
+
+11:25.270 --> 11:25.750
+In fact.
+
+11:26.070 --> 11:32.580
+I ran through this real quick and I did explain things, other things I did not, and it's all intentional
+
+11:32.580 --> 11:36.000
+because I didn't want to bug you down with the details.
+
+11:36.000 --> 11:36.870
+Too much details.
+
+11:37.380 --> 11:38.310
+This is just the beginning.
+
+11:38.520 --> 11:43.050
+We are going to dive through this like no one else coming lesson.
+
+11:43.050 --> 11:43.410
+So.
+
+11:43.780 --> 11:49.290
+So do not worry if none of this made sense, as long as you were able to go through and see what it
+
+11:49.290 --> 11:53.550
+was doing and kind of like, navigate in your mind what's going on a little bit.
+
+11:53.550 --> 11:56.910
+That's all that I'm hoping that you got from this.
+
+11:57.510 --> 12:02.400
+We will go through all of this into more detail than ever in the next videos.
+
+12:02.760 --> 12:06.750
+OK, congratulations if you were able to build this simple application.
+
+12:07.080 --> 12:11.880
+And I really look forward to seeing next what we're going to be diving deeper even deeper.
+
+12:11.910 --> 12:17.370
+Yes, it's possible even deeper into this amazing new tool that is compose.
+
+12:17.790 --> 12:19.980
+OK, thank you so much, and I'll see you next time.

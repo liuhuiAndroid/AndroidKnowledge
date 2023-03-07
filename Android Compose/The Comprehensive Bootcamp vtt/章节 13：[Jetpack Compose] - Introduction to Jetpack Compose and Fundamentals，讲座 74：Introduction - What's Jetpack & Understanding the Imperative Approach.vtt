@@ -1,0 +1,385 @@
+WEBVTT
+
+00:00.880 --> 00:07.840
+So to understand the modern way of building Android applications, we need to look at jetpack and what
+
+00:07.840 --> 00:08.650
+is Jetpack.
+
+00:08.860 --> 00:14.410
+So Jetpack is a library of tools to help developers build a modern Android apps.
+
+00:15.100 --> 00:22.990
+The most important thing is that when these modern apps are built, they must follow the best practices.
+
+00:23.320 --> 00:26.120
+So that's the whole idea behind Jetpack.
+
+00:26.170 --> 00:32.950
+So when you hear jetpack, talk about ways to build robust Android apps that are flexible, that are
+
+00:32.950 --> 00:40.420
+adaptive, especially nowadays with a plethora of different Android devices that following the best
+
+00:40.420 --> 00:41.080
+practices.
+
+00:42.070 --> 00:49.510
+So the idea is to reduce boilerplate code and make sure that there is a consistency across Android versions
+
+00:49.510 --> 00:51.970
+because, as you know, Android is very fragmented.
+
+00:52.300 --> 00:56.410
+There are different devices, different versions, different manufacturers and so forth.
+
+00:56.500 --> 01:02.860
+And so to have some sort of a holy grail or say of how do we structure our Android apps, how do we
+
+01:02.860 --> 01:07.090
+build our Android apps to have this consistency is very, very important.
+
+01:07.360 --> 01:10.780
+And of course, that leads us to follow best practices.
+
+01:11.290 --> 01:14.860
+So Jetpack Library has a lot of types.
+
+01:15.010 --> 01:17.850
+So here are just a few types we can find.
+
+01:17.860 --> 01:26.020
+So the graphics navigation, which allows developers to have a more consistent and a more consistent
+
+01:26.020 --> 01:34.720
+across the board way of of navigating users are using their app lifecycle user interface, which is
+
+01:34.720 --> 01:35.500
+a big one.
+
+01:35.860 --> 01:42.550
+We have media, we have security data as well as performance and test.
+
+01:42.640 --> 01:47.140
+So these are just the few types of library that come with jetpack.
+
+01:47.680 --> 01:53.230
+So the Android team with a lot of experience, they had to come up with something that is more uniform
+
+01:53.530 --> 02:02.400
+as Android is growing, as the differences in devices also is growing and the whole industry in general,
+
+02:02.410 --> 02:05.320
+development industry, mobile industry is evolving.
+
+02:05.620 --> 02:12.880
+So they had to come up with a solution at least close to a solution that could unify the the way Android
+
+02:12.880 --> 02:14.560
+developers develop applications.
+
+02:14.830 --> 02:17.860
+This course is going to focus on jetpack compose.
+
+02:19.060 --> 02:21.280
+So what is Jetpack Compose?
+
+02:21.730 --> 02:26.440
+Jetpack Compose is Android's modern toolkit for building native UI.
+
+02:26.770 --> 02:28.600
+UI is user interface.
+
+02:29.650 --> 02:37.600
+So Jetpack Compose again goes back to that main reason that we have jetpack the the library's right,
+
+02:37.900 --> 02:45.880
+which is to write less code with powerful tools and also that will accelerate development.
+
+02:46.120 --> 02:52.930
+So that is to minimize the work involved in building Android applications, really, but not just building
+
+02:52.930 --> 02:59.410
+Android application, building applications with less code and application that are consistent with
+
+02:59.410 --> 03:02.350
+the ecosystem and retrieval system and so forth.
+
+03:02.470 --> 03:09.260
+That's what Jetpack Compose brings to us a modern toolkit for building native UI.
+
+03:09.670 --> 03:17.050
+The great thing about Jetpack Compose is that it uses not only a separate set of Kotlin APIs and application
+
+03:18.040 --> 03:24.430
+programming interfaces, so essentially libraries, but also uses traditional Coughlin's libraries.
+
+03:24.700 --> 03:30.750
+This is really important because not only can you use the set libraries that are free compose within
+
+03:30.790 --> 03:37.090
+Kotlin, of course, but you can also use codling APIs in general with compose.
+
+03:37.390 --> 03:38.710
+It's really, really powerful.
+
+03:39.100 --> 03:41.260
+Now why jetpack compose?
+
+03:42.070 --> 03:43.300
+That's a very good question.
+
+03:43.870 --> 03:45.310
+The industry is changing.
+
+03:45.520 --> 03:47.570
+But let's let's talk about this now.
+
+03:47.590 --> 03:54.940
+Jetpack compose is a huge shift in Android development, because now we're using what they call declarative
+
+03:54.940 --> 03:55.500
+UI.
+
+03:55.500 --> 03:57.190
+It forces the imperative approach.
+
+03:58.030 --> 03:59.740
+Now what is this imperative approach?
+
+03:59.770 --> 04:06.100
+Well, the imperative approach is what we do, what we have been doing so far in Android development.
+
+04:06.670 --> 04:06.960
+OK.
+
+04:07.630 --> 04:15.700
+And truth be told, it is too complicated the way things are or the way things have been done, too
+
+04:15.700 --> 04:18.430
+complicated because there are a lot of moving parts.
+
+04:20.190 --> 04:27.150
+For instance, the UI designer face is deeply coupled with the logic and vice versa, which brings a
+
+04:27.150 --> 04:34.530
+very inflexible eco system coupled means that there is no separation between uses and the logic.
+
+04:34.740 --> 04:41.820
+So there is this very togetherness that is not healthy, per say, which makes for a very inflexible
+
+04:41.820 --> 04:42.240
+coat.
+
+04:42.720 --> 04:49.590
+For example, one of the examples that we have to render, for instance, a list with a few items in
+
+04:49.590 --> 04:55.170
+traditional Android development, you will need to create a recycle or use or recycle view, which is
+
+04:55.170 --> 04:56.430
+a very complicated class.
+
+04:57.240 --> 05:02.430
+And this recycle fruit will need an adapter which, because adapter will know exactly how to position
+
+05:02.430 --> 05:08.820
+the items inside of this recycle view and these items that we're putting inside of recycled view, which
+
+05:08.820 --> 05:09.630
+need adapter.
+
+05:10.410 --> 05:17.790
+These also will need a view holder, which is a pattern that allows for the recycling of each item that
+
+05:17.790 --> 05:19.320
+is shown on the screen.
+
+05:19.680 --> 05:22.860
+So this is actually simplification that I'm putting it together.
+
+05:22.860 --> 05:27.900
+But even though there were three steps that we need here, it's very, very complicated.
+
+05:27.910 --> 05:34.890
+In fact, if you have done traditional Android development, you will attest that this indeed gets messy.
+
+05:36.090 --> 05:37.380
+That's the imperative approach.
+
+05:37.410 --> 05:40.770
+This is just one example, among many others.
+
+05:41.160 --> 05:47.520
+But with a declarative approach in this case, jetpack compose things are different in that they are
+
+05:47.520 --> 05:49.140
+simpler and more efficient.
+
+05:49.620 --> 05:52.580
+So no more boilerplate code, right?
+
+05:52.720 --> 05:58.740
+Because now what are you doing is we are declaring or describing in code what we want to see and not
+
+05:58.740 --> 06:01.140
+describing every step to get the result.
+
+06:01.470 --> 06:05.250
+For example, to render a list with a few items.
+
+06:05.940 --> 06:11.790
+This is the same example we had previously in the imperative approach in jetpack compose.
+
+06:11.820 --> 06:14.220
+All you need is a lazy column.
+
+06:15.230 --> 06:19.250
+That's it, because now we're just describing what we want to happen.
+
+06:19.430 --> 06:24.590
+We are not going through the process of describing every step to get the result.
+
+06:25.490 --> 06:31.970
+Lazy column is the equivalent in this case of a recycled view we saw previously without all of the jargon
+
+06:31.970 --> 06:33.020
+that we have to know.
+
+06:33.200 --> 06:35.630
+And we have to implement ourselves to get things done.
+
+06:35.810 --> 06:42.170
+That is a new way of thinking about creating Android applications using jetpack compose.
+
+06:42.740 --> 06:49.010
+So if you're familiar with the imperative way of creating Android applications, this will be very,
+
+06:49.010 --> 06:50.570
+very familiar to you.
+
+06:50.990 --> 06:57.070
+So in traditional Android development to create user interfaces, we use email right?
+
+06:57.260 --> 07:03.650
+And then we connect the XML to get the actions right by using an activity Java class or Kathleen as
+
+07:03.650 --> 07:03.950
+well.
+
+07:04.010 --> 07:04.370
+Right.
+
+07:04.640 --> 07:08.740
+And of course, that's the only way we are actually able to create that application.
+
+07:08.750 --> 07:13.100
+And then so that the user can start interacting with your application.
+
+07:13.880 --> 07:18.710
+And the activity has a logic and the user interface comes from an Excel file.
+
+07:19.220 --> 07:26.960
+So with our new way of thinking of creating application jetpack compose that is no longer needed because
+
+07:26.960 --> 07:33.500
+now we have this declarative UI approach of creating user interfaces, in this case also applications
+
+07:33.500 --> 07:34.460
+Android applications.
+
+07:34.820 --> 07:36.930
+We talked about declarative UI approach.
+
+07:36.950 --> 07:38.630
+Well, this is what it means.
+
+07:38.630 --> 07:43.250
+So this is how you would declare a user interface, as you can see here.
+
+07:43.490 --> 07:46.190
+This is what we call a composable function.
+
+07:46.640 --> 07:52.610
+It composable function will compose hostname, apply some piece of a user interface.
+
+07:52.850 --> 07:56.900
+So in this case here, if you were to read this, it would make sense.
+
+07:57.840 --> 07:59.630
+First, we are saying we want a card.
+
+07:59.750 --> 08:04.730
+We are not describing how to create a card, just saying we want a card and we're going to pass a few
+
+08:04.910 --> 08:06.320
+things inside of that card.
+
+08:06.680 --> 08:11.150
+Well, this card is going to have a column which will contain a text.
+
+08:12.980 --> 08:18.560
+Not only text, but it will also contain an image inside of this column, right?
+
+08:18.950 --> 08:24.200
+And of course, there is some logic that we're doing there, that we're making this column clickable.
+
+08:24.500 --> 08:30.920
+And when this column is clicked, we want to toggle between a certain state expanded or not expanded,
+
+08:31.460 --> 08:31.650
+right?
+
+08:32.300 --> 08:36.470
+So even if you'd never seen this code before, you never even looked at compose.
+
+08:36.860 --> 08:39.550
+This should make some sense, right?
+
+08:39.590 --> 08:41.750
+We have a card and we have a column.
+
+08:41.750 --> 08:42.650
+It's a column.
+
+08:42.770 --> 08:44.660
+We are describing what we want.
+
+08:44.720 --> 08:45.620
+We want an image.
+
+08:45.860 --> 08:47.180
+And we also want a text.
+
+08:47.450 --> 08:51.680
+This text is going to be animated at some point.
+
+08:51.770 --> 08:52.070
+Right.
+
+08:52.070 --> 08:58.100
+Because I see there is this animated visibility that means it's going to be toggled between on and off,
+
+08:58.100 --> 09:01.790
+depending on whether we have clicked the column or not.
+
+09:02.790 --> 09:03.240
+That's it.
+
+09:03.870 --> 09:06.570
+This is what we call declarative UI approach.
+
+09:06.790 --> 09:09.840
+And this is how it's done with Jetpack Compose.
+
+09:10.320 --> 09:12.870
+And that's what's going to be focusing on in this course.
+
+09:13.080 --> 09:19.410
+I hope you're excited to learn more about Jetpack Compose as excited as I am because I'm so excited
+
+09:19.410 --> 09:20.370
+to show you around.
+
+09:20.790 --> 09:23.370
+And all right, I'll see you next time.

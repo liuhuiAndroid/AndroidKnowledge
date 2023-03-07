@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00.900 --> 00:04.710
+Now, because we need to gather data from somewhere, it is going to be a trivia app.
+
+00:05.340 --> 00:09.720
+I found this Jason that is hosted at this link.
+
+00:09.720 --> 00:10.350
+Here I can.
+
+00:10.650 --> 00:11.850
+I'll give you the.
+
+00:12.120 --> 00:16.740
+You'll have access to this link and you can see here is a JSON payload.
+
+00:17.400 --> 00:18.870
+So we have here.
+
+00:20.660 --> 00:26.030
+So we have here at the beginning, a square bracket there, which means this is going to be a list and
+
+00:26.240 --> 00:28.100
+inside of each list we have objects.
+
+00:28.100 --> 00:32.120
+So this would constitute, of course, the first item.
+
+00:32.210 --> 00:32.510
+Right.
+
+00:32.510 --> 00:33.650
+So there is a question.
+
+00:33.770 --> 00:35.990
+The first object, if you close here, right?
+
+00:36.170 --> 00:36.680
+There it is.
+
+00:37.250 --> 00:38.510
+So there are a lot of information.
+
+00:38.510 --> 00:43.250
+There's this list contains a lot of questions or previous, if you will.
+
+00:43.670 --> 00:48.470
+So we have a question and then we have the category and we have the answer, right?
+
+00:49.100 --> 00:55.190
+So the choices then are also hosted inside of another.
+
+00:56.330 --> 00:57.320
+List, yes.
+
+00:57.340 --> 00:59.840
+True or false or false or true, as you see.
+
+01:00.150 --> 01:02.720
+And so the answer here, the field says true.
+
+01:02.780 --> 01:04.230
+That means that the question is true.
+
+01:04.250 --> 01:10.250
+So if the user in this case, as we build their application, it's true, then they will have answered
+
+01:10.250 --> 01:11.780
+true quite correctly.
+
+01:12.350 --> 01:16.280
+So this is the structure of each one of our question, right?
+
+01:17.180 --> 01:18.140
+So this is the question.
+
+01:18.470 --> 01:23.210
+And of course, we have category this is just for the application if we wish to use categories because
+
+01:23.210 --> 01:25.430
+each section could have different categories.
+
+01:25.430 --> 01:29.810
+But we're just going to simplify everything when I we're not going to use this category, but in any
+
+01:29.810 --> 01:33.770
+case, we can use, if you want to do and then we have the answer is going to be Louisiana.
+
+01:33.770 --> 01:39.620
+Of course, if and of course, then the users are given all these choices to choose from, just like
+
+01:39.620 --> 01:41.390
+we saw in our demo.
+
+01:41.990 --> 01:44.240
+So this is the payload Jason payload.
+
+01:44.540 --> 01:53.000
+We're going to be able we are going to pass this data from this link and then construct an actual trivia
+
+01:53.000 --> 01:55.970
+question and show to the user all the options.
+
+01:55.970 --> 02:01.340
+And then when the user picks the correct or the wrong answer, we let them know and we move forward.
+
+02:01.850 --> 02:04.760
+So that's the essence of this trivia app.
+
+02:04.970 --> 02:10.730
+So next to what we're going to be doing is we are going to look at creating the actual model class,
+
+02:10.790 --> 02:16.580
+which will model after this JSON payload that we have that set up.
+
+02:16.880 --> 02:21.380
+OK, so we're going to start from the back, meaning we are going to start from putting together the
+
+02:21.380 --> 02:24.920
+data layer and then go to the user interface.

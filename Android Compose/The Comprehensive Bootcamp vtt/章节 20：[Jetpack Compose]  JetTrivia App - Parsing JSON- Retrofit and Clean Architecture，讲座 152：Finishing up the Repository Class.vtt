@@ -1,0 +1,379 @@
+WEBVTT
+
+00:01.350 --> 00:07.160
+Very well, so we have a list of questions here now we've wrapped it inside of a data or exception class
+
+00:07.170 --> 00:08.040
+there, which is really good.
+
+00:08.520 --> 00:13.590
+So now let's go ahead and get the questions right.
+
+00:13.590 --> 00:18.900
+So much they suspend again, suspend the function, say, get all questions.
+
+00:19.830 --> 00:23.370
+And what type are we expecting here, right?
+
+00:23.580 --> 00:25.890
+Expecting data or exception type?
+
+00:25.890 --> 00:34.680
+And we're going to pass, of course, an array list containing our question items such but also.
+
+00:35.860 --> 00:39.070
+We want to pass, you concede, even gives us the.
+
+00:40.590 --> 00:42.720
+You can see here even gives us the guide.
+
+00:42.780 --> 00:43.930
+What else can we pass?
+
+00:44.530 --> 00:50.070
+Bullion bullying is going to just be a bullying for now and then the exception here, it's going to
+
+00:50.070 --> 00:51.190
+be exceptions.
+
+00:51.190 --> 00:57.510
+So essentially what we had over there, right inside here, I'm going to just put inside of a try and
+
+00:57.510 --> 01:00.450
+catch because things could go wrong as we know, right?
+
+01:00.660 --> 01:03.730
+So in this case, for our catch here, I'm going to pass.
+
+01:03.750 --> 01:04.260
+Yes.
+
+01:04.440 --> 01:05.370
+Going to see exception.
+
+01:06.130 --> 01:10.050
+They say if something happens, it might pass an exception like this.
+
+01:10.950 --> 01:11.310
+All right.
+
+01:11.640 --> 01:15.810
+So what do we do instead of our tri block here?
+
+01:15.840 --> 01:18.870
+Well, first of all, look at how wonderful this is.
+
+01:18.870 --> 01:19.410
+This is.
+
+01:19.410 --> 01:25.110
+This is this is why we went through the trouble of doing what we did, which was to create this data
+
+01:25.110 --> 01:26.280
+or exception wrapper.
+
+01:26.850 --> 01:28.200
+Look, I can now see this.
+
+01:28.200 --> 01:29.130
+I can say data.
+
+01:30.090 --> 01:34.290
+Remember, we have here, I call it list of question fact.
+
+01:34.320 --> 01:39.270
+Let me change this to because it makes no sense to call list of exception list of questions, because
+
+01:39.450 --> 01:44.100
+now the list of questions is actually inside of these that are accepted.
+
+01:44.110 --> 01:49.320
+So let's just call this data or exception like this.
+
+01:49.560 --> 01:50.760
+OK, that's better.
+
+01:50.910 --> 01:54.900
+Now I can say data or exception, and I'm going to say that.
+
+01:55.230 --> 01:55.920
+Loading.
+
+01:55.950 --> 01:58.740
+Look at this because the Boolean Typekit can set it to something.
+
+01:59.220 --> 02:06.600
+I'm going to set it to true because I'm saying now, if at some point, because I'm saying now in this
+
+02:06.600 --> 02:07.020
+wrapper.
+
+02:07.020 --> 02:13.620
+That added, I'm adding here the Boolean, I'm going to set it to true that way whenever somebody calls
+
+02:13.620 --> 02:20.880
+this, get all questions and they expecting, yes, expecting this type here, data or exception.
+
+02:22.170 --> 02:23.100
+That means then they can.
+
+02:23.100 --> 02:25.130
+We can check to see if there are exceptions.
+
+02:25.140 --> 02:27.090
+That loading is true.
+
+02:27.120 --> 02:27.960
+That means it's loading.
+
+02:27.960 --> 02:31.710
+Then I can let the user know that things are happening.
+
+02:31.710 --> 02:35.790
+Just wait for a second by putting a little loader and so forth, right?
+
+02:35.790 --> 02:36.690
+Any user interface?
+
+02:37.980 --> 02:39.000
+You see the power now.
+
+02:40.230 --> 02:45.540
+Otherwise, if we didn't do that, if we hadn't done this, we would have a little bit of trouble to
+
+02:45.540 --> 02:48.780
+make to have this, to make this work.
+
+02:48.990 --> 02:55.410
+We'd have to create probably two classes that encapsulate the loading and also the data and et cetera
+
+02:55.410 --> 02:55.860
+and so forth.
+
+02:55.860 --> 02:59.010
+But now we have put all of that information in one.
+
+02:59.310 --> 03:00.420
+There are exceptional class.
+
+03:01.600 --> 03:02.140
+Wonderful.
+
+03:02.410 --> 03:07.970
+So now I set it to true say it's loading and then I say data or exception again.
+
+03:07.990 --> 03:13.300
+Now I'm going to go to the data, look at how wonderful it is if I go to the variable or property data
+
+03:13.300 --> 03:14.410
+of our data exceptions.
+
+03:14.410 --> 03:15.880
+So I'm now back to here.
+
+03:15.880 --> 03:21.100
+The first item, the T right template, which in this case is a real list of questions.
+
+03:21.310 --> 03:21.830
+Look at this.
+
+03:21.850 --> 03:25.810
+It says it's a list of questions that is the type that is expecting.
+
+03:25.990 --> 03:29.920
+And it's notable because sometimes it could be no wonderful.
+
+03:30.400 --> 03:32.800
+So for our data, what am I going to do?
+
+03:32.860 --> 03:39.640
+Well, I'm going to say API, the question API, the Dow data access object, really, and I'm going
+
+03:39.820 --> 03:41.380
+to get all questions.
+
+03:43.130 --> 03:50.720
+Because now if you have over these ghetto questions, we'll see, it's from our question API and ghetto
+
+03:50.720 --> 03:51.290
+questions.
+
+03:51.680 --> 03:53.840
+He just returned a question object.
+
+03:54.470 --> 03:57.960
+And if you go back, if we look at our question object, we will see what it is.
+
+03:57.960 --> 04:02.180
+So let's take a question like this.
+
+04:02.540 --> 04:10.700
+You see, it is indeed a narrow list of question items which works here because that's what this expects
+
+04:10.700 --> 04:11.240
+to receive.
+
+04:13.530 --> 04:13.950
+Okay.
+
+04:14.690 --> 04:15.110
+Very good.
+
+04:15.840 --> 04:25.080
+Now I can also say, if you look at this data or exception, our Raptor data or exception wrapper their
+
+04:26.070 --> 04:27.630
+data that to string.
+
+04:30.680 --> 04:33.740
+I can check if it's not empty.
+
+04:36.550 --> 04:43.810
+Then data exception that loading I'm going to change this state, look at this to false to say, OK,
+
+04:44.020 --> 04:49.390
+it's not empty, that means we've gotten something, so we're going to change the loading, the bullion,
+
+04:49.390 --> 04:53.140
+this bullion here from our data or exception wrapper to false.
+
+04:53.260 --> 04:58.600
+That way, again, whoever is consuming this data, we can check to say, OK, what is the state of
+
+04:58.600 --> 04:59.390
+loading at this point?
+
+04:59.410 --> 05:00.050
+Oh, it's false.
+
+05:00.070 --> 05:00.400
+Great.
+
+05:00.400 --> 05:05.080
+So we can stop whatever we're showing the user that things are loading spinner or whatever it is that
+
+05:05.080 --> 05:05.500
+we're adding.
+
+05:06.770 --> 05:09.170
+To show the user that something is happening in the background.
+
+05:09.860 --> 05:10.580
+Beautiful.
+
+05:10.610 --> 05:12.100
+I hope you're seeing the beauty of this.
+
+05:12.110 --> 05:13.200
+It's it's incredible.
+
+05:13.220 --> 05:13.640
+I love it.
+
+05:13.910 --> 05:14.180
+All right.
+
+05:14.330 --> 05:16.510
+So now, you know, a catch exception here.
+
+05:16.520 --> 05:18.770
+Well, things could happen as you very well know.
+
+05:20.090 --> 05:24.560
+Sometimes we may come empty handed or some exception happens.
+
+05:24.740 --> 05:26.500
+So I'm going to say data exception.
+
+05:26.510 --> 05:30.350
+Well, I can append that exception to where to what.
+
+05:30.560 --> 05:32.750
+Well, daddy, look at this.
+
+05:33.380 --> 05:34.550
+Expects an exception.
+
+05:35.150 --> 05:35.450
+Right?
+
+05:35.930 --> 05:36.680
+Exception there.
+
+05:37.070 --> 05:38.720
+So what are we going to give it?
+
+05:38.840 --> 05:43.250
+Well, I'm just pass in the exception that we're receiving and don't.
+
+05:44.330 --> 05:50.270
+And if we want, we can put a log here just to for us developers to know what's what is the message,
+
+05:50.270 --> 05:51.140
+the what is the exception?
+
+05:51.140 --> 05:59.210
+I can say exception that and can even go and say, give me a localized message like this.
+
+06:00.500 --> 06:03.100
+It looks like into probably.
+
+06:03.200 --> 06:03.800
+Let's see.
+
+06:05.270 --> 06:05.930
+I don't know.
+
+06:06.140 --> 06:09.240
+There we go, because it's an olive oil could be no, OK.
+
+06:10.370 --> 06:14.300
+I'm just going to say X see like these for exception for the attack.
+
+06:15.510 --> 06:15.890
+All right.
+
+06:16.020 --> 06:21.660
+But remember, that does get old questions, we are returning a data or exceptional returning something,
+
+06:21.660 --> 06:25.470
+that's why we still have a squiggly red line here because we need to return something.
+
+06:25.710 --> 06:32.310
+So here, all things considered, was this I'm going to return our data or exception object, which
+
+06:32.550 --> 06:36.540
+hopefully will either have all the information that we need or not.
+
+06:36.720 --> 06:43.050
+But either way, we know that we have set it up for success in the sense that we're going to have the
+
+06:43.050 --> 06:50.220
+actual data, the array list, if there is one, we're going to have the bullion is loading or not.
+
+06:50.400 --> 06:54.780
+And if there's an exception, we also are going to have an exception attached to the wrapper.
+
+06:55.970 --> 06:57.150
+Oh, this is great.
+
+06:57.630 --> 06:58.200
+OK.
+
+06:59.160 --> 07:01.350
+Our question repository is now done.
+
+07:01.680 --> 07:02.850
+So next, what are we going to do?
+
+07:02.880 --> 07:07.590
+Well, next we're going to create a view model because if we need to construct this app in such a way,
+
+07:07.590 --> 07:10.770
+we have some sort of a clean architecture that we have.
+
+07:10.770 --> 07:16.140
+These pieces that are working together to create a better application was most importantly, to make
+
+07:16.140 --> 07:21.360
+it more flexible for us to extend, add more to our app without breaking our application.

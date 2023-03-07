@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00.180 --> 00:02.850
+Let's go back to our tip percentage here, which is our slider.
+
+00:03.330 --> 00:09.480
+Let's see, how can we construct this so that we can start seeing the differences as we slide left right
+
+00:10.200 --> 00:12.600
+and feed our percentage to show correctly here?
+
+00:13.170 --> 00:19.980
+Now, if you go up, we see that our state, at least some of our states here, we have our slider positioned
+
+00:19.980 --> 00:20.430
+state.
+
+00:21.970 --> 00:29.290
+And we know that these are being we know that this the values in our state here are floats and they
+
+00:29.290 --> 00:30.070
+start, I'd say.
+
+00:31.270 --> 00:35.230
+But what we want to do is want to change this value when we show it.
+
+00:35.650 --> 00:38.660
+Because in this case, this float is has decimal point.
+
+00:38.680 --> 00:42.480
+So we want an actual full number, if you will.
+
+00:43.780 --> 00:47.110
+So we need to create yet another variable inside of him.
+
+00:47.110 --> 00:57.280
+Several let's call this tip percentage percentage of such, and we're going to take the float here and
+
+00:57.280 --> 01:02.860
+multiply that by 100 to get a nice value like 32 percent to 10 percent and so forth.
+
+01:03.640 --> 01:06.490
+So we're putting inside a parenthesis slider position.
+
+01:06.640 --> 01:13.630
+In fact, this has to be below our slider position state here so we can use it right.
+
+01:14.050 --> 01:21.970
+It's a slider position, state that value and we're going to multiply that by 100 as such.
+
+01:22.150 --> 01:25.480
+And we say to Int to convert that value to it.
+
+01:26.050 --> 01:30.160
+So again, this is what we're going to be using to show the percentage there.
+
+01:33.170 --> 01:39.650
+So back in our slider, we have our slider, we passing the slider position values here which are needed,
+
+01:39.650 --> 01:44.960
+we don't have to convert them as they are right now because those are the values that are needed for
+
+01:44.960 --> 01:45.530
+a slider.
+
+01:46.640 --> 01:54.140
+But if we go back and look our text here with this line below, I'm going to change this because this
+
+01:54.140 --> 01:55.870
+is the percentage, right?
+
+01:55.880 --> 01:59.930
+So let's say here tip percentage value.
+
+02:01.030 --> 02:03.880
+And I've handed the percent just sign like that.
+
+02:04.660 --> 02:08.890
+Now if we run this, we should be able to get the correct values.
+
+02:13.100 --> 02:14.660
+Is that true, a sea slide?
+
+02:15.200 --> 02:18.920
+And you can see it is indeed working because it's zero zero.
+
+02:19.310 --> 02:22.580
+And as I go through 16 and so forth, that's very good.
+
+02:22.610 --> 02:26.780
+So this is exactly what we need and all the way to 100.
+
+02:27.530 --> 02:28.790
+That's where it all ends.
+
+02:29.570 --> 02:29.900
+OK.
+
+02:30.260 --> 02:30.980
+That wasn't too bad.
+
+02:32.060 --> 02:32.280
+Right.
+
+02:32.300 --> 02:38.420
+So it seems like seems like we have the main functionality working at least enough so that we can start
+
+02:38.420 --> 02:39.230
+doing calculations.
+
+02:39.230 --> 02:46.190
+So the idea is that we enter, let's say, 100 and then we should start sliding left or right in.
+
+02:46.190 --> 02:53.930
+The calculations should start happening and we can change split by two, three or four and so forth.
+
+02:53.930 --> 02:59.120
+And of course, the tip later will have to change accordingly as we change these values, either from
+
+02:59.120 --> 03:01.790
+the slider or from the buttons that we're clicking there.
+
+03:02.510 --> 03:02.750
+OK.
+
+03:03.080 --> 03:06.150
+So this is what are we going to be doing in the next videos now?
+
+03:06.170 --> 03:11.030
+So the infrastructure is there now we need to do the actual calculations.

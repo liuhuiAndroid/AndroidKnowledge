@@ -1,0 +1,469 @@
+WEBVTT
+
+00:00.180 --> 00:02.760
+This is how the start screen will look like.
+
+00:03.270 --> 00:04.530
+OK, let's go ahead and start building it.
+
+00:04.650 --> 00:05.370
+It's got to be fun.
+
+00:05.880 --> 00:08.520
+The last part of the app they're going to be building.
+
+00:08.670 --> 00:12.090
+So until we are done with this application, so this is really good.
+
+00:12.210 --> 00:12.690
+Exciting.
+
+00:12.720 --> 00:14.450
+OK, let's go ahead and get started.
+
+00:14.490 --> 00:21.870
+Ladies and gentlemen, let's take care of the navigation so we know that we need to go to the start
+
+00:21.880 --> 00:22.800
+screen as such.
+
+00:22.980 --> 00:31.500
+But we also know that we will need the home view model such sunglasses equal to hilt the model and make
+
+00:31.500 --> 00:33.330
+sure that I pass here.
+
+00:33.660 --> 00:38.730
+Home Screen View model like this and I'm going to pass it along.
+
+00:39.360 --> 00:40.470
+Zongzi View model.
+
+00:41.220 --> 00:43.920
+Set that to home view model.
+
+00:44.160 --> 00:47.040
+We will have to create that parameter.
+
+00:47.890 --> 00:51.910
+So, OK, let's go to the screen and voila.
+
+00:51.930 --> 00:59.160
+Now that is added there so far, that screen has this not very helpful, but we will construct everything
+
+00:59.160 --> 00:59.670
+that we need.
+
+00:59.970 --> 01:01.680
+So, you know, read our home screen here.
+
+01:01.680 --> 01:03.720
+I'm going to say hilt with your model.
+
+01:04.440 --> 01:08.970
+So we have access to our model and get rid of all of this.
+
+01:09.600 --> 01:14.100
+So what I'm going to do, I'm going to first create a variable, say books.
+
+01:15.510 --> 01:20.730
+It's going to be a list of M book types.
+
+01:21.210 --> 01:32.580
+And then when I say current user, when I say Firebase, I get an instance when I get current user research
+
+01:32.880 --> 01:36.870
+because I'm going to use that and then let's go ahead and create a scaffold.
+
+01:37.350 --> 01:39.360
+And that's always a top bar.
+
+01:40.470 --> 01:44.490
+Put together the skeleton and then inside here, this is where we're going to add the body.
+
+01:44.500 --> 01:46.770
+So I'm going to put it surface and so forth.
+
+01:46.800 --> 01:48.480
+OK, let's start with the top bar.
+
+01:48.490 --> 01:50.460
+So we're going to do the same thing we did before.
+
+01:50.610 --> 01:53.520
+So we're going to have this nice top bar.
+
+01:53.940 --> 02:02.100
+So we already created that so I can just go ahead and call the reader app bar and the title.
+
+02:02.130 --> 02:04.860
+I'm going to say book stats.
+
+02:08.320 --> 02:20.230
+And then I'm going to pass icon icons, default arrow back and say, show profile, it's going to be
+
+02:20.230 --> 02:20.950
+false.
+
+02:22.470 --> 02:25.320
+And then controller, we pass our NAF controller.
+
+02:27.250 --> 02:29.070
+OK, that was easy.
+
+02:29.790 --> 02:33.030
+Now, you know, a surface here we get a structure, our code.
+
+02:34.020 --> 02:35.110
+Now what is I want to do here?
+
+02:35.130 --> 02:43.650
+Well, first of all, we only want to show books by this user that have been read.
+
+02:44.580 --> 02:45.210
+That makes sense.
+
+02:45.540 --> 02:46.120
+How do you do that?
+
+02:46.140 --> 02:51.680
+Well, in our books that we created lists, they're going to set that to put an if statement here.
+
+02:51.690 --> 03:04.580
+I would say if view model data that value you like and then get the data is null or empty.
+
+03:04.590 --> 03:10.260
+So in this case, if that's not the case because we have the exclamation point there, then we're good
+
+03:10.260 --> 03:10.590
+to go.
+
+03:11.870 --> 03:15.650
+That means that in I view model data that value
+
+03:19.130 --> 03:26.230
+get the data, we're going to go ahead and filter again through this book.
+
+03:28.760 --> 03:28.970
+OK.
+
+03:30.680 --> 03:32.570
+And I'm going to say an ebook
+
+03:35.630 --> 03:41.710
+user I.D. has to be equal to current user that you are Heidi.
+
+03:42.180 --> 03:42.500
+All right.
+
+03:43.010 --> 03:48.350
+So just get the books that have the same I.D. as this current user.
+
+03:48.950 --> 03:54.980
+Else, let's change that to VAR because I think it said that VAR because we're changing it.
+
+03:55.730 --> 04:02.690
+Well, else I'm going to just call an empty list to this box because we have no books by this user.
+
+04:03.930 --> 04:04.230
+OK.
+
+04:05.060 --> 04:13.020
+Bottom here, the column, and I'm going to add a row at a box the size of the entire box and then say
+
+04:13.020 --> 04:19.710
+45 deep and then padding about to dip all around.
+
+04:19.960 --> 04:28.460
+I'm just going to add a fun icon that say icons to icons dot sharp person.
+
+04:30.060 --> 04:30.270
+OK.
+
+04:30.750 --> 04:35.190
+This has to be image factor, which I say I can't for description.
+
+04:35.610 --> 04:36.120
+That's it.
+
+04:36.120 --> 04:39.180
+And then I on the side, I'm going to add a text.
+
+04:40.140 --> 04:47.070
+They will say hi, and then I'm going to use the user and say, current user.
+
+04:49.020 --> 04:56.580
+I'm going to get email this current user to strain and then will split because I just want to get the
+
+04:56.580 --> 04:57.660
+first part right?
+
+04:59.070 --> 04:59.970
+Split by.
+
+05:01.270 --> 05:08.440
+The ad dilemma there and get the first part of the email, so again, what I'm doing here.
+
+05:09.010 --> 05:18.340
+If email is like me or Paul, that at me dot com when split by Digg, like this, right?
+
+05:18.350 --> 05:21.100
+So now we have Paul and me dot com, so I'm going to get Paul.
+
+05:21.610 --> 05:22.450
+That's what I'm doing there.
+
+05:22.570 --> 05:23.020
+That's all.
+
+05:23.650 --> 05:28.840
+And I'm going to make this to uppercase like that.
+
+05:30.060 --> 05:31.500
+Oops, looks like doesn't like that.
+
+05:31.680 --> 05:33.750
+Let's see what is the other option.
+
+05:36.520 --> 05:37.090
+That works.
+
+05:37.600 --> 05:43.420
+OK, let's go ahead and run this real quick so we can see what we have so far.
+
+05:43.510 --> 05:49.180
+So we should have at least this structure and hi the name of the current user.
+
+05:50.760 --> 05:52.140
+OK, so let's click here.
+
+05:52.810 --> 05:53.280
+Angela.
+
+05:53.550 --> 05:54.890
+Say, hi, Jay.
+
+05:55.500 --> 05:58.560
+But again, next, we're going to go ahead and create a structure here.
+
+05:58.980 --> 06:05.250
+So after a row, I'm going to say card will.
+
+06:06.960 --> 06:11.430
+Qualifier Phil Max with.
+
+06:13.470 --> 06:14.340
+Give it padding.
+
+06:15.000 --> 06:16.530
+About four deep
+
+06:19.290 --> 06:26.500
+and outer circle or shape that is circle shape.
+
+06:26.830 --> 06:38.430
+Give an elevation of about five deep and I'm going to create a vowel called reader or read a book,
+
+06:40.200 --> 06:41.370
+read books list.
+
+06:43.200 --> 06:49.470
+It's going to be a list of banned books such just grading variable to hold something, and what's going
+
+06:49.470 --> 06:51.180
+to hold them are put inside of a if statement.
+
+06:52.290 --> 06:59.430
+So if you model getting the actual list of books is null or empty, in this case, it's not an all or
+
+06:59.430 --> 06:59.820
+empty.
+
+07:00.300 --> 07:03.120
+Then here I'm going to go ahead and filter some say books.
+
+07:04.880 --> 07:08.570
+That filter like this and an ebook,
+
+07:12.020 --> 07:22.370
+and I'm going to say an ebook check, our user ID is equal to the current again user user, you ID like
+
+07:22.370 --> 07:22.700
+that.
+
+07:23.540 --> 07:31.820
+And I want to make sure that also our book here finished reading is not novel.
+
+07:32.360 --> 07:34.070
+It's very important because that's what we need.
+
+07:34.080 --> 07:41.240
+So saying for our list with book lists here, we're going to look look through all the books that we
+
+07:41.240 --> 07:41.720
+have.
+
+07:42.700 --> 07:49.270
+At the top here is getting all the books, and we're going to filter through to check if it's if the
+
+07:49.270 --> 07:52.450
+book user I.D. is the same as the current newsworthy.
+
+07:53.970 --> 07:58.380
+And then if that's the case, then we're going to get that book or those books and add it to our read
+
+07:58.380 --> 07:59.070
+books list.
+
+07:59.310 --> 08:07.410
+And then I'm going to say else just pass an empty list to our book list.
+
+08:08.910 --> 08:17.280
+So just like what we did before variable here, reading books is going to be equal to books that filter
+
+08:17.700 --> 08:18.190
+again.
+
+08:18.210 --> 08:24.300
+So now I'm going to look for books that this user is reading at this point, so I'm going to filter
+
+08:24.300 --> 08:25.350
+again in the same book.
+
+08:28.350 --> 08:33.030
+I'm going to check if the book started reading.
+
+08:33.690 --> 08:35.730
+Not, no.
+
+08:37.560 --> 08:43.410
+And book that finished reading is not.
+
+08:43.890 --> 08:47.600
+So, which is one of the books that they were reading right now, so they haven't finished reading,
+
+08:47.610 --> 08:47.880
+right?
+
+08:48.270 --> 08:49.110
+That's what I want.
+
+08:49.620 --> 08:50.580
+Let's move that.
+
+08:50.790 --> 08:52.590
+So to have all insight like this?
+
+08:53.170 --> 08:53.400
+Right.
+
+08:53.400 --> 08:55.290
+So now it will have these reading books.
+
+08:57.910 --> 09:05.080
+I can use that to show essentially what I'm doing is I'm setting myself up so I can have this stats
+
+09:05.080 --> 09:09.900
+and then I can see you're reading showed the books they're reading, you've read the books I've read.
+
+09:09.910 --> 09:11.230
+That's all what I'm doing here.
+
+09:12.130 --> 09:12.430
+All right.
+
+09:12.700 --> 09:13.810
+So let's create a column.
+
+09:14.290 --> 09:16.450
+So now I'm going to create this structure here.
+
+09:17.170 --> 09:22.180
+Write this column so we can say starts in the text modifier.
+
+09:26.260 --> 09:26.970
+Padding.
+
+09:28.230 --> 09:32.340
+I say start bottom for deep
+
+09:36.690 --> 09:39.180
+and say horizontal alignment.
+
+09:39.480 --> 09:41.760
+I want this to be start.
+
+09:43.830 --> 09:45.360
+And that should be good.
+
+09:46.020 --> 09:56.760
+So I'm going to add a text inside here that would say your stats style, say material theme.
+
+09:58.710 --> 09:59.580
+Topography.
+
+10:01.040 --> 10:02.120
+It's five.
+
+10:04.530 --> 10:05.970
+Then I'm going to put a divider.
+
+10:07.110 --> 10:10.710
+Essentially, again, I'm doing this, I'm going to add this divider there.
+
+10:13.670 --> 10:17.870
+Banning an ad in a text, I will say.
+
+10:20.840 --> 10:21.760
+You are reading.
+
+10:25.330 --> 10:27.880
+Now, how do I get the numbers of books that I'm reading?
+
+10:28.120 --> 10:30.670
+Well, I already have this winning books.
+
+10:30.790 --> 10:34.510
+It's going to be a list so I can just get the size of that list, right?
+
+10:35.440 --> 10:46.600
+So reading books that size like this books and do the same.
+
+10:48.410 --> 10:50.330
+For the you've read books.
+
+10:55.730 --> 10:57.320
+Right, Booklist, that's right.
+
+10:57.890 --> 10:59.240
+Let's go ahead and run and see.
+
+11:01.580 --> 11:02.480
+OK, let's see.
+
+11:02.930 --> 11:07.790
+Click while you're right, you're reading two books, you've read one book.
+
+11:08.150 --> 11:11.580
+It's true if you go back, we don't have the go back yet.
+
+11:11.600 --> 11:14.190
+So it's click right how a reader app.
+
+11:14.210 --> 11:16.820
+Here we have elaborated.
+
+11:16.840 --> 11:22.190
+I can say enough controller that pop back stack English should be OK.
+
+11:24.120 --> 11:25.170
+Click OK.
+
+11:25.560 --> 11:30.450
+Two books that you were reading, if you go back and read, can see you have a list of two books there.
+
+11:31.110 --> 11:34.950
+I think that's good and I you've read one book so far.
+
+11:35.930 --> 11:41.240
+OK, so next, what are we going to do is just finalize and add the list of the books that we've read.

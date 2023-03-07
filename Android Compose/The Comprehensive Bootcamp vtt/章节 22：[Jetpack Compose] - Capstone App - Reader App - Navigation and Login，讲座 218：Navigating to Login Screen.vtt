@@ -1,0 +1,280 @@
+WEBVTT
+
+00:00.970 --> 00:03.850
+So we have our animation working, that's delightful.
+
+00:04.210 --> 00:07.180
+Now let's see what we want to do next is as follows.
+
+00:07.420 --> 00:15.010
+The idea is that OK, once this animation is over, we want to take the users to the login screen.
+
+00:16.030 --> 00:21.610
+Now it depends because at this point, of course, this may not make a lot of sense, but the idea is
+
+00:21.610 --> 00:29.410
+that OK, actually, once the animation is over, we will have to check to make sure that if there is
+
+00:29.410 --> 00:34.420
+indeed a logged in FRB authorized user and we're not there yet, but we'll get there.
+
+00:34.550 --> 00:36.400
+Just I'm just trying to paint the picture.
+
+00:36.880 --> 00:41.410
+That's the reason why we have this delay here because want to delay a little bit and do something afterwards?
+
+00:41.740 --> 00:42.610
+What is it I want to do?
+
+00:43.120 --> 00:50.380
+Well, later we are going to put an if statement that will check to see if we have a user already authenticated.
+
+00:50.710 --> 00:52.590
+This is in the future or not.
+
+00:52.600 --> 00:58.180
+If that's the case, meaning there's no user authenticated, then we're going to take them to the login
+
+00:58.180 --> 00:58.630
+screen.
+
+00:58.870 --> 01:01.960
+Otherwise, we take them straight to our reader home screen.
+
+01:02.410 --> 01:02.650
+OK.
+
+01:03.070 --> 01:03.870
+We're going to do that later.
+
+01:05.230 --> 01:11.230
+But for now, all we're going to do really is use our navigator or nav controller, I should say, and
+
+01:11.230 --> 01:18.010
+I'm going to get rid of this altogether because we don't need to pretend that we want to see the contents
+
+01:18.010 --> 01:20.150
+of our splash screen here.
+
+01:20.150 --> 01:23.620
+It looks like I'm having some issues, right?
+
+01:23.800 --> 01:24.940
+Probably get rid of one of these.
+
+01:25.030 --> 01:25.450
+There we go.
+
+01:26.110 --> 01:26.350
+All right.
+
+01:26.350 --> 01:27.810
+Because we will need this nav controller.
+
+01:27.820 --> 01:32.890
+This is the beauty, because now that we have an app controller controls in navigation, it means this
+
+01:32.890 --> 01:36.850
+is where direct, where we want to do like Dot, navigate to X.
+
+01:37.330 --> 01:37.930
+We need that.
+
+01:38.350 --> 01:39.580
+Now I can do that right.
+
+01:40.260 --> 01:40.500
+Right?
+
+01:40.570 --> 01:43.990
+We can do that so we can take our nav controller just enough controller.
+
+01:44.410 --> 01:51.940
+Look how easy this is that I can say, navigate and make sure you pick the correct navigation method
+
+01:51.940 --> 01:52.150
+here.
+
+01:52.180 --> 01:55.360
+There's a few, and we want the one that is correct.
+
+01:55.630 --> 02:01.980
+We want the one with the root string as such, and we're going to pass here the actual navigation.
+
+02:01.990 --> 02:03.400
+So I'm going to say I'm going to go to.
+
+02:04.210 --> 02:07.740
+OK, let's go back there so you can see what it is that I want to do.
+
+02:07.750 --> 02:13.480
+I want to go to reader screens, how the beauty is that now I can go reader screens.
+
+02:14.020 --> 02:20.950
+I go that that guy there, the integrated class enum class start.
+
+02:21.220 --> 02:27.460
+I want to go to our login screen that name, just like that.
+
+02:28.610 --> 02:29.150
+And I'm done.
+
+02:29.510 --> 02:32.310
+I have my controller, I say navigate past.
+
+02:33.690 --> 02:35.400
+Path or the route?
+
+02:37.430 --> 02:38.570
+Is that going to work?
+
+02:38.840 --> 02:40.580
+I see when I run.
+
+02:43.090 --> 02:45.250
+Oops, looks like we have some issues here.
+
+02:45.280 --> 02:47.680
+Let's go ahead and look at the run.
+
+02:48.730 --> 02:53.140
+Let's run again to see, OK, we have a few problems.
+
+02:54.560 --> 02:54.770
+OK.
+
+02:54.820 --> 02:58.360
+What seems to be the problem, say, is no such method error.
+
+02:58.690 --> 03:06.760
+Go Splash and appears in data, so looks like we don't have the navigation of click here.
+
+03:06.770 --> 03:09.820
+It says let's go to a reader navigation line.
+
+03:09.820 --> 03:10.420
+18.
+
+03:11.520 --> 03:15.180
+OK, so when we say readers splash screen, we have now have controller.
+
+03:15.870 --> 03:16.810
+We don't have.
+
+03:16.830 --> 03:17.220
+All right.
+
+03:17.700 --> 03:23.910
+So looking at this, you can see that something is not right because we don't have the log in composable
+
+03:23.910 --> 03:24.630
+here, right?
+
+03:24.630 --> 03:25.230
+Our screen.
+
+03:26.520 --> 03:27.610
+Of course, we're going to have issues.
+
+03:27.610 --> 03:36.360
+So I'm going to copy this and paste there to create the actual log in screen, that name like such.
+
+03:37.200 --> 03:41.220
+And it's going to be a log in the screen and let's see reader log in screen.
+
+03:41.460 --> 03:41.940
+There we go.
+
+03:42.720 --> 03:44.110
+Let's go to our login screen.
+
+03:44.130 --> 03:48.340
+We're going to pass our nav controller, so we should have done this before.
+
+03:48.360 --> 03:48.800
+It's okay.
+
+03:48.810 --> 03:49.590
+We're doing it now.
+
+03:50.460 --> 03:54.960
+And now this should go away this error.
+
+03:55.170 --> 03:56.820
+OK, just make sure you understand what's happening.
+
+03:57.090 --> 04:03.240
+What happened was that it wasn't recognizing this composable because there was no composable here screen
+
+04:03.450 --> 04:08.730
+that would give us direction to where to get to, to how to get to reader login screen.
+
+04:09.390 --> 04:16.020
+That's why we was complaining because we didn't have the reader screen reader login screen attached
+
+04:16.020 --> 04:17.910
+here in our nav hosts.
+
+04:18.270 --> 04:18.810
+It makes sense.
+
+04:19.170 --> 04:21.330
+All right, so let's go ahead and give it another try.
+
+04:21.360 --> 04:23.190
+Hopefully, this time we'll have no problems.
+
+04:23.610 --> 04:29.310
+And while we can see we have that animation and we go to this blank screen, that it's not very eventful
+
+04:29.310 --> 04:33.060
+because we have nothing there, it's OK, but at least we know things are working.
+
+04:33.270 --> 04:38.670
+So right here I can just say text our infamous text that says.
+
+04:40.940 --> 04:47.480
+Log in screen, so perhaps you can fill a little bit better about our efforts.
+
+04:47.960 --> 04:48.680
+This one again.
+
+04:50.940 --> 04:51.350
+OK.
+
+04:51.420 --> 04:57.030
+There is wait for two seconds and voila, logon screen is showing nice.
+
+04:57.420 --> 04:58.090
+It's working.
+
+04:58.170 --> 04:59.310
+Navigation is working.
+
+04:59.520 --> 05:05.850
+And of course, you always have to make sure that we actually have the the Navajos that we actually
+
+05:05.850 --> 05:08.970
+have added screen to navigate to right here.
+
+05:09.000 --> 05:09.600
+It's very important.
+
+05:10.230 --> 05:11.340
+OK, good.
+
+05:11.430 --> 05:12.010
+This is good.
+
+05:12.030 --> 05:13.380
+So life is really good.
+
+05:13.530 --> 05:18.510
+Things are working perfectly and we should be very happy because the application is over.
+
+05:19.170 --> 05:19.770
+Just kidding.
+
+05:19.780 --> 05:21.060
+We still have a lot of work to do.

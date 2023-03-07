@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.900 --> 00:06.600
+So because we're going to have a lot of different screens, it is important to have a central class
+
+00:06.600 --> 00:12.630
+in this case, an enum class that will contain the root of all the screens we're going to have in this
+
+00:13.410 --> 00:13.700
+app.
+
+00:13.920 --> 00:18.150
+And then let's go ahead and start adding a few imams here.
+
+00:18.420 --> 00:21.710
+Let's go ahead and start adding a few properties.
+
+00:21.810 --> 00:24.570
+The first one is going to be a splash screen search.
+
+00:26.430 --> 00:26.700
+OK.
+
+00:27.270 --> 00:35.070
+And then another, it's going to be the log in screen, then create account screen.
+
+00:37.410 --> 00:38.190
+Know home.
+
+00:41.210 --> 00:43.540
+We will have a search screen.
+
+00:45.860 --> 00:49.640
+Detail screen update.
+
+00:52.170 --> 00:52.920
+And.
+
+00:56.050 --> 00:58.390
+These stats screen as such.
+
+00:58.750 --> 01:02.890
+So instead of this in, I'm going to create a companion object, a companion.
+
+01:04.180 --> 01:06.880
+And here we're going to add a function.
+
+01:07.180 --> 01:12.700
+This function here will be responsible for routing things out seamlessly from fruit.
+
+01:13.390 --> 01:18.220
+Such and, of course, is going to expect a fruit type string.
+
+01:18.400 --> 01:19.630
+So when I call in like that.
+
+01:19.930 --> 01:22.810
+And then this will of course, inherit from our readers reader.
+
+01:23.150 --> 01:25.240
+So we have access to our reader screens.
+
+01:25.330 --> 01:26.200
+They're very good.
+
+01:26.500 --> 01:30.730
+So we're going to just set this directly to one expression.
+
+01:31.540 --> 01:38.440
+So we're going to say here, we're going to look at the root garden, although if the substring before
+
+01:38.560 --> 01:45.070
+going to put the delimiter here for, it's so it's going to look at the root and then decide what to
+
+01:45.070 --> 01:45.790
+point to.
+
+01:46.330 --> 01:49.660
+So in our case here we have a splash screen that name.
+
+01:49.660 --> 01:57.250
+If we get that name of splash screen, then we're going to point that or set that to our splash screen,
+
+01:57.610 --> 01:59.920
+our splash screen here in this section.
+
+01:59.980 --> 02:00.310
+OK.
+
+02:00.670 --> 02:04.150
+And then when I look at the log in screen, get that name.
+
+02:05.560 --> 02:06.310
+That's the case.
+
+02:06.310 --> 02:09.050
+Then we're going to point that to a log in screen.
+
+02:09.070 --> 02:20.770
+Notice that I'm getting the actual composable log in screen such and for the create account screen that
+
+02:21.490 --> 02:26.950
+name so that to create account to screen as such.
+
+02:29.650 --> 02:39.370
+And they're going to continue search screen, detailed screen and some app data screen name said that
+
+02:39.370 --> 02:41.080
+to update.
+
+02:42.110 --> 02:45.410
+Screen such and reader stats.
+
+02:50.330 --> 02:53.240
+Readers start screening, I say, OK.
+
+02:53.750 --> 02:58.130
+And if it's Snow White or whatever we're getting in our route is.
+
+02:59.150 --> 03:03.710
+Then we are going to just say, Well, let's just go to our home screen.
+
+03:04.960 --> 03:09.730
+Well, let's see your home screen like this, OK?
+
+03:10.100 --> 03:18.140
+Else, in any other case, we are just going to go ahead and throw a legal argument exception to say
+
+03:18.770 --> 03:26.580
+that the route to you trying to get to which is going to meet this route strain is not recognized.
+
+03:26.840 --> 03:32.360
+All we're doing here is just mapping everything with the route so that when we have our navigation,
+
+03:32.360 --> 03:36.830
+we can just go ahead and get the screens that we want one navigate to splash screen.
+
+03:36.860 --> 03:39.320
+Of course, we say readers get this black screen.
+
+03:39.590 --> 03:43.220
+It will know exactly how to map that to the correct route.
+
+03:43.520 --> 03:47.180
+And that means we need to also make this Nullarbor section.
+
+03:48.050 --> 03:48.920
+All right, there we have it.
+
+03:48.920 --> 03:50.690
+So now we have our readers screen.
+
+03:50.700 --> 03:55.700
+So all of these screens that we may have for want to add more screens here.
+
+03:55.700 --> 03:58.040
+You can come here and of course, add them as in.
+
+03:58.640 --> 04:04.880
+This makes it really easy to then extend our application because your app may grow in such a way that
+
+04:04.880 --> 04:09.800
+you will need more screens, and that case will know exactly where to go to add those screens.
+
+04:10.160 --> 04:12.080
+All right, so what are we going to do next?
+
+04:12.110 --> 04:14.990
+Well, next we are going to put together the navigation.
+
+04:15.050 --> 04:21.110
+Now we starting from really the basics, the ground up because we need to get this navigation set up.
+
+04:21.410 --> 04:24.590
+That way, we don't have to worry about it ever again.
+
+04:25.700 --> 04:26.060
+All right.
+
+04:26.390 --> 04:27.080
+How soon, next?
+
+04:27.080 --> 04:27.340
+VIDEO.

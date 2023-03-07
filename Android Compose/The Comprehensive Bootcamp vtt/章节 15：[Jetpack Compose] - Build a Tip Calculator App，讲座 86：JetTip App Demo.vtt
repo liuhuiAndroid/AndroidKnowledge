@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00.060 --> 00:05.640
+Welcome to this new section, I'm very excited that you're here, so as you know, the whole point of
+
+00:05.640 --> 00:11.970
+this course is to get you going with composed jetpack compose, which means that we're going to be building
+
+00:11.970 --> 00:12.540
+things.
+
+00:12.930 --> 00:18.450
+OK, so I don't want to make this a boring situation where you just are learning concepts, but we are
+
+00:18.450 --> 00:21.120
+going to be building things and we learn that way.
+
+00:21.420 --> 00:24.690
+So, OK, so what is there going to be building next?
+
+00:25.050 --> 00:28.440
+Well, next, we're going to be building this awesome jet.
+
+00:28.680 --> 00:34.440
+This awesome tip application because the world needs another tape app.
+
+00:35.880 --> 00:41.280
+But the idea really here is to, of course, to go through the process of putting together a full fledged
+
+00:41.670 --> 00:47.890
+compose app and learn about other kinds of composable functions which are widgets and so forth.
+
+00:47.910 --> 00:50.760
+So that's the whole idea of how we do that.
+
+00:51.210 --> 00:56.040
+And so now I'm going to show you a live demo of this app.
+
+00:56.850 --> 00:58.200
+So the idea is very simple.
+
+00:58.290 --> 01:04.710
+When you first open the app, you will be prompted with adding some sort of a bill.
+
+01:04.860 --> 01:05.160
+OK.
+
+01:05.670 --> 01:09.390
+And so in this case, here, it can go ahead and change the split amount.
+
+01:09.400 --> 01:16.290
+So if you are going to dinner with a few friends or a friend, you can put the amount the entire bill,
+
+01:16.680 --> 01:17.910
+which is 100 in this case.
+
+01:18.240 --> 01:21.330
+And then we want to split by two or two people.
+
+01:22.020 --> 01:26.470
+And then, of course, right away, you can also slide left and right.
+
+01:26.470 --> 01:32.760
+You have a nice slider here, and this will determine what amount of tip we want to give you.
+
+01:32.970 --> 01:33.900
+Services, well, good.
+
+01:34.460 --> 01:37.520
+And it can go, let's say, about three, OK?
+
+01:37.950 --> 01:41.850
+And that just tells us at the top there you can see right here.
+
+01:42.970 --> 01:50.290
+He tells us at the top there the total per person, so for two people, $100 and we want to tip 33 percent.
+
+01:50.830 --> 01:52.750
+We can add 33 to 100.
+
+01:52.930 --> 01:54.670
+That's 133 divided by two.
+
+01:54.710 --> 01:56.520
+It's 66 50.
+
+01:56.950 --> 02:01.780
+OK, and we can add, of course, depending on how many people decided to join the party.
+
+02:02.230 --> 02:06.040
+We can keep adding the split in this case.
+
+02:06.040 --> 02:08.470
+Five, you can see the numbers are changing.
+
+02:08.470 --> 02:11.500
+The amount per person that has to pay is always changing.
+
+02:11.800 --> 02:18.370
+If we decide that you know it's just us tonight, one person, there's one in Whyalla.
+
+02:18.910 --> 02:20.980
+This is the whole amount that we will have to pay.
+
+02:22.050 --> 02:28.020
+So there are a lot of moving parts here, not only the user interface, but also the logic behind it
+
+02:28.410 --> 02:30.660
+in how to put together such things and compose.
+
+02:30.780 --> 02:33.600
+So this is what are we going to be doing next?
+
+02:33.900 --> 02:35.760
+And let's go ahead and get started.

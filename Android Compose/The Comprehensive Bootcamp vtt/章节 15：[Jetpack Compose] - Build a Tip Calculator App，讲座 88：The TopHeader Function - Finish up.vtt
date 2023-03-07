@@ -1,0 +1,517 @@
+WEBVTT
+
+00:00.480 --> 00:00.820
+OK.
+
+00:00.870 --> 00:06.150
+So because when it's out of surface, I hope we were able to actually get the color or at least be able
+
+00:06.150 --> 00:08.170
+to change the background color for a symbol.
+
+00:08.430 --> 00:14.730
+If you have a Silver Surfer, you find the color argumento color parameter there.
+
+00:15.130 --> 00:22.890
+OK, so after shape, which is here, really, I can just go say comma and say color.
+
+00:23.760 --> 00:28.140
+And in this case, here I have a color I found on the internet.
+
+00:28.260 --> 00:32.430
+The Hex code for it, and I'm just going to go ahead and pass here.
+
+00:32.510 --> 00:33.540
+OK, it's very simple.
+
+00:34.080 --> 00:41.190
+So first, we start with by saying zero x to say this is a hex color and then f f and then I'm going
+
+00:41.190 --> 00:50.540
+to just start typing e 9d and then seven f the seven f seven.
+
+00:50.550 --> 00:52.440
+I believe that's the color get.
+
+00:53.790 --> 00:54.690
+All right, there we go.
+
+00:55.020 --> 00:57.690
+And can see in the gutter here it shows the color.
+
+00:57.960 --> 01:01.590
+If you click here, of course, you can change the color from here as well.
+
+01:01.620 --> 01:02.610
+That's really, really neat.
+
+01:02.620 --> 01:07.350
+So once you add a color, you can always come to the got it here and click and play with that color.
+
+01:07.860 --> 01:10.260
+All right, let's go ahead and refresh real quick.
+
+01:10.260 --> 01:12.120
+We should see the change.
+
+01:13.240 --> 01:13.870
+And there you go.
+
+01:14.570 --> 01:15.190
+Looks we'll get.
+
+01:16.740 --> 01:22.380
+OK, so now let's go back to our column, so this is where we are going to focus on adding these two
+
+01:23.010 --> 01:23.980
+texts, really.
+
+01:24.000 --> 01:28.890
+So the total per person and then where we will have the total amount.
+
+01:29.910 --> 01:34.530
+So it is going to be in a column because we said this structure here is top to bottom.
+
+01:34.680 --> 01:37.200
+Everything is a line from top to bottom right.
+
+01:37.350 --> 01:38.280
+One after the other.
+
+01:38.520 --> 01:40.020
+So a column would work.
+
+01:40.770 --> 01:43.680
+OK, so let's go ahead and start putting text here.
+
+01:44.280 --> 01:49.500
+For now, I'm just going to say total poor person.
+
+01:53.170 --> 01:54.910
+Copy that text.
+
+01:55.360 --> 01:56.740
+And this is going to be.
+
+01:58.920 --> 02:01.920
+I always say it's nice to put the named arguments.
+
+02:04.440 --> 02:11.150
+It's always a good idea, I say text again like that and this one, I'm going to say.
+
+02:13.180 --> 02:14.130
+1:34.
+
+02:15.010 --> 02:15.410
+OK.
+
+02:15.910 --> 02:17.260
+Let's go ahead and take a look.
+
+02:19.450 --> 02:22.630
+And you can see it's very small, but there it is.
+
+02:23.620 --> 02:28.960
+I can see some historical person, but it's not necessarily where we want it to be because we want this
+
+02:28.960 --> 02:31.000
+to be in the middle of the screen.
+
+02:31.420 --> 02:33.130
+How do we do that inside of our column?
+
+02:33.130 --> 02:38.410
+Here, we can specify the horizontal alignment, as well as the vertical arrangement.
+
+02:38.910 --> 02:40.570
+And there's a difference in naming here.
+
+02:40.780 --> 02:42.730
+So we've got to be very mindful of that.
+
+02:43.270 --> 02:45.260
+But before we do that, we need to pass.
+
+02:45.280 --> 02:52.270
+We could if we wanted to pass a modifier because modifiers always usually the first argument to pass
+
+02:52.630 --> 02:54.070
+and order is very important.
+
+02:54.670 --> 03:00.820
+So let's start with the modifier, and I want just to say padding all around inside here.
+
+03:00.820 --> 03:03.040
+I just want to give about 12 dpi.
+
+03:03.850 --> 03:04.180
+All right.
+
+03:04.180 --> 03:09.610
+So once I have that, let's move on to say horizontal lines or typing alignment.
+
+03:09.740 --> 03:15.970
+When you say alignment and I want this to be horizontally center horizontally like that.
+
+03:16.510 --> 03:19.050
+And also, I want a vertical arrangement.
+
+03:19.390 --> 03:20.980
+Notice the naming here is different.
+
+03:20.980 --> 03:25.870
+It's not again, alignment now is arrangement because we are arranging things vertically.
+
+03:26.260 --> 03:28.540
+OK, now I want this to be.
+
+03:29.930 --> 03:38.300
+Centre as such, so if I refresh now, we should make sure or should see, hopefully the tax is going
+
+03:38.300 --> 03:42.410
+to be in the middle, all of the text, which are the contents inside of our column.
+
+03:42.830 --> 03:44.030
+This should all be in the middle.
+
+03:45.100 --> 03:46.630
+Of the top header.
+
+03:46.810 --> 03:47.560
+And there you have it.
+
+03:48.160 --> 03:49.000
+He looks really good.
+
+03:49.180 --> 03:50.140
+It's in the middle there.
+
+03:50.780 --> 03:55.150
+The next thing we want to do is, of course, do some styling, you know, attacks here.
+
+03:55.210 --> 03:57.840
+Well, we can go inside of each one of them.
+
+03:57.850 --> 04:03.850
+In this case, the text, the first one that says tomorrow, horrible person, and we can do a few things.
+
+04:04.660 --> 04:06.610
+He is aware of what a comma next.
+
+04:06.910 --> 04:12.160
+If you have over again, if whenever you are in doubt, you can hover over to see what arguments we
+
+04:12.160 --> 04:12.670
+can pass.
+
+04:13.540 --> 04:14.960
+So there's a lot of things you can pass.
+
+04:14.980 --> 04:16.900
+Font size, one style and so forth.
+
+04:17.320 --> 04:22.750
+Now again, we can also pass if I say, for instance, style.
+
+04:22.780 --> 04:25.960
+Of course, that is one of the parameters or arguments in this case.
+
+04:26.260 --> 04:33.460
+I can say text style and start passing all of these parameters arguments in cytotec style.
+
+04:33.940 --> 04:41.500
+Or if I want to facilitate my life and I want to use the material, I want to use the theme of this
+
+04:41.500 --> 04:41.740
+app.
+
+04:41.740 --> 04:46.690
+I can see material like this and get the theme object there and say, Dad.
+
+04:47.020 --> 04:51.550
+And we say colors, and I can choose all these different colors if I want to.
+
+04:51.880 --> 04:59.800
+Or I can just see that typography and get different typography, sizes and style he can see to the right
+
+04:59.800 --> 05:00.040
+here.
+
+05:00.250 --> 05:01.810
+These are indeed textiles.
+
+05:02.380 --> 05:03.310
+So it's very helpful.
+
+05:03.510 --> 05:09.220
+OK, now in this case, I would just want this to be a little bit larger.
+
+05:09.220 --> 05:10.360
+So maybe H4 can.
+
+05:10.360 --> 05:12.040
+We can always come and change, of course.
+
+05:12.610 --> 05:21.640
+And then for the next one, make maybe this H5 and for the next one here, I'm going to say style again.
+
+05:24.350 --> 05:32.210
+Passing a material theme and typography and age four, so a little bit larger than the previous one.
+
+05:33.400 --> 05:34.040
+Let's refresh.
+
+05:35.030 --> 05:35.330
+OK.
+
+05:35.400 --> 05:36.140
+It looks really good.
+
+05:38.230 --> 05:39.640
+Very similar to what we have here.
+
+05:40.600 --> 05:42.280
+One thing you notice is that this.
+
+05:43.950 --> 05:46.800
+Tax here is bolder than the previous one, right?
+
+05:47.040 --> 05:48.570
+So we can still work on this.
+
+05:49.110 --> 05:54.520
+There's nothing that is that will hinder us from doing that so I can come afterwards.
+
+05:54.540 --> 06:00.990
+I can say, for instance, font weight, right, and say font weight, or I can just go ahead and start
+
+06:00.990 --> 06:01.470
+typing.
+
+06:01.470 --> 06:06.660
+Bold writing can see now it's going to go and get the variables.
+
+06:07.680 --> 06:09.510
+Don't go ahead and get these variables here.
+
+06:09.540 --> 06:12.480
+Bold, extra bold, let's use extra bold as such.
+
+06:12.990 --> 06:18.990
+Now if you refresh, you can see that you will see hopefully in a second here the changes.
+
+06:21.180 --> 06:25.560
+There we go on in 34 looks way, way better, just like these.
+
+06:25.590 --> 06:26.370
+What do we have here?
+
+06:26.700 --> 06:32.940
+So simply, you can see how easy it is really to build user interface is using with compose.
+
+06:33.330 --> 06:40.020
+And the beauty of what we did here, which is to organize or to look at our app, the overall application
+
+06:40.020 --> 06:40.950
+in smaller chunks.
+
+06:41.040 --> 06:45.750
+It's really helpful because if you are starting and you look at something like this, I know this is
+
+06:45.750 --> 06:46.680
+a very simple.
+
+06:46.680 --> 06:50.730
+It's a very simple application, but you can imagine how daunting that could be because you look at
+
+06:50.730 --> 06:54.380
+it all of this and you're thinking, Oh my goodness, there's a lot of work to do here.
+
+06:54.390 --> 06:55.080
+Yes, there is.
+
+06:55.080 --> 07:02.070
+But if you split things into smaller chunks, it's manageable and easier and you feel like you are making
+
+07:02.070 --> 07:04.230
+progress as you build these smaller chunks.
+
+07:04.620 --> 07:11.730
+You'll notice that obviously this price here, this I should say this number, this amount will change
+
+07:11.730 --> 07:16.290
+dynamically, and we go back to the idea of what composable functions do.
+
+07:16.320 --> 07:20.740
+The idea is that they were kind of reactive to the data they receive, right?
+
+07:20.790 --> 07:27.720
+They get data and they they know, OK, how am I going to draw myself to to show this data that I'm
+
+07:27.720 --> 07:28.830
+receiving, right?
+
+07:29.520 --> 07:36.930
+So that tells us that then this top header here, we should pass that data because this is going to
+
+07:36.930 --> 07:42.930
+be called somewhere we don't know, and we need to pass the data, which is going to be this amount
+
+07:43.620 --> 07:49.260
+which is going to be calculated by somebody or some other function that we don't know and displayed
+
+07:49.260 --> 07:50.610
+here, right?
+
+07:51.330 --> 07:56.640
+All this function will now this compose or function will now is that I need some data.
+
+07:56.790 --> 07:58.500
+I don't know who is going to give it to me.
+
+07:58.710 --> 08:00.180
+I don't know where it's going to come from.
+
+08:00.390 --> 08:04.830
+I don't know how to calculate whatever results from that data.
+
+08:05.490 --> 08:07.240
+All I need is just that information.
+
+08:07.260 --> 08:07.980
+The piece of data.
+
+08:08.730 --> 08:16.770
+So here I'm going to create put a total per per per person like this and it's going to be a double.
+
+08:17.460 --> 08:25.500
+And because I want it to still be able to see the preview, I'm going to set it to, you know, zero
+
+08:25.720 --> 08:26.520
+zero, right?
+
+08:26.670 --> 08:28.260
+This is default argument.
+
+08:29.820 --> 08:32.730
+All right, now, I'm going to call this somewhere.
+
+08:33.000 --> 08:35.550
+Recall that inside here.
+
+08:36.770 --> 08:38.040
+OK, let's go ahead and refresh.
+
+08:39.940 --> 08:41.720
+All right, there you go, we see who have zero.
+
+08:42.080 --> 08:48.830
+Now we're going to hand the dollar sign like this, and that should probably make it look better.
+
+08:50.630 --> 08:57.890
+Like that now, if you look at our number here, we have two decimal digits there, so how do we do
+
+08:57.890 --> 08:58.070
+that?
+
+08:58.610 --> 09:05.540
+Well, we can use the power of cuddling here and format this number that when it comes in so that we
+
+09:05.540 --> 09:07.790
+have two decimal digits there.
+
+09:08.390 --> 09:08.630
+OK.
+
+09:09.140 --> 09:16.460
+So to facilitate everything, I'm just going to create a foul here called Toro, and it's going to be
+
+09:16.760 --> 09:22.550
+I'm going to pass here this very strange looking code, if you will.
+
+09:22.700 --> 09:23.650
+So what are we doing here?
+
+09:23.660 --> 09:29.540
+I'm going to put a percentage in put that to F. So what we're doing here is that then we're going to
+
+09:29.540 --> 09:30.770
+invoke the format.
+
+09:32.970 --> 09:35.580
+Function, right and pass.
+
+09:35.850 --> 09:39.570
+Of course, in this case, our total per person value.
+
+09:39.960 --> 09:44.640
+So what are we doing here is that when we get this total per person value, we're going to format it
+
+09:44.760 --> 09:47.820
+so that it has two decimal digit, I should say.
+
+09:48.090 --> 09:55.620
+Let's actually change this two hundred and thirty three zero, which you'd call total here, and we
+
+09:55.620 --> 09:57.030
+should solve the problem.
+
+09:57.090 --> 09:59.760
+We should see one three four nine zero zero.
+
+10:00.300 --> 10:01.020
+And there you have it.
+
+10:01.560 --> 10:03.210
+Small things, but they do matter.
+
+10:03.510 --> 10:03.780
+All right.
+
+10:03.780 --> 10:04.890
+So we're making good progress.
+
+10:04.890 --> 10:10.720
+In fact, I would argue that we are done with our top header as it is right now.
+
+10:10.770 --> 10:13.410
+So now that we have a top header, it's all done.
+
+10:13.740 --> 10:18.750
+We can actually call it in our content inside of our my app, right?
+
+10:18.780 --> 10:26.820
+So I can get rid of this top top header and we don't have to pass anything because we have a default
+
+10:27.180 --> 10:28.740
+value there of double.
+
+10:29.250 --> 10:34.800
+And this point we could run on our emulator if you wanted to.
+
+10:36.860 --> 10:40.050
+I set up my phone here, so I'm going to go ahead and run if you want.
+
+10:40.050 --> 10:44.430
+You can run that, of course, on on the on an emulator that comes with Android.
+
+10:44.430 --> 10:48.180
+But I have my phone that is connected and there you have it.
+
+10:48.360 --> 10:51.300
+This is actually running on my phone right now.
+
+10:51.750 --> 10:52.010
+OK.
+
+10:52.140 --> 10:53.370
+So it's looking real good.
+
+10:53.760 --> 10:59.880
+Of course, we will put all of this together and make it look even better with other components or other
+
+11:00.390 --> 11:01.800
+composable functions there.
+
+11:01.800 --> 11:04.410
+But at least he can see things are working fine.

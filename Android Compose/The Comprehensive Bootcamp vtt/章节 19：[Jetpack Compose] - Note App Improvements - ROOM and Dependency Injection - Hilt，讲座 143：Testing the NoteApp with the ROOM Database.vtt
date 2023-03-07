@@ -1,0 +1,529 @@
+WEBVTT
+
+00:00.330 --> 00:03.690
+So we're now ready to actually look at the user interface.
+
+00:03.780 --> 00:06.280
+So finally, we did a lot of work.
+
+00:06.300 --> 00:09.660
+We worked on our room database now and it is.
+
+00:09.870 --> 00:12.270
+And then we worked on the repository.
+
+00:12.540 --> 00:15.360
+And then we went to just finish our review model.
+
+00:15.390 --> 00:16.260
+So now it's free.
+
+00:16.260 --> 00:21.150
+It's time for us to see how we can use Enfoque View model so we can get that data.
+
+00:21.840 --> 00:23.280
+This is the fun part for say.
+
+00:23.670 --> 00:29.190
+But you see that we went through this process and I know it's cumbersome and I know you always think,
+
+00:29.190 --> 00:30.900
+OK, why do we go through all of this?
+
+00:30.900 --> 00:36.840
+But you see the benefits here is that once we have this infrastructure, we're free to scale up this
+
+00:36.840 --> 00:43.320
+application to make this application as complex, as large as we possibly can or as we want it to be.
+
+00:43.350 --> 00:43.560
+Right.
+
+00:43.920 --> 00:48.930
+So it's really good because we have that set up, but we have the infrastructure that is solid and we
+
+00:48.930 --> 00:52.500
+know that we have all the moving parts set up correctly.
+
+00:53.220 --> 00:53.470
+OK.
+
+00:53.790 --> 00:56.160
+So take the time to really go through.
+
+00:56.160 --> 01:00.210
+These two will understand and always keep in mind the why we're doing this.
+
+01:00.840 --> 01:07.770
+OK, so let's look at how we are going to use the view model in our design interface and start getting
+
+01:07.770 --> 01:08.100
+data.
+
+01:09.780 --> 01:17.860
+So let's open up our main activity first and then we need node screen.
+
+01:17.860 --> 01:22.380
+We see notes, screen notes, screen like this.
+
+01:22.410 --> 01:22.740
+OK.
+
+01:22.830 --> 01:26.670
+So we have both of them because earlier we were using the view model.
+
+01:26.670 --> 01:29.880
+This way, this no longer works the way we stay in shade.
+
+01:29.880 --> 01:31.570
+It still works fine, right?
+
+01:31.590 --> 01:34.200
+You say node view model a few model by models.
+
+01:34.470 --> 01:39.880
+Also, we could have done something like this just different ways to satiate our view model can see
+
+01:39.900 --> 01:44.340
+notes the model and say Set it to view model.
+
+01:45.480 --> 01:51.960
+Like that and then the type, which is our view models, they note a few model like this.
+
+01:52.680 --> 01:53.040
+OK.
+
+01:53.610 --> 01:56.670
+So this also works.
+
+01:57.510 --> 01:59.940
+That's just different options to do the same thing.
+
+02:00.510 --> 02:00.810
+All right.
+
+02:00.810 --> 02:08.340
+So we have this by delegate and a few models like this again passing our notes, few model in our Notes
+
+02:09.120 --> 02:11.460
+app, which is being called how they brought him here.
+
+02:12.120 --> 02:16.770
+Now, in this case, here, we no longer we don't really need to actually instantiated as such can just
+
+02:16.770 --> 02:17.490
+remove that.
+
+02:17.910 --> 02:21.720
+And for our notes here, what are we going to do with a note view model?
+
+02:22.290 --> 02:30.030
+We are going to get do the following I see a dot note list because remember, you know, if you model,
+
+02:30.030 --> 02:36.060
+we have this note list, which in this case, it's going to be our note list as flew.
+
+02:36.060 --> 02:41.620
+And this note list here is being fed through our note list private internal here.
+
+02:42.330 --> 02:43.710
+So that's what are we doing there?
+
+02:44.580 --> 02:49.740
+But this is not enough because then we need to say we need to collect that information because remember,
+
+02:49.740 --> 02:57.870
+this is a flow rate, which means just imagine that you have a pipe that has one and the data is flowing
+
+02:57.870 --> 02:58.830
+in the sequence.
+
+02:59.310 --> 03:01.350
+And at some point, do we need to collect it?
+
+03:01.640 --> 03:08.550
+We say dot collect as state like this and then see value.
+
+03:09.360 --> 03:09.970
+There we go.
+
+03:09.990 --> 03:16.710
+So we're collecting these values as flow as state, which is very important because we want that reactivity.
+
+03:16.720 --> 03:22.860
+They have to be stateful so that our composable can react to it and then change accordingly.
+
+03:23.910 --> 03:24.330
+Very good.
+
+03:24.930 --> 03:29.520
+And then, of course, we're passing this notes list here, and then I'll remove note.
+
+03:29.520 --> 03:33.060
+We say note for your model and then we want to think of called delete.
+
+03:34.440 --> 03:36.750
+Let's see what did we call it?
+
+03:37.540 --> 03:44.310
+Remove note that it is then just pass a note or it like this same thing.
+
+03:45.220 --> 03:45.580
+OK.
+
+03:47.060 --> 03:50.990
+Now we're having some issues here, if you have overseas suspend function or move now, it should be
+
+03:50.990 --> 03:54.080
+called only from a call routine or a to suspend function.
+
+03:54.570 --> 03:56.510
+All right, let's go back to A. Few more.
+
+03:56.510 --> 03:58.010
+I think I made a mistake.
+
+03:58.300 --> 03:58.970
+All right.
+
+03:59.240 --> 04:02.970
+Well, these guys no longer have to be suspended because where are we getting them?
+
+04:02.990 --> 04:05.990
+You see, we are calling view model scope.
+
+04:06.230 --> 04:08.390
+So that is taken care of fact already, right?
+
+04:08.390 --> 04:10.010
+So we don't need to do CSPAN anymore.
+
+04:10.640 --> 04:11.450
+That was my mistake.
+
+04:11.900 --> 04:14.930
+And now if we go to Maine to see that this works just fine.
+
+04:15.560 --> 04:15.790
+OK.
+
+04:16.550 --> 04:17.150
+And there we go.
+
+04:17.180 --> 04:23.810
+That's really all we need to do because notice we say no list we are passing, of course, starts from
+
+04:23.810 --> 04:24.070
+here.
+
+04:24.080 --> 04:25.280
+This is what we had before.
+
+04:25.730 --> 04:31.250
+We have no review and I'm passing this wavy model creating that new model, right?
+
+04:31.640 --> 04:36.380
+And then I'm passing through our Notes app, that note of your model and then that's been fed through
+
+04:36.380 --> 04:36.770
+here.
+
+04:37.010 --> 04:41.810
+And then I'm using it, creating a variable list here instead of the model note list.
+
+04:42.140 --> 04:44.650
+And I say collect as state and gather value.
+
+04:44.660 --> 04:48.710
+So I want to make sure that this is still it's containing that state as I'm collecting it.
+
+04:48.710 --> 04:53.240
+So we still have that sequence of data that's coming in and is stateful.
+
+04:53.630 --> 04:54.320
+It's very important.
+
+04:54.680 --> 05:00.350
+And of course, we passed that note list into our notes screen because you remember our notes screen
+
+05:00.350 --> 05:04.310
+here requires a list of notes so it can do its work.
+
+05:04.970 --> 05:11.960
+So our on remove note we passed the note view model that removes and passed it in this case is the actual
+
+05:11.960 --> 05:13.300
+note to have over, he says.
+
+05:13.310 --> 05:16.160
+Note the same thing to add and voila.
+
+05:16.850 --> 05:21.230
+If you look at this, you can see how organize and compartmentalize all of this is now.
+
+05:22.070 --> 05:25.490
+The data layer is totally separate.
+
+05:25.760 --> 05:26.480
+All of this.
+
+05:27.780 --> 05:34.050
+It's all separate and DUI only requires the view model.
+
+05:35.370 --> 05:39.960
+And called if you model, which then called rapacity, which then has access to Dow.
+
+05:41.500 --> 05:46.900
+So if you look at the structures, we have it now, you can see that it doesn't really matter where
+
+05:46.900 --> 05:47.800
+the data come from.
+
+05:47.950 --> 05:50.770
+Right, because if we have a repository, we could have.
+
+05:51.780 --> 05:58.920
+The data coming from our our database, but the data could of could also be coming from someone of the
+
+05:58.920 --> 05:59.380
+source.
+
+06:00.030 --> 06:07.020
+Notice that view model doesn't really care where the data comes from because it gives this responsibility
+
+06:07.020 --> 06:08.910
+of worrying where the data is coming from.
+
+06:09.660 --> 06:11.280
+It gives it to our repository.
+
+06:12.420 --> 06:20.190
+And Dow is definitely who cares exactly where the data is coming from or how it's all being handled
+
+06:20.190 --> 06:26.250
+there, because this is what has the direct access to where the data is coming from in this case.
+
+06:27.910 --> 06:28.180
+Right.
+
+06:29.080 --> 06:37.420
+And you can see you can scale this up to have data coming from an API outside our application like we
+
+06:37.420 --> 06:41.020
+have somewhere in remote server, we have data coming in.
+
+06:41.020 --> 06:43.960
+We can gather data and still access from here.
+
+06:44.530 --> 06:49.000
+We can get this data from a file somewhere in our phone, right?
+
+06:49.330 --> 06:52.150
+We can get this data from doesn't matter.
+
+06:53.950 --> 06:59.290
+Because the repository is the single source of truth for all the data.
+
+07:01.920 --> 07:02.160
+Right.
+
+07:02.460 --> 07:04.380
+So that the user interface can communicate with.
+
+07:08.120 --> 07:10.440
+So that is the reason why.
+
+07:10.460 --> 07:17.150
+To have a structure like this to structure your apps, your apps, they have this clean architecture,
+
+07:17.150 --> 07:21.790
+they have this structure that is clean, that is concise and consistent.
+
+07:21.800 --> 07:22.940
+It's really helpful.
+
+07:23.630 --> 07:28.790
+It takes a little bit of work to put it all together, but it's worth it, especially once the applications
+
+07:28.790 --> 07:30.740
+get larger and more complex.
+
+07:31.840 --> 07:38.120
+You can't really, really want you two to think about this and use this, this structure as you put
+
+07:38.120 --> 07:38.870
+together your apps.
+
+07:39.140 --> 07:39.950
+It's very important.
+
+07:40.790 --> 07:41.180
+All right.
+
+07:41.510 --> 07:46.970
+So let's see if this works because we've done all this work and we don't really know if maybe we make
+
+07:46.970 --> 07:49.670
+mistakes somewhere and things are not working.
+
+07:49.670 --> 07:50.720
+But let's see.
+
+07:50.720 --> 07:51.020
+Let's see.
+
+07:51.020 --> 07:52.110
+Let's go ahead and give it a run.
+
+07:52.130 --> 07:57.540
+I still have my emulator running, I believe.
+
+07:57.560 --> 07:58.100
+Let's see.
+
+07:59.510 --> 08:07.760
+I have my device should say it's not going to run and see if we can actually add and remove items and
+
+08:07.760 --> 08:08.270
+so forth.
+
+08:08.540 --> 08:08.930
+All right.
+
+08:08.930 --> 08:10.790
+So we still getting this issue.
+
+08:10.790 --> 08:17.180
+Looks like cannot find implementation for another bass note that a implementation does not exist.
+
+08:18.280 --> 08:20.480
+It looks like again for a module.
+
+08:20.490 --> 08:22.100
+So something is that right?
+
+08:23.570 --> 08:31.120
+Let's go back to school to a note app built in C so far a room.
+
+08:31.130 --> 08:34.780
+Have a right because we're using codling.
+
+08:34.790 --> 08:36.500
+There's another one we need to pass here.
+
+08:36.520 --> 08:38.810
+Another dependency, so say capped, right?
+
+08:38.810 --> 08:41.180
+This is Kotlin annotation processing tool.
+
+08:41.660 --> 08:45.170
+So Marissa has Android X, so room room compiler.
+
+08:45.830 --> 08:51.710
+But this is for Kotlin annotation, so it's pretty much the same as this pass in the codling annotation
+
+08:51.710 --> 08:52.740
+processing tool capped.
+
+08:53.090 --> 09:00.470
+And remember, we added that at the top here we should have Kotlin capped as an plugins.
+
+09:00.490 --> 09:01.620
+Think this should work?
+
+09:01.640 --> 09:04.190
+Let's go ahead and first of all, sync.
+
+09:05.940 --> 09:07.360
+Take a moment of truth.
+
+09:07.380 --> 09:09.150
+I think everything is sink tap, OK.
+
+09:10.590 --> 09:16.530
+I saw him once again and see, so it's time for debugging because we can always miss something.
+
+09:17.520 --> 09:19.050
+But hopefully this time it all runs.
+
+09:19.830 --> 09:20.400
+Aha.
+
+09:20.700 --> 09:25.650
+OK, so everything is great because the reason why I know it's great, even though we're not going to
+
+09:25.650 --> 09:31.310
+see anything working here so far is because this error is actually intentional.
+
+09:31.320 --> 09:32.190
+This new one.
+
+09:32.220 --> 09:33.900
+This is not what we were having before.
+
+09:33.910 --> 09:36.120
+So what is happening here is, let's see.
+
+09:36.390 --> 09:40.330
+It says here cannot figure out how to save this field into the air base.
+
+09:40.350 --> 09:43.050
+You can consider adding type convert for it.
+
+09:43.500 --> 09:45.440
+So what's happening here is whenever we go.
+
+09:45.450 --> 09:48.620
+In fact, you can see it says no, T.J. that Java.
+
+09:48.630 --> 09:50.160
+So this is actually compiled.
+
+09:50.520 --> 09:52.620
+Note that we created in our class.
+
+09:52.910 --> 10:01.590
+OK, so we have an issue here with the new I'd be nice if you go to our note, you'll see that our UID
+
+10:02.870 --> 10:06.290
+it's it's a strange for, say, type.
+
+10:06.300 --> 10:11.880
+So what's happening is that room is very confused and doesn't know how to deal with this type.
+
+10:12.330 --> 10:13.620
+And the same will happen.
+
+10:13.800 --> 10:16.230
+And I know this because we have done this few times.
+
+10:16.650 --> 10:18.390
+The same will happen with our data.
+
+10:18.510 --> 10:21.920
+So what it says here, we need to create a type converter.
+
+10:21.930 --> 10:30.570
+So what this is is the way in which we can actually create a type that will convert this type that is
+
+10:30.570 --> 10:37.410
+not recognizing room into something that wrong will recognize because room is limited in the types that
+
+10:37.410 --> 10:40.320
+it can understand to add into the air base.
+
+10:41.100 --> 10:48.570
+The engineers, the room engineers, also gave us an option the capability of creating these types so
+
+10:48.570 --> 10:52.230
+that these types can actually be saved onto the database.
+
+10:52.650 --> 10:53.520
+The room database?
+
+10:53.940 --> 10:55.860
+OK, so this is good, by the way.
+
+10:55.890 --> 11:01.170
+Again, I said, this is a new error that I actually wanted for us to go through because it's important.

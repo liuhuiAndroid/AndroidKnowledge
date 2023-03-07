@@ -1,0 +1,532 @@
+WEBVTT
+
+00:00.120 --> 00:05.520
+We now have our own book set up, so let's go back to our detailed screen and see you can save a book.
+
+00:05.820 --> 00:08.490
+I had a few of the properties there real quick.
+
+00:09.390 --> 00:13.560
+So let's start with title because that seems to be important.
+
+00:14.070 --> 00:18.900
+And how do I pass the title, where they are or where do I get that information from when I say book
+
+00:20.520 --> 00:20.970
+data?
+
+00:21.180 --> 00:21.960
+For this book data?
+
+00:23.230 --> 00:30.900
+We have access to it because we inside of our show book details and we created at the top there UK,
+
+00:30.970 --> 00:37.000
+where a single currency looked at an going to get his title to a string as such.
+
+00:38.590 --> 00:46.750
+And then I'm going to add authors, OK, book data authors to a string.
+
+00:47.140 --> 00:48.310
+It's just very boring.
+
+00:48.350 --> 00:55.090
+I do realize this, but nonetheless we have to do this and the description to string
+
+00:57.850 --> 01:00.940
+the categories book data.
+
+01:02.220 --> 01:05.190
+Categories to string.
+
+01:05.520 --> 01:13.980
+Looks like he doesn't need me to do so, so let's go ahead and replace Jess with a dot, as it says
+
+01:15.090 --> 01:16.350
+it doesn't need that either.
+
+01:16.980 --> 01:18.450
+OK, I continue here.
+
+01:18.810 --> 01:23.050
+I'm going to put notes for now, notes just going to have an empty string as such.
+
+01:23.510 --> 01:24.690
+That will be added later.
+
+01:24.940 --> 01:25.470
+That's fine.
+
+01:26.190 --> 01:28.080
+And photo your al.
+
+01:30.280 --> 01:31.030
+Look at her.
+
+01:32.320 --> 01:43.000
+Images that thumbnail and then published date the same thing, page count, book data.
+
+01:45.350 --> 01:51.230
+Now, page count is going to come in as integer, I believe, so I'm going to say to string.
+
+01:53.030 --> 01:53.960
+Is that true?
+
+01:53.990 --> 01:54.860
+Let's see.
+
+01:56.120 --> 02:04.820
+All right, and then we're up to a string like this pitch count is indeed just a string, so it's OK
+
+02:04.910 --> 02:13.130
+we can do such and let's see rating well now, would you say 0.0?
+
+02:13.190 --> 02:14.120
+That's just the beginning.
+
+02:15.140 --> 02:16.730
+And then I'm past Google Book.
+
+02:16.730 --> 02:18.200
+I'd say Google.
+
+02:18.290 --> 02:18.800
+Book it.
+
+02:19.140 --> 02:21.360
+Remember this Google book idea?
+
+02:21.700 --> 02:29.300
+We're getting that from our Google book, where we got from book info that data that it last but not
+
+02:29.300 --> 02:36.440
+least get a pass or user ID to get your user ID again, because we love Firebase and Firebase is everywhere.
+
+02:36.770 --> 02:38.600
+You can see Firebase offers.
+
+02:40.880 --> 02:49.710
+That good instance, and it can get current user and get you I.D. and say to a stranger like this.
+
+02:51.030 --> 02:51.570
+And there we go.
+
+02:51.840 --> 02:59.700
+This will give us a united our idea of the current user that's logged in, and I know for sure you will
+
+02:59.700 --> 03:07.110
+have a current user ID because you can't enter or we can't do anything in this app without having an
+
+03:07.110 --> 03:07.500
+account.
+
+03:07.590 --> 03:09.210
+So you will have an ID.
+
+03:09.780 --> 03:10.470
+And there you have it.
+
+03:10.830 --> 03:17.220
+So now we have created this object, our book object, which is ready to be saved on, told everybody.
+
+03:17.250 --> 03:22.290
+So let's go to our save to Firebase is this book has been passed, right?
+
+03:24.120 --> 03:26.320
+So now here we have created.
+
+03:26.340 --> 03:28.860
+Indeed, our database instance there.
+
+03:29.050 --> 03:31.490
+Well, let's see.
+
+03:32.050 --> 03:35.370
+Database collection is such an ongoing DB.
+
+03:36.180 --> 03:37.200
+We say collection.
+
+03:37.220 --> 03:39.810
+I'm going to create a collection right now is going to be called books.
+
+03:40.380 --> 03:42.340
+OK, I'm going to use those.
+
+03:42.930 --> 03:43.390
+All right.
+
+03:43.410 --> 03:46.560
+So I'm going to put an if statement here to make sure that all is good.
+
+03:46.560 --> 03:57.360
+And I say if the string, whatever we getting that object is not empty, that's the case, then we are
+
+03:57.360 --> 03:58.030
+ready to go.
+
+03:58.050 --> 04:00.240
+Else, we're going to do something else.
+
+04:00.510 --> 04:00.810
+OK.
+
+04:00.840 --> 04:05.160
+So in say here because we know the book is not empty, so it's actually a valid book.
+
+04:06.630 --> 04:13.290
+This is where I'm going to say, well, DB Collection can use that collection reference and select Add
+
+04:13.860 --> 04:14.220
+to that.
+
+04:15.030 --> 04:23.100
+And then I'm going to add our, yes, our book object, and then I'm going to attach a and add on success
+
+04:23.580 --> 04:24.720
+listener as such.
+
+04:25.410 --> 04:32.610
+And we're save document wrath so much so we can check if things are good.
+
+04:33.060 --> 04:34.800
+We're going to be clever here a little bit.
+
+04:35.670 --> 04:44.700
+Well, the idea is that, OK, so once that book is saved right, we are going to snap the reference
+
+04:44.700 --> 04:49.830
+ID of that book was anything that saved in that their base will have a reference ID.
+
+04:50.640 --> 04:51.270
+It's all made.
+
+04:52.050 --> 04:56.530
+What I mean by that when we save something that document is created, we're going to have this idea,
+
+04:57.330 --> 04:57.590
+right?
+
+04:58.820 --> 05:00.710
+So what are we going to do?
+
+05:01.880 --> 05:07.790
+We're going to save the book and the moment we save the book, we get the document reference is going
+
+05:07.790 --> 05:08.070
+to be this.
+
+05:08.780 --> 05:17.270
+And then right after we do that, we're going to update the same book one field and add the new ID for
+
+05:17.270 --> 05:17.630
+the book.
+
+05:19.510 --> 05:20.260
+In this case.
+
+05:21.360 --> 05:30.630
+We're going to go back to our book passing the ID in this ID field, because remember, this ID field
+
+05:30.780 --> 05:36.900
+is actually going to be inside of the book, which we don't have here.
+
+05:36.900 --> 05:39.510
+I'm just referencing what you can see, but they did same.
+
+05:39.930 --> 05:46.590
+We actually are going to have it as a property or a field in our document because I see if I see users,
+
+05:46.680 --> 05:48.760
+this document is just a document ID.
+
+05:48.990 --> 05:53.070
+But I want to add that Document ID if you think about it into the field.
+
+05:53.820 --> 05:59.460
+So I can then check later to see if that where that book belong and what it is and so forth.
+
+05:59.730 --> 06:03.890
+OK, so where we are, we are safe to database.
+
+06:03.900 --> 06:07.140
+OK, safe to Firebase because we get so we have this document reference.
+
+06:07.470 --> 06:16.110
+OK, now what I'm going to do and I say, wow, I say Doc ID and it was a document reference.
+
+06:16.410 --> 06:17.790
+I'm going to get that ID right away.
+
+06:18.300 --> 06:22.560
+OK, once I have that ID, then I'm going to say database.
+
+06:23.040 --> 06:29.250
+So I'm going to say DB collection, and I'm going to say, let's go to a document.
+
+06:29.760 --> 06:32.730
+This document, I need to pass the idea of this document.
+
+06:32.750 --> 06:39.420
+Well, this document is going to be a document reference that ID or equity just pass.
+
+06:40.650 --> 06:44.460
+This idea that it created here, let's do that because the same thing, right?
+
+06:44.700 --> 06:53.520
+So now I'm getting to that document we just created and then I'm going to say that update Oh, now look
+
+06:53.520 --> 06:54.270
+how cool this is.
+
+06:54.750 --> 06:58.380
+I can update one field only if I need to.
+
+06:58.380 --> 07:00.300
+I don't have to update the whole document.
+
+07:01.800 --> 07:02.280
+Interesting.
+
+07:02.550 --> 07:09.240
+So in this case here to update one field, we know that we need to pass a hash map of any type.
+
+07:09.660 --> 07:11.080
+So I'm going to just do it here.
+
+07:11.100 --> 07:12.720
+It was a hash map of.
+
+07:12.960 --> 07:13.650
+I know.
+
+07:13.920 --> 07:14.670
+Go back to book.
+
+07:14.940 --> 07:21.240
+I have this I.D., which was ignored before it excluded, right when we created this and book.
+
+07:21.990 --> 07:23.340
+But now we're going to go back to it.
+
+07:23.520 --> 07:28.600
+I'm going to get this idea and to do so, I'm going to put it inside of it.
+
+07:29.340 --> 07:34.700
+I'm going to relate that to what I'm going to say to our doc.
+
+07:34.830 --> 07:42.030
+I'd like that and of course, we want us to cast that as a map like this.
+
+07:43.020 --> 07:43.590
+Does that make sense?
+
+07:44.070 --> 07:52.590
+So the moment we save this book that we saved right away, when we know that there is success that happened,
+
+07:52.600 --> 07:57.330
+so we were actually saved something, we have this document reference, which contains the aid of this
+
+07:57.330 --> 08:03.660
+document, a book that was just saved, what we do next, each as we removed that aid, putting it inside
+
+08:03.660 --> 08:04.410
+of the stockade.
+
+08:04.950 --> 08:07.260
+And then we go back, it's a collection.
+
+08:08.370 --> 08:16.150
+Get that document ID that we just added, and I'm going to update one field ID and pass in the Doc I.D.
+
+08:16.320 --> 08:29.250
+that we just got and we can attach to add on complete listener such letter lambda.
+
+08:30.030 --> 08:35.530
+And this is going to be a task which will have more information that we may need to use.
+
+08:36.300 --> 08:43.170
+So now I can say, well, OK, if all of that worked out, which is wonderful, we can test or check
+
+08:43.170 --> 08:49.440
+writing and say if task is successful, right?
+
+08:49.830 --> 08:52.170
+Following the successful, that means we're good.
+
+08:52.740 --> 08:53.830
+What do I need to do?
+
+08:53.850 --> 08:58.560
+I'm going to say NAF controller fact this point because I don't have access to that.
+
+08:59.070 --> 09:06.300
+Let's, first of all, make this a composable and which means we need to change this and I'm going to
+
+09:06.300 --> 09:08.190
+pass here in NAF controller.
+
+09:08.430 --> 09:09.330
+I such as well.
+
+09:09.600 --> 09:11.370
+OK, so now we have the controller.
+
+09:11.730 --> 09:15.840
+I say Dot Pop Stack there, that's it.
+
+09:16.200 --> 09:21.140
+And then I'm going to also say add on failure listener.
+
+09:21.600 --> 09:24.180
+In this case, I was just going to say log.
+
+09:28.560 --> 09:35.070
+I believe like that and just say something like, well, life is not good.
+
+09:36.910 --> 09:39.720
+Say era error updating.
+
+09:41.520 --> 09:41.940
+Doc?
+
+09:44.670 --> 09:44.930
+Oops!
+
+09:45.570 --> 09:52.230
+This is going to be this is where I put the actual document like the exception for say.
+
+09:54.790 --> 09:55.250
+Like this?
+
+09:55.330 --> 09:55.570
+OK.
+
+09:56.110 --> 09:56.620
+All right.
+
+09:57.400 --> 10:04.450
+This would change this save for her base and to pass it to Paris knife controller like that.
+
+10:07.810 --> 10:09.400
+Let's just remove all of that.
+
+10:09.470 --> 10:09.970
+Keep it.
+
+10:10.060 --> 10:11.230
+What we had before.
+
+10:14.880 --> 10:15.170
+OK.
+
+10:15.240 --> 10:20.520
+That should be OK, because we instead of a composable and then we have that issue, we can't call it.
+
+10:21.030 --> 10:21.330
+All right.
+
+10:21.330 --> 10:23.280
+Let's check it up and see if this works.
+
+10:28.240 --> 10:28.990
+OK, let's go.
+
+10:30.760 --> 10:32.650
+Let's see Flutter today.
+
+10:32.950 --> 10:33.580
+Safe.
+
+10:35.240 --> 10:35.630
+OK.
+
+10:35.900 --> 10:39.740
+Let's see, that's true, because it took us back to where we needed to be.
+
+10:41.160 --> 10:42.470
+That's a moment of truth.
+
+10:42.480 --> 10:43.190
+Let's refresh.
+
+10:43.400 --> 10:46.640
+We should see books collection there and hopefully with her book.
+
+10:47.360 --> 10:48.440
+And what do you know?
+
+10:48.460 --> 10:49.100
+Have a book?
+
+10:50.790 --> 10:51.310
+Voila!
+
+10:51.450 --> 10:54.840
+And it's exactly that book that we just added, Oh.
+
+10:56.810 --> 10:58.170
+This is so exciting.
+
+10:58.190 --> 11:01.720
+Ladies and gentlemen, and look at this, this is important because we even added.
+
+11:02.390 --> 11:08.990
+Look at this ad. It's exactly the same as the book document I.D., which is exactly what we wanted.
+
+11:10.610 --> 11:13.100
+We have these already wonderful.
+
+11:14.750 --> 11:15.380
+This is great.
+
+11:15.980 --> 11:19.430
+So let's say I'm going to add another book on running.
+
+11:22.470 --> 11:23.160
+About that one.
+
+11:24.000 --> 11:25.620
+Yes, I read about it.
+
+11:25.680 --> 11:30.320
+All the things and stay safe and I get back there.
+
+11:31.230 --> 11:32.040
+They come here.
+
+11:34.840 --> 11:38.350
+So refresh, we should see a second book about running.
+
+11:42.350 --> 11:42.830
+There you go.
+
+11:43.800 --> 11:45.530
+Very well, it's working.
+
+11:46.490 --> 11:46.970
+All right.
+
+11:47.240 --> 11:47.760
+All right.
+
+11:47.780 --> 11:49.190
+This is very exciting.
+
+11:49.370 --> 11:51.380
+Oh, all that work.
+
+11:51.920 --> 11:56.890
+And we're now seeing things actually happening, so we know things are working.
+
+11:56.900 --> 12:03.140
+And obviously next, the next thing we need to do is to come back to Maine here and start showing the
+
+12:03.140 --> 12:09.380
+books that we have been saving for this user showing them here, at least in the reading list.
+
+12:11.200 --> 12:11.620
+All right.
+
+12:11.770 --> 12:12.430
+I'll see you next.

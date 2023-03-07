@@ -1,0 +1,220 @@
+WEBVTT
+
+00:00.390 --> 00:06.570
+So we've done a lot in this section, we took the app from not having a database, not having a way
+
+00:06.570 --> 00:10.870
+to persist data, to having it persisting and saving data and so forth.
+
+00:10.890 --> 00:17.760
+And along the way, of course, we'll learn what a room database is as part of the jetpack components.
+
+00:18.030 --> 00:24.540
+The Room Persistence Library provides an abstraction layer over skylight to allow for more robust database
+
+00:24.540 --> 00:27.210
+access while harnessing the full power of SQL like.
+
+00:27.220 --> 00:34.290
+So the idea here really is that with room, we no longer need to really fight hard to create a lot of
+
+00:34.290 --> 00:38.970
+different classes, or we're having to deal with a lot of different classes to create our database.
+
+00:38.970 --> 00:46.380
+So it really abstract out or gets rid of all the boilerplate code that we had to deal with before to
+
+00:46.380 --> 00:48.010
+deal to create databases.
+
+00:48.030 --> 00:48.810
+So it's really great.
+
+00:49.560 --> 00:52.890
+And we learn, of course, about D-I dependency injection.
+
+00:52.890 --> 01:00.660
+So we learn the advantages of doing dependency when an object requires another object to function properly.
+
+01:00.940 --> 01:07.740
+OK, so for instance, we learn that a car may need an engine and so the car depends on the engine.
+
+01:07.980 --> 01:13.140
+And so we learned that although manually, we can actually create those dependencies, there's dependency
+
+01:13.140 --> 01:13.830
+injections.
+
+01:13.830 --> 01:21.750
+But withheld is way better because manually, as the app scales, it can be very difficult to manage
+
+01:21.750 --> 01:22.410
+dependencies.
+
+01:22.410 --> 01:27.600
+So hilt, of course, solves that problem because we then gained reusability of code.
+
+01:27.870 --> 01:32.490
+We can ease of refactoring that code and ease of testing, which is very important.
+
+01:33.090 --> 01:39.180
+So back to room database, we also realized that we need to have some sort of solid structure so that
+
+01:39.180 --> 01:43.350
+our apps doesn't crumble as the complexity increases, right?
+
+01:43.830 --> 01:51.210
+So we looked at the room database, but in a different light in that we created a data access object
+
+01:51.540 --> 01:55.890
+which is responsible for dealing with the lower level dealing.
+
+01:55.890 --> 02:02.190
+So processes like getting to our single light, looking at the entities tables and getting the data
+
+02:02.190 --> 02:04.560
+or deleting and do all the crowd operations right.
+
+02:04.920 --> 02:10.560
+And then we put together the repository layer, which essentially is not that important in the sense.
+
+02:10.560 --> 02:13.320
+It's not important for this to work in this whole system to work.
+
+02:13.650 --> 02:20.970
+But nonetheless, it's a very special crucial, if I may say piece of this puzzle here, because it
+
+02:20.980 --> 02:26.220
+allows us to have some sort of single source of truth for all, for all app data.
+
+02:26.230 --> 02:29.610
+So we get this clean API for the UI to communicate with.
+
+02:30.070 --> 02:34.550
+OK, so at the top level after a repository, then we have the view model.
+
+02:34.560 --> 02:42.210
+So in this case, also remember that the repository has an instance via the dependency injection thankfully
+
+02:42.540 --> 02:48.030
+has has any sense of the doubt because it needs to access the database.
+
+02:48.510 --> 02:54.450
+And also the view model will have access to the repository because then it has to connect and get the
+
+02:54.450 --> 02:54.780
+data.
+
+02:55.080 --> 03:03.060
+OK, now at this level here of the model, we have different aerostructures we could use to get still
+
+03:03.060 --> 03:08.970
+that state right to hold that data in the state, which is needed for our user interface.
+
+03:09.180 --> 03:13.260
+So there is life data looked at immutable states and so forth.
+
+03:13.740 --> 03:21.540
+But it turns out, was at this point the best way to use the best way to actually use this room in this
+
+03:21.540 --> 03:28.820
+structure is to use flow state, which is another mechanism that allows us to get that state highway,
+
+03:28.830 --> 03:35.340
+which is needed for us to be able to communicate and emit the data in a stream to our user interface
+
+03:35.340 --> 03:37.770
+to then react and to itself.
+
+03:38.160 --> 03:39.810
+And of course, how long that goes way.
+
+03:39.840 --> 03:42.750
+We talked about a little bit about core routines and suspend function.
+
+03:42.760 --> 03:48.810
+So the idea you want to take away from the core 5:42 bank function says, is that these are mechanisms
+
+03:48.810 --> 03:55.530
+that allow us to do work in the background away from the main user interface and maybe from the main
+
+03:55.590 --> 04:03.330
+UI thread, because it's important to know that in Android, the UI thread only needs to worry about
+
+04:03.450 --> 04:05.820
+showing the data or showing the user interface.
+
+04:05.820 --> 04:13.350
+I should say to the user to interact with so we don't want to bog down, you know, the user the UI
+
+04:13.350 --> 04:18.840
+thread, because then our applications will stop and be responsive.
+
+04:18.930 --> 04:21.540
+Ultimately, the operating system will then shut them down.
+
+04:21.540 --> 04:23.190
+And that's not good, right?
+
+04:23.370 --> 04:28.980
+So that is the nutshell of quarantines and suspend functions and flows and so forth.
+
+04:29.520 --> 04:31.110
+OK, so that was a lot that we did.
+
+04:31.530 --> 04:33.350
+And please go back.
+
+04:33.360 --> 04:37.350
+If there are things that are not really that you missing, it's OK.
+
+04:37.440 --> 04:42.240
+You can't always go back and rewatch certain videos and ask questions and do some research if you want
+
+04:42.240 --> 04:42.360
+to.
+
+04:42.570 --> 04:47.190
+If you're more curious about certain topics such as flow and even quality in the sense that we didn't
+
+04:47.460 --> 04:48.870
+really dive deep into them.
+
+04:49.470 --> 04:50.400
+That's totally fine.
+
+04:51.210 --> 04:51.630
+All right.
+
+04:51.630 --> 04:52.350
+Very excited.
+
+04:52.560 --> 04:55.380
+I hope you enjoy this section, and I hope you've learned a lot.
+
+04:55.830 --> 04:59.940
+And please feel free also to take the app and make your own.
+
+05:00.310 --> 05:06.820
+Do more work on it, or perhaps you have other applications you would want to create.
+
+05:07.420 --> 05:09.830
+But now you have the base part of it, right?
+
+05:09.850 --> 05:13.660
+You have the database how to put together a database, you understand all of that.
+
+05:13.660 --> 05:16.300
+So you can now do all sorts of things.
+
+05:16.930 --> 05:18.970
+I encourage you to do so if you do so.
+
+05:19.300 --> 05:24.910
+Don't forget to share what you build with all of us so we can congratulate you again.
+
+05:25.060 --> 05:25.890
+So grateful you're here.
+
+05:25.900 --> 05:27.850
+Thank you so much, and I'll see you next time.

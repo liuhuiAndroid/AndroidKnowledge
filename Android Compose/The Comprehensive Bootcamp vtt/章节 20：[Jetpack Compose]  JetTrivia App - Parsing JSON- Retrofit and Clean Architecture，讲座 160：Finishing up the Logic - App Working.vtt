@@ -1,0 +1,736 @@
+WEBVTT
+
+00:00.450 --> 00:04.890
+All right, so quickly here, let's get rid of this padding here on the surface, this this is what
+
+00:04.890 --> 00:08.220
+it's giving, this padding that gives us the white, we don't want that.
+
+00:08.250 --> 00:10.290
+So that's not necessary.
+
+00:11.610 --> 00:13.590
+And it's pretty common like this?
+
+00:15.110 --> 00:16.890
+OK, you can see much better now.
+
+00:17.100 --> 00:19.950
+It's taking up the entire screen, which is exactly what we want.
+
+00:20.250 --> 00:23.610
+So again, we should look way better on your emulator.
+
+00:23.610 --> 00:29.970
+But this case, my my device, my device mirror here is now working perfectly.
+
+00:29.970 --> 00:32.010
+Doesn't show the best resolution.
+
+00:32.820 --> 00:35.340
+OK, so we're making really, really good progress.
+
+00:35.340 --> 00:37.110
+So at this point here, we just passing.
+
+00:37.110 --> 00:43.680
+If you go back to our questions, we're just passing one object while we're doing this, passing this
+
+00:43.680 --> 00:44.090
+question.
+
+00:44.140 --> 00:50.100
+Get the first one we want to be able to do is, of course, to have a button such as this to go next
+
+00:50.100 --> 00:51.630
+and then go to the next question.
+
+00:51.990 --> 00:52.260
+OK.
+
+00:52.560 --> 00:56.120
+So let's go back at the bottom here display.
+
+00:56.130 --> 00:57.990
+We are going to add that button.
+
+00:59.400 --> 01:02.340
+So we have the text here and we're going to do that.
+
+01:02.730 --> 01:07.890
+Now the other thing I can do here, because I want to make sure that this text changes, first of all,
+
+01:07.890 --> 01:10.980
+the color should be different, should be white so that we are able to see.
+
+01:11.370 --> 01:15.330
+But also we want to add the color we see here.
+
+01:15.360 --> 01:20.430
+See Green when it's true, we want to propagate that color onto the text as well.
+
+01:20.790 --> 01:26.640
+So what we can do here is instead of having a text like this, we actually going to create an annotated.
+
+01:28.360 --> 01:31.070
+String writing and annotated text, per se.
+
+01:31.960 --> 01:33.790
+First, let's stop here.
+
+01:35.770 --> 01:37.480
+Let's just put what we had before.
+
+01:38.350 --> 01:41.410
+Sorry, Typekit, I'm going to create a foul call annotated
+
+01:44.350 --> 01:44.790
+string.
+
+01:45.070 --> 01:47.650
+Just build it differently.
+
+01:47.730 --> 01:47.870
+Right?
+
+01:47.920 --> 01:57.880
+So build annotated string as such and let it pass with style pass or style span style.
+
+01:58.900 --> 02:00.370
+I'm going to give font weight.
+
+02:01.960 --> 02:02.630
+Right.
+
+02:04.010 --> 02:04.300
+OK.
+
+02:06.990 --> 02:12.450
+And then when I say the color, of course, is going to change accordingly, what we had before, something's
+
+02:12.930 --> 02:16.980
+going to go ahead and copy what we have here.
+
+02:17.970 --> 02:20.770
+I'm going to change this to just see color green.
+
+02:22.800 --> 02:26.070
+And I'm going to say else if in this case here.
+
+02:27.050 --> 02:28.340
+If correct.
+
+02:33.860 --> 02:39.440
+And her state, that value is true.
+
+02:45.150 --> 02:46.440
+And index.
+
+02:48.310 --> 02:51.370
+He's also equal to answer.
+
+02:52.490 --> 02:53.990
+State that value.
+
+02:57.400 --> 03:01.750
+And this is going to be read this complete red.
+
+03:03.140 --> 03:06.170
+It's going to be false or the opposite, what we had up there.
+
+03:08.390 --> 03:16.490
+And let's say else, I'm going to just have up colors and off white.
+
+03:17.700 --> 03:21.540
+OK, so essentially, all we want to make sure that happens is.
+
+03:26.430 --> 03:27.330
+So what we're saying here.
+
+03:27.690 --> 03:30.150
+OK, if the correct answer.
+
+03:31.830 --> 03:36.750
+If the user gets the correct answer, then the color of the tax is going to be green.
+
+03:37.140 --> 03:41.220
+If the user doesn't get correct answer, we're going to also make the color of text red.
+
+03:41.550 --> 03:45.300
+In another case, the color is going to be white, so it's going to be just this white like that.
+
+03:45.990 --> 03:46.260
+OK?
+
+03:47.140 --> 03:49.760
+And of course, we need to put out a sort of a lambda here.
+
+03:49.770 --> 03:52.080
+What is that we're going to be annotating inside here?
+
+03:52.380 --> 03:57.090
+So we're going to be annotating this case.
+
+03:57.780 --> 04:04.950
+But as you know, we actually have to do something different, which is going to be a pen, write and
+
+04:04.950 --> 04:07.520
+pass our answer text.
+
+04:07.530 --> 04:13.590
+And as such, an hour after our else here, I'm going to say font size.
+
+04:14.010 --> 04:18.390
+I want to be about 17 sb the font size of our answer text.
+
+04:19.080 --> 04:22.770
+All right, let's go ahead and give it a run and see for ourselves, hopefully.
+
+04:23.850 --> 04:26.220
+We'll get the correct colors.
+
+04:28.380 --> 04:30.060
+Looks like it's not showing now.
+
+04:32.820 --> 04:33.990
+What seems to be the problem?
+
+04:35.130 --> 04:36.540
+I don't take a swing, I need never.
+
+04:36.750 --> 04:43.020
+OK, so I never called it so I just created a vowel annotated string.
+
+04:43.050 --> 04:45.150
+So I need to actually call it at some point.
+
+04:45.210 --> 04:50.040
+Of course, right below here, I'm going to create the text.
+
+04:52.260 --> 04:53.970
+Let's pass our annotated.
+
+04:58.770 --> 05:03.630
+String like this modifier, six step.
+
+05:06.590 --> 05:07.670
+OK, that's good.
+
+05:07.820 --> 05:08.960
+Let's go ahead and run now.
+
+05:15.180 --> 05:19.870
+OK, now it looks great, so if I say false, that's indeed not true.
+
+05:19.890 --> 05:26.400
+We see not only the radio button is red, but also the text is right there and apologize for the way
+
+05:26.400 --> 05:28.980
+it's looking, but it should look better on your end.
+
+05:29.280 --> 05:31.110
+And if it's true, and there you go.
+
+05:31.650 --> 05:32.670
+All right, so this is great.
+
+05:33.300 --> 05:37.920
+Now, like I said, let's added the button, the next button, because that is also important.
+
+05:38.610 --> 05:47.440
+So right below here, after these two lambdas closing there, I'm going to say Button, that's fine.
+
+05:47.460 --> 05:49.110
+And then let's give.
+
+05:49.770 --> 05:51.060
+Of course, modifier.
+
+05:51.360 --> 05:52.770
+Before we do anything.
+
+05:58.390 --> 06:07.750
+So we're going to modify a few things here, so that padding about three dpi all around and in what
+
+06:07.750 --> 06:11.230
+to say a line, I want to pass a alignment here.
+
+06:14.010 --> 06:14.730
+Centre.
+
+06:19.400 --> 06:25.250
+Horizontal like that horizontally, and then let's put a shape.
+
+06:26.390 --> 06:27.440
+I want this to be.
+
+06:37.220 --> 06:45.500
+Rounded corners shape this past 34 deep all around all corners.
+
+06:49.110 --> 06:55.230
+And then we're going to change the colors, the button colors here and let's say button defaults, search
+
+06:55.800 --> 06:57.210
+and then button colors.
+
+06:57.240 --> 06:58.950
+This is how we change the pattern.
+
+06:58.950 --> 07:03.570
+Colors looks like it just always happens all of this, which we don't need.
+
+07:03.690 --> 07:05.610
+So, OK, we're going to change that.
+
+07:06.630 --> 07:07.380
+Okay, there we go.
+
+07:07.950 --> 07:10.460
+And it's going to be a list of colors that we need to.
+
+07:10.860 --> 07:19.260
+In this case, I'm just going to pass the background color of colors and light blue.
+
+07:22.040 --> 07:23.240
+That's the only thing I want.
+
+07:25.740 --> 07:28.290
+And inside here, let's put.
+
+07:32.370 --> 07:37.980
+Oh, that one line and inside of a row here on this corporate text.
+
+07:40.350 --> 07:41.130
+I will say.
+
+07:44.350 --> 07:49.270
+Next, of course, we're going to add another modifier here.
+
+07:55.100 --> 07:56.780
+Give it padding or for deep.
+
+08:00.580 --> 08:10.470
+Color, say, app colors and off white such and I'm going to give a font size of about 17, don't ask
+
+08:10.480 --> 08:10.810
+me.
+
+08:11.860 --> 08:12.430
+All right.
+
+08:13.720 --> 08:16.520
+So we should have something like this, hopefully.
+
+08:16.670 --> 08:17.560
+Let's go ahead and run.
+
+08:19.100 --> 08:25.850
+Well, it looks good, clickable and everything, OK, so now we need to go back to our display, the
+
+08:25.850 --> 08:29.810
+actual function, because we commented out a few things here.
+
+08:29.810 --> 08:32.930
+We're going to comment all of this because we need to pass them.
+
+08:33.680 --> 08:35.930
+So the question is next, we're going to use in a bit.
+
+08:36.140 --> 08:41.120
+But now let's go ahead and look at the on click event.
+
+08:41.150 --> 08:45.860
+So on next click meaning this button is clicked here, we want to go to this next question, but how
+
+08:45.860 --> 08:46.400
+do we do that?
+
+08:47.510 --> 08:52.340
+Going down to where this needs to be clicked or needs to be called, it's going to be inside of a button,
+
+08:52.340 --> 08:55.340
+so I'm going to call here on next.
+
+08:56.970 --> 09:05.700
+Clicked in the pass, our index and would say index question indexes such that value because it's immutable.
+
+09:07.730 --> 09:13.790
+Because we need the next, because this because this so when we click, we're going to pass the question
+
+09:13.790 --> 09:16.460
+index so we know where to go next.
+
+09:16.520 --> 09:19.910
+In this case is going to be we're going to increment one to go to the next question.
+
+09:20.420 --> 09:21.950
+But all of that is going to be passed.
+
+09:22.670 --> 09:23.120
+Where?
+
+09:23.330 --> 09:25.070
+Well, we're going to pass in.
+
+09:26.150 --> 09:31.460
+Our questions composable, because this is we're going to pass because this is what we pass that information.
+
+09:32.480 --> 09:33.700
+So what are we going to do here?
+
+09:33.710 --> 09:40.120
+I'm going to create another foul when I say vowel question index, but we need to get that, OK?
+
+09:40.610 --> 09:47.270
+When, say, is equal to remember such and is going to be mutable state of.
+
+09:50.990 --> 09:53.660
+And for now, just give zero in the beginning.
+
+09:54.110 --> 09:58.190
+All right, so next what I'm going to do here.
+
+10:03.190 --> 10:08.380
+So next, instead of else here, because we know we have all the information that our review model should
+
+10:08.380 --> 10:16.210
+have something, I want to create another vowel here that says question, OK, seagulls to try and in
+
+10:16.210 --> 10:22.900
+this case, OK, here I'm going to use our question mutable and I'm going to pass the question index
+
+10:22.900 --> 10:24.310
+that value as such.
+
+10:24.440 --> 10:30.980
+We're going to have a problem because we'll have to add a safe something like this, right?
+
+10:31.060 --> 10:32.080
+Biggest question going to be no.
+
+10:33.340 --> 10:37.390
+And then I'm going to put a catch here.
+
+10:37.660 --> 10:44.110
+So if there's some problems going to say X to exception like this and then we're just going to say,
+
+10:44.110 --> 10:46.210
+no, OK, we don't want to show anything.
+
+10:46.990 --> 10:52.970
+OK, so what are we going to do here is now that we have this question, right?
+
+10:53.080 --> 10:56.650
+Because we're going to go, try to go and get the.
+
+10:58.180 --> 11:03.610
+So in this case here this question, if you have over, it's going to be a question item which we can
+
+11:03.610 --> 11:04.690
+pass along to here.
+
+11:05.140 --> 11:12.100
+So but the beauty here is that we're getting from our index depending on what is our index number at
+
+11:12.100 --> 11:14.170
+this point in the beginning is going to be zero.
+
+11:14.170 --> 11:17.680
+But because it's a remember that can change and it's mutable state.
+
+11:17.830 --> 11:25.090
+OK, so we're going to pass it this value here like that, OK?
+
+11:25.510 --> 11:30.900
+In this case, because just one item, we don't need to worry about adding anything else or say anything.
+
+11:30.910 --> 11:37.180
+So in this case, also, we need to surround it with a null check or just asserted that this is not
+
+11:37.180 --> 11:39.070
+null or it's Nullarbor per se.
+
+11:39.160 --> 11:40.930
+OK, now we need to pass something else.
+
+11:41.380 --> 11:42.850
+What is there going to pass next?
+
+11:42.910 --> 11:44.410
+Well, we need to pass that index.
+
+11:44.980 --> 11:50.830
+So going to say question index in this case is going to be equal to question index.
+
+11:52.950 --> 11:54.720
+OK, let's pass a review model.
+
+11:56.350 --> 11:57.960
+We're going to be our review model.
+
+11:58.910 --> 12:01.640
+Which one we created already?
+
+12:02.030 --> 12:06.800
+My dad taught me there now because we know that question display.
+
+12:08.030 --> 12:16.110
+The last item that we have here, you see it on on next clicked, which gets an end, right?
+
+12:16.160 --> 12:19.910
+We don't pass anything or we're not returning anything, of course, because we have a unit.
+
+12:20.810 --> 12:27.830
+Well, it is the last parameter and it's a function that means it's a trailing lamp there like that.
+
+12:27.860 --> 12:31.790
+So we have that index that it's been passed when we click.
+
+12:33.020 --> 12:38.480
+Right, because this on click here, it's been called here, we passed the question index value so we
+
+12:38.480 --> 12:41.060
+can retrieve that index and now here.
+
+12:41.750 --> 12:42.770
+What is it we want to do?
+
+12:43.220 --> 12:46.870
+Well, here we all want to do is say something like this?
+
+12:46.880 --> 12:48.230
+Well, question index.
+
+12:48.230 --> 12:53.990
+When that happened, I'm going to say value and we're going to set that to question index wherever we
+
+12:53.990 --> 12:56.980
+are at this point and we're going to add one.
+
+12:56.990 --> 12:58.040
+So we're going to increment it.
+
+12:58.880 --> 13:04.070
+So now because this question index, indeed, as we created here, is immutable state.
+
+13:04.070 --> 13:10.100
+You know, remember, that means it has a state and it can update if you are a composable, which is
+
+13:10.100 --> 13:15.890
+great, that means then we're going to be able to receive that value that is being cremated, which
+
+13:15.890 --> 13:21.380
+will allow us indeed to go to the next question because that value is being passed when we click.
+
+13:22.340 --> 13:23.300
+This button there.
+
+13:24.140 --> 13:31.760
+We'll get that question index and we can then increment, which we are doing so now if we go back.
+
+13:33.440 --> 13:38.870
+In our question tracker here, remember, if I have over have some items we can pass, for instance,
+
+13:38.870 --> 13:40.760
+the first is the counter.
+
+13:40.970 --> 13:43.730
+Well, I can pass that counter and say counter.
+
+13:44.300 --> 13:48.200
+In this case, the counter is going to be the question index, right?
+
+13:48.470 --> 13:51.690
+That value, because it's going to be well.
+
+13:51.710 --> 13:52.610
+Question zero.
+
+13:52.670 --> 13:53.510
+Let's index zero.
+
+13:54.560 --> 13:55.790
+Going to be the first question.
+
+13:57.060 --> 13:57.360
+Right.
+
+13:58.260 --> 14:01.830
+If we go to next is going to be this question one and so forth.
+
+14:02.010 --> 14:04.530
+So that's the index of our list of questions.
+
+14:06.910 --> 14:07.660
+Let's see if this works.
+
+14:07.720 --> 14:08.380
+Go ahead and run.
+
+14:10.530 --> 14:10.920
+All right.
+
+14:10.950 --> 14:11.610
+Moment of truth.
+
+14:12.030 --> 14:17.730
+I'm just going to say this is false, which is not true, and when I say next and what I see it change
+
+14:17.730 --> 14:22.050
+the index, you change the question one out of 100, we'll fix that later because we have more than
+
+14:22.050 --> 14:22.800
+100 questions.
+
+14:23.130 --> 14:29.170
+But now we go to the second question and look how wonderful this is, because now let's go ahead.
+
+14:29.190 --> 14:30.000
+Second question.
+
+14:30.780 --> 14:31.730
+The first was this one.
+
+14:31.730 --> 14:37.110
+The second question is one of the remnants, one of the remnants, and it has four.
+
+14:38.460 --> 14:44.910
+Choices here in all of these were created automatically, dynamically, because remember, we said in
+
+14:44.940 --> 14:48.960
+our choices, we make choices that for each and we pass index and we create a row.
+
+14:49.140 --> 14:55.260
+So now, depending on how many choices we have in our choices stayed in our choices list, it will go
+
+14:55.260 --> 15:01.680
+ahead and create the those rows might go ahead and create, of course, our questions.
+
+15:02.190 --> 15:05.250
+As you see here, or I should say, choices, right?
+
+15:06.530 --> 15:07.790
+I know this is Louisiana.
+
+15:08.360 --> 15:13.430
+Lie, it's true, I go next, I can continue, I've done this a few times.
+
+15:13.820 --> 15:14.600
+That is true.
+
+15:15.110 --> 15:17.280
+If I say false, that's not true.
+
+15:17.300 --> 15:18.740
+I have the chance to go and say true.
+
+15:19.070 --> 15:19.730
+And voila.
+
+15:19.940 --> 15:21.980
+This is Florida, and it's working.
+
+15:26.440 --> 15:27.520
+Wonderful.
+
+15:28.420 --> 15:28.810
+All right.
+
+15:29.740 --> 15:30.160
+It's great.
+
+15:30.640 --> 15:33.940
+Any counter is going is working as well because just the index.
+
+15:35.640 --> 15:36.270
+Exciting.
+
+15:36.300 --> 15:36.750
+There we go.
+
+15:36.930 --> 15:45.330
+So we have a dynamic app that is getting information from our Jason, we've gone through all that process
+
+15:46.620 --> 15:48.240
+and now we have something working.
+
+15:48.240 --> 15:49.110
+It is very dynamic.
+
+15:49.140 --> 15:57.220
+If somehow this Jason changes right, we have more choices, for instance, it will know how to dry
+
+15:57.220 --> 15:57.360
+it.
+
+15:57.750 --> 15:59.640
+Now it has zero one.
+
+15:59.970 --> 16:07.440
+If if we have one two three four five six seven choices in this list, then we would have seven buttons.
+
+16:07.620 --> 16:09.120
+Also, with those choices?
+
+16:10.070 --> 16:17.150
+Very well, so at this point, really, the app is his done because we have everything working we can
+
+16:17.150 --> 16:22.340
+go to, let's say, Sacramento or go to next question and the questions are working.
+
+16:22.910 --> 16:25.730
+Uh, Boise, that is the answer.
+
+16:26.210 --> 16:32.120
+I think Carson City, one would think Nevada, but it's not Salt Lake City.
+
+16:32.270 --> 16:33.530
+Oh, real good at this.
+
+16:34.220 --> 16:37.040
+That's because I've been answering these questions for a long time.
+
+16:37.100 --> 16:38.170
+OK, there we go.
+
+16:38.180 --> 16:44.240
+So everything is working and the questions are updating and we have everything working perfectly.
+
+16:44.780 --> 16:48.930
+Now there are a few things we need to do, of course, but most of them are just going to be cosmetics
+
+16:49.340 --> 16:51.740
+because we just want to give it a little pizzazz.
+
+16:52.010 --> 16:55.310
+But the base of this app is pretty much done.
+
+16:55.950 --> 16:56.540
+All right.
+
+16:57.260 --> 17:02.960
+So go ahead and look through this code because I'm sure you have a few things that we need to look at
+
+17:02.960 --> 17:06.410
+and trying to figure out how they work, and that's totally fine as part of the process.
+
+17:07.280 --> 17:11.780
+But do that and then see if you can improve this app, right?
+
+17:12.290 --> 17:14.530
+Of course, we're not completely done with this application.
+
+17:14.540 --> 17:15.800
+Of course, there are a few things we like.
+
+17:15.800 --> 17:21.530
+I said I would like to add, but at this point, you can't actually, you know, go and show off to
+
+17:21.530 --> 17:29.690
+your friends that you created a very cool trivia application here using data from somewhere, right?
+
+17:31.490 --> 17:31.850
+All right.
+
+17:32.360 --> 17:32.780
+Very good.

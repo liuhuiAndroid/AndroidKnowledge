@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.960 --> 00:06.630
+Earlier, we were able to run this app onto our device can see here anywhere.
+
+00:06.960 --> 00:09.090
+And it says, Hello, Android is really small.
+
+00:09.090 --> 00:12.220
+I apologize, but believe me, it's there and I know you're following along.
+
+00:12.240 --> 00:12.720
+You should see.
+
+00:12.750 --> 00:13.470
+Hello, Android.
+
+00:14.010 --> 00:18.260
+And we said that we were able to change the color of the surface surface.
+
+00:18.270 --> 00:23.340
+It's going to close whatever is inside of our lander trailing lambda there.
+
+00:23.910 --> 00:29.550
+In this case, we are calling greeting, which is, you see, here's another composable created passenger
+
+00:29.730 --> 00:33.450
+name and just text is hello and pass the name.
+
+00:33.540 --> 00:35.130
+So hello, Android is there.
+
+00:36.630 --> 00:43.350
+If you have it over our surface and you'll see that there's this parameter we can pass or in this case,
+
+00:43.350 --> 00:49.200
+argument that we can pass called modifier and modifier is very important one.
+
+00:49.260 --> 00:50.720
+So let's see how this works.
+
+00:50.720 --> 00:55.530
+So I'm going to say enter and then I'm going to say modifier such modifier.
+
+00:58.430 --> 01:05.960
+Sequel Put a comma there modifier, we're going to invoke modifier, and when we do that modifier,
+
+01:05.960 --> 01:10.520
+we can go and start invoking the methods that come with modifier.
+
+01:10.970 --> 01:12.970
+So in this case here, let's see.
+
+01:12.980 --> 01:18.710
+I want to go and find fill max width.
+
+01:20.120 --> 01:25.490
+So to fill Max with what is going to do is it's going to fill the max with that is available.
+
+01:25.820 --> 01:26.790
+I see how this works.
+
+01:26.790 --> 01:27.620
+So I'm going to go ahead.
+
+01:27.620 --> 01:28.250
+And Brian, this.
+
+01:30.850 --> 01:36.820
+I actually got the film Max Height in that width, but you can see here is the same idea.
+
+01:37.030 --> 01:44.770
+So because I said Phil Max height, he noticed that we have the entire height of the entire screen.
+
+01:45.010 --> 01:49.000
+If this screen was larger than this, it would have done the same thing.
+
+01:49.000 --> 01:50.770
+It would taken up the entire screen.
+
+01:51.310 --> 01:57.220
+Obviously, we can do the same thing with the width, which is in first place.
+
+01:57.250 --> 01:59.560
+That was the first thing I wanted to do, but it's OK, this works.
+
+01:59.980 --> 02:02.560
+So how do we get to fill max width?
+
+02:02.920 --> 02:04.870
+Well, because modify modifier, we can change.
+
+02:04.870 --> 02:11.390
+All of these calls can say, enter the dot again because we still in our modifier, right?
+
+02:11.860 --> 02:16.000
+And let's say fill max height in this case, width.
+
+02:16.450 --> 02:16.900
+All right.
+
+02:17.290 --> 02:17.770
+And there we go.
+
+02:18.220 --> 02:19.270
+If I ran again.
+
+02:21.140 --> 02:25.210
+Well, now you can see that our entire surface.
+
+02:26.300 --> 02:32.990
+From not having anything, it was just constrained to whatever we had in this case, a text now is showing
+
+02:33.260 --> 02:35.150
+now is taking up the entire space.
+
+02:36.250 --> 02:43.630
+And what I can do also, I can continue Cheney, I can say dot padding for padding, I can pass all
+
+02:43.630 --> 02:47.440
+different kinds of padding swiped to different functions with different parameters.
+
+02:47.650 --> 02:53.800
+But I want all the say all in this case named arguments there.
+
+02:54.130 --> 02:55.290
+I want to give it.
+
+02:55.300 --> 02:57.220
+Let's be exaggerating here.
+
+02:57.400 --> 03:00.400
+Maybe fifty nine dot deep.
+
+03:00.460 --> 03:06.010
+I have to pass that deep because that is the unit that is recognized in Android.
+
+03:06.610 --> 03:06.910
+OK.
+
+03:07.120 --> 03:09.270
+So fifty nine nine dpi.
+
+03:09.430 --> 03:14.170
+That is how much padding I'm going to have around this surface.
+
+03:14.320 --> 03:14.780
+Is that true?
+
+03:14.810 --> 03:16.240
+Let's go ahead and run again and see.
+
+03:18.010 --> 03:18.520
+There we go.
+
+03:18.820 --> 03:25.330
+So we give 59 dpi around the entire surface, when you sit around, it is indeed around.
+
+03:25.340 --> 03:30.220
+So now we can see that the surface has shrunk a little bit.
+
+03:30.460 --> 03:30.790
+Right?
+
+03:31.570 --> 03:34.360
+All sides by 59 dpi units.
+
+03:34.960 --> 03:37.380
+So you can see by using modify, you can modify.
+
+03:37.390 --> 03:39.290
+You can customize the views.
+
+03:39.700 --> 03:42.010
+The UI instantly and quickly.
+
+03:42.580 --> 03:45.640
+This is very powerful and we're going to be using it a lot.
+
+03:46.720 --> 03:53.590
+Obviously, I went straight to our set content in that case, the two preview or to see the changes
+
+03:53.590 --> 03:54.690
+I have to run, right?
+
+03:54.910 --> 03:58.120
+I could have done the same thing, obviously here as well.
+
+03:59.120 --> 04:06.230
+In our preview or inside of these composable or inside of this composable, it doesn't matter, right?
+
+04:06.470 --> 04:12.860
+But I just know that at the end of the day, if I want to push all of those changes so I can see in
+
+04:12.860 --> 04:16.910
+a screen, I have to put inside of our content, it makes sense.
+
+04:17.180 --> 04:21.170
+This is where we're setting the contents of our app very well.
+
+04:21.350 --> 04:23.330
+So this is not a big project.
+
+04:23.330 --> 04:29.360
+As you can see, it's just a way for me to show you small things here and there so that you can still
+
+04:29.870 --> 04:35.120
+get the full idea of what compose is and how powerful this is.
+
+04:36.050 --> 04:43.760
+Now, the main thing you have to understand here I would like you to really take away is that the composable
+
+04:43.760 --> 04:48.620
+function such as this, we didn't create this one, although it's very similar to this show age, but
+
+04:48.620 --> 04:50.060
+a composable function.
+
+04:51.730 --> 04:54.220
+Is very powerful in so many ways.
+
+04:54.700 --> 05:00.760
+Number one, a composable function is annotated with the compact, composable annotation.
+
+05:01.950 --> 05:05.370
+So all composable functions must have at composable.
+
+05:05.640 --> 05:07.140
+That is not negotiable.
+
+05:08.450 --> 05:14.240
+So these annotation, what he does, it informs the COMPOSE compiler that this function is intended
+
+05:14.630 --> 05:18.890
+to convert data into UI because that's all we doing here.
+
+05:19.220 --> 05:23.540
+A compose function converts data into UI.
+
+05:24.380 --> 05:30.530
+What that means is what this means is that this greeting or destroy age doesn't matter what this greeting
+
+05:30.530 --> 05:30.830
+here.
+
+05:31.130 --> 05:31.790
+What do we do?
+
+05:32.000 --> 05:33.200
+We are passing data.
+
+05:34.890 --> 05:35.300
+All right.
+
+05:35.320 --> 05:43.660
+That's all we doing, and this data is actually being transformed or converted into a user interface.
+
+05:45.080 --> 05:45.550
+Voila!
+
+05:45.920 --> 05:46.650
+You see there.
+
+05:46.670 --> 05:47.360
+Hello, Andrea.
+
+05:49.720 --> 05:56.200
+That is the power of a composer or function that is the power of jetpack compose.
+
+05:56.350 --> 06:02.410
+Ladies and gentlemen, because their function takes in data, the composable functions then accepts
+
+06:02.410 --> 06:03.190
+those parameters.
+
+06:03.350 --> 06:07.780
+Right, we can pass as many parameters as we want and accepts it, and then we can do something.
+
+06:07.780 --> 06:13.540
+In this case, we're calling yet another composable that we didn't create have over composable.
+
+06:13.540 --> 06:15.670
+It's got a lot of parameters passed.
+
+06:17.080 --> 06:25.600
+Arguments that we can pass to also set it up in transform this into an actual user interface widget.
+
+06:26.320 --> 06:32.680
+So this is the thought process how you should start thinking about compose if you are coming from,
+
+06:32.680 --> 06:39.200
+for instance, Android development, the imperative way of Android development, what you have XML and
+
+06:39.220 --> 06:41.920
+you have the Java class or Kotlin class.
+
+06:42.280 --> 06:50.170
+And then in activity, you use the mechanism to get those XML you eyes and then do something with it
+
+06:50.230 --> 06:51.550
+to give it logic, right?
+
+06:51.970 --> 06:58.540
+This is different in our case here now in compose, we are converting data into UI.
+
+06:58.570 --> 07:03.790
+The other thing you will notice about composable functions to keep in mind is that since they emit UI,
+
+07:03.790 --> 07:09.310
+they don't have to return anything because they describe keyboards here, ladies and gentlemen.
+
+07:09.580 --> 07:15.860
+They describe the desired screen state instead of constructing UI widgets here.
+
+07:15.880 --> 07:18.700
+We're not going through the process of constructing this text widget.
+
+07:18.940 --> 07:19.690
+What are we doing?
+
+07:19.900 --> 07:22.400
+We are describing what we want to happen.
+
+07:22.420 --> 07:29.230
+We want what we want to happen is a text to show hello and name that's been passed here.
+
+07:29.470 --> 07:31.990
+You notice also the naming convention.
+
+07:32.080 --> 07:36.160
+All of the composable start with uppercase letter.
+
+07:36.340 --> 07:41.470
+Any other case, if it's not a composable, you will start in Kotlin, especially in many other languages.
+
+07:41.800 --> 07:47.290
+You start a function name or a method name, as they may be called with lowercase.
+
+07:47.650 --> 07:50.020
+That tells you something the difference here.
+
+07:50.200 --> 07:52.840
+This is not a normal procedure function.
+
+07:53.200 --> 07:55.570
+It is a composable function.
+
+07:56.020 --> 07:57.760
+It composes UI.
+
+07:57.790 --> 08:01.960
+It describes the desired screen state instead of constructing UI widgets.

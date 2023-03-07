@@ -1,0 +1,457 @@
+WEBVTT
+
+00:01.590 --> 00:06.600
+So now let's go ahead and put together this structure here, so we have at the top here where the question
+
+00:06.600 --> 00:11.730
+will be, and then we have these radio buttons here, but these radio buttons are going to be up to
+
+00:11.730 --> 00:12.510
+four of them.
+
+00:12.510 --> 00:16.830
+So we are going to dynamically create them as the questions come in.
+
+00:17.490 --> 00:17.730
+All right.
+
+00:17.730 --> 00:23.910
+So right after our dotted line, we're going to put a column here and it's of this column.
+
+00:24.060 --> 00:32.130
+I'm first going to add a text to this text is going to be, for instance, our tax here.
+
+00:32.130 --> 00:33.870
+We're going to add something like.
+
+00:40.140 --> 00:42.870
+What's the meaning of all this?
+
+00:43.650 --> 00:43.890
+OK.
+
+00:45.540 --> 00:47.580
+A little bit too philosophical, but it's OK.
+
+00:48.090 --> 00:55.440
+All right, so let's go ahead and make it or add some sort of style, let's say font size.
+
+00:55.470 --> 01:05.130
+At this point, I want to be about 17 XP and font weight.
+
+01:06.640 --> 01:07.780
+One needs to be bold.
+
+01:10.590 --> 01:15.870
+And line height, this tax, I'm going to be 22, that speed like that, OK?
+
+01:16.440 --> 01:19.890
+So that is something that would look like.
+
+01:21.950 --> 01:24.590
+There is let's see, right there we go.
+
+01:25.000 --> 01:28.910
+Looks like that, not exactly what the color is off.
+
+01:28.910 --> 01:30.640
+That means you have to change the color.
+
+01:32.520 --> 01:34.380
+So I'm going to say color.
+
+01:39.500 --> 01:42.760
+Collars and off white like this.
+
+01:44.030 --> 01:45.260
+OK, that looks really nice.
+
+01:46.460 --> 01:53.420
+And of course, we know that the immediate argument we can pass here is a modifier, so we're going
+
+01:53.420 --> 01:55.670
+to pass a modifier.
+
+02:02.020 --> 02:10.840
+I'm going to have padding of about 60 60p and then alignment, I want to align this text.
+
+02:10.900 --> 02:12.640
+I'm going to pass alignment.
+
+02:14.040 --> 02:25.410
+I say alignment as such alignment, Android X when I say start, so I want this to say start from the
+
+02:25.410 --> 02:36.510
+right, that's good and I want Phil Max height, but I don't want this to be all bad, but we don't
+
+02:36.510 --> 02:40.080
+want this text to take up the entire space we have here.
+
+02:40.530 --> 02:46.710
+So the great thing about if you look at Phil Max height of Phil Max with if you have an over, you will
+
+02:46.710 --> 02:49.320
+see that we can pass the fraction float here.
+
+02:49.770 --> 02:55.770
+This is really great because if you look at params, his fraction is the fraction of the maximum high
+
+02:55.770 --> 02:58.110
+to use between zero and one inclusive.
+
+02:58.500 --> 03:05.610
+That means if I pass something like this, I want this p zero point three fraction of the entire height,
+
+03:06.070 --> 03:06.300
+right?
+
+03:06.780 --> 03:12.250
+What we're really doing here is that we want about 30 percent of the height of the entire screen, right?
+
+03:12.960 --> 03:16.830
+When we say field max height, so this is what we are going to have.
+
+03:17.130 --> 03:23.010
+This is the space we're going to allow for the question text because remember this question?
+
+03:23.010 --> 03:26.670
+Text here could be very well, very small.
+
+03:27.150 --> 03:28.380
+That's going refresh again.
+
+03:29.100 --> 03:29.430
+Thanks.
+
+03:29.430 --> 03:31.680
+You can see the question could be very small.
+
+03:31.710 --> 03:36.510
+Not a lot of well, actually, this has a lot of text and others are very small.
+
+03:36.510 --> 03:39.310
+Like this first one here, so we won't accommodate that.
+
+03:39.310 --> 03:47.730
+I want to make sure that if indeed the question has a lot of text than we are, we were able then to
+
+03:47.730 --> 03:48.780
+accommodate that as well.
+
+03:49.230 --> 03:52.530
+So right, immediate to that, that means we have our text.
+
+03:52.620 --> 03:55.200
+Then we're going to have this space for the text.
+
+03:55.740 --> 03:58.560
+Depending on how large the tax is, it's going to be accommodated.
+
+03:59.190 --> 04:03.300
+But right after that, we're going to have the section where we're going to have these radio buttons.
+
+04:03.810 --> 04:10.410
+Like I said before, the concept here is different in that we are not going to hard code the answers
+
+04:10.410 --> 04:13.470
+or in this case, the amount of buttons or radio buttons.
+
+04:13.920 --> 04:20.910
+Because if you look at the answers the most they can have, the choices I should say, most we can have
+
+04:20.910 --> 04:21.530
+or for.
+
+04:21.960 --> 04:26.760
+But in case they will have false or true, we have just two choices, right?
+
+04:27.390 --> 04:34.620
+So what we what do we need to do is for each question as we receive it, we want to try this radio button
+
+04:34.920 --> 04:36.120
+on the fly to navigate.
+
+04:36.570 --> 04:41.150
+So if it goes and gets this one, this question, for instance, this object is going to go ahead and
+
+04:41.150 --> 04:42.660
+say, OK, choices is just two.
+
+04:42.870 --> 04:46.350
+So we're going to draw, as you see here, only two of these buttons.
+
+04:47.070 --> 04:52.140
+If, on the other hand, we have a question such as this and they have four choices, then we have to
+
+04:52.140 --> 04:53.280
+draw four choices.
+
+04:53.700 --> 04:59.640
+Also adding all of these choices there after a text here, I'm going to say choices.
+
+05:00.030 --> 05:07.170
+We have to look through the choices, array or list and get the number and then draw.
+
+05:08.170 --> 05:11.260
+The correct number of choices we have.
+
+05:11.560 --> 05:13.080
+So what do we need to do in our question?
+
+05:13.120 --> 05:15.280
+I display here, we need to pass a few parameters.
+
+05:15.790 --> 05:22.720
+First, one is going to be the question items going to say question item such that we're going to have
+
+05:22.720 --> 05:25.500
+some issues here with our preview.
+
+05:25.510 --> 05:26.110
+No problem.
+
+05:26.290 --> 05:28.120
+I'm going just to get rid of that for now.
+
+05:29.080 --> 05:30.910
+And then I'm going to pass here a question.
+
+05:31.210 --> 05:32.710
+Let's go ahead and import to that.
+
+05:32.800 --> 05:39.550
+Of course, the question item and then I'm going to pass here Question Index, which we will look at
+
+05:39.790 --> 05:40.330
+in a bit.
+
+05:40.330 --> 05:41.080
+So question.
+
+05:41.890 --> 05:42.520
+Index.
+
+05:43.330 --> 05:44.560
+It's going to be mutable.
+
+05:44.560 --> 05:48.030
+State passive int type.
+
+05:48.520 --> 05:48.820
+OK.
+
+05:49.360 --> 05:53.050
+And then of course, we're going to pass the view model, which is going to be a question for your model.
+
+05:53.410 --> 06:01.360
+And then we're going to have the honor next clicked because we wanted to be able to see that, OK,
+
+06:01.360 --> 06:02.970
+when this is clicked, we're in a pass.
+
+06:03.030 --> 06:07.930
+The value of the question that was was just clicked.
+
+06:08.590 --> 06:13.380
+So in this case, here, we're going to be passing the actual question item when we hit this question
+
+06:13.390 --> 06:19.390
+display because we want to be able to get that question, which is going to be this object, which is
+
+06:19.390 --> 06:23.020
+going to have question answer and the choices.
+
+06:23.350 --> 06:24.310
+So we have that object.
+
+06:24.310 --> 06:30.520
+So now we have to go and look through these choices so that we can decide what to draw on the screen,
+
+06:30.520 --> 06:30.820
+right?
+
+06:31.030 --> 06:33.370
+Two or four rate of buttons.
+
+06:33.670 --> 06:39.220
+So the question here is what drives everything, which means then we need some sort of state because
+
+06:39.220 --> 06:45.970
+remember, if I want to be able to dynamically draw those choices, I need to have some sort of state
+
+06:45.970 --> 06:49.570
+to draw these screen whenever it needs to be tried.
+
+06:49.600 --> 06:53.650
+Meaning if there's two, then we are going to try to, if there's four going to draw four.
+
+06:54.040 --> 06:56.440
+So that just tells us we need some sort of state.
+
+06:56.890 --> 06:57.760
+So right here.
+
+06:58.330 --> 07:03.910
+Choices say choices such state.
+
+07:03.980 --> 07:04.720
+That's fine.
+
+07:05.230 --> 07:09.640
+I'm going to use the remember because we need to be trying something.
+
+07:09.640 --> 07:13.270
+So remember will allow the recomposition really.
+
+07:13.570 --> 07:19.440
+And when say a question actually for our choices state here, I need to pass a value to compute, which
+
+07:19.480 --> 07:24.460
+is going to be our question object that we're going to be passing this question item there, right?
+
+07:25.180 --> 07:31.000
+So inside here and when to say question item in this case, guide choices, choices as such.
+
+07:31.450 --> 07:37.990
+And I'm going to say to mutable list because remember, this is indeed a list we want to make it a mutable
+
+07:37.990 --> 07:38.410
+list.
+
+07:39.630 --> 07:44.280
+So we can work with very good, so now that we have this choice choices state, we can look through
+
+07:44.280 --> 07:51.050
+it, which means right here, I'm going to say it's follow, I'm going to say choices, choices state
+
+07:51.060 --> 07:59.880
+at such the for each and I want the for each index because I need the index for each item that I'm getting.
+
+08:00.330 --> 08:01.350
+We'll see later why.
+
+08:01.680 --> 08:04.390
+So I have the index and then I have the actual item.
+
+08:04.410 --> 08:08.760
+So I'm going to say answer text can call whatever you want, but that works.
+
+08:09.600 --> 08:15.510
+And then here is where I'm going to create a row in this case and will create this row for these buttons
+
+08:15.510 --> 08:15.780
+here.
+
+08:15.960 --> 08:17.520
+So let's pass a modifier.
+
+08:22.000 --> 08:31.540
+Padding modifier that padding about three deep and then once they fill Max with.
+
+08:36.300 --> 08:37.620
+Then I'm going to give her height.
+
+08:38.870 --> 08:39.290
+Oops!
+
+08:39.380 --> 08:42.140
+It's going to be after the error
+
+08:46.130 --> 08:48.230
+of about 45 dpi.
+
+08:51.000 --> 08:57.240
+And while I'm here, I'm going to give a broader right because I want to create this structure, this
+
+08:57.240 --> 08:58.290
+nice border there.
+
+08:59.490 --> 09:00.660
+I see the border.
+
+09:00.660 --> 09:08.010
+I'm going to pass the width of this border about four deep and I'm going to pass a brush object there
+
+09:08.040 --> 09:13.190
+to our own so that we can actually create a nice linear gradient here.
+
+09:13.200 --> 09:14.280
+I'm going to say brush.
+
+09:16.580 --> 09:19.580
+Linear, they say brush that linear.
+
+09:23.870 --> 09:32.690
+Gradient as such, and so for our gradient here, I'm going to pass colors, highlights a list like
+
+09:32.690 --> 09:33.050
+this.
+
+09:33.560 --> 09:45.590
+And there's a list of in, let's say, app colors that aim off dark purple and then app colors and of.
+
+09:46.800 --> 09:48.480
+Dark purple again.
+
+09:49.070 --> 09:53.970
+OK, so what I'm doing here, I'm just going to create the same gradient using the same color, that's
+
+09:53.970 --> 09:55.140
+why you have something like this.
+
+09:55.730 --> 09:57.830
+So they sent me a line, right?
+
+09:57.840 --> 10:02.340
+And then I'm going to add a shape, just get rounded.
+
+10:06.070 --> 10:15.550
+Going to use a rounded corners shape and pass about 15 deep and then what I want to do, I want to clip.
+
+10:18.110 --> 10:28.910
+With a rounded corners shape such and I'm going to say top and percentage, top start percentage.
+
+10:29.360 --> 10:40.670
+I'm going to give 50 percent and top end percentage, also 50 percent and bottom and.
+
+10:42.160 --> 10:46.570
+Percentage, the same bottom start percentage.
+
+10:47.650 --> 10:53.710
+Yes, you guessed it the same, but as it is right now, we would have this nice round user interface
+
+10:53.710 --> 10:54.010
+there.
+
+10:54.160 --> 10:59.170
+However, it would all be covered in the same with the same color or want to do instead.
+
+10:59.410 --> 11:03.250
+We want to make the background transparent, but only show.
+
+11:03.430 --> 11:07.080
+Of course, this this brush that we added there.
+
+11:07.080 --> 11:09.910
+Write this with this stroke there.
+
+11:10.270 --> 11:14.050
+So it said over a clip, we finished our clip right about there.
+
+11:14.530 --> 11:17.560
+You can see because this to this is now highlighted.
+
+11:18.640 --> 11:25.570
+I'm going to say enter dot and I'm going to say background color when I make colored or transparent
+
+11:25.810 --> 11:26.320
+as such.
+
+11:26.860 --> 11:28.810
+OK, so we're making good progress.
+
+11:28.990 --> 11:33.190
+But in the next video, we are going to continue here and hopefully by the end, we're going to see
+
+11:33.190 --> 11:34.870
+something like this at least.

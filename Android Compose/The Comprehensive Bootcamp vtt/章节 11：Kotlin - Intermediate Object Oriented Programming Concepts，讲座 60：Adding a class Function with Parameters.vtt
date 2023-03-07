@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00.330 --> 00:02.910
+So far for a method inside of this class will only have drive.
+
+00:03.210 --> 00:05.910
+But we could also add in another function here, and I say function.
+
+00:07.380 --> 00:11.130
+I can say, for instance, speed and we can pass parameters, right?
+
+00:11.190 --> 00:13.710
+I can say mean speed.
+
+00:14.540 --> 00:19.920
+S. And I would say also max speed as an integer like that.
+
+00:20.460 --> 00:32.760
+And then inside here and just going to go and say print and mean speed is pass our mean speed and max
+
+00:34.110 --> 00:34.740
+speed.
+
+00:36.060 --> 00:38.940
+In this case, max speed has such.
+
+00:39.540 --> 00:39.730
+All right.
+
+00:40.140 --> 00:48.600
+That means when we have our car, I can just go ahead and say car dot speed and pass the mean speed
+
+00:49.350 --> 00:49.770
+like this.
+
+00:50.400 --> 00:51.930
+Let's say 100.
+
+00:51.930 --> 00:59.520
+This person goes really fast and max speed one hundred and ninety nine.
+
+01:00.240 --> 01:01.700
+Go ahead and run this again.
+
+01:01.710 --> 01:08.730
+You can see everything that we've seen before, but we also see that we have mean speed and max speed
+
+01:08.730 --> 01:10.460
+of 100 199.
+
+01:11.190 --> 01:11.700
+They have it.
+
+01:12.000 --> 01:19.950
+So we have the very basics in this case of a class, my car class or created, and we can obviously
+
+01:19.950 --> 01:30.270
+call the drive again so I can see car drive to invoke the drive function.
+
+01:31.090 --> 01:37.980
+You should be able to see that we know that mean speed is 100, Max is 189.
+
+01:38.340 --> 01:42.120
+It's going to drive and we say colors, car color.
+
+01:42.420 --> 01:49.760
+And then we print in the color of the car, which is black and model Al-Alam fact must be clean here.
+
+01:49.770 --> 01:50.460
+Let's put that.
+
+01:50.940 --> 01:51.270
+All right.
+
+01:51.270 --> 01:56.280
+So I hope at this point, we were able to at least wrap your head around how to create classism.
+
+01:56.490 --> 02:01.220
+First of all, what is a class and then how do we create objects from that class?
+
+02:01.230 --> 02:05.100
+And then how do we pass properties via the primary constructor?
+
+02:05.490 --> 02:09.210
+And how Kotlin makes it way easier to do so?
+
+02:09.630 --> 02:09.960
+All right.
+
+02:10.140 --> 02:15.420
+And we have this in its block where we can initialize some code that we want to prepare this class before
+
+02:15.420 --> 02:18.660
+it's before it's instantiated into an object.
+
+02:19.140 --> 02:23.610
+If this is the first time looking at object or any programming language, I take your time.
+
+02:23.850 --> 02:26.460
+This is a concept that usually for beginners.
+
+02:26.460 --> 02:31.380
+If you are a beginner, which I'm not assuming you are, but you may be, it may take a little while
+
+02:31.380 --> 02:33.000
+to really conceptualize idea.
+
+02:33.030 --> 02:33.300
+Right?
+
+02:33.310 --> 02:39.810
+So that's why I use the car example so that I can give you some ideas of what is it that we're trying
+
+02:39.810 --> 02:45.990
+to do when we talk about class, what what a class is and how to instantiate an object from that class,
+
+02:46.320 --> 02:47.310
+especially in codling.
+
+02:48.830 --> 02:53.810
+All right, so what I want you to do before you go to the next video is to do the same thing, think
+
+02:53.840 --> 02:58.670
+of another representation of a class so you can find in your life.
+
+02:59.240 --> 03:09.050
+So usually it comes from and noun like car, a person, a country, a noun can be represented as a class
+
+03:09.440 --> 03:11.570
+and then instantiated into an object.
+
+03:12.140 --> 03:14.760
+Think of other nouns or other objects that can.
+
+03:14.780 --> 03:20.930
+You can use and reverse engineer to create a class of and then create objects of that class.

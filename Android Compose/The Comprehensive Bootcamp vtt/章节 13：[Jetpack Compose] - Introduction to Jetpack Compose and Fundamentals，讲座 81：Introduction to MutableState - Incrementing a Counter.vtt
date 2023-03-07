@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00.700 --> 00:04.900
+So what do we want to do next is to be able to go to our circle or create a circle.
+
+00:05.230 --> 00:11.290
+You can say command enter to go to the definition or control be on windows, as you can see at the bottom
+
+00:11.290 --> 00:11.500
+here.
+
+00:13.060 --> 00:18.430
+And so what I want to do is when the circus is clicked, we don't want to just to show, what do we
+
+00:18.430 --> 00:19.010
+see here?
+
+00:19.030 --> 00:20.290
+We want to be able to do something.
+
+00:20.560 --> 00:23.950
+Ideally want to be able to increment this value here.
+
+00:25.390 --> 00:26.860
+So let's test things out first.
+
+00:28.770 --> 00:34.240
+We want to be able to increment a value, which means we need to create that value or that variable.
+
+00:34.260 --> 00:40.290
+So let's go inside still inside of our function here outside of our card and I'm going to Michel.
+
+00:40.290 --> 00:41.100
+I say Val.
+
+00:42.730 --> 00:46.030
+Let's say money counter.
+
+00:47.460 --> 00:50.730
+And so back to zero, that's the first initial value.
+
+00:50.790 --> 00:51.100
+OK.
+
+00:51.990 --> 00:53.820
+And so here what it can do.
+
+00:53.820 --> 00:55.900
+I can hopefully say something like this.
+
+00:56.820 --> 01:03.870
+Money counter is equal to money counter plus one.
+
+01:03.870 --> 01:08.940
+So each time that we click on this money counter, we are going to increase it.
+
+01:09.060 --> 01:14.520
+But of course, I'm going to have issue because of course I said Val, but this should be far so that
+
+01:14.520 --> 01:16.800
+we are able to mutate this, this immutable.
+
+01:17.670 --> 01:22.650
+So if you have Val, that's going to be immutable, meaning we can't change it, but VAR will change.
+
+01:22.650 --> 01:28.770
+It makes sense because we need something that changes and we still have an issue here or rather a warning.
+
+01:28.770 --> 01:30.300
+So let's have a look and see what's going to happen.
+
+01:30.780 --> 01:33.540
+It says he'll replace with operator assignment.
+
+01:33.540 --> 01:34.620
+So yes, let's do that.
+
+01:34.740 --> 01:35.760
+It's smarter this way.
+
+01:36.240 --> 01:40.290
+Either way would have worked, but this is succinct and that the way we should always do it.
+
+01:40.800 --> 01:41.970
+OK, let's run this.
+
+01:42.360 --> 01:46.980
+And actually, before we do that, let's go ahead and say logged again because we want to see, you
+
+01:46.980 --> 01:48.630
+know, cancel this value.
+
+01:48.630 --> 01:54.510
+So I'm going to go ahead and say my counter to see if it actually changes anything.
+
+01:54.520 --> 02:01.650
+Money counter today is OK and just going to say counter.
+
+02:04.370 --> 02:05.090
+All right, let's see.
+
+02:05.150 --> 02:05.960
+Let's go ahead and run.
+
+02:07.980 --> 02:14.250
+Let's go ahead and also open a console there, and I'm going to say, and when I look for a counter
+
+02:14.430 --> 02:17.670
+right to so we can see the results just for a counter.
+
+02:18.210 --> 02:19.500
+OK, let's go ahead and see.
+
+02:23.060 --> 02:27.080
+All right, so I keep clicking and I don't see anything, maybe I missed something.
+
+02:27.110 --> 02:27.510
+Let's see.
+
+02:27.530 --> 02:28.370
+Is that true?
+
+02:29.180 --> 02:29.750
+Let's see.
+
+02:31.440 --> 02:35.610
+Counter, okay, that's nice local one, and it works fine.
+
+02:36.000 --> 02:41.190
+OK, because we can see as we tap the value being incremented, that's fine.
+
+02:41.460 --> 02:46.380
+Now let's let's see something else here because the idea really, it's not to log these values, it
+
+02:46.380 --> 02:50.910
+is to hopefully see the changes somewhere in our UI.
+
+02:51.390 --> 02:57.270
+Let's change, for instance, this tab and say, instead of saying tab, I'm going to attach another
+
+02:57.270 --> 03:01.380
+variable here or in this case, money counter variable.
+
+03:01.410 --> 03:02.730
+Let's see what's going to happen now.
+
+03:02.970 --> 03:07.230
+So I'm going to go ahead and leave that as it is when I run this.
+
+03:08.800 --> 03:15.760
+So the idea is that as I tap, I should see my Nick Hunter also going up just like we saw here, right?
+
+03:18.570 --> 03:19.650
+Let's wait for a second.
+
+03:21.220 --> 03:22.630
+OK, let's try again.
+
+03:23.260 --> 03:23.650
+Click.
+
+03:24.660 --> 03:28.260
+We noticed that the counter works fine to.
+
+03:29.490 --> 03:30.810
+Three and so forth.
+
+03:30.840 --> 03:38.850
+However, when it comes to changing our tax here, we should say tap also incrementing right first one.
+
+03:39.820 --> 03:40.930
+And so forth.
+
+03:41.080 --> 03:45.910
+This tap money is the same variable that we are showing in our log here.
+
+03:47.610 --> 03:53.790
+Yet in our league, it's going up, but at the moment we attach to a composable a UI piece of you are
+
+03:53.790 --> 03:54.270
+here you are.
+
+03:54.300 --> 03:56.880
+We did, then we don't see that change.
+
+03:57.540 --> 03:58.530
+What is happening here?
+
+03:59.160 --> 04:06.210
+Well, this is an important concept that we really need to understand in compose, which is in order
+
+04:06.210 --> 04:15.840
+for us to see changes in our tax here or in this fight, in this case, in any other composable function,
+
+04:16.380 --> 04:17.040
+as you see here.
+
+04:17.820 --> 04:18.990
+This is not going to do it.
+
+04:19.230 --> 04:26.440
+The reason being is because whenever we want to change something inside of a composer, composable function
+
+04:26.440 --> 04:27.660
+in this case, a text, right?
+
+04:28.410 --> 04:36.390
+We need to redraw that composable, which means this text here has to be redrawn with the new value.
+
+04:37.050 --> 04:41.760
+And if you remember correctly what we talk about, between the difference between the imperative approach
+
+04:41.880 --> 04:51.300
+in Android versus the declarative approach in a declarative approach, we are passing data through the
+
+04:51.750 --> 04:56.680
+composable functions and then the composing function reacts to that data.
+
+04:56.700 --> 04:57.420
+That's the idea.
+
+04:57.660 --> 05:03.450
+So how do we make this to react to that data, which in this case mean to rerun itself, to redraw itself?
+
+05:03.660 --> 05:05.400
+By the way, this redrawing itself?
+
+05:05.940 --> 05:09.780
+It's called recomposition in compose, and we'll talk about that in a second.
+
+05:11.220 --> 05:16.980
+For that to happen, there's a special variables that we need to pass here or we need to create for
+
+05:16.980 --> 05:17.610
+this to happen.
+
+05:18.210 --> 05:24.900
+The special variable will create what it's called an internal state because we need this state so that
+
+05:24.900 --> 05:28.920
+we can control that something has changed that way.
+
+05:30.180 --> 05:34.620
+This composable text here will know my data.
+
+05:34.800 --> 05:35.760
+Money has changed.
+
+05:35.760 --> 05:41.550
+That means I have to withdraw myself, compose myself to show that new change.
+
+05:41.970 --> 05:42.480
+Interesting.
+
+05:42.570 --> 05:45.890
+That means then for, in our case here what I would need to do.
+
+05:45.900 --> 05:48.390
+I'm going to say VAR money counter.
+
+05:49.170 --> 05:50.700
+I'm going to use delegation here.
+
+05:50.700 --> 05:54.570
+I'm going to say by delegate this responsibility to some other class.
+
+05:54.570 --> 06:00.570
+We don't even have to know about, let's say, mutable state of like that.
+
+06:01.170 --> 06:06.180
+And this mutable state of I'm going to pass a value of zero in the beginning.
+
+06:07.620 --> 06:12.360
+So what are we doing now we are seeing this, my counter is going, it's not going to be just an integer,
+
+06:13.080 --> 06:14.580
+it's going to be something.
+
+06:15.650 --> 06:22.640
+That is wrapped into a state which is needed for us to be able to obviously hear.
+
+06:24.000 --> 06:31.060
+To recompose our texts, so it gets the correct value as we change, as the value is changed, obviously.
+
+06:31.080 --> 06:35.640
+So we're going to have some issues here because we need to import a few things.
+
+06:35.640 --> 06:38.200
+So just hover over like this.
+
+06:38.220 --> 06:42.060
+You can go ahead and import or you can just say alt or option enter.
+
+06:42.480 --> 06:44.760
+It's going to start importing everything we need.
+
+06:45.360 --> 06:50.880
+We imported that, but we need to keep importing until that is not right anymore.
+
+06:51.570 --> 06:53.010
+Now we have another problem here.
+
+06:53.460 --> 06:58.740
+If you have over, he's going to say OK, creating a state object recomposition without using, remember?
+
+06:59.280 --> 07:02.970
+So that's another concept here that needs to be addressed.
+
+07:03.750 --> 07:09.030
+The idea is that when state changes, obviously the UI must also change.
+
+07:10.280 --> 07:18.050
+That means then we need a way in which this function here composable will always remember the state.
+
+07:18.410 --> 07:21.740
+So that's what's happening here, so we need to actually say something like this.
+
+07:22.520 --> 07:26.640
+So I'm going to say here, buy and then put start writing here.
+
+07:26.660 --> 07:29.330
+Remember like this hit enter.
+
+07:29.930 --> 07:31.220
+You know, remember is a.
+
+07:32.210 --> 07:34.940
+So now we're going to take this mutable state.
+
+07:36.650 --> 07:38.930
+I've just put that inside there.
+
+07:39.140 --> 07:44.630
+So what I'm saying now is that, yes, we are going to create a multiple state of and we passed the
+
+07:44.630 --> 07:49.850
+value here they need, they need value is zero, which will be implied to say this is indeed an integer.
+
+07:50.630 --> 07:54.380
+And then we're going to have to remember that state and all that is going to be.
+
+07:55.340 --> 07:58.100
+And we are going to put all that value instead of my counter.
+
+08:00.000 --> 08:04.470
+So now this no longer is just an integer if you have a olver, says my country, isn't it?
+
+08:04.590 --> 08:09.640
+However, we wrapped it inside of a member as well as a mutable seed, which is really important.
+
+08:09.660 --> 08:12.120
+So now if you use my counter, things are going to work.
+
+08:12.240 --> 08:13.650
+So now let's see if this works.
+
+08:14.010 --> 08:15.210
+I'm going to go ahead and run this.
+
+08:17.000 --> 08:19.100
+OK, let's see if this is going to work.
+
+08:19.290 --> 08:25.460
+Remember, I still have counter here on debugging open if I click and you can see make this a little
+
+08:25.460 --> 08:33.110
+bit bigger, we can see that tap is one two and is working as intended.
+
+08:33.590 --> 08:38.570
+So what's happening here because we have that state attached to my counter and is being remembered?
+
+08:38.930 --> 08:39.990
+What's happening now?
+
+08:40.250 --> 08:48.620
+The text will know that, OK, this is being changed the moment that we click, as since it's been changed,
+
+08:48.620 --> 08:49.790
+the value is changing.
+
+08:50.300 --> 08:55.220
+And I will remember that because it's a remember because we have a state and it's going to be remembered.
+
+08:55.580 --> 08:56.370
+What happens now?
+
+08:56.720 --> 09:04.790
+This is being recompose, meaning it's being redrawn again each time that this value is changing.
+
+09:05.930 --> 09:09.980
+That's why we're able to see what's happened here, 10 and so forth.
+
+09:12.470 --> 09:18.500
+And just now you've learned the most important one of the most important concepts in compose, which
+
+09:18.500 --> 09:21.050
+means we need to have a state.
+
+09:22.180 --> 09:32.080
+For us to be able to see changes to update a user interface in this case, this text or any other composable
+
+09:32.980 --> 09:33.790
+function of their.
+
+09:35.450 --> 09:42.950
+So you see the difference here is that we have data and we passed that data through our widget.
+
+09:43.070 --> 09:44.480
+In this case, our campus function.
+
+09:44.780 --> 09:50.870
+And then that's when the compose function will then come to life or will update itself because it will
+
+09:50.870 --> 09:54.890
+know now it's time for me to update myself because I have new data.
+
+09:56.830 --> 09:58.330
+And that's why this is working now.
+
+09:58.630 --> 09:59.060
+Very good.
+
+09:59.080 --> 10:04.810
+So now we're going to take a little break and go and understand a few other concepts that surround this
+
+10:04.810 --> 10:06.500
+one concept we've learned, right?
+
+10:06.520 --> 10:11.260
+We need to understand a little bit more how this recompose because I've talked about recomposition and
+
+10:11.260 --> 10:11.710
+so forth.
+
+10:12.010 --> 10:13.960
+What is it and how all of that works?
+
+10:14.230 --> 10:19.060
+And then we're going to compare again the imperative approach versus the declarative approach, which
+
+10:19.060 --> 10:20.080
+is why are we using here?

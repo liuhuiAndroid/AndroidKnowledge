@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00.720 --> 00:07.560
+All right, so we've done a lot in this section, so we started by looking at the book detail so users
+
+00:07.560 --> 00:15.480
+can go to details and see exactly the book that, if clicked, the book that if search for, let's say,
+
+00:16.530 --> 00:23.790
+baking right and they can search books and go and they can see the details of that book.
+
+00:24.270 --> 00:31.260
+And most importantly, we also able to create ways in which we can retrieve books from our review model.
+
+00:31.260 --> 00:37.920
+We looked at produce state in order to produce this state inside of our composable so we can get the
+
+00:37.920 --> 00:39.240
+information from our review model.
+
+00:39.930 --> 00:42.180
+So we really do a lot of things here, OK?
+
+00:42.180 --> 00:48.990
+And we culminated the whole section with being able to save a book into our database.
+
+00:49.110 --> 00:53.100
+So now we're able to go and say, save this book and we can go back.
+
+00:53.280 --> 00:54.270
+Of course we see nothing.
+
+00:54.270 --> 01:00.540
+But if you go back to our database refresh, we are able to see that indeed, we save this book, this
+
+01:00.540 --> 01:01.080
+new book.
+
+01:02.070 --> 01:03.060
+I think this is the one.
+
+01:03.210 --> 01:05.270
+No, that's not the one.
+
+01:05.380 --> 01:07.060
+James Ferguson dishes, right?
+
+01:07.110 --> 01:10.320
+So this is the one we just save now, which is about baking.
+
+01:10.890 --> 01:11.220
+OK.
+
+01:11.250 --> 01:12.150
+So this is real good.
+
+01:12.450 --> 01:17.970
+So now what do we need to do is to be able to, of course, when we save something, all the books that
+
+01:17.970 --> 01:24.180
+we've saved, we want to be able to go back home and see, of course, the list of those books, right,
+
+01:24.180 --> 01:29.910
+at least in the reading list, because we add the book, we want to put them in this category until,
+
+01:29.910 --> 01:32.520
+of course, they click this category, book here.
+
+01:32.790 --> 01:35.350
+And then we change the status of the book.
+
+01:35.370 --> 01:39.030
+Then they're going to be in the Reading Now section.
+
+01:39.880 --> 01:40.890
+OK, so we're getting there.
+
+01:41.100 --> 01:42.840
+Our app is close to being done.
+
+01:43.170 --> 01:47.670
+We still have a little bit more work to do, which we are going to continue in the next session.

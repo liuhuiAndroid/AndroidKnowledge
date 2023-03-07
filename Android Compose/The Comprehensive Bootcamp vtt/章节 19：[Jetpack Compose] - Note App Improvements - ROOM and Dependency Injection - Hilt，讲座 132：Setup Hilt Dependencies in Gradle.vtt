@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.570 --> 00:03.150
+So let's go ahead and set up a hilt and dagger.
+
+00:03.540 --> 00:10.220
+So opening our project jet note, what are we going to do is let's go to our Gradle scripts there.
+
+00:10.230 --> 00:17.160
+We get the first one build like process project there, and we need to add a few things the first thing
+
+00:17.160 --> 00:19.110
+in 08 extant extension here.
+
+00:19.140 --> 00:19.470
+Right.
+
+00:20.430 --> 00:26.370
+I'm going to say helped underscore version and give it a value.
+
+00:27.090 --> 00:34.260
+So as the recording this video, so as a recording this lesson right now, the version is to die at
+
+00:34.980 --> 00:36.630
+thirty nine.
+
+00:36.960 --> 00:39.540
+At the time of this recording hild version is to that.
+
+00:39.540 --> 00:40.100
+39.
+
+00:40.350 --> 00:44.310
+OK, by the time you may be watching this video, it may be higher.
+
+00:44.310 --> 00:45.450
+So keep that in mind.
+
+00:46.020 --> 00:50.310
+All right, so we have these hill version that is going to be used in a second here.
+
+00:50.760 --> 00:53.730
+So right about here, all seats are for dependencies.
+
+00:53.730 --> 00:58.470
+I'm going to add another class here class path and exit class path like that.
+
+01:02.350 --> 01:11.350
+And I am going to write to the following I say, calm that Google, that dagger exactly as such and
+
+01:11.350 --> 01:23.830
+then Colin say Hilt Bash, Android Gradle plugin and then I can say here.
+
+01:28.890 --> 01:34.950
+Hilt version like that, so it's going to go ahead and pull this version that we added, they revealed.
+
+01:35.520 --> 01:37.980
+Now you may ask, So where do I get this information?
+
+01:37.980 --> 01:39.480
+How do I know what to type here?
+
+01:39.510 --> 01:45.840
+Well, well, if you go to Google and type Android hilt like this, you will get most likely the first
+
+01:45.840 --> 01:46.440
+page here.
+
+01:46.630 --> 01:47.580
+OK, so click on that.
+
+01:47.730 --> 01:49.560
+That's from developer that Android.
+
+01:49.920 --> 01:51.030
+And here we are.
+
+01:51.600 --> 01:57.060
+So here says dependency injection with health, so we can actually read more about Hild and how to use
+
+01:57.060 --> 01:57.210
+it.
+
+01:57.690 --> 02:00.300
+But most importantly, if you scroll down, it's going to tell you here.
+
+02:01.140 --> 02:03.330
+So it will tell you exactly what you need to pass.
+
+02:03.630 --> 02:08.640
+So it says here in our build script dependencies, you will have to add this class paths.
+
+02:08.650 --> 02:09.940
+In fact, again, a copy that.
+
+02:09.960 --> 02:13.550
+That's exactly what we have to our dependencies.
+
+02:13.560 --> 02:20.770
+Make sure we are inside of this first build that gradle, the project there, and it's going to be exactly
+
+02:20.770 --> 02:21.120
+the same.
+
+02:21.120 --> 02:22.650
+What I've added, I'm just going to show you.
+
+02:22.920 --> 02:25.170
+So as you can see, it says something like that.
+
+02:25.500 --> 02:29.280
+If you copy and paste from there, this is a squiggly line.
+
+02:29.280 --> 02:32.820
+You're going to get to say this is not the correct version or there is a newer version.
+
+02:32.820 --> 02:37.530
+So what you can do can either click there and say change two two three nine like this?
+
+02:37.770 --> 02:41.340
+So I just want to show you where I get these dependencies.
+
+02:41.790 --> 02:44.070
+OK, so this is the same thing as what we have here.
+
+02:44.310 --> 02:48.960
+It's just that I put the hild version at the top here, so I can call it.
+
+02:49.800 --> 02:50.090
+All right.
+
+02:50.730 --> 02:51.120
+Very good.
+
+02:52.860 --> 02:57.430
+So coming back again, you can scroll down and there's other things we need to do.
+
+02:57.450 --> 03:02.200
+You noticed that a type of uses plugins, so we need to also pass if you plug ins.
+
+03:02.220 --> 03:03.570
+These two have to be passed.
+
+03:03.570 --> 03:11.610
+So I'm going to copy these like that and make sure it says here, then apply the Gradle plugin and add
+
+03:11.610 --> 03:12.930
+these dependency in your app.
+
+03:13.080 --> 03:14.040
+Build that Gradle.
+
+03:14.790 --> 03:16.050
+So I need to go to our app.
+
+03:19.860 --> 03:26.280
+So this one here, jedno, that app double click and at the top, you could see something like this.
+
+03:26.610 --> 03:29.610
+So I'm going to add that inside those too.
+
+03:30.600 --> 03:30.960
+All right.
+
+03:31.680 --> 03:33.690
+Let's go back and see what else can we do?
+
+03:35.900 --> 03:40.070
+There get so next thing we need to do is to go ahead and sink our project.
+
+03:41.930 --> 03:47.690
+OK, so when you think you may have this problem, says the hilt Android Gradle plugin is applied,
+
+03:47.810 --> 03:52.460
+but no come Google Dagger hilt dependency was found.
+
+03:52.580 --> 03:53.270
+What does that mean?
+
+03:53.330 --> 03:54.200
+We missed something.
+
+03:54.410 --> 03:59.780
+Let's go back to our help here, says we added this plugins.
+
+03:59.780 --> 04:00.380
+Wonderful.
+
+04:00.560 --> 04:03.380
+However, we forgot to add these other dependencies here.
+
+04:03.770 --> 04:12.470
+So what I need to do is copy all of this to here copy and I'm going to go down here where it says dependencies.
+
+04:13.630 --> 04:20.470
+So anywhere around here, what I like to do usually is I like to add comment, say hilt.
+
+04:23.330 --> 04:28.460
+Dagger like this or I know the dependencies that I'm adding right there we have it, so now it's going
+
+04:28.460 --> 04:30.680
+to say, OK, something is now right change to.
+
+04:32.390 --> 04:36.220
+Now you notice here there's a version is the same because it's hilt, right?
+
+04:36.230 --> 04:39.910
+It's the same as the version that we created earlier, right?
+
+04:40.130 --> 04:44.900
+So it can actually invoke the hilt and the score version here.
+
+04:47.410 --> 04:47.630
+Right.
+
+04:47.750 --> 04:50.690
+Because we've added skilled version.
+
+04:52.170 --> 04:53.910
+There, so I can't invoke that.
+
+04:53.970 --> 04:57.690
+It's much easier, so I have one place where I have everything there.
+
+04:58.140 --> 04:59.700
+OK, the same thing I can do here.
+
+05:01.620 --> 05:04.890
+Held a version like this, in fact, it completes for you as well.
+
+05:06.570 --> 05:14.010
+OK, that's another step, so it's important to follow these steps as they show here, because otherwise
+
+05:14.310 --> 05:16.680
+you may end up running into issues as you saw.
+
+05:17.280 --> 05:19.980
+So now we're ready to try again or sink.
+
+05:21.830 --> 05:27.680
+OK, this looks like everything went well and no errors, so that's good, so we have now set up all
+
+05:27.680 --> 05:31.400
+the dependencies that we need so that we can actually start using health.

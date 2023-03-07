@@ -1,0 +1,139 @@
+WEBVTT
+
+00:01.260 --> 00:06.690
+So in order for us to be able to get the information about the weather, we need an API.
+
+00:06.870 --> 00:10.590
+We need a service that will send or give us that information.
+
+00:10.920 --> 00:14.820
+And so to do that, we're going to use open weather map that.
+
+00:14.820 --> 00:19.350
+Org so he can go to home that open weather and map that as such.
+
+00:19.650 --> 00:25.260
+So in order to get access to the API where we can retrieve the information about the weather you, you'll
+
+00:25.260 --> 00:26.160
+have to create an account.
+
+00:26.400 --> 00:27.040
+It's very simple.
+
+00:27.080 --> 00:28.070
+Just add your email.
+
+00:28.080 --> 00:29.190
+I already have an account.
+
+00:30.210 --> 00:31.530
+So in this case, let's go back.
+
+00:31.770 --> 00:35.910
+So in this case here, I'm saying out, you will have to sign in, click sign in.
+
+00:35.910 --> 00:40.530
+If you don't have an account and add your email and whatever they need to create an account.
+
+00:40.530 --> 00:45.430
+In fact, you can go here, create an account, add your email password and so forth.
+
+00:45.480 --> 00:45.790
+OK.
+
+00:45.960 --> 00:46.650
+It's very easy.
+
+00:46.950 --> 00:48.660
+And then you log in.
+
+00:48.970 --> 00:50.610
+OK, so I'm going to go ahead and sign in.
+
+00:52.290 --> 00:53.610
+And once you sign in.
+
+00:54.480 --> 00:59.700
+So once you sign in, you're going to be able to see these dashboards so you have services, all the
+
+00:59.700 --> 01:01.650
+services they provide and so forth.
+
+01:01.980 --> 01:04.100
+And most importantly, you have this API key.
+
+01:04.110 --> 01:07.590
+So you need an API key in order for this to work.
+
+01:07.590 --> 01:13.740
+In order for you to be able to make those network calls to get the weather right, forecast and so forth.
+
+01:13.950 --> 01:15.320
+So this is your key.
+
+01:15.330 --> 01:16.110
+This is my key.
+
+01:16.120 --> 01:20.430
+So should not use this one, but you need to create your own in order to use it.
+
+01:20.460 --> 01:26.060
+So go ahead and create your own API key at the to just create an account and you should get an API key.
+
+01:26.070 --> 01:31.920
+Once you get that API key, you need to save it somewhere safe so that we can use it when it's time.
+
+01:32.890 --> 01:33.250
+All right.
+
+01:33.370 --> 01:34.210
+Again, remember.
+
+01:34.420 --> 01:40.540
+Go to open weather, map, open weather, dot org and create an account and create that API.
+
+01:40.750 --> 01:45.430
+Now the other thing you can see here, if you go to pricing, there's a caveat here.
+
+01:45.790 --> 01:50.170
+So for pricing, depending on what you want to do.
+
+01:50.440 --> 01:53.890
+Obviously, we just want to do some something like 60 calls per minute.
+
+01:54.310 --> 01:55.690
+We wanted this column here.
+
+01:55.690 --> 02:01.540
+So we're going to focus on getting the API, in fact, to get the API for me here, as you see here,
+
+02:01.540 --> 02:04.330
+you go to the pricing and say, get API.
+
+02:04.480 --> 02:06.760
+You want the free API because you don't want to pay.
+
+02:06.770 --> 02:07.360
+We're just testing.
+
+02:07.370 --> 02:14.440
+I would recommend to do the free get API free here and you can see the stipulation says 60 calls per
+
+02:14.440 --> 02:16.650
+minute I million calls a month.
+
+02:16.660 --> 02:17.680
+It's going to be free now.
+
+02:17.680 --> 02:21.760
+If you end up having more than that, then you're going to have to pay.
+
+02:22.360 --> 02:26.440
+So the free tier is totally fine and that's where you should go for it.
+
+02:26.980 --> 02:29.500
+OK, so come here, get API key.
+
+02:29.860 --> 02:35.170
+You will have to sign up or signing depending on your status, and then you should get your API key.

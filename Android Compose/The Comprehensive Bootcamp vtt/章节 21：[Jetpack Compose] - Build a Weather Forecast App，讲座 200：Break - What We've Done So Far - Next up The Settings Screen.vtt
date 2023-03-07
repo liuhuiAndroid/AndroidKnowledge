@@ -1,0 +1,106 @@
+WEBVTT
+
+00:00.910 --> 00:09.900
+All right, so we again finished another part of our application here, so we're able to add the saving
+
+00:10.170 --> 00:12.250
+properties, the saving seeds here.
+
+00:12.270 --> 00:17.280
+So click on a button, click on this icon there to save a city.
+
+00:17.400 --> 00:23.580
+So now we were able to not only see all the favorites, but also see all the seeds that we have saved
+
+00:23.850 --> 00:24.600
+as favorites.
+
+00:24.840 --> 00:29.430
+And so when they click on those seeds, they can either delete them or they can.
+
+00:29.430 --> 00:36.000
+Also, when click the city row, they can go back to our main activity, or they can go back to a main
+
+00:36.000 --> 00:39.420
+screen and see the weather forecast for that city.
+
+00:40.160 --> 00:40.500
+All right.
+
+00:40.770 --> 00:47.220
+So we also added the visual kind of the clues, such as the toast message, to make sure that when they
+
+00:47.220 --> 00:49.020
+save, of course, the seeds saved.
+
+00:49.590 --> 00:55.200
+The users can see that toast message to see to say that, OK, indeed, they have saved something daughter
+
+00:55.200 --> 00:59.430
+base and also made sure that no seed can be saved twice.
+
+00:59.430 --> 01:04.620
+Even though we know that the structure we have for this strategy in our database that we have set up
+
+01:04.920 --> 01:12.570
+is that if something is added twice, then it just points to danger, just goes and overrides that item.
+
+01:12.870 --> 01:19.260
+But it's always nice to give that visual clue to the user, even though we know in the back end everything
+
+01:19.260 --> 01:19.710
+is set up.
+
+01:19.950 --> 01:28.230
+So now, if the seed already exists in the database and we don't see the the favorite icon showing there,
+
+01:28.230 --> 01:31.110
+which means they can't really see something they already have.
+
+01:32.020 --> 01:32.710
+OK, very good.
+
+01:33.190 --> 01:38.500
+So we are really getting close to finalizing this entire application, this awesome application.
+
+01:38.800 --> 01:40.090
+Hopefully, you're learning a lot.
+
+01:40.420 --> 01:46.000
+What do we need to do next to finish everything is we're going to look at these settings screen.
+
+01:46.030 --> 01:52.600
+The idea is very simple, which is we're going to change or allow users to change between Celsius,
+
+01:52.900 --> 02:00.550
+which is the metric system and Fahrenheit, which is the imperial unit system unit of measurement,
+
+02:00.790 --> 02:01.270
+if you will.
+
+02:01.720 --> 02:08.110
+So we're going to use a database to do so, although because it's such a small piece of data, we could
+
+02:08.110 --> 02:13.810
+have used something less less large per say, less complicated.
+
+02:13.810 --> 02:19.180
+But because we have a database already, I just figured let's just use that is just going to make things
+
+02:19.180 --> 02:19.990
+much simpler.
+
+02:20.350 --> 02:24.220
+And you are already well versed with databases.
+
+02:24.220 --> 02:25.120
+So it's just easy.
+
+02:25.600 --> 02:30.490
+It's just a matter of adding a new table that will hold these units and go from there.
+
+02:30.850 --> 02:38.110
+OK, so we're going to create that structure so users can actually see either in Celsius or in Fahrenheit.
+
+02:40.020 --> 02:41.190
+All right, let's go ahead and do that.

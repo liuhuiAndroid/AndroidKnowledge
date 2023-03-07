@@ -1,0 +1,595 @@
+WEBVTT
+
+00:00.300 --> 00:07.680
+So we've added our email input, and now here we're going to add yet another input or another text field.
+
+00:08.160 --> 00:14.370
+This is going to be called password input and we haven't created that.
+
+00:14.370 --> 00:15.090
+That's fine.
+
+00:15.390 --> 00:16.890
+And we're going to pass a few things.
+
+00:16.900 --> 00:20.730
+It's going to be pretty much the same what we had before, but there's some differences here.
+
+00:20.730 --> 00:27.750
+So I'm going to say modifier, for instance, and for modifying was a modifier that I'm going to pass
+
+00:27.750 --> 00:28.500
+the focus.
+
+00:31.590 --> 00:34.500
+Focus requests, so this means, like I said before.
+
+00:35.010 --> 00:37.650
+Let me give us some more space.
+
+00:38.040 --> 00:43.320
+It's going to get the focus of the moment that we are done with IMO input right on keyboard actions.
+
+00:43.500 --> 00:46.320
+The focus will go directly to our password input.
+
+00:46.890 --> 00:49.290
+OK, so this is how we pass it along.
+
+00:49.650 --> 00:51.990
+So notice this password request focus request.
+
+00:52.350 --> 01:00.540
+We're created here as a default request, but then we are then passing it along to request to request
+
+01:00.540 --> 01:01.110
+that focus.
+
+01:01.380 --> 01:07.170
+And then we need to pass that object along here to say that, OK, when this email input they hit on
+
+01:07.170 --> 01:09.720
+action, keyboard enter or whatever they do next.
+
+01:10.140 --> 01:14.220
+They are going to see the focus going to our password input.
+
+01:15.030 --> 01:20.970
+Next, we're going to pass the password state, I should call it, and it's going to save password,
+
+01:21.960 --> 01:26.680
+right and then label it.
+
+01:27.420 --> 01:31.910
+It's going to be password enabled.
+
+01:32.310 --> 01:32.910
+Be true.
+
+01:32.910 --> 01:33.630
+To begin with.
+
+01:33.630 --> 01:34.650
+We're going to change this.
+
+01:35.040 --> 01:35.750
+And then it goes.
+
+01:35.790 --> 01:39.840
+Password visibility is immutable state, of course.
+
+01:40.650 --> 01:42.840
+Capacity, password visibility.
+
+01:43.670 --> 01:46.950
+Going to check that out in a moment, you know, an action.
+
+01:47.490 --> 01:55.660
+The keyboard actions lambda there in that here is I'm going to put an if statement.
+
+01:55.770 --> 01:59.730
+I say if you need a valid password, it's not valid.
+
+01:59.730 --> 02:05.640
+That is when I just go ahead and return whatever the keyboard actions are set up and then I'm going
+
+02:05.640 --> 02:13.950
+to call the on done method here, which should then I'm going to pass the email value and I'm going
+
+02:13.950 --> 02:20.400
+to trim that value just to get rid of all the unnecessary spaces and so forth and pass the password.
+
+02:20.670 --> 02:23.250
+Also, the value and treating that as well.
+
+02:23.730 --> 02:26.940
+OK, now there's a lot of scripted now.
+
+02:26.940 --> 02:30.940
+There's a lot of things going on here, but we will decipher everything, right?
+
+02:30.960 --> 02:34.290
+Let's go ahead and create this password input there.
+
+02:34.740 --> 02:36.480
+Create a composable at the bottom here.
+
+02:36.780 --> 02:37.380
+And voila!
+
+02:37.410 --> 02:42.240
+If you do that, you can see, then we don't need to go through the trouble of having to pass all of
+
+02:42.240 --> 02:44.750
+these parameters ourselves.
+
+02:44.760 --> 02:45.570
+So this is really good.
+
+02:45.570 --> 02:53.880
+In fact, it can also out option enter and put on a separate lines like this and beautiful saves us
+
+02:53.880 --> 02:54.420
+a lot of work.
+
+02:54.720 --> 02:57.300
+There's one more detail to pass here, which is Almy.
+
+02:57.300 --> 03:05.040
+Action was I am e action that done so I'm going to show just done, as did button on keyboard.
+
+03:05.790 --> 03:11.130
+So inside here is where we're going to actually do the same thing we did before them and say, outline
+
+03:11.490 --> 03:13.820
+TextView and what a pass.
+
+03:13.830 --> 03:20.190
+Of course, our password state and on value change here accepts a lambda, thankfully.
+
+03:20.400 --> 03:28.860
+And what I'm going to do is, let's say, password state that a value gonna give it and we're going
+
+03:28.860 --> 03:30.720
+to add the it.
+
+03:32.530 --> 03:33.850
+Like this looks like.
+
+03:34.090 --> 03:34.520
+Right?
+
+03:34.540 --> 03:38.350
+So this has to be the value is going to get the value like this.
+
+03:38.440 --> 03:44.950
+Then we can get to the I.T. like the actual string that will be coming from our text field.
+
+03:46.600 --> 03:51.370
+OK, so we're going to do the same thing really a lot of repetition, but I guess this is how we learn.
+
+03:52.300 --> 04:00.400
+And let's see here I'm going to pass the label and I'm going to pass text label I.D..
+
+04:02.870 --> 04:06.170
+Single line, single line, the bullion.
+
+04:06.200 --> 04:11.450
+I'm going to say true, I want this to be a single line Muscat textile here.
+
+04:12.720 --> 04:21.440
+Uh, give it a font size of about 18 HP color again.
+
+04:21.530 --> 04:23.360
+Good material theme.
+
+04:27.310 --> 04:29.050
+Callers on background.
+
+04:32.490 --> 04:36.720
+Pass on my fire first to modify that we have upstairs.
+
+04:37.270 --> 04:42.280
+I'm going to pass the padding bottom again, 10 deep.
+
+04:44.340 --> 04:56.310
+Start 10 DP and worst 10 DP as such, all right, and then fill Max with just want to get the whole
+
+04:56.310 --> 05:01.170
+width and let's say, enabled, I want to pass enabled.
+
+05:03.100 --> 05:08.440
+This guy, their keyboard options, keyboard tie.
+
+05:10.360 --> 05:18.100
+Keyboard type, password and army action and pass that one along.
+
+05:18.460 --> 05:23.890
+And the great thing about these outlying text field, there are a lot of arguments we can pass if you
+
+05:23.890 --> 05:26.320
+have over all of this stuff, right?
+
+05:26.770 --> 05:29.660
+We've passed, most of them line a single line.
+
+05:29.680 --> 05:33.250
+Actually, we passed only this single line keyboard types options.
+
+05:33.550 --> 05:36.820
+Now there is this visual transformation that we can pass.
+
+05:36.970 --> 05:43.920
+This will allow us to transform visually what users can see or cannot see within this outline text field.
+
+05:43.930 --> 05:46.270
+So we're going to use that, especially for our password.
+
+05:46.900 --> 05:55.130
+So right after this guy there, I'm going to just put a comma and then I'm going to say visual transformation.
+
+05:55.180 --> 06:04.390
+So it needs a visual transformation type one passive visual trends for nation variable like this?
+
+06:04.690 --> 06:06.460
+Let's go ahead and create that at the top here.
+
+06:06.760 --> 06:08.620
+Two separate things a little bit.
+
+06:09.850 --> 06:11.050
+So at the top of our
+
+06:14.020 --> 06:18.370
+function, let's say vowel visual transformation.
+
+06:19.180 --> 06:28.390
+I'm going to say if password visibility right, that value is true to say that value like that and when
+
+06:28.390 --> 06:33.240
+it's just go ahead and call visual transformation, that none, right?
+
+06:33.280 --> 06:35.590
+Because in this case, everything is good.
+
+06:36.850 --> 06:43.900
+Else I'm going to say password visual transformation like this, if you have over what is this?
+
+06:44.230 --> 06:50.230
+Well, says the visual filter that can be used for password input field and we can continue, let's
+
+06:50.230 --> 06:52.900
+say I want to add a trailing icon.
+
+06:53.010 --> 06:57.320
+And this is, of course, a trailing lambda.
+
+06:57.340 --> 06:58.150
+No pun intended.
+
+06:58.330 --> 07:05.020
+So in this case, here we're going to pass another composable called password visibility, which we
+
+07:05.020 --> 07:06.460
+haven't created yet.
+
+07:06.610 --> 07:08.470
+And then I'm going to pass the password.
+
+07:09.040 --> 07:13.180
+Visibility like such, it's going to be equal to password visibility.
+
+07:13.180 --> 07:17.980
+So I'm just setting it up with this Boolean password or visibility, or we're going to be passing their
+
+07:18.070 --> 07:19.180
+password visibility.
+
+07:19.190 --> 07:20.590
+What is I want to happen.
+
+07:20.980 --> 07:22.330
+What's happening with this?
+
+07:23.170 --> 07:30.100
+Well, what we want to do here inside is as follow us, we're going to create a visible variable here.
+
+07:30.100 --> 07:33.790
+I'm going to say a password visibility just to get that, that value.
+
+07:34.090 --> 07:40.060
+OK, and then I'm going to add in icon buttons when I say icon like this button?
+
+07:43.010 --> 07:50.720
+And when that is clicked in this case and when I say password visibility, this value mutable state,
+
+07:50.720 --> 07:59.180
+that value, I'm going to say is not set that to not visible, so not visible like this.
+
+07:59.570 --> 08:05.930
+And instead of a lambda here, I'm just going to pass passing icons that default, that close.
+
+08:06.320 --> 08:12.110
+So for our password input, also, I have this on action that it's not being used or set up.
+
+08:12.110 --> 08:18.830
+So let's go ahead and actually say keyboard default action just like we did before with all the other
+
+08:18.830 --> 08:19.100
+ones.
+
+08:20.360 --> 08:24.560
+All right, now we're going to have an issue here because if you look at it where we call it password
+
+08:24.560 --> 08:26.930
+input, we have this down on done so.
+
+08:27.050 --> 08:32.600
+This is just like a callback function that it will take in the email and the password.
+
+08:32.640 --> 08:32.900
+Right?
+
+08:33.290 --> 08:38.420
+So when they click done or next in the keyboard, we want to give it all that information.
+
+08:38.930 --> 08:44.090
+So that means then in our user form here, there are a few parameters we are going to pass because we
+
+08:44.090 --> 08:47.270
+want to obviously process this information.
+
+08:47.570 --> 08:53.570
+The first parameter I'm going to pass, it's I'm going to call this loading and it's going to be a Boolean
+
+08:54.140 --> 08:55.700
+and it's going to be false.
+
+08:55.760 --> 08:58.550
+In the beginning, we'll see that in the second and then I'm going to pass.
+
+08:58.550 --> 09:01.220
+Another one call is create a count.
+
+09:02.630 --> 09:08.180
+It's going to be a Boolean to because we're going to reuse this same form in different cases, some
+
+09:08.360 --> 09:10.370
+boolean and make it false.
+
+09:10.850 --> 09:11.210
+OK.
+
+09:11.450 --> 09:12.230
+As a default.
+
+09:12.620 --> 09:14.150
+And then we're going to pass it on.
+
+09:14.150 --> 09:14.690
+Done.
+
+09:16.650 --> 09:23.580
+Here, method and this is going to create, well, passing as two strings, right, the email and the
+
+09:23.580 --> 09:27.600
+password like that, and then we can have us return a unit.
+
+09:27.690 --> 09:32.670
+So this is the done, the method that we're going to be using, as you see here.
+
+09:33.400 --> 09:37.500
+For now, let's just go ahead and say empty like that.
+
+09:37.500 --> 09:38.610
+So preview can work.
+
+09:39.360 --> 09:42.610
+So this one down here is where it's going to be called right here.
+
+09:42.630 --> 09:49.980
+We passed the email because it says we need to pass two strings passwords just so that we still have
+
+09:49.980 --> 09:50.850
+this preview to work.
+
+09:53.000 --> 09:54.650
+Looks like he needs everything.
+
+09:54.680 --> 09:55.400
+OK, there we go.
+
+09:56.510 --> 09:57.710
+All right, we'll change that, of course.
+
+09:57.710 --> 10:02.150
+We just want to make sure that our previous work, so it must pass, we must pass something there,
+
+10:02.780 --> 10:03.050
+right?
+
+10:03.920 --> 10:06.680
+So this is the only one that will be called.
+
+10:06.740 --> 10:08.270
+So you see here we have enabled.
+
+10:08.270 --> 10:11.750
+So our enabled here we set it to true, we need to do something about it.
+
+10:12.140 --> 10:17.270
+But if you look at the top here, we see that we have this floating variable that we passed or parameter
+
+10:17.270 --> 10:18.140
+in this case, right?
+
+10:18.620 --> 10:19.550
+So what is this for?
+
+10:19.580 --> 10:24.200
+Well, this is going to be for our log in button or create account button, as you will see later.
+
+10:24.560 --> 10:31.840
+The idea is we want later to check to see if we want to make this button enabled or disabled, right,
+
+10:31.940 --> 10:37.580
+depending on the information that we're putting in our email and password fields like the input itself.
+
+10:38.120 --> 10:45.620
+So this is important because then we can check whether the loading is true and if that's true and the
+
+10:45.620 --> 10:47.870
+inputs are valid, then what are we going to do?
+
+10:47.960 --> 10:50.420
+We can then change the state of this button.
+
+10:51.950 --> 10:58.850
+OK, so we are going to pass that loading along here, I'm going to toggle it and we say the opposite
+
+10:58.850 --> 11:01.220
+of what's happening to say, loading a section.
+
+11:01.940 --> 11:06.890
+And that happens also with our password input.
+
+11:07.460 --> 11:09.340
+This is for our password input, let's say.
+
+11:10.160 --> 11:15.140
+Also for our input email input that is so loading like this?
+
+11:16.660 --> 11:18.490
+We'll see in a second how all of that works.
+
+11:18.820 --> 11:21.550
+Let's go and see, I think everything is set up.
+
+11:21.580 --> 11:22.510
+Let's go ahead and run.
+
+11:22.660 --> 11:25.630
+And hopefully we can see something in our screen.
+
+11:25.870 --> 11:32.620
+I believe a reader, of course, nothing is showing there, I think is because I haven't called the
+
+11:32.620 --> 11:34.600
+user form where.
+
+11:34.720 --> 11:37.600
+Yes, you guessed it user.
+
+11:38.350 --> 11:41.800
+And I need to pass a few arguments here for loading.
+
+11:41.800 --> 11:43.460
+Let's say it's false.
+
+11:43.870 --> 11:44.230
+Right?
+
+11:44.740 --> 11:46.570
+And then is create account.
+
+11:46.570 --> 11:51.070
+In this case, I'm also going to say false.
+
+11:52.060 --> 11:53.320
+So we see a few things.
+
+11:53.590 --> 11:55.960
+And of course, we have a trailing lambda here.
+
+11:56.260 --> 12:02.040
+This is where we're going to have our email, access, our email and password, right?
+
+12:02.920 --> 12:04.870
+And for now, I'm going to just log D.
+
+12:05.250 --> 12:07.470
+I say email form.
+
+12:07.570 --> 12:13.210
+And of course, I'm going to have an issue here because of course, this user form is using that experimental
+
+12:13.210 --> 12:15.760
+compose UI, and we have to add that.
+
+12:15.790 --> 12:23.380
+So I'm going to go ahead and add that to our reader log in screen so we can see things working this
+
+12:24.220 --> 12:24.970
+change like that.
+
+12:25.060 --> 12:28.660
+OK, so now let's see if this works right again.
+
+12:31.930 --> 12:34.260
+And let's see, Angela.
+
+12:35.020 --> 12:36.830
+OK, we have this, too, if you click.
+
+12:36.850 --> 12:37.420
+There we go.
+
+12:37.420 --> 12:43.450
+We can put an email and you see because I can put at and so forth, code and password.
+
+12:43.810 --> 12:46.960
+And then of course, I can add my password and as you click.
+
+12:47.380 --> 12:49.300
+Now, of course, there are a few problems here.
+
+12:50.080 --> 12:53.250
+First of all, we have this space in between.
+
+12:53.290 --> 12:54.340
+That's not a problem.
+
+12:54.340 --> 12:59.830
+The world will change all of that in a second, but at least we could see that most of it is working.
+
+13:00.200 --> 13:02.680
+So next, we are going to, of course.
+
+13:03.710 --> 13:07.610
+Take care of the spacing issue and also add the buttons and so forth.
+
+13:07.850 --> 13:12.860
+This add on keyboard actions and going to pass on action like this.
+
+13:12.950 --> 13:13.310
+All right.
+
+13:13.520 --> 13:15.170
+So that everything is set up correctly.
+
+13:15.410 --> 13:15.730
+OK.
+
+13:15.770 --> 13:16.530
+Should be all good.
+
+13:17.270 --> 13:20.060
+Let's remove all of this, of course.
+
+13:21.880 --> 13:30.490
+And put it somewhere else in this case, let's go back to our components just to have a place where
+
+13:30.490 --> 13:34.750
+we can have all of these little components live.
+
+13:35.080 --> 13:41.740
+And of course, back here, we have to import all of this and all this good, and I promise we will
+
+13:41.740 --> 13:42.930
+finish this and move on.
+
+13:42.940 --> 13:46.570
+But it's an important concept that I'm trying to show you here.
+
+13:47.020 --> 13:48.190
+All right, I'll see you next.

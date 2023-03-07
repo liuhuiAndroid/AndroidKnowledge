@@ -1,0 +1,529 @@
+WEBVTT
+
+00:01.460 --> 00:03.380
+So let's solve the issue we have here.
+
+00:03.840 --> 00:11.360
+Our our card, our circle posé is taking up the entire space in our surface, which is not what we want.
+
+00:12.170 --> 00:18.140
+So what we can do actually, and this is going to help us because in the long run, that's what we want
+
+00:18.140 --> 00:22.820
+to do in a way because we want to make sure that we have another composable in this case and that a
+
+00:22.820 --> 00:24.350
+widget on top here, right?
+
+00:25.100 --> 00:30.260
+What we want to do is to wrap our circle inside of another composable.
+
+00:30.810 --> 00:31.120
+OK.
+
+00:31.730 --> 00:32.930
+So what would that be?
+
+00:32.960 --> 00:35.300
+Well, that composable is going to be a column.
+
+00:35.390 --> 00:40.610
+We want to be able to have widgets that are from top to bottom that are lined up vertically.
+
+00:40.880 --> 00:47.600
+What I can do really here is I'm going to put inside of a column because that's what I need to enter.
+
+00:48.080 --> 00:52.370
+And then we're going to get our friend here.
+
+00:52.370 --> 00:58.880
+If you just say command shift and arrow up control plus shift plus Arrow app on Windows.
+
+00:59.210 --> 01:06.620
+It's going to take this entire line of code inside of column, just like that, if I go ahead and rerun
+
+01:06.620 --> 01:07.430
+this real quick.
+
+01:07.970 --> 01:10.070
+We'll see that if you changes will happen.
+
+01:10.610 --> 01:15.600
+One important change that is and they will go now you can see instead of taking the entire space, it
+
+01:15.630 --> 01:16.430
+wouldn't put a column.
+
+01:16.670 --> 01:20.240
+It reduces the size to the correct size, which is exactly what we want.
+
+01:20.750 --> 01:21.890
+Now we still have a problem here.
+
+01:21.890 --> 01:24.380
+We want this button to be in the middle of the screen.
+
+01:25.120 --> 01:30.830
+This is going to be in the middle of our surface because this indeed is the outer canvas where everything
+
+01:30.830 --> 01:32.600
+is being laid out.
+
+01:33.530 --> 01:39.740
+So if you have all over again our column here, you will see it's a composable and we have that modifier.
+
+01:40.100 --> 01:47.450
+But most importantly, we can now align things vertically or arrange things vertically, as well as
+
+01:47.450 --> 01:49.760
+arranged things horizontally.
+
+01:50.360 --> 01:55.880
+This is really helpful because that means we have a lot of control of whatever we put inside of our
+
+01:55.880 --> 01:56.300
+column.
+
+01:57.020 --> 02:01.670
+So let's go ahead and say I want to still vertically, so say for that.
+
+02:01.820 --> 02:06.290
+Wait a second vertical arrangement so I can arrange vertically by passing.
+
+02:07.820 --> 02:08.570
+Arrangement.
+
+02:09.730 --> 02:14.530
+Like this, I want this to be center, so there are a few options.
+
+02:14.620 --> 02:18.190
+There's top the center, there's bottom and so forth.
+
+02:18.250 --> 02:20.680
+So we're going to see a center like this.
+
+02:21.100 --> 02:23.710
+And let's go ahead and run away quick and we'll see what's going to happen.
+
+02:25.500 --> 02:25.970
+Aha!
+
+02:26.010 --> 02:26.820
+It is, senator.
+
+02:27.090 --> 02:33.600
+Yes, however, however, it was said, firstly, we want this to be center so vertically.
+
+02:33.630 --> 02:34.830
+It is indeed in the middle.
+
+02:35.010 --> 02:36.120
+If we go top to bottom.
+
+02:36.810 --> 02:40.260
+But we also want to horizontally be in the middle.
+
+02:40.530 --> 02:41.250
+How do we do this?
+
+02:41.580 --> 02:46.380
+Well, we're going to go ahead and say horizontally, let's put a comma there.
+
+02:48.450 --> 02:49.530
+I say horizontally.
+
+02:49.980 --> 02:50.880
+I said a line.
+
+02:51.240 --> 02:56.580
+I want centre horizontally like this if we run this again.
+
+03:01.210 --> 03:05.800
+And voila, now the button is indeed in the middle of the screen, which is exactly where we want.
+
+03:07.150 --> 03:12.340
+Now, remember, I'm passing inside of my app here, which is being called.
+
+03:14.090 --> 03:21.600
+You know, I said content and my app as a composable, we have a surface and inside of the surface.
+
+03:21.690 --> 03:25.200
+This is the surface with this color inside of a surface.
+
+03:25.200 --> 03:30.510
+We added a column and we made sure that everything or anything that is inside of his column is going
+
+03:30.510 --> 03:35.580
+to be vertically arranged center and center or horizontally arranged horizontally.
+
+03:36.030 --> 03:37.170
+That's why we get there.
+
+03:38.570 --> 03:38.960
+Very good.
+
+03:39.260 --> 03:43.100
+And of course, inside of our column, that's where we create the sort of what we call critics circle,
+
+03:43.100 --> 03:46.370
+which is indeed this composable here.
+
+03:46.850 --> 03:53.420
+And right away, you can see that indeed we have everything in the middle as well because we just previewing.
+
+03:53.630 --> 04:01.570
+We've now passed the my app, which contains the surface and we're passing.
+
+04:01.580 --> 04:05.840
+There's a column there and then we have and then we're calling the create circle.
+
+04:06.260 --> 04:06.860
+And there you have it.
+
+04:07.310 --> 04:08.660
+So next, what is or what to do?
+
+04:08.690 --> 04:11.590
+Well, next, we want to pass by the top here.
+
+04:11.600 --> 04:13.550
+What it can do, actually, it can go straight in.
+
+04:13.580 --> 04:17.960
+Put a text right in this text here will say what?
+
+04:18.230 --> 04:20.990
+Well, I want this to say hello.
+
+04:21.470 --> 04:22.550
+And it's text here.
+
+04:22.730 --> 04:23.900
+I can say text.
+
+04:23.990 --> 04:27.050
+Now there's another thing to notice.
+
+04:27.170 --> 04:33.350
+Very interesting here is that we can actually pass named arguments here, and it's really a good idea
+
+04:33.350 --> 04:38.720
+to pass name arguments because especially when we sort of passing a lot of arguments into our composable
+
+04:38.720 --> 04:43.400
+here, things get a little bit chaotic if we don't add these named arguments.
+
+04:43.700 --> 04:43.940
+OK?
+
+04:44.120 --> 04:44.780
+You don't have to.
+
+04:44.780 --> 04:47.000
+In fact, you can just go ahead and just say something like this.
+
+04:47.000 --> 04:48.620
+Hello, and that still works.
+
+04:48.830 --> 04:56.480
+But it's a good idea to always pass the actual argument to name something like this and then pass the
+
+04:56.480 --> 04:58.040
+values to data in this case.
+
+04:59.030 --> 05:01.610
+So for now, I'm just going to go ahead and say, 100 like this.
+
+05:01.760 --> 05:02.750
+Of course it's going to be.
+
+05:03.440 --> 05:05.660
+Of course, this is going to be inside of double quotes.
+
+05:05.690 --> 05:07.700
+Oops, let's go ahead and refresh.
+
+05:09.410 --> 05:10.010
+And there we go.
+
+05:10.100 --> 05:12.950
+So it's hard to see, but there it is.
+
+05:15.320 --> 05:21.200
+And we have our tap button, which is a button now because we made it clickable and then we have the
+
+05:21.200 --> 05:22.190
+text there.
+
+05:23.710 --> 05:28.660
+Now, imagine that we want to put some sort of space between this circle and this text.
+
+05:29.170 --> 05:29.860
+How do we do this?
+
+05:30.760 --> 05:37.060
+Well, there is a specific composable that we can use called spacer like, say, space or like this.
+
+05:37.360 --> 05:38.800
+Again, you can pass a modifier.
+
+05:39.310 --> 05:42.100
+The modifier in this case could be a few things.
+
+05:42.100 --> 05:43.540
+So I'm going to say modifier.
+
+05:43.660 --> 05:46.450
+Let's go ahead and just type it all out on fire.
+
+05:46.750 --> 05:53.380
+And because I want the height of this modifier and because I want to make sure let's go back this,
+
+05:53.770 --> 05:55.030
+let's go back again here.
+
+05:55.420 --> 06:02.920
+I want to make sure that the height right between this widget and the next one.
+
+06:03.430 --> 06:04.510
+There's some sort of separation.
+
+06:04.510 --> 06:08.410
+So the more height I have, the more separation I get.
+
+06:08.830 --> 06:11.080
+That's why I can then go see my modifier.
+
+06:12.880 --> 06:13.690
+That height.
+
+06:15.450 --> 06:20.580
+And give it value, let's say, of very deep.
+
+06:22.380 --> 06:22.950
+So refresh.
+
+06:24.300 --> 06:24.990
+And they go.
+
+06:25.170 --> 06:28.050
+You can see there is that space that we need.
+
+06:28.260 --> 06:35.460
+So the more space we give and sort of 100 and see, the greater this number is in our height, the more
+
+06:35.460 --> 06:36.210
+space we'll get.
+
+06:36.870 --> 06:40.500
+So we have a things set up as we want to look and feel good.
+
+06:40.860 --> 06:47.040
+Let's go ahead and run one more time onto our emulator so we can see exactly how all of this transpired.
+
+06:47.340 --> 06:47.760
+There we go.
+
+06:47.790 --> 06:50.520
+We have our app is working and look, well, good.
+
+06:50.730 --> 06:54.540
+But you noticed that the text is really small here.
+
+06:54.540 --> 06:55.980
+We want to make this a little bit bigger.
+
+06:56.250 --> 06:57.000
+How do we do that?
+
+06:57.540 --> 06:59.690
+Well, funny, you ask.
+
+06:59.700 --> 07:01.410
+We can go inside of attacks here.
+
+07:01.560 --> 07:06.990
+If you have over again instead of a text to remember, this is still a composable function we can pass.
+
+07:07.080 --> 07:08.900
+Of course, the text would pass the string.
+
+07:08.910 --> 07:12.060
+There it is, but we can also pass other arguments.
+
+07:13.160 --> 07:15.710
+That's the beauty, again of compose here.
+
+07:16.550 --> 07:18.290
+Of course, we know we have the modifier.
+
+07:18.320 --> 07:23.000
+Our good friend, we can pass the color, font, size, font style and so forth.
+
+07:23.540 --> 07:26.190
+But you see that the last one we have here is style.
+
+07:26.210 --> 07:29.480
+This is more free form way of styling our text.
+
+07:29.720 --> 07:31.130
+I'm going to use that so I can show you.
+
+07:31.550 --> 07:39.590
+So I'm going to say, comma, I'm going to put style and we can pass a textile type again.
+
+07:39.590 --> 07:42.380
+So same textile like this.
+
+07:42.710 --> 07:47.630
+And you can see we have textile default in many other we have there.
+
+07:47.630 --> 07:48.500
+It's textile.
+
+07:48.740 --> 07:54.920
+And you can see if I hit enter in sort of a textile, we can pass all kinds of arguments.
+
+07:55.010 --> 07:56.480
+Oh, this is beautiful.
+
+07:56.510 --> 07:59.540
+So we can really customize our text to our liking.
+
+07:59.870 --> 08:00.740
+Look at all of this.
+
+08:01.700 --> 08:01.970
+All right.
+
+08:02.720 --> 08:05.190
+So in this case, here I can go and change the color.
+
+08:05.210 --> 08:11.090
+I can probably say would enter into your line and see color and set color.
+
+08:11.120 --> 08:16.730
+I'm going to use this color here and then I want this to be white.
+
+08:17.930 --> 08:18.470
+OK?
+
+08:18.950 --> 08:22.160
+And then I can see options space.
+
+08:23.000 --> 08:25.970
+And then I can say font size.
+
+08:27.210 --> 08:29.190
+Right, or font size and let's say, 19?
+
+08:29.520 --> 08:32.420
+And now I'm going to use a different unit, which is as P.
+
+08:32.700 --> 08:37.950
+OK, so whenever you want to use font sizes, ESP is the recommended.
+
+08:37.950 --> 08:42.480
+So I'm going to say alt or option enter to import SB Library.
+
+08:42.510 --> 08:42.990
+There we go.
+
+08:43.890 --> 08:45.880
+And now if I run this.
+
+08:46.920 --> 08:47.280
+There we go.
+
+08:47.520 --> 08:51.600
+It's 100 still small so we can play, let's say, thirty nine.
+
+08:51.930 --> 08:52.740
+That's much better.
+
+08:53.100 --> 08:53.370
+OK.
+
+08:53.430 --> 08:55.080
+Because we just change it.
+
+08:55.080 --> 08:57.060
+Style an attribute here.
+
+08:57.060 --> 09:00.240
+You notice that we didn't have to run everything to see the changes.
+
+09:00.570 --> 09:01.370
+This looks great.
+
+09:01.380 --> 09:03.120
+Maybe 30.
+
+09:04.970 --> 09:07.610
+Maybe 35 can play with this forever.
+
+09:07.850 --> 09:08.640
+OK, so there we go.
+
+09:08.660 --> 09:09.440
+It looks real good.
+
+09:09.650 --> 09:13.130
+And we can make it bold and say font weight.
+
+09:14.120 --> 09:18.050
+Then I have to say font weight and then go get bold.
+
+09:18.380 --> 09:24.470
+The other thing I can do, I can start typing bold like this, and the idea will actually give the option
+
+09:24.680 --> 09:25.880
+for bold or extra.
+
+09:25.880 --> 09:28.820
+But let's say extra bold, because we're feeling extra today.
+
+09:29.240 --> 09:30.470
+OK, let's go ahead and run this.
+
+09:32.410 --> 09:32.700
+OK.
+
+09:32.740 --> 09:33.220
+There it is.
+
+09:33.670 --> 09:36.490
+So we were able to put together this user interface.
+
+09:36.670 --> 09:41.650
+OK, so it's very simple, but at least, but at least is going to guide us understand how things will
+
+09:41.710 --> 09:42.850
+work, how to compose.
+
+09:43.270 --> 09:44.050
+No pun intended.
+
+09:44.050 --> 09:46.510
+How to compose a nice user interface, as you see here.
+
+09:46.810 --> 09:52.300
+Now, obviously, the whole idea is that we want to make sure that when we tap as we tap this button,
+
+09:52.300 --> 09:53.220
+we made this a button.
+
+09:53.230 --> 09:53.950
+It's just a circle.
+
+09:54.340 --> 09:56.230
+We want to increase this number here.
+
+09:56.380 --> 09:56.680
+Right.
+
+09:56.680 --> 09:58.510
+We'll start zero and go from there.
+
+09:59.320 --> 10:01.300
+And that's all going to be doing in the next video.

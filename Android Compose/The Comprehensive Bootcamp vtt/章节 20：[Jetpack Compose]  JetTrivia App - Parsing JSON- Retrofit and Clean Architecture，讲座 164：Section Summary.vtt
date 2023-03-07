@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00.190 --> 00:06.000
+All right, so we learn a lot in this section, we built a trivia app from scratch.
+
+00:06.000 --> 00:07.420
+There's a lot of moving parts.
+
+00:07.920 --> 00:15.180
+We learn about clean architecture, how to further set up our apps for success in many ways.
+
+00:15.750 --> 00:18.980
+And we also learn about how to price data.
+
+00:19.260 --> 00:24.300
+Jason data, of course, using retrofit library and other libraries that come with it.
+
+00:25.260 --> 00:30.690
+And of course, we improved our user interface design using compose.
+
+00:31.140 --> 00:37.260
+Now, this is not a final application, meaning there are a lot of things you can do and add to it to
+
+00:37.260 --> 00:40.290
+make it your own and improve upon it as an exercise.
+
+00:40.290 --> 00:42.510
+So that's what I would recommend you do.
+
+00:43.020 --> 00:49.380
+But for now, thank you so much for your time, and I hope you learned something from this section and
+
+00:49.380 --> 00:55.980
+I hope that you, if anything, you got inspired to go out there and learn more about compose and how
+
+00:55.980 --> 00:57.570
+to build awesome apps.
+
+00:58.710 --> 01:00.480
+Very well, thank you, and I'll see you next time.

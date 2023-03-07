@@ -1,0 +1,793 @@
+WEBVTT
+
+00:00.180 --> 00:01.660
+All this work dead now.
+
+00:01.680 --> 00:06.300
+You notice that there is no way for us to really get rid of the keyboard.
+
+00:06.330 --> 00:08.130
+Of course, you can click here and goes away.
+
+00:08.550 --> 00:15.840
+But I want to be able to when I'm writing here, when we hit done or check mark down here, we want
+
+00:15.840 --> 00:20.820
+to be able to get rid of our keyboard so we can focus on whatever else we have in there.
+
+00:21.300 --> 00:25.860
+Well, luckily we can do that because we have our keyboard controller.
+
+00:26.220 --> 00:31.380
+So when is that going to happen or when do we use this keyboard controller to hide our keyboard?
+
+00:31.770 --> 00:35.400
+Well, that's going to happen right after I was submit button.
+
+00:35.670 --> 00:38.910
+Or actually, I should say when the submit button is clicked.
+
+00:40.170 --> 00:47.730
+So here, right after we have on done is sent via email and the passwords are sent over again, say
+
+00:47.730 --> 00:48.330
+keyboard.
+
+00:49.850 --> 00:53.570
+Controller and then not hide like this.
+
+00:54.560 --> 01:01.490
+Of course, we have to go ahead and surround with Noel, check or replace with safe call like this.
+
+01:01.790 --> 01:02.330
+And voila!
+
+01:03.230 --> 01:05.090
+OK, now who run this?
+
+01:06.950 --> 01:10.850
+And I put something gibberish there and there are gibberish.
+
+01:11.540 --> 01:12.920
+Go ahead and say, log in.
+
+01:12.980 --> 01:15.190
+Notice the moment we said, log in.
+
+01:15.200 --> 01:17.840
+This goes away, which is exactly what we want.
+
+01:19.220 --> 01:19.460
+All right.
+
+01:19.460 --> 01:24.110
+So now we are going to look at the sign up, right logic.
+
+01:25.460 --> 01:29.120
+So let me look, let me show you what that will look like.
+
+01:29.130 --> 01:30.800
+So the sign up will be something like this.
+
+01:30.800 --> 01:36.260
+So there are a few differences, but the main thing here is that we'll have the same structure.
+
+01:36.440 --> 01:43.130
+So this is why we've set up things the way we've set up because we want to be able to check if the user
+
+01:43.130 --> 01:47.570
+is clicking or the user in this case is trying to log in.
+
+01:47.840 --> 01:49.130
+You notice the difference here.
+
+01:49.130 --> 01:53.180
+Actually put this together side by side you see here, says new user.
+
+01:53.180 --> 01:54.860
+Sign up, they click Sign up.
+
+01:55.250 --> 01:56.840
+This should show, right?
+
+01:57.230 --> 02:03.500
+And then it's going to also change to log in because in this case, they can revert back to log in screen.
+
+02:03.980 --> 02:07.490
+So we're going to do this real quick so that we have this option here now.
+
+02:07.490 --> 02:10.820
+We could have created a total different screen for each one of these.
+
+02:11.060 --> 02:18.780
+But this is actually clever and the best way to do this, because then we can reuse these components
+
+02:18.800 --> 02:21.650
+with these composable and show them on the same screen.
+
+02:22.130 --> 02:22.430
+OK.
+
+02:23.270 --> 02:23.570
+All right.
+
+02:23.630 --> 02:25.040
+OK, let's go ahead and do this.
+
+02:25.610 --> 02:27.860
+So inside of a reader, log in.
+
+02:28.040 --> 02:30.470
+This is where we calling our user form.
+
+02:31.310 --> 02:39.440
+And outside there, I'm just going to create a variable called show log in form, and it's going to
+
+02:39.440 --> 02:40.210
+be a remember.
+
+02:40.210 --> 02:42.860
+I can use this savable like this.
+
+02:46.020 --> 02:47.460
+And get rid of all of that.
+
+02:48.330 --> 02:51.420
+In this case, it's going to be a mutable state of.
+
+02:51.840 --> 02:54.420
+And let's give it true first.
+
+02:55.560 --> 02:55.840
+OK.
+
+02:56.040 --> 03:00.180
+To say that in the beginning is going to be true to show the log in form.
+
+03:01.850 --> 03:03.860
+Let's put this in one line.
+
+03:04.810 --> 03:09.080
+They're now inside here.
+
+03:09.380 --> 03:14.780
+Before we even at this point, we're just showing the user form, but again, we want to check to see
+
+03:15.110 --> 03:19.490
+if we want to show the user form or not.
+
+03:19.880 --> 03:23.540
+So I'm going to wrap all of this inside of if statement.
+
+03:23.540 --> 03:28.370
+So if and show log in form, it's a mutable state song.
+
+03:28.370 --> 03:29.240
+I say value.
+
+03:30.200 --> 03:36.920
+If it's true, then I'm going to say, of course, this is going to be valid to show this show user
+
+03:36.920 --> 03:37.310
+form.
+
+03:37.310 --> 03:37.940
+And that's good.
+
+03:38.720 --> 03:38.990
+OK.
+
+03:41.060 --> 03:44.900
+And let me get rid of all of this for now, because we no longer need that.
+
+03:46.870 --> 03:48.650
+We'll work later there.
+
+03:49.370 --> 03:49.670
+All right.
+
+03:49.670 --> 03:57.680
+So else if that's another case, meaning that the show log in for show lagging form is not true.
+
+03:58.130 --> 04:05.540
+That means we want to show the, I'm going to say user form, but now we're going to pass a different
+
+04:06.080 --> 04:07.280
+set of arguments.
+
+04:07.730 --> 04:11.630
+First of all, the loading in this case, I'm going to say it's going to be false.
+
+04:12.060 --> 04:12.440
+Right?
+
+04:13.280 --> 04:19.730
+And then is create a count now is going to be true because we no longer we're going to be showing the.
+
+04:21.050 --> 04:25.100
+The log in this is going to be create a council user, create account.
+
+04:25.610 --> 04:26.390
+It's going to be true.
+
+04:30.530 --> 04:34.610
+And then here, of course, we're going to have the same thing where we had there, so I'm going to
+
+04:34.610 --> 04:36.860
+just copy all of that.
+
+04:36.980 --> 04:38.570
+This is our trailing lambada.
+
+04:39.380 --> 04:42.660
+OK, so here is what I'm going to do the work.
+
+04:42.680 --> 04:48.080
+We're not there yet because we need to create, account, say to do create.
+
+04:49.850 --> 05:02.300
+AFB for Firebase, I count this, and in our case here, we are going to also say to do half the logging
+
+05:02.650 --> 05:04.880
+in AFB for Firebase, not Facebook.
+
+05:06.410 --> 05:06.800
+Very good.
+
+05:07.010 --> 05:12.470
+So we're still inside of all of our reader log in screen, so we still here, by the way.
+
+05:12.860 --> 05:14.150
+So what do we need to do next?
+
+05:14.180 --> 05:17.570
+Well, next, we're going to create this structure here.
+
+05:17.630 --> 05:24.290
+Yes, because we want to give the users the chance to say, Well, if you can't log in because you don't
+
+05:24.290 --> 05:26.140
+have an account, we can go ahead and sign up.
+
+05:26.150 --> 05:29.390
+So it's created this, well, I'm going to go down.
+
+05:30.200 --> 05:32.150
+So right outside of.
+
+05:34.000 --> 05:38.750
+Our column, right, so right there, I'm going to put Errol.
+
+05:39.220 --> 05:45.310
+Actually, sir, with a space service, I want to give some space between somebody's fire when I give
+
+05:45.310 --> 05:47.390
+a height of about 15 dpi.
+
+05:47.860 --> 05:48.120
+OK?
+
+05:48.910 --> 05:50.470
+And then let's add a row.
+
+05:51.340 --> 06:01.000
+So in this row here, I'm going to pass a modifier as well as a modifier modifier and give it padding,
+
+06:01.420 --> 06:05.710
+and it's going to be about 15 dpi overall padding.
+
+06:07.030 --> 06:10.090
+And let's say horizontal arrangement.
+
+06:10.720 --> 06:17.080
+I want this to be center and vertical alignment.
+
+06:17.350 --> 06:19.540
+I'm going to be also center vertically.
+
+06:20.320 --> 06:20.620
+All right.
+
+06:20.710 --> 06:23.410
+So we are going to create this structure there.
+
+06:23.740 --> 06:28.870
+It's going to be a row because you have to text once it's user the I want, they sign up.
+
+06:32.260 --> 06:40.300
+Now I'm going to say foul text here and this text is going to contain some values, depending on the
+
+06:40.300 --> 06:40.900
+situation.
+
+06:40.900 --> 06:45.370
+So you see, earlier it was showing you depending where we are.
+
+06:46.030 --> 06:52.030
+All things considered, we can show sign up if we are talking about logging in because the user can
+
+06:52.030 --> 06:55.050
+say, Well, I can't log in because I don't have a log in or I have an account.
+
+06:55.480 --> 06:58.360
+In that case, I will have to create an account so they can go to sign up.
+
+06:58.810 --> 07:04.480
+But if they are in the logging page, well, it is the same page or it is the same screen with just
+
+07:04.480 --> 07:06.790
+swiping things here, the logic, right?
+
+07:07.360 --> 07:11.980
+And so then they will have access to the log in because they want to go back to this logging because
+
+07:11.980 --> 07:13.240
+they can't, right?
+
+07:13.240 --> 07:14.440
+They already have an account.
+
+07:15.410 --> 07:16.730
+OK, so that is the case.
+
+07:16.730 --> 07:18.760
+So I'm going to put that in a variable.
+
+07:18.760 --> 07:25.480
+The text that is put out instead of if statement and it will save show log in form, that value is true.
+
+07:25.840 --> 07:32.800
+Well, in that case, the text we're going to add is going to say, sign up like this else.
+
+07:33.040 --> 07:35.770
+Well, that means we going to see log in.
+
+07:36.430 --> 07:43.840
+Next, I'm going to add a text here, and I'm going to say new user like this.
+
+07:45.850 --> 07:53.320
+And they want to create another text that will then have our text that we passed at the top, this one.
+
+07:54.130 --> 07:54.390
+OK.
+
+07:55.000 --> 08:01.540
+And because they have the same name, I can just remove the argument name and this works.
+
+08:06.100 --> 08:07.960
+Let's pass a modifier here.
+
+08:09.520 --> 08:14.560
+We're going to make this, first of all, clickable, because remember, I want this to be clickable
+
+08:14.560 --> 08:18.790
+so that when they click, they can go to the create account and vice versa.
+
+08:20.460 --> 08:23.370
+That's the beauty here with a modifier, we can make anything clickable.
+
+08:23.850 --> 08:31.050
+So when this is clickable, what we want to do, we actually want to change the value of our show log
+
+08:31.050 --> 08:39.240
+in form because that is what is going to determined whether or not we want to show this or this.
+
+08:41.200 --> 08:41.860
+Does it make sense?
+
+08:42.250 --> 08:45.340
+OK, we'll see that someone said show log in form and remember.
+
+08:46.000 --> 08:46.470
+Let's go.
+
+08:46.480 --> 08:47.940
+So again, show log in for me.
+
+08:47.950 --> 08:49.200
+See, this is a mutable state.
+
+08:49.210 --> 08:54.730
+We did this on purpose because we wanted to have that state and we can then pass it around.
+
+08:54.730 --> 08:58.050
+And then the composable is going to react, right?
+
+08:58.060 --> 09:00.340
+Recompose, according to this new state.
+
+09:01.390 --> 09:01.740
+All right.
+
+09:01.750 --> 09:04.650
+So show log form that value.
+
+09:04.660 --> 09:06.990
+We're going to toggle it right between true and false.
+
+09:07.000 --> 09:11.910
+So we put the exclamation point and then show log in form value again
+
+09:15.130 --> 09:15.420
+section.
+
+09:15.910 --> 09:21.130
+So you click it first time it's going to, if it sign up, are going to change to log in if you click
+
+09:21.130 --> 09:21.430
+back.
+
+09:21.460 --> 09:22.660
+It's going to change to sign up.
+
+09:23.170 --> 09:29.170
+And while that happens, we can also check obviously later to see what is the value of show logging.
+
+09:29.170 --> 09:30.790
+And in fact, we've done that already.
+
+09:31.150 --> 09:32.560
+So we have this logic here.
+
+09:32.560 --> 09:40.400
+If this true the show log in, then we know that we need to, then we know we need to log in the user.
+
+09:40.840 --> 09:45.970
+Else we're going to show that form, but we're going to have some things that are different and we are
+
+09:45.970 --> 09:46.750
+going to create the user.
+
+09:47.530 --> 09:57.190
+OK, so let's pass it padding and start on about five dpi.
+
+09:58.690 --> 10:02.080
+So I'm going to give this padding from left to right.
+
+10:02.440 --> 10:07.300
+Give that space there and fight.
+
+10:07.680 --> 10:10.240
+Wait, Seybold.
+
+10:12.930 --> 10:22.650
+And passing a color material theme colors and let's say, secondary variant.
+
+10:23.460 --> 10:23.640
+OK.
+
+10:27.490 --> 10:31.900
+All right, let's see if our logic works because we have been working for a little bit.
+
+10:31.960 --> 10:32.800
+Let's run this.
+
+10:35.820 --> 10:37.680
+OK, there go our entry.
+
+10:38.430 --> 10:39.060
+And voila!
+
+10:39.240 --> 10:40.140
+This is very nice.
+
+10:40.230 --> 10:41.310
+Looks good.
+
+10:41.370 --> 10:43.360
+Now if I click on, sign up.
+
+10:43.390 --> 10:45.840
+Aha, you see, it's changed the create account.
+
+10:46.290 --> 10:49.020
+If I go back to log in, then it's going to change the log.
+
+10:49.110 --> 10:50.370
+This is good, right?
+
+10:50.610 --> 10:54.120
+Because now we are in log in page per se.
+
+10:54.660 --> 10:56.710
+That means the user can log in, right?
+
+10:56.790 --> 11:01.290
+But if they realize I can't log in because I don't have an account, they can go ahead and sign up and
+
+11:01.290 --> 11:05.880
+we change the button to create a account, which means then whatever happens here, it's going to be
+
+11:05.880 --> 11:08.160
+taken for creating an account.
+
+11:08.910 --> 11:14.310
+Now to finalize also notice we have this text that we need to add as well, depending on the situation.
+
+11:14.310 --> 11:17.220
+So when we creating account, we do have this text here.
+
+11:17.250 --> 11:19.530
+Let's go ahead and add that text before we move forward.
+
+11:20.460 --> 11:27.230
+So inside of our user form, because this text is going to be attached to the user form, right?
+
+11:28.140 --> 11:29.760
+Let's go and add.
+
+11:30.270 --> 11:31.200
+So in our column?
+
+11:33.500 --> 11:35.570
+Here, right on top.
+
+11:36.620 --> 11:37.490
+I'm going to say if.
+
+11:40.000 --> 11:48.340
+Is Create account is true, then the text that I'm going to show you here now, I can add the text directly,
+
+11:48.340 --> 11:55.930
+but I can also add all of that in our resources so I can say resource string a resource such in past
+
+11:55.940 --> 11:57.460
+aid and when they are God.
+
+11:59.490 --> 12:08.640
+Strains that in this case, I probably have to import to the R class, so have access to the resources.
+
+12:09.180 --> 12:11.400
+And this add apt name.
+
+12:12.210 --> 12:14.030
+But that's not where we want, but there it is.
+
+12:14.040 --> 12:18.810
+Let's go ahead and click and here I'm going to actually create another string.
+
+12:18.900 --> 12:21.330
+Remember, here is the strings that smell.
+
+12:21.330 --> 12:25.560
+This is where you want to add all the strings that will be part of your application.
+
+12:25.560 --> 12:31.110
+So it's a really good idea because then if you want, for instance, to create a different version of
+
+12:31.110 --> 12:34.450
+these strings in four different languages, it's easier to have in one place.
+
+12:34.530 --> 12:39.900
+So this is the recommended wait on the string and then the name here is going to be,
+
+12:42.840 --> 12:49.410
+as you say, create a city like this and I have the text and it's going to say something like.
+
+12:51.040 --> 12:56.800
+Please enter a valid email and password.
+
+12:59.840 --> 13:00.560
+That is.
+
+13:03.310 --> 13:04.150
+At least.
+
+13:10.630 --> 13:18.220
+Six characters are S. So now they have it in our string that accept mail.
+
+13:18.250 --> 13:21.270
+By the way, all of that is actually down here.
+
+13:21.280 --> 13:26.560
+If you go to resources, you go to values, go to strings SML example.
+
+13:27.430 --> 13:34.870
+So now in here, I can go ahead and get that string, which is create a account, I believe.
+
+13:35.380 --> 13:37.390
+Yeah, great act like that.
+
+13:38.470 --> 13:40.950
+It's much easier this way and cleaner.
+
+13:40.960 --> 13:47.110
+And so I can pass a style while it's actually passing modifier here.
+
+13:48.390 --> 13:54.760
+All right, at fire, I'm going to give it padding around over about four dpi.
+
+13:55.630 --> 14:01.090
+OK, so if that's the case, this is the tax we're going to show else else.
+
+14:01.090 --> 14:03.730
+I'm just going to have a text that is empty like this.
+
+14:04.360 --> 14:09.370
+So the idea is that if we are in the create account, we're going to see this message.
+
+14:09.970 --> 14:12.370
+Otherwise, it's just going to not have anything.
+
+14:14.120 --> 14:14.530
+OK.
+
+14:14.900 --> 14:20.780
+All right, let's go ahead and run this quick so we can see the fruits of our work.
+
+14:23.700 --> 14:24.250
+Ha ha.
+
+14:24.300 --> 14:26.490
+Looks like we have some issues here.
+
+14:28.380 --> 14:30.750
+Looks like right here we are.
+
+14:30.840 --> 14:32.040
+Log in.
+
+14:32.370 --> 14:34.380
+Yes, because we're using some of the.
+
+14:36.840 --> 14:45.210
+Experimental compose uses, so it requires us to add that as well, so I'm going to add that to the
+
+14:45.210 --> 14:48.180
+reader in navigation altogether, so we can see that is out of there.
+
+14:48.660 --> 14:51.330
+So that's what's needed and we're going to run again.
+
+14:52.740 --> 14:54.390
+Hopefully now things should work.
+
+14:56.410 --> 15:03.010
+Yes, we need to do that again, because everywhere you call a composable that require that experimental
+
+15:03.010 --> 15:07.180
+compose you are, you would need to pass that along, which is a little bit annoying if you ask me,
+
+15:07.180 --> 15:09.940
+because we should just be able to call it once and be good.
+
+15:09.950 --> 15:12.190
+But that's what we have right now.
+
+15:12.190 --> 15:14.230
+So we just have to deal with it.
+
+15:14.410 --> 15:15.160
+It's fine again.
+
+15:15.790 --> 15:18.160
+Hopefully, this time should be good.
+
+15:19.560 --> 15:20.490
+Yes, we have.
+
+15:21.810 --> 15:23.160
+This is what I'm talking about.
+
+15:23.790 --> 15:25.620
+All right, let's do that again.
+
+15:25.950 --> 15:26.430
+Thank you.
+
+15:26.460 --> 15:32.220
+Google, let's add this to the main activity as such and this one one more time.
+
+15:33.930 --> 15:35.970
+OK, it looks like this time will should be good.
+
+15:38.380 --> 15:42.670
+And there you have it, that nice animation, and voila.
+
+15:42.730 --> 15:43.030
+Good.
+
+15:43.330 --> 15:46.200
+OK, let's see if this works, so sign up wildlife.
+
+15:46.300 --> 15:48.110
+Please enter a valid email and password.
+
+15:48.130 --> 15:51.610
+Eight At least six characters I could log in and I see nothing.
+
+15:54.500 --> 16:00.950
+Now, look how wonderful this is, so you remember earlier we actually added this form inside of a scrollable,
+
+16:01.250 --> 16:10.850
+because exactly this depending on how things are set up, we say that this area here, we added, gave
+
+16:10.850 --> 16:12.320
+it a certain height.
+
+16:12.680 --> 16:20.660
+Now the moment that we add more than what we want, more than more than what this area can take, it
+
+16:20.660 --> 16:22.000
+gives us that squirrel ability.
+
+16:22.010 --> 16:26.030
+So this is very helpful, especially if we have more information.
+
+16:26.030 --> 16:27.860
+So now use users can scroll up and see.
+
+16:27.980 --> 16:33.230
+Of course, it looks a little tacky in our case here because it doesn't really make much sense or it
+
+16:33.230 --> 16:34.190
+looks just terrible.
+
+16:34.490 --> 16:40.730
+But if you had more, say more feel that he had to deal with and so forth, so you can see that this
+
+16:40.820 --> 16:42.100
+will be very helpful, OK?
+
+16:42.350 --> 16:44.480
+So just wanted to point that one out.
+
+16:44.990 --> 16:48.800
+But yes, things are working and this is very nice.
+
+16:49.130 --> 16:57.410
+So the main idea here to take away is that we could have created different pages or different screens,
+
+16:57.410 --> 17:03.170
+but that's just not necessary because we were using all of our composable, which is exactly what do
+
+17:03.170 --> 17:04.040
+you need to be doing?
+
+17:04.220 --> 17:07.370
+You can't reuse your code, so you don't have to repeat yourself.
+
+17:08.000 --> 17:08.300
+Right?
+
+17:08.690 --> 17:15.050
+So this is really nice because now, depending on the situation, if I go back to my code, I will know
+
+17:15.050 --> 17:17.150
+exactly what need to happen, what needs to happen.
+
+17:17.630 --> 17:20.570
+Let's go to reader login screen where we call it.
+
+17:20.990 --> 17:23.030
+Here is where the magic happens.
+
+17:23.450 --> 17:28.460
+So now, depending on who's situation, whether the login form is true, that is being shown, we're
+
+17:28.460 --> 17:31.490
+going to go ahead and write the code that will log in the user.
+
+17:31.760 --> 17:35.150
+Otherwise, this person is actually wanting to create an account.
+
+17:35.330 --> 17:37.550
+So we're going to write a code to create that account.
+
+17:37.820 --> 17:40.040
+All of that using this same form.
+
+17:40.760 --> 17:42.020
+How cool is that?
+
+17:42.030 --> 17:49.130
+You should be very happy and excited because you've just created something that is very useful and I'm
+
+17:49.130 --> 17:49.880
+happy for you.
+
+17:50.300 --> 17:51.430
+All right, thank you.
+
+17:51.440 --> 17:52.790
+I'll see you next.

@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00.120 --> 00:06.090
+Now that we have the infrastructure for logging and critical and setup, it is time for us to actually
+
+00:06.090 --> 00:09.060
+allow users to create accounts and or log in.
+
+00:09.300 --> 00:11.490
+This is what we're going to be doing in the next videos.
+
+00:12.150 --> 00:13.440
+OK, let's go ahead and get started.

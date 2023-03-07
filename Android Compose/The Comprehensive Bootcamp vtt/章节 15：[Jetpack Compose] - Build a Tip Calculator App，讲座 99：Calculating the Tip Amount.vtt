@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00.330 --> 00:02.670
+Let's start with calculating the total tip.
+
+00:03.180 --> 00:10.110
+Well, to calculate the total tip, first of all, we will need the Enter Bill White, the amount of
+
+00:10.110 --> 00:18.060
+the bill, and we need to multiply that by the percentage of the tip that the user wants to give.
+
+00:18.270 --> 00:23.770
+That means all of that will have to be driven inside of our own value changed set of a slider because
+
+00:23.770 --> 00:30.870
+the idea is once something is entered to say 100, so we will always have one for this split by state.
+
+00:31.530 --> 00:36.810
+And so the driving method here, the driving mechanism, if you will, is going to be the slider.
+
+00:36.810 --> 00:43.470
+So we are going to dynamically as the slider slides left or right or increasing the percentage we want
+
+00:43.470 --> 00:43.840
+to give.
+
+00:43.860 --> 00:47.940
+We're going to also calculate the tip amount.
+
+00:48.150 --> 00:53.700
+So inside of our slider here, this is where we are going to say something like this.
+
+00:53.710 --> 00:59.700
+First of all, we need to create a state that's going to say tip amount, state that value.
+
+00:59.910 --> 01:01.500
+Notice we haven't created this yet.
+
+01:01.560 --> 01:02.820
+It's going to be equal to.
+
+01:03.330 --> 01:08.010
+Well, it's going to be equal to a function that will calculate the total tips.
+
+01:08.020 --> 01:11.910
+I'm going to say calculate total tip.
+
+01:12.990 --> 01:17.920
+Which will require us to pass a total bill that value.
+
+01:18.090 --> 01:22.650
+And the tip percentage tip percentage like this.
+
+01:23.460 --> 01:25.860
+OK, so let's go ahead and create for the tip amount.
+
+01:26.070 --> 01:29.790
+So going up again, still inside of our function here.
+
+01:29.920 --> 01:38.160
+Foul tip amount state to remember the total state of and it's going to be a double because that's what
+
+01:38.160 --> 01:38.970
+we're going to be expecting.
+
+01:38.980 --> 01:44.790
+So 0.0 to start with going down here, we still have to create this calculate total tip.
+
+01:45.180 --> 01:51.050
+So what we can do here can actually go click right there and say create function, calculate total tip.
+
+01:51.660 --> 01:54.420
+And you can see it's created at the bottom here.
+
+01:54.510 --> 01:59.050
+And before we do that, let's set a same value for the arguments named argument here.
+
+01:59.060 --> 02:05.580
+And let's say total bill instead of string, let's say double, because that's what we need.
+
+02:05.820 --> 02:08.820
+We have to transform that into double A. percentage.
+
+02:09.090 --> 02:11.040
+It's fine as an entity.
+
+02:11.640 --> 02:11.880
+All right.
+
+02:11.880 --> 02:18.360
+So here I'm going to say return, and I'm going to check in and say if total bill amount is greater
+
+02:18.360 --> 02:22.530
+than one because we don't want to start looking to calculate it.
+
+02:22.560 --> 02:26.640
+His calculator total tip if total bill is not greater than one.
+
+02:26.730 --> 02:31.890
+And in this case, it's a total bill not to string.
+
+02:32.790 --> 02:37.470
+I just want to make sure that it is not empty such.
+
+02:38.860 --> 02:44.680
+If that's the case, I'm going to put a new line, let's say, total bill, in this case, I'm going
+
+02:44.680 --> 02:50.980
+to multiply this by tip percentage and let's divide that by 100.
+
+02:51.580 --> 02:52.990
+So we get the right value.
+
+02:53.470 --> 02:57.480
+And let's say else, you know the case, I'm just going to return 0.2 zero.
+
+02:57.760 --> 03:01.900
+So what we're saying here, we're going to calculate total bill only after the bill is greater than
+
+03:01.900 --> 03:08.950
+one and total bill is not empty and then get that total bill by about two percentage, which we're going
+
+03:08.950 --> 03:11.350
+to be passing there and we divide that by 100.
+
+03:11.470 --> 03:16.860
+In no case, we're just going to say return zero, that zero in any other case, we're just going to
+
+03:16.860 --> 03:20.890
+return 0.0 because remember expects to return it double.
+
+03:21.100 --> 03:23.050
+OK, let's go where we are calling this.
+
+03:23.530 --> 03:25.350
+And of course, we're going to have some issues here.
+
+03:25.360 --> 03:31.570
+First of all, let's go ahead and just add the named parameters here just to make it more clear to total
+
+03:31.930 --> 03:38.800
+that and this is going to be a percentage or two percent is equal to that.
+
+03:39.090 --> 03:42.190
+OK, this is good to see that we know exactly what we're passing.
+
+03:42.460 --> 03:46.930
+Either way would have worked, but named parameters or arguments are really good.
+
+03:47.410 --> 03:47.650
+All right.
+
+03:47.650 --> 03:50.590
+So we have an issue here because we need in fact to have over.
+
+03:50.590 --> 03:55.020
+It's going to say change parameter or build type function to return a string.
+
+03:55.030 --> 04:00.490
+What we want actually is to make this say not to double because that's what we the value that we want
+
+04:00.910 --> 04:01.870
+it to Typekit anyway.
+
+04:02.050 --> 04:07.210
+So now we have our tip amount, which is going to be this string here.
+
+04:07.330 --> 04:14.680
+It should be changing accordingly as we slide left or right or increase or decrease our tip percentage.
+
+04:15.190 --> 04:16.810
+Where is this going to be called?
+
+04:16.810 --> 04:17.740
+We've got up here.
+
+04:17.770 --> 04:19.270
+We can see it's going to be called here.
+
+04:19.270 --> 04:21.940
+This is where our tip amount should be called.
+
+04:22.900 --> 04:24.730
+So let's go ahead and get rid of that.
+
+04:27.460 --> 04:30.820
+And I give space, say tip amount.
+
+04:31.940 --> 04:34.130
+State get that value.
+
+04:36.200 --> 04:37.310
+Let's see if this is true.
+
+04:37.340 --> 04:38.180
+Let's go ahead and run.
+
+04:45.760 --> 04:46.600
+OK, there it is.
+
+04:47.080 --> 04:50.290
+And of course, we're going to have to enter, let's say, 100.
+
+04:50.380 --> 04:51.250
+It's a nice number.
+
+04:52.060 --> 04:53.480
+And then let's see if this works.
+
+04:53.500 --> 04:58.780
+So as you start increasing the file, you can see there are two or three two percent.
+
+04:59.360 --> 05:01.360
+The total tip is going to be $30, right?
+
+05:02.440 --> 05:02.830
+Very good.
+
+05:02.860 --> 05:04.210
+So this is indeed working.
+
+05:04.210 --> 05:07.770
+If I go to zero, I can see, well, there's no tip.
+
+05:07.810 --> 05:11.740
+So there is zero dollars that we need to add for our tip.
+
+05:12.250 --> 05:12.590
+OK.
+
+05:12.610 --> 05:13.240
+Very simple.
+
+05:13.480 --> 05:17.830
+Now one thing we can do, of course, because things are getting a little bit chaotic and that we have
+
+05:17.830 --> 05:21.640
+all our code inside of main activity and this is not a good thing.
+
+05:22.330 --> 05:29.290
+And so what do we need to do is let's go back to a project and I'm going to create yet another package.
+
+05:29.650 --> 05:34.330
+So new package packages called this utils or you tail like this?
+
+05:34.690 --> 05:37.300
+And inside here, I'm going to create a.
+
+05:39.030 --> 05:41.370
+File cut in class or file.
+
+05:42.180 --> 05:43.370
+I'm going to call this util.
+
+05:44.580 --> 05:48.060
+OK, so here I'm just going to go ahead and get that function.
+
+05:48.360 --> 05:51.600
+This calculator function and because these functions are treated.
+
+05:53.450 --> 05:55.370
+And I'm going to add there.
+
+05:57.650 --> 06:01.490
+And going back to Maine, I'm going to have some issues, I'm going to click here.
+
+06:01.800 --> 06:03.440
+It's going to say I don't know what to calculate.
+
+06:03.500 --> 06:09.140
+The total tip is that means we need to import so alt or option, enter whichever way you want.
+
+06:09.140 --> 06:10.880
+And voila, now things are good.
+
+06:11.150 --> 06:13.910
+So we have a factor, a little bit of our code.
+
+06:14.570 --> 06:14.960
+All right.
+
+06:14.990 --> 06:15.500
+There it is.
+
+06:16.530 --> 06:19.190
+We are now able to calculate our tip.

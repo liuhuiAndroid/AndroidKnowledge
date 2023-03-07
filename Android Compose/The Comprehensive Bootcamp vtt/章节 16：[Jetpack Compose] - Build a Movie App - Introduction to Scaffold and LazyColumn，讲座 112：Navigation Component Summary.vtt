@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.420 --> 00:04.020
+So in this section, we learned a lot of things we learned about navigation.
+
+00:04.170 --> 00:10.050
+The need for us to navigate, for instance, from one screen to the next and how traditionally we used
+
+00:10.050 --> 00:13.950
+to use just intents and start activity, which is fine.
+
+00:14.070 --> 00:17.240
+But until we get to the point where we need something more complex.
+
+00:17.250 --> 00:23.160
+So the solution in this case, we learn that there is these navigation components in Jetpack, which
+
+00:23.160 --> 00:29.320
+allows us to use the tools and libraries for handling complex navigation cases in Android.
+
+00:29.910 --> 00:34.930
+And so we also learned that navigation component has three major parts working together.
+
+00:34.950 --> 00:36.750
+The first one is navigation graph.
+
+00:37.140 --> 00:41.130
+Then we have nav hosts and host and the navigation controller.
+
+00:41.370 --> 00:48.570
+So each part that we talked about of the navigation component, we learned how to look at it as a diagram,
+
+00:48.960 --> 00:50.370
+as a hierarchy, if you will.
+
+00:50.400 --> 00:55.380
+So we have navigation component, which has, in this case, nav controller and sat nav controller.
+
+00:55.380 --> 00:59.680
+We will have enough host and nav host will have nav graph.
+
+00:59.730 --> 01:06.360
+So the graph in this case, the nav controller is the central API that instructs navigation to happen.
+
+01:06.600 --> 01:12.570
+For instance, it can say navigation that navigate and passing the route and do not host navigation
+
+01:12.570 --> 01:12.960
+host.
+
+01:13.260 --> 01:19.200
+This is where all the navigation graph items are hosted, so this is where everything is swapped out
+
+01:19.200 --> 01:19.740
+the show.
+
+01:19.890 --> 01:26.460
+Each composable destination or screen when users navigate to a new screen and the navigation graph,
+
+01:26.460 --> 01:32.220
+as the name implies, is just a graph that holds all of the items all of the composable, all of the
+
+01:32.220 --> 01:32.820
+screens.
+
+01:33.390 --> 01:36.910
+But most importantly, also these nodes, because it's a graph.
+
+01:37.230 --> 01:41.580
+They also carry more information about the navigation.
+
+01:42.120 --> 01:45.200
+This is what we've learned in this section.
+
+01:45.240 --> 01:53.400
+We use an example of a movie app where we have a list of courses and column using lazy column.
+
+01:53.610 --> 01:59.490
+And when we when we click on each item list we're getting, we're taken using navigation component were
+
+01:59.510 --> 02:02.040
+taken to a description screen.
+
+02:02.190 --> 02:02.450
+OK.
+
+02:02.870 --> 02:07.980
+Again, the nav graph just look at nav graph as screens, right?
+
+02:08.220 --> 02:11.490
+The composable in this case that users can navigate through.
+
+02:12.120 --> 02:14.820
+So I hope this section was helpful and I'll see you next time.

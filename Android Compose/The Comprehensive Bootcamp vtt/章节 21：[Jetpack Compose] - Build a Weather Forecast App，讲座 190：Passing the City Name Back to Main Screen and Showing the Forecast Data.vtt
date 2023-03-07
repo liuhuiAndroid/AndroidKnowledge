@@ -1,0 +1,1207 @@
+WEBVTT
+
+00:00.480 --> 00:05.630
+All right, so continue here in sort of our common text field, which we created the bottom here, but
+
+00:05.640 --> 00:08.700
+it's being called inside of our search bar.
+
+00:10.470 --> 00:18.480
+On action here, meaning when we are when users types search and come here and they want to add something,
+
+00:18.870 --> 00:24.930
+the keyboard will show up right and at the bottom, we will have this next or arrow button there.
+
+00:24.930 --> 00:29.880
+So that means that when they click that we want to validate and do what needs to be done in order to
+
+00:29.880 --> 00:31.020
+take this information.
+
+00:31.590 --> 00:35.520
+In this case, the city name, they have just entered and do something with it.
+
+00:35.930 --> 00:42.330
+So this is all captured here in the keyboard actions, meaning what action they have done after they've
+
+00:42.780 --> 00:44.580
+right, after they've added something.
+
+00:44.880 --> 00:47.160
+We want to capture that and move forward.
+
+00:47.850 --> 00:50.250
+OK, so here is where I'm going to do something like this.
+
+00:50.250 --> 00:56.430
+I'm going to say if because I want to validate or check if whatever was entered is valid, if it's not
+
+00:56.430 --> 00:57.810
+in this, it's not valid.
+
+00:57.810 --> 01:03.870
+And I can do that because remember, I have this remember variable that created there, which validates
+
+01:03.870 --> 01:06.830
+really returns, whether it's true or false.
+
+01:06.840 --> 01:13.110
+If we have if the search query doesn't have anything right and this is not what I want to let me, I
+
+01:13.110 --> 01:14.670
+don't know what what happened there.
+
+01:15.330 --> 01:18.300
+Let's say Dot.
+
+01:22.840 --> 01:23.530
+He's empty.
+
+01:31.710 --> 01:33.150
+This shouldn't be inside.
+
+01:33.210 --> 01:37.500
+That's why it's OK, let me move all of that.
+
+01:41.990 --> 01:45.860
+Putin said of a lambada and pacing like this.
+
+01:50.200 --> 01:51.350
+Let's say is not.
+
+01:52.900 --> 01:54.250
+Empty like that.
+
+02:02.930 --> 02:03.280
+OK.
+
+02:03.380 --> 02:04.100
+That sort of want.
+
+02:04.580 --> 02:09.830
+All right, so back here, if it's not valid, meaning it's empty in this case, I'm just going to return.
+
+02:10.770 --> 02:11.250
+Like this?
+
+02:11.640 --> 02:17.790
+So this case us, we turn nothing into the case, which means that it's validated, then I'm going to
+
+02:17.790 --> 02:23.160
+invoke the on search, right, which is what we passing here, right?
+
+02:23.430 --> 02:29.820
+And we're going to pass a string that was going to be coming from our text field, pass that along.
+
+02:30.660 --> 02:38.040
+So when I pass the search query state value, of course, I'm going to trim it so that we don't have
+
+02:38.040 --> 02:39.540
+excess of things that we don't want.
+
+02:40.020 --> 02:40.350
+All right.
+
+02:40.920 --> 02:45.840
+And then once that happened, I'm going to just use it and search for state and value just to clear
+
+02:45.840 --> 02:46.390
+everything up.
+
+02:46.410 --> 02:48.780
+I'm just going to put an empty string like that.
+
+02:48.780 --> 02:53.940
+So what that means once we click that next to enter or whatever, you know, our keyboard, we're going
+
+02:53.940 --> 02:55.500
+to clear our text field.
+
+02:56.850 --> 02:57.780
+That's what we're doing there.
+
+02:58.830 --> 03:02.160
+And once that is done, we want to make sure there are keyboard controller.
+
+03:02.850 --> 03:03.330
+Look at that.
+
+03:03.930 --> 03:11.430
+And I'm going to say hide so we can hide our keyboard controller, which means I need to safeguard it
+
+03:11.430 --> 03:13.260
+with the exclamation point like that.
+
+03:14.570 --> 03:15.110
+And that's it.
+
+03:16.010 --> 03:21.440
+And I do realize that we took a long time, and I do realize that we took a long time to put this together,
+
+03:21.440 --> 03:28.460
+but it's important to do this way and not trying to do the other way because number one, we have these
+
+03:28.460 --> 03:30.320
+capability of reusing this code.
+
+03:30.530 --> 03:31.700
+We're using this composable.
+
+03:32.480 --> 03:33.230
+And number two.
+
+03:34.290 --> 03:41.010
+It just makes it much easier to extend our search bar if we want to add, for instance, in this column
+
+03:41.010 --> 03:41.290
+here.
+
+03:41.310 --> 03:43.950
+Another common text we can add as many as we want.
+
+03:44.280 --> 03:46.110
+So think in those terms?
+
+03:46.170 --> 03:48.010
+Always very good.
+
+03:48.270 --> 03:52.650
+So now we have a search bar fairly ready to be used.
+
+03:53.050 --> 03:59.070
+OK, so I'm going to call this inside of our search screen, which is going to be here.
+
+03:59.760 --> 04:00.090
+All right.
+
+04:00.300 --> 04:04.110
+Inside of this column, I say search bar.
+
+04:06.030 --> 04:08.220
+I see Search Bar.
+
+04:08.520 --> 04:09.450
+There we go.
+
+04:11.680 --> 04:16.390
+And then I'm going to pass a few things, let's make sure that we don't have a different search bar,
+
+04:16.660 --> 04:22.430
+right, because we are using the experimental experimental composer UI.
+
+04:22.450 --> 04:28.300
+We also have to annotate that whatever it's calling it, let's pass a modifier here.
+
+04:29.580 --> 04:36.150
+Actually, before we do that, that means we have to allow this to have a modifier that makes sense.
+
+04:36.900 --> 04:42.900
+And I'm just going to say modifier like this as a default one.
+
+04:44.100 --> 04:44.700
+Very well.
+
+04:45.270 --> 04:48.000
+So now I'm going to be able to pass that modifier.
+
+04:54.440 --> 04:56.870
+Said, I feel Max width
+
+04:59.630 --> 05:03.980
+and I'm going to give a padding of about 16 dpi all along.
+
+05:05.420 --> 05:13.070
+And I want to align everything by saying alignment, compose alignment.
+
+05:13.070 --> 05:17.930
+Of course, I want this to be center horizontally like that.
+
+05:18.590 --> 05:18.950
+Very good.
+
+05:19.340 --> 05:21.800
+Now the beauty also because is a search bar.
+
+05:21.810 --> 05:28.310
+And remember, because we have these on search and is the last parameter and it's a function of our
+
+05:28.310 --> 05:28.730
+search bar.
+
+05:28.760 --> 05:33.380
+It means we can use, yes, you guessed it, we can use a lambda trailing lambda.
+
+05:33.410 --> 05:33.920
+That's the beauty.
+
+05:33.930 --> 05:39.920
+And if you do that, it can see we now have this it implicit variable that is passed around, which
+
+05:39.920 --> 05:46.640
+in this case is going to be whatever is inside of our text field because we're passing it along, right?
+
+05:47.150 --> 05:48.380
+So have a search here.
+
+05:48.380 --> 05:52.550
+When we call it here, we're passing our query value.
+
+05:53.410 --> 05:56.340
+OK, so we can use that, we can do whatever we want.
+
+05:56.360 --> 05:58.310
+So let's go back to where I'm calling.
+
+05:58.340 --> 05:58.970
+There we go here.
+
+05:59.570 --> 06:07.160
+Let's say logged for now, and I'm just going to pass this idea like this, which is going to be like
+
+06:07.160 --> 06:08.780
+I said, whatever users have entered.
+
+06:10.070 --> 06:10.490
+All right.
+
+06:10.890 --> 06:13.040
+OK, let's see if this is going to work this.
+
+06:13.310 --> 06:14.150
+That's the whole point.
+
+06:14.660 --> 06:15.410
+Let's run this.
+
+06:17.520 --> 06:17.970
+All right.
+
+06:18.000 --> 06:20.220
+Let's click Aha!
+
+06:20.250 --> 06:23.130
+Look, how beautiful this looks, great, wonderful.
+
+06:23.340 --> 06:23.610
+All right.
+
+06:23.790 --> 06:28.800
+Instead of Seattle, let's say San Diego, my wife's favorite place ever.
+
+06:29.610 --> 06:31.320
+Let's go and say, enter.
+
+06:31.810 --> 06:33.240
+OK, it's clear.
+
+06:33.240 --> 06:38.220
+Now let's go to our Logcat and San Diego is showing they're beautiful.
+
+06:38.250 --> 06:39.470
+This is exactly what we need.
+
+06:39.930 --> 06:48.360
+Remember, the idea is as follows when we hit enter or next year, our keyboard, we want to be taken
+
+06:48.360 --> 06:50.430
+back to our main screen.
+
+06:50.970 --> 06:51.900
+You can go like this.
+
+06:53.490 --> 06:54.330
+Try again.
+
+06:54.570 --> 07:00.840
+Main screen like this and we are going to get, for instance, San Diego what users have entered, and
+
+07:00.840 --> 07:04.530
+we're going to repopulate this entire main view with the new city.
+
+07:05.250 --> 07:06.060
+That is the idea.
+
+07:06.510 --> 07:11.340
+But one thing at a time we were able to pass along or get that information.
+
+07:12.700 --> 07:18.760
+In our search, which is good, and now we are going to be able to then take that information.
+
+07:18.850 --> 07:22.580
+In this case, the city name and pass it along back to our main screen.
+
+07:23.290 --> 07:24.250
+Now how do we do that?
+
+07:24.280 --> 07:32.070
+How do we then get this city name from our search back to a main screen, whether navigation lights?
+
+07:32.330 --> 07:40.780
+So it looks like we have an issue here or not sure why outright we have to add experimental even here.
+
+07:40.810 --> 07:41.440
+Let's do that.
+
+07:42.400 --> 07:46.090
+OK, because we using that experimental API, we have to.
+
+07:46.270 --> 07:47.230
+Anywhere we call it.
+
+07:47.350 --> 07:52.150
+This also has to be called or added right to the the annotation.
+
+07:52.660 --> 08:00.490
+Now we have to change the way we have set up our main screen because the idea again, is to get that
+
+08:00.610 --> 08:07.210
+data, the city that was added and go back to our main screen and repopulate the main screen with the
+
+08:07.210 --> 08:08.560
+new data with the new CD.
+
+08:09.730 --> 08:13.450
+So in this case, here we need to pass the variable.
+
+08:13.450 --> 08:16.870
+We need to pass a data through our composable.
+
+08:17.620 --> 08:17.880
+Right?
+
+08:18.850 --> 08:25.870
+And in this case, with our navigation, so to do that, it's it's fairly simple, but we have to restructure
+
+08:25.870 --> 08:26.440
+a few things.
+
+08:26.620 --> 08:29.200
+So back to our weather navigation here.
+
+08:32.060 --> 08:37.970
+In our composable where we have this main screen, what I'm going to do, I'm going to get it out of
+
+08:37.970 --> 08:38.240
+there.
+
+08:38.240 --> 08:46.580
+So when, say, Val route or I want to say whether screen screams I see as you see there and I'm going
+
+08:46.580 --> 08:48.470
+to say main screen that name.
+
+08:48.800 --> 08:51.800
+So essentially, I'm going to remove this.
+
+08:52.340 --> 08:53.780
+I removed is and put it there.
+
+08:53.810 --> 08:56.750
+So now I'm going to call this out like this same thing.
+
+08:56.750 --> 08:57.290
+Nothing new.
+
+08:57.530 --> 09:06.980
+But what's not new or what is new, I should say, is that now I'm going to put that inside of double
+
+09:06.980 --> 09:11.420
+quotes to say it is a string because I want to append something else.
+
+09:11.960 --> 09:14.930
+So I'm going to say dollar sign to have the variable.
+
+09:15.290 --> 09:19.160
+And then I'm going to say forward slash and curly braces as such.
+
+09:19.700 --> 09:22.940
+And inside I'm going to pass the city variable like this.
+
+09:23.930 --> 09:33.380
+What that means is as follow when we call this route here, this main screen we're going to have, just
+
+09:33.380 --> 09:35.850
+like we have on the web, right?
+
+09:35.870 --> 09:42.080
+We have, for instance, that we have W Google Dot Com and then forward slash and we can have, for
+
+09:42.080 --> 09:49.880
+instance, I don't know, city name like this is equal to Spokane or Seattle.
+
+09:50.240 --> 09:51.480
+OK, so that stadium?
+
+09:51.530 --> 09:52.310
+So what are we doing here?
+
+09:52.580 --> 09:59.660
+We're passing this city name or city variable along so that we can then pass something when we receive
+
+09:59.660 --> 10:06.020
+something from our text field, then pass that variable along, hopefully with some data.
+
+10:06.470 --> 10:07.520
+That's all we doing here.
+
+10:08.390 --> 10:08.690
+OK.
+
+10:08.900 --> 10:11.630
+Well, it's not the whole picture yet, but that's the idea.
+
+10:12.230 --> 10:17.780
+OK, now once we have that, we have to do something else because in our composable here, if you go
+
+10:17.780 --> 10:22.520
+over, you will see that we can pass other things other than just the route.
+
+10:22.760 --> 10:25.730
+We can pass the arguments that can pass the blinks and so forth.
+
+10:26.090 --> 10:26.270
+Right.
+
+10:26.480 --> 10:27.000
+This is good.
+
+10:27.020 --> 10:27.710
+This is helpful.
+
+10:27.980 --> 10:33.500
+That means then as a parameter or an argument, in this case, I'm going to pass the arguments no pun
+
+10:33.500 --> 10:33.970
+intended.
+
+10:33.980 --> 10:35.950
+Of course, I did not know that.
+
+10:36.380 --> 10:37.310
+It's called arguments.
+
+10:37.820 --> 10:38.180
+All right.
+
+10:39.080 --> 10:43.890
+And in this argument here, it's actually going to be a list of something.
+
+10:43.910 --> 10:46.810
+It's arguments that argument arguments like this.
+
+10:46.820 --> 10:47.090
+OK?
+
+10:47.510 --> 10:51.830
+It's going to be a list of because we can pass a list of arguments.
+
+10:53.600 --> 10:54.710
+But we just going to pass one.
+
+10:54.720 --> 10:56.970
+But in this case, they always allow us to pass.
+
+10:56.990 --> 10:59.000
+Actually, they want us to pass a list.
+
+10:59.960 --> 11:00.680
+That's no problem.
+
+11:01.280 --> 11:05.080
+Now we can't just pass a list like just a string.
+
+11:05.090 --> 11:09.140
+We need to wrap it around a navigation argument.
+
+11:09.620 --> 11:09.950
+OK.
+
+11:10.270 --> 11:13.880
+So say now I've already made all of this is given as we see there.
+
+11:14.510 --> 11:15.320
+We can just use it.
+
+11:15.680 --> 11:24.230
+And I argued it allows us to pass in this case, a string and Inov and in nav argument builder to build
+
+11:24.380 --> 11:28.550
+around that argument that we passing around because all of this.
+
+11:29.210 --> 11:35.990
+Remember, we are putting all of this infrastructure together because we are one to make sure that this
+
+11:35.990 --> 11:38.060
+works with the navigation system.
+
+11:39.610 --> 11:39.810
+OK.
+
+11:40.600 --> 11:40.900
+All right.
+
+11:41.140 --> 11:42.450
+So for the name.
+
+11:42.520 --> 11:45.190
+Well, what is the name of this variable going to be passing?
+
+11:45.220 --> 11:48.910
+Well, it's going to be City has to be exactly the same where we chose here.
+
+11:49.060 --> 11:52.180
+This could be monkey could be dog you.
+
+11:52.180 --> 11:54.430
+You know anything you want, but it has to be the same.
+
+11:54.610 --> 11:55.990
+Consistency is very important.
+
+11:56.860 --> 11:57.190
+OK.
+
+11:57.490 --> 11:59.180
+So this is also Alhambra.
+
+11:59.200 --> 12:06.460
+We can just put their trailing lambda to say, then we need to pass the type that we passing here.
+
+12:06.470 --> 12:09.040
+So in this case is going to be a string type.
+
+12:10.130 --> 12:10.460
+OK.
+
+12:12.300 --> 12:18.630
+Now, swing type, what that means is we need to specify what kind of objects in this case, what kind
+
+12:18.630 --> 12:26.220
+of values, what kind of pieces of data we're passing because you could pass a list of something you
+
+12:26.220 --> 12:28.530
+could pass an object, you could pass all sorts of things.
+
+12:28.830 --> 12:33.240
+In this case was saying, we want a string type, which is exactly what we passing is just a string.
+
+12:34.520 --> 12:34.970
+That's all.
+
+12:35.970 --> 12:36.300
+All right.
+
+12:37.080 --> 12:37.380
+OK.
+
+12:37.740 --> 12:40.560
+It's looks complicated, but it really isn't that complicated.
+
+12:40.980 --> 12:41.280
+All right.
+
+12:41.550 --> 12:45.420
+Now inside here, then this is where we were before.
+
+12:45.420 --> 12:47.190
+This is we've seen before this way.
+
+12:47.550 --> 12:54.540
+So you see here we have this implicit nav back stack entry, which is just a variable.
+
+12:54.540 --> 13:00.000
+That is, what can we get right from our arguments, actually from our composable?
+
+13:00.690 --> 13:07.500
+So what this allows us to do allows us to do many things, such as getting the arguments and so forth.
+
+13:08.070 --> 13:09.270
+What I mean by that is as follow.
+
+13:09.480 --> 13:17.610
+So I'm going to actually add a name, call this nav back like this so we can use it to do what do we
+
+13:17.610 --> 13:17.970
+need to do?
+
+13:18.720 --> 13:23.430
+So now I'm going to say nav back stack entry object, and I'm going to say arguments.
+
+13:23.730 --> 13:24.210
+Look at that.
+
+13:24.210 --> 13:29.820
+It's a bundle, which means it's another structure, another class that are class that allows us to
+
+13:29.820 --> 13:33.300
+bundle up pieces of data and you can see the naming.
+
+13:33.300 --> 13:39.690
+It's very important, right bundle bundle of data just to think of a package that will contain other
+
+13:39.690 --> 13:40.600
+pieces of data inside.
+
+13:40.620 --> 13:41.610
+That's exactly what it is.
+
+13:41.610 --> 13:48.180
+So we're creating through our nav back stack, we say, Hey, let's go ahead and put together this bundle
+
+13:48.510 --> 13:52.050
+of a box that we can put all these pieces of data.
+
+13:52.320 --> 13:53.990
+That way we can pass that along.
+
+13:54.000 --> 13:58.650
+And whoever gets it, they can open as a present Christmas present and they can get data.
+
+13:58.830 --> 14:00.480
+That's exactly what's happening, really, guys.
+
+14:00.750 --> 14:02.130
+Nothing really too fancy.
+
+14:02.490 --> 14:02.790
+OK.
+
+14:03.270 --> 14:04.920
+So we have the arguments.
+
+14:05.310 --> 14:11.670
+Wonderful, then we need to continue and say, Get string.
+
+14:12.090 --> 14:12.870
+Now why?
+
+14:12.870 --> 14:14.160
+And how do I know with his string?
+
+14:14.160 --> 14:17.700
+Well, I just said here the type we're passing is a string type.
+
+14:19.250 --> 14:19.550
+Right.
+
+14:20.180 --> 14:21.800
+Therefore, it has to be a string.
+
+14:21.890 --> 14:26.660
+When I retrieve that information, when I went to retrieve that data.
+
+14:27.380 --> 14:27.650
+Right.
+
+14:28.070 --> 14:29.210
+So I need to pass the key.
+
+14:30.140 --> 14:31.120
+What is the key?
+
+14:31.130 --> 14:31.820
+A city.
+
+14:32.030 --> 14:36.290
+So I say City again, has to be the same name.
+
+14:36.350 --> 14:37.760
+Otherwise, it's not going to work.
+
+14:38.450 --> 14:38.780
+All right.
+
+14:39.230 --> 14:42.080
+So once that happens, I'm going to use the lat block.
+
+14:42.620 --> 14:48.920
+OK, this light block allows us to run the code that will take advantage of whatever is being passed
+
+14:48.920 --> 14:49.300
+along.
+
+14:49.320 --> 14:52.010
+So this case here when we get that string?
+
+14:52.400 --> 14:54.230
+Well, in this case, we passed the key.
+
+14:54.620 --> 14:56.690
+That means we're going to get the value.
+
+14:57.050 --> 14:58.490
+So where is the value?
+
+14:58.520 --> 15:00.650
+Well, the value is going to be in this block.
+
+15:01.640 --> 15:03.740
+Again, as the string there.
+
+15:05.240 --> 15:06.950
+Huh, interesting, right?
+
+15:07.250 --> 15:07.550
+All right.
+
+15:07.580 --> 15:12.410
+That means that I can take all of these other code we had before and pass it all there.
+
+15:13.340 --> 15:19.370
+Now the great thing here, the look, how beautiful this is, the great thing here is that now because
+
+15:19.370 --> 15:22.080
+I have this it, by the way, this is what it is again.
+
+15:22.100 --> 15:22.580
+What is it?
+
+15:22.700 --> 15:28.700
+Well, is it is the value, the key value that we are passing along?
+
+15:29.820 --> 15:34.350
+Which is needed because we need that back to our main screen, right?
+
+15:34.770 --> 15:37.950
+So to facilitate here, I might.
+
+15:38.220 --> 15:40.140
+In fact, I'll just leave as it, but I for want.
+
+15:40.140 --> 15:41.910
+I can just say city like that.
+
+15:42.120 --> 15:43.290
+Let's just say City.
+
+15:43.290 --> 15:45.390
+I think that's that's appropriate.
+
+15:45.990 --> 15:50.370
+OK, so have the city, the actual city, the actual value.
+
+15:50.440 --> 15:51.030
+Not right.
+
+15:52.260 --> 15:57.450
+And so now I'm going to pass it along on main screen because remember, the whole idea is that main
+
+15:57.450 --> 16:03.060
+screen retrieves or gets in that city that was added, you know, a search screen, right?
+
+16:04.140 --> 16:05.370
+That's why we're doing all of this.
+
+16:06.000 --> 16:07.650
+But how do we pass it along?
+
+16:08.250 --> 16:17.040
+Well, we say comma and we pass a city like that as an argument, and I'm going to say City.
+
+16:18.940 --> 16:20.260
+Which city is this one?
+
+16:20.410 --> 16:23.950
+Now it's going to complain because they're going to say main screen doesn't know what cities.
+
+16:24.010 --> 16:26.320
+Of course he doesn't because we haven't added it.
+
+16:26.710 --> 16:30.120
+So let's create parameters, city and it's OK.
+
+16:30.130 --> 16:31.960
+Just added like this should be good.
+
+16:33.800 --> 16:34.070
+OK.
+
+16:36.260 --> 16:36.860
+And that's it.
+
+16:38.140 --> 16:42.890
+This is how you pass parameters past data through your composable.
+
+16:44.520 --> 16:46.260
+Let's go to main screen.
+
+16:47.160 --> 16:52.440
+You notice in our main screen now the beauty, because we added at City.
+
+16:52.890 --> 16:54.450
+Look at that and it's Nullarbor.
+
+16:54.720 --> 16:56.340
+Let's open up like this.
+
+16:56.970 --> 16:57.780
+What we can do.
+
+16:57.810 --> 16:59.130
+Look how cool this is.
+
+16:59.550 --> 16:59.880
+All right.
+
+17:00.090 --> 17:01.200
+I just can't help it.
+
+17:01.560 --> 17:02.310
+I can see logged.
+
+17:02.550 --> 17:06.460
+So you can see, OK.
+
+17:06.720 --> 17:09.180
+And it's and then again, just CD like this.
+
+17:10.890 --> 17:12.990
+Let's just wrap it with a tag.
+
+17:12.990 --> 17:14.060
+That's totally fine.
+
+17:14.070 --> 17:15.420
+We don't mind that.
+
+17:15.810 --> 17:18.120
+Let's run this in now.
+
+17:18.120 --> 17:23.310
+You can see when we go to search, add something, go back to main screen.
+
+17:23.640 --> 17:26.700
+We're going to see the city that was just added.
+
+17:29.000 --> 17:29.510
+Let's see.
+
+17:32.510 --> 17:32.940
+Oops!
+
+17:32.960 --> 17:34.490
+Looks like we have a problem.
+
+17:36.350 --> 17:44.180
+What seems to be right, the problem here is as follows, it says that navigation this nation that matches
+
+17:44.630 --> 17:51.080
+request main screen cannot be found in navigation graph route splash.
+
+17:51.590 --> 17:59.060
+OK, so if we go to our splash screen, the reason that's happening is because we've changed a few things
+
+17:59.060 --> 18:01.040
+actually right in our composable.
+
+18:01.850 --> 18:07.430
+But remember that the main screen is actually called somewhere else, because if you look at let's go
+
+18:07.430 --> 18:09.680
+to our splash screen, I think that's going to help.
+
+18:13.340 --> 18:18.860
+If you look at our splash screen, you will see that after a few seconds, it will say knife controller.
+
+18:19.310 --> 18:21.360
+And then we go to main screen as such.
+
+18:21.380 --> 18:24.950
+So now he's saying, Well, yes, I can go there.
+
+18:25.100 --> 18:32.240
+But the problem is that you've said that when I navigate to the main screen, I must pass some sort
+
+18:32.240 --> 18:33.430
+of city, right?
+
+18:33.440 --> 18:34.220
+Because that's what I've said.
+
+18:34.430 --> 18:36.050
+That's why we have an issue.
+
+18:36.380 --> 18:39.200
+So for now, I'm just going to put a default seat.
+
+18:40.010 --> 18:46.610
+So I'm going to say plus and the way we do this, we are going to put a forward slash like this and
+
+18:46.610 --> 18:50.510
+put, say, default city, which I haven't created yet.
+
+18:53.130 --> 18:59.280
+So at the top here, I'm just going to say, wow, the fourth city, you say.
+
+19:00.920 --> 19:03.350
+San Diego like that.
+
+19:04.790 --> 19:05.930
+Now this is going to work.
+
+19:06.870 --> 19:07.290
+All right.
+
+19:08.010 --> 19:08.650
+Does it make sense?
+
+19:08.910 --> 19:15.510
+And we have to add it this way because remember, all of these routes are being seen just like links
+
+19:16.140 --> 19:17.070
+in web development.
+
+19:17.640 --> 19:20.820
+So we need to put forward slash and then default city like this.
+
+19:22.030 --> 19:22.410
+OK.
+
+19:22.830 --> 19:23.260
+That's right.
+
+19:27.000 --> 19:27.780
+And you can see.
+
+19:28.800 --> 19:30.360
+OK, it's working perfectly.
+
+19:31.610 --> 19:38.000
+Now, it's not saying San Diego here is because somewhere along the way we actually changed this to
+
+19:38.000 --> 19:40.280
+say Maputo, in fact, I know exactly where that is.
+
+19:40.580 --> 19:42.920
+If you go to the main screen, we added Maputo here.
+
+19:43.790 --> 19:45.650
+OK, so that's fine.
+
+19:46.490 --> 19:49.370
+OK, now here's the thing.
+
+19:49.760 --> 19:55.820
+Let's go to search and I'm going to say Seattle hit enter.
+
+19:57.000 --> 19:58.050
+And if I go back.
+
+20:00.020 --> 20:01.760
+Let's see if I see.
+
+20:03.880 --> 20:04.260
+Right.
+
+20:04.840 --> 20:12.010
+Actually, in order for this to work, I'm getting ahead of myself here when we navigate.
+
+20:13.440 --> 20:17.490
+Let's go back to our search screen for you to see exactly what are we getting?
+
+20:20.060 --> 20:23.820
+Right, I'm not doing anything here, all I'm doing, I'm just saying search, screen and enter.
+
+20:23.840 --> 20:24.620
+That's not what I want to do.
+
+20:24.620 --> 20:28.430
+I want to actually navigate back to our main screen.
+
+20:28.640 --> 20:29.180
+That makes sense.
+
+20:29.390 --> 20:34.760
+So all I do, I say now I've control it because I have access to enough controller and let's say, navigate,
+
+20:35.330 --> 20:38.120
+remember to get the root string one like that.
+
+20:38.540 --> 20:42.920
+And then I'm going to say whether screen's right or enum.
+
+20:43.340 --> 20:43.820
+Whoops.
+
+20:44.150 --> 20:44.900
+Let's see.
+
+20:49.650 --> 20:54.120
+And name, they say, whether screens.
+
+20:55.170 --> 21:00.900
+Main screen, that is that name, and I'm going to do the same thing we did on a splash screen, I'm
+
+21:00.900 --> 21:08.880
+going to spend our friend there was just added right and it's going to be our city.
+
+21:09.300 --> 21:13.890
+Now, in this case, here we see a string or it.
+
+21:14.100 --> 21:17.550
+I'm just going to say, Am city like this?
+
+21:19.380 --> 21:20.170
+Wow, I like that.
+
+21:20.190 --> 21:21.420
+So this is what's going to happen.
+
+21:21.420 --> 21:23.100
+So we click on search.
+
+21:23.100 --> 21:24.700
+We add the search.
+
+21:24.720 --> 21:28.050
+In fact, let's just run and see how this will work.
+
+21:30.610 --> 21:31.330
+OK, let's go.
+
+21:32.950 --> 21:38.470
+I'm going to say Seattle hit enter Whyalla.
+
+21:39.370 --> 21:40.150
+We went back.
+
+21:41.300 --> 21:45.850
+If we go to Logcat, there is Seattle in from our main screen.
+
+21:48.040 --> 21:49.180
+Very cool.
+
+21:49.270 --> 21:52.420
+If I change to, let's say, Moscow.
+
+21:56.590 --> 21:59.950
+You should see Moscow.
+
+22:01.240 --> 22:01.530
+There.
+
+22:02.800 --> 22:05.950
+Look how easy things get now in our main screen.
+
+22:06.310 --> 22:11.380
+We said we got the city from army, from our screen in this case, our.
+
+22:12.850 --> 22:18.040
+Search screen, that means then I can take this city and added here dynamically.
+
+22:18.660 --> 22:22.140
+I look at this look how easy this will look now I say City.
+
+22:24.850 --> 22:25.510
+Like that?
+
+22:29.210 --> 22:32.750
+Looks like it needs some wrapping to string.
+
+22:32.780 --> 22:33.170
+Sure.
+
+22:33.800 --> 22:34.170
+Voila.
+
+22:34.710 --> 22:37.220
+OK, look, what's going to happen when I run this?
+
+22:38.800 --> 22:45.070
+Now, the first default is going to happen because from here, it's going to go and voila.
+
+22:45.100 --> 22:46.870
+San Diego, why San Diego?
+
+22:47.230 --> 22:52.180
+Because, you know, a splash screen, we said, well, default seat is going to be San Diego when they
+
+22:52.180 --> 22:53.080
+first come in.
+
+22:53.710 --> 22:59.170
+We have to have some sort of defaults, default city, which is exactly what happened because we passed
+
+22:59.170 --> 23:01.030
+that along in our navigation.
+
+23:01.390 --> 23:01.890
+Wonderful.
+
+23:01.900 --> 23:02.380
+It's working.
+
+23:02.500 --> 23:03.280
+Now check this out.
+
+23:03.610 --> 23:04.480
+Let's go to search.
+
+23:04.960 --> 23:07.090
+I'm going to say Moscow.
+
+23:07.390 --> 23:07.900
+Why not?
+
+23:08.020 --> 23:09.370
+Because we can click.
+
+23:09.370 --> 23:10.080
+We go back.
+
+23:10.090 --> 23:10.580
+There we go.
+
+23:10.600 --> 23:15.310
+Moscow and everything changed now because the way we've set everything up.
+
+23:15.550 --> 23:19.780
+It goes ahead and says, get weather data passes in the city.
+
+23:19.960 --> 23:25.630
+Now the city is indeed the city that we've just added, right, you know, search bar and pulls in the
+
+23:25.630 --> 23:27.400
+information about Moscow.
+
+23:27.760 --> 23:36.040
+If I go and say, let's say my portal like this, click.
+
+23:36.850 --> 23:37.780
+Now it's my photo.
+
+23:38.080 --> 23:42.670
+And while if I search for something else, I say Mumbai.
+
+23:44.820 --> 23:50.100
+And goes back Mumbai and is getting the weather information for Mumbai.
+
+23:51.450 --> 23:51.810
+Great.
+
+23:52.110 --> 23:52.770
+It's working.
+
+23:54.770 --> 23:55.970
+OK, I get it.
+
+23:56.420 --> 24:02.990
+So this is a pretty long video, and I apologize for that, but I hope you were able to follow along
+
+24:02.990 --> 24:05.060
+and see exactly the process right.
+
+24:05.060 --> 24:11.760
+It took my time because I want you to understand exactly how we go about routing everything and passing
+
+24:11.760 --> 24:15.260
+in data, passing in information from droughts and so forth.
+
+24:15.510 --> 24:15.860
+OK.
+
+24:16.010 --> 24:16.790
+And there you go.
+
+24:16.820 --> 24:17.330
+It works.

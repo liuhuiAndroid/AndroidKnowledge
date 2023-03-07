@@ -1,0 +1,289 @@
+WEBVTT
+
+00:01.080 --> 00:07.230
+So, Caitlin, and we've talked about it gives us this flexibility of extending or inheriting from other
+
+00:07.230 --> 00:11.970
+classes, which is really good because it gives us this flexibility of not repeating code, but also
+
+00:11.970 --> 00:19.920
+make it so that there is this system tree system, if you will, that allows us to inherit and get information
+
+00:19.920 --> 00:22.980
+from a super class to a child class.
+
+00:23.130 --> 00:27.810
+So it's a very good paradigm programming paradigm, as we've seen, and it has a lot of benefits, but
+
+00:27.810 --> 00:32.310
+there are times that we need something more and Caitlin gives us a lot.
+
+00:32.400 --> 00:37.410
+One of the things that it gives us is something called extension functions.
+
+00:37.560 --> 00:38.760
+So a good example.
+
+00:39.090 --> 00:47.160
+A simple example would be imagine that we are trying to append a string after a text like this.
+
+00:47.160 --> 00:54.150
+So we have hello there and then we want to create a function that will append a string.
+
+00:54.210 --> 00:55.980
+So, for instance, could say hello there.
+
+00:56.580 --> 00:58.860
+How are you or hello there, sir?
+
+00:58.860 --> 01:00.030
+Hello there, miss.
+
+01:00.240 --> 01:01.650
+Hello there, Mrs., and so forth.
+
+01:01.770 --> 01:10.050
+So string being one of the classes that comes prebuilt in Kotlin, we can actually extend that and create
+
+01:10.050 --> 01:15.810
+a function what we call the extension function that will append the text to existing string.
+
+01:15.840 --> 01:20.820
+OK, now this is a very simplistic, of course, example, and there are other ways to actually append
+
+01:20.820 --> 01:21.390
+strings.
+
+01:21.690 --> 01:26.190
+This is going to give us some sort of a start to understanding extension functions.
+
+01:26.760 --> 01:30.750
+OK, let's go ahead and take a look in code and see how that will work.
+
+01:32.110 --> 01:36.550
+All right, let's go ahead and create an extension function, so what is this syntax, how do we create
+
+01:36.550 --> 01:37.570
+an extinction function?
+
+01:38.200 --> 01:42.100
+So outside of Maine here when I can do the first thing you need to do, of course, I'm going to say
+
+01:42.100 --> 01:43.630
+fun because it's going to be a function.
+
+01:43.630 --> 01:50.560
+And then we start by invoking the class library class that comes with that.
+
+01:50.560 --> 01:53.200
+We want to create extinction function from.
+
+01:53.590 --> 01:54.930
+So in this case, going to be string.
+
+01:55.180 --> 01:57.880
+OK, and then we say, Dot want to create our own?
+
+01:58.120 --> 01:59.550
+So we're going to name it something different.
+
+01:59.560 --> 02:03.460
+I'm going to say this append as such.
+
+02:03.700 --> 02:08.050
+And then it's going to be a function so we can pass parameters inside here.
+
+02:08.050 --> 02:14.200
+I'm just going to say to append to signify this is going to be a string that we're going to append to
+
+02:14.200 --> 02:16.090
+the pre-existing string or text.
+
+02:16.780 --> 02:18.760
+And I want this to actually return a string.
+
+02:19.120 --> 02:19.450
+OK.
+
+02:20.690 --> 02:26.840
+OK, so in this case here, all I'm going to do, I'm going to say we turn now the idea is that if we
+
+02:26.840 --> 02:32.540
+come up here and I see, for instance, print, I'll end the message here.
+
+02:32.780 --> 02:40.200
+If I say Hello, Janey, I want to be able to say dot and invoke a pen.
+
+02:40.220 --> 02:41.570
+In fact, at the moment, you do that.
+
+02:41.750 --> 02:44.930
+You can see it is showing already and we haven't done anything.
+
+02:45.530 --> 02:48.260
+This append is exactly what we just created here.
+
+02:48.320 --> 02:55.880
+That is the power of extinction functions because we leveraged what already existed to our advantage.
+
+02:56.270 --> 02:57.950
+We even create the string class.
+
+02:58.070 --> 03:00.680
+We can't even do much with it, but we can extend.
+
+03:00.860 --> 03:03.830
+That's why they call extinction functions, right.
+
+03:03.830 --> 03:10.070
+So there is the sense that it is that when we are pand mean, we are gluing say hello, Janie, and
+
+03:10.070 --> 03:13.640
+then we're going to penned some text here that would say something like.
+
+03:15.250 --> 03:16.750
+Friend or whatever.
+
+03:16.960 --> 03:17.650
+That's what we're doing.
+
+03:17.890 --> 03:18.640
+So how do we do that?
+
+03:18.940 --> 03:23.200
+Well, first of all, we need to get this text here, right?
+
+03:23.260 --> 03:24.010
+Which is strength.
+
+03:24.040 --> 03:25.660
+How do we do that inside here?
+
+03:25.690 --> 03:29.810
+There is this implicit this keyword.
+
+03:30.040 --> 03:34.270
+I say this if you have over, this will mean what?
+
+03:34.270 --> 03:38.830
+It's going to be a string type, which means going to be whatever we are passing as a string.
+
+03:39.330 --> 03:41.230
+So this is actually the string.
+
+03:41.530 --> 03:41.960
+OK.
+
+03:42.670 --> 03:47.500
+And then in this case, I would say this get the string and I'm going to say that plus.
+
+03:48.730 --> 03:55.480
+So I'm just going to add something else and then add the two append string three passing air.
+
+03:56.380 --> 04:03.040
+And so now you can see this is working fine because we do have this append actually returning something.
+
+04:03.430 --> 04:08.240
+So let's say, sir, or it's like this.
+
+04:08.320 --> 04:09.100
+Let's go ahead and run.
+
+04:09.820 --> 04:12.810
+And while we can see says, Hello, Jenny, miss.
+
+04:12.830 --> 04:21.850
+So whatever we pass here, friend and run, it's going to append that message or the string that we
+
+04:21.850 --> 04:22.570
+want our pen to.
+
+04:22.990 --> 04:29.620
+Now this is a very important concept of extension functions where, as you can see, we can customize
+
+04:29.620 --> 04:30.240
+anything.
+
+04:30.250 --> 04:32.590
+So think of any class that comes with Kotlin.
+
+04:32.920 --> 04:40.420
+You can add your own extension function to do something extra that they may not be able to do out of
+
+04:40.420 --> 04:40.900
+the box.
+
+04:41.200 --> 04:48.700
+And since we know how to make our code even more succinct and codling, we know that we can remove this
+
+04:48.790 --> 04:50.470
+actually, because it's just one liner.
+
+04:50.650 --> 04:51.850
+You can get rid of all of that.
+
+04:52.630 --> 04:53.890
+Get rid of return.
+
+04:57.130 --> 05:00.580
+Such and just say equals like this.
+
+05:01.210 --> 05:03.850
+OK, so this is the same thing what we had before.
+
+05:03.850 --> 05:05.290
+So now it's just in one line.
+
+05:05.590 --> 05:11.430
+We're saying that we're going to return these that append this string that we are adding there.
+
+05:11.440 --> 05:14.970
+So we ran this, we'll see that same thing happens.
+
+05:14.980 --> 05:25.390
+We are appending friend after the string there get put a comma as well, maybe less space.
+
+05:25.870 --> 05:28.660
+And Iran can also put a smiley face.
+
+05:30.650 --> 05:32.680
+It's having some fun here, and there we have it.
+
+05:32.920 --> 05:35.440
+Also, I may have to correct myself a little bit.
+
+05:35.440 --> 05:38.780
+I may have called the append being the receiver type.
+
+05:38.790 --> 05:39.510
+That's not true.
+
+05:39.520 --> 05:42.670
+That's actually the extension function name, as you see there.
+
+05:43.120 --> 05:48.040
+But the receiver type is this right, which refers to the type being extended?
+
+05:48.220 --> 05:50.800
+That's something that I wanted to correct myself here.
+
+05:50.830 --> 05:54.910
+So as you can see, there are a lot of things we can do with extension functions because it allows us
+
+05:54.910 --> 05:59.690
+to extend beyond what the library gives us the Coughlin library.
+
+05:59.710 --> 06:03.730
+So think of other ways in which you can extend the library.
+
+06:03.730 --> 06:06.140
+In this case, create extension functions.
+
+06:06.160 --> 06:13.090
+How about creating an extension function that will take a string such as space as we have here and remove
+
+06:13.090 --> 06:14.950
+the first and the last characters?
+
+06:16.560 --> 06:20.320
+Just think about it and maybe do some research and figure out a way to do that.

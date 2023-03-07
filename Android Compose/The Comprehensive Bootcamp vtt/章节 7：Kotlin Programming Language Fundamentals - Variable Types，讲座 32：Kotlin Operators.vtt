@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00.330 --> 00:07.110
+And of course, as in other programming language, we are able to do operations such as addition, subtraction,
+
+00:07.110 --> 00:11.490
+multiplication division and the module operator.
+
+00:11.760 --> 00:12.840
+So those are the basics.
+
+00:13.040 --> 00:16.410
+And so this is very important because any programming language has to be able to do this.
+
+00:16.680 --> 00:18.900
+Now let's take a quick look real fast here.
+
+00:18.930 --> 00:20.940
+How do we do this in Scotland?
+
+00:21.130 --> 00:25.380
+Well, back to our main can create a variable vowel a sequel.
+
+00:25.380 --> 00:32.700
+23 Mel B is 12, so I can just print, say, a Class B the result?
+
+00:32.790 --> 00:34.260
+Let's see what's going to happen.
+
+00:34.470 --> 00:38.010
+Should we have 35 and they have it 35.
+
+00:38.100 --> 00:38.910
+So very simple.
+
+00:39.360 --> 00:43.410
+Let's see if one is subtract, which is Score C Dash minus there.
+
+00:43.620 --> 00:46.670
+You know, we should get and number 11.
+
+00:46.700 --> 00:48.450
+That's very good and very simple, really.
+
+00:48.570 --> 00:49.830
+And let's see.
+
+00:49.830 --> 00:50.970
+We want to multiply.
+
+00:51.000 --> 00:53.280
+Multiplication is going to be asterix.
+
+00:53.430 --> 00:54.560
+So there we go.
+
+00:54.600 --> 00:55.020
+Run.
+
+00:55.410 --> 00:57.280
+There it is for a divide.
+
+00:57.300 --> 00:59.460
+What would slash and we'd get one, huh?
+
+00:59.580 --> 01:06.120
+It seems like that would have a problem because if we divide 23 by 12, it's not necessarily one.
+
+01:06.180 --> 01:07.230
+What's going on here?
+
+01:07.410 --> 01:12.390
+Well, the reason being is because when we divide integers, we don't get the right result.
+
+01:12.540 --> 01:18.210
+So we have to change these to double to get the correct result or one of them, at least.
+
+01:18.210 --> 01:19.230
+But let's change both of them.
+
+01:19.380 --> 01:20.310
+Look, what's going to happen?
+
+01:20.610 --> 01:21.950
+Talk about precision again.
+
+01:21.960 --> 01:28.050
+You can see if we do that, then we get the correct number, which is 1.9, 16 and so forth.
+
+01:28.290 --> 01:32.850
+So this goes back to that idea of types there, how important they are.
+
+01:32.880 --> 01:36.660
+It's not wrong when we divide 23 by 12 and get one.
+
+01:36.840 --> 01:40.740
+I mean, in the computer way of thinking, quote unquote, it's that's not wrong.
+
+01:40.950 --> 01:47.130
+But the problem is that it's wrong mathematically because the way things are done in memory when we're
+
+01:47.130 --> 01:48.800
+dealing with integers, right?
+
+01:48.990 --> 01:54.660
+So if we're dividing two numbers that are integers in the division, the quotient is actually a double.
+
+01:54.900 --> 01:57.460
+Well, the result is always going to be an integer.
+
+01:57.480 --> 02:04.440
+That's why we get the one, because if we ignore all of these decimal numbers, we will see that indeed,
+
+02:04.650 --> 02:07.240
+all it's been red is one because this is an integer.
+
+02:07.260 --> 02:09.960
+The rest is gibberish when the types are integer.
+
+02:10.020 --> 02:13.260
+So always keep in mind if you are dividing integers.
+
+02:13.260 --> 02:19.110
+If the result is actually a floating point type, you will get the result that is wrong.
+
+02:19.440 --> 02:20.490
+See, let's do this again.
+
+02:20.610 --> 02:25.170
+That's a very good, interesting lesson when it comes to types in codling.
+
+02:25.170 --> 02:28.800
+This one again, it says one because again, it's ignoring anything else.
+
+02:28.800 --> 02:33.900
+It's saying, OK, well, it's going to be one because that is the integer goes and finds that one that
+
+02:33.900 --> 02:39.090
+whatever else it needs to happen, whatever decimal places we have, it's going to ignore all of that
+
+02:39.090 --> 02:40.080
+because it's an integer.
+
+02:40.170 --> 02:43.350
+It's a goes and gets just one because these are integers.
+
+02:43.590 --> 02:49.620
+But if we just change one to a double by putting that zero, the whole thing changes because now we
+
+02:49.620 --> 02:50.700
+should get it precision.
+
+02:50.850 --> 02:54.660
+So we don't have to put for both doubles just one double one integer.
+
+02:54.960 --> 02:59.220
+The result is going to be a double, which contains indeed precision that we need.
+
+02:59.250 --> 03:02.680
+In turn, that's the correct result programming.
+
+03:03.480 --> 03:08.280
+So things to always keep in mind very, very important when it comes to division.
+
+03:08.520 --> 03:08.820
+All right.
+
+03:09.090 --> 03:09.900
+So we have that.
+
+03:09.960 --> 03:12.930
+Now let's look at the modulo operator.
+
+03:13.260 --> 03:14.040
+What does that mean?
+
+03:14.070 --> 03:15.690
+Well, is the remainder operator.
+
+03:15.690 --> 03:23.250
+So if I say, for instance, just changes, say, 10 and this is going to be two, if I change the operator
+
+03:23.250 --> 03:28.730
+here to percentage sign what's going to happen this one, this right, it's a zero.
+
+03:28.740 --> 03:29.450
+What's happening?
+
+03:29.460 --> 03:30.450
+Well, it's very simple.
+
+03:30.450 --> 03:31.530
+It's the remainder.
+
+03:31.770 --> 03:35.640
+So when we do this operation, we are looking for the remainder.
+
+03:35.640 --> 03:39.540
+Meaning if we divide 10 by two, what is the remainder?
+
+03:39.630 --> 03:41.640
+Well, the remaining is going to be zero is 10.
+
+03:41.640 --> 03:45.330
+Divided by two is indeed five and the remainder is zero.
+
+03:45.450 --> 03:49.600
+However, if I change this to three right, what's going to happen, right?
+
+03:49.620 --> 03:54.780
+We have one remainder is indeed one, because 10 divided by three is three.
+
+03:54.870 --> 03:58.230
+Three times three is nine and remainder is one to get to 10.
+
+03:59.130 --> 04:04.860
+So you will use the remainder in certain cases where, for instance, you want to get multiples of three
+
+04:05.550 --> 04:11.700
+from a list or multiples of two or multiples of 10 or whatever it is, you can actually use the remainder
+
+04:11.880 --> 04:15.370
+do a little bit of calculations to figure out certain things.
+
+04:15.660 --> 04:18.240
+So there's a lot of use for remainder.
+
+04:18.540 --> 04:19.560
+OK, very good.
+
+04:19.890 --> 04:22.980
+So we've learn about the basic operation.
+
+04:22.990 --> 04:28.350
+So addition, subtraction, multiplication division and the modulo operator.

@@ -1,0 +1,769 @@
+WEBVTT
+
+00:03.200 --> 00:07.700
+All right, so let's go ahead and start putting together the infrastructure we need to be able to save
+
+00:07.970 --> 00:10.040
+data into the database.
+
+00:10.460 --> 00:16.820
+That way, we can see something like this right to be able to save seeds that we search for and add
+
+00:16.820 --> 00:18.860
+them to our database so we can.
+
+00:18.980 --> 00:25.760
+Then users in this case can go back and refer to them by clicking and show the information about that
+
+00:25.760 --> 00:26.110
+city.
+
+00:27.820 --> 00:31.540
+OK, so we're going to start, of course, from the beginning, the first thing we need to do is to
+
+00:31.540 --> 00:33.040
+create that table, right?
+
+00:33.220 --> 00:38.440
+Or in this case, the model class that will model after a favorite city.
+
+00:39.610 --> 00:40.840
+So let's go to our project.
+
+00:41.890 --> 00:46.480
+A lot of things here, of course, we have to remember that we must have.
+
+00:48.890 --> 00:55.490
+All of the dependencies that we added earlier, so if you are just now following us, which I hope you
+
+00:55.670 --> 01:01.760
+are not just now following us, remember that we have already added the foom dependencies and everything
+
+01:01.760 --> 01:03.520
+that we need in order to use room.
+
+01:03.890 --> 01:04.850
+So that's very important.
+
+01:05.960 --> 01:08.780
+And so back here, what do we need to do?
+
+01:08.810 --> 01:11.810
+Let's go to our model here and our model class.
+
+01:12.140 --> 01:15.420
+I'm going to create a new class.
+
+01:15.750 --> 01:19.370
+It's just going to be an actual data class, actually.
+
+01:19.730 --> 01:21.110
+You know what to call these favor it.
+
+01:21.680 --> 01:21.920
+OK.
+
+01:22.760 --> 01:23.300
+There we have it.
+
+01:23.390 --> 01:26.750
+So there's really much special about this class.
+
+01:27.770 --> 01:34.220
+Except that we need to add some annotations here to tell the room database compiler to know that this
+
+01:34.460 --> 01:40.830
+is not just any class, but it's also going to be part or the will be compiled into an entity.
+
+01:40.880 --> 01:47.570
+So an entity is a table that we can add into our database to do so, it's for a simple say at, say,
+
+01:47.570 --> 01:49.890
+entity such and voila.
+
+01:49.970 --> 01:54.980
+This tells us that everything is set up in the back end, meaning we have a room dependency and everything.
+
+01:55.280 --> 01:58.730
+So this entity can say, you can see here, says Android X.
+
+01:58.910 --> 02:02.150
+That room, which tells us that it is a room.
+
+02:03.180 --> 02:09.930
+Entity, what that means, then, is that we can pass out a method metadata inside, so I can say table
+
+02:09.930 --> 02:15.450
+name, so I can now say, OK, I want this to be favorite or fav.
+
+02:16.670 --> 02:18.560
+Tbal like this, right?
+
+02:18.800 --> 02:22.730
+I like to always add a table for table whenever I create a table.
+
+02:23.360 --> 02:29.810
+OK, so now entity is going to run it and say, OK, this class is not just any class is an entity,
+
+02:29.810 --> 02:35.750
+which means is in lay terms is just a table that can be used with room.
+
+02:36.880 --> 02:37.120
+OK.
+
+02:37.750 --> 02:44.590
+All right, so next here in our constructor, we are going to add a few parameters if you were going
+
+02:44.590 --> 02:45.550
+to add a few parameters.
+
+02:45.910 --> 02:48.520
+The first prime is going to be actually one.
+
+02:49.270 --> 02:55.300
+The first primary I'm going to the first parameter is going to be a city because for a fravor, because
+
+02:55.300 --> 02:58.090
+we saving the favored city like the city name.
+
+02:58.810 --> 03:00.490
+So in this case, there's going to be a string.
+
+03:01.510 --> 03:07.270
+And the second one is going to be a country because I just want to save that to show later that, you
+
+03:07.270 --> 03:11.590
+know, we have that country code there, just something I decided to do.
+
+03:12.040 --> 03:12.340
+All right.
+
+03:12.460 --> 03:13.000
+Same thing.
+
+03:13.000 --> 03:13.360
+It's going to be a.
+
+03:15.630 --> 03:17.400
+Let's not forget what outcome was there.
+
+03:17.850 --> 03:25.980
+OK, now this is fine, but it's not complete because now we have to again, I penned I had a few annotations
+
+03:25.980 --> 03:30.360
+here, so that room compiler will know what to do with all of this.
+
+03:30.750 --> 03:37.380
+First of all, every table needs to have some sort of a primary key so that it can reference that key
+
+03:37.380 --> 03:39.210
+whenever we want to get to that information.
+
+03:39.750 --> 03:40.020
+Right.
+
+03:40.500 --> 03:43.240
+So it's a unique key in this case for us.
+
+03:43.260 --> 03:49.650
+I'm just going to make this actual primary key meaning that our city is going to be a primary key.
+
+03:51.900 --> 03:57.960
+And next here, I'm going to ask Annotate to say, well, the city is also going to be a column because
+
+03:57.960 --> 04:01.330
+we have columns and rows right for our tables entities.
+
+04:01.740 --> 04:06.660
+So I'm going to say at column info like that in passing a few metadata here.
+
+04:06.900 --> 04:13.170
+The name is going to be city now because city and city are the same.
+
+04:13.170 --> 04:14.140
+There are the same name.
+
+04:14.160 --> 04:19.650
+I don't really have to add a name if I didn't want to write because there have the same name.
+
+04:19.890 --> 04:27.630
+The beauty here is that I can create a different column name if I wish to do so different from the actual
+
+04:28.920 --> 04:29.670
+fields name.
+
+04:29.880 --> 04:31.920
+But in this case, it's fine, which is going to keep it that way.
+
+04:33.030 --> 04:40.080
+And I want to make sure also that is not known, right, that this primary key city should not be now.
+
+04:40.080 --> 04:47.760
+Meaning we won't be able to save a all for city with sense because we don't want to save a favorite
+
+04:48.210 --> 04:49.020
+novel city.
+
+04:49.890 --> 04:50.090
+OK.
+
+04:50.700 --> 04:55.830
+And so for country, I'm going to do different and for a country here, all I have to pass is just the
+
+04:55.830 --> 04:59.010
+column info and pass the name.
+
+04:59.320 --> 05:01.470
+Just going to see a country like this.
+
+05:02.040 --> 05:02.490
+There we go.
+
+05:02.550 --> 05:08.660
+And just like that, we've created an entity that will use for our room database.
+
+05:10.740 --> 05:11.250
+And that's it.
+
+05:12.630 --> 05:18.960
+In the background and the room compiler will know what to do with everything and set everything up for
+
+05:18.960 --> 05:19.140
+us.
+
+05:19.890 --> 05:22.830
+So let's look at the diagram because it's always helpful.
+
+05:22.980 --> 05:29.700
+So we said that we're going to follow this structure here because it helps us to compartmentalize,
+
+05:29.700 --> 05:37.080
+to create entities to create, in this case, layers that will help us in the future if we wish to make
+
+05:37.080 --> 05:37.890
+this more complex.
+
+05:38.190 --> 05:38.490
+Right.
+
+05:38.910 --> 05:46.830
+But also, it just gives us a a scaffolding per se so that we can use anytime we want to create a database
+
+05:46.830 --> 05:47.790
+room database, right?
+
+05:47.790 --> 05:50.070
+So always follow something similar to this.
+
+05:50.230 --> 05:51.420
+At least it's very important.
+
+05:52.320 --> 05:58.470
+Now we said that in order for us to connect or database, in order for us to interface with our database,
+
+05:58.470 --> 06:05.460
+we need to create a Dow down just any interface class that access our object.
+
+06:05.460 --> 06:12.330
+So data access object, which means all he does, it has the functions that will allow us to do all
+
+06:12.330 --> 06:19.890
+the queries, all the reading, updating and so forth to our SQL like database, which in turn has entities.
+
+06:20.640 --> 06:25.110
+OK, so we are working here in this area right now.
+
+06:25.410 --> 06:26.490
+Let's go ahead and create that.
+
+06:27.830 --> 06:30.920
+So far now I'm going to create that inside of our data.
+
+06:31.230 --> 06:40.580
+OK, so you guys like class and it's going to be an interface, so I'm going to say weather now and
+
+06:40.580 --> 06:42.410
+notice the naming is very important here.
+
+06:42.530 --> 06:42.890
+Right?
+
+06:43.160 --> 06:46.400
+The app is weather and Dow is their access object.
+
+06:46.880 --> 06:51.710
+It's very important to have those and these name naming conventions here, because then it's easy for
+
+06:51.710 --> 06:55.430
+us to know what this is when we look at it.
+
+06:56.870 --> 06:58.670
+OK, so weather now, what do we do?
+
+06:58.700 --> 07:02.750
+Well, the first thing we need to do, of course, is to make sure again annotated to say this is a
+
+07:02.750 --> 07:04.560
+Dow class, right?
+
+07:04.580 --> 07:06.740
+It's an Android Excel room Dow.
+
+07:06.890 --> 07:11.330
+And so Android will know exactly what this is in the background.
+
+07:12.320 --> 07:12.590
+OK.
+
+07:13.640 --> 07:19.130
+And here is where are we going to add all of the queries and all sort of things that we need to interface
+
+07:19.130 --> 07:25.790
+with their base because their base really all we're doing is creating an item is updating that item
+
+07:25.790 --> 07:26.810
+is leading.
+
+07:26.810 --> 07:33.860
+That item is so create, read, update, delete, cried.
+
+07:33.870 --> 07:34.910
+That's all we're doing.
+
+07:35.510 --> 07:35.810
+OK?
+
+07:36.880 --> 07:41.370
+So we need to create infrastructure in these cases and interface, or we need to create the classic
+
+07:41.400 --> 07:43.600
+or in this case, the functions that will do that.
+
+07:44.050 --> 07:50.860
+So the first one is going to be get favorites and it's getting the fun, get favorites like to get my
+
+07:50.860 --> 07:51.910
+favorite from their base.
+
+07:52.480 --> 07:58.990
+And in this case, here, I'm going to make it so that the list, because we want to receive all of
+
+07:58.990 --> 08:05.110
+that as a list of favorites and once a list of white favorite objects in this case is going to be favorite
+
+08:05.110 --> 08:05.550
+objects.
+
+08:06.850 --> 08:14.020
+But this is not enough because remember, with compose, we need to wrap our data, especially getting
+
+08:14.050 --> 08:19.990
+our data, because now we're talking about composer roles that respond to the changes of our data.
+
+08:20.320 --> 08:27.520
+We need to wrap this inside of a structure that is structured that will allow this reactivity of our
+
+08:27.520 --> 08:27.910
+data.
+
+08:28.720 --> 08:30.390
+Now we've seen mutable state.
+
+08:30.400 --> 08:34.960
+We've seen other kinds of structured data structure that allow us for that.
+
+08:35.350 --> 08:37.220
+Now we're going to use a new one called Flow.
+
+08:37.240 --> 08:45.190
+Now I found that flow works really well with a room database, so I'm not going to use mutable state
+
+08:45.190 --> 08:45.700
+or anything.
+
+08:45.880 --> 08:51.820
+Flow is what works well so far, so I'm going to wrap all of that with flow.
+
+08:52.720 --> 08:57.040
+So if you have over this quite an import flow and flow, there we go.
+
+08:57.640 --> 08:58.000
+Very good.
+
+08:59.700 --> 09:05.670
+Now, there's a lot about flow that I'm not going to get into it, but if you have overseas is an asynchronous
+
+09:05.670 --> 09:12.350
+data stream that's sequentially in its values and completes normally or with exceptions and so forth,
+
+09:12.360 --> 09:12.630
+right?
+
+09:13.290 --> 09:17.790
+And there's a lot about it, and you can read more about it, but essentially think of just a stream
+
+09:17.790 --> 09:22.110
+of data that we're going to be stream out to whoever wants to use it.
+
+09:22.770 --> 09:25.290
+Now, this is not it, actually, because we need to do something else.
+
+09:25.380 --> 09:27.990
+As you know, we are talking about the room, their base.
+
+09:28.290 --> 09:33.600
+That means we need to annotate to know to make it known that this is indeed a query we're doing to there
+
+09:33.640 --> 09:33.930
+to.
+
+09:35.360 --> 09:39.860
+So that it's known that this is indeed a query we are performing to our database.
+
+09:40.190 --> 09:47.300
+And luckily, we can do that by saying at query that make sure we get the correct query from the correct
+
+09:47.300 --> 09:49.490
+dependency on the correct namespace.
+
+09:49.850 --> 09:56.030
+So we want the Android X Room query like this, which allows us to pass, of course, as you know,
+
+09:56.030 --> 09:58.430
+by now, certain values and say values.
+
+10:00.130 --> 10:05.410
+Core value in this case, in fact, I don't have to pass anything like this, but it's implicit there.
+
+10:05.590 --> 10:09.090
+You can see it's a value that we can pursue what easily they were going to pass.
+
+10:09.100 --> 10:16.390
+Well, we're going to pass the actual query sequel light sequel query here command that will allow us
+
+10:16.390 --> 10:18.460
+to get data from the database.
+
+10:19.210 --> 10:25.870
+So all we have to do is just say select all caps doesn't have to go all caps, but I like to follow
+
+10:25.870 --> 10:34.360
+that convention and asterisks to say select all and then say from well, from our database.
+
+10:34.720 --> 10:37.360
+But how do I get the database?
+
+10:37.570 --> 10:43.420
+This is the beauty, because from database is sophisticated, all the classes know of each other.
+
+10:43.750 --> 10:51.640
+If you just start typing like f a V, remember this is the name of the table we created earlier when
+
+10:51.640 --> 10:54.460
+you created that entity favorite class.
+
+10:55.970 --> 10:56.300
+Right.
+
+10:56.600 --> 10:58.400
+Very good, so I can just hit enter.
+
+10:58.550 --> 11:04.850
+And while I'm so always saying that now, is that OK when this is called get favorites right, it will
+
+11:04.850 --> 11:12.950
+know that it needs to go and query the database and get everything from our favorite table and return
+
+11:13.280 --> 11:17.840
+a list of favorite objects in a stream of the flow.
+
+11:20.070 --> 11:20.460
+That's it.
+
+11:22.140 --> 11:22.920
+All right.
+
+11:23.160 --> 11:23.700
+Very easy.
+
+11:24.120 --> 11:26.970
+Of course, I'm going to create another one here to suspend.
+
+11:27.030 --> 11:29.910
+Now this one is suspend because I'm going to create.
+
+11:30.180 --> 11:35.910
+I'm going to create a different query that requires to run on the background, OK?
+
+11:36.300 --> 11:40.380
+So and also it's not returning essentially a flow.
+
+11:40.380 --> 11:46.620
+So a flow will take care of all of the background routines and everything that we usually have to worry
+
+11:46.620 --> 11:48.870
+about when we're getting data from anywhere else.
+
+11:49.260 --> 11:53.370
+So suspended balance, it gets five by it.
+
+11:53.580 --> 11:54.680
+Now we're not going to use this.
+
+11:54.690 --> 11:57.430
+I'm just going to give you a full picture here, right?
+
+11:57.450 --> 12:02.370
+Let's say I want to get my favorite CD by its side.
+
+12:02.940 --> 12:11.310
+The idea is going to be city right string like this pass, and I want to return a favor object.
+
+12:12.480 --> 12:13.780
+Of course, I want to do the same thing.
+
+12:13.800 --> 12:14.790
+It's going to be a query.
+
+12:16.050 --> 12:18.600
+And for the value I'm going to say select.
+
+12:21.680 --> 12:22.250
+All.
+
+12:26.420 --> 12:28.310
+From our fave table.
+
+12:29.240 --> 12:35.510
+But then I'm going to put a clause here say where right, where white, where what city in this case
+
+12:35.960 --> 12:37.130
+is going to be equal?
+
+12:40.820 --> 12:47.570
+And calling like this equal to City now, this is a syntax, it looks really weird, but what he was
+
+12:47.570 --> 12:54.110
+saying here is that we want to get the city where from our table, of course, favor tables where a
+
+12:54.110 --> 12:58.370
+city, whatever we're passing here is going to be equal to this city.
+
+12:58.550 --> 13:02.480
+Whatever we passing in, our get fast, get fast by it.
+
+13:03.590 --> 13:10.370
+OK, so we do the syntax to say we're going to pass a quarter, we're going to pass in actual value
+
+13:10.910 --> 13:14.540
+that we want to get from our database, which is going to be a favored object.
+
+13:14.660 --> 13:15.920
+So this is syntax weird?
+
+13:15.920 --> 13:17.210
+I know, but that's how we do it.
+
+13:17.630 --> 13:18.470
+We're going to continue.
+
+13:18.980 --> 13:21.400
+Let's go now and insert, right.
+
+13:21.410 --> 13:22.820
+Let's say we want to insert.
+
+13:22.820 --> 13:25.430
+Obviously, we need to insert something to our database.
+
+13:25.650 --> 13:26.570
+Well, let's do that.
+
+13:26.930 --> 13:29.480
+When do you suspend function again?
+
+13:29.990 --> 13:32.300
+Call this insert favorite.
+
+13:36.340 --> 13:38.080
+And I'm getting sort of favorite object.
+
+13:38.230 --> 13:41.140
+Obviously, we don't need to return anything, and that's all.
+
+13:41.290 --> 13:46.060
+Well, not necessarily because we need to tell, of course, the compiler what needs to happen in the
+
+13:46.060 --> 13:46.660
+background.
+
+13:47.200 --> 13:50.830
+In this case, I'm going to say insert annotation.
+
+13:51.820 --> 13:52.990
+Look how easy this is, right?
+
+13:53.500 --> 14:00.100
+So what I can do now here to insert, I could leave it as it is, but I can also say well on conflict.
+
+14:00.100 --> 14:03.250
+If there is some conflict trying to insert a stamp that already exists.
+
+14:03.730 --> 14:10.060
+All I'm going to do, I'm going to invoke the on conflict strategy and say, just go ahead and replace
+
+14:10.270 --> 14:10.580
+that.
+
+14:10.600 --> 14:16.690
+So if we inserting a favorite that already exists like Cancun, the database is just going to go and
+
+14:16.690 --> 14:24.250
+delete whatever concrete, whatever we had before and insert that new data when you favorite in this
+
+14:24.250 --> 14:25.040
+case in your city.
+
+14:26.020 --> 14:26.710
+Let's continue.
+
+14:27.370 --> 14:32.440
+The next one's going to be suspend also, and this is going to be update favorite.
+
+14:33.970 --> 14:37.300
+Again, we're not going to use most some of these, but I'm just going to add them.
+
+14:37.720 --> 14:39.250
+So we have a complete picture.
+
+14:40.150 --> 14:45.330
+We don't need to report to return anything, which is always nice, but we're going to do the same thing.
+
+14:45.340 --> 14:46.970
+I'm just going to go and pass update.
+
+14:46.990 --> 14:48.170
+Look at that very easy.
+
+14:48.190 --> 14:52.960
+And again, I'm going to pass some information metadata say on conflict again.
+
+14:53.470 --> 15:00.580
+I'm going to use a different strategies on conflict strategy and replace like this the same thing we
+
+15:00.580 --> 15:01.010
+did there.
+
+15:01.030 --> 15:04.360
+Let's make sure a favorite like this and I'm going to continue here.
+
+15:04.420 --> 15:08.140
+I say I want to delete because that's one thing that we want to do.
+
+15:08.530 --> 15:09.860
+Let's say I want to delete everything.
+
+15:09.880 --> 15:10.870
+So I'm going to suspend.
+
+15:15.260 --> 15:19.400
+And say delete all favorites.
+
+15:22.270 --> 15:30.160
+I need to pass anything to delete everything, I'm just going to put a query in the square.
+
+15:30.250 --> 15:32.830
+I'm going to go ahead and add the delete.
+
+15:35.280 --> 15:35.910
+From
+
+15:39.360 --> 15:45.930
+our fav table, so this will just delete everything from our database, which usually is not what we
+
+15:45.930 --> 15:49.530
+want to do, but hey, sometimes one must do what needs to do.
+
+15:50.100 --> 15:50.370
+All right.
+
+15:50.610 --> 15:58.560
+And the other one we're going to do, which is important also is the delete one favorite because we
+
+15:58.560 --> 16:01.730
+actually are going to use this span here.
+
+16:01.740 --> 16:02.790
+I'm going to say delete.
+
+16:04.410 --> 16:11.610
+Favourite such and going to delete past the favourite object, we're going to be deleting.
+
+16:13.480 --> 16:19.000
+And I'm just going to go and say at delete, just call delete and voila.
+
+16:19.270 --> 16:19.660
+That's it.
+
+16:24.440 --> 16:31.610
+Now looking at this, if this is the first time that you've worked with databases from their base in
+
+16:32.300 --> 16:42.320
+Android, you will realize how far we've come in Android because before we had to write a lot of boilerplate
+
+16:42.320 --> 16:48.170
+code, a lot of classes, complicated stuff just to get things to work with database SQLite.
+
+16:48.770 --> 16:55.420
+This is what we do with Ramdev's, because when that happens again, it simplifies our lives is apt.
+
+16:55.520 --> 17:01.100
+It abstracts out all the things that we had to do before all the classes that we create, all these
+
+17:01.100 --> 17:02.330
+transactions and so forth.
+
+17:02.930 --> 17:10.850
+All we have to do is just pass in the queries as annotation and leave it all to room to deal with everything
+
+17:10.850 --> 17:11.540
+in the background.
+
+17:11.810 --> 17:12.680
+OK, very good.
+
+17:12.980 --> 17:16.370
+So just take time to marvel at all of this.
+
+17:16.910 --> 17:18.410
+This should be favorite Typekit.
+
+17:18.920 --> 17:19.270
+Let's see.
+
+17:19.280 --> 17:22.120
+Favorite favorite, favorite tie.
+
+17:22.190 --> 17:22.970
+Wherever that was.
+
+17:23.150 --> 17:23.540
+Okay.
+
+17:24.260 --> 17:24.530
+All right.
+
+17:24.530 --> 17:29.330
+So take your time to marvel at this if this is the first time and this is great.
+
+17:29.840 --> 17:37.130
+OK, so next we are going to continue and see where this weather Dow is going to be called and how it
+
+17:37.140 --> 17:38.120
+all fits together.
+
+17:38.600 --> 17:46.250
+So we still following this structure here right from their base structure to set us to set ourselves
+
+17:46.250 --> 17:47.210
+up for success.

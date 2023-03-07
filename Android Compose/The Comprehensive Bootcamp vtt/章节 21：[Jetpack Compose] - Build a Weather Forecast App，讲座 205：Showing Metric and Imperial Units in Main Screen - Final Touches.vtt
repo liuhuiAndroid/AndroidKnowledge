@@ -1,0 +1,691 @@
+WEBVTT
+
+00:01.250 --> 00:07.130
+OK, so now we have our settings screen, which means we are able to save the settings in this unit,
+
+00:07.130 --> 00:08.930
+I should say, into our database.
+
+00:08.960 --> 00:14.810
+Now we need to retrieve that so that we can change the structure of our app, meaning if we go back
+
+00:14.810 --> 00:16.220
+to our main.
+
+00:22.270 --> 00:24.220
+It has worked, let's fix that real quick.
+
+00:24.940 --> 00:26.350
+OK, we are.
+
+00:26.920 --> 00:28.290
+Go to our settings screen.
+
+00:28.300 --> 00:29.500
+Yes, that's where we are.
+
+00:30.400 --> 00:31.780
+And we have a toggle.
+
+00:32.820 --> 00:35.490
+OK, here we have the Lambda Navigator.
+
+00:36.660 --> 00:40.590
+Oh, nav controller, let's just pop.
+
+00:41.810 --> 00:42.860
+Next, act like this.
+
+00:42.890 --> 00:43.280
+All right.
+
+00:43.830 --> 00:43.940
+So.
+
+00:45.700 --> 00:49.330
+OK, let's go ahead and go back and we'll go back to Maine of great.
+
+00:49.840 --> 00:56.170
+So I would want to be able to do is that in our main screen here, this is where things need to change
+
+00:56.170 --> 00:56.740
+because remember?
+
+00:57.220 --> 01:00.100
+Let's go back to main screen.
+
+01:01.150 --> 01:03.190
+This is where we are setting everything up.
+
+01:03.340 --> 01:09.100
+Remember, we have the CD and everything in our main screen that we are passing along so that we know
+
+01:09.100 --> 01:17.590
+exactly so that this so that so that we get the information from that CD so that we get the information
+
+01:17.590 --> 01:20.740
+from that CD, the the data, the forecast for that CD.
+
+01:21.700 --> 01:25.000
+So this is also where we are going to create something else, right?
+
+01:31.750 --> 01:37.090
+So this is also we're going to set up this structure for our Farenheit.
+
+01:37.810 --> 01:41.050
+This is where we also are going to create this structure to set up our.
+
+01:43.540 --> 01:43.900
+Our.
+
+01:45.170 --> 01:47.690
+Our unit of measurement for our.
+
+01:49.380 --> 01:52.920
+This is where we need to set up, this is where we also are going to set up a few things.
+
+01:53.100 --> 01:55.650
+This is where we're going to set up our unit of measurement.
+
+01:56.520 --> 01:59.340
+Now there are other things that need to do here.
+
+01:59.350 --> 02:01.080
+First of all, let's let's start with the.
+
+02:04.750 --> 02:08.330
+OK, so what I'm going to do is let's create another vowel here.
+
+02:08.350 --> 02:14.200
+I'm going to say unit from DB such as, I'm going to say settings now.
+
+02:14.200 --> 02:16.480
+I don't have our settings view model.
+
+02:16.490 --> 02:18.130
+Well, how do I do that?
+
+02:18.490 --> 02:28.150
+I just created, I say, Settings, the model sequel to hilt the model.
+
+02:29.080 --> 02:33.490
+Such easy say that I'm going to say settings.
+
+02:33.490 --> 02:39.820
+Use that view model and get you a list collect state.
+
+02:41.530 --> 02:43.720
+As they can get the value.
+
+02:45.670 --> 02:45.940
+OK.
+
+02:47.460 --> 02:52.140
+And I'm going to create a variable here called unit to make this a state also.
+
+02:53.310 --> 02:54.030
+I remember.
+
+03:08.390 --> 03:13.160
+And here, let's a notable state of.
+
+03:16.190 --> 03:18.870
+She has Imperial to start with
+
+03:22.320 --> 03:22.740
+like this.
+
+03:39.130 --> 03:44.800
+And then what I'm going to do, I'm going to create another VAR call is imperial, which is going to
+
+03:44.800 --> 03:45.840
+be a volume sweep.
+
+03:45.850 --> 03:46.810
+I remember
+
+03:49.180 --> 03:53.380
+immutable state of, say, false in the beginning.
+
+03:53.770 --> 03:55.750
+All right, we'll see all of that in action.
+
+03:59.330 --> 04:02.600
+So that means then I'm going to put everything inside of an if statement here.
+
+04:02.630 --> 04:13.610
+So what I'm going to do and say, if I'm going to check if your unit from DB is not normal or empty,
+
+04:13.610 --> 04:16.790
+that's why I have this exclamation point there.
+
+04:22.100 --> 04:26.780
+If that's the case, then I'm actually going to get all of this.
+
+04:31.010 --> 04:34.720
+Inside of this if statement, OK?
+
+04:40.030 --> 04:45.760
+So if that's the case, if it's not null or empty, then I'm going to set our unit.
+
+04:47.960 --> 04:53.860
+Stringer, remember, this unit is this variable here, which you say remember, which is a state quite
+
+04:54.020 --> 04:54.470
+variable.
+
+04:55.220 --> 04:57.280
+I'm going to set that to what's.
+
+04:59.060 --> 04:59.510
+Go back.
+
+05:00.470 --> 05:07.040
+I'm going to set that whole unit from database and get because I know there's only one item in our list
+
+05:07.100 --> 05:08.480
+that we get from their base, right?
+
+05:08.720 --> 05:10.010
+So I can't actually do this.
+
+05:10.340 --> 05:16.130
+I can say the first item which is going to be that object to the object and I'm going to get the unit.
+
+05:16.790 --> 05:21.560
+And then if you remember correctly, the way we are saving these units, it's a little bit strange,
+
+05:21.560 --> 05:22.160
+but it's OK.
+
+05:22.370 --> 05:23.930
+It saves it at this.
+
+05:24.200 --> 05:30.620
+So imperial Ben Affleck that so we want to get rid of all of these noise for say so we just get the
+
+05:30.620 --> 05:31.160
+imperial.
+
+05:32.210 --> 05:33.920
+OK, you've seen this many times.
+
+05:33.920 --> 05:35.600
+Me do this many times now.
+
+05:36.200 --> 05:37.310
+It should be very familiar.
+
+05:37.340 --> 05:37.760
+Let's see.
+
+05:37.760 --> 05:38.490
+Where am I?
+
+05:38.750 --> 05:39.080
+There you go.
+
+05:39.410 --> 05:48.770
+And so now I'm going to actually split right that unit and split by where we have a space, right?
+
+05:48.770 --> 05:49.640
+An empty string.
+
+05:49.860 --> 05:53.990
+You know what I'm saying here and when split by here in the middle?
+
+05:54.980 --> 05:55.400
+OK.
+
+05:57.340 --> 06:01.300
+And then get to the first part of the list.
+
+06:04.170 --> 06:09.150
+Get just imperial in what I want to do also, I want to make this a lowercase everything lowercase.
+
+06:09.780 --> 06:13.200
+And it's easier to say that lower case like that.
+
+06:14.770 --> 06:23.890
+And then in this case, is imperial bullying, he's going to be equal to whatever the unit is, if it's
+
+06:23.890 --> 06:25.830
+that imperial, right?
+
+06:25.840 --> 06:31.210
+So if the unit is imperial that we're getting here, then that means imperial is going to be true.
+
+06:33.350 --> 06:37.160
+OK, so now that we have this unit, we need to pass it somewhere.
+
+06:37.590 --> 06:46.220
+Right, because remember, the unit is actually passed along the call by the YAL so that we can pass
+
+06:46.220 --> 06:47.900
+units, say imperio or metric.
+
+06:48.590 --> 06:52.760
+All we're doing all of this here because this is where everything is driven, meaning this is where
+
+06:52.790 --> 06:53.720
+everything happens.
+
+06:53.900 --> 06:56.810
+This is where they get weather data is called.
+
+06:56.810 --> 06:57.680
+We're passing the city.
+
+06:58.250 --> 07:03.620
+In this case, we're also going to pass units here, which will set up in a second.
+
+07:04.010 --> 07:05.120
+I'm going to pass my unit.
+
+07:07.040 --> 07:07.340
+OK.
+
+07:11.250 --> 07:12.600
+OK, let's go ahead and.
+
+07:15.000 --> 07:20.580
+First of all, add a comma there and we need to pass, create parameter.
+
+07:26.530 --> 07:30.700
+You know, get whether we have that units.
+
+07:30.790 --> 07:38.050
+It means they'll either get weather here, I'm also going to pass units, it's going to be our.
+
+07:42.760 --> 07:43.720
+It's like that.
+
+07:45.550 --> 07:49.660
+So let's go ahead and create a parameter to say, OK.
+
+07:50.700 --> 07:52.440
+Now, if I go to this weather.
+
+07:53.770 --> 07:55.270
+Notice that we have that units.
+
+07:57.690 --> 08:06.090
+Which we need to pass along as well after query units and passy units fun.
+
+08:06.660 --> 08:13.890
+And in our get weather, you notice that we do have already the units there, which we have imperial
+
+08:14.160 --> 08:14.970
+for its default.
+
+08:16.400 --> 08:22.820
+Right, so we had to trickle down to the main source of truth here to pass that unit's parameter.
+
+08:24.110 --> 08:27.110
+Which already is there for their last one, at least.
+
+08:28.850 --> 08:36.650
+So now or get weather is complete because it will have the API, key API, ID and the units as well.
+
+08:37.610 --> 08:37.940
+OK.
+
+08:39.320 --> 08:43.970
+Let's see if this works because we did a lot of work and we don't know if this is going to work.
+
+08:52.570 --> 08:55.990
+But while I'm here as well, let's go back to our main screen.
+
+08:56.590 --> 08:57.730
+Get rid of these.
+
+09:04.100 --> 09:06.770
+Since we hear looks like it's see.
+
+09:15.290 --> 09:19.760
+We'll use this imperial in a bit, but I'm going to for our city.
+
+09:20.690 --> 09:28.080
+I'm also going to add a new variable here called Coeur City, so so we have a default.
+
+09:28.130 --> 09:34.580
+So this is going to be a string and I'm going to put an if statement here, if city that we're getting
+
+09:34.730 --> 09:35.720
+here, right?
+
+09:36.020 --> 09:40.220
+Passing along is blank like this.
+
+09:41.930 --> 09:49.160
+Then I'm just going to say Seattle else, which is going to say, let's get the city that we're getting,
+
+09:49.670 --> 09:55.280
+OK, this is just going to complete everything so we don't run into issues.
+
+09:55.280 --> 09:57.380
+So now I'm going to use that current city.
+
+10:02.080 --> 10:08.140
+Directly, instead of getting trusting that this is not normal, which shouldn't be because we set it
+
+10:08.140 --> 10:12.970
+up, set everything up, but we always want to make sure that we have that net.
+
+10:13.420 --> 10:15.760
+So I pass this current city like this now.
+
+10:17.540 --> 10:22.010
+All right, let's go ahead and give it a run to see.
+
+10:23.010 --> 10:23.430
+All right.
+
+10:24.420 --> 10:32.490
+If you go to app inspection, we should see Settings is imperial, that's why we still see 67 63 Fahrenheit.
+
+10:32.880 --> 10:40.140
+Now if I go back here to settings and changes to Celsius, let's go back and see.
+
+10:40.620 --> 10:41.150
+And voila!
+
+10:41.340 --> 10:43.290
+You see now everything changed.
+
+10:43.560 --> 10:45.750
+Still, San Diego right now is in Celsius.
+
+10:46.230 --> 10:46.770
+That's good.
+
+10:47.400 --> 10:55.950
+If I go back and change to their height, save go back, goes ahead and change back to Fahrenheit.
+
+10:57.040 --> 10:57.490
+All right.
+
+10:57.610 --> 11:03.910
+It's working, but it's not complete yet, because if you look closely, we see that some units are
+
+11:03.910 --> 11:07.810
+still not working perfectly, meaning if I go to settings.
+
+11:09.470 --> 11:12.830
+And I want to go back to Celsius.
+
+11:14.480 --> 11:16.430
+Why Celsius, everything in Celsius?
+
+11:16.430 --> 11:21.080
+Great, but he notes here it says 74 miles per hour.
+
+11:21.320 --> 11:21.650
+Right.
+
+11:21.860 --> 11:24.830
+This should be meters per second because now we're in Celsius.
+
+11:25.280 --> 11:27.110
+So that's a small thing we can change.
+
+11:27.290 --> 11:29.690
+And that's why we have this is imperial.
+
+11:30.170 --> 11:35.450
+This is imperial is going to be passed along in our main scaffold.
+
+11:35.660 --> 11:36.800
+I'm going to do it right now.
+
+11:37.940 --> 11:43.550
+That way, we can then retrieve that boolean and change whatever we need to change here.
+
+11:44.180 --> 11:44.480
+All right.
+
+11:44.510 --> 11:47.210
+So what is imperial?
+
+11:49.970 --> 11:51.800
+Is Imperial like this?
+
+11:52.400 --> 11:57.320
+Of course, we'll have to create a parameter to say, OK, refactor.
+
+11:59.710 --> 12:02.440
+And now if we go to our main scaffold.
+
+12:03.160 --> 12:07.510
+So you go to a main scaffold, you notice that we have is imperial, what we're going to do actually
+
+12:07.510 --> 12:11.740
+is going to pass that along in our main content because this is where we have.
+
+12:13.770 --> 12:23.340
+We'll show you everything else, so just passing it down is imperial, create that parameter factor,
+
+12:23.490 --> 12:26.580
+that's good and it's passed down.
+
+12:28.950 --> 12:31.770
+OK, now is imperial, when are we going to use that?
+
+12:31.800 --> 12:34.020
+Well, first we're going to use in this.
+
+12:36.190 --> 12:37.070
+Immediately.
+
+12:38.620 --> 12:46.690
+We're going to use the inside of this row here, which is scroll down humidity, wind pressure row.
+
+12:46.700 --> 12:51.520
+So again, going to do the same thing is imperial capacitor along
+
+12:54.130 --> 12:57.220
+and we need to just create that parameter.
+
+12:59.640 --> 13:00.300
+That's OK.
+
+13:02.470 --> 13:08.340
+OK, I know going down the stream in Orla.
+
+13:08.380 --> 13:14.620
+So now if it's imperial, we're going to go down to this taxi, which is wind.
+
+13:14.830 --> 13:15.730
+I think that's all in place.
+
+13:15.730 --> 13:16.690
+We need to change.
+
+13:18.080 --> 13:19.520
+Pressure icon wind.
+
+13:20.120 --> 13:25.850
+So in our text here, instead of miles per hour, I'm going to change a few things.
+
+13:26.270 --> 13:27.320
+Actually, let's see.
+
+13:29.440 --> 13:31.870
+Humidity is miles per hour.
+
+13:34.290 --> 13:35.100
+This shouldn't be.
+
+13:35.610 --> 13:36.990
+That's not right, it should be wind.
+
+13:37.350 --> 13:39.480
+That's why I'm getting it the wrong thing here.
+
+13:40.290 --> 13:41.610
+Let's see whether that.
+
+13:44.170 --> 13:44.710
+Speed.
+
+13:44.950 --> 13:45.700
+That's what I need.
+
+13:45.850 --> 13:46.310
+There we go.
+
+13:46.390 --> 13:47.330
+So I was getting the wrong.
+
+13:47.350 --> 13:49.240
+That's why you see seven, four and seven four.
+
+13:49.630 --> 13:49.990
+All right.
+
+13:50.500 --> 13:53.020
+That should be the correct property.
+
+13:53.770 --> 13:54.040
+All right.
+
+13:54.040 --> 13:59.080
+So here what I'm going to do is I'm going to put an if statement.
+
+14:00.040 --> 14:02.470
+So let's see.
+
+14:03.100 --> 14:05.080
+Let's just get out of here and say,
+
+14:08.200 --> 14:15.610
+plus, if it is imperial is true, then it's going to be miles per hour.
+
+14:16.380 --> 14:22.240
+Else we're just going to see meters per second like this.
+
+14:23.050 --> 14:24.820
+All of that work just change.
+
+14:24.820 --> 14:29.950
+One thing are developing, but it's OK.
+
+14:29.950 --> 14:30.430
+It's worth it.
+
+14:30.440 --> 14:31.720
+Let's go ahead and run.
+
+14:32.920 --> 14:33.310
+All right.
+
+14:33.340 --> 14:39.190
+And you can see because our settings is in Celsius, right metric.
+
+14:39.610 --> 14:47.040
+You can see now so three point nineteen meters per second or get if I go back and change to Fahrenheit
+
+14:47.050 --> 14:48.220
+save, we're going to go.
+
+14:48.610 --> 14:52.330
+Hopefully, see that is seven point fourteen miles per hour.
+
+14:52.990 --> 14:54.940
+And of course, we can always format this.
+
+14:55.450 --> 14:58.200
+I think I call this decimal formatting.
+
+14:58.210 --> 15:00.840
+I see format decimals.
+
+15:01.960 --> 15:07.260
+This, I believe, just wrapped that around and let's just run again.
+
+15:09.410 --> 15:12.230
+OK, now works seven miles per hour.
+
+15:12.620 --> 15:16.190
+It's in Fahrenheit change to.
+
+15:18.510 --> 15:20.040
+Celsius, I say that.
+
+15:22.040 --> 15:22.550
+Safe.
+
+15:23.540 --> 15:23.780
+OK.
+
+15:24.020 --> 15:27.740
+It's working three miles per second, and it's working perfectly.
+
+15:27.980 --> 15:30.560
+I can't go to Moscow.
+
+15:31.650 --> 15:33.160
+It's safe.
+
+15:33.200 --> 15:36.230
+There's there is Moscow safe to our settings.
+
+15:36.230 --> 15:39.720
+I can go to our settings while I can.
+
+15:39.830 --> 15:42.290
+I want to change anything, but let's go to our favorites.
+
+15:42.860 --> 15:45.830
+Well, it's minus five Celsius.
+
+15:46.250 --> 15:47.150
+That's very cold.
+
+15:48.200 --> 15:50.120
+And let's see.
+
+15:51.450 --> 15:52.110
+This search.
+
+15:53.820 --> 15:55.290
+15°C.
+
+15:56.720 --> 16:00.770
+Can change settings to Fahrenheit if I want to.
+
+16:01.850 --> 16:04.250
+And still works fine.
+
+16:04.670 --> 16:08.840
+Well, it looks like we are finished with our project.
+
+16:09.050 --> 16:10.370
+I know it's been quite a journey.
+
+16:10.400 --> 16:12.430
+It's a long journey that we went through.
+
+16:12.450 --> 16:14.200
+But I hope it was helpful.
+
+16:14.210 --> 16:16.490
+I hope you were able to learn a lot.
+
+16:16.850 --> 16:22.830
+There was a lot of things that we went through and I don't expect you obviously to know everything in
+
+16:22.850 --> 16:23.360
+one take.
+
+16:23.540 --> 16:31.040
+That's why we have this video lectures because you can go back and work on things that you're not quite
+
+16:31.040 --> 16:33.680
+sure how they work and you can always ask questions.
+
+16:33.760 --> 16:35.600
+You can improve upon this.
+
+16:35.870 --> 16:40.160
+There are a lot of topics that we've touched on, and I hope that was helpful.

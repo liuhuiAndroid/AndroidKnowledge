@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.550 --> 00:07.120
+So with one here, one expression, you can also check a value for being in or not in a range.
+
+00:07.450 --> 00:07.750
+OK.
+
+00:07.810 --> 00:11.040
+So what that means is, for instance, to say 100 here, right?
+
+00:11.040 --> 00:13.860
+I can change this to say something like this in this.
+
+00:13.930 --> 00:18.880
+That's a key word there in between one and, let's say, 100.
+
+00:19.000 --> 00:27.130
+I want to print something like this amount is between one and 100, something like that.
+
+00:27.320 --> 00:27.550
+OK.
+
+00:27.820 --> 00:33.940
+So if I change this to 99, the amount, because remember, this is what governs the entire expression
+
+00:33.940 --> 00:34.210
+here.
+
+00:34.360 --> 00:35.230
+Let's go ahead and run.
+
+00:35.860 --> 00:42.400
+Can see this amount is between one and a hundred and we can do the opposite, which is to check if something
+
+00:42.400 --> 00:43.510
+is not in range.
+
+00:43.520 --> 00:44.280
+So what do we do?
+
+00:44.290 --> 00:52.270
+We say exclamation point, which means not right in range between 10 90, something like this.
+
+00:52.480 --> 00:56.800
+This amount is outside the range.
+
+00:56.920 --> 00:57.460
+Saron.
+
+00:57.580 --> 01:01.060
+OK, so this is running because it's cocked here.
+
+01:01.390 --> 01:04.810
+But if I put the zero, let's go and run.
+
+01:04.990 --> 01:09.790
+This amount is outside arranged anything that is outside the range of between 10 and 90.
+
+01:10.060 --> 01:13.000
+It's going to go in line this statement here.
+
+01:13.450 --> 01:13.780
+Oops.
+
+01:13.780 --> 01:15.160
+I made a mistake here and there.
+
+01:15.580 --> 01:15.830
+OK.
+
+01:16.120 --> 01:21.490
+So there are a lot of things you can do with one expression, and you see it's really simple to set
+
+01:21.490 --> 01:21.680
+up.
+
+01:21.700 --> 01:24.820
+You can put as many cases as you need here.
+
+01:24.970 --> 01:26.800
+OK, so go ahead and play with this concept.
+
+01:26.890 --> 01:28.570
+It's pretty fun, and I'll see you next.

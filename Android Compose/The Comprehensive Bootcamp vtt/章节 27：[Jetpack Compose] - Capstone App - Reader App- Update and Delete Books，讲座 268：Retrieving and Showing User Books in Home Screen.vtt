@@ -1,0 +1,511 @@
+WEBVTT
+
+00:00.210 --> 00:06.540
+So we have put together the five repositories, that means then we can use that in our home screen view
+
+00:06.540 --> 00:06.870
+model.
+
+00:07.320 --> 00:07.980
+How exciting.
+
+00:08.130 --> 00:08.940
+OK, let's do this.
+
+00:09.390 --> 00:18.020
+Well, first of all, let's go and add this like that looks like have formatting, I should say.
+
+00:18.050 --> 00:20.070
+Well, OK, let's just put it in the line.
+
+00:20.910 --> 00:22.020
+And that's fine.
+
+00:22.890 --> 00:23.190
+OK.
+
+00:23.790 --> 00:31.320
+So I'm going to create a variable here called data, and it's going to be mutable and aware of what
+
+00:31.320 --> 00:32.920
+data or exception.
+
+00:32.980 --> 00:38.430
+But that's the one we were wrapping it with list in this case and book.
+
+00:39.090 --> 00:39.420
+OK.
+
+00:41.370 --> 00:43.590
+It's important that, of course.
+
+00:44.390 --> 00:45.180
+Very nice.
+
+00:45.730 --> 00:50.790
+And say, bullion hopes, bullion and exception.
+
+00:53.320 --> 00:57.460
+OK, I'm going to set that initialize that with mutable state.
+
+01:00.420 --> 01:01.470
+State of.
+
+01:03.230 --> 01:05.270
+And it's going to be data work exception.
+
+01:06.390 --> 01:10.830
+And just say list of initialise to true.
+
+01:10.860 --> 01:18.150
+Yes, it's loading and exceptions is going to pass exception and pass in its constructor is just nothing.
+
+01:19.410 --> 01:19.830
+All right.
+
+01:19.950 --> 01:20.940
+A lot of work for.
+
+01:22.210 --> 01:29.380
+What seems to be nothing but salad, right then here I'm going to put any neat blocks as you notice,
+
+01:29.380 --> 01:30.880
+it's the same thing we've done before.
+
+01:31.090 --> 01:38.620
+So by now, we should see the logic here once they get all books just because they want to get all books
+
+01:40.900 --> 01:43.000
+from database.
+
+01:44.580 --> 01:46.290
+And let's go ahead and create this puppy.
+
+01:46.890 --> 01:48.450
+All right, there we go.
+
+01:48.720 --> 01:50.070
+It seems to be private.
+
+01:50.190 --> 01:51.390
+That's totally fine.
+
+01:51.780 --> 01:53.820
+And so what are we going to do here?
+
+01:53.910 --> 01:57.040
+Well, you guessed it, we inside of your model.
+
+01:57.060 --> 02:04.470
+I'm going to say view, model, scope and launch this beautiful puppy again seems to talk about I seem
+
+02:04.470 --> 02:06.040
+to talk about puppies, right?
+
+02:07.230 --> 02:09.960
+Maybe it's because my daughter will want puppies one day.
+
+02:10.290 --> 02:11.490
+All right, there we go.
+
+02:11.520 --> 02:12.300
+I'm going to say data.
+
+02:13.230 --> 02:15.660
+Then certain things happen that value in this case.
+
+02:16.560 --> 02:18.770
+Loading I'm going to set that true.
+
+02:18.780 --> 02:20.580
+So yep, indeed we are loading.
+
+02:21.150 --> 02:23.070
+And then, of course, I'm going to get the data.
+
+02:23.350 --> 02:23.560
+That's it.
+
+02:23.580 --> 02:29.580
+Data that value and the actual data, which is a list of and books.
+
+02:30.240 --> 02:38.550
+Beautiful, actually, I can just say value like this and said this repository don't get all books from
+
+02:38.550 --> 02:43.890
+database like that because I know this will return the correct type that we want.
+
+02:45.310 --> 02:45.580
+OK.
+
+02:45.970 --> 02:50.380
+And I can put an if statement here and say if data
+
+02:53.410 --> 03:02.350
+value by data is null or empty, if that's not true because we have their exclamation point and then
+
+03:02.350 --> 03:09.610
+in the case of missing data that value that Loading said it to false because we know that we have data.
+
+03:09.610 --> 03:10.900
+So just say it false.
+
+03:11.080 --> 03:19.600
+No more loading this case, let's say a log d, just so we know that we're getting something, I'm going
+
+03:19.600 --> 03:21.610
+to say data that value.
+
+03:23.170 --> 03:29.770
+Data and to list and to strength just so we can see.
+
+03:31.030 --> 03:34.930
+And I say, get right, there we go.
+
+03:34.960 --> 03:38.200
+That's all for our home screen there, the admiral.
+
+03:39.450 --> 03:40.230
+What do we do next?
+
+03:40.260 --> 03:47.130
+Well, before we move forward, let's go and set things up first in our navigation, right?
+
+03:47.130 --> 03:50.340
+Because remember, we need to instantiate that view model as we did before.
+
+03:50.940 --> 03:51.210
+OK.
+
+03:51.780 --> 03:55.110
+So you will see that our home screen.
+
+03:56.070 --> 03:58.620
+This home here doesn't have anything at this point.
+
+03:59.070 --> 04:06.120
+It's just a simple home, but it no longer is the case because we need yes, we need a few model.
+
+04:06.630 --> 04:10.470
+So Val and I see home view model.
+
+04:11.990 --> 04:20.000
+Let's say hilt view model, and I'm going to pass the type which is going to be our home screen view
+
+04:20.000 --> 04:20.900
+Model S section.
+
+04:21.740 --> 04:24.270
+And now I'm going to have to pass that around.
+
+04:24.290 --> 04:27.960
+See if you model said that to home view model.
+
+04:28.130 --> 04:33.320
+Now, of course, is going to complain because our home Vermonter doesn't have that.
+
+04:33.320 --> 04:34.160
+So I'm going to create.
+
+04:35.690 --> 04:37.640
+That parameter in our home view model.
+
+04:39.580 --> 04:40.900
+So refactor and it's fine.
+
+04:41.770 --> 04:48.450
+And if I go to home screen, we should see that we have now a few model section.
+
+04:48.820 --> 04:51.370
+And as you know, I'm going to just say sequel to hilt.
+
+04:53.170 --> 05:00.970
+If you model like this, by the way, you can say hilt view model or you can actually also say this
+
+05:00.970 --> 05:05.070
+like this, you can just say view model like this.
+
+05:05.110 --> 05:06.160
+I think that should work.
+
+05:06.400 --> 05:08.470
+Also, let me just try a little quick here.
+
+05:10.040 --> 05:10.670
+View.
+
+05:12.870 --> 05:13.770
+Model like this.
+
+05:14.310 --> 05:18.930
+It adds this annotation, which is a little bit confusing, but should be OK.
+
+05:19.170 --> 05:21.870
+OK, so I'll just keep a here to view model as well.
+
+05:22.740 --> 05:23.070
+All right.
+
+05:23.310 --> 05:24.960
+So that means then we can use it.
+
+05:25.230 --> 05:31.380
+I'm going to pass it along or a few model like this in our own content.
+
+05:31.620 --> 05:35.430
+And here we have these books that we added before.
+
+05:35.940 --> 05:38.010
+So I'm going to change a few things here.
+
+05:38.820 --> 05:42.660
+Let's, uh, just calling this out.
+
+05:43.090 --> 05:44.880
+I'm going to use the same vowel.
+
+05:46.000 --> 05:48.460
+List of books.
+
+05:48.640 --> 05:51.790
+First, I'm going to make this just an empty list.
+
+05:52.990 --> 05:55.720
+Of M book types like this.
+
+05:55.750 --> 05:56.050
+OK.
+
+05:57.130 --> 06:03.190
+And so also, we will need current users, this current current user as such.
+
+06:03.470 --> 06:04.780
+Let's say Firebase.
+
+06:06.130 --> 06:09.130
+That get instance, get current user.
+
+06:09.820 --> 06:10.630
+We'll see that later.
+
+06:10.840 --> 06:16.420
+OK, I'm going to check for a few model when I passing a few model, that is the problem.
+
+06:16.450 --> 06:16.870
+OK.
+
+06:17.740 --> 06:20.110
+Let's see if you model like this.
+
+06:21.070 --> 06:22.030
+All right, there you go.
+
+06:22.480 --> 06:26.650
+OK, so now we have a few models so we can say you model.
+
+06:28.510 --> 06:29.410
+That data.
+
+06:31.130 --> 06:32.080
+I value.
+
+06:33.810 --> 06:38.040
+That data is no more empty.
+
+06:38.430 --> 06:39.990
+I'm going to say negate this.
+
+06:41.010 --> 06:44.610
+That's the case, then I'm going to say a list of books.
+
+06:46.420 --> 06:52.720
+When I said that to, of course, if you model that data that file you in when I said that to.
+
+06:55.030 --> 07:02.620
+That data, if you want data that value that data again and then said that to list I so it right through
+
+07:03.040 --> 07:03.600
+like that.
+
+07:03.640 --> 07:05.080
+And then here's what I'm going to do.
+
+07:05.800 --> 07:08.740
+I'm going to filter through all of the list.
+
+07:08.760 --> 07:13.070
+I'm going to say like this to wrap it and say that filter.
+
+07:13.990 --> 07:17.490
+Look at that, that lambda when it passed the predicate there, there.
+
+07:17.890 --> 07:20.980
+So we have it, which is the book, in fact and C book.
+
+07:22.580 --> 07:25.250
+Like this or an ebook reader?
+
+07:25.850 --> 07:26.540
+Very clever.
+
+07:27.590 --> 07:33.860
+And what I'm going to do here, well, I'm going to test or check if book this book, I should say and
+
+07:33.860 --> 07:40.790
+book that User ID is equal to current user that we said that you are ID.
+
+07:45.210 --> 07:46.980
+Like this to string.
+
+07:48.140 --> 07:49.220
+If that's true.
+
+07:51.730 --> 07:53.020
+Let's go ahead and do that.
+
+07:53.860 --> 07:58.330
+Well, if that's true, then this list of books looks like it was.
+
+07:59.500 --> 08:00.280
+Yeah, there we go.
+
+08:00.570 --> 08:03.070
+We've asserted everything looks like we don't need that.
+
+08:03.730 --> 08:04.570
+We don't need that either.
+
+08:04.720 --> 08:10.840
+OK, we're going to filter through our list of books coming in, and we're going to check to see if
+
+08:10.840 --> 08:17.460
+the I.D. user ID for each book because this is going to be the place where all books will lend.
+
+08:17.670 --> 08:17.960
+Right.
+
+08:17.960 --> 08:18.820
+We're going to save all the books.
+
+08:19.390 --> 08:23.200
+That's the reason why we added attached user I.D. of the person that added the book.
+
+08:23.650 --> 08:30.190
+If the user ID is equal to the current user I.D., then we know that this is a good book, right?
+
+08:30.220 --> 08:32.500
+This is the book belonged to this person.
+
+08:32.680 --> 08:33.340
+That's a good thing.
+
+08:33.820 --> 08:38.080
+Now we have a problem here because we need to change this too far because we're changing that, right?
+
+08:38.440 --> 08:38.920
+That's fine.
+
+08:40.950 --> 08:46.120
+So we're filtering the books by the current logged in user and this point.
+
+08:46.140 --> 08:52.380
+Let's see, I'm going to just see log de books, the list of books.
+
+08:54.920 --> 08:55.860
+To swing like this.
+
+08:55.880 --> 08:56.690
+Let's see if this works.
+
+09:03.170 --> 09:06.080
+And while this is exciting.
+
+09:07.200 --> 09:07.830
+Look at this.
+
+09:07.860 --> 09:08.940
+Look what happens now.
+
+09:11.100 --> 09:16.740
+We should have three books in all of these sections their categories, right?
+
+09:17.100 --> 09:22.560
+And we still have the same image because remember, we haven't done anything inside of our column or
+
+09:22.560 --> 09:24.840
+inside of our actual book.
+
+09:24.940 --> 09:25.350
+All right.
+
+09:25.390 --> 09:25.770
+It's OK.
+
+09:25.920 --> 09:31.530
+But you can see now we have, for instance, the baking chai running and flatter.
+
+09:32.550 --> 09:36.330
+So we're getting all the books pertaining to this user.
+
+09:36.720 --> 09:38.700
+Wonderful, isn't it?
+
+09:39.150 --> 09:44.250
+And also, if I click on any one of these books, each one of these books, you can see it actually
+
+09:44.250 --> 09:45.380
+show in our log here.
+
+09:45.390 --> 09:48.780
+This is what we've done before that information about the book.
+
+09:49.320 --> 09:49.800
+Look at that.
+
+09:50.070 --> 09:51.960
+OK, so it's working right?
+
+09:51.960 --> 09:55.830
+We're getting the books from our from our database here.
+
+09:56.990 --> 10:03.080
+If I were to delete one of these books, delete, document and delete that one, it's OK to go back.
+
+10:03.440 --> 10:08.060
+Let's run this, which you see now should only see two books per category.
+
+10:09.230 --> 10:09.770
+And voila!
+
+10:10.010 --> 10:10.480
+Look at this.
+
+10:10.870 --> 10:11.570
+Just two books.
+
+10:14.770 --> 10:15.230
+All right.
+
+10:15.250 --> 10:16.450
+So this is working.
+
+10:16.480 --> 10:20.980
+That means we're getting the books from our forest store database.
+
+10:21.010 --> 10:27.400
+So now what do we need to do is, well, we need to be able to do a few other things which, first of
+
+10:27.400 --> 10:32.980
+all, will have to go and change, of course, at the correct image because we have the object to book
+
+10:32.980 --> 10:37.960
+object now so we can just go ahead and get the image, the book picture.
+
+10:38.500 --> 10:41.950
+And I think that's all for that.
+
+10:42.310 --> 10:43.360
+That part, at least.
+
+10:44.730 --> 10:46.740
+OK, so we'll continue next.

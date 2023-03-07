@@ -1,0 +1,628 @@
+WEBVTT
+
+00:01.560 --> 00:05.970
+So now that we have the data, we know we're getting the data from our API.
+
+00:06.120 --> 00:09.660
+Let's look at constructing our main user interface here.
+
+00:09.690 --> 00:11.820
+So this is our main screen.
+
+00:12.000 --> 00:15.930
+So there's a lot of things, so we're going to start small and work our way up.
+
+00:16.560 --> 00:23.580
+The first thing here we are going to look at is going to be the top bar, the app bar there and then
+
+00:23.580 --> 00:24.240
+we're going to work.
+
+00:24.270 --> 00:30.970
+Now, now we may go back and forth and then working our way back to the top app bar.
+
+00:31.110 --> 00:34.770
+But let's start with the app bar and and and go from there.
+
+00:36.870 --> 00:43.470
+Now back to our main screen here, I'm going to change this show data to something that makes more sense
+
+00:43.890 --> 00:45.430
+and said, I'm going to call this.
+
+00:45.690 --> 00:52.110
+Let's go ahead and say shift f six or shift f six for windows.
+
+00:52.710 --> 00:53.100
+OK.
+
+00:55.730 --> 01:00.010
+And I'm going to change this name to something that says Main.
+
+01:01.430 --> 01:02.210
+Scaffold.
+
+01:03.440 --> 01:10.490
+So we're going to use a scaffold, which is a structure that allows us to have a scaffold, so a.
+
+01:12.010 --> 01:18.010
+So we're going to use a scaffold to structure our app, right, the screen, so scaffold is another
+
+01:18.010 --> 01:24.650
+composable that has all these different structures predefined that we can just plug in our composable.
+
+01:24.880 --> 01:27.340
+So we have something like this.
+
+01:28.150 --> 01:28.460
+All right.
+
+01:28.480 --> 01:30.640
+So now with change, that's for good.
+
+01:30.640 --> 01:32.450
+We're passing our main new model.
+
+01:32.470 --> 01:33.010
+Always good.
+
+01:33.250 --> 01:36.070
+Now there will be some changes here, but so far it's good.
+
+01:37.310 --> 01:37.510
+Right.
+
+01:37.510 --> 01:38.620
+So next, what are we going to do?
+
+01:38.620 --> 01:41.640
+Instead of saying having this there now nails.
+
+01:41.660 --> 01:49.810
+If I get rid of that now to restructure a few things here, I'm actually going to move this produced
+
+01:49.810 --> 01:53.680
+state up the chain to our main screen here.
+
+01:54.520 --> 02:02.800
+So let's get all of these out of here, and I'm going to put there such still looking good.
+
+02:05.500 --> 02:06.310
+Get rid of that.
+
+02:08.020 --> 02:09.860
+And then what I'm going to do.
+
+02:09.880 --> 02:17.290
+Actually, let's control the so I'm going to actually cut this and put inside of LCF and instead of
+
+02:17.290 --> 02:21.370
+the main view model, instead, I'm going to pass the actual data.
+
+02:21.760 --> 02:22.060
+OK.
+
+02:22.510 --> 02:28.180
+So the idea is that we have our review model that's instantiated and pass inside of our main screen.
+
+02:29.650 --> 02:30.640
+And so what are we going to do?
+
+02:30.640 --> 02:32.200
+And we have all weather data here.
+
+02:32.240 --> 02:35.370
+We're producing this state that we need, right?
+
+02:35.890 --> 02:42.190
+And then we're checking if loading is true to show our circle of progress indicator elseif, whether
+
+02:42.190 --> 02:43.580
+that data is not normal.
+
+02:43.600 --> 02:44.680
+That means we have the data.
+
+02:44.680 --> 02:47.530
+Then we're going to pass to our main scaffold and the actual data.
+
+02:47.770 --> 02:49.690
+So it means how fold is this guy here?
+
+02:50.040 --> 02:51.280
+OK, it's empty right now.
+
+02:52.600 --> 02:57.040
+So in this case, I'm just going to get rid of that because we just going to pass the data itself,
+
+02:57.040 --> 02:58.510
+not the main fuel model.
+
+02:58.750 --> 03:07.450
+So instead, I'm going to say, let's pass the weather and let's create that parameter.
+
+03:08.140 --> 03:14.620
+This is going to be weather and just pass the weather object.
+
+03:14.680 --> 03:18.700
+Now where do we get this weather object while we get this weather object from our weather data and say
+
+03:18.700 --> 03:22.990
+weather data data like this?
+
+03:23.170 --> 03:26.740
+So probably we'll need to do some assertion there.
+
+03:27.730 --> 03:32.590
+And the other thing we are going to have to pass is enough controller because we need that.
+
+03:33.220 --> 03:38.890
+And I'll go ahead and pass that our nav controller and be able to have a controller.
+
+03:39.310 --> 03:42.980
+And because they have similar names, I can just remove one like this.
+
+03:43.030 --> 03:43.840
+This also works.
+
+03:44.560 --> 03:44.860
+All right.
+
+03:44.860 --> 03:47.800
+So we just restructuring a few things here before we move forward.
+
+03:48.550 --> 03:49.110
+Let's see.
+
+03:49.120 --> 03:51.100
+So now there are main scaffold here.
+
+03:52.000 --> 04:02.440
+We can create the actual scaffold and to do so when, say, scaffold such and for each scaffold he can
+
+04:02.440 --> 04:07.060
+have over, you can see the scaffold allows you to pass a few parameters.
+
+04:07.180 --> 04:11.030
+Quite so have top bar, which is a composable bottom bar.
+
+04:11.050 --> 04:13.060
+We have all of these parameters that we can pass.
+
+04:13.630 --> 04:14.410
+Very cool.
+
+04:14.650 --> 04:19.480
+So the first thing we're going to pass here is going to be our top bar, the top bar and accepts, of
+
+04:19.480 --> 04:23.710
+course, a composable so I can put a trailing lambda section.
+
+04:24.760 --> 04:27.670
+And for now, that's all we want to pass.
+
+04:28.000 --> 04:33.210
+And inside of our scaffold, this is the content area where we can add the actual contents here.
+
+04:33.220 --> 04:38.720
+So the contents is going to be pretty much everything else that we see there.
+
+04:38.750 --> 04:41.440
+Let me make this a little smaller so you can see the whole picture, right?
+
+04:41.650 --> 04:46.630
+So everything that is here, that is going to be added inside here.
+
+04:46.660 --> 04:47.710
+Now it's going to be a lot of code.
+
+04:47.950 --> 04:55.120
+So what I'm going to do is I'm going to say main content create indeed another composable here, and
+
+04:55.120 --> 05:04.150
+this will require data which is going to be out of whether object for now.
+
+05:04.150 --> 05:05.400
+So we haven't created this.
+
+05:05.410 --> 05:09.250
+Let's go ahead and create right now create composable main.
+
+05:12.250 --> 05:21.990
+This is going to be a weather type search and our data, it's going to be weather like this.
+
+05:22.420 --> 05:22.830
+Very good.
+
+05:23.520 --> 05:30.180
+So again, remember, I'm just restructuring everything the main scaffold is called when we know that
+
+05:30.180 --> 05:33.000
+data is not known, which means we actually have the data.
+
+05:33.510 --> 05:37.430
+And then of course, inside there we have the scaffold, the scaffold.
+
+05:37.440 --> 05:42.270
+We will add to the top bar in a minute there, but we calling the main content and passed that data.
+
+05:42.270 --> 05:50.340
+We're just passing everything down to the lowest to the lowest composable, which is the main code content.
+
+05:50.730 --> 05:53.880
+So now we can do all the work here or later, at least.
+
+05:53.880 --> 05:59.310
+But for now, it can just go ahead and put a text again just so that we know that we haven't broken
+
+05:59.310 --> 05:59.730
+anything.
+
+06:00.450 --> 06:01.860
+And so I can report that.
+
+06:03.150 --> 06:07.620
+And let's go ahead and say text is going to be equal to data.
+
+06:07.980 --> 06:14.760
+It's going to be an object and say city and get city name.
+
+06:15.180 --> 06:15.450
+OK.
+
+06:16.470 --> 06:17.040
+Just like that.
+
+06:17.460 --> 06:20.580
+Let's go ahead and run this to see if we still get something.
+
+06:27.150 --> 06:27.580
+All right.
+
+06:27.600 --> 06:29.500
+And you can see there it says Portland.
+
+06:29.520 --> 06:29.850
+Very good.
+
+06:29.910 --> 06:32.820
+So things are still working, which is a good sign.
+
+06:34.210 --> 06:34.440
+Right.
+
+06:34.440 --> 06:38.730
+So back to our original intent, which is to create this top bar there.
+
+06:38.940 --> 06:39.660
+OK, how do we do that?
+
+06:39.690 --> 06:45.540
+Well, the great thing is that with our scaffold, as we have looked or added here there's top bar.
+
+06:45.840 --> 06:51.120
+We can add a scaffolding, we can add rather a top bar composable here.
+
+06:51.540 --> 06:56.700
+Now our tab bar is going to be a little bit more complex in that this tab bar will be used.
+
+06:57.760 --> 07:04.480
+Many places in many other screens, right, and it will always change depending on the screen we are
+
+07:04.480 --> 07:04.780
+in.
+
+07:05.260 --> 07:10.330
+So we need to we probably need to make it a separate composable.
+
+07:10.330 --> 07:13.900
+That way we can use it differently, depending on the situation.
+
+07:13.900 --> 07:16.930
+So that's what I'm going to do instead of cutting everything in here.
+
+07:17.200 --> 07:21.220
+We're going to create a new composable called well weather app bar.
+
+07:21.550 --> 07:21.790
+All right.
+
+07:21.790 --> 07:22.480
+So what I'm going to do?
+
+07:22.840 --> 07:28.960
+Let's go back to a project and let's close down a few of these, and let's go to perhaps our widgets
+
+07:29.770 --> 07:31.930
+right click when I say new.
+
+07:33.350 --> 07:39.980
+And class in this, let's call this weather up bar.
+
+07:42.500 --> 07:44.420
+All right, so let's add composable.
+
+07:45.700 --> 07:51.280
+The first thing is that looking at our photo here, our screenshot, we see that we have a title mural
+
+07:51.520 --> 07:52.580
+and we have these buttons.
+
+07:52.600 --> 07:56.380
+Now this is one instance, as I said of our app arm.
+
+07:56.830 --> 07:57.130
+Right?
+
+07:57.490 --> 08:03.580
+So starting out, we are going to see how can we just create something that will have a title and then
+
+08:03.790 --> 08:07.240
+of course, have these action buttons there?
+
+08:08.760 --> 08:13.560
+For that, we are going to pass because we know we're going to be using this in different places or
+
+08:13.560 --> 08:17.270
+going to go ahead and pass a few parameters here, first of all, is going to be title.
+
+08:18.070 --> 08:24.820
+It's going to be a strange type and we may need to add a an icon at some point.
+
+08:24.870 --> 08:29.490
+For instance, you see here we have this icon, that icon, and at some point we have another icon.
+
+08:29.490 --> 08:33.360
+So we also going to allow the passage of an icon.
+
+08:33.600 --> 08:37.800
+Now the reason why you see the preview saying, well, something is not right is because whenever we
+
+08:37.800 --> 08:41.670
+want to preview something, the parameters needed to have something.
+
+08:41.680 --> 08:47.310
+So in this case, I'm just going to say title like this right to say that we have a default value.
+
+08:47.850 --> 08:48.150
+OK.
+
+08:48.780 --> 08:50.670
+And next, I'm going to pass an icon.
+
+08:51.210 --> 08:55.200
+So the icon is going to be a type and we can pass different kinds of icon types.
+
+08:55.500 --> 09:02.520
+I'm just going to use an image vector such and I'm going to make this knowable and say it's equal to
+
+09:02.520 --> 09:02.790
+no.
+
+09:03.120 --> 09:05.040
+This also will help with our preview there.
+
+09:05.460 --> 09:05.760
+OK.
+
+09:06.540 --> 09:12.540
+The other thing I'm going to pass is a Boolean, which will be used later to say, OK, I was showing
+
+09:12.690 --> 09:17.460
+this app bar on the main screen or not, because there are a difference.
+
+09:17.470 --> 09:23.910
+If you're not on the main screen, we are going to add a back arrow that will signify that users can
+
+09:23.910 --> 09:24.990
+tap and go back.
+
+09:25.500 --> 09:25.830
+OK.
+
+09:26.100 --> 09:27.060
+So I'm going to do that.
+
+09:27.240 --> 09:28.740
+I'm going to say is main.
+
+09:30.960 --> 09:36.480
+Screen like this is going to be a Boolean, and it's going to be true to start with.
+
+09:38.310 --> 09:46.280
+And I'm going to pass elevation because we may need to add elevation and it's going to be a DPI type
+
+09:46.290 --> 09:48.960
+and as a default, she's going to be 0.2 dpi.
+
+09:49.950 --> 09:52.950
+Now we need to import those DPS.
+
+09:56.320 --> 09:56.770
+Very good.
+
+09:57.040 --> 10:00.010
+So this is very customizable, as we see here.
+
+10:00.520 --> 10:04.210
+And of course, I'm going to pass a knife controller because we will need that knife controller for
+
+10:04.210 --> 10:10.630
+cases when, as I said, we may be in a different screen and we want to go back to the previous screen,
+
+10:10.630 --> 10:10.780
+right?
+
+10:10.780 --> 10:11.830
+So we need an IV controller.
+
+10:12.610 --> 10:17.080
+Then let's go ahead and pass, let's say, on add action.
+
+10:17.260 --> 10:22.480
+Now this is going to be more apparent once we have everything set up, of course, but it's just going
+
+10:22.480 --> 10:29.380
+to be a callback function per se, and it's going to be unit doesn't return anything and we set it to
+
+10:29.380 --> 10:31.870
+nothing so that we don't have that issue.
+
+10:31.960 --> 10:32.260
+OK?
+
+10:32.530 --> 10:34.360
+And then on button clicked.
+
+10:34.450 --> 10:36.610
+So this could be any button that was clicked.
+
+10:36.970 --> 10:42.820
+We're just going to also be able to pass that particular callback.
+
+10:44.740 --> 10:49.950
+OK, for now, because controller, we will have to instantiate something and I don't want to insinuate
+
+10:49.960 --> 10:50.320
+anything.
+
+10:50.320 --> 10:54.380
+I'm just going to go ahead and comment that out so we can see something, hopefully at some point.
+
+10:54.430 --> 10:56.650
+Well, now it's empty because we don't have anything there.
+
+10:56.980 --> 10:57.280
+All right.
+
+10:57.670 --> 11:03.190
+So we have that set up for us now and say, here this is what are we going to create the actual app
+
+11:03.190 --> 11:03.580
+bar?
+
+11:03.610 --> 11:03.890
+Right?
+
+11:03.910 --> 11:10.510
+The actual contents of this app are so to help ourselves here, I'm going to invoke a top bar or top
+
+11:10.750 --> 11:14.020
+app bar that comes already pre baked or with compose.
+
+11:14.030 --> 11:19.630
+This is really nice because it gives us the basic structure of an app bar.
+
+11:19.840 --> 11:25.320
+So we're going to use that hover over it so you can pass modifier, of course, background color content
+
+11:25.330 --> 11:26.620
+adding in all this stuff.
+
+11:26.620 --> 11:27.790
+So we have this content here.
+
+11:27.970 --> 11:33.370
+We're just going to be a composable and we're going to use that, of course, using trailing collaborator
+
+11:33.380 --> 11:33.640
+there.
+
+11:34.090 --> 11:39.910
+And this is very interesting to see says this is a row scope, which means our composable here are top
+
+11:39.910 --> 11:40.270
+bar.
+
+11:40.870 --> 11:42.850
+Everything that we're going to be adding is going to be in a row.
+
+11:43.030 --> 11:46.850
+It makes sense because it's we don't have a lot of space, right?
+
+11:46.870 --> 11:50.160
+It's a horizontal aligned widget per se.
+
+11:50.170 --> 11:52.060
+So everything's going to be in a row.
+
+11:52.630 --> 11:57.340
+So these are the clues you can see as low spacing, narrow scope.
+
+11:57.640 --> 12:01.030
+If the was column would have said column scope, right?
+
+12:01.030 --> 12:04.840
+So right here, let's go ahead and add a text.
+
+12:05.290 --> 12:14.900
+And for the title in this text here, let's just say important and for the text of this text, I'm going
+
+12:14.950 --> 12:18.340
+to pass the title, which will be whatever we pass in there.
+
+12:18.850 --> 12:19.120
+OK?
+
+12:19.720 --> 12:22.690
+And I'm going to set it up by adding.
+
+12:23.110 --> 12:26.200
+First of all, let's put a color material
+
+12:29.350 --> 12:29.860
+theme.
+
+12:29.860 --> 12:36.400
+So colors, I'm going to say on secondary color and then was out of style.
+
+12:36.500 --> 12:40.990
+Real quick here, and we just use a text style and font weight.
+
+12:41.200 --> 12:43.120
+I want this to be bold.
+
+12:44.110 --> 12:44.500
+OK?
+
+12:45.310 --> 12:50.470
+And font size about 15 that sb.
+
+12:50.470 --> 12:54.310
+So four sizes when it comes to text and so forth, you use SB.
+
+12:54.310 --> 12:54.940
+Not deep.
+
+12:55.000 --> 12:55.180
+Okay.
+
+12:55.180 --> 12:56.010
+Let's see.
+
+12:56.030 --> 12:57.640
+Let's just go ahead and run this.
+
+12:57.650 --> 13:03.160
+Actually, let's let's go to our main screen and I'm going to call this weather.
+
+13:05.170 --> 13:10.970
+A bar like this, we don't have to pass well, actually, let's pass the title here and you can say
+
+13:12.080 --> 13:14.330
+heroin are empty.
+
+13:16.040 --> 13:17.180
+OK, let's go ahead and run.
+
+13:19.490 --> 13:20.360
+OK, there we go.
+
+13:20.430 --> 13:22.230
+Can see, says Helena Mty.
+
+13:23.000 --> 13:23.720
+That looks great.
+
+13:23.870 --> 13:27.410
+And the next video will continue working on our app bar.

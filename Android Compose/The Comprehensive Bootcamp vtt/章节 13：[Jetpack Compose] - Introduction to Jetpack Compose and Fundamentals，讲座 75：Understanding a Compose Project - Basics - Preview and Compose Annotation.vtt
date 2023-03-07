@@ -1,0 +1,583 @@
+WEBVTT
+
+00:00.770 --> 00:05.720
+Let's go ahead and get started and create a brand new Android composed project.
+
+00:05.810 --> 00:08.840
+So open Android Studio, you can go and say file you top.
+
+00:08.870 --> 00:10.820
+There are different ways to create a new project.
+
+00:11.900 --> 00:13.550
+But this is how I'm going to do it.
+
+00:13.910 --> 00:19.040
+And so and then we're going to have to get the empty compose activity, so click on that.
+
+00:19.730 --> 00:23.450
+I'm going to say next and here we're going to create the project.
+
+00:23.660 --> 00:26.870
+I'm going to say, give it a name.
+
+00:26.870 --> 00:29.840
+I say intro to compose.
+
+00:30.710 --> 00:32.700
+So we're going to start from the beginning with compose.
+
+00:32.700 --> 00:37.730
+So dissecting the major components of a compose project and they compose application.
+
+00:38.000 --> 00:39.740
+So whatever you want, you can name it.
+
+00:40.070 --> 00:45.860
+And of course, for a package name, mine is pre-populated with this package name, but you can choose
+
+00:45.860 --> 00:48.620
+whatever you want and make sure you have a location.
+
+00:48.620 --> 00:49.580
+Where are you going to save face?
+
+00:49.580 --> 00:53.360
+So I do have a sandbox android there in my.
+
+00:54.930 --> 01:00.910
+When my machine makes sure we have Android calling for minimum SDK, I'm just going to go higher.
+
+01:00.930 --> 01:03.930
+It doesn't really matter at this point, but because go to 10.
+
+01:06.060 --> 01:07.300
+I got 38 this point.
+
+01:07.660 --> 01:07.930
+All right.
+
+01:09.530 --> 01:15.350
+Let's say finish, and so it may take you a little while for the project to be created, so be patient,
+
+01:15.350 --> 01:20.390
+wait until the process is done and you can always see at the bottom here what's this great Gradle configuring
+
+01:20.390 --> 01:20.960
+projects?
+
+01:20.960 --> 01:27.050
+So the Gradle is the machine, quote unquote, that does all the work in the background to validate.
+
+01:27.410 --> 01:34.940
+To put together the entire project works in the background, so give it a time and it will be done soon.
+
+01:36.020 --> 01:36.290
+OK.
+
+01:36.320 --> 01:41.450
+After a few moments, you will see that the whole project has been created and all seems to be good.
+
+01:41.600 --> 01:43.940
+Let's go over what we are seeing here.
+
+01:43.940 --> 01:47.390
+So to the left here, you will see that we have our Android project.
+
+01:47.870 --> 01:52.160
+The great thing about our industry is that it gives us different ways to view our files.
+
+01:52.520 --> 01:57.390
+So if you click at the top here, you can even change the view of your files.
+
+01:57.420 --> 01:58.310
+You can go to projects.
+
+01:58.760 --> 02:04.040
+We'll just show the project view, which means you have to drop in and look for files and so forth.
+
+02:04.340 --> 02:12.140
+That's a that's a choice, but I liked the Android view because it just focused on the files pertaining
+
+02:12.140 --> 02:13.520
+to the application.
+
+02:14.090 --> 02:14.390
+OK.
+
+02:14.930 --> 02:18.920
+So you can also toggle it to close and open, right?
+
+02:18.950 --> 02:19.610
+The project?
+
+02:20.560 --> 02:27.040
+Tap here and inside, we have a few things we have the manifest file, we have the Manifest folder there,
+
+02:27.040 --> 02:31.840
+which has our Android manifest, and then we have the Java folder here.
+
+02:32.020 --> 02:32.320
+OK.
+
+02:32.770 --> 02:37.060
+It's kind of ironic that it says Java, even though we are going to be using Kotlin.
+
+02:37.060 --> 02:43.990
+But to remember, Java and Kotlin are interoperable and also the basis of everything really is Java
+
+02:44.000 --> 02:45.120
+Scotland, actually.
+
+02:45.190 --> 02:46.390
+Also on top of Java.
+
+02:46.630 --> 02:48.100
+So that's totally fine.
+
+02:48.490 --> 02:53.890
+And if we open our Android, if we open Java, we'll see that we have a few packages here.
+
+02:53.890 --> 02:58.550
+So a package, essentially, it's just a folder that contains the related classes.
+
+02:58.550 --> 03:00.280
+So all of these or different packages.
+
+03:00.640 --> 03:03.460
+The main package we want is the first one here, right?
+
+03:04.000 --> 03:08.470
+And it's very interesting also to see that we have the main activity, which is exactly what's open.
+
+03:08.860 --> 03:12.250
+And then we have this UI theme, right UI theme.
+
+03:12.670 --> 03:14.710
+So this is all created for us.
+
+03:15.580 --> 03:19.070
+If you double click here, you can see that this is color that Katie.
+
+03:19.510 --> 03:25.780
+So you can see color that Katie holds all of the main colors that are used in our project.
+
+03:26.170 --> 03:28.420
+And you can see if I go to my theme.
+
+03:29.660 --> 03:30.800
+File Double-Click.
+
+03:31.370 --> 03:32.480
+Let's just see code.
+
+03:32.900 --> 03:34.460
+You will see that somehow.
+
+03:34.490 --> 03:38.090
+You can see that this is actually where the colors are being used.
+
+03:38.840 --> 03:45.470
+You see here we have a foul called Dark Color Palette and we have dark colors and we passing.
+
+03:45.710 --> 03:50.030
+In this case, the primary colors, primary variant and so forth.
+
+03:50.420 --> 03:52.580
+And we also have the light color palettes.
+
+03:52.880 --> 03:59.690
+Now these dark and light color are used for different modes, for different light modes.
+
+03:59.720 --> 04:01.670
+We have dark mode and we have light mode.
+
+04:02.180 --> 04:06.170
+So nowadays devices can be on dark mode or light mode.
+
+04:06.530 --> 04:13.340
+So right off the bat, our project gives that flexibility of dark and light mode and the colors that
+
+04:13.340 --> 04:16.220
+will be shown in one of those modes.
+
+04:16.550 --> 04:18.050
+And then we have this type.
+
+04:18.080 --> 04:19.310
+What is this table type?
+
+04:19.340 --> 04:20.600
+Here we have a few things.
+
+04:20.750 --> 04:23.030
+This is where we can set our typography.
+
+04:23.030 --> 04:27.350
+So we're talking about styles, fonts and sizes and so forth.
+
+04:27.800 --> 04:33.920
+There's a lot of things here, but but we have the basic set up that you see here, says typography.
+
+04:34.400 --> 04:41.930
+The body is set to this style, OK, which means if we want to use, for instance, we are in our main
+
+04:41.930 --> 04:46.010
+activity, we want to create a text and we want to pass the stay style.
+
+04:46.160 --> 04:55.670
+We can use these typography here like the variable and invoke the body to get the body style for the
+
+04:55.670 --> 04:56.540
+text we want to show.
+
+04:56.930 --> 05:00.740
+These are preset values, and obviously we can change those.
+
+05:00.740 --> 05:04.940
+As you see here, either default textiles to override, we can override all sorts of things.
+
+05:05.300 --> 05:08.750
+So this is something that we're going to take a look later, obviously.
+
+05:09.620 --> 05:09.920
+All right.
+
+05:10.080 --> 05:12.710
+So and we have shape.
+
+05:13.130 --> 05:19.940
+So for shapes here, we can actually use certain predetermined shapes for our user interfaces, for
+
+05:19.940 --> 05:26.930
+our widgets as we create them in our main activity or anywhere else in our application so we can create
+
+05:26.930 --> 05:28.010
+our own, obviously.
+
+05:28.010 --> 05:32.300
+But there are a few that are set as a default for us to use.
+
+05:33.320 --> 05:38.930
+As we see here, I have vowel shapes and we are getting the shapes, as you can see here.
+
+05:39.050 --> 05:45.860
+If we get a small, we're going to get a rounded corners shape for DPI, which means if we use, for
+
+05:45.860 --> 05:52.640
+instance, a card and we want to have those rounded corners, we can right away say we want small.
+
+05:53.210 --> 05:56.720
+This is the value we're going to get for our rounded corner shape.
+
+05:57.140 --> 05:57.890
+For a medium.
+
+05:57.890 --> 05:59.330
+This is what we get in large.
+
+05:59.600 --> 06:00.320
+That's what we get.
+
+06:01.890 --> 06:05.640
+So all of this is given to us, and we can't always override and customize.
+
+06:06.120 --> 06:11.040
+And of course, we have our resources folder here and then we have our arrival here in our resource
+
+06:11.040 --> 06:11.520
+files.
+
+06:11.620 --> 06:12.930
+OK, resource file.
+
+06:12.930 --> 06:14.820
+And then inside we have this from a folder.
+
+06:14.830 --> 06:17.140
+This is where we can add images and so forth.
+
+06:17.310 --> 06:21.060
+And we also have the values folder here where we have colors that XML.
+
+06:21.300 --> 06:28.080
+These are also the same representation of the colors that we saw earlier, that it's used still in Android
+
+06:28.080 --> 06:28.620
+development.
+
+06:28.650 --> 06:28.950
+OK.
+
+06:29.040 --> 06:33.780
+These are still used, of course, internally, because remember, even though we're talking about composing,
+
+06:33.780 --> 06:39.210
+we're not saying that everything is stripped away in terms of how we used to build Android applications.
+
+06:39.450 --> 06:42.270
+This is just a quick overview of what we have here.
+
+06:42.270 --> 06:46.680
+And I do realize if you were an Android developer already, this may be very mundane to you and you
+
+06:46.680 --> 06:49.710
+can always fast forward or skip this, but it's fine.
+
+06:49.980 --> 06:55.290
+But I just thought it would be good for everybody to actually get at least some idea of what's going
+
+06:55.290 --> 06:55.620
+on here.
+
+06:56.340 --> 06:56.640
+All right.
+
+06:56.880 --> 07:00.480
+So we will be spending a lot of our time in this folder here.
+
+07:00.480 --> 07:06.540
+So in our main activity because we are creating a compose project here.
+
+07:07.230 --> 07:10.350
+This is what we see them go ahead and close this down.
+
+07:11.370 --> 07:19.320
+Now we can split between code dress code and split to see here the preview a few refresh.
+
+07:19.710 --> 07:22.530
+We should see a preview in a second.
+
+07:24.000 --> 07:24.270
+OK.
+
+07:24.300 --> 07:27.600
+After a few seconds, you can see now it says here, Hello, Android.
+
+07:27.630 --> 07:33.630
+Now it's important to know exactly where is this being previewed from?
+
+07:34.440 --> 07:35.400
+Let's look at our code.
+
+07:35.910 --> 07:40.440
+You may think this has been previewed from here because this is where it's being called, but that's
+
+07:40.440 --> 07:40.980
+not true.
+
+07:41.700 --> 07:45.060
+If we go down here, we can see that we have this default preview.
+
+07:45.060 --> 07:48.950
+In fact, we should have a hint here that says default preview.
+
+07:48.960 --> 07:53.340
+So this is indeed the name of this function here.
+
+07:54.640 --> 08:02.200
+OK, that's very interesting to also keep in mind that every composable, every composable function
+
+08:02.200 --> 08:11.320
+has to have this at composable annotation, so annotation is a way of adding meaning to certain functions
+
+08:11.320 --> 08:18.370
+or classes and so forth to add metadata to say so that the compiler can know exactly what to do.
+
+08:18.640 --> 08:25.090
+There will be more directions as to what is it that it's going to be added on to the functional class
+
+08:25.300 --> 08:27.550
+that is being annotated that stadium.
+
+08:28.030 --> 08:35.320
+Although in compose, the ad compose is not necessarily annotation as you would have in any other circumstances,
+
+08:35.350 --> 08:38.440
+such as in Java and even codling in a sense.
+
+08:38.740 --> 08:45.760
+So look at this as more of a keyword that tells the compiler that, OK, this is indeed a composable
+
+08:45.970 --> 08:51.490
+function, which means which means it should construct a piece of a user interface.
+
+08:52.030 --> 08:58.660
+But again, what is really making this available here in our preview is this at preview.
+
+08:59.600 --> 09:06.110
+Annotation there and see also, if you have it over anywhere, we get some documentation, this is really,
+
+09:06.110 --> 09:09.470
+really, really, really, really, really important and cool.
+
+09:09.980 --> 09:14.840
+So if whenever in doubt you do understand is, for example, what this is or what something is.
+
+09:15.020 --> 09:19.130
+You can always hover over and you have a preview can see here.
+
+09:19.130 --> 09:21.770
+Says This is a public constructor preview.
+
+09:21.800 --> 09:22.250
+Very good.
+
+09:22.550 --> 09:28.010
+That means we can pass all these all of these parameters, and you can see one of the parameters we
+
+09:28.010 --> 09:31.340
+pass is show background boolean to true.
+
+09:33.180 --> 09:38.040
+What happens if I say false, I let's test things out.
+
+09:38.570 --> 09:39.030
+Aha.
+
+09:39.060 --> 09:39.600
+They would go.
+
+09:39.780 --> 09:42.840
+If I say false, then we lose that white background.
+
+09:44.300 --> 09:47.480
+All right back to true.
+
+09:47.840 --> 09:50.600
+And if you preview again or actually have or should say.
+
+09:51.590 --> 09:57.680
+The preview you can play around with anything else that you want here, like a name, can change the
+
+09:57.680 --> 09:59.450
+preview name to something else.
+
+09:59.810 --> 10:04.180
+I can see, for instance, name sequel to me.
+
+10:05.770 --> 10:06.310
+Like this?
+
+10:07.810 --> 10:12.700
+And voila, the moment you do that, you can see it change to me instead of default preview.
+
+10:12.880 --> 10:17.800
+So if you don't put anything, specify it's just going to go and get the name of the function.
+
+10:18.160 --> 10:19.900
+That's it would be like and didn't have to do it.
+
+10:20.140 --> 10:21.940
+You can see its default preview.
+
+10:23.200 --> 10:27.380
+OK, so in Mexican, see here we have the intro to compose theme.
+
+10:27.760 --> 10:34.780
+This intro to compose theme, you notice it will take the name of the application that you created that
+
+10:34.780 --> 10:38.170
+you typed in when we're creating this project.
+
+10:38.680 --> 10:38.980
+Right?
+
+10:40.030 --> 10:41.230
+So what is this?
+
+10:41.260 --> 10:45.160
+Well, it's a painted theme, so you could imagine that this is theme related.
+
+10:45.700 --> 10:51.520
+If you hover over again, you can see that this is at composable, which means is indeed a composable
+
+10:51.520 --> 10:52.150
+itself.
+
+10:52.900 --> 10:55.740
+So it's public fun and intro to compose theme.
+
+10:56.140 --> 10:59.350
+And then here you can see that we can pass a few parameters.
+
+11:00.040 --> 11:00.310
+OK?
+
+11:00.790 --> 11:03.990
+And these parameters are optional at least the first one.
+
+11:04.000 --> 11:08.950
+So the first parameter is dark theme, so it respects it expects a Boolean.
+
+11:08.950 --> 11:14.590
+So, as the name implies, dark theme will allow us to say, OK, we want this to show in dark theme
+
+11:14.590 --> 11:15.940
+mode or not.
+
+11:16.330 --> 11:18.100
+And then we have this content here.
+
+11:18.580 --> 11:22.930
+The content is a composable function that is expected here.
+
+11:23.410 --> 11:23.890
+Interesting.
+
+11:24.130 --> 11:29.380
+And the beauty here, because you'll remember if you have been following yes or if you remember your
+
+11:29.380 --> 11:37.390
+codling, you remember if you have a function that has a function and other function as its last parameter,
+
+11:37.390 --> 11:40.810
+which is this case, then that means that we can use a lambda.
+
+11:41.080 --> 11:49.540
+As you see here, we can use a trailing lambda to invoke this content last parameter function.
+
+11:49.780 --> 11:56.920
+And, of course, is expecting at composable, which means expect any composable function to be shown
+
+11:56.920 --> 11:59.230
+or to be to be added.
+
+11:59.470 --> 12:04.240
+So in this case, you that's why you can see you have a greeting, which indeed is a composable function.
+
+12:04.870 --> 12:10.360
+If I remove this composable there, we can have a lot of issues because I'm going to say, well.
+
+12:11.690 --> 12:16.640
+Function, which invokes a composable function, must be marked with at composable annotation.
+
+12:16.910 --> 12:24.650
+So this is lesson number one, the say that you can only call either composable inside of composable
+
+12:24.650 --> 12:25.130
+functions.
+
+12:25.460 --> 12:25.850
+Very good.
+
+12:25.850 --> 12:27.950
+So we are making progress here.
+
+12:27.950 --> 12:33.440
+We're going really slow because I really want you to get to know what we're dealing with, you know,
+
+12:33.440 --> 12:34.610
+very simple project.
+
+12:34.760 --> 12:37.370
+This is just a default project.
+
+12:37.580 --> 12:40.100
+A default jetpack compose function.
+
+12:40.340 --> 12:45.440
+So we're going to go through a few things here and keep digesting so we can wrap your head around,
+
+12:45.650 --> 12:46.250
+compose.

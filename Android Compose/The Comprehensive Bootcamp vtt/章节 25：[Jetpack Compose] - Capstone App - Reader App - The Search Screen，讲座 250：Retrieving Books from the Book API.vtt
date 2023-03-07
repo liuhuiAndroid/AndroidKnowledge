@@ -1,0 +1,805 @@
+WEBVTT
+
+00:00.300 --> 00:05.910
+So now that we have our book repository done, what we need to do is go to our app module and do the
+
+00:05.910 --> 00:12.180
+same thing with Apple with provide book API, which means we need to add this dependency.
+
+00:13.180 --> 00:16.390
+Through our app module so everybody else can actually get it.
+
+00:16.880 --> 00:28.630
+Someone say at Singleton again and then provides and then we're going to say find provide book repository
+
+00:28.660 --> 00:32.230
+as such and then we're going to pass our API.
+
+00:32.230 --> 00:32.830
+We need that.
+
+00:33.100 --> 00:34.570
+We start book API.
+
+00:36.190 --> 00:38.560
+And just then.
+
+00:40.020 --> 00:42.240
+Send it to our book repository
+
+00:44.760 --> 00:47.070
+and we pass, of course, the API.
+
+00:49.150 --> 00:49.390
+Okay.
+
+00:49.570 --> 00:51.970
+All of this is going to be used internally.
+
+00:52.240 --> 00:59.680
+We're not going to directly invoke these providers, but Dagger and Hilton will be able to use all of
+
+00:59.680 --> 01:03.430
+that internally when we are ready to use inside of our view model.
+
+01:04.720 --> 01:05.950
+So now it's time.
+
+01:05.950 --> 01:09.070
+Let's get rid of all of these classes we've been working on.
+
+01:10.150 --> 01:16.960
+Now it's time for us to then created the View model, which will allow us to then use repository, which
+
+01:16.960 --> 01:19.960
+repository uses the book API, which is DAO.
+
+01:19.960 --> 01:25.810
+And then down the line we have our retrofit, which is going to be able to get information from our
+
+01:25.810 --> 01:26.260
+database.
+
+01:26.900 --> 01:27.140
+Right.
+
+01:27.610 --> 01:33.370
+So let's go back to our screens and we are inside of her.
+
+01:33.760 --> 01:34.720
+Let's go to our search.
+
+01:35.080 --> 01:35.200
+Okay.
+
+01:35.230 --> 01:39.940
+So here I'm going to create package, going to go ahead and say command new colony class.
+
+01:40.720 --> 01:42.630
+I'm going to create a view model.
+
+01:42.640 --> 01:52.120
+So it's going to be normal class in my see books or book search view model search.
+
+01:53.620 --> 02:01.030
+And what are we going to do first so that we don't forget we're going to see that hilt view model like
+
+02:01.030 --> 02:01.360
+this.
+
+02:03.620 --> 02:05.960
+And then we're going to use that inject.
+
+02:08.340 --> 02:09.530
+Their constructor.
+
+02:09.870 --> 02:11.370
+Injecting a dependency.
+
+02:11.370 --> 02:12.090
+That's the beauty.
+
+02:12.390 --> 02:12.840
+What is that?
+
+02:12.840 --> 02:13.230
+We want?
+
+02:13.230 --> 02:13.380
+Where?
+
+02:13.380 --> 02:15.570
+We want access to our repository.
+
+02:15.570 --> 02:17.940
+Because a repository knows how to get the books.
+
+02:18.480 --> 02:25.410
+Why so many say Private Val repository as such.
+
+02:26.610 --> 02:27.730
+And there you have it.
+
+02:27.750 --> 02:31.590
+So inside now I'm going to create a variable set var.
+
+02:33.540 --> 02:40.380
+It's a list of books and this is going to be actually a type.
+
+02:41.040 --> 02:41.280
+Okay.
+
+02:41.910 --> 02:46.110
+What type am I going to add or create here?
+
+02:46.140 --> 02:53.140
+Well, the type is going to be again, I'm going to say mutable state like this.
+
+02:53.520 --> 02:53.740
+Right.
+
+02:54.450 --> 02:57.240
+And of type, what is going to be of type data?
+
+02:59.540 --> 03:11.510
+Or exception like this, which is going to be a list of items our own item like this.
+
+03:11.660 --> 03:14.960
+So these have to be the same that we created earlier.
+
+03:15.320 --> 03:17.960
+So let's finalize this before we move forward.
+
+03:18.410 --> 03:21.350
+And then I'm going to pass here a boolean
+
+03:24.260 --> 03:25.520
+and pass.
+
+03:25.550 --> 03:29.510
+Of course, an exception like that.
+
+03:29.560 --> 03:33.290
+And I'm going to set it up for this to be a mutable.
+
+03:34.520 --> 03:41.180
+List of mutable state should say mutable state.
+
+03:41.600 --> 03:44.720
+List of mutable state of like that.
+
+03:44.990 --> 03:46.370
+End of what types?
+
+03:46.370 --> 03:48.620
+Well, it's going to be data or exception.
+
+03:50.060 --> 03:50.720
+It's going to pass.
+
+03:50.720 --> 03:52.400
+No true.
+
+03:52.850 --> 03:54.530
+And just pass an exception.
+
+03:55.570 --> 03:57.710
+And it has nothing in the constructor.
+
+04:00.260 --> 04:03.670
+I think that so have too many things here.
+
+04:03.680 --> 04:05.660
+I don't need that that.
+
+04:06.020 --> 04:06.980
+Let's get rid of that.
+
+04:07.130 --> 04:09.340
+Well, I do a lot of things here.
+
+04:09.350 --> 04:10.190
+So what are we doing here?
+
+04:10.190 --> 04:16.670
+Because remember, we are we said that we are wrapping our list item inside of our data or exception.
+
+04:17.030 --> 04:17.330
+All right.
+
+04:17.720 --> 04:20.320
+That class, we created this one data class.
+
+04:20.330 --> 04:20.600
+Right.
+
+04:20.810 --> 04:24.560
+And so we have to make sure that the types that we're getting, you know, a list of books is going
+
+04:24.560 --> 04:27.680
+to be that, but also going to wrap that inside of a mutable state.
+
+04:27.680 --> 04:33.740
+Because, remember, we need to have a state attached to all of these books that we get because they
+
+04:33.740 --> 04:36.860
+will be sent to our user interface in this case composable.
+
+04:36.860 --> 04:43.250
+So the composable will know how to recompose themselves to add that data, to show that data.
+
+04:43.850 --> 04:44.150
+Okay.
+
+04:44.150 --> 04:48.050
+So then I'm going to have an init block here.
+
+04:48.350 --> 04:50.870
+I want to get something in this case.
+
+04:50.870 --> 05:00.770
+I'm just going to call the search books and pass in this case, Android.
+
+05:01.190 --> 05:04.400
+We haven't created a search book yet, so let's go ahead and create that.
+
+05:04.400 --> 05:08.150
+So it's going to be a function and I'm going to pass the query.
+
+05:09.680 --> 05:11.150
+And what is going to happen here?
+
+05:11.150 --> 05:13.190
+I'm going to say view model.
+
+05:14.940 --> 05:15.600
+Scope.
+
+05:16.710 --> 05:18.180
+You see, we have an issue here.
+
+05:18.210 --> 05:23.190
+The reason being is because this is actually not going to be viewed as a new model because we haven't
+
+05:23.700 --> 05:24.630
+inherited from.
+
+05:25.050 --> 05:25.470
+Yes.
+
+05:25.560 --> 05:26.760
+View model.
+
+05:27.570 --> 05:29.160
+Android lifecycle like this.
+
+05:30.000 --> 05:30.650
+Okay.
+
+05:30.660 --> 05:31.080
+There we go.
+
+05:31.090 --> 05:36.870
+So now we will have to will be able to import our view model scope, because then we can invoke the
+
+05:36.870 --> 05:37.440
+launch.
+
+05:37.620 --> 05:44.910
+Certain processes that we need to be very careful as to not interfere with anything else in the user
+
+05:44.910 --> 05:45.330
+interface.
+
+05:45.720 --> 05:52.500
+So we can even make it even better by saying this pictures and say IO.
+
+05:52.530 --> 05:57.510
+In this case we just saying, okay, whatever we want to add in this launch block here it is core routine
+
+05:57.510 --> 05:59.250
+as as as it's called.
+
+05:59.850 --> 06:07.380
+We can launch we can actually give more space or more lanes, if you will, for the to be able to run
+
+06:07.680 --> 06:08.940
+parallel to each other.
+
+06:09.090 --> 06:15.660
+In this case, I would say if query, just make sure it is empty so there's nothing being passed from
+
+06:15.660 --> 06:18.540
+our query when we try to get something.
+
+06:19.020 --> 06:20.390
+I'm just going to say return.
+
+06:20.400 --> 06:21.210
+I'd like like this.
+
+06:21.210 --> 06:21.570
+So.
+
+06:21.630 --> 06:22.650
+So we do nothing.
+
+06:23.250 --> 06:31.170
+And then here I'm going to say list of books or mutable state, dot value, dot loading.
+
+06:31.350 --> 06:40.260
+I'm going to set that to true because that's what's happening now and then also data or list of books
+
+06:40.260 --> 06:41.040
+that value.
+
+06:42.660 --> 06:50.940
+And when I set that to repository that get books like that and pass our search query, which is our
+
+06:50.940 --> 06:55.620
+query, and then I'm going to set check it, check if list of books.
+
+06:57.340 --> 07:08.470
+That value and the data say to string is not empty like this.
+
+07:10.710 --> 07:12.060
+Then I know that data.
+
+07:12.900 --> 07:20.130
+And then when I see list of books that value loading in this case, I'm going to set that to false to
+
+07:20.130 --> 07:23.340
+say, well, we're done loading and things are good.
+
+07:23.910 --> 07:29.700
+And now, of course, we're calling these search books and passing a query so that we have some data
+
+07:29.700 --> 07:30.300
+in the beginning.
+
+07:30.930 --> 07:33.210
+In this case, when I guess search for Android books.
+
+07:33.570 --> 07:36.570
+Now let's go ahead and test to see if this actually works.
+
+07:36.600 --> 07:39.090
+Let's go to let's get rid of this.
+
+07:39.090 --> 07:41.550
+We want to go to our book search there.
+
+07:42.120 --> 07:47.190
+And what are we going to do inside of our search screen?
+
+07:47.940 --> 07:54.210
+We're also going to pass we don't need to pass this anymore because we don't need to look at our preview.
+
+07:54.220 --> 07:55.260
+So I'm going to delete that.
+
+07:55.530 --> 07:55.740
+Okay.
+
+07:55.740 --> 08:01.470
+So what I'm going to pass also here, I'm going to pass a view model which is going to be our book search
+
+08:01.470 --> 08:02.100
+view model.
+
+08:02.460 --> 08:09.990
+And I'm going to go ahead instantiated to view models like this, which means then we can pass along
+
+08:10.050 --> 08:11.040
+our surface.
+
+08:13.500 --> 08:18.150
+Can require a feel model to be passed as well as a few model.
+
+08:19.320 --> 08:19.800
+This.
+
+08:21.270 --> 08:22.290
+Go back here.
+
+08:22.350 --> 08:23.490
+I will have to pass.
+
+08:28.020 --> 08:29.010
+Our review model.
+
+08:31.230 --> 08:34.770
+It's going to be out of the model that we created at the top here.
+
+08:35.650 --> 08:35.900
+Okay.
+
+08:35.940 --> 08:40.410
+So I can just get rid of this because they have the same name, so that's fine.
+
+08:40.560 --> 08:45.690
+And then that means inside here, remember, we are inside of our search form.
+
+08:46.170 --> 08:50.460
+And if you go back to our search form, we have to go and search, which is going to pass the string,
+
+08:50.970 --> 08:53.610
+which is going to be whatever users added here.
+
+08:53.880 --> 08:54.150
+Right.
+
+08:55.200 --> 09:02.700
+So conveniently, we can then inside here we have that we can actually change this to query.
+
+09:05.300 --> 09:08.150
+And now I can see a few model that's being passed.
+
+09:08.240 --> 09:13.040
+Dot search books and the query is going to be the query just like that.
+
+09:13.610 --> 09:16.430
+Which means I can put a log D here, log d.
+
+09:18.560 --> 09:21.320
+I will say I'm going to pass a list.
+
+09:22.370 --> 09:25.760
+Of books that value data.
+
+09:27.150 --> 09:27.690
+Like this.
+
+09:29.040 --> 09:31.890
+Say to strength so we can see that screen representation.
+
+09:34.560 --> 09:36.420
+Say data like this.
+
+09:36.660 --> 09:43.140
+Okay, folks, as well, we should be able to see search at least what we are searching for.
+
+09:43.230 --> 09:43.820
+Let's see.
+
+09:43.830 --> 09:44.850
+Make sure everything is good.
+
+09:46.050 --> 09:46.740
+We should be good.
+
+09:47.130 --> 09:48.090
+All right, let's save.
+
+09:49.260 --> 09:53.280
+Okay, let's go ahead and give it a run.
+
+09:53.370 --> 09:54.270
+Fingers crossed.
+
+09:54.270 --> 09:55.380
+We haven't made any mistakes.
+
+09:55.380 --> 09:59.120
+We should be able to see that everything is working.
+
+09:59.150 --> 10:02.010
+Hopefully see the payload of our search.
+
+10:02.730 --> 10:03.080
+All right.
+
+10:03.090 --> 10:03.990
+There it is.
+
+10:05.300 --> 10:06.770
+Everything seems to still work.
+
+10:06.830 --> 10:07.250
+Let's see.
+
+10:07.250 --> 10:11.600
+Now let's go to search and nothing is working.
+
+10:11.750 --> 10:13.530
+Maybe we made a mistake.
+
+10:13.550 --> 10:15.770
+Let's go and look at the run.
+
+10:16.010 --> 10:16.990
+Log here.
+
+10:17.660 --> 10:20.260
+A view more provider create factory.
+
+10:20.300 --> 10:21.320
+Let's see.
+
+10:21.620 --> 10:21.980
+Okay.
+
+10:21.980 --> 10:24.470
+Book search view model.
+
+10:24.650 --> 10:26.540
+That's not working.
+
+10:27.140 --> 10:29.930
+Okay, so I think I know what the problem is.
+
+10:31.400 --> 10:31.640
+Okay.
+
+10:31.650 --> 10:35.240
+Let's go to our Cecil book search review model.
+
+10:35.270 --> 10:42.890
+So instead of doing this, let's just go straight because sometimes I think we're using a different
+
+10:44.420 --> 10:44.780
+library.
+
+10:44.780 --> 10:47.450
+So let's say Hilt View model.
+
+10:48.710 --> 10:52.040
+Or just a lower case hilt view model like this.
+
+10:52.070 --> 10:54.370
+Okay, let's give it a try with this.
+
+10:54.380 --> 10:57.590
+And if that doesn't work, then we'll assess from there.
+
+10:59.670 --> 10:59.970
+Okay.
+
+11:00.540 --> 11:02.240
+So let's run.
+
+11:02.520 --> 11:05.130
+Look at it again because you I'll see.
+
+11:05.130 --> 11:07.170
+I'll show you what the problem is in a second here.
+
+11:07.620 --> 11:13.230
+It looks like says reading as say that was created after the snapshot was taken or in a soundtrack that
+
+11:13.230 --> 11:14.580
+has not yet been applied.
+
+11:15.780 --> 11:20.160
+Let's common this out for a second just to see if that will solve.
+
+11:21.420 --> 11:21.750
+Okay.
+
+11:22.230 --> 11:23.310
+So that was the problem.
+
+11:24.090 --> 11:31.740
+Somehow this list of books, we make sense because we are we hadn't actually set up our list of books.
+
+11:33.220 --> 11:37.960
+So that's why we're having that issue to say this wasn't ready to be used before.
+
+11:38.140 --> 11:40.990
+We actually had instantiated and added something to it.
+
+11:40.990 --> 11:42.160
+So that was a problem there.
+
+11:42.520 --> 11:42.760
+All right.
+
+11:42.820 --> 11:46.240
+So everything is now working because you see.
+
+11:46.480 --> 11:47.110
+There we go.
+
+11:47.560 --> 11:49.060
+Of course, we're not seeing anything there.
+
+11:49.060 --> 11:55.660
+But because we have created this search box in a net, you know, if you model there.
+
+11:55.660 --> 11:56.770
+So we have Android.
+
+11:57.010 --> 12:00.670
+So we should see books pertaining to Android as you see here.
+
+12:01.270 --> 12:05.440
+So we got all of this information says Android for Dummy, one of the books.
+
+12:05.440 --> 12:07.150
+So this is great.
+
+12:07.570 --> 12:11.170
+Now let's see what happens if we search for something.
+
+12:11.500 --> 12:14.890
+Let's say flutter seed.
+
+12:14.890 --> 12:15.280
+Enter.
+
+12:17.460 --> 12:18.540
+And we should have.
+
+12:20.360 --> 12:20.710
+Flatter.
+
+12:20.810 --> 12:25.390
+You see, I can see that something else happened because we have flatter now showing there.
+
+12:26.060 --> 12:32.930
+In fact, let's go to at I think this will be more helpful and I'll say data.
+
+12:33.320 --> 12:33.680
+Okay.
+
+12:33.920 --> 12:34.460
+There we go.
+
+12:35.000 --> 12:35.960
+So you can see.
+
+12:39.970 --> 12:45.100
+Why did we call this data like that?
+
+12:45.440 --> 12:46.330
+You go there.
+
+12:47.260 --> 12:47.650
+Okay.
+
+12:47.650 --> 12:49.300
+So this was called and we have it.
+
+12:49.450 --> 12:50.230
+It's working.
+
+12:50.890 --> 12:54.520
+And it's a flatter click.
+
+12:56.660 --> 13:00.300
+Of course we see that we should have some sort of flutter.
+
+13:00.320 --> 13:00.950
+They would go.
+
+13:01.370 --> 13:03.300
+If I change something else.
+
+13:03.320 --> 13:04.100
+Let's see.
+
+13:05.480 --> 13:07.850
+I'd say money making.
+
+13:11.270 --> 13:18.020
+And he and her can see that we have something else making money so as to the payload.
+
+13:19.190 --> 13:20.430
+So now everything is working.
+
+13:20.450 --> 13:22.160
+This is really, really good, right?
+
+13:22.880 --> 13:28.100
+Instead of making this private, let's just say Val like this.
+
+13:28.190 --> 13:33.290
+Just want to make sure that perhaps we can make this to work.
+
+13:33.290 --> 13:36.110
+Because I want to set our list of books.
+
+13:36.110 --> 13:39.240
+Value the loading of our object to true.
+
+13:40.310 --> 13:44.000
+Let's see if we can get this to work.
+
+13:44.000 --> 13:44.900
+This one once again.
+
+13:47.310 --> 13:47.620
+Okay.
+
+13:47.710 --> 13:48.350
+Let's run.
+
+13:49.670 --> 13:51.240
+So we still have this problem here.
+
+13:52.260 --> 14:00.570
+Okay, so it seems like if I remove the dispatch io, then I don't have this problem so I can still
+
+14:00.570 --> 14:02.610
+have this list of value and load into.
+
+14:02.610 --> 14:03.000
+True.
+
+14:03.020 --> 14:08.250
+So let's just remove the the dispatch there and run again.
+
+14:08.700 --> 14:14.040
+We should be able to see that we have no problem and be able to set our loading to true.
+
+14:14.310 --> 14:15.090
+Okay, let's run.
+
+14:15.300 --> 14:15.730
+There we go.
+
+14:15.750 --> 14:16.620
+So that's good.
+
+14:17.280 --> 14:18.720
+And we have no problems.
+
+14:18.720 --> 14:21.390
+We can still search Logcat.
+
+14:21.450 --> 14:22.770
+Let me clear all of this.
+
+14:23.310 --> 14:24.690
+I search for something else.
+
+14:25.050 --> 14:25.590
+See?
+
+14:27.060 --> 14:28.320
+Web development.
+
+14:31.020 --> 14:31.470
+Enter.
+
+14:32.500 --> 14:32.920
+Okay.
+
+14:32.920 --> 14:36.020
+So you see, everything is working perfectly.
+
+14:36.040 --> 14:36.680
+That's very good.
+
+14:36.700 --> 14:39.280
+So that was just a little glitch there.
+
+14:39.280 --> 14:39.920
+But that's okay.
+
+14:40.000 --> 14:41.500
+Just remove that and we should be good.
+
+14:41.500 --> 14:45.430
+And looks like this is who wants to make it private.
+
+14:45.490 --> 14:46.390
+That's totally fine.
+
+14:46.600 --> 14:46.930
+Okay.
+
+14:47.440 --> 14:47.830
+There we go.
+
+14:47.860 --> 14:54.010
+So we are able to put together the infrastructure that allows us to get information right it search
+
+14:54.010 --> 14:58.990
+books, and we can actually add search terms and we get the information.
+
+14:59.000 --> 15:02.770
+So this will good of course not that we have that data coming in.
+
+15:03.040 --> 15:07.950
+We can then get that data, put that in an object and start populating our list here.
