@@ -274,7 +274,11 @@ The time is ripe.
 
 Learning is like rowing upstream: not to advance is to drop back.
 
+### No.13
 
+That's one small step for a man, one giant leap for mankind.
+
+She is extremely difficult to please.
 
 
 
