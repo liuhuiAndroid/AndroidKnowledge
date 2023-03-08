@@ -1,12 +1,6 @@
 
 # 一款使用RN + TS开发的仿喜马拉雅的听书应用
 
-
-## 项目运行截屏
-
-![Android](./raw/android.gif)
-![IOS](./raw/ios.gif)
-
 ## 如何运行
 
 1. 确认你的环境已经搭建完成: [搭建开发环境](https://reactnative.dev/docs/environment-setup)
