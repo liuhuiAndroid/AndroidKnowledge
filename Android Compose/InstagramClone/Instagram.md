@@ -54,75 +54,77 @@ diagram 图表
 
 ### No.5
 
-uniquely identify
+uniquely identify 独特地；珍奇地
 
-tease
+tease 取笑，嘲笑；
 
-mention
+mention 提到，谈到；
 
-previously
+previously 以前地，先前地
 
 ### No.7
 
-sneak
+sneak 出其不意的，偷偷摸摸的
 
-pretentious
+pretentious 自命不凡的，做作的；
 
-evolve
+evolve 进化，演化；
 
-further
+further 更远地
 
 ### No.8
 
-complexity
+complexity 复杂性
 
-regarding
+regarding 关于，至于
 
-purposes
+purposes 目的，打算
 
-in particular
+in particular 尤其，特别
 
 ### No.9
 
-various
+various 各种各样的；
 
-inevitable
+inevitable 必然发生的，不可避免的；
 
-a bunch of cities
+a bunch of cities 很多城市
 
-encourage
+encourage 鼓励，激励；
 
-variables
+variables 变量
 
 ### No.10
 
 ### No.11
 
-scratch
+scratch 挠，轻抓
 
-functional
+functional 功能的
 
 ### No.12
 
 ### No.13
 
-section
+section 段，部分；
 
-be mindful about
+be mindful about 留心 注意
 
-retrieval
+retrieval 找回，取回；
 
-spinner
+spinner 纺纱机；纺纱工人；
 
 ### No.14
 
-instantiated
+instantiated 实例化，具现化，实体化；
 
 ### No.15
 
-guard
+guard 卫兵，警卫；
 
-purpose
+purpose 目的
+
+sufficient 足够的，充足的；
 
 ### No.16
 
@@ -130,27 +132,48 @@ purpose
 
 ### No.18
 
+spinner 纺纱机；纺纱工人；
+
+previously 以前地，先前地
+
 ### No.19
 
 ### No.20
+
+desired 渴望
 
 ### No.21
 
 ### No.22
 
+enforced 实施的，执行
+
+feed 饲养，喂养
+
 ### No.23
+
+iteration 迭代
+
+functionality 功能
+
+confirmation 确定；证实
 
 ### No.24
 
+eventually 最终，结果
+
+spinner 下拉列表
+
 ### No.25
+
+underscore 强调
+
+slightly different 稍微；稍有不同
+
+cheat 欺骗
+
+dummy 假的，仿真的
 
 ### No.26
 
-### No.27
-
-### No.28
-
-### No.29
-
-### No.30
 
