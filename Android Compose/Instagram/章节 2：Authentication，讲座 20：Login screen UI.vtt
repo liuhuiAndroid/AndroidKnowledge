@@ -1,0 +1,301 @@
+WEBVTT
+
+00:00.600 --> 00:05.220
+OK, so let's go ahead and implement our log in screen UI.
+
+00:05.940 --> 00:11.130
+All right, we're going to keep this for a little bit because we're going to use it actually in our
+
+00:11.130 --> 00:11.610
+UI.
+
+00:11.820 --> 00:18.300
+So first of all, at the top here, we're going to put a box so that we can overlap several elements
+
+00:18.540 --> 00:23.520
+and we're going to have a modifier modifier, dot filled max size.
+
+00:24.450 --> 00:24.820
+All right.
+
+00:24.840 --> 00:26.670
+Inside, we're going to have a column.
+
+00:27.420 --> 00:34.170
+So it's going to be quite similar in layout to our sign up screen, except we're going to have fewer,
+
+00:35.010 --> 00:36.930
+you know, boxes where you can.
+
+00:36.960 --> 00:42.270
+We don't need the I think we don't need the username, but we still need the email and password.
+
+00:42.630 --> 00:51.420
+So for the column, I'm going to have a modifier equals modifier dot fill max width, OK?
+
+00:51.990 --> 00:56.100
+We're going to have dot rep content size.
+
+00:57.260 --> 00:58.760
+Still in the modifier, though.
+
+01:00.580 --> 01:02.500
+Dot rap content size.
+
+01:04.090 --> 01:08.890
+Sorry, rap content, height and dot, vertical scroll.
+
+01:10.150 --> 01:10.900
+Remember?
+
+01:13.270 --> 01:23.050
+Scroll states, OK, so that will basically allow us to scroll when the keyboard is visible on the screen.
+
+01:23.800 --> 01:30.640
+Now we're going to declare two states so valid email states is going to meet, going to be remember.
+
+01:33.630 --> 01:37.830
+And here we have mutable state of.
+
+01:40.080 --> 01:42.270
+And we have a text field value.
+
+01:47.550 --> 01:48.050
+OK.
+
+01:50.600 --> 01:52.430
+So that is our email state.
+
+01:52.460 --> 02:01.010
+Let's duplicate that and I'm going to have a pass state, OK, so we just need email and password.
+
+02:01.010 --> 02:02.390
+We don't need the username.
+
+02:03.080 --> 02:06.050
+Now here at the top, of course, we're going to add the image.
+
+02:08.330 --> 02:10.550
+And painter resource.
+
+02:12.340 --> 02:18.910
+Of are now make sure you enable you import the correct answer for me, it's going to be this one, so
+
+02:18.910 --> 02:22.630
+the package name has to correspond to your application.
+
+02:24.340 --> 02:36.280
+OK, here you will find it at the top are Dot Draw Bowl Dot IG logo with a content description of No.
+
+02:36.670 --> 02:41.950
+And we can add our modifier equals modifier dot.
+
+02:44.350 --> 02:46.270
+Now, Dot with.
+
+02:48.250 --> 02:51.460
+Is going to be 250 dug deep.
+
+02:52.850 --> 02:59.960
+We're going to have padding is going to be top equals 16 deep.
+
+03:01.460 --> 03:04.640
+And we're going to have a regular putting of hate.
+
+03:05.420 --> 03:08.780
+So the only the top banning is different, the rest is the same.
+
+03:09.410 --> 03:09.800
+All right.
+
+03:09.800 --> 03:14.360
+So let's go ahead and add a text outside of the image.
+
+03:16.040 --> 03:22.820
+The text is going to be logging, and however, we're going to have modifier.
+
+03:24.510 --> 03:29.490
+Equals modifier dot padding of eight dpi.
+
+03:31.590 --> 03:35.430
+OK, what else do we need, we need a font size.
+
+03:38.060 --> 03:40.580
+Of 30, don't speak.
+
+03:41.930 --> 03:44.480
+And we will need a let's import DSP.
+
+03:45.080 --> 03:48.050
+And we will need font family.
+
+03:49.960 --> 03:51.700
+Font family thought serif.
+
+03:52.120 --> 03:56.020
+OK, we have our text, so we need to text fields.
+
+03:56.890 --> 04:02.650
+I'm going to actually copy those to text fields from the sign up screen.
+
+04:03.430 --> 04:09.910
+I'm going to copy the text fields, email and password, so copy those.
+
+04:12.420 --> 04:12.940
+All right.
+
+04:12.960 --> 04:19.080
+And I think those are the same, those are exactly the same because it's just email and password.
+
+04:19.560 --> 04:21.930
+And finally, we're going to need a button.
+
+04:22.410 --> 04:24.420
+So sign up screen button.
+
+04:26.610 --> 04:29.100
+I think that is exactly the same as well.
+
+04:29.100 --> 04:29.380
+So.
+
+04:29.400 --> 04:36.670
+Copy the button and we're going to paste it here, but we're going to remove the on click functionality.
+
+04:36.690 --> 04:37.110
+OK.
+
+04:37.530 --> 04:42.750
+For that, of course, we will need to contact the view model and call a different method.
+
+04:43.230 --> 04:46.020
+The name here is going to be the text here is going to be different.
+
+04:46.020 --> 04:48.360
+This is going to be logging.
+
+04:53.600 --> 05:00.140
+One thing I forgot in sign up screen as well is I would like to when when we click the button, I would
+
+05:00.140 --> 05:02.660
+like to dismiss the keyboard.
+
+05:03.020 --> 05:09.440
+OK, so for that, we need to add at the top here we need to add a valve.
+
+05:09.440 --> 05:15.050
+Focus equals local focus manager Dot current.
+
+05:15.650 --> 05:18.830
+And we're going to use this focus to dismiss the keyboard.
+
+05:18.830 --> 05:28.010
+OK, so down below in the button in on click, we're going to see focus, dot, clear focus and force.
+
+05:29.030 --> 05:36.530
+Equals true, and I'm just going to copy this one and paste that in the on click here as well.
+
+05:37.950 --> 05:38.260
+OK.
+
+05:38.400 --> 05:44.280
+And of course, we need the focus in that that file as well.
+
+05:44.820 --> 05:45.120
+All right.
+
+05:45.120 --> 05:47.520
+So let's add the value here.
+
+05:48.900 --> 05:55.860
+Focus and then we have our focus in on quick and the same for here.
+
+05:56.340 --> 06:00.390
+We have our button now after the button.
+
+06:01.230 --> 06:09.030
+We need to add this text value here, so I'm going to copy it or cut it rather and paste it here.
+
+06:10.870 --> 06:11.770
+Format, the code.
+
+06:12.280 --> 06:20.740
+All right, so we have our go to sign up text field and I'm getting an error.
+
+06:21.310 --> 06:22.180
+Why is that?
+
+06:23.920 --> 06:24.370
+All right.
+
+06:24.370 --> 06:29.590
+So I forgot the closing brackets, OK?
+
+06:30.100 --> 06:32.080
+And of course, we need the spinners.
+
+06:32.080 --> 06:39.250
+So I'm just going to copy the spinner from here, from the sign up screen and place it in the log in.
+
+06:39.550 --> 06:43.750
+However, I'm just going to place it inside the box, but outside the column.
+
+06:44.050 --> 06:47.710
+OK, so column is going to be here, but inside the box.
+
+06:48.460 --> 06:51.580
+So make sure you place it in the right place.
+
+06:53.880 --> 06:59.220
+And I think that is all for the logging UI.
+
+06:59.280 --> 07:09.340
+Let's run the code and see if we get the desired screen so we can move between the two screens.
+
+07:09.360 --> 07:10.050
+Of course.
+
+07:16.790 --> 07:20.950
+All right, so I am in the sign up screen and I can go to logging.
+
+07:21.440 --> 07:26.180
+And obviously, I am missing something here.
+
+07:26.750 --> 07:31.490
+I forgot the horizontal alignment for the column.
+
+07:31.500 --> 07:39.970
+So here after the modifier, I'm going to say horizontal alignment, alignment, dart center horizontally.
+
+07:40.610 --> 07:41.570
+Let's run that again.
+
+07:49.410 --> 07:51.810
+OK, I'm in the sign up, I go to log in.
+
+07:52.160 --> 07:55.740
+OK, let's test the keyboard functionality.
+
+07:55.740 --> 08:00.180
+If I click log in, the focus goes away and the same for sign up.
+
+08:00.270 --> 08:04.320
+If I click the button, keyboard goes away.
+
+08:04.680 --> 08:12.870
+Of course, there is an issue here because we haven't entered any any information in those fields,
+
+08:12.870 --> 08:14.040
+so we're going to focus.
+
+08:14.070 --> 08:16.320
+We're going to solve that later on.
+
+08:16.530 --> 08:19.800
+But for now, I think the log in screen is fine.
+
+08:21.240 --> 08:26.850
+The UI is correct and we're going to focus on implementing the functionality, which is going to be
+
+08:26.850 --> 08:34.110
+inside the view model on log in function to sign in a user that already exists.

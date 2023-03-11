@@ -1,0 +1,160 @@
+WEBVTT
+
+00:00.550 --> 00:05.740
+All right, so in this video, we're going to put in place the foundations for our navigation.
+
+00:05.950 --> 00:13.840
+Now keep in mind that we want to work on authentication first, so basically sign up and log in.
+
+00:14.650 --> 00:19.240
+Let's go ahead and create the first screen that we're going to use and that is the sign up screen.
+
+00:19.660 --> 00:27.010
+So I'm going to create here a new package, and I'm going to call this off for authentication.
+
+00:27.370 --> 00:32.260
+And here I'm going to create a new file called sign up screen.
+
+00:32.770 --> 00:35.170
+Make sure you select a file here.
+
+00:35.560 --> 00:40.720
+We don't need a class and here we're basically going to create a composable.
+
+00:43.220 --> 00:43.680
+OK.
+
+00:44.000 --> 00:45.690
+And I'm going to have fun.
+
+00:45.710 --> 00:49.350
+Sign up screen here.
+
+00:49.370 --> 00:56.210
+I'm going to have two parameters NAV Controller of type nav controller, which is going to be our navigation
+
+00:56.210 --> 01:01.130
+controller and then the end of type Instagram View model.
+
+01:02.510 --> 01:02.850
+OK.
+
+01:03.080 --> 01:05.180
+And let's just put a text here.
+
+01:07.500 --> 01:13.590
+Sorry, not a text field, just a text, and the text is going to be up screen.
+
+01:15.380 --> 01:22.550
+OK, so once we display this, we have a text on the screen to verify that we have reached this composable
+
+01:23.000 --> 01:30.950
+now going to main activity here, we're going to define our navigation and our possible destinations.
+
+01:30.980 --> 01:38.360
+OK, so here, right before my Instagram app composable, I'm going to create a sealed class that will
+
+01:38.360 --> 01:45.260
+contain all my destination screens, so I'm going to call this destination screen.
+
+01:46.370 --> 01:49.640
+And this will have one parameter vao route.
+
+01:51.020 --> 01:52.640
+Of type string.
+
+01:53.700 --> 01:58.200
+OK, so the name of that, Robert, and I'm going to create an object here.
+
+01:58.560 --> 01:59.250
+Sign up.
+
+02:01.010 --> 02:02.930
+Of type destinations screen.
+
+02:03.950 --> 02:05.480
+With the root sign of.
+
+02:07.350 --> 02:12.930
+OK, so we only have one screen at the moment, we will add more as we go through the app.
+
+02:13.590 --> 02:18.570
+Now we have our sign up, let's go ahead and create our navigation host.
+
+02:18.990 --> 02:24.840
+So in the Instagram app, I'm going to define a valve mask controller.
+
+02:25.740 --> 02:32.550
+And this is going to be remember, nav controller with no parameters.
+
+02:34.060 --> 02:40.390
+OK, so that will give us our navigation controller, and we can use that to create a nav host, so
+
+02:40.390 --> 02:48.940
+maps host with the nav controller that we've just created and we don't need a graph, we will need a
+
+02:48.940 --> 02:57.200
+start destination that's going to be destination screen dot sign up dot route.
+
+02:58.300 --> 02:58.740
+OK.
+
+02:59.230 --> 03:05.770
+And here we have a composable for the route that we are defining, right?
+
+03:05.770 --> 03:10.870
+So destination screen dot sign up dot route.
+
+03:12.040 --> 03:21.520
+And when we reach that route, we're going to say sign up screen, the nav controller that we have created
+
+03:21.520 --> 03:27.070
+and the view model that you know, we also have received here via tilt.
+
+03:27.850 --> 03:29.960
+So that is basically all there is to it.
+
+03:29.980 --> 03:36.280
+We have the nav host here and we have the network controller that we can then use to navigate throughout
+
+03:36.280 --> 03:37.150
+our application.
+
+03:37.150 --> 03:43.540
+And as we go through our application, we're going to define more destination screens, more more routes,
+
+03:43.540 --> 03:46.780
+more ways to reach those destination screens later on.
+
+03:47.080 --> 03:53.860
+But for now, since our start destination is the sign up, we should be able to see this sign up screen
+
+03:53.860 --> 03:56.200
+as soon as we run the application.
+
+03:56.830 --> 03:58.240
+OK, so let's go ahead.
+
+04:01.030 --> 04:09.610
+OK, let's go ahead and run our application here in our emulator or on the real device if you choose
+
+04:09.610 --> 04:10.270
+to use that.
+
+04:18.340 --> 04:19.640
+All right, so there we go.
+
+04:19.660 --> 04:24.880
+Our application has run, there is much to it at the moment, but we can clearly see that we are in
+
+04:24.880 --> 04:28.090
+the sign up screen here at the top left.
+
+04:28.360 --> 04:30.910
+OK, so all is good now.
+
+04:30.910 --> 04:36.940
+We can go ahead and start to build our sign up screen basically from scratch, right?
+
+04:36.940 --> 04:42.220
+We can go ahead and implement the UI and the functionality later on.

@@ -1,0 +1,469 @@
+WEBVTT
+
+00:00.390 --> 00:06.960
+All right, so in this video, we're going to start to build our main screens of our API and we're going
+
+00:06.960 --> 00:10.870
+to start with a with the My Post screen.
+
+00:10.890 --> 00:17.730
+The reason for that is if we start with the feed screen, we need to have some posts in the backend
+
+00:18.090 --> 00:22.890
+API so that we can have something to display and the same for the search screen.
+
+00:22.890 --> 00:24.400
+We need to search through something.
+
+00:24.420 --> 00:26.010
+OK, we don't have that at the moment.
+
+00:26.340 --> 00:33.720
+So I think it's the best is the best idea to start with a my post screen that will allow us to create
+
+00:33.720 --> 00:38.940
+new posts eventually and to edit our user information.
+
+00:38.970 --> 00:39.330
+OK.
+
+00:39.570 --> 00:43.770
+But for now in this video, we're just going to focus on the UI side of things.
+
+00:44.340 --> 00:51.780
+So I have here my post screen, and I'm just going to remove everything for now, and we will add this
+
+00:51.780 --> 00:52.500
+later on.
+
+00:53.130 --> 00:59.940
+So now let's go ahead and connect to our review model and retrieve a couple of elements that we will
+
+00:59.940 --> 01:00.270
+need.
+
+01:00.360 --> 01:08.490
+So first of all, I'm going to say Val user data is going to be VMM Dot user data dot value, and I
+
+01:08.490 --> 01:10.710
+will also need the spinner.
+
+01:10.980 --> 01:19.080
+OK, so I'm going to say Val is loading by spin or I mean the the flag that tells me if it's in progress
+
+01:19.080 --> 01:24.150
+or not so that I can display the spinning val is loading equals.
+
+01:25.800 --> 01:28.230
+VM in-progress dot value.
+
+01:30.000 --> 01:32.160
+All right, so let's go ahead and create a column.
+
+01:32.850 --> 01:38.340
+The reason I have this column is because I want to be able to display the spinner on top of whatever
+
+01:38.340 --> 01:40.560
+else will be there on the screen.
+
+01:40.920 --> 01:49.530
+So inside I'm going to have another column that will have a modifier dot weight of one s.
+
+01:50.070 --> 01:57.030
+So as you can imagine, this column will contain most of the UI and at the bottom we will have the navigation.
+
+01:57.030 --> 02:00.960
+So that's why we are taking up one f as a weight.
+
+02:00.960 --> 02:06.780
+So taking up the as much screen as we can, but leaving room for the bottom navigation.
+
+02:07.530 --> 02:16.350
+So here I will have a bottom navigation menu with bottom navigation item dot posts.
+
+02:16.500 --> 02:20.730
+So that is the selected item and the nav controller.
+
+02:21.660 --> 02:24.300
+OK, so I have my bottom navigation.
+
+02:24.630 --> 02:27.000
+Let's go ahead and build our UI.
+
+02:27.270 --> 02:34.200
+So first of all, I will have a row at the top that will contain my profile image, and it will tell
+
+02:34.200 --> 02:36.960
+me some information about the current user.
+
+02:36.960 --> 02:42.960
+So how many posts they have created, how many followers and followings there are?
+
+02:43.320 --> 02:54.720
+So I'm going to say Row, OK, inside I will have a profile image and here I will create this composable.
+
+02:55.440 --> 02:56.790
+Let's do that now, actually.
+
+02:56.810 --> 02:59.730
+So down below here, I'm going to have composable.
+
+03:03.510 --> 03:05.640
+And this is going to be fun.
+
+03:06.660 --> 03:16.380
+Profile image and the profile image will need a image you are of type string, okay?
+
+03:16.770 --> 03:21.840
+And an interaction we want to extract or hoist that state.
+
+03:21.860 --> 03:23.730
+So we're going to have an on click.
+
+03:27.230 --> 03:29.060
+Which is going to be a lander.
+
+03:29.540 --> 03:36.020
+OK, so we're not going to implement this now, we just want to define it so that we can have it here.
+
+03:36.230 --> 03:38.360
+OK, so that we can display it here.
+
+03:38.810 --> 03:39.170
+All right.
+
+03:39.170 --> 03:44.120
+So here I will have my profile image URL.
+
+03:44.130 --> 03:48.400
+So I'm going to say user data dot.
+
+03:48.920 --> 03:52.520
+I think it's a question mark dot image URL because that can be no.
+
+03:53.540 --> 03:56.720
+And we're going to have an on click OK.
+
+03:56.750 --> 03:58.580
+We're going to fill that in later on.
+
+03:58.850 --> 04:01.520
+But for now, we're going to add also a text.
+
+04:02.570 --> 04:06.590
+The text is going to be something like 15 posts.
+
+04:07.640 --> 04:12.140
+OK, let me add a splash in here so that it displays on two lines.
+
+04:12.800 --> 04:14.390
+OK, 15 posts.
+
+04:14.390 --> 04:22.490
+I'm going to have a modifier modifier dot weight of one if.
+
+04:24.360 --> 04:27.990
+And not a line alignment.
+
+04:31.130 --> 04:33.890
+Dart center vertically.
+
+04:36.630 --> 04:41.070
+OK, so I have my post, but I also want to add an alignment,
+
+04:44.040 --> 04:46.760
+a line text the line, that's it.
+
+04:47.100 --> 04:48.880
+Text align center.
+
+04:50.620 --> 04:53.480
+Sorry, text align center.
+
+04:53.490 --> 04:53.850
+OK.
+
+04:54.090 --> 05:00.420
+So basically this aligns the text in the row, and this aligns the text itself.
+
+05:00.420 --> 05:07.020
+So we want to be kind of in the middle of the composable of the text composable, right?
+
+05:07.170 --> 05:14.910
+So this puts the composable in the center of the row and this puts the text in the center of this element.
+
+05:15.990 --> 05:17.730
+Hopefully, that is clear.
+
+05:18.000 --> 05:18.390
+All right.
+
+05:18.390 --> 05:23.850
+So we're going to have two more of these because we want posts, followers and following.
+
+05:24.600 --> 05:27.870
+So I'm going to copy this twice.
+
+05:30.250 --> 05:39.130
+For the second, I'm going to say followers, so let's say 54 slash and followers.
+
+05:40.780 --> 05:47.380
+And for this one, ninety three and following.
+
+05:49.570 --> 05:52.990
+OK, so the people that are following this user.
+
+05:54.280 --> 05:57.700
+OK, so we have the top row.
+
+05:58.390 --> 05:58.840
+OK.
+
+05:59.260 --> 06:06.970
+So after that, we will add some information about the user, so we want to display the username.
+
+06:07.690 --> 06:11.140
+We want to maybe display the name of the user and the bio.
+
+06:11.260 --> 06:13.040
+OK, so let's go ahead and do that.
+
+06:13.060 --> 06:14.530
+We're going to add a column.
+
+06:16.630 --> 06:18.820
+OK, with a modifier.
+
+06:20.540 --> 06:24.080
+Dot padding of eight dpi.
+
+06:26.300 --> 06:34.010
+OK, import, that now valid username display is going to be.
+
+06:35.280 --> 06:42.510
+Now, if we have a username, if user data question my thoughts username.
+
+06:45.410 --> 06:52.250
+If that is no, then we display nothing else.
+
+06:52.970 --> 07:02.420
+We want to display an at sign before our user name, so at dollar curly braces user data.
+
+07:03.590 --> 07:04.280
+Question Mark.
+
+07:04.640 --> 07:05.330
+Username.
+
+07:06.800 --> 07:11.570
+OK, so we simply want to add an ad if we do have a username here.
+
+07:12.050 --> 07:17.630
+OK, so with that, we're going to add a text and the text is going to be user data.
+
+07:19.230 --> 07:21.120
+The question or thought name?
+
+07:22.320 --> 07:22.800
+OK.
+
+07:24.930 --> 07:27.990
+Or since this can be no or empty street.
+
+07:28.620 --> 07:34.010
+And importantly, I want to add a font weight here font weight dot bold.
+
+07:34.020 --> 07:38.610
+So I want the name to be in bold and the user name in regular text.
+
+07:39.300 --> 07:43.790
+Then we're going to display a text with user name display.
+
+07:46.090 --> 07:54.370
+OK, and another text with the bio, so we're going to say VM Dot, sorry, user data.
+
+07:56.300 --> 07:57.830
+Question Mark thought bio.
+
+07:59.220 --> 08:02.610
+And then Elvis operator, empty string, if that is no.
+
+08:04.040 --> 08:09.080
+OK, so we have our column for the user information.
+
+08:09.440 --> 08:17.900
+Next up, we want to display a button that will send us to the profile page where we can edit the information.
+
+08:17.990 --> 08:19.550
+OK, so let's go ahead and do that.
+
+08:19.790 --> 08:22.790
+We're going to add here and outlined button.
+
+08:25.200 --> 08:30.660
+OK, now for the UN click, we're not going to implement it at the moment, so then you remove it to
+
+08:30.660 --> 08:34.380
+do because it will just crash our application if we click it.
+
+08:34.860 --> 08:40.560
+So we're going to leave that on, click for now and we're going to add a modifier here.
+
+08:43.030 --> 08:51.430
+Modifier equals modifier dot padding is going to be eight dpi.
+
+08:53.430 --> 08:56.490
+And we're going to add Phil Max width.
+
+08:58.270 --> 09:00.890
+OK, so that's my modifier.
+
+09:01.100 --> 09:08.600
+Next up, I want to add some colors is going to be button defaults.
+
+09:10.960 --> 09:12.520
+Dot button colors.
+
+09:19.310 --> 09:24.020
+And here I will have a background color of color that's transparent.
+
+09:25.640 --> 09:26.130
+All right.
+
+09:26.150 --> 09:28.370
+So I want to have the transparent color.
+
+09:28.760 --> 09:37.760
+Now I would like to set the elevation is going to be button defaults, dot elevation.
+
+09:40.660 --> 09:44.770
+And here I will have default elevation of zero dpi.
+
+09:45.730 --> 09:49.960
+I will have pressed elevation zero dpi.
+
+09:51.040 --> 09:58.630
+And also disabled elevation zero dpi, so I want to make sure that I get no elevation on my button.
+
+09:58.960 --> 10:09.550
+And then finally, I'm going to have the shape is going to be rounded corner shape with 10 as the parameters.
+
+10:09.550 --> 10:12.040
+So I want corners to be rounded slightly.
+
+10:13.560 --> 10:20.760
+OK, and inside here, I'm going to have a text that says, edit profile.
+
+10:22.710 --> 10:27.090
+OK, let me add a color equals color dot black.
+
+10:29.140 --> 10:39.250
+OK, so we have our we have our button outline button that will eventually send us to the edit profile
+
+10:39.250 --> 10:44.670
+page, and here I will, and I would like to add a column for the post.
+
+10:44.710 --> 10:50.560
+We don't have any posts at the moment, but I just want to display that, that column, that information
+
+10:50.560 --> 10:52.510
+where we will eventually have some posts.
+
+10:53.020 --> 10:56.380
+So instead of column, I'm going to have a modifier.
+
+10:58.770 --> 11:09.940
+Modifier dot weight is going to be one F, and then here I'm just going to have a text that says Post's
+
+11:10.710 --> 11:11.130
+list.
+
+11:11.460 --> 11:16.110
+OK, so a column that takes up the rest of the space in that screen.
+
+11:16.830 --> 11:21.020
+So I think that is all we haven't implemented the profile image yet.
+
+11:21.030 --> 11:22.470
+We will do that in the next video.
+
+11:22.740 --> 11:31.530
+But for now, if we run this, we should be able to see kind of a nice outline for our for our UI.
+
+11:31.650 --> 11:32.340
+Let's have a look.
+
+11:38.520 --> 11:39.000
+OK.
+
+11:39.060 --> 11:40.290
+Moving to my posts.
+
+11:40.650 --> 11:42.820
+OK, so this is looking OK.
+
+11:43.650 --> 11:46.860
+Basically, we don't have too much information to fill out here.
+
+11:47.070 --> 11:49.230
+We haven't posted anything.
+
+11:49.440 --> 11:51.300
+We haven't created anything for the image.
+
+11:51.300 --> 11:54.350
+So that's why there's no image that appears here.
+
+11:54.360 --> 12:00.390
+We will do that in the next video, but here we have our posts, followers and following which we will
+
+12:00.390 --> 12:01.410
+fill out later on.
+
+12:01.680 --> 12:04.020
+Here we have some information for our users.
+
+12:04.020 --> 12:11.280
+So the username, we don't have a name or a bio yet, but we have the edit profile and the profile and
+
+12:11.280 --> 12:12.420
+the post list.
+
+12:12.900 --> 12:22.020
+If I go to the backend Firebase API and I fill out some information here for John, let's say the name.
+
+12:24.830 --> 12:28.080
+The name is going to be a strange journey.
+
+12:29.300 --> 12:33.470
+And then let's say the bio is also going to be a string.
+
+12:34.250 --> 12:39.910
+This is the IG account of Johnny.
+
+12:41.210 --> 12:42.620
+OK, so update that.
+
+12:43.010 --> 12:46.060
+Now let's go ahead and run the application again.
+
+12:48.190 --> 12:51.640
+And this time we should get some more information displayed.
+
+12:53.880 --> 12:54.340
+I'll say.
+
+12:57.110 --> 13:02.990
+There we go, so we have Johnny as the name at John and the bio displayed here.
+
+13:03.260 --> 13:05.180
+This button, of course, doesn't do anything.
+
+13:05.480 --> 13:11.720
+For now, we will implement that later and in the next video, we want to implement the image for the
+
+13:11.720 --> 13:12.200
+user.
+
+13:12.240 --> 13:13.670
+OK, we will do that next.

@@ -26,9 +26,15 @@ react-native-config：多环境
 
 babel-plugin-module-resolver 插件解决绝对路径问题，配置 babel.config.js
 
+React Navigation 5：官方推荐的导航器，官网：https://reactnavigation.org/docs/getting-started
 
+redux
 
+react-native-svg
 
+react-native-iconfont-cli
+
+axios
 
 
 

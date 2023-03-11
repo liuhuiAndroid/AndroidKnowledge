@@ -1,0 +1,676 @@
+WEBVTT
+
+00:00.540 --> 00:06.030
+All right, guys, welcome back to a new video, and in this video, we're going to put together the
+
+00:06.270 --> 00:13.110
+kind of functional requirements of our application now again, in a real world situation, you would
+
+00:13.110 --> 00:17.340
+spend a lot of time on this process and multiple people would be involved.
+
+00:17.610 --> 00:23.700
+But in this video, I just want to give you kind of an overview to have a clearer picture of what we're
+
+00:23.700 --> 00:29.820
+going to be building in our application and what kind of data we're going to be using and also what
+
+00:29.820 --> 00:36.600
+kind of data we're going to be storing in our back API that we will build using Firebase.
+
+00:36.630 --> 00:38.190
+OK, so we will see all of that.
+
+00:38.520 --> 00:44.700
+So for this purpose, let's go ahead and create a diagram of these screens of our application, and
+
+00:44.700 --> 00:47.580
+we're going to extract some requirements from those.
+
+00:47.790 --> 00:53.460
+So first of all, the main squeeze that we're going to need are going to be the kind of sign up and
+
+00:53.460 --> 00:54.390
+log in screen.
+
+00:54.410 --> 00:56.670
+So I'm going to have here sign up screen.
+
+00:57.750 --> 00:58.380
+OK.
+
+00:59.370 --> 01:02.610
+So that's going to be the screen to create a user.
+
+01:02.940 --> 01:09.090
+And the screen for logging if we have an existing user.
+
+01:09.270 --> 01:12.990
+And of course, for this, we're going to need Firebase authentication.
+
+01:15.540 --> 01:16.100
+OK.
+
+01:16.770 --> 01:20.610
+That will require username and password.
+
+01:22.530 --> 01:22.900
+All right.
+
+01:22.920 --> 01:25.470
+Let's arrange this a little bit nicer.
+
+01:25.500 --> 01:31.260
+OK, so we will use Firebase authentication for the sign up process.
+
+01:32.340 --> 01:35.910
+OK, here we go.
+
+01:35.970 --> 01:36.360
+All right.
+
+01:36.660 --> 01:40.890
+So we have our two screens for the authentication.
+
+01:40.930 --> 01:46.170
+Now let's move a bit past that because Firebase authentication will be kind of on its own.
+
+01:46.380 --> 01:49.680
+And once that is done, we can kind of forget about it.
+
+01:49.710 --> 01:56.070
+OK, so the main screen that we're going to have is we're going to have a kind of a feed screen here.
+
+01:57.570 --> 02:03.540
+Now, even though this is the first screen that the user sees, I think for us it will be the last screen
+
+02:03.540 --> 02:07.470
+that we're going to be building because we need a lot of infrastructure for this screen.
+
+02:07.680 --> 02:13.020
+We need to have a user image, a user name we need to have post.
+
+02:13.020 --> 02:14.220
+We need to have follows.
+
+02:14.460 --> 02:17.460
+So this will kind of be the last thing we're going to be building.
+
+02:18.180 --> 02:24.780
+Now, more importantly, we're going to build here a milepost screen.
+
+02:25.140 --> 02:25.560
+OK.
+
+02:25.860 --> 02:30.270
+Let me put a text here up above because we want to style this a little bit.
+
+02:30.270 --> 02:32.850
+So my posts screen.
+
+02:34.780 --> 02:35.110
+All right.
+
+02:35.170 --> 02:40.280
+So my screen will basically be then you zoom in a little bit.
+
+02:40.300 --> 02:40.620
+OK.
+
+02:40.930 --> 02:45.640
+Basically, it will be the screen where we can create new posts.
+
+02:45.760 --> 02:48.980
+OK, and we have a few elements here.
+
+02:49.000 --> 02:53.050
+So first of all, I'm going to add here an image at the top.
+
+02:55.060 --> 02:55.390
+OK.
+
+02:55.420 --> 02:59.420
+This is going to be a user image and at the top as well.
+
+02:59.440 --> 03:06.610
+We will have some information about how many posts we've created, user followers following, etc..
+
+03:06.620 --> 03:09.970
+OK, so we will have, for instance, three posts.
+
+03:11.230 --> 03:11.860
+OK.
+
+03:12.130 --> 03:17.320
+And we will have, let's say, two hundred followers.
+
+03:19.210 --> 03:24.370
+OK, whatever information we need to display here, it will be at the top of the screen.
+
+03:24.850 --> 03:27.520
+Then down below we will have some user information.
+
+03:27.550 --> 03:32.470
+OK, so here we will have, let's say, username.
+
+03:32.890 --> 03:34.480
+And we will have bio.
+
+03:34.960 --> 03:43.420
+OK, the data for that user that we will fill out in the next screen that site, then we will have kind
+
+03:43.420 --> 03:44.620
+of a button here
+
+03:47.320 --> 03:50.620
+and this button will take us to edit profile.
+
+03:52.660 --> 03:55.640
+OK, let me see if I can just a little bit bigger.
+
+03:55.660 --> 03:56.050
+OK.
+
+03:56.440 --> 04:01.450
+And then right below it, we will have some posts.
+
+04:04.120 --> 04:06.430
+OK, so I have a post here.
+
+04:06.430 --> 04:07.920
+I have a post here.
+
+04:08.320 --> 04:10.050
+I have another post here.
+
+04:14.870 --> 04:15.350
+OK.
+
+04:16.280 --> 04:19.940
+You know, you can arrange this as well as you like.
+
+04:22.780 --> 04:27.820
+All right, so I have my posts here that I can display the ones that I've already created.
+
+04:28.090 --> 04:36.880
+OK, now from my post screen, if I click on user profile, I can then go to an edit profile screen.
+
+04:38.470 --> 04:42.370
+OK, now this is going to be edit profile screen.
+
+04:46.470 --> 04:47.010
+All right.
+
+04:48.720 --> 04:52.440
+In my edit profile screen, I can do a few modifications, right?
+
+04:52.440 --> 05:04.470
+So first of all, I can have a user image, OK, I can upload a user image, then I will have some added
+
+05:04.470 --> 05:09.870
+functionality for my let's say name here.
+
+05:11.250 --> 05:13.820
+Then I will have my username.
+
+05:15.900 --> 05:27.630
+And I will also have my bio OK, and we have places to edit this information.
+
+05:28.050 --> 05:31.710
+OK, so my name is going to be here.
+
+05:32.430 --> 05:38.100
+Then I have my username and I have my bio.
+
+05:38.430 --> 05:42.450
+And finally, at the end, I will have the logout
+
+05:44.880 --> 05:45.810
+functionality.
+
+05:46.680 --> 05:47.010
+All right.
+
+05:47.010 --> 05:53.250
+So once we have this, we can kind of extract the information that we need for our user.
+
+05:53.280 --> 06:02.020
+OK, so let's put that here and we're going to say user data and what do we need here?
+
+06:02.040 --> 06:04.920
+So first of all, we're going to use a we have a user ID.
+
+06:05.130 --> 06:09.750
+This will be quite useful in a number of situations to uniquely identify the user.
+
+06:10.230 --> 06:13.260
+Next up, we have name, username and bio.
+
+06:13.290 --> 06:16.230
+OK, so name, username and bio.
+
+06:16.620 --> 06:21.020
+I'm not going to specify the types of data here because this is kind of generic in Scotland.
+
+06:21.030 --> 06:26.130
+Obviously, these are going to be strings, so that's we're going to leave that for later.
+
+06:26.370 --> 06:28.200
+We're also going to have an image.
+
+06:28.680 --> 06:29.640
+You are right.
+
+06:30.630 --> 06:38.820
+OK, so the basically the image that we have here and we're also going to have followers, OK, the
+
+06:38.820 --> 06:45.870
+followers are going to be basically a list of other user IDs that follow my current user.
+
+06:47.040 --> 06:47.400
+All right.
+
+06:47.760 --> 06:49.410
+So we have that now.
+
+06:50.070 --> 06:54.260
+Let's go ahead and create a new screen here.
+
+06:54.270 --> 07:03.210
+So we have, for example, we have our search screen, OK for the third screen.
+
+07:07.160 --> 07:07.400
+All right.
+
+07:07.430 --> 07:12.830
+For the search screen, it's going to be quite simple, really, it's just going to have a kind of a
+
+07:12.830 --> 07:14.840
+search bar here at the top.
+
+07:19.070 --> 07:22.840
+OK, and then we're going to have a list of posts.
+
+07:23.150 --> 07:30.190
+OK, the posts here that we're going to search for are basically going to send us to a new screen.
+
+07:33.650 --> 07:36.980
+OK, and that will be the post screen.
+
+07:37.040 --> 07:39.710
+Let me just move this a little bit here.
+
+07:41.210 --> 07:41.480
+All right.
+
+07:41.810 --> 07:44.900
+So this is the post screen and the post screen.
+
+07:44.900 --> 07:46.700
+We can design it a little bit.
+
+07:46.700 --> 07:50.930
+So I'm going to have kind of a user image here at the top.
+
+07:52.310 --> 07:54.770
+Let me see if I can zoom in a little bit.
+
+07:57.500 --> 08:01.790
+The Zoom is not quite there yet for this drawing up file, but it works.
+
+08:02.120 --> 08:05.330
+All right, so I have my user image at the top.
+
+08:06.140 --> 08:13.640
+Then I will have here the option to follow or unfollow this user.
+
+08:16.460 --> 08:17.000
+OK?
+
+08:17.180 --> 08:22.670
+We will have basically a text button that says either follow or unfollow, depending on whether or not
+
+08:22.670 --> 08:24.710
+we've already followed this user.
+
+08:25.220 --> 08:35.000
+Next up, I will have and post image here and then down below we will have, let's say, three likes,
+
+08:36.080 --> 08:42.080
+and we will also have, let's say, five comments.
+
+08:45.560 --> 08:55.390
+OK, so once we have this kind of structure, let's go ahead and tease out the data type for the post.
+
+08:55.460 --> 08:58.250
+OK, that's pretty much all the information we need, I think.
+
+08:58.730 --> 09:09.050
+So post data now here again, we will have a Post I.D. We will have a user ID.
+
+09:09.320 --> 09:16.340
+OK, so we want to have the information for the user that has created this post and also going to store
+
+09:16.340 --> 09:18.750
+a user name just for simplicity.
+
+09:18.770 --> 09:21.380
+OK, we want to display the post here.
+
+09:21.380 --> 09:25.520
+We want to have the user name, so we will need that as well.
+
+09:26.030 --> 09:28.040
+Now I'm going to have a post image,
+
+09:30.870 --> 09:31.520
+OK?
+
+09:32.060 --> 09:36.710
+I'm also going to have let's see and have I have a host image?
+
+09:37.550 --> 09:41.720
+I want to have a post description, which I haven't put here.
+
+09:41.720 --> 09:49.070
+I forgot to put down below, but we can have the description here.
+
+09:53.680 --> 09:54.140
+OK.
+
+09:54.940 --> 09:56.720
+Host description.
+
+09:58.030 --> 10:04.210
+OK, now we will also need a few things, so we're going to need a time.
+
+10:06.520 --> 10:06.940
+OK?
+
+10:07.600 --> 10:12.130
+We need to have this timestamp so that we can order our post in our feed.
+
+10:13.030 --> 10:20.830
+And we're also going to need search terms so we can identify some search terms that will bring up this
+
+10:20.830 --> 10:21.730
+particular post.
+
+10:21.730 --> 10:27.910
+So when we search something here, we if this search term matches one of the search terms of the post,
+
+10:28.120 --> 10:29.170
+we can display it.
+
+10:30.070 --> 10:34.550
+And then finally, we're going to count the likes for this post.
+
+10:34.570 --> 10:39.010
+OK, we're going to have a list of user IDs that have like this post.
+
+10:39.910 --> 10:46.000
+Once we're done with that, clicking on the comments will bring us to a new screen here.
+
+10:48.220 --> 10:49.420
+And this is going to be.
+
+10:49.990 --> 10:53.110
+So let me put some text here.
+
+10:53.110 --> 10:55.000
+Comments screen.
+
+10:59.580 --> 11:02.140
+And let me put it here as well.
+
+11:02.160 --> 11:05.130
+We're going to have post screen.
+
+11:06.240 --> 11:06.600
+All right.
+
+11:06.600 --> 11:08.940
+So I'm going to have a post screen.
+
+11:08.940 --> 11:13.050
+I'm going to have a comment screen in this comment screen.
+
+11:13.050 --> 11:14.970
+I'm going to have two things at the bottom.
+
+11:14.970 --> 11:22.200
+So first of all, I'm going to have the kind of comment box here that allows me to comment to type my
+
+11:22.200 --> 11:29.730
+comment in, and I'm going to have a comment button.
+
+11:33.680 --> 11:36.410
+All right, let's see if that works, OK?
+
+11:38.940 --> 11:41.190
+All right, so I have my comment button here.
+
+11:41.520 --> 11:47.320
+And of course, I have a list of comments in my screen.
+
+11:47.340 --> 11:51.030
+OK, so I have, let's say Alex has comment one.
+
+11:53.130 --> 12:00.600
+And then let's say here John has comment too.
+
+12:01.050 --> 12:07.500
+OK, so this is the list of comments that we will have so we can get the comment information as well.
+
+12:07.500 --> 12:10.020
+The comment will be a new data type.
+
+12:11.520 --> 12:16.200
+And we're going to have comment data.
+
+12:16.980 --> 12:18.690
+And here we're going to have commented.
+
+12:20.580 --> 12:28.800
+We're going to have posted so the the post that this comment refers to and we're going to have the username,
+
+12:29.640 --> 12:31.890
+we need the text of the comment.
+
+12:33.420 --> 12:39.180
+And we're going to have a timestamp so that we can order these comments correctly.
+
+12:40.140 --> 12:40.590
+All right.
+
+12:41.020 --> 12:48.270
+Now one thing, I'm missing one screen here and that is going to be the post creation screen, which
+
+12:48.270 --> 12:49.110
+is quite simple.
+
+12:52.320 --> 12:54.750
+Here at the top, I have two options.
+
+12:54.750 --> 12:58.710
+I have cancel and I have
+
+13:01.560 --> 13:09.180
+post, OK, I'm going to have an image that I can select.
+
+13:13.960 --> 13:14.380
+OK.
+
+13:14.410 --> 13:15.220
+Something like that.
+
+13:15.550 --> 13:26.920
+And I will have here a description that I can type in and that will give me the post creation.
+
+13:27.430 --> 13:27.970
+OK.
+
+13:29.680 --> 13:31.800
+Let me just arrange this a little bit.
+
+13:31.810 --> 13:32.590
+I'm not sure how.
+
+13:32.590 --> 13:34.430
+So, first of all, how do we do this?
+
+13:34.430 --> 13:44.320
+So from clicking on this image here will take me to the post creation and clicking on the edit profile
+
+13:44.590 --> 13:46.030
+will take me here.
+
+13:47.360 --> 13:54.850
+OK, now from the post screen, clicking on the comments will take me to the comments screen.
+
+13:57.860 --> 13:58.880
+Somewhere here.
+
+13:59.510 --> 14:00.030
+OK.
+
+14:00.050 --> 14:05.390
+And I think that's it, so let me just put some results here.
+
+14:07.310 --> 14:10.280
+This is the post result and clicking on that
+
+14:13.070 --> 14:16.220
+will take me to the kind of post screen.
+
+14:18.710 --> 14:19.040
+All right.
+
+14:19.430 --> 14:20.030
+Something like that.
+
+14:20.270 --> 14:23.630
+So it will take me from here to here to here, right?
+
+14:24.650 --> 14:26.660
+What else do I need to sit here?
+
+14:26.660 --> 14:34.730
+So Firebase, we have authentication and we have two more things that we require in Firebase.
+
+14:34.730 --> 14:40.280
+So I'm going to have here Firebase Firestorm.
+
+14:41.780 --> 14:48.080
+So the fire store is going to be our kind of database, so the user is going to be stored there.
+
+14:48.380 --> 14:58.690
+The host data is going to be stored in Firebase and the comment data is also going to be in fire store
+
+14:58.700 --> 14:59.270
+as well.
+
+14:59.840 --> 15:02.360
+Let me see if I can put this somewhere better.
+
+15:02.550 --> 15:03.110
+I cannot.
+
+15:03.170 --> 15:03.500
+All right.
+
+15:03.770 --> 15:05.000
+I'm just going to leave it here.
+
+15:08.960 --> 15:13.760
+And let me just put it lower down below.
+
+15:16.480 --> 15:16.810
+All right.
+
+15:17.050 --> 15:17.950
+That's looking good.
+
+15:17.980 --> 15:29.230
+So I have my Firebase fire store and I want to have also Firebase storage, and this storage is basically
+
+15:29.230 --> 15:32.000
+going to be for the images.
+
+15:32.020 --> 15:41.380
+OK, so I'm going to store my image, my user image in fires based storage, and I'm going to store
+
+15:41.380 --> 15:44.110
+my post as well.
+
+15:46.030 --> 15:47.950
+OK, so kind of this structure.
+
+15:48.370 --> 15:51.520
+This is the structure that we're going to be building for our application.
+
+15:51.550 --> 15:56.860
+You can see that we have quite a few different screens, but nothing really too crazy.
+
+15:56.860 --> 16:02.410
+Of course, you with time in a real world project, you would kind of iterate and improve over this
+
+16:02.410 --> 16:02.950
+design.
+
+16:03.220 --> 16:09.460
+But for now, for the purposes of this course, I think this will be quite an interesting project to
+
+16:09.460 --> 16:09.790
+build.
+
+16:09.790 --> 16:16.510
+OK, we've got we have quite a bit of data, quite a bit of, you know, we are going to use Firebase
+
+16:16.510 --> 16:17.020
+quite a bit.
+
+16:17.740 --> 16:24.040
+One thing I forgot to mention, I think previously is that we're going to be using hilt quite a lot
+
+16:25.900 --> 16:33.070
+for dependency injection, and we're also going to be building our application and the end in the Nvidia
+
+16:33.160 --> 16:33.930
+architecture.
+
+16:33.940 --> 16:38.980
+OK, so these two are going to be quite central to our design as well.
+
+16:39.730 --> 16:40.060
+All right.
+
+16:40.060 --> 16:41.950
+So I think that's it.
+
+16:41.950 --> 16:43.750
+I hope I haven't forgotten anything.
+
+16:43.750 --> 16:47.830
+In any case, this is kind of a first draft.
+
+16:47.830 --> 16:53.090
+So of course, in code, we can change some things if we need to.
+
+16:53.110 --> 16:56.800
+For now, I think though, it's going to be quite sufficient.
+
+16:57.130 --> 16:57.460
+All right.
+
+16:57.460 --> 17:01.690
+So that's it for kind of the design phase of our application.
+
+17:01.930 --> 17:07.030
+In the next video, we will start to actually create the project and start coding.
+
+17:07.120 --> 17:07.430
+All right.
+
+17:07.450 --> 17:08.470
+And I will see you there.

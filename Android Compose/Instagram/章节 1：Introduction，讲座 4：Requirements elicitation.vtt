@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.820 --> 00:07.210
+Hello, everyone, welcome to this new video on our Instagram clone creation course.
+
+00:07.540 --> 00:14.230
+Now in this video, I want to go through a process of requirements elicitation that you would normally
+
+00:14.230 --> 00:16.510
+go through when you are creating a project.
+
+00:16.780 --> 00:22.030
+Now keep in mind that our project in this course will be quite limited in scope.
+
+00:22.030 --> 00:26.950
+So obviously we cannot implement every functionality that Instagram has.
+
+00:26.950 --> 00:33.370
+They have a whole team of developers working for years to develop this application, so we will need
+
+00:33.370 --> 00:42.190
+to limit our scope to several screens and several pieces of functionality that we can implement in this
+
+00:42.190 --> 00:43.060
+particular course.
+
+00:43.090 --> 00:43.330
+Right.
+
+00:43.330 --> 00:50.770
+So in this video, I want to go through these requirements that we're going to go through and we're
+
+00:50.770 --> 00:53.650
+going to see exactly what we're going to implement.
+
+00:54.250 --> 01:01.690
+So first of all, we want to have some functionality for sign up and creating a user and being able
+
+01:01.690 --> 01:02.980
+to log in and log out.
+
+01:03.010 --> 01:04.450
+OK, so let's put that down.
+
+01:04.720 --> 01:10.750
+We want to have sign up, log in and logout functionality.
+
+01:12.040 --> 01:19.120
+OK, so that will imply we have several screens that we can move between signing sign up and log out.
+
+01:19.660 --> 01:27.370
+Now, apart from that, the main kind of screen of our app will be a feed screen where we will see some
+
+01:27.370 --> 01:29.830
+posts that other users have created.
+
+01:29.870 --> 01:39.820
+OK, so we will need to have a feed screen that will display posts from followed users.
+
+01:41.440 --> 01:48.460
+Now, if we don't have any followed users, so if we just created a new user and I just signing in now
+
+01:48.610 --> 02:00.550
+for the first time, we will have a general posts list if we haven't followed anyone.
+
+02:01.930 --> 02:07.810
+So what we're looking for here is when the user signs up to our application first time, they will still
+
+02:07.810 --> 02:10.180
+see something in the feed.
+
+02:10.180 --> 02:14.020
+They won't have an empty feed that looks quite quite ugly and quite empty.
+
+02:14.800 --> 02:20.980
+Now we also want a screen where we can search for existing posts based on a keyword.
+
+02:20.990 --> 02:27.820
+OK, so we will have a search screen where I can search for a keyword.
+
+02:29.480 --> 02:37.480
+OK, so this basically will give me posts that have this keyword so that I can look at the posts, follow
+
+02:37.480 --> 02:38.890
+the users and so on.
+
+02:39.610 --> 02:44.590
+Then we will also need a screen where we basically create new posts.
+
+02:44.590 --> 02:55.420
+So a my screen where I can create new posts, and this screen will also display the posts that I've
+
+02:55.420 --> 03:03.340
+already created and see posts that I have already created.
+
+03:05.170 --> 03:07.000
+OK, so I have the screen now.
+
+03:07.000 --> 03:07.770
+What else do we need?
+
+03:07.780 --> 03:13.750
+We will need a profile screen where we can edit our personal information.
+
+03:13.750 --> 03:26.140
+So Profile Edit screen where I can edit my info info and upload a photo.
+
+03:26.260 --> 03:30.700
+OK, so we want the possibility to upload a personal photo for our profile.
+
+03:30.820 --> 03:32.860
+We will do that in the profile screen.
+
+03:33.760 --> 03:40.060
+And then finally, we have a screen where we can see a single post.
+
+03:40.240 --> 03:48.490
+OK, so we have a screen where I can see details of a post.
+
+03:50.410 --> 03:55.990
+And here we will include, including likes and comments.
+
+03:57.070 --> 04:02.550
+OK, so those are kind of the screens that our application will have.
+
+04:02.560 --> 04:09.910
+It will be centered around posts, OK, and we will be able to see these posts in different kinds of
+
+04:09.910 --> 04:12.610
+situations and follow them accordingly.
+
+04:12.940 --> 04:15.280
+Now I want to have some abilities here.
+
+04:17.260 --> 04:18.760
+OK, let's put them down.
+
+04:19.270 --> 04:21.790
+I have the ability to create a post.
+
+04:23.920 --> 04:28.600
+I want to have the ability to like a post from a certain user.
+
+04:29.320 --> 04:31.600
+I want to be able to comment on a post.
+
+04:33.580 --> 04:40.060
+And I want the ability to follow and unfollow a user.
+
+04:41.470 --> 04:47.110
+OK, so I want this ability, these abilities to be kind of integral to the app.
+
+04:47.110 --> 04:54.320
+So our app will basically be centered around posts around our feeds and around our search functionality.
+
+04:54.340 --> 04:54.560
+OK.
+
+04:54.580 --> 04:58.260
+And kind of the other screens are supportive of that.
+
+04:58.270 --> 05:03.850
+We want to be able to have kind of the infrastructure that allows us to see these posts in different
+
+05:03.850 --> 05:04.570
+situations.
+
+05:04.570 --> 05:09.670
+And of course, if you want later on, you can expand the application to add more functionality, such
+
+05:09.670 --> 05:17.170
+as stories and other functionalities that you know, Instagram has implemented, but we already have
+
+05:17.170 --> 05:19.390
+quite a bit of work to implement.
+
+05:19.520 --> 05:23.710
+So I think we will limit ourselves to this, this kind of functionality.
+
+05:23.950 --> 05:27.250
+And of course, we have a lot to implement here.
+
+05:27.520 --> 05:31.930
+Now this is all for the kind of high level requirements elicitation.
+
+05:32.170 --> 05:39.880
+And in the next video, I want to kind of detail a little bit these individual screens and see how what
+
+05:39.880 --> 05:46.540
+kind of data we need to back this up and what kind of backend services we will require to make this
+
+05:46.720 --> 05:48.370
+kind of functionality possible.
+
+05:48.400 --> 05:51.100
+OK, so that's it for this video, and I'll see you in the next one.

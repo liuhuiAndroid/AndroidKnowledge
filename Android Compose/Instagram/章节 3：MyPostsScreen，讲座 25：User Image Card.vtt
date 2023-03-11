@@ -1,0 +1,532 @@
+WEBVTT
+
+00:00.500 --> 00:08.840
+OK, so in this video, we will start to build the image here, the user image, but we have a few constraints
+
+00:08.840 --> 00:10.970
+for this particular piece of code.
+
+00:11.240 --> 00:18.020
+First of all, we are aware that at the beginning, when the user just simply creates a profile, they
+
+00:18.020 --> 00:19.540
+haven't yet set an image.
+
+00:19.550 --> 00:22.610
+They haven't uploaded an image of themselves, a profile image.
+
+00:22.850 --> 00:28.670
+So that means we still want to display something there, even if we don't have a user image yet.
+
+00:28.910 --> 00:33.260
+So we will need some sort of standards placeholder.
+
+00:33.950 --> 00:41.360
+Also, we want to be able to re-use this image in multiple places in our app because we want to display
+
+00:41.360 --> 00:48.020
+this kind of rounded image whenever we display a post or on the feed screen or in many other places,
+
+00:48.020 --> 00:48.230
+right?
+
+00:48.230 --> 00:49.820
+So we want to make it quite generic.
+
+00:50.630 --> 00:51.000
+All right.
+
+00:51.020 --> 00:59.300
+So also, in addition to that, we want to display a spinner that while the image is loading, we just
+
+00:59.300 --> 01:00.410
+simply show the spinner.
+
+01:00.650 --> 01:05.870
+And then when the image has finished, loading we are removing the spinner and just showing the image.
+
+01:06.200 --> 01:14.180
+So for that, we're going to go to our main common bits and we're going to just create a standard common
+
+01:14.180 --> 01:14.780
+image.
+
+01:14.810 --> 01:19.640
+OK, so I'm going to say composable fun common image.
+
+01:21.230 --> 01:24.830
+All right now, what do we need for this common image?
+
+01:24.860 --> 01:28.430
+Well, we need the data as a string.
+
+01:29.810 --> 01:35.060
+OK, so this is the image you are L or you are right.
+
+01:35.570 --> 01:37.250
+We're going to have a modifier.
+
+01:37.880 --> 01:45.260
+So we're going to let whoever calls this common image pass a modifier here, and we're going to put
+
+01:45.260 --> 01:47.120
+a modifier by default as well.
+
+01:47.120 --> 01:51.850
+So we make this optional modifier dot rep content size.
+
+01:53.760 --> 01:59.070
+OK, and then we're going to have a scale for our image, and again, we're going to make this optional
+
+01:59.310 --> 02:00.360
+so content.
+
+02:00.690 --> 02:02.760
+Scale of type.
+
+02:02.760 --> 02:03.780
+Content scale.
+
+02:06.710 --> 02:10.270
+Is going to be content scale dot crop.
+
+02:12.060 --> 02:17.370
+OK, and this is the image, so here we're going to have Val Painter.
+
+02:17.610 --> 02:19.260
+He's going to be remembered.
+
+02:19.350 --> 02:20.340
+Image painter.
+
+02:23.370 --> 02:23.850
+OK.
+
+02:24.740 --> 02:35.540
+With the data equals data, OK, so this is the coil image painter that we can use to retrieve images
+
+02:35.540 --> 02:39.710
+from a URL, and we're going to display that image.
+
+02:39.710 --> 02:44.510
+So we're going to have image painter is going to be our painter that we've just defined.
+
+02:44.780 --> 02:46.760
+Content description is going to be no.
+
+02:47.900 --> 02:54.440
+And we also want to add our modifier and our content scale.
+
+02:57.540 --> 03:05.430
+OK, so that is basically our image, but we also want to display a spinner in case this story while
+
+03:05.700 --> 03:08.550
+the content the painter is loading.
+
+03:08.910 --> 03:15.600
+So we can say if painter dot state is image painter.
+
+03:17.060 --> 03:18.840
+Dot state dot.
+
+03:18.860 --> 03:19.400
+Loading.
+
+03:20.910 --> 03:27.450
+While we are loading, we just display a common progress spinner that we have defined previously.
+
+03:28.470 --> 03:28.950
+There we go.
+
+03:29.670 --> 03:36.120
+So this is our common image, but of course, this is not enough for our current purposes because we
+
+03:36.120 --> 03:44.280
+don't we don't necessarily have data for this image and we want to display some place holder as well
+
+03:44.280 --> 03:49.320
+for the image, for the user image card here in the corner.
+
+03:49.350 --> 03:54.330
+So here we need to define another composable that will use the one we defined previously.
+
+03:54.750 --> 03:59.670
+So I'm going to say composable fun user image card.
+
+04:00.450 --> 04:00.800
+OK.
+
+04:01.020 --> 04:06.750
+Keep in mind that the common image can be used for anything for post images or user images, but the
+
+04:06.750 --> 04:10.350
+user image card is only for the user images.
+
+04:11.340 --> 04:15.300
+Now here I'm going to have a user image of type string.
+
+04:16.230 --> 04:18.570
+I'm also going to have a modifier.
+
+04:21.280 --> 04:31.630
+Is going to be modifier dot padding of HDP and the size.
+
+04:34.810 --> 04:38.200
+Oh, wait, sorry, let me import that.
+
+04:38.770 --> 04:45.120
+And don't size, not on the size, dot size by default is going to be 64 dpi.
+
+04:47.620 --> 04:48.250
+OK.
+
+04:50.170 --> 04:55.460
+Right, so it doesn't seem to like something here, let me have a look.
+
+04:55.500 --> 05:02.140
+OK, modifier is a type modifier and then the default version option.
+
+05:04.150 --> 05:06.330
+And I still don't like this very much.
+
+05:06.400 --> 05:07.810
+OK, that's looking better.
+
+05:08.080 --> 05:12.560
+So I have my user image and my modifier.
+
+05:12.580 --> 05:15.640
+I think that user image can be no sphere.
+
+05:15.940 --> 05:23.650
+OK, so we're going to post that simply because we are passing user data dot image URL, and that can
+
+05:23.650 --> 05:24.190
+be more so.
+
+05:24.190 --> 05:25.840
+I want to handle this here.
+
+05:26.800 --> 05:35.320
+OK, so inside here we're going to create a card and the card will have a shape equals circle shape.
+
+05:39.220 --> 05:42.970
+And then I'm going to have modifier equals modifier.
+
+05:45.940 --> 05:47.630
+OK, so I have my card.
+
+05:47.650 --> 05:50.920
+Now if you use our image.
+
+05:52.000 --> 05:54.520
+Thought is low or empty.
+
+05:56.360 --> 06:02.660
+In that case, I want to display a placeholder, so for that, let's go ahead and create an image here
+
+06:02.660 --> 06:03.290
+in the draw.
+
+06:03.590 --> 06:09.830
+I'm going to right click new vector asset and search here for person.
+
+06:10.550 --> 06:16.940
+OK, that will give me basically this clip part, and I'm going to have this.
+
+06:17.270 --> 06:19.160
+I see underscore user.
+
+06:19.550 --> 06:20.720
+So icon user.
+
+06:21.920 --> 06:27.290
+OK, so we're going to use that to display here when we don't have any user image.
+
+06:27.530 --> 06:33.410
+So we're going to see image with painter, painter resource are.
+
+06:34.770 --> 06:39.450
+Now, make sure you import the right arm for your project package.
+
+06:40.500 --> 06:41.040
+OK.
+
+06:41.340 --> 06:43.700
+Our Dot Drobo Dot.
+
+06:43.770 --> 06:44.550
+I see.
+
+06:45.690 --> 06:46.200
+User.
+
+06:47.840 --> 06:48.390
+OK.
+
+06:48.540 --> 06:50.610
+And the content description is no.
+
+06:51.600 --> 06:58.590
+But we also want to add a color filter is going to be color filter.
+
+07:00.910 --> 07:05.350
+Color, filter dots, tint color.
+
+07:06.190 --> 07:07.510
+Dot Gray.
+
+07:09.860 --> 07:13.670
+OK, so we are just kind of tilting it to grey.
+
+07:13.700 --> 07:17.450
+Otherwise it would be white and we won't see anything because of the white background.
+
+07:18.230 --> 07:23.750
+OK, now if the user image is empty, then we display this else.
+
+07:25.830 --> 07:31.740
+We display common image with the data equals user image.
+
+07:33.960 --> 07:41.340
+OK, so at this point, we have a user image card that we can use to display in our profile.
+
+07:41.640 --> 07:43.800
+Sorry, in our My Posts screen.
+
+07:44.340 --> 07:47.970
+So here I'm going to have my profile image.
+
+07:48.180 --> 07:51.630
+Now the profile image is going to be slightly different.
+
+07:52.230 --> 07:59.940
+It's going to contain one more element, and that is a small plus sign right on the bottom right of
+
+07:59.940 --> 08:00.970
+the image.
+
+08:01.000 --> 08:06.750
+OK, that will indicate to the user that there is a matching attach there so that when they click or
+
+08:06.750 --> 08:09.840
+tap that image, they create a new post.
+
+08:10.530 --> 08:12.090
+OK, so let's go ahead and do that.
+
+08:12.120 --> 08:13.440
+I'm going to have a box.
+
+08:15.090 --> 08:27.810
+With a modest fire dart heading top equals 16 dot deep and dot clickable.
+
+08:29.400 --> 08:34.860
+OK, and on in clickable, we're going to have on click dot invoke.
+
+08:35.610 --> 08:41.100
+OK, so we're basically invoking the on that is passed to the profile image here.
+
+08:43.630 --> 08:48.970
+OK, so we have our bucks, let's go ahead and put some elements in it, so first of all, I'm going
+
+08:48.970 --> 08:53.020
+to have a user image card with the user image being.
+
+08:53.230 --> 08:54.130
+Image URL.
+
+08:56.630 --> 08:57.140
+OK.
+
+08:59.240 --> 09:02.540
+But I also want to have a modifier here.
+
+09:06.270 --> 09:16.050
+Modifier dot padding is going to be a deep and dark size is going to be 80 deep.
+
+09:19.450 --> 09:26.710
+OK, so I have my user image card, and I also want to display, like I said, a plus sign with kind
+
+09:26.710 --> 09:29.500
+of a blue background, so let's go ahead and add that.
+
+09:31.720 --> 09:45.100
+Vector assets and there we go and I see ads, OK, like I said, that will tell the user that there
+
+09:45.100 --> 09:49.690
+is something some action attached to tapping on this image.
+
+09:50.140 --> 09:51.970
+So here I'm going to have a card.
+
+09:53.170 --> 09:55.420
+The card will have shape.
+
+09:56.480 --> 09:58.640
+Equals circle shape.
+
+10:01.670 --> 10:02.420
+Oh, OK.
+
+10:02.900 --> 10:07.430
+It will also have a border equals border stroke.
+
+10:09.310 --> 10:16.240
+Of with off to the DPI and color.
+
+10:17.280 --> 10:19.740
+Equals color dot white.
+
+10:22.890 --> 10:27.180
+OK, so we have our border and we want a modifier.
+
+10:31.610 --> 10:37.100
+Dot size is going to be 30 to the P.
+
+10:38.580 --> 10:43.070
+Then we have a line alignment.
+
+10:45.440 --> 10:47.570
+Dot bottom and.
+
+10:49.140 --> 10:56.250
+And we also have some padding bottom is going to be DP.
+
+10:57.370 --> 11:00.260
+And and eight deep.
+
+11:01.750 --> 11:08.800
+OK, so that is the card and inside here, we're going to have an image that just displays the icon
+
+11:08.800 --> 11:14.470
+so painter resource of our dot drobo.
+
+11:17.930 --> 11:21.830
+Ah, OK, let's import the correct one, ah, the troll bulldogs.
+
+11:22.790 --> 11:24.350
+I see ads.
+
+11:26.230 --> 11:28.450
+Content description is going to be no.
+
+11:30.120 --> 11:34.350
+And then we have modifier equals modifier.
+
+11:36.000 --> 11:36.630
+Dot.
+
+11:38.390 --> 11:39.300
+What do we need here?
+
+11:39.320 --> 11:42.350
+Just the background color, dark blue.
+
+11:43.040 --> 11:47.510
+OK, so just displaying a blue background color for this card?
+
+11:48.410 --> 11:50.050
+OK, so that's it.
+
+11:50.060 --> 11:54.320
+I think let's go ahead and run this code and see what we get.
+
+11:57.100 --> 12:00.010
+OK, so let's go ahead and click on this one.
+
+12:00.190 --> 12:06.760
+And there we go, we have our place with a plus image with a blue background.
+
+12:06.790 --> 12:12.670
+OK, so if we click here, at the moment, there is nothing happening because we haven't said anything
+
+12:12.670 --> 12:13.330
+in this phone.
+
+12:13.330 --> 12:13.750
+Click.
+
+12:15.370 --> 12:16.720
+Where did we call it?
+
+12:18.180 --> 12:19.240
+We call it here.
+
+12:19.260 --> 12:24.330
+There's nothing in this on at the moment, but obviously we can click it.
+
+12:24.600 --> 12:29.040
+Now one thing I would like to do before we end that would like to kind of cheat a little bit and put
+
+12:29.040 --> 12:30.030
+an image here.
+
+12:30.780 --> 12:37.660
+I would like to go to the background, the Firebase API in storage, OK?
+
+12:37.700 --> 12:40.950
+And I was just going to I'm just going to upload a file.
+
+12:47.100 --> 12:51.670
+OK, so that will upload this guy won the JPEG file.
+
+12:52.350 --> 13:00.660
+And if I click on it and I have here a link, if I click on that, I will get the link to that image.
+
+13:00.780 --> 13:01.200
+OK.
+
+13:01.500 --> 13:02.970
+So copy that.
+
+13:03.570 --> 13:09.540
+Now I'm going to go to Fire Store and set it to my John user.
+
+13:11.400 --> 13:13.140
+Let's see, John.
+
+13:13.170 --> 13:17.970
+Image URL is going to be of type, string and pass this value.
+
+13:17.970 --> 13:22.620
+So hopefully this works when I rerun the application.
+
+13:25.500 --> 13:30.630
+I will see the user image and I will see the spinner and then the user image, right?
+
+13:32.710 --> 13:39.070
+There we go, so we have a spinner, and once that's loaded, we have the user image, the recording
+
+13:39.070 --> 13:44.140
+software that I'm using is kind of messing with the spinner a little bit, but hopefully for you, you
+
+13:44.140 --> 13:45.490
+won't have any issues.
+
+13:46.180 --> 13:47.350
+It's just a clean spinner.
+
+13:47.350 --> 13:51.880
+And once that's done, it's you see the user image here.
+
+13:52.270 --> 13:54.850
+And then of course, we can click on it later on.
+
+13:54.850 --> 13:56.650
+We will implement some functionality.
+
+13:57.310 --> 13:58.420
+So I think that's it.
+
+13:58.420 --> 14:04.360
+For this video, you can see that our My Posts page or screen is kind of taking shape.
+
+14:04.360 --> 14:09.610
+We have some nice data here for followers following, of course, this is dummy data.
+
+14:09.610 --> 14:11.860
+For now, we will implement this later on.
+
+14:12.130 --> 14:19.090
+We have the user information and we have some edit profile page that we will implement later on.

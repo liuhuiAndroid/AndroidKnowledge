@@ -1,0 +1,448 @@
+WEBVTT
+
+00:01.200 --> 00:06.330
+In this video, we're going to start to put in place the sign up screen layout.
+
+00:06.390 --> 00:11.670
+OK, so we're not going to retouch the functionality that much, but we're just going to implement the
+
+00:11.670 --> 00:15.720
+layout of the composable of sign up screen.
+
+00:16.260 --> 00:16.580
+All right.
+
+00:16.590 --> 00:18.600
+So open up sign up screen.
+
+00:19.020 --> 00:20.130
+The sign up screen file.
+
+00:20.550 --> 00:25.850
+Let's remove the text that is there and we're going to put a few elements on our screen.
+
+00:25.860 --> 00:29.790
+So first of all, I would like to put a Instagram logo at the top.
+
+00:30.390 --> 00:37.950
+Then we're going to add the username, the email and the password, and we're going to have a button
+
+00:38.280 --> 00:41.160
+to actually perform the signing.
+
+00:41.550 --> 00:47.490
+And of course, we need to have a link to the log in screen in case the user already has an account
+
+00:47.490 --> 00:49.140
+but just wants to log in.
+
+00:49.650 --> 00:51.060
+OK, so let's go ahead and do that.
+
+00:51.060 --> 00:53.820
+So I'm going to put here a box.
+
+00:53.820 --> 01:03.720
+First of all, now the modifier is going to be modifier dot filled max size and inside my box I want
+
+01:03.720 --> 01:04.920
+to put a column.
+
+01:06.910 --> 01:14.540
+And here I will have a modifier equals modifier dot fill.
+
+01:14.590 --> 01:15.910
+Max width.
+
+01:17.770 --> 01:24.520
+OK, I want to dart wrap content, height.
+
+01:25.760 --> 01:34.970
+OK, I just want the height of the elements and dot vertical scroll, and here I will have remember,
+
+01:35.420 --> 01:36.530
+scroll state.
+
+01:37.790 --> 01:38.130
+All right.
+
+01:38.150 --> 01:44.540
+So I want to remember that scroll state in case we are our application is destroyed and recreated.
+
+01:45.350 --> 01:53.960
+Now here inside, I'm going to have three states, so I'm going to have a valid username state that's
+
+01:53.960 --> 01:54.540
+going to be.
+
+01:54.560 --> 01:55.430
+Remember?
+
+01:56.580 --> 02:00.210
+Of let's import that, remember.
+
+02:00.780 --> 02:03.210
+Actually, we can put remember savable here.
+
+02:05.150 --> 02:08.330
+And right, remove that.
+
+02:08.600 --> 02:12.560
+So remember, savable of mutable state of.
+
+02:14.120 --> 02:18.260
+And here we will have a text field.
+
+02:19.340 --> 02:19.970
+Value.
+
+02:21.810 --> 02:26.130
+OK, so we're going to use this state in our username tax field.
+
+02:26.220 --> 02:32.860
+Remember savable, I'm going to duplicate that twice commandes the on my Mac, it's controlled the,
+
+02:32.880 --> 02:34.230
+I think, on a PC.
+
+02:34.710 --> 02:40.060
+In any case, user name state, the second one is going to be email state.
+
+02:41.890 --> 02:43.980
+OK, I think the rest is the same.
+
+02:44.280 --> 02:48.180
+And then we're going to have pass state for the password.
+
+02:49.680 --> 02:50.040
+All right.
+
+02:50.050 --> 02:51.630
+So I have my three states.
+
+02:51.640 --> 02:55.490
+Let's go ahead and put some elements on the screen.
+
+02:55.500 --> 03:04.440
+So first of all, I would like to have an image with a painter that's going to be painter resource.
+
+03:05.580 --> 03:13.470
+And you will find if you downloaded the images attached to the Create Project lecture, you will have
+
+03:13.560 --> 03:15.290
+an IG logo here.
+
+03:15.310 --> 03:20.250
+Okay, so we're going to use that for our logo here at the top of the screen.
+
+03:20.610 --> 03:23.110
+So it is going to be ah.
+
+03:23.940 --> 03:31.100
+Now, when you import this AR function, our class, make sure you import the one from your project,
+
+03:31.110 --> 03:35.160
+OK, so that we can have access to our jobs.
+
+03:35.160 --> 03:43.230
+So our dot drobo dot IG underscore logo and description is going to be no.
+
+03:45.300 --> 03:48.180
+Now, I'm just going to need a modifier here.
+
+03:50.310 --> 03:55.980
+Modifier Dot, then he sort that format the code.
+
+03:56.310 --> 04:02.180
+All right, so the modifier, I'm going to have a width of 250 dots dpi.
+
+04:02.220 --> 04:08.910
+Make sure you import the dot DP dot padding is going to be six.
+
+04:09.450 --> 04:13.080
+Padding at the top is going to be 16 dot DP.
+
+04:14.130 --> 04:19.560
+And then the full padding is going to be eight dot DP.
+
+04:20.830 --> 04:25.140
+OK, let's reformat the code and we have a nice image.
+
+04:25.890 --> 04:27.660
+All right, so we have our image.
+
+04:27.660 --> 04:29.730
+Let's add a text.
+
+04:31.390 --> 04:33.190
+The text is going to be signed up.
+
+04:34.960 --> 04:35.500
+OK.
+
+04:36.640 --> 04:41.830
+The modifier is going to be modifier.
+
+04:42.910 --> 04:46.710
+Dot padding of eight dot deep.
+
+04:48.410 --> 04:54.630
+We're also going to have a font size of 30 dot SB.
+
+04:55.460 --> 04:55.800
+OK.
+
+04:55.950 --> 05:02.030
+Make sure you import the SB and then we're going to have a font family.
+
+05:02.780 --> 05:07.610
+Let's say something like font family dot sans serif.
+
+05:08.720 --> 05:11.570
+OK, format that code and we have a text.
+
+05:12.320 --> 05:18.140
+Now we're going to need a few elements for our username, email and password.
+
+05:18.170 --> 05:22.820
+So here I'm going to have an outlined text field.
+
+05:24.720 --> 05:29.160
+With the value is going to be username dot value.
+
+05:33.030 --> 05:35.820
+Oh, sorry, user name states don't value.
+
+05:42.250 --> 05:45.070
+Now there's a small issue here.
+
+05:45.940 --> 05:53.620
+OK, so my mistake mutable state of not set of immutable state of textual value.
+
+05:53.650 --> 05:58.660
+OK, so now we have our outline text field with the value on value.
+
+05:58.660 --> 06:02.770
+Change is going to be username states.
+
+06:02.770 --> 06:04.990
+The value is going to be it.
+
+06:06.410 --> 06:14.240
+OK, we're going to add a couple more things here, so we're going to have a modifier equals modifier
+
+06:14.720 --> 06:19.580
+dot padding is going to be a deep.
+
+06:21.020 --> 06:23.690
+And finally, we're going to have a label.
+
+06:25.730 --> 06:28.940
+And this label will have a text.
+
+06:30.530 --> 06:33.770
+With the text is going to be username.
+
+06:35.060 --> 06:40.670
+OK, let's reformat the code, so we have our username fields.
+
+06:41.060 --> 06:44.570
+OK, now we're going to need the exact same field two more times.
+
+06:44.570 --> 06:51.380
+So I'm just going to copy and paste this twice, and we're just going to change whatever needs changing
+
+06:51.380 --> 06:51.680
+here.
+
+06:51.980 --> 06:55.190
+So the second one is going to be instead of username.
+
+06:55.490 --> 07:00.110
+We're going to have our email states.
+
+07:02.300 --> 07:02.810
+OK.
+
+07:03.470 --> 07:09.650
+Email state, obviously we need to change or I need to change, you might have done this correctly.
+
+07:10.190 --> 07:12.870
+So email state emails.
+
+07:12.890 --> 07:18.680
+They don't value modifiers the same and then the label is going to be email.
+
+07:20.030 --> 07:27.370
+All right, and the final one is going to be pass state, passed state, and here we're going to have
+
+07:27.440 --> 07:28.220
+password.
+
+07:28.820 --> 07:36.710
+The final one needs another element here and that is going to be visual transformation simply because
+
+07:36.710 --> 07:38.960
+we need to hide the password.
+
+07:38.990 --> 07:45.410
+OK, so the transformation is going to be password visual transformation.
+
+07:47.570 --> 07:47.960
+OK.
+
+07:48.410 --> 07:54.620
+Let's reformat the code, so we have our three seals, I think those are correct.
+
+07:55.550 --> 07:59.060
+Email, email and pass pass password.
+
+07:59.090 --> 08:00.950
+All right, that looks good.
+
+08:00.980 --> 08:03.490
+Let's go ahead and create down below.
+
+08:03.490 --> 08:05.060
+We're going to add a button.
+
+08:06.450 --> 08:10.200
+And we're going to leave the oncolytic empty for now.
+
+08:11.880 --> 08:12.360
+OK.
+
+08:12.930 --> 08:15.140
+And we're just going to add a modifier.
+
+08:16.710 --> 08:26.790
+After the oncolytic, we're going to add a modifier is going to be modifier dot padding eight or deep,
+
+08:27.900 --> 08:30.930
+and then we have the on click.
+
+08:31.950 --> 08:32.420
+All right.
+
+08:32.430 --> 08:38.580
+And then inside the button, I'm just going to have a text that's going to say, Sign up.
+
+08:40.350 --> 08:40.680
+All right.
+
+08:40.920 --> 08:41.940
+That's looking good.
+
+08:42.240 --> 08:48.480
+So I have my button and I would like to have a link that takes me to the log in screen as well.
+
+08:48.720 --> 08:50.670
+So down below, I have a text.
+
+08:51.030 --> 08:55.150
+The text says already a user question mark.
+
+08:55.620 --> 08:59.430
+Go to log in and arrow.
+
+09:00.030 --> 09:08.370
+Now the text has a few elements here, so I'm going to have a color equals color dot blue.
+
+09:10.400 --> 09:17.810
+I will have a modifier modifier dot padding, eight dots deep.
+
+09:19.830 --> 09:21.660
+And dot clickable.
+
+09:22.680 --> 09:25.230
+And we're going to leave the quick, empty for now.
+
+09:25.680 --> 09:27.210
+And I'm going to reformat the code.
+
+09:27.720 --> 09:29.160
+So I think that is it.
+
+09:29.160 --> 09:31.870
+Unless I've made some mistake, then that should be fine.
+
+09:31.890 --> 09:37.260
+We're not actually using the NAF controller or the View model yet because we're not implementing the
+
+09:37.260 --> 09:38.070
+functionality.
+
+09:38.280 --> 09:41.070
+Let's just go ahead and run this and see what it looks like.
+
+09:56.540 --> 10:04.100
+OK, so I've made a small mistake here, actually, textual value cannot be remembered using remember
+
+10:04.100 --> 10:09.110
+savable, so we need to replace that with a simple remember.
+
+10:09.380 --> 10:11.510
+OK, so if we run that?
+
+10:12.760 --> 10:14.920
+Hopefully that will work this time.
+
+10:20.090 --> 10:22.620
+OK, so we have our screen.
+
+10:22.640 --> 10:30.140
+The only thing that I see is that we're not learning this correctly, so we need to put a alignment.
+
+10:30.140 --> 10:32.360
+So inside our column here.
+
+10:32.780 --> 10:40.100
+I'm going to have a horizontal alignment is going to be alignment dots centered horizontally.
+
+10:40.370 --> 10:42.260
+OK, so let's go ahead and run that.
+
+10:52.560 --> 10:54.780
+OK, so that is looking better.
+
+10:55.440 --> 10:58.830
+One thing I want to check when we open the keyboard.
+
+10:59.310 --> 11:04.050
+We need to be able to scroll up a bit because it covers some of our UI.
+
+11:04.350 --> 11:06.830
+So in order to address that, it's quite simple.
+
+11:06.840 --> 11:12.690
+Let's go in our Android Manifest file and down below in the activity.
+
+11:13.020 --> 11:20.880
+I'm going to add a window soft input mode and we're going to have adjust, resize.
+
+11:20.910 --> 11:25.950
+OK, so we're going to be able to scroll in this in this view.
+
+11:26.430 --> 11:30.030
+So that's going to be valid for all the screens in our UI.
+
+11:31.320 --> 11:31.620
+All right.
+
+11:31.630 --> 11:32.640
+So let's run that again.
+
+11:41.450 --> 11:49.400
+OK, so now if I type something here, I can also scroll the UI, which is really good, it's what we
+
+11:49.400 --> 11:51.260
+are aiming to do.
+
+11:51.680 --> 11:52.040
+All right.
+
+11:52.040 --> 11:54.080
+So that's it for the UI.
+
+11:54.080 --> 11:58.280
+In the next video, we will start to implement the functionality for this screen.

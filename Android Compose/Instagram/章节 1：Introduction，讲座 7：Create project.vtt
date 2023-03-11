@@ -1,0 +1,283 @@
+WEBVTT
+
+00:00.930 --> 00:07.140
+All right, everyone, welcome to the first video where we actually start to create our project and
+
+00:08.370 --> 00:09.390
+start coding.
+
+00:09.420 --> 00:16.330
+Now before we get started, I want to say a few things about the code and about the bugs in general.
+
+00:16.350 --> 00:23.760
+Now I've built this project before I started recording this course, and I spent quite a lot of time
+
+00:23.760 --> 00:26.820
+tinkering around and playing around with the code.
+
+00:26.820 --> 00:31.890
+So I'm hoping that there's not too many bugs in the code in the final project.
+
+00:32.190 --> 00:36.510
+Now, of course, this is software development and no code is 100 percent perfect.
+
+00:36.780 --> 00:40.530
+It is possible that some bugs have managed to sneak in.
+
+00:40.770 --> 00:48.480
+So I do kindly ask you to be understanding if you do find some issues, some bugs, if you do find them
+
+00:48.690 --> 00:50.400
+and you find a solution.
+
+00:50.670 --> 00:52.890
+Please post it in the comments.
+
+00:52.890 --> 00:59.460
+I will try to update my code and it will be useful for other students to see that there is a solution
+
+00:59.460 --> 01:01.350
+to the problem that they might find.
+
+01:01.830 --> 01:02.160
+All right.
+
+01:02.190 --> 01:05.190
+With that said, let's go ahead and start to create our project.
+
+01:05.190 --> 01:08.080
+So I'm here in Android Studio now.
+
+01:08.100 --> 01:16.020
+Make sure you have an up to date version that includes compose because we will use Compose for our project
+
+01:16.020 --> 01:16.660
+creation.
+
+01:16.690 --> 01:22.380
+OK, so go ahead and create a new project, select compose activity and click next.
+
+01:22.950 --> 01:25.910
+Give your code some your project, some name.
+
+01:25.920 --> 01:27.770
+It doesn't really matter what the name is.
+
+01:27.840 --> 01:29.880
+I'm going to say Instagram Clone.
+
+01:30.690 --> 01:35.580
+OK, Clone is kind of a pretentious word because it's not really a clone.
+
+01:35.580 --> 01:41.490
+It doesn't have nearly as many features, but just going to keep it simple and call it an Instagram
+
+01:41.490 --> 01:46.710
+clone, even though we're implementing just a fraction of the features that Instagram has.
+
+01:47.040 --> 01:48.330
+Now I'm going to click Finish.
+
+01:56.260 --> 02:00.460
+And so we have our project that we can start working on now.
+
+02:00.610 --> 02:07.570
+First of all, what I would like to do is I would like to increase the font size to make it easier for
+
+02:07.570 --> 02:11.050
+you to see, hopefully font size.
+
+02:12.700 --> 02:16.000
+And we're going to do that here.
+
+02:16.030 --> 02:18.190
+16 apply.
+
+02:18.370 --> 02:24.550
+OK, so hopefully that will look better and it's easy for you to kind of follow along.
+
+02:24.910 --> 02:31.270
+So in this first video, we're just going to add the libraries that we're going to need for our project
+
+02:31.570 --> 02:38.530
+in the previous lecture, you have a you have some code that you can copy and paste or you can simply
+
+02:38.530 --> 02:40.090
+type it out if you choose to.
+
+02:40.300 --> 02:46.210
+I'm going to have here, I'm going to open up with double shift, which is search everywhere and I'm
+
+02:46.210 --> 02:48.400
+going to open build dot Gradle.
+
+02:49.030 --> 02:53.620
+The project file, so not the app file the general project file at first.
+
+02:54.190 --> 03:01.970
+And here I'm just going to paste the paste the code for Google Services and Health.
+
+03:01.990 --> 03:04.240
+Remember, we're going to be using helped as well.
+
+03:04.570 --> 03:13.570
+Now let's open the other build dot Gradle file the app level file and down below where we have our dependencies,
+
+03:13.570 --> 03:15.610
+we're going to add a few dependencies here.
+
+03:15.790 --> 03:22.630
+OK, so let's just copy and paste the libraries that we're going to need, and we're going to go through
+
+03:22.630 --> 03:25.960
+them in a second to kind of point out what they are.
+
+03:26.830 --> 03:31.260
+But before that, right at the top, we will need some plugins as well.
+
+03:31.270 --> 03:34.480
+So copy and paste those in as well.
+
+03:34.720 --> 03:41.350
+We have Google Services, CPT and our Diger Health plugin.
+
+03:41.710 --> 03:43.150
+Let's go ahead and sync now.
+
+03:43.420 --> 03:47.230
+And it should take some time to kind of download all the libraries.
+
+03:47.230 --> 03:53.650
+Hopefully for me, they are already downloaded and the this goes smoothly.
+
+03:53.650 --> 03:56.950
+No issues if you have any problems and you're not able to sync.
+
+03:57.190 --> 04:00.910
+Make sure you haven't made any mistakes typing here.
+
+04:01.150 --> 04:01.510
+OK.
+
+04:02.350 --> 04:02.710
+All right.
+
+04:02.710 --> 04:04.300
+So let's go through them.
+
+04:04.600 --> 04:05.890
+They're not too many, actually.
+
+04:05.900 --> 04:08.410
+So let's see what our libraries are.
+
+04:08.710 --> 04:12.280
+So obviously we will need the navigation component.
+
+04:12.290 --> 04:15.520
+We will use navigation to kind of move through our app.
+
+04:16.090 --> 04:17.650
+We're going to use Firebase.
+
+04:17.650 --> 04:20.590
+So as we've seen, these are the basics.
+
+04:20.890 --> 04:25.330
+We have authentication, firestorm and fire based storage.
+
+04:25.720 --> 04:31.120
+Obviously, we need those we will have built for dependency injection.
+
+04:31.690 --> 04:32.050
+All right.
+
+04:32.060 --> 04:34.770
+We're going to need hilt navigation.
+
+04:34.780 --> 04:40.810
+OK, there's the library that specifically designed to work with our navigation, and we're going to
+
+04:40.810 --> 04:42.730
+have the compiler as well.
+
+04:42.730 --> 04:45.730
+Capability Kotlin compiler.
+
+04:46.360 --> 04:49.240
+We're going to use coils for image loading.
+
+04:49.450 --> 04:49.870
+OK.
+
+04:49.900 --> 04:57.160
+Even though I found some small issues in coil that I would like change, hopefully at some point these
+
+04:57.160 --> 04:58.690
+will be implemented.
+
+04:58.960 --> 05:00.430
+And this will work fine.
+
+05:00.430 --> 05:05.290
+But it is looking like Hoyle is the recommended library by Android.
+
+05:05.290 --> 05:09.820
+So we will use that and then we will have code routines as well.
+
+05:09.850 --> 05:16.300
+We will use code routines in one specific point in our application, so they are very, very useful.
+
+05:16.690 --> 05:17.020
+All right.
+
+05:17.020 --> 05:18.430
+So these are the libraries.
+
+05:18.430 --> 05:28.060
+Hopefully your code has syncs nicely and there's no problems there and here what we have Google services
+
+05:28.060 --> 05:28.960
+and help, right?
+
+05:28.960 --> 05:30.820
+So we have everything we need.
+
+05:31.210 --> 05:34.780
+Now, keep in mind, navigation is still in beta.
+
+05:35.140 --> 05:40.360
+OK, so we do have to be careful about that when you are taking this course.
+
+05:40.630 --> 05:45.280
+These libraries might evolve, so you have might have later versions.
+
+05:45.280 --> 05:50.950
+So if you do find some bugs, some issues, then go ahead and update to the latest version.
+
+05:51.220 --> 05:56.530
+But I'm going to use these versions that you find here, and I do recommend that you keep these versions
+
+05:56.530 --> 06:06.160
+here because if there are any changes that kind of break previous versions, then this code might not
+
+06:06.160 --> 06:07.210
+work 100 percent.
+
+06:07.210 --> 06:14.740
+So it's better to keep everyone on the same version while we build a project and then later on update
+
+06:14.740 --> 06:18.130
+if you need to, if you want to take this application further.
+
+06:18.700 --> 06:21.160
+All right, so that's it for this video.
+
+06:22.030 --> 06:24.640
+Hopefully, everything works fine up to this point.
+
+06:24.640 --> 06:28.300
+In the next few minutes, we're going to start to actually implement our code.
+
+06:28.480 --> 06:29.650
+So I will see you there.

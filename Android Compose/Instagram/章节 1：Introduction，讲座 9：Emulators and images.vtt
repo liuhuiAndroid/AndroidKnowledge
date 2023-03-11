@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.680 --> 00:08.360
+All right, in this video, I want to give you a quick overview of how to build and run and test your
+
+00:08.360 --> 00:09.050
+application.
+
+00:09.260 --> 00:18.290
+So here we have our devices, OK, I'm going to be using an emulator for this course simply because
+
+00:18.470 --> 00:26.150
+using a physical device is not really is not really easy to record what's going on so you can use a
+
+00:26.150 --> 00:26.930
+physical device.
+
+00:26.930 --> 00:28.190
+In fact, they do recommend it.
+
+00:28.430 --> 00:36.570
+If you use an emulator, make sure that you create an emulator that has this Play Store button.
+
+00:36.590 --> 00:42.890
+OK, because this will make it a bit more realistic and allow us to kind of download whatever we need,
+
+00:42.890 --> 00:44.870
+and it just works better.
+
+00:45.050 --> 00:51.050
+Now, I've had a few issues with the emulator while building this course, and especially I'm using
+
+00:51.050 --> 00:53.300
+the Nexus 5X API 30.
+
+00:53.510 --> 00:57.530
+There's a few connection issues and, you know, various problems.
+
+00:58.010 --> 01:06.530
+So if you can use your physical device connected to your laptop and it works much better or you can
+
+01:06.530 --> 01:12.680
+use an emulator as well, just make sure that you have the patience for the inevitable bugs that do
+
+01:12.710 --> 01:13.100
+happen.
+
+01:13.670 --> 01:14.010
+All right.
+
+01:14.030 --> 01:18.110
+Now, once you have that emulator, here is my suggestion.
+
+01:18.110 --> 01:25.280
+We will need a few photos for our post and our profile images.
+
+01:25.280 --> 01:28.580
+So I have already downloaded some images here.
+
+01:28.820 --> 01:35.450
+You can see I have a bunch of cities, I have some profile photos and some animals as well.
+
+01:35.690 --> 01:38.780
+So I do encourage you to download these as well.
+
+01:39.560 --> 01:46.610
+The way I downloaded the profile images is I go to this website called This is not.
+
+01:48.190 --> 01:56.080
+Is not a real person, which is a website that basically generates AP photos.
+
+01:58.020 --> 01:59.580
+What is the name of that?
+
+02:01.010 --> 02:02.870
+Oh, this person does not exist, that's the one.
+
+02:03.710 --> 02:04.760
+This person.
+
+02:06.140 --> 02:09.290
+Does not exist, that's the website.
+
+02:09.620 --> 02:17.480
+And this one basically is provides you with air generated spaces that you can then use as your image
+
+02:17.480 --> 02:19.760
+without any copyright problems like that.
+
+02:19.770 --> 02:27.560
+So every time you refresh that, it will give you a new face completely random so you can use that.
+
+02:27.770 --> 02:35.660
+You can download images of cities or animals or whatever you like to use, as you know, as your images
+
+02:35.660 --> 02:37.790
+for the post while we are developing this course.
+
+02:38.360 --> 02:47.060
+Also inside the project, I have downloaded a guy photo just for the kind of mock data that we're going
+
+02:47.060 --> 02:54.560
+to be using at the beginning, and I have downloaded an image of Tokyo also for the mock images that
+
+02:54.560 --> 02:56.670
+word will be using for the posts.
+
+02:56.700 --> 03:02.120
+OK, so go ahead and download those and put them in the drawer folder as well.
+
+03:02.870 --> 03:03.230
+All right.
+
+03:03.290 --> 03:04.420
+So that's it.
+
+03:04.430 --> 03:06.320
+I think that's all I wanted to cover.
+
+03:06.320 --> 03:08.960
+So emulator, be careful with that.
+
+03:08.960 --> 03:13.310
+There's bugs and it's better to use the physical device if you can.
+
+03:13.610 --> 03:22.070
+If not, use an emulator with the Google Play Store button and in the emulator to download the images.
+
+03:22.100 --> 03:24.380
+OK, so that's basically it.
+
+03:25.070 --> 03:27.740
+I think we can start in the next video.
+
+03:27.740 --> 03:30.650
+We can start to actually build our project.
+
+03:30.770 --> 03:33.050
+OK, we will start with setting the foundations.
+
+03:33.380 --> 03:34.970
+I will see you in the next video.

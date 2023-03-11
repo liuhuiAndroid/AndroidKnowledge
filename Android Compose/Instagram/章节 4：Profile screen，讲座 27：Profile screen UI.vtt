@@ -1,0 +1,661 @@
+WEBVTT
+
+00:00.450 --> 00:06.060
+So in this video and the next few videos, we will work on the profile screen.
+
+00:06.090 --> 00:13.230
+Now the profile screen is different from my post screen in that the profile screen allows us to update
+
+00:13.230 --> 00:14.610
+the user information.
+
+00:14.910 --> 00:18.990
+So the way we get to the profile screen is from the mid post screen.
+
+00:19.290 --> 00:26.670
+By clicking on this outline button that will take us to the profile screen, we have an on click here
+
+00:26.670 --> 00:27.990
+that we will update.
+
+00:28.500 --> 00:28.860
+All right.
+
+00:28.920 --> 00:30.180
+So let's get started.
+
+00:30.190 --> 00:35.920
+We're going to create the profile screen, and for me, that kind of looks like authentication, right?
+
+00:35.940 --> 00:40.410
+That relates to user information updating user data.
+
+00:40.650 --> 00:44.010
+So I'm going to put it in authentication, this kind of a judgment call.
+
+00:44.160 --> 00:45.240
+You don't have to put it there.
+
+00:45.240 --> 00:47.720
+You can put it in Maine, but I want to put it here.
+
+00:48.120 --> 00:59.010
+So I'm going to say profile screen as a file and I'm going to create the composable font profile screen.
+
+00:59.790 --> 01:08.190
+Now this one, of course, will take a nav controller and a VM of type ID view model.
+
+01:09.480 --> 01:14.730
+OK, so we have our profile screened before we start filling out this information here.
+
+01:15.000 --> 01:20.450
+Let's go to our main activity and added to our destinations.
+
+01:20.460 --> 01:29.100
+So here I'm going to have an object of type profile destination screening of the route is going to be
+
+01:29.100 --> 01:29.560
+profiled.
+
+01:30.750 --> 01:39.300
+OK, and I'm going to just add the composable here composable destination screen, dot profile, dart
+
+01:39.300 --> 01:48.540
+route and of course, profile screen nav controller and VM view model.
+
+01:49.500 --> 01:57.480
+Now, let's add the navigation, so I'm going to go to the My Post screen here in on in outline button.
+
+01:57.690 --> 02:02.160
+I'm going to say navigate to I have the nav controller.
+
+02:04.490 --> 02:07.040
+And the destination screen.
+
+02:08.890 --> 02:10.330
+Dot profile.
+
+02:11.560 --> 02:18.460
+OK, so I'm just going to move to navigation now, keep in mind, profile doesn't have a bottom navigation,
+
+02:18.460 --> 02:20.620
+so it's a complete full screen.
+
+02:21.220 --> 02:21.630
+All right.
+
+02:21.670 --> 02:29.560
+Now profile screen, let's go ahead and start to implement the functionality for our profile screen.
+
+02:29.570 --> 02:35.350
+So first of all, I'm going to use the is loading a flag in the AM.
+
+02:35.590 --> 02:41.590
+So I'm going to say Val is loading equals vim dot in progress.
+
+02:41.590 --> 02:43.660
+That's the one dot value.
+
+02:43.870 --> 02:45.850
+And if is loading.
+
+02:48.420 --> 02:56.820
+Then I'm going to simply display a common progress spinner else, I'm going to build my UI, so here
+
+02:56.820 --> 03:02.250
+I want to have kind of two composer balls, one that handles state, which is this one.
+
+03:02.490 --> 03:05.040
+And one that displays the information.
+
+03:05.310 --> 03:11.550
+So I'm going to add here a composable fun profile content.
+
+03:12.920 --> 03:19.790
+This will take a quite large number of parameters, so let's go ahead here and define some values.
+
+03:19.790 --> 03:26.870
+So Val user data is going to be the dot user data dot value.
+
+03:28.820 --> 03:31.880
+Then VAR name by.
+
+03:33.380 --> 03:34.160
+Remember?
+
+03:36.070 --> 03:37.870
+Remember savable?
+
+03:41.050 --> 03:42.420
+Save a bull.
+
+03:46.260 --> 03:51.130
+It's important that and here I have mutable state of.
+
+03:54.360 --> 03:55.320
+User data.
+
+03:57.090 --> 03:58.200
+The name.
+
+03:59.760 --> 04:06.300
+Or if that is no an empty string now, this often happens.
+
+04:06.600 --> 04:13.890
+This exception often happens simply because Android Studio doesn't know how to import a certain element.
+
+04:14.220 --> 04:19.170
+So I'm going to import it manually import Android X decompose.
+
+04:20.360 --> 04:24.860
+Dot runtime dot get value.
+
+04:25.790 --> 04:31.220
+That's the one that is needed in court, set the value as well.
+
+04:31.220 --> 04:39.530
+So for some reason, Android Studio has trouble with this particular import, so it needs to be there.
+
+04:39.950 --> 04:40.340
+All right.
+
+04:40.370 --> 04:45.460
+So I have my name now I'm going to add the username and bios.
+
+04:45.480 --> 04:52.490
+I'm just going to duplicate that username and replace username here.
+
+04:53.330 --> 04:59.750
+And then again, bio and then here we have bio.
+
+05:01.020 --> 05:08.430
+OK, so now we have these elements, so now we can call the profile content.
+
+05:10.710 --> 05:18.150
+Now, profile content requires a lot of parameters, so I have spent quite a bit of time to extract
+
+05:18.150 --> 05:25.380
+all the required information from, you know, while building this course, I have extracted all the
+
+05:25.650 --> 05:31.380
+state from profile content and placed it in the profile screen.
+
+05:31.390 --> 05:34.470
+So here I'm going to add all the parameters that are required.
+
+05:34.740 --> 05:43.560
+So first of all, vim of type, I give you model, then we have name of type string, we have user name
+
+05:43.560 --> 05:50.640
+of type string and we have bio also of type string.
+
+05:51.650 --> 05:57.030
+Now we will need a own name change functionality, so on.
+
+05:57.600 --> 06:05.310
+Name change is going to be is going to take a string and give us a unit.
+
+06:05.310 --> 06:11.160
+So that is a lambda and the same for username and bios.
+
+06:11.160 --> 06:14.370
+So on user name change.
+
+06:16.260 --> 06:25.380
+And on budget change, we need three lambdas for these changes so that we can actually update our data
+
+06:25.380 --> 06:29.490
+here when we type something in the input boxes.
+
+06:30.360 --> 06:36.390
+And then we need three other operations which are on save.
+
+06:36.420 --> 06:39.840
+So when we want to save the information also is a lambda.
+
+06:41.810 --> 06:45.800
+On back when we want to go back to the previous screen.
+
+06:47.240 --> 06:47.750
+OK.
+
+06:48.110 --> 06:53.960
+And on logout, since we will have a log out button on this screen.
+
+06:55.910 --> 07:03.200
+OK, so these are the elements that we require, so now in profile content, we can go ahead and pass
+
+07:03.200 --> 07:04.190
+all the parameters.
+
+07:04.460 --> 07:16.310
+So the PM is going to be VMM view model, then name is going to be name, username is going to be username.
+
+07:16.940 --> 07:19.100
+Bio is going to be bio.
+
+07:20.870 --> 07:25.100
+Now I need on name change.
+
+07:26.140 --> 07:30.040
+Is going to be name equals it.
+
+07:32.240 --> 07:32.750
+OK.
+
+07:34.520 --> 07:39.170
+And it's going to be very similar for on username change.
+
+07:41.220 --> 07:51.120
+Username equals it's because we get a string passed to this function and then on bio change equals bio
+
+07:52.080 --> 07:52.980
+equals it.
+
+07:55.160 --> 08:04.670
+OK, so now in on safe, we don't actually have anything at the moment, OK, we need to create a function
+
+08:04.670 --> 08:10.310
+in our view model, so we're going to leave this empty for now on back.
+
+08:11.060 --> 08:12.320
+This is quite simple.
+
+08:12.560 --> 08:14.480
+We're going to navigate to.
+
+08:15.840 --> 08:16.890
+NAF controller.
+
+08:19.670 --> 08:21.740
+And destination screen.
+
+08:23.220 --> 08:25.110
+Dot my posts.
+
+08:27.680 --> 08:35.540
+That's the on back and then on logout again, we don't have any functionality here, we need to implement
+
+08:35.540 --> 08:36.860
+the logout function.
+
+08:37.460 --> 08:40.430
+So we're going to leave this like that for now.
+
+08:40.430 --> 08:44.090
+We're going to implement on save and on logout a bit later.
+
+08:44.540 --> 08:47.420
+But now let's focus on the profile content.
+
+08:47.660 --> 08:55.130
+So here I'm going to have Val Scroll St. equals, remember scroll state.
+
+08:58.470 --> 08:58.880
+OK.
+
+08:58.930 --> 09:01.680
+That's because I want my screen to be scrollable.
+
+09:02.520 --> 09:12.720
+And here I'm going to have a column with a modifier equals modifier dot, vertical scroll, scroll state,
+
+09:13.890 --> 09:18.540
+and then I'm going to add some padding that is going to be eight dpi.
+
+09:24.480 --> 09:24.840
+OK.
+
+09:28.020 --> 09:34.230
+Right, so I have my column now inside my column, I want to have at the top, I want to have a row
+
+09:34.230 --> 09:36.750
+with a button back and a button safe.
+
+09:37.170 --> 09:39.390
+So I'm going to implement a row.
+
+09:40.590 --> 09:46.680
+That has a modifier equals modifier dot filled max with.
+
+09:47.700 --> 09:53.250
+And the padding of eight deep.
+
+09:55.470 --> 10:01.650
+Now, in addition to this modifier, I want to have a horizontal arrangement.
+
+10:02.870 --> 10:05.460
+And arrangement, not space between.
+
+10:05.480 --> 10:09.960
+So I want the back button to be on the left and the safe button to be on the right.
+
+10:09.980 --> 10:14.190
+So I want some distance between those now in my row.
+
+10:14.210 --> 10:16.910
+I have to text elements.
+
+10:18.310 --> 10:25.510
+First one says back then has a modifier equals modifier clickable.
+
+10:27.190 --> 10:30.580
+And here I have on back dot invoke.
+
+10:32.810 --> 10:33.270
+OK.
+
+10:33.470 --> 10:46.970
+And then I have another one text that says save and modifier equals modifier dot clickable on save dot
+
+10:46.970 --> 10:47.560
+invoke.
+
+10:49.740 --> 10:58.320
+OK, so that is my upper menu, let's say, with back and safe now right below this, I want to have
+
+10:58.320 --> 11:05.640
+kind of a horizontal divider, a line that separates the top buttons from the rest of the elements.
+
+11:05.670 --> 11:12.720
+OK, so here I'm going to have what I call a common divider, which we need to create, of course.
+
+11:13.080 --> 11:20.790
+So we're going to create this in our common bits because we're going to use it in different places in
+
+11:20.790 --> 11:21.330
+our code.
+
+11:21.990 --> 11:27.990
+So I'm going to create here a composable fun common divider.
+
+11:31.550 --> 11:36.130
+Takes no parameters, and we're going to simply add a divider.
+
+11:38.280 --> 11:42.570
+Color is going to be color dot light gray.
+
+11:44.210 --> 11:50.450
+We're going to have a thickness of one deep and a modifier.
+
+11:54.220 --> 12:04.600
+With an alpha of zero, 0.3 F and a padding of top equals eight DP.
+
+12:06.540 --> 12:09.400
+And bottom equals also S&amp;P.
+
+12:10.080 --> 12:17.640
+OK, that's our modifier, it's a simple, kind of transparent line that just kind of subtly creates
+
+12:17.640 --> 12:18.660
+a division here.
+
+12:19.290 --> 12:21.660
+OK, so import the divider.
+
+12:22.800 --> 12:24.700
+Now what else do we need?
+
+12:24.720 --> 12:28.410
+We need an image that we don't have at the moment.
+
+12:28.410 --> 12:35.250
+So here we will allow the user to update their image to upload an image, right?
+
+12:35.250 --> 12:38.750
+So we don't have that at the moment, we don't have the functionality.
+
+12:38.760 --> 12:40.830
+So I'm just going to put a placeholder here.
+
+12:41.220 --> 12:49.020
+I'm going to say user image and I'm going to create a column that has a modifier.
+
+12:53.750 --> 12:54.320
+OK.
+
+12:54.530 --> 12:55.060
+Dot.
+
+12:56.180 --> 13:07.300
+I'm going to add a height of 200 dpi dot fill max width and I'm going to add a background of color dot
+
+13:07.490 --> 13:07.910
+gray.
+
+13:09.020 --> 13:15.350
+OK, so that's just basically a placeholder that later on we can replace with an image.
+
+13:16.460 --> 13:16.790
+All right.
+
+13:16.970 --> 13:19.430
+Below that, I'm going to have another common divider.
+
+13:22.150 --> 13:30.940
+And below that, I will have a few rows of elements that we can up where we can update the user information,
+
+13:30.950 --> 13:31.180
+right?
+
+13:31.180 --> 13:34.870
+So I want to update the name, the user name and the bio.
+
+13:35.470 --> 13:37.720
+So the first one is going to be wrote.
+
+13:39.730 --> 13:45.970
+And I'm going to have a modifier equals modifier dot filled max with.
+
+13:46.950 --> 13:57.240
+And dart padding that has a start of for deep and the end of.
+
+13:58.580 --> 13:59.600
+For deep.
+
+14:01.490 --> 14:10.820
+And also, I have a vertical alignment in this row, so I have vertical alignment, alignment dart center
+
+14:10.820 --> 14:11.390
+vertically.
+
+14:13.310 --> 14:19.070
+OK, so I have my row now inside, I have a text that says name.
+
+14:20.690 --> 14:25.760
+With a modifier equals modifier dot width.
+
+14:27.150 --> 14:33.510
+Of 100 deep and I will have a text field.
+
+14:35.540 --> 14:37.820
+The value is going to be name.
+
+14:38.240 --> 14:44.000
+Remember, this is the name that is passed here in the parameters of the function.
+
+14:45.410 --> 14:50.000
+OK, and on value change I have on name change.
+
+14:52.090 --> 14:52.630
+OK.
+
+14:52.960 --> 14:55.510
+And I want to add a colors.
+
+14:56.670 --> 14:57.620
+Element here.
+
+15:00.870 --> 15:03.060
+That has a text field.
+
+15:04.960 --> 15:09.610
+Defaults, dot, text, field colors.
+
+15:14.850 --> 15:15.400
+OK.
+
+15:15.790 --> 15:26.740
+Text field colors and inside here, I'm going to have background color equals color dot transparent
+
+15:27.520 --> 15:29.500
+and I will have a text color.
+
+15:30.130 --> 15:31.540
+Color dot black.
+
+15:33.110 --> 15:38.720
+OK, so quite a lot of information here, but basically we have a name text and a text field where we
+
+15:38.720 --> 15:39.980
+can input the name.
+
+15:40.610 --> 15:47.270
+OK, now we have one of these rows, so let's add two more basically.
+
+15:47.270 --> 15:54.110
+So I'm just going to copy this one and paste it here, and let's just update what we need.
+
+15:54.120 --> 16:04.760
+So instead of name we have, username value is going to be username on value, change on username change,
+
+16:05.360 --> 16:07.070
+and the colors are the same.
+
+16:07.700 --> 16:13.460
+And let's add, I think here we have something quite similar.
+
+16:15.960 --> 16:16.620
+Let me see.
+
+16:17.250 --> 16:17.770
+All right.
+
+16:17.790 --> 16:24.180
+So I'm going to add another row, so I have modifier filled next with with some padding.
+
+16:26.070 --> 16:27.930
+OK, vertical alignment.
+
+16:28.560 --> 16:30.540
+This one is going to be top.
+
+16:32.140 --> 16:34.870
+OK, here I have bio.
+
+16:37.100 --> 16:46.670
+And the width is going to be 100 deep now, textual value is going to be bio then on bio change.
+
+16:47.330 --> 16:52.760
+And here we're going to add a few more elements because we want the this text field to be larger so
+
+16:52.760 --> 16:57.650
+that we can have more room for to input our bio.
+
+16:58.010 --> 17:01.460
+So we have on value change and we have colors.
+
+17:01.940 --> 17:05.210
+Now we're going to add a single line equals false.
+
+17:07.920 --> 17:08.260
+OK.
+
+17:08.280 --> 17:19.860
+This is a multi line field, and then we're going to have a modifier equals modifier dot height of 150
+
+17:20.070 --> 17:21.090
+dot dpi.
+
+17:22.440 --> 17:27.330
+All right, so that is basically our bio field.
+
+17:28.880 --> 17:31.160
+All right, so that's all there is to it.
+
+17:31.340 --> 17:36.920
+And now we need to add the final row, which is going to be a simple log out button.
+
+17:37.190 --> 17:45.590
+OK, so I'm going to have a row here with a modifier equals modifier dot fill max with.
+
+17:48.520 --> 17:50.260
+And dart padding.
+
+17:51.010 --> 18:01.450
+I'm going to add top and bottom, so top is going to be 16. deep and bottom also 16. DP, OK?
+
+18:01.660 --> 18:04.270
+And also I have a horizontal.
+
+18:06.480 --> 18:10.950
+Horizontal arrangement arrangement is going to be center.
+
+18:12.630 --> 18:12.990
+Right.
+
+18:13.020 --> 18:18.210
+So inside here, I'm just going to have a text that's going to say, log out.
+
+18:20.880 --> 18:25.620
+And modifier equals modifier dot clickable.
+
+18:27.510 --> 18:30.750
+On Logout Dot Invoke.
+
+18:31.620 --> 18:38.910
+OK, we haven't said what we do in the logout, but we know that we have a parameter here that is on
+
+18:38.910 --> 18:39.480
+log out.
+
+18:40.110 --> 18:41.250
+So that's it.
+
+18:41.280 --> 18:48.690
+Let's see if I've made any mistake building this UI, but hopefully you will see what it's going to
+
+18:48.690 --> 18:51.000
+look like for the profile screen.
+
+19:02.710 --> 19:11.050
+All right, so I am in the My Post page, and then if I click Edit Profile, then I have my profile
+
+19:11.050 --> 19:17.230
+screen here, so I have a back button, which actually works because we've we've actually implemented
+
+19:17.230 --> 19:19.750
+this functionality navigate to.
+
+19:21.160 --> 19:27.760
+But if I click again, saved doesn't yet work and we have name, username and bio.
+
+19:27.790 --> 19:35.020
+OK, keep in mind that these are pre-populated, so you do get some data here, but we can update the
+
+19:35.020 --> 19:36.250
+information only.
+
+19:37.300 --> 19:46.870
+OK, if we update, we will need to save and call the The View model to update the information.
+
+19:46.870 --> 19:48.700
+But for now, that is not implemented.
+
+19:48.730 --> 19:56.230
+OK, so we have also the log out button at the bottom that allows us to log out, which we will implement
+
+19:56.230 --> 19:56.770
+shortly.
+
+19:57.430 --> 19:57.790
+All right.
+
+19:57.790 --> 20:02.860
+So that's it for this video in the next video, we're going to implement the functionality to actually
+
+20:02.860 --> 20:07.120
+save this information on the view model site.
+
+20:07.180 --> 20:07.840
+I'll see you there.

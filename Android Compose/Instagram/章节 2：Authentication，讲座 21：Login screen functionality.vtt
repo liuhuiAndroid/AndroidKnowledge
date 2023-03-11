@@ -1,0 +1,316 @@
+WEBVTT
+
+00:00.740 --> 00:08.060
+All right, so in this video, we're going to implement the functionality for our in screen in on click
+
+00:08.150 --> 00:13.250
+OK, so basically actually logging in the user in the view model.
+
+00:13.760 --> 00:20.150
+And this is going to be quite easy because we've already put in place most of the framework and most
+
+00:20.150 --> 00:26.990
+of the code that we need for that we already have, for example, the get user data method that we can
+
+00:26.990 --> 00:28.730
+call without any issues.
+
+00:28.940 --> 00:33.170
+And also, we know exactly how we can log in our user.
+
+00:34.220 --> 00:38.120
+Since we have an example in sign up, it's going to be just slightly different.
+
+00:38.480 --> 00:45.020
+However, the first thing I want to do is I want to fix a small bug that I forgot in previous videos,
+
+00:45.230 --> 00:51.260
+which is if I simply click the button in the sign up screen without entering any information here,
+
+00:51.590 --> 00:53.390
+our application will crash.
+
+00:53.750 --> 00:55.550
+So that is quite easy to fix.
+
+00:55.670 --> 01:00.550
+Here in on sign up, we need to introduce a check for all these values.
+
+01:00.560 --> 01:11.680
+OK, so I'm going to say if username dot is empty or email dot is empty or pass.
+
+01:12.110 --> 01:17.510
+Dot is empty, then I simply want to put up an exception.
+
+01:17.540 --> 01:20.780
+It's not really an exception, but it's just a custom message.
+
+01:21.200 --> 01:24.770
+And I can say something like, please fill in.
+
+01:25.920 --> 01:31.740
+Paul Fields, OK, and then I can simply return so that I don't run the rest of the code.
+
+01:32.370 --> 01:34.170
+So that should fix our problem.
+
+01:43.480 --> 01:48.190
+All right, is doing some operations in the background, just retrieving the user information since
+
+01:48.190 --> 01:50.960
+we are actually logged in, keep that in mind.
+
+01:50.980 --> 01:53.920
+We just don't see the outcome of that operation.
+
+01:54.100 --> 01:59.080
+But here, if I simply sign up, I will get please fill in all fields.
+
+01:59.290 --> 02:01.870
+OK, so that takes care of our issue.
+
+02:02.410 --> 02:09.420
+Now let's move on to implementing the on logging function of our code.
+
+02:09.430 --> 02:16.910
+So here right below on sign up, I'm going to say fun on logging and I'm going to have a username.
+
+02:16.930 --> 02:18.400
+Actually, I don't have username.
+
+02:18.400 --> 02:19.570
+I just have email.
+
+02:20.700 --> 02:25.740
+Of type, string and password or parts of type string.
+
+02:27.630 --> 02:30.980
+All right, so I have these two values here.
+
+02:30.990 --> 02:37.940
+So again, we need to introduce that check if email dot is empty or pass.
+
+02:38.580 --> 02:39.750
+Dot is empty.
+
+02:40.800 --> 02:43.850
+Then we can handle the same exception, actually.
+
+02:43.880 --> 02:45.060
+Let's just copy and paste.
+
+02:47.540 --> 02:55.730
+OK, we have that exception with pretty much the same message, and we can return if we pass this check,
+
+02:55.740 --> 02:58.370
+then we can go ahead and do the processing.
+
+02:58.400 --> 03:01.340
+So first of all, let's set the flag in progress.
+
+03:01.910 --> 03:05.290
+Dot value equals true.
+
+03:06.910 --> 03:13.240
+Then Boss Dot signing with email and password.
+
+03:13.630 --> 03:16.180
+OK, so before we had.
+
+03:17.740 --> 03:23.020
+First, we were retweeting the username to check that it is unique, but then we have create user with
+
+03:23.020 --> 03:23.830
+email and password.
+
+03:24.130 --> 03:31.750
+Now we have sign in with email and password and here we can pass the email and pass.
+
+03:33.010 --> 03:35.470
+Of course, we have an add on complete.
+
+03:37.860 --> 03:47.010
+On complete listener, and we have an add on failure listener now for the complete listener, we get
+
+03:47.010 --> 03:47.910
+a task.
+
+03:49.920 --> 03:54.600
+And we can say if the task is successful.
+
+03:57.000 --> 04:04.140
+Then we are basically signed in and we can do what we need to write so we can set the flag signed in,
+
+04:04.890 --> 04:10.650
+that value is going to be true then in progress.
+
+04:11.130 --> 04:13.830
+The value is going to be false.
+
+04:14.520 --> 04:16.230
+We have finished our operation.
+
+04:17.280 --> 04:26.120
+And then we can say also that current user thought ID, this is knowable, so we need to do that check.
+
+04:26.130 --> 04:29.630
+But of course, here it should be no issue.
+
+04:29.640 --> 04:31.830
+There should be no issues, but obviously we need to check.
+
+04:32.460 --> 04:34.560
+And here we have our I.D..
+
+04:34.740 --> 04:39.330
+And here, of course, we need to get user data with this.
+
+04:40.410 --> 04:42.690
+OK, so retrieve that information.
+
+04:43.320 --> 04:47.610
+Now, why is it saying that UID might be no.
+
+04:48.720 --> 04:50.700
+I think I forgot the question mark here.
+
+04:50.730 --> 04:51.300
+There it is.
+
+04:51.450 --> 04:56.130
+So you at this point is no longer know so we can get user data.
+
+04:56.580 --> 04:59.070
+Now we need to handle any exception that might occur.
+
+04:59.100 --> 05:05.690
+So for example, here, if the task is not successful, then we can handle the exception task.
+
+05:05.700 --> 05:14.040
+That exception, with the message log in failed and then we can set in progress.
+
+05:14.730 --> 05:17.720
+Dot value equals false.
+
+05:19.240 --> 05:24.160
+OK, and again, in the on failure, the sooner, this is obviously an exception, so let's call it
+
+05:24.160 --> 05:26.200
+e x c for exception.
+
+05:26.860 --> 05:29.210
+And here we can do the same thing.
+
+05:29.230 --> 05:35.230
+Handle exception with e x c and the message in failed.
+
+05:36.820 --> 05:41.500
+And then in progress, the value is going to be false.
+
+05:43.100 --> 05:48.440
+So that's pretty much it for the operation, of course, we need to call this method, so let's go to
+
+05:48.470 --> 05:56.330
+our login screen and here in the not in the text, but in the button on Click.
+
+05:57.740 --> 06:10.880
+After we clear the focus, we can say the dot on logging with email state dot value dot to string and
+
+06:11.060 --> 06:15.380
+with past state dot value dot to string.
+
+06:16.900 --> 06:21.010
+OK, so basically, we call this when we click the button.
+
+06:21.580 --> 06:27.880
+Now, before I test this, I want to simply call this method here on DOT.
+
+06:27.880 --> 06:28.780
+Sign out.
+
+06:29.110 --> 06:35.080
+OK, so that by default, when we when the application runs, the user is signed out and then we can
+
+06:35.440 --> 06:36.160
+log in.
+
+06:36.850 --> 06:44.530
+And since we don't actually see any outcome here, let's put a notification just to see a message on
+
+06:44.530 --> 06:49.570
+the screen when we do retrieve this or we do finish this operation successfully.
+
+06:49.870 --> 06:53.210
+So I'm going to say hello exception, even though it's not an exception.
+
+06:53.620 --> 06:58.240
+We're just going to pass the custom message logging success.
+
+07:00.850 --> 07:02.380
+I think that's correctly spelled.
+
+07:02.410 --> 07:07.690
+OK, so let's go ahead and run this and see if we get a log in.
+
+07:22.350 --> 07:28.860
+All right, so let's switch to log in, and I think I have a user, John, at gmail.com, you might
+
+07:28.860 --> 07:32.250
+have a different user click logging.
+
+07:33.430 --> 07:34.960
+And we should get a message.
+
+07:37.240 --> 07:39.070
+Once this operation finishes.
+
+07:41.980 --> 07:49.990
+So I get a message this email is badly formatted, which simply means that I've passed the wrong elements
+
+07:49.990 --> 07:50.770
+here, right?
+
+07:50.770 --> 07:58.480
+So instead of two string, I need the dot text value for the email and passwords.
+
+07:59.500 --> 08:04.240
+OK, it's not, let's assume, because that will just convert the whole object to a string, and that's
+
+08:04.240 --> 08:05.620
+not what we want.
+
+08:06.040 --> 08:06.960
+So let's run again.
+
+08:10.970 --> 08:16.280
+All right, switch to log in, John, at Gmail dot com.
+
+08:16.700 --> 08:19.160
+One two three four five six.
+
+08:19.850 --> 08:20.600
+Click Log In.
+
+08:22.730 --> 08:29.450
+My recording software is causing this kind of jitteriness, but you should have no problem and you see
+
+08:29.450 --> 08:32.150
+here that we have a logging success.
+
+08:33.140 --> 08:39.560
+The only issue is that this banner has disappeared as well because it was retrieving the data.
+
+08:39.590 --> 08:45.890
+OK, so we have a call to the get user data function, which shows the spinner again.
+
+08:46.160 --> 08:54.800
+So I think at this point, we are able to do our authentication either through a sign up or a log in.
+
+08:55.100 --> 09:01.010
+And I think the next move that we need to do to kind of wrap this whole thing up and finish with authentication
+
+09:01.400 --> 09:09.920
+is to move the the user to a new screen once the authentication has been completed one way or another.
+
+09:10.100 --> 09:12.140
+OK, so we will do that in the next video.

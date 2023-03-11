@@ -1,0 +1,379 @@
+WEBVTT
+
+00:00.660 --> 00:06.270
+OK, so the next step for us is to create the user profile in Firestorm.
+
+00:06.300 --> 00:12.360
+OK, so I'm going to replace this comment here with a call to a function create.
+
+00:13.140 --> 00:19.170
+We're going to call this a function, create or update profile.
+
+00:19.710 --> 00:25.860
+OK, because we're going to call it from different parts of our application and we want to be able to
+
+00:25.860 --> 00:29.640
+not only create the user, but also updated since we require the same data.
+
+00:30.000 --> 00:36.990
+And here, the only data that we have at the moment is the user name, and that's going to be username
+
+00:36.990 --> 00:38.370
+equals username.
+
+00:38.550 --> 00:42.450
+OK, the username that we pass to our own sign up call.
+
+00:43.320 --> 00:49.560
+OK, so we have our create or update user profile is gone ahead and create that function.
+
+00:50.250 --> 00:52.140
+That's going to be a private function.
+
+00:53.190 --> 00:58.560
+We cannot call it from outside, create or update user profile.
+
+00:58.860 --> 01:00.500
+And this will take several parameters.
+
+01:00.510 --> 01:01.200
+So first of all.
+
+01:01.650 --> 01:05.730
+Name of type string equals normal by default.
+
+01:06.270 --> 01:11.850
+User name of type string equals null by default.
+
+01:12.690 --> 01:13.590
+What else do we need?
+
+01:13.590 --> 01:24.300
+We need bio of type string equals node by default and we need the image you rl.
+
+01:25.260 --> 01:26.400
+Of type string.
+
+01:27.520 --> 01:34.630
+Equals no by default, OK, so this is our function, and that has solved our problem here.
+
+01:35.230 --> 01:42.490
+OK, so for this create or update, basically what we need to do is we need to retrieve all the user
+
+01:42.490 --> 01:52.300
+information, create a user object of the type of user data and then store that data in the database
+
+01:52.660 --> 01:56.920
+if it doesn't exist and if it exists, we just need to update that data.
+
+01:57.310 --> 01:59.860
+OK, so let's go ahead and do that first.
+
+01:59.860 --> 02:01.420
+Val UID.
+
+02:03.370 --> 02:09.190
+So the user ID is going to be US dot current user.
+
+02:10.260 --> 02:11.160
+Don't you?
+
+02:11.610 --> 02:15.060
+So this is the user that is given to us by authentication.
+
+02:16.020 --> 02:22.830
+Now we're going to have user data is going to be user data class.
+
+02:23.920 --> 02:27.190
+OK, we're going to instantiate that, then we're going to pass all the parameters.
+
+02:27.490 --> 02:29.620
+So user I.D. equals you.
+
+02:31.630 --> 02:34.120
+Then we have name equals.
+
+02:34.900 --> 02:43.750
+So either our name is not is not null or in case it is, no, we're going to use the user data from
+
+02:43.750 --> 02:46.960
+the parameter that we defined here at the top.
+
+02:48.920 --> 02:52.560
+User data dot value question mark.
+
+02:52.580 --> 02:53.390
+Dot name.
+
+02:54.230 --> 03:01.160
+OK, so either we get some parameters passed here or if not, we just use the ones we already have in
+
+03:01.160 --> 03:03.380
+our app, in our view.
+
+03:03.680 --> 03:10.370
+Keep in mind that now we are calling this when we first register a user, but later on we will already
+
+03:10.370 --> 03:12.350
+have some information for our user.
+
+03:12.620 --> 03:17.480
+And if we don't pass the name, we need to keep that information available.
+
+03:17.520 --> 03:20.300
+OK, we don't want to rewrite it to a normal value.
+
+03:21.260 --> 03:27.650
+OK, so that is the name we're going to do the same for user name is going to be user name, question
+
+03:27.650 --> 03:37.190
+mark colon user name data, user data dot value dot user name.
+
+03:39.390 --> 03:39.780
+OK.
+
+03:39.990 --> 03:52.500
+Same for bio is going to be bio Elvis, operator, user data dot value dot bio.
+
+03:56.250 --> 03:56.740
+OK.
+
+03:56.820 --> 04:02.400
+That's the bio we have, image you URL is going to be image URL.
+
+04:03.240 --> 04:10.170
+Elvis operator user data dot value question mark dot image URL.
+
+04:11.820 --> 04:18.030
+And finally, we have following now following will be updated in a different way since it is a list.
+
+04:18.030 --> 04:27.060
+So we're simply going to take the value that is in the user data user data that value dot following.
+
+04:27.990 --> 04:30.570
+OK, so this is our data structure.
+
+04:30.780 --> 04:36.950
+Now what we need to do is we need to check, first of all, do we have a user ID if we have a user I.D.,
+
+04:36.960 --> 04:43.560
+do we have an existing user in the database in which case we simply need to update the information or
+
+04:43.590 --> 04:46.020
+if we don't and we need to create a new user?
+
+04:46.110 --> 04:47.460
+OK, so let's go ahead and do that.
+
+04:47.940 --> 04:50.250
+First of all, we need to check you ID.
+
+04:50.910 --> 04:51.600
+Question mark.
+
+04:51.930 --> 04:52.380
+Let.
+
+04:54.630 --> 05:00.360
+OK, now we're going to set the in-progress flag to true.
+
+05:00.420 --> 05:02.910
+So in progress, those value equals true.
+
+05:03.870 --> 05:12.420
+Then we're going to say DB Dot Collection users, we're going to try to retrieve the document with you
+
+05:12.420 --> 05:12.780
+ID.
+
+05:13.260 --> 05:14.280
+OK, you ID.
+
+05:15.180 --> 05:19.650
+Or we can simply say it, OK, let's put it UID for clarity.
+
+05:19.650 --> 05:24.300
+So you I.D. OK, we have our I.D. here.
+
+05:24.990 --> 05:30.900
+Now we know this is not new, so we're going to this is going to succeed, either we retrieve anything
+
+05:30.900 --> 05:33.450
+or we don't don't get.
+
+05:35.100 --> 05:40.260
+And here we're going to add on success listener.
+
+05:41.670 --> 05:48.030
+OK, now if it's not exists.
+
+05:49.870 --> 05:52.900
+Now, if it exists, then what do we want to do?
+
+05:53.320 --> 06:01.090
+We want to update that reference with the new data, so we're going to say it's those reference Dot
+
+06:01.090 --> 06:04.580
+update user data.
+
+06:04.600 --> 06:13.810
+So the one we created here user data dot to map this is where the map comes in, because if we want
+
+06:13.810 --> 06:17.230
+to update, we need to pass a map to this function.
+
+06:19.920 --> 06:21.930
+Don't add on success, listener.
+
+06:22.470 --> 06:26.130
+So if it is successful, then what can we do?
+
+06:26.160 --> 06:32.400
+This dot user data dot value equals user data.
+
+06:34.280 --> 06:39.290
+And then we said the in-progress flag don't value equals false.
+
+06:40.520 --> 06:51.620
+So this is for the add on success listener add on failure listener here we have handle exception it
+
+06:52.160 --> 06:57.110
+and cannot update user.
+
+06:58.860 --> 07:00.600
+And then in progress.
+
+07:02.650 --> 07:05.290
+The value is going to be false.
+
+07:07.040 --> 07:17.560
+OK, now this is the case where it exists else, if it doesn't exist, we can say DB the collection.
+
+07:19.890 --> 07:20.700
+Users.
+
+07:23.030 --> 07:24.350
+Dot document.
+
+07:24.620 --> 07:25.880
+And here we pass the you.
+
+07:26.450 --> 07:29.780
+So the ID of our user dot set.
+
+07:30.500 --> 07:34.430
+And here we have our user data.
+
+07:36.610 --> 07:36.980
+OK.
+
+07:37.540 --> 07:46.270
+And then after that, we need to once this has completed, we need to retrieve that user data so we
+
+07:46.270 --> 07:50.920
+can say we can have a function, get user data.
+
+07:52.420 --> 07:53.440
+Of UUID.
+
+07:54.070 --> 07:58.600
+This function needs to be created, so let's just put it in place now without any functionality.
+
+07:58.990 --> 08:08.520
+Private val and private fun get user data of UUID of type string.
+
+08:10.740 --> 08:18.060
+OK, so that's all for now, we don't implement this now, we just want to see the functionality here.
+
+08:18.450 --> 08:25.680
+One thing that I forgot, I think, is we have an unsuccessful listener, but we don't have an on failure
+
+08:25.680 --> 08:26.190
+listener.
+
+08:26.200 --> 08:32.640
+So let's add that that's really simple to to do exception.
+
+08:33.210 --> 08:35.340
+And we simply handle exception.
+
+08:37.330 --> 08:41.950
+And in case of a failure, we handle exception.
+
+08:43.810 --> 08:54.640
+And cannot create user, and we want to set in progress that value because false.
+
+08:55.600 --> 09:04.180
+Also, don't forget to set it here in the other branch of the if in progress, dot value equals false.
+
+09:06.670 --> 09:15.220
+I think that's it, so on this, I've made a mistake that should create both the let me see both the
+
+09:15.220 --> 09:18.580
+authentication user and the Firestorm user.
+
+09:18.790 --> 09:19.810
+So let's try it out.
+
+09:19.840 --> 09:24.010
+I'm going to run this code and let's see what happens.
+
+09:36.050 --> 09:38.990
+OK, so let's create a username, John.
+
+09:39.770 --> 09:42.650
+An email, John, at Gmail dot com.
+
+09:43.280 --> 09:47.330
+I'm not going to test the error messages because we've tested that in the previous video.
+
+09:47.660 --> 09:49.760
+So let's go ahead and sign up.
+
+09:52.200 --> 09:55.570
+And I don't think there's any error messages that come up.
+
+09:55.590 --> 10:01.320
+So let's have a look in the backend API authentication.
+
+10:02.220 --> 10:07.710
+We have a new user, John and Gmail, and let's check the user creation.
+
+10:08.220 --> 10:15.600
+We have users, we have an element in the collection and we have our user I.D. and user name.
+
+10:15.600 --> 10:17.220
+So username is correct.
+
+10:17.430 --> 10:21.510
+User ID is the same user ID that we have for this document.
+
+10:21.510 --> 10:27.030
+So this is going to be quite important because we reference this ID later on in our code.
+
+10:27.540 --> 10:30.980
+But for now, I think it's all looking really good.
+
+10:30.990 --> 10:39.330
+We already have user creation and we have error message handling.
+
+10:39.390 --> 10:39.780
+OK.
+
+10:39.990 --> 10:44.220
+What I would like to do in the next video is put in place this get user data because this is going to
+
+10:44.220 --> 10:45.300
+be quite important.
+
+10:45.510 --> 10:51.480
+We're going to call it from here, but we're also going to be calling it when we simply start off the
+
+10:51.480 --> 10:54.960
+app to check whether the user is signed in or not.
+
+10:54.960 --> 10:59.370
+And if it is signed in, then we need to get that user information here.
+
+10:59.470 --> 11:01.830
+OK, so we're going to do that in the next video.

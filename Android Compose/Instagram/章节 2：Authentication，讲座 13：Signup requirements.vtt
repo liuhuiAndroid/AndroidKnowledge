@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.420 --> 00:06.330
+All right, so in this video, we're going to start to work on the sign up functionality.
+
+00:06.630 --> 00:12.360
+Now the issue about center functionality is that it kind of relates to a lot of different components
+
+00:12.360 --> 00:13.110
+in the app.
+
+00:13.350 --> 00:18.720
+So what I would like to do first, I would like to list out the pieces of functionality that we're going
+
+00:18.720 --> 00:19.830
+to need to work on.
+
+00:20.070 --> 00:24.060
+And then we're going to start to tackle them one by one in the next few videos.
+
+00:24.300 --> 00:25.930
+So I'm here in my document.
+
+00:25.950 --> 00:31.760
+Let's go ahead and create a section called signup requirements.
+
+00:32.610 --> 00:38.460
+So what do we need to do to, you know, have a functional sign up in our application?
+
+00:38.730 --> 00:45.720
+First of all, when the user introduces the username, email and password authentication, Firebase
+
+00:45.720 --> 00:52.920
+authentication basically makes sure that the email and password are according to some standard, but
+
+00:52.920 --> 00:55.710
+it doesn't take into account anything about the user name.
+
+00:55.950 --> 00:56.850
+So what?
+
+00:56.850 --> 01:02.490
+The first thing we need to do is we need to check that the username is unique.
+
+01:05.010 --> 01:10.650
+OK, so we need to check that the username is unique and only then we can start to create our user.
+
+01:10.890 --> 01:14.550
+So once we have that, let's go ahead and create a user.
+
+01:14.880 --> 01:22.140
+And here we need to be mindful about the Firebase authentication verification, so the email is correctly
+
+01:22.140 --> 01:22.770
+formatted.
+
+01:22.770 --> 01:26.100
+The password is at least six characters long and so on.
+
+01:26.370 --> 01:31.590
+So here, subject to Firebase Auth verification.
+
+01:33.450 --> 01:39.810
+OK, so once we create a user in Firebase Auth, then we need to store a user profile in our fighter
+
+01:39.810 --> 01:40.170
+story.
+
+01:40.200 --> 01:43.890
+OK, so that we can have access to a lot more data about our users.
+
+01:44.220 --> 01:48.570
+So create a profile in Firestorm.
+
+01:50.310 --> 01:56.250
+Once we have that, we want to retrieve all the information that was stored, even though we have just
+
+01:56.250 --> 01:58.170
+created it and we have that information.
+
+01:58.380 --> 02:05.340
+We need kind of a central function for retrieval that we can call from multiple locations in our application.
+
+02:05.380 --> 02:11.610
+OK, so here we want to retrieve user data and store it.
+
+02:13.180 --> 02:16.540
+Store it in the view model.
+
+02:18.540 --> 02:21.150
+So that we have access to it in our application.
+
+02:21.550 --> 02:24.840
+Next up, we want to have sort of an in progress.
+
+02:26.090 --> 02:30.650
+Flag and display a spinner.
+
+02:31.900 --> 02:38.200
+While the operation is ongoing, OK, so we want to set this flag when we start the operation and ended
+
+02:38.350 --> 02:43.270
+when the operation is completed and we want to display a spinner while this flag is on going.
+
+02:43.870 --> 02:47.230
+Next up, we want to handle any error.
+
+02:49.450 --> 02:51.700
+Messages that might occur.
+
+02:55.090 --> 02:55.540
+OK.
+
+02:55.840 --> 02:57.310
+Handle any error messages.
+
+02:57.730 --> 03:04.900
+Also, we want on app startup, we want to check whether the user is signed in or not and proceed to
+
+03:04.900 --> 03:05.920
+the next screen.
+
+03:05.920 --> 03:09.940
+So on up startup check if user is logged in.
+
+03:11.350 --> 03:12.910
+And then if the user is logged in.
+
+03:16.370 --> 03:19.160
+Move to main app screen.
+
+03:20.240 --> 03:26.060
+OK, so kind of I think these are all the requirements for now, obviously, we will need a bit more
+
+03:26.060 --> 03:29.420
+for logging and the other screens that we're going to implement.
+
+03:29.420 --> 03:37.220
+But for now, for sign up, I think this should be enough and that should cover us for a lot of functionality.
+
+03:37.250 --> 03:37.550
+OK.
+
+03:37.850 --> 03:43.130
+So with that, we're going to end this video here and in the next one, we're going to start to actually
+
+03:43.310 --> 03:46.100
+implement the code for these requirements.

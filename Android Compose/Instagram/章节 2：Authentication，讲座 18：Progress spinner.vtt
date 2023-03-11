@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00.600 --> 00:06.540
+The next thing I would like us to do is I would like us to put a spinner to kind of show the user that
+
+00:06.540 --> 00:13.320
+something is happening in the background, OK, and for that, we have the perfect site here in progress.
+
+00:13.350 --> 00:20.790
+OK, so if we are in progress, if this flag is set to true, then we can show kind of a spinner on
+
+00:20.790 --> 00:22.200
+the Sign-Up screen.
+
+00:22.830 --> 00:23.130
+All right.
+
+00:23.130 --> 00:25.270
+So that will be quite easy to do.
+
+00:25.290 --> 00:27.150
+First of all, let's create the spinner.
+
+00:28.050 --> 00:33.450
+And since we're going to use this spinner in multiple locations throughout our application, I'm going
+
+00:33.450 --> 00:39.030
+to put it here in the main common bits file and I'm going to create a composable here.
+
+00:39.660 --> 00:43.470
+OK, so we're going to call this fun something like common spinner.
+
+00:46.050 --> 00:55.230
+Let's say common progress spinner, OK, so we're going to just show a progress spinner whenever we
+
+00:55.230 --> 00:56.880
+do something in the background.
+
+00:57.300 --> 01:02.310
+Now here I'm going to create a row and a modifier.
+
+01:07.800 --> 01:08.130
+Dot.
+
+01:08.790 --> 01:10.980
+So first of all, we're going to add some alpha.
+
+01:11.010 --> 01:20.370
+I want it a bit transparent, so I'm going to say 0.5 f, then I'm going to add a background color dot
+
+01:20.370 --> 01:21.300
+light gray.
+
+01:21.960 --> 01:27.000
+Okay, so kind of a light gray, transparent color dot clickable.
+
+01:27.570 --> 01:30.140
+So I want to intercept all the clicks.
+
+01:30.150 --> 01:37.710
+OK, so I don't want the user to be able to do anything with the UI while the spinner is go is on the
+
+01:37.710 --> 01:38.100
+screen.
+
+01:38.550 --> 01:42.720
+So I'm going to set clickable enabled equals false.
+
+01:43.650 --> 01:46.470
+OK, and finally fill max size.
+
+01:47.040 --> 01:52.830
+OK, so the spinner is basically going to fill the maximum size and we're going to limit that depending
+
+01:52.830 --> 01:57.330
+on the situation, on the element where we are in the application.
+
+01:58.140 --> 01:58.440
+All right.
+
+01:58.440 --> 02:02.390
+So that is our modifier.
+
+02:02.400 --> 02:10.860
+Now we need to add a horizontal arrangement equals arrangement center and also a vertical alignment,
+
+02:11.250 --> 02:13.470
+also alignment center vertically.
+
+02:14.010 --> 02:19.140
+OK, we want the spinner right in the middle of whatever element we are displayed on top.
+
+02:20.340 --> 02:23.850
+And here I have a circular progress indicator.
+
+02:24.690 --> 02:27.570
+OK, that's a standard composable.
+
+02:28.200 --> 02:34.590
+So basically, this will display a spinner on top of whatever element we would like, and we're going
+
+02:34.590 --> 02:36.600
+to add it to our sign up screen.
+
+02:36.600 --> 02:39.840
+So here I'm going to add it right below.
+
+02:41.410 --> 02:47.560
+Right below this column, but still inside the box, the box is meant to allow us to put something on
+
+02:47.560 --> 02:48.700
+top of this column.
+
+02:48.730 --> 02:52.600
+OK, so here I'm going to have VAR.
+
+02:52.960 --> 02:55.750
+Val Val is loading.
+
+02:57.600 --> 03:06.420
+Is going to be VMD, not in progress, the value that we're going to have an if is loading, then I'm
+
+03:06.420 --> 03:09.090
+simply going to display the common progress spinner.
+
+03:10.850 --> 03:18.290
+And that's pretty much all there is to it, so we just display it here inside our box that is filled
+
+03:18.290 --> 03:21.020
+max size, so the spinner will basically cover the whole screen.
+
+03:21.380 --> 03:23.540
+So let's run the application and test it out.
+
+03:39.410 --> 03:46.040
+OK, so that is running, you already saw the spinner kind of running there while we were retrieving
+
+03:46.040 --> 03:48.170
+the data from the backend API.
+
+03:48.470 --> 03:50.810
+Now let's go ahead and create a new user.
+
+03:50.810 --> 03:58.820
+So let's say a b c a b c at Gmail dot com one two three four five six.
+
+03:59.600 --> 04:05.990
+OK, so if I sign up, I have the spinner in the foreground and then it is.
+
+04:06.350 --> 04:09.370
+It has processed something in the backend.
+
+04:09.380 --> 04:15.470
+We don't see any result on the UI because we haven't implemented that yet, but we can see it in the
+
+04:16.400 --> 04:19.430
+in the Firebase console like we have previously.
+
+04:19.670 --> 04:22.310
+So we know that this is working and now we have a spinner.
+
+04:22.640 --> 04:23.810
+All right, that's it for now.
+
+04:23.840 --> 04:25.460
+I will see you in the next video.

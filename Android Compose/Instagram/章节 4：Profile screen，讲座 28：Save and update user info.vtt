@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.390 --> 00:07.500
+OK, so in this video, we're going to implement the on save functionality for our profile content.
+
+00:07.800 --> 00:15.240
+Now, luckily, we've put in pretty much all the work there is to it for this functionality since in
+
+00:15.240 --> 00:17.910
+our eye IG view model.
+
+00:20.010 --> 00:25.870
+OK, in our view model, we have a function called create or update profile.
+
+00:26.140 --> 00:33.400
+So what we want to do is we want to use this function to update our information for name, username
+
+00:33.400 --> 00:34.330
+and bio.
+
+00:34.510 --> 00:40.420
+We're not going to touch the image URL in this situation because we don't have an image URL yet.
+
+00:40.690 --> 00:48.190
+We just have these three fields that are updatable here name, username and bio.
+
+00:48.790 --> 00:53.290
+All right, so let's go ahead and implement that in our IG view model.
+
+00:53.530 --> 00:57.520
+I'm going to just create a public function down below.
+
+00:57.940 --> 01:10.030
+Fun update profile data that takes a name of type string, a username of type string and a bio of type
+
+01:10.030 --> 01:10.510
+string.
+
+01:12.410 --> 01:16.050
+And this one simply calls create or update profile.
+
+01:16.070 --> 01:21.710
+Now this is a private function, and I'm going to leave it like that simply because this contains the
+
+01:22.310 --> 01:30.410
+business functionality that we don't want really to expose to our users.
+
+01:30.590 --> 01:38.450
+If we extend the application, then you know, it's safer to separate the public function from the private
+
+01:38.600 --> 01:39.320
+operation.
+
+01:39.830 --> 01:47.150
+So I'm going to use this create or update profile call, and I'm going to say name, username and bio.
+
+01:48.650 --> 01:56.930
+OK, so we have that now let's go to our profile in unsafe, we're going to save GM Dot, what did we
+
+01:56.930 --> 01:57.420
+call it?
+
+01:57.440 --> 02:03.740
+Update profile data with name, username and bio.
+
+02:05.120 --> 02:05.470
+OK.
+
+02:05.990 --> 02:15.500
+So that's pretty much all we need to do that should update our information in the backend Firebase UI
+
+02:16.550 --> 02:17.040
+API.
+
+02:17.060 --> 02:17.290
+Sorry.
+
+02:17.510 --> 02:21.900
+So let's go ahead and run the code and test out our new functionality.
+
+02:21.920 --> 02:27.910
+Let's see if we actually get some new data in the backend firebase.
+
+02:27.940 --> 02:34.160
+So here I have my user, Johnny John, as a username and bio.
+
+02:34.880 --> 02:35.750
+So let's have a look.
+
+02:36.560 --> 02:42.470
+Now, edit profile the name, let's change that to John.
+
+02:44.920 --> 02:48.080
+Username John Wick.
+
+02:49.280 --> 02:53.990
+And this is the account of John Wick.
+
+02:55.590 --> 02:56.160
+Why not?
+
+02:56.910 --> 02:59.250
+All right, so let's go ahead and save.
+
+02:59.970 --> 03:04.350
+We get the spinner and you can see here that the information has been updated.
+
+03:04.380 --> 03:06.990
+John John Wick and the bio.
+
+03:07.440 --> 03:09.300
+So that is basically all there is to it.
+
+03:09.300 --> 03:17.670
+Since we've already done the work to update this firestorm information than simply calling the function
+
+03:17.670 --> 03:20.850
+and getting the new data is all we need to do here.
+
+03:21.180 --> 03:28.170
+So that's it for this video in the next one, I think we will work a bit on the user image since we
+
+03:28.170 --> 03:31.650
+want to be able to upload an image for our user.

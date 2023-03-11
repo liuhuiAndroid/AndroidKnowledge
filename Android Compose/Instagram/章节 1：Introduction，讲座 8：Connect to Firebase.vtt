@@ -1,0 +1,247 @@
+WEBVTT
+
+00:01.450 --> 00:08.860
+In this video, we're going to connect our project to Firebase so that we can use Firebase in our project
+
+00:08.860 --> 00:09.640
+as we need.
+
+00:09.880 --> 00:15.320
+Now before we do this, make sure you build or rebuild your project.
+
+00:15.340 --> 00:17.080
+OK, that's important for Firebase.
+
+00:17.410 --> 00:21.160
+And then once you've done that, go to tools and select Firebase.
+
+00:21.580 --> 00:26.410
+This will bring up the assistant that will make connecting to Firebase really, really easy.
+
+00:26.440 --> 00:31.900
+Otherwise, we need to create some manual JSON files, and that's a bit more complex.
+
+00:32.320 --> 00:35.170
+So I'm going to go to cloud the fire store.
+
+00:35.410 --> 00:39.310
+Click on, Get Started and then connect to Firebase.
+
+00:39.340 --> 00:42.580
+OK, so let's go ahead and click on that build.
+
+00:44.540 --> 00:50.090
+And we're just going to wait for the build to finish that should be quite quick.
+
+00:51.720 --> 00:55.950
+All right, once that is done, let's go ahead and connect to Firebase, and that will bring up the
+
+00:55.950 --> 00:57.450
+Firebase console.
+
+00:57.840 --> 01:02.940
+So here you're going to either create a new project or select an existing project.
+
+01:02.940 --> 01:07.950
+For me, I'm just going to select an existing project and connect to that.
+
+01:08.070 --> 01:15.630
+OK, so let's go ahead and we're going to wait for that to connect to our Android Studio.
+
+01:17.380 --> 01:19.120
+And then click on Connect.
+
+01:20.900 --> 01:27.140
+So that will connect our current project to the Firebase project on the backend API.
+
+01:30.160 --> 01:37.690
+If you are using a new project on Firebase, you need to enable the services that you are going to be
+
+01:37.690 --> 01:38.170
+using.
+
+01:38.220 --> 01:44.890
+OK, so for me, for example, I have my project here and I want to enable authentication.
+
+01:44.890 --> 01:51.120
+So here I want to set up a signing method and I want to use email and password.
+
+01:51.130 --> 01:58.420
+So go ahead and enable that and save so we don't need email link that just complicates our flow a little
+
+01:58.420 --> 01:58.720
+bit.
+
+01:59.470 --> 02:03.460
+You could implement this if you wanted to, but that just adds a bit more complexity.
+
+02:03.460 --> 02:07.510
+So we're just going to leave email and password and click on Safe.
+
+02:08.440 --> 02:11.410
+So that has enabled our email and password.
+
+02:11.620 --> 02:14.860
+We also need to enable fire stored database.
+
+02:15.070 --> 02:17.260
+OK, we're going to be using that in our code.
+
+02:17.530 --> 02:25.210
+So go ahead and create a database and we're going to start in test mode since we are kind of building
+
+02:25.210 --> 02:26.770
+our code and practicing.
+
+02:27.370 --> 02:29.110
+We are using test mode.
+
+02:29.110 --> 02:35.260
+If you want to publish your application, you need to set some rules regarding the database, so you
+
+02:35.260 --> 02:36.880
+would need to do production mode.
+
+02:36.910 --> 02:39.220
+But for us, we're just building our code for now.
+
+02:39.220 --> 02:41.080
+So we're doing test mode here.
+
+02:41.650 --> 02:45.580
+OK, so go ahead and click next and we're going to click Enable.
+
+02:47.420 --> 02:55.670
+OK, so we're just waiting for the firestorm to finish processing, and then we'll move on to enabling
+
+02:55.670 --> 02:56.270
+storage.
+
+03:02.070 --> 03:07.290
+All right, so that's all done, so this is the database that we're going to be using.
+
+03:07.530 --> 03:10.800
+And then we need to do the same thing for storage.
+
+03:12.360 --> 03:15.540
+OK, so now for me, this is enabled.
+
+03:16.140 --> 03:17.410
+There's nothing much to it.
+
+03:17.430 --> 03:24.660
+You just click use or whatever the name of the button is and you should have the system set up already.
+
+03:24.960 --> 03:29.270
+OK, for the rules, I think just the default is going to be fine.
+
+03:29.280 --> 03:33.210
+We're still doing in what they call here playgrounds.
+
+03:33.210 --> 03:37.320
+So basically testing and developing our app and not yet publishing it.
+
+03:37.960 --> 03:43.170
+You know, obviously for publishing an application, there's a lot more complexity that goes behind
+
+03:43.170 --> 03:43.650
+the scenes.
+
+03:43.950 --> 03:45.750
+So security and things like that.
+
+03:46.380 --> 03:52.920
+So if you do want to publish a large app, you do need to work with someone who is familiar or you need
+
+03:52.920 --> 03:56.730
+to get more familiar with the rules around Firebase.
+
+03:56.940 --> 04:02.790
+But for our purposes, we're just going to do the basic basic rules are fine.
+
+04:02.850 --> 04:11.040
+That is going to allow us to read, read and write to our database, to our storage and to our authentication.
+
+04:15.060 --> 04:23.850
+OK, now I can go back to my project and we can add the SDK to our project.
+
+04:23.930 --> 04:28.680
+OK, I think this should already be there most of it, but let's go ahead and accept the changes.
+
+04:29.310 --> 04:33.360
+We're going to sink and then wait for that to finish.
+
+04:35.980 --> 04:44.050
+That just basically adds Google services to our project and allows us to use Firebase and Firestorm
+
+04:44.050 --> 04:44.860
+in particular.
+
+04:45.400 --> 04:45.770
+All right.
+
+04:45.790 --> 04:47.980
+So that is mostly done.
+
+04:47.980 --> 04:50.160
+I think it just needs to download a couple of things.
+
+04:51.440 --> 04:51.770
+All right.
+
+04:51.800 --> 04:53.450
+That is basically it.
+
+04:53.750 --> 04:56.600
+Let's have a look here for storage.
+
+04:57.050 --> 04:58.010
+It is connected.
+
+04:58.010 --> 05:00.320
+Let's add cloud storage as well.
+
+05:00.650 --> 05:02.510
+I think that should be already there.
+
+05:02.900 --> 05:05.420
+OK, so let me just open up the app.
+
+05:06.080 --> 05:07.670
+And yes, we have fire store.
+
+05:07.670 --> 05:09.770
+We have storage and we have authentication.
+
+05:09.770 --> 05:11.120
+So that should be fine.
+
+05:11.390 --> 05:13.130
+We are done with this.
+
+05:13.310 --> 05:20.450
+Now we're not going to follow the rest of the assistant steps simply because we will implement them
+
+05:20.450 --> 05:21.250
+in a different way.
+
+05:21.260 --> 05:28.100
+We're going to use hilt to implement them, not directly in our main activity, as the assistant says.
+
+05:28.340 --> 05:29.920
+So don't worry about that.
+
+05:29.930 --> 05:33.410
+We will do that later on in a better way.
+
+05:33.440 --> 05:38.690
+OK, we're not going to use this reference that the assistant recommends.
+
+05:39.320 --> 05:39.650
+All right.
+
+05:39.680 --> 05:41.080
+That's it for Firebase.
+
+05:41.090 --> 05:42.590
+I will see you in the next video.

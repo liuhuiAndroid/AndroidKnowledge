@@ -1,0 +1,283 @@
+WEBVTT
+
+00:00.430 --> 00:07.240
+Hello, everyone, and welcome to this course on building an Instagram like application for Android.
+
+00:07.600 --> 00:13.660
+Now in this first video, I want to give you a quick overview of what we're going to be building and
+
+00:13.660 --> 00:16.150
+how this is basically going to work.
+
+00:16.150 --> 00:21.910
+So we're going to use a lot of cutting edge technologies to build this application.
+
+00:21.910 --> 00:28.630
+We're going to use Jetpack Compose, which was released quite recently by Google.
+
+00:28.960 --> 00:30.240
+So we're going to use it by compose.
+
+00:30.250 --> 00:37.270
+We're going to use NVMe for the architecture and we're going to use Firebase for the backend.
+
+00:37.570 --> 00:42.910
+OK, so that will allow us a lot of flexibility in building our application, but also it will allow
+
+00:42.910 --> 00:45.310
+us to scale the application if we want to.
+
+00:45.360 --> 00:53.290
+So after taking this course, if you want to scale this application, solidify it and publish it, then
+
+00:53.290 --> 00:53.980
+you can do so.
+
+00:53.980 --> 00:58.090
+But in this first video, I just want to give you a quick overview of what we're going to be building
+
+00:58.090 --> 01:02.350
+kind of the high level view of the screens that we're going to work with.
+
+01:02.650 --> 01:06.760
+So here we have our application that is running.
+
+01:07.000 --> 01:09.010
+So I have here a log in screen.
+
+01:09.010 --> 01:15.520
+Of course, log in will connect using Firebase authentication to the backend, and we can switch between
+
+01:15.520 --> 01:18.460
+a login screen and a sign up screen here.
+
+01:18.790 --> 01:20.320
+So let's go ahead and sign up.
+
+01:20.410 --> 01:22.930
+I'm going to create a username you can do.
+
+01:23.140 --> 01:25.370
+You can pretty much write anything you like.
+
+01:25.750 --> 01:31.960
+I'm going to have Kotlin because that's my name and cattle at Gmail dot com.
+
+01:31.990 --> 01:34.410
+Now, keep in mind, this is not a real email.
+
+01:34.420 --> 01:37.300
+This does not belong to me, so please don't send emails there.
+
+01:37.750 --> 01:38.140
+All right.
+
+01:38.560 --> 01:42.790
+And I'm going to set a password and I'm going to click Sign up now.
+
+01:42.820 --> 01:51.850
+This will communicate in the backend with the Firebase authentication to create the user and retrieve
+
+01:51.940 --> 01:53.890
+the data that we need.
+
+01:53.920 --> 01:58.660
+So here we have our basic UI, Instagram like UI.
+
+01:58.870 --> 02:03.740
+We have an image here at the top, which we haven't set yet, so it's going to be a default.
+
+02:04.720 --> 02:05.680
+Unknown user.
+
+02:05.860 --> 02:07.360
+And then we're going to have a feed.
+
+02:07.360 --> 02:15.520
+I've set here a few posts on our on our application just for show right now.
+
+02:16.000 --> 02:23.050
+Here we have a profile screen where we can go ahead and edit our profile.
+
+02:23.230 --> 02:28.840
+So here I can set a image, for example, I can choose this image here.
+
+02:35.220 --> 02:43.080
+And that has been saved on our fire based storage, and now we have it India, so I can set my name
+
+02:43.080 --> 02:45.960
+here and I set a bio.
+
+02:45.990 --> 02:50.820
+This is the profile of in.
+
+02:52.340 --> 02:54.020
+And I can put a.
+
+02:55.410 --> 03:00.480
+Icon here, OK, now I'm going to go ahead and save.
+
+03:01.840 --> 03:07.810
+All right, and if I go back, I have my profile, you can see here I have zero posts for now, I have
+
+03:07.960 --> 03:10.090
+zero followers and zero following.
+
+03:10.360 --> 03:13.510
+So in order to create a post, I'm going to click here.
+
+03:13.810 --> 03:16.540
+Then I'm going to select an image and.
+
+03:17.730 --> 03:23.760
+I'm going to select Bangkok, and I'm going to say Bangkok is awesome.
+
+03:25.370 --> 03:25.970
+Let me just.
+
+03:26.900 --> 03:28.740
+All right, let me type that correctly.
+
+03:28.760 --> 03:29.480
+Awesome.
+
+03:29.870 --> 03:34.130
+OK, and I'm going to click Post now, that's going to upload, of course.
+
+03:38.350 --> 03:44.890
+And now I have my post now, of course, I can post more images or I can edit my profile.
+
+03:45.100 --> 03:46.960
+But let's have a look at other features.
+
+03:46.970 --> 03:56.950
+So for example, we have our home screen, which has a feed of basically of posts that have been posted
+
+03:56.950 --> 03:58.930
+in the last 24 hours.
+
+03:59.200 --> 04:05.290
+Now this will contain basically all the posts as long as I'm not following anybody, right?
+
+04:05.290 --> 04:12.790
+So I have zero zero followers at the moment, so I will see kind of a generic post feeds here.
+
+04:13.030 --> 04:19.000
+But if I go, for example to this post in particular, I can follow Alex.
+
+04:19.480 --> 04:19.960
+OK.
+
+04:20.860 --> 04:26.680
+And then when I go back to my main screen, I only see the posts from my followers.
+
+04:27.310 --> 04:34.260
+OK, so here if I go to my profile, I have one following and the same goes for the followers.
+
+04:34.270 --> 04:37.300
+If somebody follows me, I will have this updated here.
+
+04:37.660 --> 04:39.440
+Now what else can we do?
+
+04:39.460 --> 04:40.570
+We can like a post.
+
+04:40.570 --> 04:42.250
+So for example, I like this post.
+
+04:42.250 --> 04:45.010
+I'm going to double click on it and I have my like.
+
+04:45.010 --> 04:47.620
+If I double click again, I will unlock it.
+
+04:47.770 --> 04:55.180
+OK, so if I double click like if I do a single click here, I will move to a post screen where I can
+
+04:55.180 --> 04:56.650
+see my likes.
+
+04:57.010 --> 05:01.120
+I can see the comment for that post.
+
+05:01.390 --> 05:03.010
+And also, I have my comment.
+
+05:03.010 --> 05:08.230
+So if I go ahead and comment something, Tokyo is cool.
+
+05:10.140 --> 05:13.650
+OK, I comment that I see my comment appear here.
+
+05:13.950 --> 05:20.280
+And if I go back, OK, I can see that we have a comment and a light.
+
+05:20.610 --> 05:20.940
+All right.
+
+05:21.150 --> 05:22.350
+Let's go back.
+
+05:24.070 --> 05:24.490
+All right.
+
+05:25.090 --> 05:34.030
+And again, I have another screen here for searching, so if I search for city search that I get a list
+
+05:34.030 --> 05:38.380
+of POWs now here we can have as many posts as there are in the backend.
+
+05:38.650 --> 05:41.790
+This is a scrolling list.
+
+05:41.800 --> 05:47.890
+OK, so if the posts do not sit on the screen, you will be able to scroll up and see all the posts.
+
+05:48.280 --> 05:54.880
+And here, of course, if I click on a post, then I have the information for that particular post.
+
+05:55.150 --> 05:58.420
+OK, I have here, Maria, which I can follow.
+
+05:58.840 --> 06:03.160
+And then I can go back and I have now two followers.
+
+06:03.700 --> 06:06.910
+So this is the main structure for our application.
+
+06:07.300 --> 06:14.680
+This looks quite simple from kind of an overview perspective, but it will involve quite a lot of technology
+
+06:14.680 --> 06:15.580
+behind the scenes.
+
+06:15.610 --> 06:21.520
+OK, so like I said, we will work with Jetpack Compose, so you will get a very, very good idea of
+
+06:21.520 --> 06:24.100
+how Jetpack Compose works in an application.
+
+06:24.400 --> 06:30.010
+You will see how we integrate just by compose with an empty VM architecture, so you will rely on a
+
+06:30.010 --> 06:33.790
+view model to kind of give us all the data.
+
+06:34.330 --> 06:37.650
+And then of course, we will work with Firebase.
+
+06:37.660 --> 06:45.400
+OK, so we will see Firebase authentication, storage and fire store for kind of the database side of
+
+06:45.400 --> 06:45.820
+things.
+
+06:46.150 --> 06:51.370
+So a lot of technologies, a lot of screens, a lot of functionality, and we will go through it step
+
+06:51.370 --> 06:56.440
+by step and hopefully you will learn a lot in this course and you will get a lot of value from it.
+
+06:56.770 --> 06:59.950
+So that's it for the first video, I will see you in the next one.

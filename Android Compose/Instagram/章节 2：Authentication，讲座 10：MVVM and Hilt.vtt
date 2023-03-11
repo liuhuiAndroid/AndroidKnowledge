@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00.770 --> 00:01.100
+All right.
+
+00:01.130 --> 00:07.520
+So in this video, we're going to lay the foundations for our architecture, and that means we're going
+
+00:07.520 --> 00:14.840
+to have ended GM and our health dependency injection now for health dependency injection.
+
+00:14.840 --> 00:21.020
+We're only going to need that for injecting our Firebase services.
+
+00:21.020 --> 00:26.630
+So we're going to have three services authentication, storage and firestorm.
+
+00:26.780 --> 00:28.070
+OK, that is the database.
+
+00:28.310 --> 00:32.630
+So we're going to use health to inject that into our view model.
+
+00:32.960 --> 00:38.630
+And since we're doing that, let's go ahead and put the kind of foundation for our needle architecture
+
+00:38.630 --> 00:39.230
+as well.
+
+00:39.770 --> 00:40.100
+All right.
+
+00:40.100 --> 00:45.260
+So this is not very difficult to do, especially since we're quite limited in scope.
+
+00:45.260 --> 00:50.870
+So let's go ahead and go and create a new Kotlin file.
+
+00:51.620 --> 00:54.500
+And this is going to be our Instagram.
+
+00:55.800 --> 00:58.530
+Clone application.
+
+00:59.520 --> 01:02.850
+OK, so we need this application class for our hilt.
+
+01:02.950 --> 01:07.920
+OK, and we're going to annotate it with Health Android app.
+
+01:08.850 --> 01:12.780
+OK, now this is going to extend from application.
+
+01:14.320 --> 01:20.720
+OK, so now we have our application class, this is basically the extent of this class, we're not going
+
+01:20.720 --> 01:22.280
+to need it for anything else.
+
+01:22.760 --> 01:25.730
+However, we will need to declare it in our manifest.
+
+01:26.030 --> 01:30.440
+So go ahead and hit double shift and type Android Manifest.
+
+01:31.160 --> 01:31.580
+OK.
+
+01:31.820 --> 01:32.780
+Open up the file.
+
+01:32.780 --> 01:40.610
+And here inside the application, we're going to declare our application file, so it's going to be
+
+01:40.620 --> 01:41.210
+name.
+
+01:41.600 --> 01:47.360
+So Android's common name and this is going to be dot Instagram, clone application or whatever name
+
+01:47.360 --> 01:48.020
+you gave to it.
+
+01:48.800 --> 01:54.770
+Also, since we're in the Android Manifest now, let's go ahead and add the permission for internet.
+
+01:54.770 --> 01:59.930
+So I'm going to have users permission and we're going to have internet here.
+
+02:01.100 --> 02:01.380
+OK?
+
+02:01.400 --> 02:06.110
+Make sure use this permission is outside of the application, but still inside the manifest tag.
+
+02:06.860 --> 02:07.250
+All right.
+
+02:07.250 --> 02:09.920
+So we're done with Android Manifest.
+
+02:09.950 --> 02:13.310
+Now let's go ahead and create our hilt module.
+
+02:13.310 --> 02:20.630
+We're going to need a module because we need to specify how we create or access those services from
+
+02:20.630 --> 02:21.320
+Firebase.
+
+02:21.350 --> 02:27.050
+OK, so let's go ahead and create a new custom file, and I'm going to call this health module.
+
+02:30.080 --> 02:30.540
+OK.
+
+02:32.930 --> 02:40.460
+Now here, I'm going to declare this as a model, and I'm going to annotated with install in.
+
+02:40.910 --> 02:46.460
+But here we don't have the The View model class yet, so I'm just going to leave this empty for now.
+
+02:47.420 --> 02:53.330
+Now inside the class, I'm going to have a at provides with fun provide.
+
+02:54.700 --> 02:58.330
+Authentication, the name here doesn't really matter.
+
+02:58.810 --> 03:01.960
+And this is going to return a Typekit firebase.
+
+03:03.020 --> 03:07.880
+Authentication and that is going to be equal to Firebase.
+
+03:09.870 --> 03:11.190
+Dot us.
+
+03:13.860 --> 03:14.210
+All right.
+
+03:14.250 --> 03:18.150
+So let me import Firebase as well.
+
+03:18.630 --> 03:25.710
+All right, so that is four that is all for authentication that we need to also provide a function,
+
+03:25.710 --> 03:28.350
+provide firestorm.
+
+03:30.720 --> 03:33.570
+This will return any type Firebase fires for.
+
+03:36.370 --> 03:36.870
+OK.
+
+03:37.080 --> 03:41.970
+And it's simply going to be equal to Firebase Dot Firestorm.
+
+03:43.020 --> 03:43.890
+Very simple.
+
+03:44.340 --> 03:46.380
+And finally, we're going to need the storage.
+
+03:46.380 --> 03:51.870
+So app provides fun, provide storage.
+
+03:53.440 --> 04:00.730
+We'll return a fire based storage that is equal to Firebase dark storage.
+
+04:01.810 --> 04:05.950
+OK, very, very simple and kind of straightforward.
+
+04:05.980 --> 04:08.650
+OK, so we have our health module.
+
+04:08.920 --> 04:17.170
+Let's go ahead and create our view model where we need to install these these services.
+
+04:17.200 --> 04:22.660
+OK, so I'm going to create a new cognitive file, and here I have.
+
+04:23.260 --> 04:27.520
+I'm going to call this simply ECG view model.
+
+04:28.870 --> 04:36.370
+OK, so this is my Instagram view model, and this will extend from view model.
+
+04:38.690 --> 04:41.510
+All right, we now have the class, so let's go in.
+
+04:42.170 --> 04:44.030
+Health module and declare it here.
+
+04:44.330 --> 04:45.350
+So I'm going to have.
+
+04:45.980 --> 04:48.590
+Actually, we don't need the class itself.
+
+04:48.590 --> 04:51.110
+We just need to view model components.
+
+04:51.110 --> 04:54.590
+My mistake, so do might model component double colon class.
+
+04:54.950 --> 04:56.990
+This just says that we need to.
+
+04:57.260 --> 05:05.750
+We require this module to provide whatever services we declare to a view model type of model components.
+
+05:05.780 --> 05:06.170
+OK.
+
+05:06.860 --> 05:13.820
+If you're not familiar what with what the components, modules and so on me, check out my other courses
+
+05:13.820 --> 05:15.860
+on dagger and Hilts.
+
+05:15.860 --> 05:19.160
+Those are specifically designed to teach you that.
+
+05:19.640 --> 05:20.690
+All right, so vehemently.
+
+05:20.700 --> 05:21.730
+Component here.
+
+05:21.740 --> 05:28.190
+Now let's go to our review model, and here we're going to declare this with an annotation at Health
+
+05:28.190 --> 05:29.360
+View model.
+
+05:30.260 --> 05:38.210
+OK, we have our Hillview model and this will allow us to inject whatever services we require inside
+
+05:38.210 --> 05:39.100
+the constructor.
+
+05:39.110 --> 05:44.080
+So I'm going to have right after the IG view model, but before the column here, I'm going to have
+
+05:44.270 --> 05:45.050
+to inject.
+
+05:48.980 --> 05:49.410
+OK.
+
+05:50.150 --> 05:50.890
+Constructeur.
+
+05:52.640 --> 05:56.360
+OK, let's make sure that we import this injection.
+
+05:57.380 --> 06:02.400
+OK, so we have our constructor and here we declare these three services that we need.
+
+06:02.420 --> 06:06.140
+So Val, all of type Firebase calls.
+
+06:08.250 --> 06:15.120
+OK, we have Val DB is going to be Firebase Fire Storm.
+
+06:16.420 --> 06:23.560
+And the oil storage is going to be a tight, fire based storage.
+
+06:25.190 --> 06:25.550
+All right.
+
+06:25.580 --> 06:29.810
+Excellent, so we have our module, we have our view model.
+
+06:30.080 --> 06:37.910
+So now these variables are going to be injected here, OK, right?
+
+06:37.920 --> 06:42.590
+So we have that the last piece of the puzzle is in our main activity.
+
+06:42.950 --> 06:47.180
+We're going to declare this as Android's entry point.
+
+06:47.270 --> 06:51.650
+OK, so we're going to let him know that we want injection done here.
+
+06:52.400 --> 06:56.300
+I'm going to remove this greeting composable.
+
+06:58.020 --> 07:07.560
+When you remove it from here, and I just want to declare another composable fun Instagram app.
+
+07:09.700 --> 07:10.140
+OK.
+
+07:10.390 --> 07:15.790
+And I'm going to call it here in my phone, creates Instagram.
+
+07:17.800 --> 07:20.740
+And let's call it in the preview as well.
+
+07:23.350 --> 07:23.680
+All right.
+
+07:24.220 --> 07:34.700
+So all I want to do here is I want to validate the fact that I get a view model that that is created.
+
+07:34.720 --> 07:39.820
+So I'm going to have now VM is going to be hilt view model.
+
+07:40.790 --> 07:43.010
+And here I need to provide the type.
+
+07:44.020 --> 07:46.720
+And this is going to be IG view model.
+
+07:47.820 --> 07:55.020
+OK, so that's all we need to do for the system to create the view model for us and pass it into this
+
+07:55.020 --> 07:55.620
+variable.
+
+07:55.920 --> 08:02.010
+OK, I'm just going to debug here to make sure that everything is fine, then it's a vote equals zero
+
+08:02.010 --> 08:08.310
+so that I can stop it at this line and let's go ahead and run the code in debug mode.
+
+08:08.670 --> 08:15.150
+And if all goes well, we will have an instance of the new model, which means that our functionality,
+
+08:15.150 --> 08:19.800
+our health functionality, is working as expected and.
+
+08:21.070 --> 08:26.980
+Right, and we will be able to continue on with developing the rest of the application.
+
+08:40.860 --> 08:45.630
+OK, so we can see here that we have a new model created.
+
+08:45.660 --> 08:50.530
+OK, so all is well, our hilt functionality is working.
+
+08:50.550 --> 08:53.730
+Our view model functionality is working as well.
+
+08:54.210 --> 08:54.550
+All right.
+
+08:54.570 --> 08:55.680
+That's it for this video.
+
+08:55.690 --> 08:57.000
+I'll see you in the next one.

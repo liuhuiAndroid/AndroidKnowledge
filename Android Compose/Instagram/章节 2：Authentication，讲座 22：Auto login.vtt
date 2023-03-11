@@ -1,0 +1,301 @@
+WEBVTT
+
+00:00.270 --> 00:08.820
+All right, so the final piece of the puzzle is to automatically move the user from a authentication
+
+00:08.820 --> 00:12.120
+screen to some other screen in our application.
+
+00:12.300 --> 00:12.660
+OK.
+
+00:12.870 --> 00:20.760
+And we will do that either if the user logs in, if they sign in or importantly, if they are automatically
+
+00:20.760 --> 00:22.380
+signed in by Firebase.
+
+00:22.410 --> 00:24.390
+OK, so first thing to do.
+
+00:24.690 --> 00:27.360
+Let's go in our IG view model at the top.
+
+00:27.870 --> 00:33.570
+Inside in it, I'm going to comment out this all star sign out so we don't sign out automatically when
+
+00:33.570 --> 00:34.470
+we start the app.
+
+00:35.040 --> 00:41.190
+Now let's create a new screen that is very basic for now, but it will serve as a destination for us
+
+00:41.190 --> 00:42.420
+to move the user to.
+
+00:42.810 --> 00:49.410
+So here in us, actually not enforced, but in mean, I'm going to create a new file.
+
+00:50.910 --> 00:57.060
+So it's not a resource file, just a new Coplan file, and I'm going to call this feed screen.
+
+00:57.960 --> 00:59.530
+OK, make sure this is a file.
+
+00:59.850 --> 01:09.630
+So here we're going to create a composable fun feed screen that it takes a nap, hosts NAF controller
+
+01:09.630 --> 01:13.830
+and a VM as its view model.
+
+01:14.220 --> 01:17.520
+And here, just to see that we are on the correct screen, let's put a text.
+
+01:19.060 --> 01:22.090
+And we will just say, feed, scream.
+
+01:23.020 --> 01:27.430
+So what we want to do is we want you to move the user to this screen.
+
+01:27.610 --> 01:33.820
+Now we already have the correct method to move the user.
+
+01:33.820 --> 01:35.510
+Where is that in the main common bits?
+
+01:35.530 --> 01:37.540
+So we have here navigates to.
+
+01:38.050 --> 01:39.580
+We need a destination, right?
+
+01:39.580 --> 01:43.120
+So we do the destination in the main activity.
+
+01:43.130 --> 01:44.650
+We need to add it here.
+
+01:45.070 --> 01:54.650
+So object feed of the type destination screen with a route or route feed.
+
+01:56.110 --> 01:58.270
+OK, we need to add it's done below in the nav.
+
+01:58.270 --> 02:00.040
+Host composable.
+
+02:01.950 --> 02:08.110
+Destination screen, dot seeds, dot, root and feed.
+
+02:08.130 --> 02:08.820
+Screen.
+
+02:10.550 --> 02:19.340
+With NAF controller left controller and the AM all right, so we have we have created our destination
+
+02:19.760 --> 02:27.290
+now we need a method that is common for both log in and sign up so that we can move to that particular
+
+02:27.290 --> 02:27.740
+screen.
+
+02:27.980 --> 02:29.660
+And we do that in Maine.
+
+02:29.660 --> 02:30.530
+Common bits.
+
+02:31.100 --> 02:38.120
+So down below somewhere we can create a composable fun chick.
+
+02:39.400 --> 02:40.210
+Signed in.
+
+02:42.630 --> 02:46.170
+With a VMM of type I.D. view model.
+
+02:47.870 --> 02:52.250
+And we will need enough controller as well, OK, because we need to perform the moves.
+
+02:54.520 --> 02:57.460
+OK, now check signed, then, how do we do this?
+
+02:57.460 --> 03:01.090
+So first of all, let's say Val already logged in.
+
+03:02.920 --> 03:04.030
+Because remember.
+
+03:06.310 --> 03:11.020
+And here we have that's important to remember mutual states of.
+
+03:15.740 --> 03:16.250
+False.
+
+03:16.760 --> 03:19.370
+So at the moment, we are not locked in.
+
+03:19.860 --> 03:26.000
+Well, let's call it signed in equals M Dot signed end of value.
+
+03:29.400 --> 03:29.760
+All right.
+
+03:30.000 --> 03:33.180
+Now, if signed in.
+
+03:34.360 --> 03:38.080
+And not already logged in.
+
+03:38.430 --> 03:43.420
+OK, we don't want to do this operation multiple times, we just want to do it one time.
+
+03:45.510 --> 03:52.340
+Otherwise, every time this composable refreshes, we will send the user again and again to to the Finn's
+
+03:52.380 --> 03:54.420
+feed screen, so we just want to do this one time.
+
+03:54.660 --> 04:00.930
+So now we can say already logged in dog value equals truth so that we don't do this again and we can
+
+04:00.930 --> 04:07.590
+say enough controller dot navigate to destination screen.
+
+04:10.620 --> 04:14.520
+Dot seeds, dot roots.
+
+04:14.940 --> 04:23.820
+Now here, the reason I'm not using the same method is because I want to remove every composable from
+
+04:23.820 --> 04:26.710
+my back stack when I move to the feed screen.
+
+04:26.730 --> 04:31.940
+I don't want to have any, you know, logging fragment or sign up fragment.
+
+04:31.950 --> 04:33.180
+I just want to remove everything.
+
+04:33.330 --> 04:36.960
+So to do that, we need to say pop up to zero.
+
+04:36.990 --> 04:37.890
+OK, we pop up.
+
+04:38.190 --> 04:44.790
+We pop every fragment from the back stack or every composable from the back stack and just leave the
+
+04:44.790 --> 04:46.920
+feed screen if we were to call this.
+
+04:47.160 --> 04:50.790
+It would simply add the feed screen on top of everything else.
+
+04:50.790 --> 04:57.180
+And when a user clicks back then, we go back to the to the sign up screen and we don't want that.
+
+04:57.300 --> 05:00.450
+OK, so we want to pop everything now.
+
+05:00.450 --> 05:08.340
+Once we have this, we can simply use it in our log in and sign up screen at the top here.
+
+05:08.790 --> 05:11.560
+And we just close these imports at the top.
+
+05:11.580 --> 05:19.790
+I can simply say check signed in with Vim and NES controller.
+
+05:21.380 --> 05:21.730
+OK.
+
+05:22.250 --> 05:24.500
+And I can do the same thing for sign up.
+
+05:26.980 --> 05:32.860
+Cheque signed in with VM and controller nav controller.
+
+05:35.120 --> 05:41.900
+So that means now when we run the app, we should automatically get sent to the seed screen, so let's
+
+05:41.900 --> 05:42.560
+try it out.
+
+05:59.410 --> 06:05.620
+OK, so you can see that we got sent directly to the feed screen, that is because in the IG view model,
+
+06:05.620 --> 06:12.730
+in the in it we automatically check whether the user is logged in or not, and Firebase authentication
+
+06:12.730 --> 06:15.160
+will tell us if there is a current user or not.
+
+06:15.490 --> 06:22.210
+If we don't want this functionality, then we can enable sign out and we do the signing process.
+
+06:22.210 --> 06:30.040
+And actually, I want to check this sign out as well because I want to see the whole functionality from
+
+06:30.040 --> 06:32.800
+creating a user to ending up on the feed screen.
+
+06:32.800 --> 06:35.560
+I want to make sure that it is working correctly.
+
+06:35.950 --> 06:45.940
+So let's say Andrew as the username Andrew adds Gmail dot com and one two three four five six.
+
+06:46.510 --> 06:46.960
+OK.
+
+06:47.350 --> 06:53.260
+So in the back end, we're going to create some data when that comes back successful that we should
+
+06:53.260 --> 06:55.240
+end up on the feed screen.
+
+06:59.920 --> 07:10.690
+And success, we have created a user in our backend API, so let's check it here authentication we have
+
+07:10.960 --> 07:14.800
+Andrew and the Fire Store database.
+
+07:15.550 --> 07:17.650
+We have a user, Andrew.
+
+07:17.920 --> 07:18.490
+Let's see.
+
+07:18.490 --> 07:21.010
+This is the one, Andrew with a user ID.
+
+07:21.550 --> 07:24.700
+So exactly what we were expecting to happen.
+
+07:25.240 --> 07:31.960
+So at this point, we are pretty much done with authentication unless there are some bugs that will
+
+07:31.960 --> 07:33.070
+come to later.
+
+07:33.070 --> 07:36.370
+If I find them, or you can raise them yourself.
+
+07:37.090 --> 07:43.840
+Unless we have that, then authentication is pretty much done and we can move on to some more, maybe
+
+07:43.840 --> 07:51.550
+more interesting parts of our application, which is actually building our UI for Instagram.
+
+07:51.550 --> 07:56.140
+So posts and comments and likes and user profiles and so on and so forth.
+
+07:56.710 --> 07:57.040
+All right.
+
+07:57.040 --> 07:58.060
+So that's it.
+
+07:58.060 --> 08:04.150
+I hope you are enjoying the course so far and I will see you in the next section of our course.

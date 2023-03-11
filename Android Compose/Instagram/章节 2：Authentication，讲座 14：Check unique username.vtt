@@ -1,0 +1,448 @@
+WEBVTT
+
+00:00.960 --> 00:04.320
+All right, so let's get started with our up functionality.
+
+00:04.350 --> 00:08.880
+So the first thing that I would like to put in place is I would like to create a new package here called
+
+00:08.880 --> 00:09.510
+data.
+
+00:10.140 --> 00:14.730
+And inside the data package, we're going to store the data types that we're going to be using in our
+
+00:14.730 --> 00:15.320
+application.
+
+00:15.330 --> 00:24.090
+So the first one we need to do is we need to have a file, a data class for our user data.
+
+00:24.600 --> 00:26.580
+OK, make sure this is a data class.
+
+00:27.600 --> 00:35.940
+OK, so for the user data, we're going to have a few different variables so vile user ID of type string
+
+00:36.030 --> 00:38.400
+Nullarbor and equals no.
+
+00:38.730 --> 00:45.810
+The reason why we will add no liability to all the variables here are all the parameters is because
+
+00:45.810 --> 00:55.680
+when we retrieve data from Firebase, Firebase requires us to be requires the data type to be to be
+
+00:55.680 --> 00:59.400
+able to instantiated right to be able to have an empty constructor.
+
+00:59.640 --> 01:05.340
+So we need to provide a value by default for each parameter that we pass and that value is going to
+
+01:05.340 --> 01:09.900
+be null and we're going to handle this null ability later on in our application.
+
+01:10.620 --> 01:10.950
+All right.
+
+01:10.950 --> 01:16.380
+So we have a user ID, we have a name also string.
+
+01:18.090 --> 01:22.800
+We have a user name without user name string.
+
+01:22.830 --> 01:27.090
+Now keep in mind, the user name is unique, but the name is not necessarily unique.
+
+01:27.220 --> 01:32.790
+OK, now we have a image URL.
+
+01:35.070 --> 01:36.750
+Of type string.
+
+01:40.060 --> 01:40.530
+OK.
+
+01:40.840 --> 01:48.370
+I do believe that we need to set VARs here, so let me change that now because as I said, Firebase
+
+01:48.370 --> 01:54.400
+needs to create an empty constructor and then set these values later on, so we need to be able to change
+
+01:54.400 --> 01:54.700
+these.
+
+01:55.060 --> 01:59.530
+So I'm going to do VARs from now on VAR Bio.
+
+01:59.920 --> 02:06.730
+OK, so we need to store some bio information for each user string as well.
+
+02:07.510 --> 02:16.870
+And then later on in our code, we're going to have a list of follow followings so people that we are
+
+02:16.870 --> 02:17.500
+following.
+
+02:17.710 --> 02:19.930
+OK, so I'm going to add the following.
+
+02:21.990 --> 02:28.680
+There's going to be a list of strings, these strings are going to be user IDs, so list of string,
+
+02:28.680 --> 02:32.160
+but the list itself can be null and in fact is null by default.
+
+02:34.170 --> 02:41.340
+Also, let's added now we're going to need a function to convert this data type to a map so that we
+
+02:41.340 --> 02:46.140
+can store it later on in our firestorm.
+
+02:46.170 --> 02:49.350
+OK, so firestorm, the way it works is we have collections.
+
+02:50.220 --> 02:52.200
+This is going to be, for instance, users.
+
+02:53.260 --> 02:54.250
+Something like this.
+
+02:55.900 --> 03:02.530
+OK, and here we have a document, so document is going to be the individual user that we're going to
+
+03:02.560 --> 03:03.070
+have.
+
+03:03.490 --> 03:05.320
+And the user will have some fields.
+
+03:05.320 --> 03:09.310
+So for instance, user ID or let's say, user name.
+
+03:10.720 --> 03:18.550
+John, whatever it needs to be, right, so this is the general structure of our firestorms, so we
+
+03:18.550 --> 03:20.350
+have collections with documents.
+
+03:20.620 --> 03:24.430
+These documents can contain fields or more collections.
+
+03:24.640 --> 03:25.000
+OK.
+
+03:25.390 --> 03:31.180
+I'm just going to remove this collection for now because it's going to be created automatically and
+
+03:31.180 --> 03:34.030
+we actually want to test that it's correctly created.
+
+03:35.140 --> 03:42.640
+And so, like I said, we need to convert this data type to a map so that it can be easily stored in
+
+03:42.790 --> 03:43.600
+Firebase.
+
+03:43.600 --> 03:45.640
+So fun to map.
+
+03:47.500 --> 03:49.120
+Is going to be map of.
+
+03:51.220 --> 03:54.010
+And here we covered everything, so we have main.
+
+03:55.610 --> 03:57.230
+To Main.
+
+03:59.110 --> 04:03.600
+We have username to username.
+
+04:05.640 --> 04:10.770
+At the top, we have user I.D. to use our I.D..
+
+04:13.030 --> 04:15.940
+OK, what else we have, we have image URL.
+
+04:18.180 --> 04:19.620
+To image URL.
+
+04:20.670 --> 04:21.780
+We have bio.
+
+04:24.150 --> 04:28.320
+To bio and we have following.
+
+04:30.390 --> 04:32.340
+To following.
+
+04:33.090 --> 04:36.750
+OK, so we convert this to a map that we will use later on.
+
+04:37.140 --> 04:37.440
+All right.
+
+04:37.440 --> 04:39.040
+So we have our data type.
+
+04:39.070 --> 04:43.920
+Now let's go to sign up screen and here when we click a button.
+
+04:44.670 --> 04:55.320
+OK, we have this modifier padding and we can add, Oh, we have already the on click OK, so we can
+
+04:55.320 --> 04:59.520
+use this on click to save GM Dot on sign up.
+
+04:59.550 --> 05:01.200
+This is the method that we want.
+
+05:01.530 --> 05:05.130
+And here we will pass the three parameters that we have.
+
+05:05.130 --> 05:09.360
+So we have user name states dot value dot text.
+
+05:10.470 --> 05:13.260
+We have email states.
+
+05:13.260 --> 05:15.060
+Dot value dot text.
+
+05:16.250 --> 05:21.380
+And we have passed a state dot value dot text.
+
+05:21.540 --> 05:24.650
+OK, so we need to create this on sign up method.
+
+05:25.400 --> 05:28.240
+So let's go to our view model and create this method.
+
+05:28.250 --> 05:31.790
+So we're going to see fun on sign up.
+
+05:33.490 --> 05:42.580
+And here we have user username of type, string, email of type, string and parcel of type string.
+
+05:44.210 --> 05:47.810
+OK, so we have our own sign up if we have a look at the sign up screen.
+
+05:48.170 --> 05:50.640
+This has solved our error here.
+
+05:52.790 --> 05:55.310
+OK, so we have our own sign up.
+
+05:55.310 --> 06:02.840
+So let's go ahead and put in place some variables at the top that will contain some information that
+
+06:02.840 --> 06:04.820
+the viewers can access.
+
+06:04.850 --> 06:08.540
+OK, so first of all, we're going to have Val signed in.
+
+06:08.930 --> 06:14.810
+This is going to be the flag that tells us if we are signed in or not, this is going to be a mutable
+
+06:15.290 --> 06:16.550
+state of.
+
+06:17.780 --> 06:20.090
+And we're going to have false by default.
+
+06:20.090 --> 06:21.890
+So we are not signed in by default.
+
+06:22.670 --> 06:25.340
+We're going to have a flag for in progress.
+
+06:26.430 --> 06:32.290
+OK, if the operation is in progress again, mutable state of false.
+
+06:32.300 --> 06:34.760
+OK, so by default, we are not in progress.
+
+06:35.330 --> 06:41.270
+And then we're going to have user data that's going to be mutable state of.
+
+06:42.290 --> 06:45.770
+And here by default, we're going to have no.
+
+06:46.070 --> 06:51.740
+But since we have no, we have to specify the type of data that we get user data.
+
+06:52.610 --> 06:58.790
+Make sure you import the correct path here package.
+
+06:59.120 --> 07:02.420
+I mean, to say, OK, so this is going to be knowable.
+
+07:02.420 --> 07:05.330
+So we by default make it null.
+
+07:06.760 --> 07:10.480
+OK, so we have our flags here.
+
+07:10.780 --> 07:17.740
+The first thing we need to do, like we said, is we need to check whether that username is unique or
+
+07:17.740 --> 07:18.190
+not.
+
+07:18.220 --> 07:24.760
+OK, so here on sign up, we can start to access our users collection.
+
+07:25.210 --> 07:33.880
+For that, let's go ahead, by the way and declare our constant Val users is going to be users.
+
+07:33.910 --> 07:37.210
+This is the name of the collection that we're going to use later on.
+
+07:37.960 --> 07:38.340
+All right.
+
+07:38.350 --> 07:45.910
+So here, first of all, we can set the in-progress flag to true because we are starting some process
+
+07:47.080 --> 07:50.650
+through Oh, sorry, but the value is going to be true.
+
+07:51.910 --> 08:00.590
+Now we're going to access this particular username from Firebase Fire Store and check if it exists.
+
+08:00.610 --> 08:01.310
+So we're going to say.
+
+08:02.380 --> 08:06.850
+Keep in mind, that's how we access the Fire Store DVD collection.
+
+08:07.240 --> 08:12.390
+Users dot where equal to.
+
+08:12.820 --> 08:21.730
+So we're checking the field with the name username and we're checking username parameter dot get.
+
+08:22.660 --> 08:26.920
+And here we will attach to listeners' add on success listener.
+
+08:28.420 --> 08:32.320
+And we will have add on failure listener.
+
+08:34.170 --> 08:43.160
+For the add on and on success listener, we have here eight documents, so the returned documents for
+
+08:43.440 --> 08:44.640
+from this operation.
+
+08:44.940 --> 08:48.600
+And we need to check whether this collection is empty.
+
+08:48.600 --> 08:54.390
+So if this collection is empty, it means that we don't have the username in our database so we can
+
+08:54.390 --> 09:01.890
+proceed if documents dot size greater than zero.
+
+09:04.180 --> 09:06.430
+OK, so here we have a problem.
+
+09:06.820 --> 09:11.650
+We have an exception that we need to let the user know that something has happened.
+
+09:12.040 --> 09:14.800
+For that, we're going to create a function down below.
+
+09:15.250 --> 09:16.960
+Now we're going to implement a bit later.
+
+09:17.260 --> 09:21.040
+The function is going to be handle exception.
+
+09:23.900 --> 09:30.290
+OK, and the handle exception function will take a couple of parameters, so first of all, an exception.
+
+09:31.600 --> 09:38.590
+Of type exception that can be no and is not by default and a custom message.
+
+09:40.470 --> 09:42.960
+That we want to pass to our user.
+
+09:45.210 --> 09:47.310
+And that is an empty string by default.
+
+09:47.880 --> 09:52.890
+So for now, we're not going to do anything here, but we're just going to reference this and we're
+
+09:52.890 --> 09:54.600
+going to say handle exception.
+
+09:54.960 --> 10:01.530
+We don't actually have an exception to pass, but we can send the custom message the user name already
+
+10:02.130 --> 10:02.790
+exists.
+
+10:04.060 --> 10:09.720
+OK, and we set the in progress dot value to false.
+
+10:10.380 --> 10:12.000
+OK, so the username already exists.
+
+10:12.180 --> 10:16.080
+We have to let the user know that and we can proceed.
+
+10:16.650 --> 10:18.690
+We can let the user create a new username.
+
+10:19.950 --> 10:26.670
+However, if this is false, so if the user name is not in the database already, then we can create
+
+10:26.670 --> 10:33.150
+the user so we can say auth dot, create user name with email and password.
+
+10:33.910 --> 10:37.110
+And here we pass the email and pass.
+
+10:39.660 --> 10:42.330
+And on complete listener.
+
+10:44.640 --> 10:52.050
+We have a task, so here we have two options if Task Dot is successful.
+
+10:55.310 --> 10:56.750
+Then what do we do?
+
+10:56.780 --> 11:02.660
+Well, first of all, we say signed in dot value is going to be true.
+
+11:04.850 --> 11:08.540
+And then we can create profile.
+
+11:10.030 --> 11:14.920
+Now else, it means we have an exception, so we handle the exception.
+
+11:15.160 --> 11:20.500
+This time we do have access to the actual exceptions, so we can say task dot exception.
+
+11:22.160 --> 11:22.630
+OK.
+
+11:22.970 --> 11:28.520
+And we can set a custom message we can say site sign up failed.
+
+11:30.360 --> 11:40.860
+OK, with that at the end, we can say in progress, dot value equals false.
+
+11:41.100 --> 11:44.790
+So whatever happens here, the process has completed.
+
+11:45.300 --> 11:45.750
+OK.
+
+11:47.070 --> 11:47.480
+Right.
+
+11:47.490 --> 11:52.710
+So we're going to pause here and we're going to continue on in the next video.

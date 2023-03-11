@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.550 --> 00:05.680
+All right, so in this video, we're going to create a login screen and we're going to also implement
+
+00:05.680 --> 00:09.670
+the navigation between the logging screen and the sign up screen.
+
+00:09.700 --> 00:11.290
+OK, so we can move back and forth.
+
+00:11.920 --> 00:12.190
+All right.
+
+00:12.190 --> 00:13.040
+So let's get started.
+
+00:13.060 --> 00:16.540
+We're going to go ahead and create a new codling file.
+
+00:16.870 --> 00:19.270
+I'm going to call this login screen.
+
+00:20.500 --> 00:24.730
+Make sure that's a file so that it doesn't create the class for us, and then we're going to create
+
+00:24.730 --> 00:29.770
+a composable full log in screen.
+
+00:30.790 --> 00:35.650
+Now we're going to need a couple of parameters, just like we did for the signup screen.
+
+00:36.100 --> 00:40.930
+So we're going to need the nav controller to navigate and we're going to need the view model as well.
+
+00:41.770 --> 00:46.930
+OK, we're not going to use them in this video, but of course, we need those to implement the login
+
+00:46.930 --> 00:47.770
+screen later on.
+
+00:48.550 --> 00:55.310
+Now here, and I'm going to create a text view just to be able to move between this screen and the other.
+
+00:55.330 --> 01:00.970
+And I'm just going to copy the text view from here, OK, from the sign up screen.
+
+01:01.330 --> 01:03.220
+Already, a user go to log in.
+
+01:03.550 --> 01:09.760
+It's going to be the same text view, but with a different message and a different clickable.
+
+01:09.790 --> 01:14.770
+OK, so here, instead of this message, I'm going to say something like new here.
+
+01:15.640 --> 01:19.570
+Go to sign up and an arrow.
+
+01:20.410 --> 01:20.790
+All right.
+
+01:20.800 --> 01:27.920
+So we have our login screen now we need to add it to our navigation in our main activity.
+
+01:27.940 --> 01:34.130
+OK, so at the top here we have destination screen, so we need another object log in.
+
+01:35.170 --> 01:39.730
+That is a destination screen with the root log.
+
+01:40.840 --> 01:43.480
+OK, and we need to add it to our nav host.
+
+01:43.780 --> 01:49.930
+So composable destination screen dot logging dot root.
+
+01:51.700 --> 01:57.070
+And then log in screen with the nav controller.
+
+01:58.700 --> 02:00.350
+And the VM.
+
+02:02.200 --> 02:05.830
+OK, so we can now navigate between the two.
+
+02:05.860 --> 02:11.640
+So let's go ahead and implement a navigation function that we can call throughout our application,
+
+02:11.650 --> 02:16.840
+OK, we're going to need to move through different screens from many places in our app.
+
+02:17.080 --> 02:21.820
+So that means we're going to add it to our main common bits file.
+
+02:22.390 --> 02:27.100
+So here I'm going to say not a composable, but just a simple function.
+
+02:27.670 --> 02:29.290
+Navigate to.
+
+02:31.380 --> 02:38.940
+NAF controller, and we need a destination which is a destination screen.
+
+02:42.300 --> 02:47.370
+All right, so let's go ahead and implement this, we're just going to call the NAF controller dot,
+
+02:47.370 --> 02:57.300
+navigate to our destination dark roots with a couple of parameters and that those are going to be pop
+
+02:57.300 --> 02:57.870
+up to.
+
+03:00.300 --> 03:08.460
+Destination dog roots and launch single top equals true.
+
+03:08.940 --> 03:15.540
+Now the reason for these parameters is that, first of all, we may have a user that kind of jumps back
+
+03:15.540 --> 03:19.600
+and forth multiple screens, and we don't want to open the same screen multiple times.
+
+03:19.670 --> 03:25.920
+OK, so we just need to pop up the back stack to that particular screen and launch it a single time.
+
+03:25.920 --> 03:29.850
+That means we pop up to that screen, but we don't launch a new screen.
+
+03:30.090 --> 03:32.340
+We just use the existing one.
+
+03:32.550 --> 03:32.860
+OK.
+
+03:32.880 --> 03:40.530
+That will basically maintain our state and make sure that we don't have a large number of screens in
+
+03:40.530 --> 03:41.490
+our back stack.
+
+03:42.330 --> 03:50.470
+OK, so we have our navigate to function so we can actually implement that in the log in screen inside
+
+03:50.470 --> 03:51.720
+the clickable here.
+
+03:52.140 --> 03:54.150
+We're going to say navigate to.
+
+03:56.220 --> 04:04.110
+And we're going to pass the NAF controller, and we're going to pass a destination's green dot sign
+
+04:04.110 --> 04:04.320
+up.
+
+04:05.500 --> 04:10.870
+OK, so we need to navigate to sign up, and we're going to do the same thing in the sign up screen
+
+04:11.800 --> 04:12.310
+here.
+
+04:12.550 --> 04:14.590
+We're going to see navigate to.
+
+04:15.160 --> 04:19.480
+We're going to pass the move controller and destination screen.
+
+04:21.550 --> 04:21.970
+Dot.
+
+04:22.060 --> 04:22.660
+Log in.
+
+04:23.470 --> 04:28.870
+OK, so we're just going to allow the user to move back and forth between log in and sign up.
+
+04:29.350 --> 04:30.390
+So that's pretty much it.
+
+04:30.400 --> 04:34.750
+Let's go ahead and try out the application and see if we can move between the screens.
+
+04:48.540 --> 04:55.820
+All right, so we are in sign up if I click here, I go to log in screen, which is tell me you can
+
+04:55.820 --> 05:00.200
+go to sign up so that I can move back and forth between the two.
+
+05:01.040 --> 05:01.370
+All right.
+
+05:01.370 --> 05:03.650
+So that is navigation implemented.
+
+05:03.650 --> 05:07.460
+And I think in the next video, we'll start to implement our login screen.
+
+05:07.520 --> 05:08.210
+I will see you there.

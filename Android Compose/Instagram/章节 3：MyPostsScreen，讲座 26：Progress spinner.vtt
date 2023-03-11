@@ -1,0 +1,64 @@
+WEBVTT
+
+00:00.180 --> 00:08.520
+One thing that I would like to add to this profile, this my posts page or screen is that when we first
+
+00:08.520 --> 00:13.440
+arrive at this screen, we want to display a spinner while the image is loading.
+
+00:13.680 --> 00:19.710
+Keep in mind that we have accessed here the is loading flag, but we haven't actually used it.
+
+00:20.070 --> 00:27.750
+So what I would like to do is I would like to go in the my post screen composable at the end, I'm going
+
+00:27.750 --> 00:30.690
+to add and if is loading.
+
+00:33.180 --> 00:36.420
+I'm going to add a common progress spinner.
+
+00:36.960 --> 00:44.010
+OK, so we wanted this play a common spinner, if the flag is loading and when that is said to false,
+
+00:44.010 --> 00:46.410
+then that will not be shown.
+
+00:46.770 --> 00:55.410
+And in order to see this better, I'm going to go to my main common bits here in cheek, signed in and
+
+00:55.410 --> 01:03.270
+I'm going to change the destination from feeds to my posts so that we go straight to the screen and
+
+01:03.270 --> 01:04.890
+we see the spinner more clearly.
+
+01:05.250 --> 01:06.690
+So let's go ahead and run this.
+
+01:07.680 --> 01:13.740
+And hopefully, we will end up on the screen with kind of a spinner happening while it's retrieving
+
+01:13.740 --> 01:14.340
+some data.
+
+01:16.810 --> 01:21.820
+OK, so the data, I think, is already there because we get the information here, but the spinner
+
+01:22.060 --> 01:27.580
+is happening in the background while the data is being retrieved by the view model.
+
+01:27.610 --> 01:34.650
+OK, so we have now as spinner as well to tell the user that something is happening in the background
+
+01:34.660 --> 01:39.160
+if that takes a bit longer to retrieve to show the information.
+
+01:39.970 --> 01:40.340
+All right.
+
+01:40.360 --> 01:41.500
+That's it for this video.
+
+01:41.500 --> 01:42.790
+I will see you in the next one.

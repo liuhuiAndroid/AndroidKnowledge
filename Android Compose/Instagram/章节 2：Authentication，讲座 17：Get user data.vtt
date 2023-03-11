@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00.790 --> 00:07.000
+OK, so we have user creation, both in authentication and in Firestorm.
+
+00:07.360 --> 00:13.540
+So what we need to do now is we need to implement this, get user data that we're going to be calling
+
+00:13.540 --> 00:14.610
+from here.
+
+00:14.620 --> 00:23.200
+So basically inside the user creation, but also we're going to be calling it if the user is already
+
+00:23.200 --> 00:25.450
+signed in at the start of the application.
+
+00:25.480 --> 00:26.830
+OK, so let's implement that.
+
+00:27.370 --> 00:32.710
+So first of all, we're going to set the in-progress the value flag to true.
+
+00:34.150 --> 00:38.740
+OK, and we're going to access the collection of users.
+
+00:40.270 --> 00:50.460
+Dot document of UID usage is the one passed in the function call Dot Get.
+
+00:51.910 --> 00:58.270
+And then we have add on success listener and we have add on savior listener.
+
+00:58.960 --> 01:01.780
+Let's implement the failure because it's simpler.
+
+01:02.530 --> 01:08.410
+We have an exception here and we can say handle exception with e x c.
+
+01:08.950 --> 01:18.250
+And the message cannot retrieve user data and then in progress, the value equals false.
+
+01:20.080 --> 01:20.500
+OK.
+
+01:20.560 --> 01:25.430
+So we have that now let's implement the on success.
+
+01:25.750 --> 01:33.550
+So the success gives us a document snapshot that we can convert into our user data so we can have valid
+
+01:33.580 --> 01:37.300
+user equals it not to object.
+
+01:37.960 --> 01:41.050
+And here we pass the data type user data.
+
+01:42.220 --> 01:42.620
+OK.
+
+01:42.640 --> 01:44.650
+We need to import that.
+
+01:44.830 --> 01:46.540
+So that should fix our problem.
+
+01:46.960 --> 01:49.960
+And then once we have that, we're going to say user data.
+
+01:49.960 --> 01:57.820
+The value is going to be user and in progress, the value is going to be false.
+
+01:58.360 --> 02:06.070
+Now, since we don't see anything different in our application, if we have this success, we can have
+
+02:06.070 --> 02:07.750
+a notification here.
+
+02:08.980 --> 02:12.160
+What is the name of that variable pop up notification?
+
+02:14.070 --> 02:21.780
+Pop up notification dot value is going to be user data retrieved.
+
+02:22.810 --> 02:24.040
+Successfully.
+
+02:27.490 --> 02:29.740
+And we need to wrap that in an event.
+
+02:33.720 --> 02:37.740
+OK, so we have our pop up notification now.
+
+02:38.190 --> 02:44.040
+We need to also do a check at the start to see whether we are signing or not.
+
+02:44.050 --> 02:54.750
+So in the in it block here we're going to have valid current user is going to be us dot current user.
+
+02:56.330 --> 02:57.800
+Then signed in.
+
+02:59.350 --> 03:00.700
+Not value.
+
+03:02.460 --> 03:07.160
+This is going to be current user different from North.
+
+03:07.180 --> 03:11.380
+So if the user is not more than we are saying, then otherwise no.
+
+03:12.220 --> 03:21.400
+And then current user dot question mark thought you are the question mark, but let if we have a UID,
+
+03:21.640 --> 03:25.380
+then we can get user data with UIDAI.
+
+03:28.120 --> 03:31.570
+And we need to mark this as new this year.
+
+03:32.380 --> 03:38.500
+All right, so what this will do basically when the system starts up and instantiate our view model,
+
+03:38.680 --> 03:40.990
+it will check whether or not we have a user.
+
+03:41.200 --> 03:47.300
+Keep in mind that authentication so Firebase authentication remembers if a user is signing or not.
+
+03:47.380 --> 03:52.330
+OK, so we have that here given to us without any effort on our part.
+
+03:52.810 --> 03:55.470
+Once we have that, we can set the value of signed in.
+
+03:55.480 --> 04:02.170
+And if we have a signed in user with a UID, then we can get the data, OK, which is the function that
+
+04:02.170 --> 04:03.190
+we've just implemented.
+
+04:03.610 --> 04:08.200
+And if we get the user data successfully, then we get a pop up notification.
+
+04:08.890 --> 04:13.330
+OK, so with that in place, let's go ahead and run the application and see if it works.
+
+04:28.030 --> 04:34.990
+So user data retrieved successfully is exactly what I was expecting, so the authentication is already
+
+04:34.990 --> 04:35.590
+signed in.
+
+04:36.460 --> 04:36.930
+OK.
+
+04:36.970 --> 04:43.870
+This will retain a current user and the current user has a new I.D. So we automatically do a get user
+
+04:43.870 --> 04:44.260
+data.
+
+04:44.890 --> 04:53.620
+However, if we do auth dot, sign out, let's go ahead and check that upon creation.
+
+04:53.860 --> 04:56.320
+We also get this pop up notification.
+
+04:56.410 --> 04:59.170
+OK, so let's run this code again.
+
+04:59.680 --> 05:05.230
+So what I'm expecting here is to go through the whole process and call the method here.
+
+05:05.710 --> 05:06.110
+OK?
+
+05:06.130 --> 05:09.640
+And that will have user data retrieved successfully again.
+
+05:10.760 --> 05:14.840
+OK, so now let's create a username.
+
+05:14.900 --> 05:22.760
+Michael, let's say at Gmail dot com and password one two three four five six.
+
+05:23.240 --> 05:24.890
+OK, so let's go ahead and sign up.
+
+05:27.350 --> 05:29.840
+And let's see if we get a pop up eventually.
+
+05:31.950 --> 05:37.380
+User data retrieved successfully, so it has gone through the whole process successfully, and we get
+
+05:37.380 --> 05:39.330
+user data in our application.
+
+05:39.660 --> 05:42.330
+So let's have a look in the backend API.
+
+05:44.500 --> 05:51.460
+We have Michael with the user I.D. and the authentication is correct, we have at gmail.com.
+
+05:52.120 --> 05:55.930
+And that is because we've set this sign out.
+
+05:55.940 --> 05:59.560
+So let's do it bit of clean up before we end, I'm just going to remove this.
+
+06:00.010 --> 06:00.520
+Well, you know what?
+
+06:00.520 --> 06:06.970
+I'm just going to comment it out just to make sure that we have it if we need it later on and then I
+
+06:06.970 --> 06:09.820
+want to remove this pop up notification.
+
+06:09.850 --> 06:12.670
+OK, we don't need this in our actual code.
+
+06:13.450 --> 06:13.810
+All right.
+
+06:13.810 --> 06:16.390
+So that's it for this video.
+
+06:16.400 --> 06:23.510
+I think at this point, we have a a sign up functionality correctly.
+
+06:23.830 --> 06:25.210
+It doesn't really go anywhere.
+
+06:25.210 --> 06:29.380
+So once we actually sign up, the application doesn't take us to the next screen.
+
+06:29.380 --> 06:36.700
+But we are confident now by looking in the database and by getting our pop up notifications that the
+
+06:36.700 --> 06:38.080
+user can sign up.
+
+06:38.500 --> 06:44.560
+So what I would like to do next is I would like to create the on login function, which is going to
+
+06:44.560 --> 06:47.140
+be similar to this one, but slightly different.
+
+06:47.530 --> 06:53.470
+So on log in and we need to be able to move between various fragments, right?
+
+06:53.470 --> 07:00.520
+So here in sign up, if I click the button here, the text, this is going to take me to the log in
+
+07:00.520 --> 07:05.920
+screen and the login screen will have a similar one to take me back to sign up so we can do that jump
+
+07:05.920 --> 07:08.680
+back and forth between the screens.
+
+07:09.160 --> 07:09.430
+All right.
+
+07:09.430 --> 07:12.160
+So we will do all of that in the next few videos.

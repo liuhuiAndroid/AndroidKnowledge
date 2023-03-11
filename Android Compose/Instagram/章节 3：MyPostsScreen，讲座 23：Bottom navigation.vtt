@@ -1,0 +1,550 @@
+WEBVTT
+
+00:00.390 --> 00:07.080
+Hello, everyone, welcome back to the course now in this video, we're going to implement some bottom
+
+00:07.080 --> 00:10.710
+navigation for the main part of our app.
+
+00:10.740 --> 00:18.420
+OK, so we will have basically three screens, one for the feed where we see different posts from different
+
+00:18.420 --> 00:19.020
+users.
+
+00:19.260 --> 00:26.250
+We have a search screen and we have a kind of a my posts page is not the profile page where we edit
+
+00:26.250 --> 00:32.640
+our personal information, but it's the one where we can create new posts for our account.
+
+00:33.090 --> 00:39.180
+Now in this video, we're going to focus on the bottom navigation and the issue that I have found while
+
+00:39.210 --> 00:47.430
+building this course and while building this application is that I think compose, jetpack compose and
+
+00:47.430 --> 00:54.270
+navigation doesn't work really well with the current iteration of bottom navigation.
+
+00:54.310 --> 01:00.450
+OK, so I've tried for a few days to make it work, but it seems to have some issues when you have an
+
+01:00.450 --> 01:06.810
+application that has both authentication with separate screens and screens with bottom navigation.
+
+01:07.110 --> 01:09.540
+So I've tried a lot of different things.
+
+01:09.540 --> 01:17.340
+I found too many issues, so I've decided to kind of build a custom bottom navigation functionality
+
+01:17.340 --> 01:18.900
+for this app in particular.
+
+01:19.080 --> 01:21.090
+So that's what we're going to do in this video.
+
+01:21.120 --> 01:26.250
+OK, we're going to build a custom bottom navigation functionality, which is actually quite easy to
+
+01:26.250 --> 01:28.260
+implement in jetpack compose.
+
+01:29.070 --> 01:29.340
+All right.
+
+01:29.340 --> 01:35.400
+So the first step that we need to take is we need to create these three screens that we want to display.
+
+01:35.700 --> 01:37.050
+We already have one of them.
+
+01:37.050 --> 01:42.120
+We have the feed screen and we will update this feed screen as well.
+
+01:42.450 --> 01:44.550
+But let's go ahead and create a couple more.
+
+01:44.850 --> 01:51.480
+So I'm going to create a new file, make sure it's a file, and I'm going to call this something like
+
+01:51.480 --> 01:53.340
+search screen.
+
+01:55.400 --> 01:55.790
+OK.
+
+01:56.210 --> 02:07.010
+And I'm going to just create the composable for now fun search screen, and I'm going to pass the nav
+
+02:07.010 --> 02:14.510
+controller and the view model of type I, the I view model.
+
+02:15.290 --> 02:19.850
+OK, we're going to just leave it empty for now because we will add stuff to it later on in this video.
+
+02:20.270 --> 02:23.840
+And also, let's go and get let's go ahead and create a new file.
+
+02:24.560 --> 02:28.240
+And this one is going to be my posts screen.
+
+02:30.280 --> 02:39.820
+And again, we're just going to add the composable fund my posts screen with the MAV controller and
+
+02:39.820 --> 02:40.780
+the VM.
+
+02:43.420 --> 02:45.820
+All right, so far, so good.
+
+02:45.850 --> 02:51.940
+Now we need to add this to our destination screens.
+
+02:52.010 --> 02:56.950
+OK, so in main activity in destination screen, we're going to add two more.
+
+02:57.490 --> 02:59.070
+So I'm just going to duplicate that.
+
+02:59.080 --> 03:03.010
+So this one is going to be search with the root search.
+
+03:04.000 --> 03:06.790
+And this one is going to be my posts.
+
+03:08.540 --> 03:11.900
+And my posts here, OK?
+
+03:12.110 --> 03:16.060
+And we need to add two more composable to Navajos.
+
+03:16.070 --> 03:20.540
+So one and two destinations green dot search.
+
+03:21.740 --> 03:26.330
+And here we have the composable that we've created search screen.
+
+03:27.350 --> 03:27.890
+OK.
+
+03:28.400 --> 03:34.430
+And here for the last one, we have my posts and the my posts screen.
+
+03:36.350 --> 03:38.210
+All right, so far, so good.
+
+03:38.480 --> 03:43.010
+Now let's go ahead and implement a bottom navigation.
+
+03:43.250 --> 03:45.290
+So for that, I'm going to create a new file here.
+
+03:46.880 --> 03:49.100
+And I'm going to call this bottom.
+
+03:50.930 --> 03:53.840
+Navigation menu, let's say.
+
+03:54.620 --> 03:55.970
+And that's going to be a file.
+
+03:56.420 --> 04:01.160
+So the first thing I need to do, I'm going to create an enum class bottom navigation.
+
+04:03.590 --> 04:04.100
+Item.
+
+04:04.940 --> 04:13.520
+OK, so this will contain the items that our bottom menu has, this will have a valid icon of type entry
+
+04:14.480 --> 04:22.640
+and a valid nav destination, which is of type of destination.
+
+04:24.680 --> 04:27.140
+Screen destination screen.
+
+04:27.470 --> 04:32.990
+And here we need to add three elements because we have three elements in our menu.
+
+04:33.290 --> 04:37.700
+Before we do that, let's go ahead and create three icons for this menu.
+
+04:38.000 --> 04:45.080
+OK, so in the drawer bowl, so under resource drawer bowl, I'm going to right click New Vector Asset,
+
+04:45.920 --> 04:50.060
+OK, and I'm going to select here a, let's say, home.
+
+04:50.810 --> 04:53.060
+And this will have the icon for home.
+
+04:54.170 --> 04:55.640
+OK, I'm going to call this.
+
+04:56.540 --> 04:58.280
+I see underscore home.
+
+04:58.310 --> 05:02.360
+This will correspond to the feed screen.
+
+05:03.080 --> 05:04.760
+OK, so I have I see home.
+
+05:05.150 --> 05:09.230
+Let's go ahead and create a new one, a vector asset.
+
+05:09.830 --> 05:15.050
+And here let's do search and we have a magnifying glass.
+
+05:16.040 --> 05:17.360
+I see search.
+
+05:19.020 --> 05:19.840
+Finished that.
+
+05:20.160 --> 05:27.480
+And finally, for my posts, we're going to have the kind of image of a user or a person, so let's
+
+05:27.480 --> 05:28.590
+search for person.
+
+05:29.340 --> 05:34.040
+I have the icon here and here I have I see posts.
+
+05:35.370 --> 05:35.750
+OK.
+
+05:35.910 --> 05:37.940
+Remember, this is different from profile.
+
+05:37.950 --> 05:42.030
+It's just the the screen where I create new posts.
+
+05:43.200 --> 05:43.580
+All right.
+
+05:43.590 --> 05:45.760
+So we have the icons.
+
+05:45.780 --> 05:48.990
+Now let's go and create the elements of this enum.
+
+05:49.020 --> 05:50.880
+So the first one is going to be feed.
+
+05:51.480 --> 05:57.060
+And here I will pass the ah dot drobo dot.
+
+05:57.810 --> 05:59.700
+I see underscore.
+
+06:01.020 --> 06:05.700
+I think it's home and we need to import the R class now.
+
+06:06.000 --> 06:07.710
+Be careful importing this.
+
+06:08.340 --> 06:10.680
+You need the one from your project.
+
+06:10.720 --> 06:17.580
+OK, you might import by mistake some other file, and the next destination is going to be destination
+
+06:17.580 --> 06:18.870
+screen dot feed.
+
+06:20.590 --> 06:23.590
+All right, so that's feed now for search.
+
+06:23.950 --> 06:25.930
+We have our dot draw bill.
+
+06:28.190 --> 06:29.900
+I need a comma at the end here.
+
+06:30.560 --> 06:38.090
+Draw bow dot by sea search and destination screen dot search.
+
+06:39.660 --> 06:50.220
+And then finally, I have posts with our the Drobo dots, I see posts and destination screen dot my
+
+06:50.220 --> 06:50.730
+posts.
+
+06:52.550 --> 06:53.520
+Okay, all good.
+
+06:53.580 --> 06:56.640
+Now we're going to create a composable.
+
+06:58.580 --> 07:00.020
+Fun bottom.
+
+07:01.200 --> 07:03.720
+Navigation menu.
+
+07:05.010 --> 07:17.070
+Now this is going to take a selected item of type, bottom navigation item and it's going to take a
+
+07:17.070 --> 07:20.160
+nav controller of type nav controller.
+
+07:21.680 --> 07:23.750
+So here I will have a row.
+
+07:24.140 --> 07:26.630
+We're now building the bottom navigation, right?
+
+07:26.630 --> 07:33.200
+So row, it's going to have a modifier modifier dot filled max width.
+
+07:36.490 --> 07:41.170
+OK, Phil Mack's with them dot rep content height.
+
+07:42.860 --> 07:43.480
+OK.
+
+07:44.970 --> 07:47.390
+That's what else we need, we need some padding.
+
+07:48.830 --> 07:59.120
+We're going to have a top party of four deep and I'm going to add a background of color thought white.
+
+08:01.070 --> 08:09.440
+OK, I need to import the DP, all right, so I have my row and inside this row, I need to pass the
+
+08:09.440 --> 08:10.130
+items.
+
+08:11.990 --> 08:22.270
+OK, so here I have four item in button navigation item dot values.
+
+08:23.230 --> 08:32.560
+So I'm going to take all elements from here and here I can see an image where the painter is painter
+
+08:32.560 --> 08:36.250
+resource and the ID is item the icon.
+
+08:38.530 --> 08:40.870
+The description is no.
+
+08:41.800 --> 08:43.930
+And I have a modifier.
+
+08:47.080 --> 08:47.580
+OK.
+
+08:48.460 --> 08:53.080
+Dot size, first of all, the size is going to be 40 dpi.
+
+08:54.160 --> 08:58.900
+The padding is going to be five dpi.
+
+09:00.520 --> 09:09.880
+Then the wait is going to be one f, so I want all the images to take up the same amount of space,
+
+09:09.880 --> 09:11.920
+so I'm just going to add one to all of them.
+
+09:12.280 --> 09:20.230
+And then finally, it's going to be clickable and when we click it, we're going to navigate to nav
+
+09:20.230 --> 09:20.890
+controller.
+
+09:23.380 --> 09:24.850
+And item.
+
+09:26.760 --> 09:28.560
+Dot destination.
+
+09:29.840 --> 09:30.950
+OK, easy enough.
+
+09:31.280 --> 09:38.000
+And then I want to add another thing, which is a color filter, and this color filter will basically
+
+09:38.000 --> 09:42.290
+depend if we're on the selected item or not.
+
+09:42.380 --> 09:43.310
+I misspelled this.
+
+09:43.610 --> 09:47.600
+So if we're on the selected item, I want to add a black color.
+
+09:47.840 --> 09:50.780
+Otherwise, this is going to be a gray color.
+
+09:51.200 --> 10:00.020
+So we can say if item equals selected item, then color filter.
+
+10:02.240 --> 10:08.750
+Dots tent is going to have a color dot black health.
+
+10:11.640 --> 10:12.720
+Color filter.
+
+10:14.650 --> 10:18.790
+Actually, we can change this a little bit, we can put it right, you know what, let's leave it like
+
+10:18.790 --> 10:19.060
+this.
+
+10:19.240 --> 10:24.220
+So color filter dot tint colored dot grey.
+
+10:25.390 --> 10:29.080
+So you can reduce this by putting the if inside the color filter dot tint.
+
+10:29.080 --> 10:32.050
+But you know, it's pretty much the same thing.
+
+10:33.760 --> 10:35.110
+Let me put this down here.
+
+10:35.680 --> 10:36.140
+OK.
+
+10:36.160 --> 10:45.180
+So I think that is all for the navigation menu, so we can now use this navigation menu in our screens.
+
+10:45.190 --> 10:47.920
+So let me open up feed screen.
+
+10:48.910 --> 10:56.140
+And instead of this text, I can add a couple of things, so I want to add a column that will fill up
+
+10:56.140 --> 10:56.740
+the screen.
+
+10:58.630 --> 11:03.940
+OK, so modifier equals modifier dot fill max size.
+
+11:04.780 --> 11:14.030
+OK, and inside here I want to have a bottom navigation menu with the selected item.
+
+11:14.050 --> 11:19.120
+Bottom navigation item, dot feed and map controller.
+
+11:19.630 --> 11:24.070
+Now, if we leave it like this, this will simply be at the top of the screen.
+
+11:24.070 --> 11:32.590
+So I want to have a column inside my column that will basically take up the whole space apart from the
+
+11:32.590 --> 11:35.530
+navigation menu, so it will put the navigation menu at the bottom.
+
+11:36.010 --> 11:41.230
+So Modifier equals modifier Dot's weight.
+
+11:43.130 --> 11:49.670
+One, if and inside this column, let's just put a text so that we have just another confirmation that
+
+11:49.670 --> 11:52.070
+we are on the feed screen.
+
+11:53.590 --> 11:58.600
+OK, so that will basically have a column that will take up the most of the space with a screen, with
+
+11:58.600 --> 11:59.260
+a text.
+
+11:59.590 --> 12:01.870
+And at the bottom, we have our navigation.
+
+12:02.680 --> 12:09.820
+OK, so I'm just going to copy this and I'm going to put it in the search and let's just modify the
+
+12:09.820 --> 12:10.930
+selected item.
+
+12:10.930 --> 12:15.490
+Here is going to be search and the text is going to be search screen.
+
+12:16.840 --> 12:29.530
+The rest stays the same and I have my posts again, paste that my this posts and my posts screen.
+
+12:30.820 --> 12:31.240
+OK.
+
+12:31.280 --> 12:34.270
+And I think that is sufficient.
+
+12:35.260 --> 12:41.890
+Basically, the system will send us to the feed screen and the feed screen will have a bottom navigation
+
+12:41.890 --> 12:44.380
+that we can use to navigate between the different screens.
+
+12:44.680 --> 12:48.790
+So let's go ahead and run this application and see what we get.
+
+13:00.920 --> 13:03.980
+All right, so the application is running now.
+
+13:04.940 --> 13:08.390
+I may have let me just check the ITV model.
+
+13:08.720 --> 13:14.030
+Yes, we have sign out, so I'm just going to comment this out for the next one, but for now, I'm
+
+13:14.030 --> 13:15.590
+just going to go with Alex.
+
+13:15.740 --> 13:16.550
+Or is it John?
+
+13:16.550 --> 13:19.720
+I think it's John gmail.com, the user.
+
+13:19.730 --> 13:23.450
+The user name doesn't matter at the moment unless logging.
+
+13:24.200 --> 13:29.360
+And that's just send us to the feed screen and we should see a confirmation text here.
+
+13:31.460 --> 13:32.000
+There we go.
+
+13:32.030 --> 13:34.940
+Log in success, we might want to remove that at some point.
+
+13:35.270 --> 13:38.660
+Feed screen and we have our bottom navigation view.
+
+13:38.780 --> 13:44.720
+So if I click on search, that will send me to the search screen and you can see that the color has
+
+13:44.720 --> 13:47.900
+turned to black here and the rest is gray.
+
+13:48.170 --> 13:53.780
+OK, so again, here the color is different when I move to a different screen.
+
+13:55.130 --> 13:59.360
+OK, before we end, let me just remove that log in successful.
+
+13:59.360 --> 14:04.820
+So in the view model, log in success.
+
+14:05.030 --> 14:09.030
+I'm just going to comment this out because we don't really need it.
+
+14:09.050 --> 14:12.770
+We get the confirmation that it's successful when we move to the correct screen.
+
+14:13.580 --> 14:13.940
+All right.
+
+14:13.940 --> 14:20.600
+So that is all for this video and in the next two videos, we're going to start to implement some Instagram
+
+14:20.600 --> 14:22.020
+specific functionality.
+
+14:22.040 --> 14:22.760
+I will see you there.

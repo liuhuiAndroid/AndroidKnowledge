@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00.700 --> 00:07.840
+OK, so the final piece of the puzzle for the profile screen is for us to add a logout functionality.
+
+00:07.870 --> 00:13.960
+OK, so here in the view model, I want to create a function on logout.
+
+00:15.700 --> 00:23.290
+OK, and here I want to set everything or reset every, every piece of data that I have here in the
+
+00:23.290 --> 00:23.800
+view model.
+
+00:24.040 --> 00:26.290
+So I'm going to say asked Dot.
+
+00:26.770 --> 00:31.000
+Sign out, then sign then.
+
+00:32.540 --> 00:35.480
+Dot value equals false.
+
+00:36.260 --> 00:41.270
+OK, I'm going to set user data, dot value equals no.
+
+00:43.370 --> 00:50.240
+OK and pop up notification, that value is going to be an event.
+
+00:51.530 --> 00:53.990
+That will say logged out.
+
+00:54.710 --> 00:58.010
+OK, so that's pretty much it for the function.
+
+00:58.280 --> 01:04.670
+Now let's go back to our profile screen and we will update the call for the log.
+
+01:05.450 --> 01:07.370
+OK, so on logout here.
+
+01:08.640 --> 01:16.620
+We will simply call the M Dot on logout, so that basically should solve our problem.
+
+01:17.730 --> 01:22.800
+And then once we logout, actually, we need to navigate to some other screen.
+
+01:22.860 --> 01:28.560
+So here I'm going to say navigate to nav controller.
+
+01:29.630 --> 01:33.320
+And destination screen dot logging.
+
+01:33.770 --> 01:39.590
+So I want to navigate to the log in screen, so that should be basically enough.
+
+01:40.490 --> 01:46.190
+Let's go ahead and run and test our application and see if they log out functionality works as expected.
+
+01:50.760 --> 01:58.650
+OK, so I'm in my mind post page then in the profile, and if I click logout, I am logged out and sent
+
+01:58.650 --> 02:00.720
+back to the log in screen.
+
+02:01.050 --> 02:11.280
+And if I try to log in again, John at gmail.com one two three four five six, log in and then I'm sent
+
+02:11.280 --> 02:15.180
+back to my post page and then to profile.
+
+02:15.450 --> 02:18.750
+So that kind of completes the authentication loop.
+
+02:18.750 --> 02:26.730
+We have a log out functionality now as well, and we have profile or user information and the ability
+
+02:26.730 --> 02:28.560
+to update that as we want.
+
+02:29.010 --> 02:29.800
+So that's it.
+
+02:29.820 --> 02:33.960
+Thank you for watching so far, and I will see you in the next video.

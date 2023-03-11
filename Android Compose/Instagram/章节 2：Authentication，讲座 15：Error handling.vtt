@@ -1,0 +1,451 @@
+WEBVTT
+
+00:00.930 --> 00:08.220
+In this video, I would like to implement this handle exception method so that we have a way to handle
+
+00:08.220 --> 00:14.790
+any exception that might occur or to guard against any exceptions that might occur.
+
+00:14.820 --> 00:20.430
+OK, so we want to be able to display a message to the user whenever an exception happens.
+
+00:21.060 --> 00:24.400
+Now, keep in mind that exceptions are one time events.
+
+00:24.420 --> 00:27.930
+We don't want to keep displaying that message to the user.
+
+00:29.610 --> 00:32.820
+Again and again whenever we come back to a screen.
+
+00:32.820 --> 00:38.160
+So if we leave the screen and come back to it, or if we leave the app and come back to it, we don't
+
+00:38.160 --> 00:40.980
+want to display the same error message again and again.
+
+00:41.790 --> 00:49.950
+If we use a mutable state of in our view model, then whenever the screen kind of refreshes, we it
+
+00:49.950 --> 00:52.320
+will still display the same message again and again.
+
+00:52.560 --> 00:53.880
+So we want to avoid that.
+
+00:54.090 --> 01:00.570
+And for that purpose, we need to create a special data type that will only allow us to display a message
+
+01:00.570 --> 01:01.020
+once.
+
+01:01.290 --> 01:02.310
+And then that's it.
+
+01:02.430 --> 01:05.310
+OK, so we're going to call that data type and event.
+
+01:05.700 --> 01:10.380
+OK, so we're going to create a new content file called event.
+
+01:11.930 --> 01:21.980
+OK, now an event is basically an open class event that will take some generic type out T.
+
+01:24.470 --> 01:27.440
+And it will have a constructor private.
+
+01:28.550 --> 01:32.090
+Val, content of type T.
+
+01:32.720 --> 01:35.540
+OK, so we want to be able to handle any data type.
+
+01:35.930 --> 01:40.760
+However, we want to set some restrictions on this event.
+
+01:40.790 --> 01:46.220
+OK, so first of all, we want to know whether the event has been handled or not.
+
+01:46.230 --> 01:51.440
+So for that, we're going to have a VAR has been handled.
+
+01:52.880 --> 01:59.230
+Equals false by default, and also we want to set a private set.
+
+01:59.270 --> 02:07.790
+OK, we want to make the sector private so that only the event or elements inside this class can update
+
+02:07.790 --> 02:08.690
+this variable.
+
+02:09.590 --> 02:11.710
+Once we have that, we can say fun.
+
+02:11.720 --> 02:15.290
+Get content or no.
+
+02:17.070 --> 02:25.740
+This will return a type to Nullarbor, and we have return if has been handled.
+
+02:28.960 --> 02:30.310
+Then we return, no.
+
+02:31.890 --> 02:32.340
+Health.
+
+02:33.990 --> 02:35.120
+Has been handled.
+
+02:35.220 --> 02:39.720
+We set it to true and we return content.
+
+02:41.410 --> 02:50.170
+OK, so we want to be able to return this content only if it hasn't been handled, if it has, then
+
+02:50.170 --> 02:51.370
+we we return.
+
+02:51.490 --> 02:51.910
+No.
+
+02:53.020 --> 02:53.350
+All right.
+
+02:53.350 --> 03:02.350
+So that's it for this event, and we can use this event to create a mutable status in our IG view model.
+
+03:02.410 --> 03:05.980
+OK, so here we're going to have devout pop up.
+
+03:07.030 --> 03:08.050
+Notification.
+
+03:09.960 --> 03:14.410
+Is going to be a mutable state of here.
+
+03:14.430 --> 03:16.470
+We're going to pass the type event.
+
+03:17.480 --> 03:20.750
+And we're going to pass a string type to our event.
+
+03:20.990 --> 03:22.550
+Make sure you import that.
+
+03:24.430 --> 03:24.960
+OK.
+
+03:25.510 --> 03:30.570
+Again, this is going to be notable, and it's going to be no by default.
+
+03:31.920 --> 03:32.250
+All right.
+
+03:32.260 --> 03:37.980
+So with that in mind, we can start to implement our handle exception function.
+
+03:38.000 --> 03:43.320
+So first of all, we can say exception, question mark, dot, print stack, trace.
+
+03:43.320 --> 03:46.920
+We want to display any information we have to the council.
+
+03:47.820 --> 03:52.890
+We're going to say valve error message is going to be exception.
+
+03:53.460 --> 03:54.270
+Question mark.
+
+03:54.300 --> 03:54.750
+Dot.
+
+03:54.750 --> 03:57.720
+Localize message or.
+
+03:58.410 --> 04:01.230
+So if that is no, we're going to have an empty string.
+
+04:02.920 --> 04:04.840
+We're going to have a message.
+
+04:05.110 --> 04:07.270
+Valid message is going to be if.
+
+04:09.470 --> 04:11.030
+Custom message.
+
+04:12.410 --> 04:13.700
+Dot is empty.
+
+04:16.540 --> 04:25.840
+Then we simply have the error message, otherwise we can personalize our output, so inside a string,
+
+04:25.840 --> 04:31.630
+we have the custom message colon duller error message.
+
+04:31.900 --> 04:36.970
+So basically we can we kind of combined the message from the exception with our custom message.
+
+04:37.390 --> 04:42.730
+And then finally, we assign it to our pop up notification via an event.
+
+04:42.730 --> 04:47.080
+So proper notification dot value is going to be event.
+
+04:49.010 --> 04:51.920
+Of our message straight.
+
+04:53.390 --> 04:53.760
+OK.
+
+04:54.050 --> 04:59.040
+Make sure custom message, I think that is.
+
+05:00.200 --> 05:05.330
+We don't need to have this new label actually, since by default is a strength so we can remove that
+
+05:05.330 --> 05:07.460
+no liability and get rid of that error.
+
+05:08.090 --> 05:12.110
+OK, so we have that now.
+
+05:12.320 --> 05:18.980
+Once we have this handle exception, this pop up notification will be updated.
+
+05:19.460 --> 05:24.770
+So once we have this pop up notification, we can access it in our composable.
+
+05:25.100 --> 05:25.490
+OK.
+
+05:25.670 --> 05:32.870
+We're going to create a class or a file rather that will contain these kind of small composable that
+
+05:32.870 --> 05:37.490
+don't really go into a screen and they go into multiple screens, let's say.
+
+05:37.880 --> 05:41.810
+So I'm going to create a new package here called Main.
+
+05:42.230 --> 05:47.090
+So I'm going to place this inside the main and not inside the box because it doesn't really relate to
+
+05:47.090 --> 05:48.170
+us specifically.
+
+05:48.380 --> 05:50.570
+It relates to pretty much the whole application.
+
+05:51.020 --> 05:59.750
+So here I'm going to create a new file and I'm going to call this main, let's say, common bits.
+
+05:59.900 --> 06:06.620
+OK, so the kind of composer composable that go into this file, I set it as a class, but it's not
+
+06:06.620 --> 06:07.460
+really a class.
+
+06:07.460 --> 06:11.420
+So I'm just going to remove that and I'm going to create a composable here.
+
+06:13.590 --> 06:20.700
+Function notification message, and here I need the view model.
+
+06:20.820 --> 06:30.750
+So in IG view model, so let's attach an observer to that VM.
+
+06:31.590 --> 06:40.800
+What did we call it, pop up notification and pop up a toast message when the event hasn't been handled.
+
+06:41.010 --> 06:51.900
+So without notification, notify state equals v m dot pop up notification dot value then vowed not if
+
+06:51.930 --> 06:57.210
+a message is going to be notify state.
+
+06:59.900 --> 07:07.340
+Don't get content or no notice, they can be no keep in mind, so let's add that.
+
+07:07.400 --> 07:09.650
+No, no liability check.
+
+07:10.430 --> 07:13.850
+Now, if not this message.
+
+07:15.620 --> 07:16.700
+Is not no.
+
+07:17.960 --> 07:20.660
+Only then we have a toast.
+
+07:23.110 --> 07:25.120
+And toast, don't make text.
+
+07:25.510 --> 07:27.430
+We have local context.
+
+07:28.900 --> 07:30.310
+Dot current.
+
+07:31.450 --> 07:38.350
+We have our notification message and toast dot long.
+
+07:39.040 --> 07:40.380
+And don't forget, dots show.
+
+07:41.910 --> 07:49.410
+OK, so we have our notification message as a composable so we can simply use this composable in pretty
+
+07:49.410 --> 07:53.490
+much in the whole application, so we need to set it in the main activity.
+
+07:53.500 --> 08:00.600
+So here we're going to have notification message and we need to pass the VM.
+
+08:01.560 --> 08:03.930
+OK, so basically what will happen here?
+
+08:05.160 --> 08:08.910
+What will happen here is, let's say we get an error somewhere, OK?
+
+08:08.910 --> 08:09.960
+We get an exception.
+
+08:09.960 --> 08:16.230
+Like here, username already exists that will basically call this function and update a pop up notification
+
+08:16.560 --> 08:17.550
+via an event.
+
+08:18.270 --> 08:26.640
+Once this is updated automatically, the notification message composable will receive an updated state.
+
+08:27.240 --> 08:29.130
+We'll check this ability.
+
+08:29.370 --> 08:36.060
+You will find that it can display a toast and display a toast here, and that will happen in the main
+
+08:36.060 --> 08:38.340
+activity in the notification message.
+
+08:38.910 --> 08:42.630
+So what I would like to do now is let's check if we haven't made any mistake.
+
+08:42.990 --> 08:49.040
+Let's run the application and I'm going to check three elements.
+
+08:49.110 --> 08:54.990
+First of all, I'm going to check if username already already exists, if this message is happening,
+
+08:55.440 --> 09:00.120
+and then we will check this creation.
+
+09:00.570 --> 09:00.960
+OK?
+
+09:00.990 --> 09:02.880
+With username and password.
+
+09:04.470 --> 09:09.750
+OK, so let's see what happens if I can get this to run on my emulator.
+
+09:17.860 --> 09:18.270
+OK.
+
+09:19.030 --> 09:24.720
+Right, so like I said, we need to check whether the user name already already exists.
+
+09:24.730 --> 09:27.820
+So for that, let's go ahead and create a username.
+
+09:28.540 --> 09:31.560
+So here I'm going to start my collection users.
+
+09:32.740 --> 09:37.990
+I'm going to create a document with a random I.D. and I'm going to have your username.
+
+09:38.620 --> 09:42.040
+And let's say, let's put this as Alex.
+
+09:42.490 --> 09:45.870
+OK, so that will create a user with a username.
+
+09:45.880 --> 09:50.020
+Alex, that's the only thing that the system checks for now, so that should be sufficient.
+
+09:50.410 --> 09:58.030
+So if I put here, Alex, email doesn't matter and password one two three, that doesn't matter either.
+
+09:58.360 --> 10:00.280
+So if I click, sign up.
+
+10:01.960 --> 10:05.080
+I get a pop up username already exists.
+
+10:05.260 --> 10:06.820
+OK, so that is fine.
+
+10:07.180 --> 10:11.950
+Let's say we remove this delete collection, users.
+
+10:13.450 --> 10:17.950
+Now, I shouldn't get this message anymore with the same data, but I should get a different message
+
+10:18.250 --> 10:20.770
+coming from Firebase authentication.
+
+10:21.100 --> 10:22.540
+So if I click, sign up.
+
+10:24.030 --> 10:30.390
+I get sent up failed email or email address is badly formatted, OK, so I don't have the correct email.
+
+10:30.780 --> 10:32.400
+So let's fix that image.
+
+10:32.550 --> 10:41.220
+Gmail dot com sign up centerfielder given password is invalid, password should be at least six characters
+
+10:41.220 --> 10:41.550
+long.
+
+10:41.940 --> 10:44.460
+So one two three four five six.
+
+10:45.120 --> 10:46.290
+Let's go ahead and do that.
+
+10:46.890 --> 10:51.690
+Keep in mind, we won't get a notification if everything's completed successfully.
+
+10:52.530 --> 10:54.010
+Let's have a look in the code.
+
+10:54.030 --> 10:55.110
+What do we do?
+
+10:55.500 --> 10:59.910
+Basically, we simply stop here before creating a profile.
+
+11:00.180 --> 11:08.750
+However, we should see in authentication, we should see our user created there and we see the SD at
+
+11:08.760 --> 11:11.190
+gmail.com that was created.
+
+11:11.580 --> 11:13.440
+OK, so that is really good.
+
+11:13.440 --> 11:15.030
+That is working so far.
+
+11:15.960 --> 11:17.250
+I think we're on the right track.
+
+11:17.280 --> 11:25.710
+Next up, what we need to do is we need to take that information and create a profile once the authentication
+
+11:25.710 --> 11:27.150
+user has been created.
