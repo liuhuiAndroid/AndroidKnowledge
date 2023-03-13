@@ -25,12 +25,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.compose.ImagePainter
+import coil.compose.AsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.catalin.instagramclone.DestinationScreen
 import com.catalin.instagramclone.IgViewModel
 import com.catalin.instagramclone.R
-import java.security.interfaces.DSAKey
 
 @Composable
 fun NotificationMessage(vm: IgViewModel) {
@@ -96,7 +95,7 @@ fun CommonImage(
         modifier = modifier,
         contentScale = contentScale
     )
-    if (painter.state is ImagePainter.State.Loading) {
+    if (painter.state is AsyncImagePainter.State.Loading) {
         CommonProgressSpinner()
     }
 }

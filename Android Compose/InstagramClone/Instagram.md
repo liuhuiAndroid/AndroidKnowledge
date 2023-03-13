@@ -176,4 +176,76 @@ dummy 假的，仿真的
 
 ### No.26
 
+### No.27
+
+judgment 判断
+
+### No.28
+
+### No.29
+
+intrinsic
+
+### No.30
+
+### No.31
+
+### No.32
+
+rememberSaveable
+
+### No.33
+
+motivated
+
+quote-unquote
+
+workaround
+
+### No.34
+
+### No.35
+
+functionality
+
+### No.36
+
+### No.37
+
+### No.38
+
+### No.39
+
+### No.40
+
+### No.41
+
+### No.42
+
+### No.43
+
+### No.44
+
+### No.45
+
+### No.46
+
+### No.47
+
+### No.48
+
+### No.49
+
+### No.50
+
+### No.51
+
+### No.52
+
+### No.53
+
+### No.54
+
+### No.55
+
 
