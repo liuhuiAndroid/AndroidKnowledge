@@ -174,21 +174,13 @@ cheat 欺骗
 
 dummy 假的，仿真的
 
-### No.26
-
 ### No.27
 
 judgment 判断
 
-### No.28
-
 ### No.29
 
-intrinsic
-
-### No.30
-
-### No.31
+intrinsic 固有的
 
 ### No.32
 
@@ -196,56 +188,34 @@ rememberSaveable
 
 ### No.33
 
-motivated
+motivated 有动力的
 
-quote-unquote
+quote-unquote 引用-取消引用
 
-workaround
-
-### No.34
+workaround 解决方法
 
 ### No.35
 
-functionality
-
-### No.36
-
-### No.37
+functionality 功能性
 
 ### No.38
 
+batch 批
+
+individual 个人
+
 ### No.39
 
-### No.40
+adapt 适应
 
-### No.41
+individual 个人
 
-### No.42
-
-### No.43
-
-### No.44
-
-### No.45
-
-### No.46
-
-### No.47
-
-### No.48
+make sense 合理
 
 ### No.49
 
-### No.50
+section 部分
 
-### No.51
-
-### No.52
-
-### No.53
-
-### No.54
-
-### No.55
+significant 重要的
 
 

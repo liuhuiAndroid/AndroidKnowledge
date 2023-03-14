@@ -4,7 +4,9 @@
 
 声明式 UI：不手动更新 UI
 
-独立于平台（最新版Android），Android Studio 预览功能
+独立于平台（独立于最新版Android），Android Studio 预览功能
+
+Compose 会跨到 iOS 吗？短期内希望渺茫。可支持桌面版、Web 版。多平台（multi-platform）
 
 Coil
 
@@ -12,7 +14,13 @@ FrameLayout -> Box()
 
 ScrollView -> Modifier.verticalScroll()
 
+RelativeLayout -> Box()
+
+ConstraintLayout -> 依然可以用
+
 RecyclerView -> LazyColumn()
+
+ScrollView -> Modifier.verticalScroll()
 
 ViewPager -> Pager()
 
