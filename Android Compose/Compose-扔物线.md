@@ -24,18 +24,26 @@ ScrollView -> Modifier.verticalScroll()
 
 ViewPager -> Pager()
 
+--------------
+
+Modifier.clip(CircleShape).size(128.dp)
+
 Modifier.background(Color.Green).padding(8.dp).background(Color.Red).padding(8.dp)
 
 match_parent = Modifier.fillMaxWidth / Height / Size()
 
 通用的设置用Modifier，专项的设置用函数参数。
 
+点击监听器用Modifier
+
+---------
+
 compile -> runtime -> ui -> animation -> foundation -> material
 
 包依赖三条原则
 
-1. 依赖 material(3) 就够了，可能跳过 material 依赖 foundation
-2. 如果你需要 ui-tooling，需要单独依赖
+1. 依赖 material(3) 就够了；可能跳过 material 依赖 foundation
+2. 如果你需要 ui-tooling，需要单独依赖：提供预览功能
 3. 如果你需要 material-icons-extended，需要单独依赖
 
 ### No.3 状态订阅和自动更新
