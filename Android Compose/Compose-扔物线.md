@@ -864,3 +864,47 @@ Modifier.scrollable(rememberScrollableState{
 ```kotlin
 Modifier.nestedScroll()
 ```
+
+### 和传统的 View 系统混用
+
+SurfaceView
+
+TextureView
+
+```kotlin
+// View 里面使用 Compose
+val linearLayout = LinearLayout(this)
+val composeView = ComposeView(this).apply{
+  setContent{ CustomText() }
+}
+linearLayout.addView(composeView, ViewGroup.LayoutParams(
+  	ViewGroup.LayoutParams.MATCH_PARENT,
+  	ViewGroup.LayoutParams.WARP_CONTENT,
+))
+findViewById<ComposeView>(R.id.composeView).setContent{ CustomText() }
+
+// Compose 使用 View
+setContent{
+  val context = LocalContext.current
+  val name by remember{ mutableStateOf("hello world") }
+  Theme{
+    AndroidView(factory = {
+      TextView(context).apply{
+        text = "hello world"
+      }
+    }){
+      // update
+      it.text = name
+    }
+  }
+}
+```
+
+```xml
+<androidx.compose.ui.platform.ComposeView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+```
+
+
+
