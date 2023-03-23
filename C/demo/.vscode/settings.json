@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "io_utils.h": "c",
+        "limits.h": "c",
+        "_types.h": "c"
+    }
+}

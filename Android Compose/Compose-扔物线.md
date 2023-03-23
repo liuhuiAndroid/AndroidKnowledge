@@ -218,9 +218,74 @@ LocalContext.current
 
 ##### 状态转移型动画 animateXxxAsState()
 
+```kotlin
+// var size by remember { mutableStateOf(48.dp) }
+var big by mutableStateOf(false)
+setContent{
+  var size by animateDpAsState(if(big) 96.dp else 48.dp)
+	Box(
+    Modifier.size(size)
+      .background(Color.Green)
+      .clickable{
+        big = !big
+      }
+	)
+}
+```
+
 ##### 流程定制型动画 Animatable
 
+```kotlin
+var big by mutableStateOf(false)
+setContent{
+  val size = remember(big) { if(big) 96.dp else 48.dp }
+  val anim = remember { Animatable(size, Dp.VectorConverter) }
+  LaunchedEffect(big){
+    anim.snapTo(if(big) 192.dp else 0.dp)
+    anim.animateTo(size)
+  }
+	Box(
+    Modifier.size(anim.value)
+      .background(Color.Green)
+      .clickable{
+        big = !big
+      }
+	)
+}
+```
+
 ##### AnimationSpec 之 TweenSpec
+
+补间动画
+
+Easing：缓动
+
+FastOutSlowInEasing 快出慢进，先加速再减速
+
+LinearOutSlowInEasing
+
+FastOutLinearInEasing
+
+LinearEasing 匀速运动
+
+```kotlin
+var big by mutableStateOf(false)
+setContent{
+  val size = remember(big) { if(big) 96.dp else 48.dp }
+  val anim = remember { Animatable(size, Dp.VectorConverter) }
+  LaunchedEffect(big){
+    anim.snapTo(if(big) 192.dp else 0.dp)
+    anim.animateTo(size, spring(Spring.DampingRatioMediumBouncy))
+  }
+	Box(
+    Modifier.size(anim.value)
+      .background(Color.Green)
+      .clickable{
+        big = !big
+      }
+	)
+}
+```
 
 ##### AnimationSpec 之 SnapSpec
 
