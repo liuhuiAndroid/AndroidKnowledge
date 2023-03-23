@@ -6,6 +6,8 @@ TypeScript
 
 React Native 中文网：https://reactnative.cn/；安装完整原生环境
 
+React Native 依赖：https://js.coach/?collection=React+Native
+
 ```shell
 nodejs watchman
 npm install -g yarn
@@ -91,7 +93,7 @@ axios
       ```groovy
       defaultConfig {
         ndk {
-          abiFilters "armeabi-v7a", "x86", "armeabi"
+          abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86" , "x86_64"
         }
       }
       ```
@@ -167,16 +169,30 @@ axios
 
 ##### 打包发布 Android 项目
 
-1. JS Bundle 包放入 Android 项目内使用 Android Studio 打包
-2. React Native 官方推荐的方式
+打包方式：
+
+- JS Bundle 包放入 Android 项目内使用 Android Studio 打包
+- React Native 官方推荐的方式
+
+react-native-splash-screen：解决打开白屏问题
+
+react-native-config：Android 使用 .env 配置
+
+```shell
+# 生成 upload.json
+npx upload-init
+# 编译打包
+npx upload-build --no-ios
+```
 
 ##### React Native升级与适配指南
 
-自动升级：react-native-git-upgrade
+升级方式
 
-手动升级，每个大版本升级一次；建议使用
+- 自动升级：react-native-git-upgrade
 
-##### React Native 新架构实战课
+- 手动升级，每个大版本升级一次；建议使用
+  - 使用 react-native 初始化一个最新的 RN 项目，参照该项目的 package.json 对依赖版本进行升级，修改 devDependencies 节点
 
 
 

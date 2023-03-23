@@ -260,25 +260,31 @@ setContent{
 
 Easing：缓动
 
-FastOutSlowInEasing 快出慢进，先加速再减速
+FastOutSlowInEasing 快出慢进，先加速再减速；从A状态变成B状态
 
-LinearOutSlowInEasing
+LinearOutSlowInEasing 	适合元素入场动画；全程减速；
 
-FastOutLinearInEasing
+FastOutLinearInEasing 	 适合元素出场动画；全程加速；
 
-LinearEasing 匀速运动
+LinearEasing 全程匀速运动
 
 ```kotlin
 var big by mutableStateOf(false)
 setContent{
   val size = remember(big) { if(big) 96.dp else 48.dp }
+  val offset = remember(big) { if(big) (-48).dp else 148.dp }
   val anim = remember { Animatable(size, Dp.VectorConverter) }
+  val offsetAnim = remember { Animatable(offset, Dp.VectorConverter) }
   LaunchedEffect(big){
     anim.snapTo(if(big) 192.dp else 0.dp)
     anim.animateTo(size, spring(Spring.DampingRatioMediumBouncy))
+    anim.animateTo(size, TweenSpec(easing = LinearEasing))
+    offsetAnim.animateTo(offset, TweenSpec(easing = FastOutLinearInEasing))
+    offsetAnim.animateTo(offset, tween())
   }
 	Box(
     Modifier.size(anim.value)
+    	.offset(offsetAnim.value, offsetAnim.value)
       .background(Color.Green)
       .clickable{
         big = !big
@@ -289,11 +295,51 @@ setContent{
 
 ##### AnimationSpec 之 SnapSpec
 
+```kotlin
+// 和 anim.snapTo 作用一样，唯一区别可以延迟
+offsetAnim.animateTo(offset, SnapSpec(3000))
+offsetAnim.animateTo(offset, snap(3000))
+```
+
 ##### AnimationSpec 之 KeyframesSpec
+
+分段式 TweenSpec
+
+```kotlin
+anim.animateTo(size, KeyframesSpec(KeyframesSpec.KeyframesSpecConfig<Dp>().apply{
+}))
+// =
+anim.animateTo(size, keyframes {
+	durationMillis = 450
+  delayMillis = 500
+  // 150ms的时候需要运行到144dp的位置
+  144dp at 150 with FastOutLinearInEasing
+  200dp at 300 with FastOutSlowInEasing
+})
+```
 
 ##### AnimationSpec 之 SpringSpec
 
+无法设置时长
+
+```kotlin
+// dampingRatio 阻尼比
+// stiffness 刚度
+// visiblityThreshold 阈值
+anim.animateTo(size, spring())
+anim.animateTo(size, spring(Spring.DampingRatioMediumBouncy))
+anim.animateTo(size, spring(0.1f, Spring.StiffnessHigh), 200.dp)
+```
+
 ##### AnimationSpec 之 RepeatableSpec
+
+```kotlin
+// iterations
+// animation
+// repeatMode
+// initialStartOffset 时间偏移，延迟或快进
+anim.animateTo(size, repeatable(3, tween(), RepeatMode.Reverse, StartOffset(500, StartOffsetType.Delay)))
+```
 
 ##### AnimationSpec 之 InfiniteRepeatableSpec
 
