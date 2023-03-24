@@ -343,11 +343,67 @@ anim.animateTo(size, repeatable(3, tween(), RepeatMode.Reverse, StartOffset(500,
 
 ##### AnimationSpec 之 InfiniteRepeatableSpec
 
+```kotlin
+// 无限循环，和 RepeatableSpec 本质上没有区别
+anim.animateTo(size, infiniteRepeatable(tween(), RepeatMode.Reverse, StartOffset(500, StartOffsetType.Delay)))
+```
+
 ##### AnimationSpec 之其他 Spec
+
+FloatTweenSpec 针对 Float 类型
+
+FloatSpringSpec 针对 Float 类型
+
+```kotlin
+var big by mutableStateOf(false)
+setContent{
+  val float = remember(big) { if(big) (-48).dp else 148.dp }
+  val floatAnim = remember { Animatable(float) }
+  LaunchedEffect(big){
+    floatAnim.animateTo(200f, tween())
+    floatAnim.animateTo(200f, spring())
+  }
+}
+```
+
+VectorizedAnimationSpec 系列是之前的 AnimationSpec 底层使用
+
+DecayAnimationSpec
 
 ##### 消散型动画 animateDecay()
 
+惯性衰减，初始速度需要精确指定
+
+```kotlin
+// initialVelocity 初始速度，像素
+// animationSpec
+// block
+val decay = remember { ntialDecay<Dp>() }
+anim.animateDecay(100.dp, decay)
+
+// frictionMultiplier 摩擦力系数
+// absVelocityThreshold 速度阈值绝对值，速度绝对值小于阈值动画直接结束
+// 指数型衰减，不会针对像素密度修正，面向Dp；使用范围广
+// 由于没有用到 density（用户可以在系统调节） 所以没有带remember版本；但还是需要自己包一层remember避免对象重复创建
+exponentialDecay<Dp>()
+// 用来实现惯性滑动
+splineBasedDecay<Int>(LocalDensity.current)
+// 建议直接用带 remember 版本，不同屏幕像素手机滑动距离不一样;根据像素密度修正，Dp依然修正；所以只能使用像素不能使用Dp，面向像素；
+rememberSplineBasedDecay()
+```
+
 ##### block 参数：监听每一帧
+
+animateTo 和 animateDecay 都有 block 参数
+
+```kotlin
+val decay = remember { ntialDecay<Dp>() }
+anim.animateDecay(100.dp, decay) {
+  // 每一帧刷新都会执行，相当于对动画的监听
+  // 可以让 A 动画更新实时值传递给 B 动画
+  println("hhh")
+}
+```
 
 ##### 打断施法：动画的边界限制、结束和取消
 
