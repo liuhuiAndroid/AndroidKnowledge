@@ -151,21 +151,39 @@ axios
      react-native bundle --platform android --dev false --entry-file index.js --bundle-output .//app/sec/main/assets/index.android.bundle --assets-dest .//app/sec/main/res
      ```
 
-封装 React Native Android 原生模块供 React Native JS 使用
+##### 封装 React Native Android 原生模块供 React Native JS 使用
+
+```kotlin
+// 数据类型转换
+Boolean -> Bool
+Integer -> Number
+Double -> Number
+Float -> Number
+String -> String
+Callback -> function
+ReadableMap -> Object
+ReadableArray -> Array
+```
 
 1. 编写原生模块的相关 Java 代码
 
 2. 暴露接口与数据交互
 
-   借助 React Native 的 ReactContextBaseJavaModule 类
+   借助 React Native 的 ReactContextBaseJavaModule 类，getName 方法向 JS 暴露 Module 名字
 
-   @ReactMethod 向 JS 暴露方法
+   通过 @ReactMethod 向 JS 暴露方法
 
-   原生模块通过 Callback 或 Promise 进行数据传递；可以通过 RCTDeviceEventEmitter 向 JS 发送多次事件
+   原生模块通过 Callbacks 或 Promises 进行数据传递，调用一次回调一次；
+
+   可以通过 RCTDeviceEventEmitter 向 JS 发送多次事件；
 
 3. 注册与导出 React Native 原生模块
 
-   实现 ReactPackage 向 React Native 注册原生模块，ReactPackage 实现类需要注册到 Application，就可以交给 JS 来使用了
+   原生实现 ReactPackage 接口来向 React Native 注册原生模块
+   
+   ReactPackage 实现类需要注册到 Application
+   
+   然后为原生模块导出 JS 模块，就可以交给 JS 来使用了
 
 ##### 打包发布 Android 项目
 
