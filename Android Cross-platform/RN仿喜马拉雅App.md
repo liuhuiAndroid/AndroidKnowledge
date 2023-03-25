@@ -169,9 +169,11 @@ ReadableArray -> Array
 
 2. 暴露接口与数据交互
 
-   借助 React Native 的 ReactContextBaseJavaModule 类，getName 方法向 JS 暴露 Module 名字
+   借助 React Native 的 ReactContextBaseJavaModule 类创建子类，
 
-   通过 @ReactMethod 向 JS 暴露方法
+   - getName 方法向 JS 暴露 Module 名字
+
+   - 通过 @ReactMethod 向 JS 暴露方法
 
    原生模块通过 Callbacks 或 Promises 进行数据传递，调用一次回调一次；
 
@@ -185,7 +187,20 @@ ReadableArray -> Array
    
    然后为原生模块导出 JS 模块，就可以交给 JS 来使用了
 
-##### 打包发布 Android 项目
+#### React Native 全屏幕适配
+
+- 顶部 NavigationBar 上部预留安全区域；
+- 底部 TabBar 底部预留安全区域；
+
+https://android-developers.googleblog.com/2017/03/update-your-app-to-take-advantage-of.html
+
+https://developer.android.com/guide/practices/screens_support?hl=zh-cn
+
+```xml
+<meta-data android:name="android.max_aspect" android:value="2.1" />
+```
+
+#### 打包发布 Android 项目
 
 打包方式：
 
@@ -196,14 +211,18 @@ react-native-splash-screen：解决打开白屏问题
 
 react-native-config：Android 使用 .env 配置
 
+react-native-code-push：https://github.com/microsoft/react-native-code-push
+
 ```shell
 # 生成 upload.json
 npx upload-init
 # 编译打包
 npx upload-build --no-ios
+# 打包APK
+.gradlew assebleRelease 
 ```
 
-##### React Native升级与适配指南
+#### React Native升级与适配指南
 
 升级方式
 
