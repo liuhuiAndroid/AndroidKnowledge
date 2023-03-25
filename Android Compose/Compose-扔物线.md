@@ -407,6 +407,51 @@ anim.animateDecay(100.dp, decay) {
 
 ##### 打断施法：动画的边界限制、结束和取消
 
+Animatable
+
+```kotlin
+// animateDecay animateTo snapTo 可以相互打断；新动画打断旧动画
+// anim.stop() 主动打断，不能和要被掐断的动画同一个协程
+// anim.updateBounds() 设置边界；动画边界触达；正常结束不会抛异常
+var big by mutableStateOf(false)
+setContent{
+  BoxWithConstraints{
+    LaunchedEffect(Unit){
+      delay(1000)
+      try{
+        val animResult = anim.animateDecay(2000.dp, decay)
+        if(animResult.endReason == AnimationEndReason.BoundReached){
+          // 反弹
+          animResult.animateDecay(-animResult.endState.velocity, decay)
+        }
+      } catch (e: CancellationException){
+        println("被打断了")
+      }
+    }
+    LaunchedEffect(Unit){
+      delay(1500)
+      anim.animateDecay(-1000.dp, decay)
+    }
+    anim.updateBounds(0.dp, upperBound = maxWidth - 100.dp)
+    // 可以分来设置边届，动画分开停止
+    animY.updateBounds(upperBound = maxHeight - 100.dp)
+    
+    // 手动计算回弹值交给 padding
+    val paddingX = remember(anim.value){
+      val usedValue = anim.value
+      while (usedValue >= (maxWidth -100.dp) * 2) {
+        usedValue -= (maxWidth -100.dp) * 2
+      }
+      if(usedValue < maxWidth - 100.dp){
+        usedValue
+      } else {
+        (maxWidth -100.dp) * 2 - usedValue
+      }
+    }
+  }
+}
+```
+
 ##### Transition：多属性的状态切换
 
 ##### Transition 延伸：AnimatedVisibility()
