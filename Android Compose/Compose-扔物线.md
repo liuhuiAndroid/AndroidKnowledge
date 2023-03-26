@@ -454,11 +454,108 @@ setContent{
 
 ##### Transition：多属性的状态切换
 
+转场动画，状态切换的动画
+
+```kotlin
+val big by remember { mutableStateOf(false) }
+// val bigTransition = updateTransition(big, "big")
+val bigTransition = updateTransition(
+  MutableTransitionState(big).apply{ targetState = true }, "big")
+// Transition 会统一管理，label在预览页面可以看
+val size by bigTransitiom.animateDp({ 
+	when {
+    false isTransitioningTo true -> spring() 
+    else tween()
+  }
+}, label = "size"){ if(big) 96.dp else 48.dp }
+val corner by bigTransitiom.animateDp(label = "corner"){ if(big) 0.dp else 18.dp }
+Box(
+	Modifier
+  	.size(size)
+  	.clip(RoundedCornerShape(corner))
+  	.background(Color.Green)
+  	.clickable{
+      big = !big
+    }
+)
+```
+
 ##### Transition 延伸：AnimatedVisibility()
+
+扩展 Transition
+
+```kotlin
+var shown by remember { mutableStateOf(true) }
+// AnimatedVisibility(shown, enter = fadeIn(initialAlpha = 0.5f)) {
+//   TransitionSquare()
+// }
+AnimatedVisibility(shown, enter = slideIn{ IntOffset(-it.width, -it.height) }) {
+  TransitionSquare()
+}
+AnimatedVisibility(shown, enter = expandIn(
+  tween(5000),
+	expandFrom = Alignment.TopStart,
+  initialSize = { IntSize(it.width / 2, it.height / 2) }
+  clip = false
+)) {
+  TransitionSquare()
+}
+AnimatedVisibility(shown, enter = scaleIn(transformOrigin = TransformOrigin())) {
+  TransitionSquare()
+}
+// 0.5f 废弃
+AnimatedVisibility(shown, enter = fadeIn(initialAlpha = 0.3f) + fadeIn(initialAlpha = 0.5f)) {
+  TransitionSquare()
+}
+// + 把两个动画进行合并
+AnimatedVisibility(shown, enter = scaleIn() + expandIn()]) {
+  TransitionSquare()
+}
+Button(onClick = { shown = !shown }){
+  Text("切换")
+}
+
+val big by remember { mutableStateOf(false) }
+val bigTransition = updateTransition(big, "big")
+bigTransition.AnimatedVisibility({ it }){
+  
+}
+```
 
 ##### Transition 延伸：Crossfade()
 
+让两个交替出现的组件渐变
+
+```kotlin
+var shown by remember { mutableStateOf(true) }
+Crossfade(shown, animationSpec = tween()){
+  if (it) {
+    A()
+  } else{
+    Box(Modifier.size(24.dp).background(Color.Red))
+  }
+}
+```
+
 ##### Transition 延伸：AnimatedContent()
+
+面向多个组件出场和入场定制
+
+```kotlin
+var shown by remember { mutableStateOf(true) }
+AnimatedContent(shown, transitionSpec = {
+  // ContentTransform(fadeIn(), fadeOut())
+  // fadeIn() with fadeOut()
+  fadeIn(tween(3000)) with fadeOut(tween(3000, 3000))
+}) {
+  when (it) {
+    1 -> Box()
+    2 -> Box()
+    3 -> Box()
+    else -> Box()
+  }
+}
+```
 
 ### No.5 Modifier 全解析
 
