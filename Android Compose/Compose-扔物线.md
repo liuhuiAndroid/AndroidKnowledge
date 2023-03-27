@@ -1174,11 +1174,15 @@ Modifier.scrollable(rememberScrollableState{
 Modifier.nestedScroll()
 ```
 
+##### 自定义触摸：二维滑动监测
+
+##### 自定义触摸：多指手势
+
+##### 自定义触摸：最底层的 100% 定义触摸算法
+
 ### 和传统的 View 系统混用
 
-SurfaceView
-
-TextureView
+SurfaceView、TextureView 在 Compose中没有对等实现
 
 ```kotlin
 // View 里面使用 Compose
@@ -1190,6 +1194,10 @@ linearLayout.addView(composeView, ViewGroup.LayoutParams(
   	ViewGroup.LayoutParams.MATCH_PARENT,
   	ViewGroup.LayoutParams.WARP_CONTENT,
 ))
+// xml 添加 androidx.compose.ui.platform.ComposeView
+// <androidx.compose.ui.platform.ComposeView
+//   android:layout_width="match_parent"
+//   android:layout_height="wrap_content"/>
 findViewById<ComposeView>(R.id.composeView).setContent{ CustomText() }
 
 // Compose 使用 View
@@ -1202,17 +1210,11 @@ setContent{
         text = "hello world"
       }
     }){
-      // update
+      //  重组过程中会 update
       it.text = name
     }
   }
 }
-```
-
-```xml
-<androidx.compose.ui.platform.ComposeView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
 ```
 
 
