@@ -921,7 +921,7 @@ Text("Hello", Modifier.drawBehind{
 Box(Modifier.size(80.dp).drawBehind{
   
 })
-
+// 自由决定绘制顺序
 Text("Hello", Modifier.drawWithContent{
 	drawRect(Color.Yellow)
   // drawContent 上面xxx 被覆盖
@@ -932,10 +932,18 @@ Text("Hello", Modifier.drawWithContent{
 })
 
 val image = ImageBitmap.imageResource(R.drawable.avatar)
-// 两种旋转 1. graphicsLayer 使用 RenderNode 旋转
-Canvas(Modifier.size(80.dp).graphicsLayer{ rotationX = 45f }){
+val paint by remember { mutableStateOf(Paint()) }
+// 两种旋转 1. graphicsLayer 使用 RenderNode 旋转坐标系
+Canvas(Modifier.size(80.dp).graphicsLayer{ 
+  rotationX = 45f
+  rotationY = 45f
+}){
   rotate(30f){
     drawImage(image, dstSize = IntSize(size.width.roundToInt(), size.height.roundToInt()))
+  }
+  // rotateRad() 弧度
+  drawInCanvas{
+    it.drawImageRect(image, dstSize = IntSize(size.width.roundToInt(), size.height.roundToInt()), paint = paint)
   }
 }
 
@@ -947,14 +955,20 @@ LaunchedEffect(Unit){
   rotationAnimatable.animateTo(360f, infiniteRepeatable(tween(2000)))
 }
 // 多维旋转使用 Camera
-val camera by remember { mutableStateOf(Paint()) }
-val paint by remember { mutableStateOf(Camera()) }
+val camera by remember { mutableStateOf(Camera()) }// .apply{
+//   value.rotateX(45f)
+//   value.rotateY(45f)
+// }
+val paint by remember { mutableStateOf(Paint()) }
 Canvas(Modifier.size(80.dp)){
+  // 下沉到Compose的Canvas
   drawInCanvas{
+    // 使用更下层的接口
     it.translate(size.width/2, size.height/2)
     it.rotate(-45f)
     camera.save()
     camera.ratateX(rotationAnimatable.value)
+    // 下沉到原生Canvas
     camera.applyToCanvas(it.nativeCanvas)
     camera.restore()
     it.rotate(45f)
@@ -982,7 +996,7 @@ fun CustomLayoutPreview{
   }
 }
 
-// 自定义布局
+// 自定义布局，简单版自定义Column
 @Composable
 fun CustomLayout(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
   // Layout 等价于 ViewGroup
@@ -1008,16 +1022,22 @@ fun CustomLayout(modifier: Modifier = Modifier, content: @Composable () -> Unit)
 
 ##### 自定义布局：SubcomposeLayout()
 
-对界面性能有负面影响，能不用就不用
+LazyColumn：动态控制显示数量和细节等，避免性能消耗。Scaffold；
+
+缺点：对界面性能有负面影响，能不加入Subcompose就不用。也不用因噎废食
 
 ```kotlin
 BoxWithConstraints() {
-  // 可以拿到父组件对子组件的尺寸限制
+  // 可以拿到测量过程父组件对子组件的尺寸限制再决定如何组合；Box拿不到
   constraints
-  Text("Hello", Modifier.align(Alignment.Center))
-  Text("World", Modifier.align(Alignment.Center))
+  if(minWidth >= 360.dp){
+    Text("Hello", Modifier.align(Alignment.Center))
+  } else {
+    Text("World", Modifier.align(Alignment.Center))
+  }
 }
 
+// Subway，sub次一级
 SubcomposeLayout{ constraints ->
   // 组合
 	val measureable = subcompose(1){
@@ -1216,6 +1236,3 @@ setContent{
   }
 }
 ```
-
-
-

@@ -230,6 +230,3 @@ npx upload-build --no-ios
 
 - 手动升级，每个大版本升级一次；建议使用
   - 使用 react-native 初始化一个最新的 RN 项目，参照该项目的 package.json 对依赖版本进行升级，修改 devDependencies 节点
-
-
-
