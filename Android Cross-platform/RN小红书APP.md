@@ -118,7 +118,17 @@ node_modules：npm安装的项目
 
 ##### Image构建精美ui
 
+图片源的两种类型：source
+
+缩放模式：resizeMode
+
+blurRadius：曾经的难题现在如此简单
+
 ##### ImageBackground-View和Image的结合
+
+style 和 imageStyle
+
+ref 和 imageRef
 
 ##### TextInput唯一且强大的输入组件
 
