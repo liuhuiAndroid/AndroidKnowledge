@@ -132,17 +132,69 @@ ref 和 imageRef
 
 ##### TextInput唯一且强大的输入组件
 
+字体样式：和Text一致
+
+自动聚焦：autoFocus和focus()
+
+自动失焦：blurOnSubmit和blur()
+
+隐藏光标：caretHidden
+
+默认输入：defaultValue
+
+可编辑性：editable
+
+键盘类型：keyboardType
+
+确定键配置：returnKeyType
+
+最大长度：maxLength
+
+多行输入：multiline和numberOfLines
+
+焦点回调：onBlur和onFocus
+
+内容回调：onChange和onChangeText
+
+选中相关：selection、selectionColor、selectTextOnFocus
+
+对齐方式：textAlign和textAlignVertical
+
+安全模式：secureTextEntry
+
 ##### TouchableOpacity最好用的点击组件
+
+透明度渐变阈值：activeOpacity
+
+点击事件：onPress、onLongPress、delayLongPress
+
+点击事件起止：onPressIn、onPressOut
 
 ##### TouchableHighlight使用略显麻烦的点击组件
 
+所有点击类事件和TouchableOpacity相同
+
+只支持一个子节点
+
+使用陷阱：必须复写onPress
+
 ##### TouchbaleWithoutFeedback几乎不用的点击组件
 
+只支持一个子节点，且自身不支持样式
+
 ##### Button 使用简单但样式固定
+
+title：设置按钮显示文字
+
+color ：设置按钮颜色
+
+应用场景：对按钮的UI没有要求
 
 ##### 强大的 Pressable
 
 ##### ScrollView 基础滚动组件
+
+
 
 ##### FlatList 高性能列表组件
 
