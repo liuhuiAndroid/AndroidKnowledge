@@ -194,19 +194,125 @@ color ：设置按钮颜色
 
 ##### ScrollView 基础滚动组件
 
+添加子节点：固定子元素、列表渲染、数组渲染
 
+内容包裹样式：contentContainerStyle
+
+滚动键盘消失：keyboardDismissMode
+
+点击收起键盘：keyboardShouldPersistTaps
+
+滚动开始与结束：onMomentumScrollBegin/End
+
+滚动距离监听：onScroll（IOS：scrollEventThrottle）
+
+超出滚动：overScrollMode
+
+分页滚动：pagingEnabled，滚动方向：horizontal
+
+滚动开关：scrollEnable
+
+初始滚动：contentOffset
+
+是否展示滚动条：showsVerticalScrollIndicator/Horizontal
+
+吸顶元素：stickyHeaderIndices
+
+api：scrollTo()、scrollToEnd()
 
 ##### FlatList 高性能列表组件
 
+基础使用：data、renderItem、keyExtractor
+
+ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
+
+横向纵向：horizontal
+
+表头：ListHeaderComponent
+
+表尾：ListFooterComponent
+
+空元素：ListEmptyComponent
+
+分割线元素：ItemSeparatorComponent
+
+初始渲染元素：initialNumToRender
+
+反向：inverted
+
+多列排布：numColumns
+
+滚动到指定元素：scrollToIndex()、scrollToItem()不推荐
+
+滚动指定距离：scrollToOffset()
+
+滚动到底：scrollToEnd()
+
 ##### SectionList 多类型分组列表
+
+基础使用：sections、renderItem、keyExtractor
+
+ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
+
+表头：ListHeaderComponent
+
+表尾：ListFooterComponent
+
+分组头部：renderSectionHeader
+
+分割线元素：ItemSeparatorComponent
+
+分组吸顶：stickySectionHeadersEnabled
+
+滚动api：scrollToLocation()
 
 ##### RefreshControl 下拉刷新
 
+下拉刷新：refreshing、onRefresh
+
+上拉加载：onEndReached、onEndReachedThreshold
+
 ##### Modal 自定义弹窗
+
+控制显示：visible
+
+渲染内容：children
+
+安卓返回关闭：onRequestClose
+
+背景透明：transparent
+
+状态栏透明：statusBarTranslucent
+
+动画方式：animationType
+
+状态回调：onShow、onDismiss
+
+背景动画：伏笔
 
 ##### StatusBar 适配状态栏
 
+内容深浅模式：barStyle
+
+背景颜色：backgroundColor
+
+动画切换：animated
+
+透明悬浮：translucent
+
+隐藏状态栏：hidden
+
+api：setBackgroundColor()、setBarStyle()、setHidden()、setTranslucent()
+
 ##### Switch 开关切换
+
+指定开关：value
+
+状态回调：onValueChange
+
+背景颜色：trackColor
+
+前景颜色：thumbColor
 
 ### 常用API
 
