@@ -1170,11 +1170,13 @@ Modifier.pointerInput(Unit){
 
 val interactionSource = remember { MutableInteractionSource() }
 val offsetX by remember { mutableStateOf(0f) }
-Text("Hello world.", Modifier.offset{ IntOffset(offsetX.roundToInt, 0) }
+Text("Hello world.", Modifier
+     .offset{ IntOffset(offsetX.roundToInt, 0) }
+     // 监测一维滑动
      .draggable(rememberDraggableState{ delta ->
-  println("$delta px.")
-  offsetX += it                                 
-}, Orientation.Horizontal))
+        println("$delta px.")
+        offsetX += it                                 
+     }, Orientation.Horizontal))
 val isDragged = interactionSource.collectIsDraggedAsState()
 Text(if (isDragged) "拖动中" else "静止")
 
@@ -1185,20 +1187,74 @@ Modifier.HorizontalScrollable()
 // 滑动监测
 Modifier.scrollable(rememberScrollableState{
   println("scroll $it")
-})
+}, Orientation.Horizontal, overscrollEffect = ScrollableDefaults.overscrollEffect())
+
+SwipToDismiss()
 ```
 
 ##### 嵌套滑动和 nestedScroll()
 
 ```kotlin
 Modifier.nestedScroll()
+
+Scaffold{
+  LargeTopAppBar(title="", scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior())
+}
+
+var offsetY by remember{ mutableStateOf(0f) }
+val dispatcher = remember{ NestedScrollDispatcher() }
+Column(
+	Modifier.offset{ IntOffset(0, offsetY.roundToInt()) }
+  .draggable(rememberDraggableState{
+    dispatcher.dispatchPreScroll(Offset(0f, it), NestedScrollSource.Drag)
+    offsetY += it
+    dispatcher.dispatchPostScroll()
+  }, Orientation.Vertical)
+  .nestedScroll()
+)
 ```
 
 ##### 自定义触摸：二维滑动监测
 
+```kotlin
+Modifier.pointInput(Unit){
+  detectDragGestures{ change, dragAmout ->
+    
+  }
+}
+
+val draggableState = rememberDraggableState{}
+Modifier.draggable(draggableState, Orientation.Horizontal)
+LaunchedEffect(Unit){
+  draggableState.drag{
+    dragBy(100f)
+  }
+}
+```
+
 ##### 自定义触摸：多指手势
 
+```kotlin
+Modifier.pointInput(Unit){
+  detectTransformGestures{ centroid, pan, zoom, rotation ->
+    
+  }
+}
+```
+
 ##### 自定义触摸：最底层的 100% 定义触摸算法
+
+```kotlin
+Text("", Modifier.pointerInput(Unit){
+  awaitPointerEventScope{
+    var event = awaitPointEvent()
+    print("${event.type}")
+    if(event.type == PointerEventType.Release){
+      
+    }
+  }
+})
+```
 
 ### 和传统的 View 系统混用
 
