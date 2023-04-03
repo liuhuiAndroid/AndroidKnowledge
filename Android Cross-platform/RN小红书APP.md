@@ -576,6 +576,8 @@ Android 手动启动布局动画
 
 学习几个演示案例
 
+
+
 ### 账号密码本
 
 ##### 初始化项目和页面框架
@@ -633,4 +635,206 @@ AsyncStorage：数据存储
 打release包并安装发布
 
 
+
+### 掌握企业级开发的必备利器
+
+##### TypeScript 介绍和优势
+
+JS的超集，JS有的TS都有，能运行JS就能运行TS
+
+强大的类型系统提升了代码可阅读性、可维护性
+
+类型推断、类型检查、代码提示
+
+有助于在团队中推动严格的代码检查
+
+##### TypeScript 安装和项目配置
+
+```shell
+# 安装TypeScript
+npm install --save-dev typescript
+# 生成tsconfig.json
+tsc --init
+# 安装类型申明
+npm i --save-dev @types/react @types/react-native
+```
+
+##### number、string、boolean 三大基础类型
+
+数值类型：number
+
+字符串类型：string
+
+布尔类型：boolean
+
+##### 数组、元组、枚举类型的使用
+
+数组类型：Array
+
+##### 函数类型
+
+##### 类型文件和命名空间
+
+局部类型文件和全局类型文件
+
+使用命名空间
+
+
+
+### 深刻理解解耦的精髓
+
+##### Context 上下文介绍和演示
+
+在一个典型的React应用中，数据是通过props属性逐层传递，这种做法对于某些数据而言是极其繁琐的（如：登陆信息，UI主题），这些数据应用中许多组件都需要；而Context提供了一种在组件间共享值的方式，而不必显式地通过组件树逐层传递
+
+##### Context 实例演示应用主题配置
+
+分析实现效果，思考传统实现思路及问题
+
+对比Context实现方式，体会Context的简洁和解耦
+
+```tsx
+import { createContext } from 'react';
+export const ThemeContext = createContext<string>('dark')
+
+import { ThemeContext } from './ThemeContext';
+const theme = useContext(ThemeContext);
+
+const [theme, setTheme] = useState<string>('dark');
+```
+
+使用state维护动态Context值
+
+##### Context 内容小结
+
+因为Context本质上就是全局变量，大量使用Context会导致组件失去独立性，使组件复用性变差。
+
+对于常规的组件间传值，可优先考虑组件组合、状态管理、单例导出等方式，不要过度使用Context。
+
+
+
+### 掌握高阶组件强大的解耦和封装技巧
+
+##### HOC 高阶组件介绍
+
+什么是高阶函数？
+
+如果一个函数接受的参数为函数，或者返回值是一个新函数，则该函数就是高阶函数。
+
+什么是高阶组件？
+
+如果一个组件的参数是组件，返回值是一个新组件，则该组件就是高阶组件。
+
+高阶组件应用场景：解决什么问题？
+
+使用HOC高阶组件解决横切关注点问题，使得组件功能更加单一，组件逻辑服务组件ui，从而降低耦合性，增强组件的复用性。
+
+##### HOC 高阶组件案例演示1
+
+Hack渲染函数：首页添加按钮
+
+##### HOC 高阶组件案例演示2
+
+
+
+### 掌握几种必备的memo应用技巧
+
+##### memo 与性能优化 函数式组件和 class 组件拦截多余渲染的方法
+
+避免多余渲染
+
+- 函数式组件：React.memo()
+- class组件：shouldComponentUpdate()
+
+##### 使用 useMemo 缓存计算结果
+
+useMemo 缓存数据
+
+useMemo 缓存ui渲染
+
+useCallback 缓存回调函数
+
+##### useMemo 缓存 ui 以及 useCallback 缓存回调函数
+
+##### Hermes 引擎
+
+enableHermes: true 可以节省10% JS Bundle体积
+
+
+
+### 具备更强的自定义组件能力
+
+##### Ref转发案例演示1 外层操作原始组件
+
+ref转发解决什么问题
+
+- 使用自定义组件时，外层对原始组件的操作
+- 函数式组件对外暴露实例
+
+案例演示
+
+- 使用自定义组件，外层操作原始组件
+
+##### Ref转发案例演示2 对外暴露api
+
+案例演示
+
+- 自定义组件对外暴露api
+- class组件实现方式
+- 函数式组件实现方式
+
+
+
+### 精通4种桥接方式，让RN能力无限延伸
+
+##### 桥接原生介绍
+
+为什么需要桥接原生
+
+- 实现react层JS实现不了的需求
+  - 复杂、高性能组件：复杂表格、视频播放等
+  - 原生层开发能力：传感器编程、widget等
+  - 平台属性：系统信息、设备信息等
+  - 对接三方应用：相机、相册、地图等
+
+##### 桥接原生实现JS调用原生方法
+
+- 编写并注册原生层方法
+  - 实现 ReactPackage
+  - 实现 ReactContextBaseJavaModule
+    - @ReactMethod
+- JS层调用原生方法
+
+##### 桥接原生实现JS层获取原生常量
+
+- 编写并注册原生常量方法
+- JS层获取原生常量（同步获取）
+
+##### 桥接原生原子组件 实现原生组件
+
+- 实现一个原生自定义组件View
+
+##### 桥接原生原子组件 JS层调用原生组件
+
+- 创建ViewManager，实现 SimpleViewManager，用于接管原生自定义组件的属性和行为，并把ViewManager注册到ReactPackage中
+- 在JS层导入原生组件，并封装导出JS模块
+
+##### 桥接原生原子组件 封装原生组件属性
+
+ViewManager 使用 @ReactProp 定义组件属性
+
+##### 桥接原生原子组件 原生事件回调
+
+原生组件回调JS层方法
+
+##### 桥接原生原子组件 原生组件公开api给JS调用
+
+公开原生组件方法给JS层调用
+
+##### 桥接原生容器组件
+
+- 实现一个原生容器组件
+- 创建 ViewGroupManager，注册行为和 ViewManager 一致
+- 在 JS 层导入原生组件，并封装导出 JS 模块
+- 属性、方法回调、api调用和ViewManager一致
 
