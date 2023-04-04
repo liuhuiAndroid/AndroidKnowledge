@@ -838,3 +838,203 @@ ViewManager 使用 @ReactProp 定义组件属性
 - 在 JS 层导入原生组件，并封装导出 JS 模块
 - 属性、方法回调、api调用和ViewManager一致
 
+
+
+### 项目实战仿写小红书App
+
+##### 实战仿写小红书 App 实战项目指导大纲
+
+##### 实战仿写小红书App 功能演示和需求梳理
+
+##### 实战仿写小红书App 项目初始化和资源准备
+
+初始化工程与安装
+
+完成基础项目配置：名称、图标、应用id
+
+核对设计稿，准备资源图片，导入图片
+
+##### 实战仿写小红书App 导入并配置TypeScript和AsyncStorage
+
+项目配置TypeScript
+
+```shell
+# 安装TypeScript
+npm install --save-dev typescript
+# 生成tsconfig.json
+tsc --init
+# 安装类型申明
+npm i --save-dev @types/react @types/react-native
+```
+
+AsyncStorage：数据存储
+
+```shell
+# 集成async-storage
+npm i @react-native-async-storage/async-storage
+# 保存数据：AsyncStorage.setItem()
+# 读取数据：AsyncStorage.getItem()
+```
+
+
+
+### 项目实战仿写小红书App【路由管理和欢迎登陆页面】
+
+##### 实战仿写小红书 App 路由管理安装和介绍
+
+集成react-navigation
+
+```shell
+npm i @react-navigation/bottom-tabs
+npm i @react-navigation/native
+npm i @react-navigation/stack
+npm i react-native-gesture-handler
+npm i react-native-safe-area-context
+npm i react-native-screens
+```
+
+##### 实战仿写小红书 App 构建导航栈并测试核心 Api
+
+构建导航栈
+
+- 在App.tsx根结点构建导航栈
+- 配置导航栈属性
+
+##### 实战仿写小红书 App 实现欢迎页面和快捷登陆页面
+
+欢迎页面和登陆页面
+
+- 开发欢迎页面，并设置3秒倒计时
+- 开发登陆页面，并设置3秒倒计时
+- 页面连续跳转
+
+##### 实战仿写小红书 App 实现账号密码登陆页面
+
+##### 实战仿写小红书 App 欢迎登陆首页三连跳
+
+##### 实战仿写小红书 App 登陆页面交互细节优化
+
+
+
+### 项目实战仿写小红书App【服务端接口与网络请求】
+
+##### nodejs服务介绍及使用方法
+
+为什么使用本地nodejs服务模拟数据？
+
+初识egg.js：初始化、controller、静态资源
+
+本地nodejs服务使用方法
+
+```shell
+npm install
+npm run dev
+```
+
+##### 封装Axios请求
+
+```shell
+# 安装Axios库
+npm i axios
+# 封装request请求方法
+request.ts
+```
+
+##### 封装接口配置
+
+增加apis接口配置文件
+
+使用简化接口配置名发起请求
+
+##### 拦截接口响应
+
+拦截接口响应（错误码）
+
+##### 使用Mobx和缓存实现完整登陆流程
+
+- 集成MobX库，介绍基础用法
+
+```shell
+npm i mobx mobx-react
+```
+
+- 编写UserStore，使用状态管理类隔离ui和数据
+
+  ESM单例导出  
+
+- 本地缓存登录信息，下次自动登录
+
+
+
+### 项目实战仿写小红书App【构建应用自定义主Tab页】
+
+##### 构建基础底部Tab
+
+- 使用bottom-tab组件构建首页Tab页
+
+- 实现自定义Tab样式
+
+- 集成相册选择模块，跳转系统图库
+
+  ```shell
+  npm i react-native-image-picker
+  ```
+
+##### 自定义底部TabBar样式
+
+##### 集成相册选择模块
+
+
+
+### 高仿商业级小红书 App【构建应用首页瀑布流列表】
+
+##### 搭建首页框架
+
+- 创建首页组件和HomeStore
+
+- 重新安装mobx版本
+
+  ```shell
+  npm uninstall mobx
+  npm uninstall mobx-react
+  npm i mobx@5.15.4 mobx-react@6.1.8
+  
+  npm i @babel/plugin-proposal-decorators
+  # babel 添加插件
+  plugins: [["@babel/plugin-proposal-decorators", {"legacy":true}]]
+  # tsconfig.json添加属性
+  "experimentalDecorators": true
+  ```
+
+- 实现ui到数据的基本流程
+
+##### 实现列表显示和分页加载
+
+- 使用FlatList加载文章列表
+  - 固定尺寸Item
+  - 完整数据显示
+  - 数据分页加载
+  - 添加列表Footer
+
+##### 实现瀑布流布局
+
+- 使用FlowList代替FlatList实现瀑布流布局
+- 自定义ResizeImage组件，实现可变图片大小
+- 自定义Heart组件实现点赞特效
+
+##### 自定义Heart实现点赞特效
+
+##### 封装TitleBar组件
+
+##### 封装CategoryList频道组件
+
+- 本地定义频道数据，并在store提供存取功能
+- 使用横向ScrollView实现频道列表
+- 使用自定义Modal实现频道编辑弹窗
+
+##### 自定义频道编辑弹窗
+
+##### 实现频道编辑数据修改
+
+##### Toast和Loading小工具
+
