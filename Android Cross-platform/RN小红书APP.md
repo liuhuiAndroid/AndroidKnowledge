@@ -1120,20 +1120,97 @@ npm i mobx mobx-react
 
 - 不需要下载应用包，不需要重新发起安装
 - 小体积差分包下载、免安装重启生效
+
+为什么会存在热修复技术？
+
 - 移动端的特有属性：离线安装包
 - 互联网竞争的短平快新：最小成本、最快速度、降低干扰
 
 CodePush & **Pushy**
 
+- CodePush：微软，官网：http://appcenter.ms/apps
+
+- Pushy：RN中文网推荐，官网：https://pushy.reactnative.cn/
+
+  | CodePush             | Pushy                    |
+  | -------------------- | ------------------------ |
+  | 功能强，支持生产测试 | 功能一般，不支持生产测试 |
+  | 大厂信用背书         | 中文网推荐               |
+  | 支持数据统计         | 服务器稳定               |
+  | 服务器不稳定         | 补丁包体积较小           |
+  | 初次补丁包较大       | 不支持数据统计           |
+
 ##### 安装Pushy模块与创建应用
+
+1. cli和模块安装
+
+   ```shell
+   npm i -g react-native-update-cli
+   npm i react-native-update
+   ```
+
+2. 禁用android的crunch优化
+
+   ```groovy
+   buildTypes{
+   	release{
+   		crunchPngs false
+   	}
+   }
+   ```
+
+3. 配置Bundle URL
+
+   ```java
+   @Override
+   protected String getJSBundleFile(){
+     return UpdateContext.getBundleUrl(MainActivity.this);
+   }
+   ```
+
+4. 后续具体查看官网文档。。。
 
 ##### 代码集成热修复加载流程
 
-生效与回滚
+代码自定义集成
 
-- 确认生效：补丁安装成功，保存patch版本
-- 回滚补丁：补丁安装失败，上报信息
+1. 获取appKey
+2. 检查更新
+3. 下载更新
+4. 切换版本
+5. 生效与回滚
+   - 确认生效：补丁安装成功，保存patch版本
+   - 回滚补丁：补丁安装失败，上报信息
 
 ##### 发布补丁并成功加载
 
+```shell
+pushy uploadApk app-release.apk
+pushy bundle --platform android
+# meta info: {"forceUpdate":true}
+```
+
 ##### 6处流程细节优化
+
+1. 检查补丁更新封装成高阶组件
+2. 不做大版本更新
+3. 可以发布小功能
+4. 区分布丁是否强制升级还是弹窗提示用户
+5. 提醒用户是否重启
+6. 设置页面显示补丁版本号name
+
+
+
+### 课程总结与未来展望
+
+- 前端基础、React基础、系统组件、系统Api
+- TypeScript、Context、HOC、memo、ref
+- 动画系统、原生桥接、路由管理、状态管理 ...
+- React开发思维、函数式编程思想
+- 组件接耦技巧、模块封装方法
+- 项目开发流程、实战开发经验
+
+TODO
+
+- React开发web项目
+- Taro开发小程序项目
