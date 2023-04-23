@@ -1,4 +1,6 @@
-### ReactNative优势
+### 了解ReactNative优势和本套课程的学习目标
+
+跨平台的优势和机遇
 
 - 快速开发，降本增效
 - 合并两端人员，促进技术融合
@@ -13,23 +15,47 @@
 - Flutter 出自 Google，对于 Android 开发有情感优势，而 React Native 出自 Facebook，需要重新学习前端语言
 - 二者都是非常优秀的跨平台方案，从需选择，理性看待，不要简单用优/劣划分
 
-### 开发环境搭建
+### 开发环境搭建和 demo 运行
 
 官网：https://reactnative.dev/
 
 VSCode
 
 ```shell
+# 安装node和watchman
 brew install node
+# watchman：用来监视文件并且记录文件的改动情况
 brew install watchman
+# 使用cli命令创建ReactNative工程，并启动运行
+npx react-native init AwesomeProject
 npx react-native init AwesomeProject --version X.XX.X
+# 安装js依赖，简写npm i
 npm install
+# 安装原生依赖
 gradle sync
 adb devices
+# 运行Android程序
 npm run android
+# Mac下 .bash_profile 和 .zshrc 两者之间的区别
+# .zshrc在电脑每次自启时都会生效（永久有效）
+# .bash_profile中修改的环境变量只对当前窗口有效
 ```
 
 ### 前端基础
+
+##### 学习js的基本使用，了解如何申明变量、函数、以及js的一些基本特性
+
+##### 了解什么是ES5、ES6，掌握ES6常用的一些方法
+
+ECMAScript5、ECMAScript6
+
+##### 了解什么是babel以及常见的配置
+
+##### 学习CSS-flex布局基础，为后面正式学习rn布局打下基础
+
+##### npm是什么？npm如何检索、安装和卸载
+
+##### 使用nrm管理npm源
 
 ### 原生基础
 
