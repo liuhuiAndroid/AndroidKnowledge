@@ -1308,31 +1308,51 @@ npm i --save-dev @types/react @types/react-native
 
 ##### Context 上下文介绍和演示
 
-在一个典型的React应用中，数据是通过props属性逐层传递，这种做法对于某些数据而言是极其繁琐的（如：登陆信息，UI主题），这些数据应用中许多组件都需要；而Context提供了一种在组件间共享值的方式，而不必显式地通过组件树逐层传递
+在一个典型的React应用中，数据是通过**props属性逐层传递**，这种做法对于某些数据而言是极其繁琐的（如：登陆信息，UI主题），这些数据应用中许多组件都需要；而Context提供了一种在**组件间共享值**的方式，而不必显式地通过组件树逐层传递
 
 ##### Context 实例演示应用主题配置
 
-分析实现效果，思考传统实现思路及问题
+- 分析实现效果，思考传统实现思路及问题
 
-对比Context实现方式，体会Context的简洁和解耦
+- 对比Context实现方式，体会Context的简洁和解耦
 
 ```tsx
-import { createContext } from 'react';
+// ThemeContext.tsx
+import { createContext, useContext, useState } from 'react';
 export const ThemeContext = createContext<string>('dark')
-
+// use ThemeContext
 import { ThemeContext } from './ThemeContext';
+// 根节点
+export default () => {
+  return (
+    <ThemeContext.Provider value='dark'>
+      <View style={{ width: '100%' }}>
+        <PageView />
+      </View>
+    </ThemeContext.Provider>
+  )
+}
+// 叶子结点取值
 const theme = useContext(ThemeContext);
-
+// 动态修改
 const [theme, setTheme] = useState<string>('dark');
 ```
 
-使用state维护动态Context值
+- 使用state维护动态Context值
 
 ##### Context 内容小结
 
-因为Context本质上就是全局变量，大量使用Context会导致组件失去独立性，使组件复用性变差。
+使用Context的思考：
 
-对于常规的组件间传值，可优先考虑组件组合、状态管理、单例导出等方式，不要过度使用Context。
+- 因为Context本质上就是全局变量，大量使用Context会导致组件失去独立性，使组件复用性变差。
+
+- 对于常规的组件间传值，可优先考虑组件组合、状态管理、单例导出等方式，不要过度使用Context。
+- 使用Context实现全局登录信息传递
+
+内容小结：
+
+- Context传递全局数据，相比传统的通过props组件树逐级传递，代码更少，更加简洁，降低耦合。
+- 大量使用Context会导致组件失去独立性，使组件复用性变差，除必要场景外，应优先思考其他解耦方案。
 
 
 
