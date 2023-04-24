@@ -106,15 +106,56 @@ RN和原生组件对应关系
 
 ### React基础知识和工程结构
 
-index.js：默认入口文件						
+##### 工程目录结构，了解关键文件作用
+
+index.js：默认入口文件
 
 App.js：RN组件
 
-package.json：全局大管家文件		
+package.json：全局大管家文件
+
+package-lock.json：npm i自动生成，锁定版本
+
+babel.config.js：翻译器配置				
+
+app.json：定义工程配置常量
+
+node_modules：npm安装的项目，里面的文件可以改，改完不能npm i
+
+##### 构建通用源码目录结构，好的工程从模块划分开始
+
+职责清晰：每个目录划分都规定具体的职责
+
+功能全面：包含ui、数据、网络、常量、工具、环境等
+
+独立接耦：一级目录之间没有职责交叉和耦合
+
+src：modules、components、assets、constants、env、hooks、stores、utils、apis、theme
+
+##### package.json全局大管家文件
 
 - 基础字段：name、version、private
 
-- 自定义脚本：scripts
+  ```js
+  import {name, version} from './package.json';
+  console.log(`name=${name},version=${version}`)
+  ```
+
+- 自定义脚本：scripts，使用 npm run 可以运行
+
+  npm run android
+
+  ```groovy
+  flavorDimensions "type"
+  productFlavors{
+    dev{
+      resValue("string", "app_name", "demo_dev")
+    }
+    prd{
+      resValue("string", "app_name", "demo_prd")
+    }
+  }
+  ```
 
   ```json
   "android_devDebug": "react-native run-android --variant=devDebug",
@@ -123,45 +164,556 @@ package.json：全局大管家文件
 
 - 包依赖：dependencies、devDependencies
 
+  dependencies：真实运行需要依赖的包
+
+  devDependencies：开发阶段需要依赖的包
+
   ```shell
   npm install xxx
   npm uninstall xxx
   npm install -save-dev xxx
   ```
 
-package-lock.json：自动生成
 
-babel.config.js：翻译器配置				
+##### import和export，三种导入导出类型
 
-app.json：定义工程配置常量
+import export json
 
-node_modules：npm安装的项目
+```json
+{
+  "name": "jerry",
+  "age": 12,
+  "level": "top",
+  "sex": true
+}
+```
 
-##### class 组件
+```js
+import Config from './src/constants/Config.json';
+console.log(JSON.stringify(Config))
+console.log(`name=${Config.name},age=${Config.age}`)
+```
 
-- 有状态（state），每次都是修改的同一个状态
-- 基于生命周期的管理
-- 面向对象的好处：易于理解，适合新手
+import export function
 
-##### 函数式组件（用的更多）
+```js
+// StringUtil.js
+function test(){
+  console.log('test...')
+}
+export default test;
+// 2 导出函数
+export function test2(){
+  console.log('test...')
+}
+```
 
-- 无状态，每次刷新都是生成一个新的状态
-- 基于状态变化的管理
-- 函数式的好处：简洁，模版代码少，易于复用
+```js
+import StringUtil from './src/utils/StringUtil';
+test();
+// 2
+import {test, test2} from './src/utils/StringUtil';
+test2();
+```
+
+import export view
+
+```js
+// TestView.js
+import React from "react";
+import { View } from "react-native";
+export default () => {
+  return (
+  	<View style={{width:200, height:200, backgroundColor: 'blue'}}/>
+  );
+}
+```
+
+```js
+import TestView from './src/components/TestView';
+AppRegistry.registerComponent(appName, () => TestView);
+```
+
+##### class 组件的标准写法和生命周期
+
+| class组件                                 | 函数式组件（用的更多）                   |
+| ----------------------------------------- | ---------------------------------------- |
+| 有状态（state），每次都是修改的同一个状态 | 无状态，每次刷新都是生成一个新的状态     |
+| 基于生命周期的管理                        | 基于状态变化的管理                       |
+| 面向对象的好处：易于理解，适合新手        | 函数式的好处：简洁，模版代码少，易于复用 |
+
+- class 组件的标准写法和生命周期
+
+```js
+// ClassView.js
+import React from "react";
+import { View } from "react-native";
+
+class ClassView extends React.Component{
+  constructor(props){
+    super(props);
+    console.log("constructor ...");
+  }
+  
+  componentDidMount(){
+    // 加载成功，在render后执行
+    console.log("componentDidMount ...");
+  }
+  
+  componentWillUnmount(){
+    console.log("componentWillUnmount ...");
+  }
+  
+  render(){
+    console.log("render ...");
+    return (
+    	<View style={{width:200, height:200, backgroundColor: 'blue'}}>
+      
+      </View>
+    )
+  }
+}
+export default ClassView;
+```
+
+```js
+// App.js
+import ClassView from './src/components/ClassView';
+
+const App = () => {
+  const [showClassView, setShowClassView] = useState(true);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setShowClassView(false);
+    }, 2000);
+  }, []);
+  
+  return (
+  	<SafeAreaView>
+    	<StatusBar
+    		barStyle={'dark-content'}
+				backgroundColor='#FFFFFF'
+    	/>
+    	<View style={styles.container}>
+    		{ showClassView && <ClassView /> }
+    	</View>
+    </SafeAreaView>
+  )
+}
+```
+
+- props与state管理ui数据
+
+props：外部传入的数据
+
+state：内部引用的状态
+
+- state和setState
+
+```js
+// ClassView.js
+import React from "react";
+import { View, Text } from "react-native";
+
+class ClassView extends React.Component{
+  constructor(props){
+    super(props);
+    // 解构
+    const { name, age, level, sex} = props;
+		console.log(`constructor name=${name},age=${age}`) 
+    this.state ={
+      address: "上海市"
+    };
+  }
+  
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState(
+      	address: "川沙"
+      );
+    }, 2000);
+  }
+  
+  render(){
+    const { name, age, level, sex} = this.props;
+    const { address } = this.state;
+		console.log(`render name=${name},age=${age}`) 
+    return (
+    	<View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+      	<Text style={{ fontSize:20, color: 'white' }}>
+          {`render name=${name},age=${age}`}
+        </Text>
+        <Text style={{ fontSize:20, color: 'black' }}>
+          {`render address=${address}`}
+        </Text>
+      </View>
+    )
+  }
+}
+export default ClassView;
+```
+
+```js
+// App.js
+import ClassView from './src/components/ClassView';
+
+const App = () => {
+  return (
+  	<SafeAreaView>
+    	<StatusBar
+    		barStyle={'dark-content'}
+				backgroundColor='#FFFFFF'
+    	/>
+    	<View style={styles.container}>
+    		<ClassView name="jerry" age={12} level="top" sex={true} />
+    	</View>
+    </SafeAreaView>
+  )
+}
+```
 
 ##### 函数式组件的优势和常用hook
 
 - 函数式组件的3种写法
+
+```js
+// FunctionView.js
+import React from "react";
+import { View, Text } from "react-native";
+
+function FunctionView() { 
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	
+    </View>
+  };
+}
+
+// 箭头函数
+const FunctionView2 = () => { 
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	
+    </View>
+  };
+}
+export default FunctionView;
+
+// 匿名导出
+export default () => { 
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	
+    </View>
+  };
+}
+```
+
+```js
+// App.js
+import FunctionView from './src/components/FunctionView';
+
+const App = () => {
+  return (
+  	<SafeAreaView>
+    	<StatusBar
+    		barStyle={'dark-content'}
+				backgroundColor='#FFFFFF'
+    	/>
+    	<View style={styles.container}>
+    		<FunctionView />
+    	</View>
+    </SafeAreaView>
+  )
+}
+```
+
 - props和useState管理ui数据
+
+```js
+// FunctionView.js
+import React, { useState, useEffect } from "react";
+import { View, Text } from "react-native";
+
+// 匿名导出
+export default (props) => { 
+  // 解构
+  const { name, age, level, sex} = props;
+  
+  const [address, setAddress] = useState("上海市");
+  // []放监听对象，为空第一次渲染会回调
+  useEffect(() => {
+		console.log(`useEffect ...`)
+    setTimeout(() => {
+      setAddress("川沙");
+    }, 2000);
+  }, []);
+  
+  useEffect(() => {
+		console.log(`update address=${address} ...`)
+  }, [address]);
+  
+	console.log(`return ...`)
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+      <Text style={{ fontSize:20, color: 'yellow' }}>
+      	{`address=${address}`}
+      </Text>
+    </View>
+  };
+}
+```
+
+```js
+// App.js
+import FunctionView from './src/components/FunctionView';
+
+const App = () => {
+  return (
+  	<SafeAreaView>
+    	<StatusBar
+    		barStyle={'dark-content'}
+				backgroundColor='#FFFFFF'
+    	/>
+    	<View style={styles.container}>
+    		<FunctionView name="jerry" age={12} level="top" sex={true} />
+    	</View>
+    </SafeAreaView>
+  )
+}
+```
+
 - 常用hook：useState、useEffect、useRef、useWindowDimension、useColorScheme
+
+```js
+// FunctionView.js
+import React, { useState, useEffect, useRef, useWindowDimension, useColorScheme } from "react";
+import { View, Text, ScrollView } from "react-native";
+
+export default (props) => { 
+  const { name, age, level, sex} = props;
+  const scrollViewRef = useRef(null);
+  useEffect(() => {
+    setTimeout(() => {
+      scrollViewRef.current.scrollToEnd({animted: true});
+    }, 2000);
+  }, []);
+  // 获取屏幕宽高
+  const {width, height} = useWindowDimension();
+  console.log(`useWindowDimension width=${width},height=${height} ...`)
+  // 皮肤跟随系统
+  const colorScheme = useColorScheme();
+  console.log(`useColorScheme colorScheme=${colorScheme} ...`)
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+      <ScrollView ref={scrollViewRef}>
+      	<Text style={{ fontSize: 20, color: 'white', marginVertical: 12 }}>AAA</Text>
+      	<Text style={{ fontSize: 20, color: 'white', marginVertical: 12 }}>AAA</Text>
+      	<Text style={{ fontSize: 20, color: 'white', marginVertical: 12 }}>AAA</Text>
+      	<Text style={{ fontSize: 20, color: 'white', marginVertical: 12 }}>AAA</Text>
+      </ScrollView>
+    </View>
+  };
+}
+```
 
 ##### JSX语法：高效开发源自于此
 
-- 拆分渲染、内联样式与样式表、样式组合
+- 拆分渲染（方法和组件）、内联样式与样式表、样式组合
+
+```js
+// FunctionView.js
+import React, { useState, useEffect } from "react";
+import { View, Text } from "react-native";
+
+export default (props) => { 
+  const { name, age, level, sex} = props;
+  const renderProps = () => {
+    return (
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+    );
+  }
+  const renderAddress = () => {
+  	return (
+  		<Text style={{ fontSize:20, color: 'yellow' }}>
+      	{`address=${address}`}
+      </Text>
+  	)
+  }
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	{renderProps()}
+      {renderAddress()}
+    </View>
+  };
+}
+```
+
+props传View；（属性值、属性View和子View）
+
+```js
+export default (props) => { 
+  const { name, age, level, sex, levelView} = props;
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+      // 通过levelView={getLevelView()}来传递
+      {levelView()}
+      // 传子View
+      {props.children}
+    </View>
+  };
+}
+```
+
+内联样式与样式表
+
+```js
+// FunctionView.js
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+export default (props) => { 
+  const { name, age, level, sex} = props;
+  return {
+    <View style={styles.root}>
+    	<Text style={[styles.txt, styles.txtBold]}>
+      	{`name=${name},age=${age}`}
+      </Text>
+    </View>
+  };
+}
+const styles = StyleSheet.create({
+	root: {
+		width:200,
+		height:200, 
+		backgroundColor: '#00bcd4'
+	},
+	txt: {
+		fontSize:20,
+		color: 'white'
+	},
+	txtBold: {
+		fontWeight: 'bold',
+	},
+	txtBlue: {
+		color: 'blue'
+	},
+})
+```
+
 - 标准写法和简略写法
+
+```js
+// FunctionView.js
+import React, { useState, useEffect } from "react";
+import { View, Text } from "react-native";
+
+export default (props) => { 
+  const { name, age, level, sex} = props;
+  // 标准写法
+  const renderProps = () => {
+    return (
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+    );
+  }
+  // 简略写法
+  const renderProps = () => (
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+    )
+  // 更简略写法，如index.js
+  const renderProps = () => 
+  		<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	{renderProps()}
+    </View>
+  };
+}
+```
+
 - 条件渲染、三元表达式、列表渲染、数组渲染等
 
+```js
+// FunctionView.js
+import React, { useState, useEffect } from "react";
+import { View, Text, ScrollView } from "react-native";
+
+export default (props) => {
+  const { name, age, level, sex} = props;
+  const [levelUp, setLevelUp] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLevelUp(true);
+    }, 2000);
+  }, []);
+  const renderProps = () => (
+    	levelUp?
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text> :
+      <Text style={{ fontSize:20, color: 'black' }}>
+      	{`name2=${name},age2=${age}`}
+      </Text>
+    )
+  const renderProps = () => (
+    	levelUp &&
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`name=${name},age=${age}`}
+      </Text>
+    )
+  const array = ['AAA', 'BBB', 'CCC']
+  const getListView = () => {
+  	const viewList = [];
+  	for(let i = 0; i < 5; i++){
+  		viewList.push(<Text style={{ fontSize: 20}}>`List item ${i}`</Text>);
+  	}
+  	return viewList;
+  }
+  return {
+    <View style={{width:200, height:200, backgroundColor: '#00bcd4'}}>
+    	<Text style={{ fontSize:20, color: 'white' }}>
+      	{`levelUp=${levelUp?'高级':'低级'}`}
+      </Text>
+      {renderProps()}
+      <ScrollView>
+      	{array.map((item) => {
+      		return (
+      			<Text style={{ fontSize: 20}}>{item}</Text>
+      		);
+      	})}
+      	// 简写
+      	{array.map((item) => <Text style={{ fontSize: 20}}>{item}</Text>)}
+      </ScrollView>
+      // 数组渲染
+      <ScrollView>
+      	{getListView()}
+      </ScrollView>
+    </View>
+  };
+}
+```
+
 ##### RN计数器
+
+分别用class组件和函数式组件实现计数器练习；注意闭包的坑
+
+- 计数器效果展示
+- 使用函数式组件、setInterval定时器实现演示效果
 
 ### 系统组件精讲
 
