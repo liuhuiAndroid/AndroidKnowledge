@@ -47,17 +47,62 @@ npm run android
 
 ##### 了解什么是ES5、ES6，掌握ES6常用的一些方法
 
-ECMAScript5、ECMAScript6
+EcmaScript5 EcmaScript6
+
+- 变量申明：var let const
+- 对象属性简写
+- Object.assign对象合并
+- 解构赋值
+- 展开运算符
+- 模板字符串
+- Promise
+- import和export
 
 ##### 了解什么是babel以及常见的配置
 
+Babel是一个JavaScript编译器。就像其他编译器一样，编译过程分为三个阶段：解析、转换和打印输出。
+
+也是一个工具链，主要用于将ES6+版本的代码甚至是react JSX语法转换为向后兼容的JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
+
 ##### 学习CSS-flex布局基础，为后面正式学习rn布局打下基础
+
+横向和纵向布局：direction
+
+主轴和交叉轴对齐：justifyContext、alignItems
+
+元素的放大和缩小：flexGrow、flexShrink
 
 ##### npm是什么？npm如何检索、安装和卸载
 
 ##### 使用nrm管理npm源
 
+安装nrm，切换taobao源
+
+```shell
+npm i -g nrm
+nrm ls
+nrm add taobao https://registry.npm.taobao.org/
+nrm use taobao
+nrm test taobao
+```
+
 ### 原生基础
+
+如何连接安卓设备以及开发中常用的adb命令
+
+移动端ui结构和设备特性
+
+RN开发中常见的原生文件
+
+RN和原生组件对应关系
+
+原生开发语言选择
+
+移动端应用发布及主流的应用市场
+
+移动端特有的生产热修复机制和应用场景
+
+移动端设备的版本兼容选择
 
 ### React基础知识和工程结构
 
