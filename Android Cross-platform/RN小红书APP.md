@@ -1588,24 +1588,321 @@ HOC高阶组件在真实项目开发中是非常重要的解耦技巧，它解�
 
 ##### memo 与性能优化 函数式组件和 class 组件拦截多余渲染的方法
 
-避免多余渲染
+memo解决什么问题？
 
-- 函数式组件：React.memo()
-- class组件：shouldComponentUpdate()
+1. 避免多余渲染
+   1. 函数式组件：React.memo()
+   2. class组件：shouldComponentUpdate()
+2. 避免重复计算、重复创建对象
+
+```typescript
+// 函数式组件
+// index.d.ts
+type UserInfo = {
+  avatar: string;
+  name: string;
+  desc: string;
+}
+// InfoView.tsx
+type Props = {
+  info: UserInfo
+}
+export default React.memo((props: Props) => {
+  const { info } = props;
+  console.log('render ...');
+  return (
+  	<View>
+    	<Image style={drakStyles.img} source={{ uri: info.avatar }}/>
+    	<Text style={drakStyles.txt}>{info.name}</Text>
+			<View style={drakStyles.infoLayout}>
+        <Text style={drakStyles.infoTxt}>{info.desc}</Text>
+      </View>
+    </View>
+  );
+}, (preProps: Props, nextProps: Props) => {
+  // 判断是否需要重绘,true使用缓存
+  // return preProps.info.avatar === nextProps.info.avatar &&
+  //   preProps.info.name === nextProps.info.name &&
+  //   preProps.info.desc === nextProps.info.desc;
+  return JSON.stringify(preProps.info) === JSON.stringify(nextProps.info);
+})
+// MemoPage.tsx
+export default () => {
+  const {info, setInfo} = useState<UserInfo>({
+    avatar: 'xxxx',
+    name: 'xxx',
+    desc: 'xxxxxxx'
+  });
+  return (
+  	<View style={{width: '100%'}}>
+    	<Button title='btn', onPress={() => {
+        setInfo({
+          avatar: 'xxxx222',
+          name: 'xxx222',
+          desc: 'xxxxxxx222'
+        })
+      }}/>
+    	<InfoView info={info}/>
+    </View>
+  );
+}
+```
+
+```typescript
+// class组件
+// index.d.ts
+type UserInfo = {
+  avatar: string;
+  name: string;
+  desc: string;
+}
+// InfoView.tsx
+type Props = {
+  info: UserInfo
+}
+export default class InfoView extends React.Component<Props, any> {
+  constructor(props: Props){
+    super(props);
+  }
+  shouldComponentUpdate(nextProps: Readonly<Props>, nextState: Readonly<any>,
+                        nextContext: any): boolean {
+    // true 重新渲染
+    return JSON.stringify(this.props.info) !== JSON.stringify(nextProps.info);
+  }
+  render(): React.ReactNode {
+    const { info } = this.props;
+    return (
+      <View>
+        <Image style={drakStyles.img} source={{ uri: info.avatar }}/>
+        <Text style={drakStyles.txt}>{info.name}</Text>
+        <View style={drakStyles.infoLayout}>
+          <Text style={drakStyles.infoTxt}>{info.desc}</Text>
+        </View>
+      </View>
+    );
+  }
+}
+```
 
 ##### 使用 useMemo 缓存计算结果
 
-useMemo 缓存数据
+避免重复创建对象
 
-useMemo 缓存ui渲染
+- useMemo 缓存数据
 
-useCallback 缓存回调函数
+- useMemo 缓存ui渲染
+
+- useCallback 缓存回调函数对象
+
+```typescript
+// 问题：切换开关重新触发计算合计
+// ConsumeList.tsx
+import React, { useState, useMemo, useCallback } from 'react';
+import {
+  View,
+  Button,
+  StyleSheet,
+  FlatList,
+  Switch,
+  Text,
+  TouchableOpacity
+} from 'react-native';
+// 数据源
+import { ListData, ListData2 } from '../constants/Data';
+import { TypeColors } from '../constants/Data';
+
+export default () => {
+    const [data, setData] = useState<any>(ListData);
+    const [showType, setShowType] = useState<boolean>(true);
+
+  	// 使用useMemo解决重复计算问题
+    // const calculateTotal = useMemo(() => {
+    //     console.log('重新计算合计');
+    //     return data.map((item: any) => item.amount)
+    //         .reduce((pre: number, cur: number) => pre + cur);
+    // }, [data])
+
+    // 使用 useMemo 缓存 ui 
+    const totalAmountView = useMemo(() => {
+        const total = data.map((item: any) => item.amount)
+            .reduce((pre: number, cur: number) => pre + cur);
+        console.log('重新渲染合计');
+        return (
+            <View style={styles.totalLayout}>
+                <Text style={styles.totalTxt}>{total}</Text>
+                <Text style={styles.totalTxt}>合计：</Text>
+            </View>
+        );
+    }, [data])
+
+    // 缓存回调函数
+    const onItemPress = useCallback((item: any, index: number) => () => {
+        console.log(`点击第${item.index}行`);
+    }, [])
+
+    const renderItem = ({item, index}: any) => {
+        const styles = StyleSheet.create({
+            itemLayout: {
+                width: '100%',
+                padding: 16,
+                flexDirection: 'column',
+                borderBottomWidth: 1,
+                borderBottomColor: '#E0E0E0',
+            },
+            labelRow: {
+                width: '100%',
+                flexDirection: 'row',
+                alignItems: 'center',
+            },
+            valueRow: {
+                marginTop: 10,
+            },
+            labelTxt: {
+                flex: 1,
+                fontSize: 14,
+                color: '#666',
+            },
+            first: {
+                flex: 0.4,
+            },
+            second: {
+                flex: 0.3,
+            },
+            last: {
+                flex: 0.6
+            },
+            valueTxt: {
+                flex: 1,
+                fontSize: 18,
+                color: '#333',
+                fontWeight: 'bold',
+            },
+            typeLayout: {
+                flex: 0.3,
+            },
+            typeTxt: {
+                width: 20,
+                height: 20,
+                textAlign: 'center',
+                textAlignVertical: 'center',
+                color: 'white',
+                borderRadius: 4,
+                fontWeight: 'bold',
+            },
+        });
+        return (
+            <TouchableOpacity
+                style={styles.itemLayout}
+                onPress={onItemPress(item, index)}
+            >
+                <View style={styles.labelRow}>
+                    <Text style={[styles.labelTxt, styles.first]}>序号</Text>
+                    {showType && <Text style={[styles.labelTxt, styles.second]}>类型</Text>}
+                    <Text style={styles.labelTxt}>消费名称</Text>
+                    <Text style={[styles.labelTxt, styles.last]}>消费金额</Text>
+                </View>
+                <View style={[styles.labelRow, styles.valueRow]}>
+                    <Text style={[styles.valueTxt, styles.first]}>{item.index}</Text>
+                    {showType && <View style={styles.typeLayout}>
+                        <Text style={[
+                            styles.typeTxt,
+                            { backgroundColor: TypeColors[item.type] }
+                        ]}>
+                            {item.type}
+                        </Text>
+                    </View>}
+                    <Text style={styles.valueTxt}>{item.name}</Text>
+                    <Text style={[styles.valueTxt, styles.last]}>{item.amount}</Text>
+                </View>
+            </TouchableOpacity>
+        );
+    }
+
+    return (
+        <View style={styles.root}>
+            <View style={styles.titleLayout}>
+                <Text style={styles.titleTxt}>消费记账单</Text>
+                <Switch
+                    style={styles.switch}
+                    value={showType}
+                    onValueChange={value => setShowType(value)}
+                />
+                <Button
+                    title='切换数据'
+                    onPress={() => {
+                        setData(ListData2)
+                    }}
+                />
+            </View>
+            <FlatList
+                data={data}
+                keyExtractor={(item, index) => `${item.index}-${item.name}`}
+                renderItem={renderItem}
+            />
+            {/* <View style={styles.totalLayout}>
+                <Text style={styles.totalTxt}>{calculateTotal}</Text>
+                <Text style={styles.totalTxt}>合计：</Text>
+            </View> */}
+            {totalAmountView}
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    root: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+    },
+    titleLayout: {
+        width: '100%',
+        height: 56,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    titleTxt: {
+        fontSize: 18,
+        color: '#333',
+        fontWeight: 'bold',
+    },
+    totalLayout: {
+        width: '100%',
+        height: 60,
+        flexDirection: 'row-reverse',
+        borderTopWidth: 1,
+        borderTopColor: '#c0c0c0',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+    },
+    totalTxt: {
+        fontSize: 20,
+        color: '#333',
+        fontWeight: 'bold',
+    },
+    switch: {
+        position: 'absolute',
+        right: 16,
+    },
+})
+```
 
 ##### useMemo 缓存 ui 以及 useCallback 缓存回调函数
 
+useMemo 缓存 ui 在生产中更加常见
+
 ##### Hermes 引擎
 
-enableHermes: true 可以节省10% JS Bundle体积
+- 提升启动速度
+- 压缩包体积
+
+```groovy
+// build.gradle
+project.ext.react = [
+  // enableHermes: true 大约可以节省10% JS Bundle体积，默认已经开启
+  enableHermes: true // clean and rebuild if changing
+]
+```
 
 
 
