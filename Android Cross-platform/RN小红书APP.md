@@ -1259,52 +1259,168 @@ AsyncStorage：数据存储
 
 
 
-### 掌握企业级开发的必备利器
+### TypeScript快速进阶
 
 ##### TypeScript 介绍和优势
 
-JS的超集，JS有的TS都有，能运行JS就能运行TS
+- JS的超集，JS有的TS都有，能运行JS就能运行TS
 
-强大的类型系统提升了代码可阅读性、可维护性
+- 强大的类型系统提升了代码可阅读性、可维护性
 
-类型推断、类型检查、代码提示
+- 类型推断、类型检查、代码提示
 
-有助于在团队中推动严格的代码检查
+- 有助于在团队中推动严格的代码检查
 
 ##### TypeScript 安装和项目配置
 
 ```shell
 # 安装TypeScript
-npm install --save-dev typescript
+npm i --save-dev typescript
 # 生成tsconfig.json
 tsc --init
-# 安装类型申明
+# 安装类型申明（众多）
 npm i --save-dev @types/react @types/react-native
 ```
 
 ##### number、string、boolean 三大基础类型
 
-数值类型：number
+- 数值类型：number
+- 字符串类型：string
+- 布尔类型：boolean
 
-字符串类型：string
-
-布尔类型：boolean
+```typescript
+const num1:number = 12;
+const num2:number = 12.32;
+const add = (n1:number, n2:number): number => {
+    return n1 + n2;
+}
+console.log(add(7, 8));
+const num4: Number = new Number(13);
+console.log(num4.valueOf())
+const s1: string = 'hello'
+const s2: string = `${s1}, my name is jerry.`
+console.log(2 + '3')
+const s3 = new String("String Object");
+console.log(s3.valueOf())
+const b1: boolean = true;
+const b2: boolean = false;
+const b3: boolean = !!null;
+const b4: boolean = !!undefined;
+const b5: boolean = 4 > 5;
+const b6: Boolean = new Boolean(4 > 5);
+console.log(b6.valueOf())
+```
 
 ##### 数组、元组、枚举类型的使用
 
-数组类型：Array
+- 数组类型：Array
+- 元组类型
+- 枚举类型
+
+```typescript
+const a1: number[] = [1, 2, 3];
+const a2: Array<number> = [1, 2, 3];
+const a3: Array<number> = new Array(5);
+const a4: Array<number | string> = new Array();
+console.log(a1);
+a3[1] = 12;
+a4.push(3);
+const t1: [string, number, boolean] = ['jerry', 12, true];
+console.log(t1);
+console.log(t1[2]);
+enum Job {
+    Teacher, Programmer, Cook
+}
+enum City {
+    NanJing = '南京', WuXi = '无锡', HangZhou = '杭州'
+}
+console.log(Job.Programmer);
+```
 
 ##### 函数类型
 
+- 基础的函数申明
+- 函数参数类型和返回值类型的申明
+- 函数的可选参数和默认参数
+
+```typescript
+const f1: () => void = () => {
+    console.log('f1 ...');
+}
+f1();
+const f2: (s: sting) => void = () => {
+    console.log(`f2 ${s} ...`);
+}
+f2('hello');
+const add = (n1:number, n2:number): number => {
+    return n1 + n2;
+}
+console.log(add(7, 8));
+const f3: (name: string, age?: number) => void = (name: string, age?: number) => {
+    console.log(`my name is ${name}, ${age || 0} years old.`);
+}
+f2('hello', 2);
+const f4 = (name: string, age: number = 100) => {
+    console.log(`my name is ${name}, ${age} years old.`);
+}
+f4('hello');
+```
+
 ##### 类型文件和命名空间
 
-局部类型文件和全局类型文件
+- 局部类型文件和全局类型文件
 
-使用命名空间
+  ```typescript
+  // 局部类型文件
+  // @types/index.d.ts
+  type Student = {
+      name: string;
+      age: number;
+      hobby?: string[];
+  }
+  
+  // TSDemo.tsx
+  const student: Student = {
+      name: 'jerry',
+      age: 12,
+      hobby: undefine,
+  } as Student;
+  console.log(student);
+  
+  // 全局类型文件
+  // typings.d.ts
+  type Student = {
+      name: string;
+      age: number;
+      hobby?: string[];
+  }
+  ```
+
+- 使用命名空间
+
+  ```typescript
+  // @types/index.d.ts
+  declare namespace Info {
+      type Dog = {
+          name: string;
+          age: number;
+      }
+  }
+  
+  // TSDemo.tsx
+  const dog: Info.Dog = {
+      name: 'jerry',
+      age: 12,
+  } as Info.Dog
+  ```
+
+- 使用类型文件中的类型定义数据
 
 
 
-### 深刻理解解耦的精髓
+
+
+### Context上下文
 
 ##### Context 上下文介绍和演示
 
@@ -1356,31 +1472,119 @@ const [theme, setTheme] = useState<string>('dark');
 
 
 
-### 掌握高阶组件强大的解耦和封装技巧
+### HOC高阶组件
 
 ##### HOC 高阶组件介绍
 
-什么是高阶函数？
+- 什么是高阶函数？
 
-如果一个函数接受的参数为函数，或者返回值是一个新函数，则该函数就是高阶函数。
+  如果一个函数接受的参数为函数，或者返回值是一个新函数，则该函数就是高阶函数。
 
-什么是高阶组件？
+- 什么是高阶组件？
 
-如果一个组件的参数是组件，返回值是一个新组件，则该组件就是高阶组件。
+  如果一个组件的参数是组件，返回值是一个新组件，则该组件就是高阶组件。
 
-高阶组件应用场景：解决什么问题？
+- 高阶组件应用场景：解决什么问题？
 
-使用HOC高阶组件解决横切关注点问题，使得组件功能更加单一，组件逻辑服务组件ui，从而降低耦合性，增强组件的复用性。
+  使用HOC高阶组件解决横切关注点问题，使得组件功能更加单一，组件逻辑服务组件ui，从而降低耦合性，增强组件的复用性。
 
 ##### HOC 高阶组件案例演示1
 
 Hack渲染函数：首页添加按钮
 
+```typescript
+// withFloatButton.tsx
+// 使用的时候包裹View就可以
+import React from "react";
+import { TouchableOpacity, Image, StyleSheet } from "react-native";
+
+type IReactComponent = 
+	React.ClassicComponentClass 
+	| React.ComponentClass 
+	| React.FunctionComponent 
+	| React.ForwardExoticComponent<any>;
+
+import icon_add from '../assets/images/icon_add.png'
+
+export default <T extends IReactComponent>(OriginView: T): T => {
+    const HOCView = (props: any) => {
+        return (
+        	<>
+            	<OriginView {...props}/>
+    			<TouchableOpacity
+    				style={styles.addButton}
+    				onPress={() => {
+                        console.log(`onPress ...`);
+                    }}
+    			>
+            		<Image style={styles.addImg} source={icon_add}/>
+            	</TouchableOpacity>
+            </>
+        );
+    }
+    return HOCView as T;
+}
+const styles = StyleSheet.create({
+    addButton: {
+        position: 'absolute',
+        bottom: 80,
+        right: 28,
+    },
+    addImg: {
+        width: 54,
+        height: 54,
+        resizeMode: 'contain',
+    }
+});
+```
+
 ##### HOC 高阶组件案例演示2
 
+Hack生命周期：首页上报设备信息
+
+```typescript
+// withFloatButton.tsx
+import React from "react";
+import { TouchableOpacity, Image, StyleSheet } from "react-native";
+
+type IReactComponent = 
+	React.ClassicComponentClass 
+	| React.ComponentClass 
+	| React.FunctionComponent 
+	| React.ForwardExoticComponent<any>;
+
+export default <T extends IReactComponent>(OriginView: T): T => {
+    const HOCView = (props: any) => {
+        useEffect(() => {
+            reportDeviceInfo();
+        }, []);
+
+        const reportDeviceInfo = () => {
+            // TODO 上报设备信息
+        }
+        return (
+        	<>
+            	<OriginView {...props}/>
+            </>
+        );
+    }
+    return HOCView as T;
+}
+```
+
+##### 高阶组件使用思考
+
+- 不要改变原始组件的原型
+- 必要的话可以传多个参数
+
+- 用【Hack生命周期】实现一个首页申请权限
+- 用【Hack渲染函数】实现一个列表索引
+
+HOC高阶组件在真实项目开发中是非常重要的解耦技巧，它解决的是横切点关注问题，把不同的职责和能力独立成高阶组件，增强了复用性，降低了耦合度。合理使用高阶组件可以使我们的代码更安全稳定，更好维护。
 
 
-### 掌握几种必备的memo应用技巧
+
+### memo与性能优化
 
 ##### memo 与性能优化 函数式组件和 class 组件拦截多余渲染的方法
 
@@ -1405,7 +1609,7 @@ enableHermes: true 可以节省10% JS Bundle体积
 
 
 
-### 具备更强的自定义组件能力
+### ref转发
 
 ##### Ref转发案例演示1 外层操作原始组件
 
@@ -1428,7 +1632,7 @@ ref转发解决什么问题
 
 
 
-### 精通4种桥接方式，让RN能力无限延伸
+### 桥接原生
 
 ##### 桥接原生介绍
 
