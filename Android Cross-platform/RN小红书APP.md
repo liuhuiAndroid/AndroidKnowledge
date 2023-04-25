@@ -1912,20 +1912,175 @@ project.ext.react = [
 
 ref转发解决什么问题
 
-- 使用自定义组件时，外层对原始组件的操作
-- 函数式组件对外暴露实例
+- 使用自定义组件（组合模式）时，外层对原始组件的操作
+- 函数式组件对外暴露实例（通常是api）
 
 案例演示
 
 - 使用自定义组件，外层操作原始组件
 
+```typescript
+import React, { useRef } from 'react';
+import {
+  StyleSheet,
+  View,
+  Button,
+  TextInput
+} from 'react-native';
+
+import CustomInput from './CustomInput';
+
+export default () => {
+    const inputRef = useRef<TextInput>(null);
+    return (
+        <View style={styles.root}>
+            <Button title='聚焦' onPress={() => {
+              	// inputRef 可以操作原始输入框组件
+                inputRef.current?.customFocus();
+            }} />
+            <CustomInput ref={inputRef} />
+        </View>
+    );
+}
+
+// CustomInput.tsx
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+
+export default forwardRef<TextInput, any>((props, ref) => {
+  return(
+  	...
+    <TextInput
+    	ref={inputRef}
+    	style={styles.input}
+    	value={value}
+    	keyboardType='number-pad'
+    	onChangeText={value => {
+        LayoutAnimation.spring();
+    		setValue(value);
+    	}}
+    	maxLength={11}/>
+  )
+}
+```
+
 ##### Ref转发案例演示2 对外暴露api
 
-案例演示
+案例演示：自定义组件对外暴露api
 
-- 自定义组件对外暴露api
 - class组件实现方式
 - 函数式组件实现方式
+
+```typescript
+// 函数式组件实现方式
+// CustomInput.tsx
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+export interface CustomInputRef {
+    customFocus: () => void;
+    customBlur: () => void;
+}
+export default forwardRef((props, ref) => {
+    const inputRef = useRef<TextInput>(null);
+    const customFocus = () => {
+        inputRef.current?.focus();
+    }
+    const customBlur = () => {
+        inputRef.current?.blur();
+    }
+    useImperativeHandle(ref, () => {
+        return {
+            customFocus,
+            customBlur,
+        };
+    })
+    return (
+      	...
+        <TextInput
+      		ref={inputRef}
+      		style={styles.input}
+      		value={value}
+      		keyboardType='number-pad'
+      		onChangeText={value => {
+      			LayoutAnimation.spring();
+      			setValue(value);
+      		}}
+      		maxLength={11}
+      		/>
+    );
+});
+// RefDemo.tsx
+import React, { useRef } from 'react';
+import CustomInput, { CustomInputRef } from './CustomInput';
+
+export default () => {
+    const inputRef = useRef<CustomInput>(null);
+    return (
+        <View style={styles.root}>
+            <Button title='聚焦' onPress={() => {
+                inputRef.current?.customFocus();
+            }} />
+            <Button title='失焦' onPress={() => {
+                inputRef.current?.customBlur();
+            }} />
+            <CustomInput ref={inputRef} />
+        </View>
+    );
+}
+```
+
+```typescript
+// class组件实现方式
+// CustomInput.tsx
+import React from 'react';
+export default class CustomInput extends React.Component {
+    inputRef = React.createRef<TextInput>();
+    constructor(props: any) {
+        super(props);
+    }
+    customFocus = () => {
+        this.inputRef.current?.focus();
+    }
+    customBlur = () => {
+        this.inputRef.current?.blur();
+    }
+    render() {
+        return (
+          	// ...
+            <TextInput
+                        ref={this.inputRef}
+                        style={styles.input}
+                        value={value}
+                        keyboardType='number-pad'
+                        onChangeText={value => {
+                            LayoutAnimation.spring();
+                            this.setState({
+                                value,
+                            })
+                        }}
+                        maxLength={11}
+                    />
+        );
+    }
+}
+
+// RefDemo.tsx
+import React, { useRef } from 'react';
+import CustomInput2 from './CustomInput2';
+
+export default () => {
+    const inputRef = useRef<CustomInput2>(null);
+    return (
+        <View style={styles.root}>
+            <Button title='聚焦' onPress={() => {
+                inputRef.current?.customFocus();
+            }} />
+            <Button title='失焦' onPress={() => {
+                inputRef.current?.customBlur();
+            }} />
+            <CustomInput2 ref={inputRef} />
+        </View>
+    );
+}
+```
 
 
 
