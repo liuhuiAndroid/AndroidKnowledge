@@ -937,32 +937,117 @@ api：setBackgroundColor()、setBarStyle()、setHidden()、setTranslucent()
 
 前景颜色：thumbColor
 
+
+
 ### 常用API
 
 ##### alert 和 console 你不知道的调试小技巧
 
-alert()：简单的弹窗提示
+- alert()：简单的弹窗提示
 
-区别Alert.alert()，这个是RN的对话框工具
+- 区别Alert.alert()，这个是RN的对话框工具，较少使用
 
-console.log：最常用的控制台输出
+- console.log：最常用的控制台输出
 
-console日志输出分级
+- console日志输出分级
 
-console.log字符串模版和占位符三种方式：%o、%s、%d
+- console.log字符串模版和占位符三种方式：%o、%s、%d
 
-console.log添加样式：%c颜色和字号
+- console.log添加样式：%c颜色和字号
 
-- color：orange
-- font-size:x-large、x-medium、x-small
+  - color：orange
 
-console.log输出组件树
+  - font-size:x-large、x-medium、x-small
 
-console.log输出表格日志
 
-console.log输出分组日志
+- console.log输出组件树
+
+- console.log输出表格日志
+
+- console.log输出分组日志
+
+```js
+alert('这是一条提示信息');
+alert(123);
+alert(false);
+
+const buttons = [
+  {text: '取消', onPress: () => console.log('取消')},
+  {text: '确定', onPress: () => console.log('确定')},
+];
+Alert.alert('这是标题', '这是一条提示信息', buttons);
+
+console.log('这是普通的日志输出');
+console.info('信息日志输出');
+console.debug('调试日志输出');
+console.warn('警告日志输出');
+console.error('错误日志输出');
+
+console.log('我是个人开发者%s，我学习RN%d年半了', '张三', 2);
+const obj = {name: '张三', age: 12};
+console.log('我是一个对象:%o', obj);
+
+// 在浏览器才会有效果
+console.log('%c这行日志红色文字，字号大', 'color:red; font-size:x-large');
+console.log('%c这行日志蓝色文字，字号中', 'color:blue; font-size:x-medium');
+console.log('%c这行日志绿色文字，字号小', 'color:green; font-size:x-small');
+
+// 调试时很有用
+const viewLayout = (
+    <View style={{ flexDirection: 'column' }}>
+        <Text style={{ fontSize: 20, color: 'red' }} >
+            文字显示
+        </Text>
+    </View>
+);
+console.log(viewLayout);
+
+// 在浏览器才会有效果
+const users = [
+    {name: '张三', age: 12, hobby: '唱歌'},
+    {name: '李四', age: 15, hobby: '跳舞'},
+    {name: '王武', age: 18, hobby: '打篮球'},
+];
+console.table(users);
+
+console.group();
+console.log('第1行日志');
+console.log('第2行日志');
+console.log('第3行日志');
+  console.group();
+  console.log('二级分组第1行日志');
+  console.log('二级分组第2行日志');
+  console.log('二级分组第3行日志');
+  console.groupEnd();
+console.groupEnd();
+```
 
 ##### Dimension 和 useWindowDimension 获取屏幕信息
+
+- 获取屏幕宽高的两种方式
+- 获取缩放、文字缩放
+- Dimension.get传screen和window的区别：screen比window默认多状态栏高度
+- addEventListener监听屏幕信息变化
+
+```js
+const { width, height, scale, fontScale } = Dimensions.get('window');
+console.log(`width=${width}, height=${height}`);
+console.log(`scale=${scale}, fontScale=${fontScale}`);
+// hook 不能写在函数内
+const { width, height, scale, fontScale } = useWindowDimensions();
+console.log(`width=${width}, height=${height}`); 
+console.log(`scale=${scale}, fontScale=${fontScale}`);
+
+useEffect(() => {
+    const subcription = Dimensions.addEventListener('change', (window, screen) => {
+        console.log(window);
+        console.log(screen);
+    });
+    return () => {
+        subcription.remove();
+    }
+}, []);
+```
 
 ##### Platform 获取平台属性
 
@@ -972,41 +1057,126 @@ console.log输出分组日志
 
 平台选择：Platform.select()
 
+```js
+console.log(Platform.OS);
+console.log(Platform.Version);
+console.log(Platform.constants);
+console.log(Platform.isPad);
+console.log(Platform.isTV);
+
+// 可以写在StyleSheet内
+const style = Platform.select({
+    android: {
+        marginTop: 20,
+    },
+    ios: {
+        marginTop: 0,
+    },
+    default: {
+        marginTop: 10,
+    },
+});
+console.log(style);
+```
+
 ##### StyleSheet 构建灵活样式表
 
-基础使用
+- 基础使用
 
-创建多个样式表
+- 创建多个样式表
 
-样式合并：StyleSheet.compose
+- 样式合并：StyleSheet.compose
+  - 和[]写法的区别：compose效率更高，可以定位到同一个对象
 
-- 和[]写法的区别：compose效率更高
 
-样式平铺：StyleSheet.flatten
+- 样式平铺：StyleSheet.flatten
 
-绝对填充：StyleSheet.absoluteFill
+- 绝对填充：StyleSheet.absoluteFill
 
-头发丝尺寸：StyleSheet.hairlineWidth
+- 头发丝尺寸：StyleSheet.hairlineWidth
+
+```js
+const styles = StyleSheet.create({})
+
+const s1 = {
+    fontSize: 18,
+};
+const s2 = {
+    fontSize: 20,
+    color: 'red',
+};
+const composeStyle = StyleSheet.compose(s1, s2);
+console.log(composeStyle);
+
+// 重复属性后面覆盖前面
+const flattenStyle = StyleSheet.flatten([s1, s2]);
+console.log(flattenStyle);
+
+console.log(StyleSheet.absoluteFill);
+// ...StyleSheet.absoluteFill 使用在 StyleSheet.create
+
+console.log(StyleSheet.hairlineWidth); // 1px
+console.log(1 / Dimensions.get('screen').scale);
+```
 
 ##### Linking 一个 api 节省 50 行代码
 
-打开链接：openURL()、canOpenURL()
+- 打开链接：openURL()、canOpenURL()
 
-跳转应用设置：Linking.openSettings()
+  网页链接、地图定位、拨打电话、发送短信、发送邮件、应用跳转
 
-安卓隐式跳转：Linking.sendIntent()
+- 跳转应用设置：Linking.openSettings()
 
-获取初始化url：getInitialURL()
+- 安卓隐式跳转：Linking.sendIntent()
+
+- 获取初始化url：getInitialURL()
+
+```js
+if (Linking.canOpenURL('https://www.baidu.com/')) {
+  	// 跳转系统浏览器
+    Linking.openURL('https://www.baidu.com/');
+}
+Linking.openURL('geo:37.2122, 12.222');
+Linking.openURL('tel:10086');
+Linking.openURL('smsto:10086');
+Linking.openURL('mailto:10086@qq.com');
+// 定义 action="View" category="DEFAULT&BROWSABLE" scheme="dagongjue" host="demo"
+Linking.openURL('dagongjue://demo?name=李四');
+Linking.openSettings();
+
+if (Platform.OS === 'android') {
+  	// 定义 action="com.dagongjue.demo.test"
+    Linking.sendIntent('com.dagongjue.demo.test', [{key: 'name', value: '王武'}]);
+}
+// 前提应用是通过URL跳转过来的
+console.log(Linking.getInitialURL());
+```
 
 ##### PixelRatio 像素比例工具
 
-获取屏幕像素密度：PixelRatio.get()
+- 获取屏幕像素密度：PixelRatio.get()
 
-获取字体缩放比例（仅安卓）：PixelRatio.getFontScale()
+- 获取字体缩放比例（仅安卓）：PixelRatio.getFontScale()
 
-获取布局大小：PixelRatio.getPixelSizeForLayoutSize()
+- 获取布局像素大小：PixelRatio.getPixelSizeForLayoutSize()
 
-获取就近值：PixelRatio.roundToNearestPixel()
+- 获取就近值：PixelRatio.roundToNearestPixel()
+
+```js
+console.log(PixelRatio.get());
+console.log(PixelRatio.getFontScale());
+console.log(
+    PixelRatio.getPixelSizeForLayoutSize(200)
+);
+
+const styles = StyleSheet.create({
+    subView: {
+        width: '100%',
+        backgroundColor: 'green',
+        height: PixelRatio.roundToNearestPixel(32.1),
+    },
+});
+```
 
 ##### BackHandler 安卓返回键适配
 
@@ -1018,47 +1188,150 @@ console.log输出分组日志
 
 社区hook：@react-native-community/hooks
 
+```js
+useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', backForAndroid)
+    return () => {
+        BackHandler.removeEventListener('hardwareBackPress', backForAndroid);
+    }
+}, []);
+
+const backForAndroid = () => {
+  	// false 不处理，true 需要消费
+    return false;
+}
+
+BackHandler.exitApp();
+
+// 社区hook，简化了上面的模版代码
+npm install @react-native-community/hooks
+import { useBackHandler } from '@react-native-community/hooks'
+useBackHandler(()=> { return true })
+```
+
 ##### PermissionsAndroid 轻松解决权限问题
 
-检查权限：PermissionsAndroid.check()
+- 检查权限：PermissionsAndroid.check()
 
-申请权限：PermissionsAndroid.request()
+- 申请权限：PermissionsAndroid.request()
+  - 切记原生manifest注册权限
 
-- 切记原生manifest注册权限
 
-申请多个权限：PermissionsAndroid.requestMultiple()
+- 申请多个权限：PermissionsAndroid.requestMultiple()
+
+```js
+const needPermission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
+PermissionsAndroid.check(
+    needPermission
+).then(result => {
+    if (!result) {
+        PermissionsAndroid.request(needPermission).then(status => {
+            console.log(status);
+            if (status === 'granted') {
+                //获得
+            } else if (status === 'denied') {
+                //拒绝
+            }
+        });
+    }
+});
+console.log(PermissionsAndroid.PERMISSIONS);
+
+PermissionsAndroid.requestMultiple([
+    PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+    PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+]);
+```
 
 ##### Vibration 简单好用的震动交互
 
-原生申明权限：android.permission.VIBRATE
+- 原生申明权限：android.permission.VIBRATE
 
-发起震动：Vibration.vibrate()
+- 发起震动：Vibration.vibrate()
 
-Android时间模式：[100,500,200,500]
+- Android时间模式：[100,500,200,500]
 
-iOS时间模式：[100,200,300,400]
+- iOS时间模式：[100,200,300,400]
 
-重复震动：repeat
+- 重复震动：repeat
+
+```js
+Vibration.vibrate();
+Vibration.vibrate(1000);//just Android,iOS单次400ms
+Vibration.cancel();
+// Android，停100震500停200震200
+Vibration.vibrate([100, 500, 200, 500]);
+// iOS，指定停顿的时间
+Vibration.vibrate([100, 200, 300, 400]);
+// 循环震动
+Vibration.vibrate([100, 200, 300, 400], true);
+```
 
 ##### ToastAndroid 安卓平台的提示
 
-弹出提示：ToastAndroid.show()
+- 弹出提示：ToastAndroid.show()
 
-弹出提示：ToastAndroid.showWithGravity()
+- 弹出提示：ToastAndroid.showWithGravity()
 
-偏移量：ToastAndroid.showWithGravityAndOffset()
+- 偏移量：ToastAndroid.showWithGravityAndOffset()
+
+```js
+ToastAndroid.show('这是一个提示', ToastAndroid.SHORT);
+ToastAndroid.show('这是一个提示', ToastAndroid.LONG);
+ToastAndroid.showWithGravity(
+    '这是一个提示',
+    ToastAndroid.LONG,
+    ToastAndroid.TOP
+);
+ToastAndroid.showWithGravity(
+    '这是一个提示',
+    ToastAndroid.LONG,
+    ToastAndroid.TOP,
+    100, 200,
+);
+```
 
 ##### Transform 矩阵变换的伪3D效果
 
-水平移动：translateX
+- 水平移动：translateX
 
-垂直移动：translateY
+- 垂直移动：translateY
+- 整体缩放：scale
+- 横向缩放：scaleX
+- 纵向缩放：scaleY
 
-X轴旋转：rotateX
+- X轴旋转：rotateX
 
-Y轴旋转：rotateY
+- Y轴旋转：rotateY
 
-Z轴旋转：rotateZ、rotate
+- Z轴旋转：rotateZ、rotate
+
+```js
+<View
+    style={[
+        {
+            width: 100,
+            height: 100,
+            backgroundColor: '#3050ff',
+            marginTop: 60,
+            marginLeft: 60,
+        },
+        {
+            transform: [
+                // {translateX: 200}
+                // {translateY: 150}
+                {scale: 1.5},
+                // {scaleX: 1.5},
+                // {scaleY: 1.5}
+                {rotateX: '45deg'},
+                // {rotateY: '45deg'},
+                {rotateZ: '45deg'}
+                // {rotate: '45deg'},
+            ],
+        }
+    ]}
+/>
+```
 
 ##### Keyboard 键盘操作有神器
 
@@ -1067,6 +1340,27 @@ Z轴旋转：rotateZ、rotate
 注销键盘监听：EmitterSubscription.remove()
 
 隐藏键盘：Keyboard.dismiss()
+
+```js
+useEffect(() => {
+    const showSubscription = Keyboard.addListener('keyboardDidShow', onKeyboardShow);
+    const hideSubscription = Keyboard.addListener('keyboardDidHide', onKeyboardHide);
+    return () => {
+        showSubscription.remove();
+        hideSubscription.remove();
+    }
+}, []);
+const onKeyboardShow = () => {
+    console.log('键盘出现');
+}
+const onKeyboardHide = () => {
+    console.log('键盘隐藏');
+}
+
+Keyboard.dismiss();
+```
+
+
 
 ### RN动画系统
 
