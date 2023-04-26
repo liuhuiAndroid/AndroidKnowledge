@@ -1366,80 +1366,216 @@ Keyboard.dismiss();
 
 ##### 简单示例学习基础动画方法
 
-演示一个简单的平移动画效果
+- 演示一个简单的平移动画效果
 
-使用 Animated.View、Animated.Value、useRef
+- 使用 Animated.View、Animated.Value、useRef
+
+```typescript
+import React, { useRef } from 'react';
+import {
+  StyleSheet,
+  View,
+  Button,
+  Animated
+} from 'react-native';
+export default () => {
+  	// 得到支持动画的属性值
+    const marginLeft = useRef(new Animated.Value(0)).current;
+    return (
+        <View style={styles.root}>
+            <Button title='按钮' onPress={() => {
+              	// 指定动画的值和属性
+                Animated.timing(marginLeft, {
+                    toValue: 300,
+                    duration: 500,
+                  	// 是否启动原生驱动，native完成动画，性能更好但是脱离js层
+                    useNativeDriver: false,
+                }).start();
+            }} />
+            <Animated.View
+                style={[
+                    styles.view,
+                    {marginLeft: marginLeft}
+                ]}
+            />
+        </View>
+    );
+}
+const styles = StyleSheet.create({
+    root: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+    },
+    view: {
+        width: 100,
+        height: 100,
+        backgroundColor: '#3050ff',
+        marginTop: 20,
+    },
+});
+```
 
 ##### 四大动画类型
 
 平移、旋转、缩放、渐变
 
+```typescript
+import React, { useRef } from 'react';
+import {
+  StyleSheet,
+  View,
+  Button,
+  Animated
+} from 'react-native';
+export default () => {
+    // const marginLeft = useRef(new Animated.Value(0)).current;
+    // const rotate = useRef(new Animated.Value(0)).current;
+    // const scale = useRef(new Animated.Value(1)).current;
+    const opacity = useRef(new Animated.Value(0)).current;
+
+    // const rotateValue = rotate.interpolate({
+    //     inputRange: [0, 45],
+    //     outputRange: ['0deg', '45deg'],
+    // })
+    return (
+        <View style={styles.root}>
+            <Button title='按钮' onPress={() => {
+                Animated.timing(opacity, {
+                    toValue: 1,
+                    duration: 1000,
+                    useNativeDriver: false,
+                }).start();
+            }} />
+            <Animated.View
+                style={[
+                    styles.view,
+                    // {marginLeft: marginLeft}	// 平移
+                    {transform: [
+                        // { rotate: rotateValue },	// 旋转
+                        // { scale: scale }	// 缩放
+                    ]},
+                    {opacity: opacity}	// 渐变
+                ]}
+            />
+        </View>
+    );
+}
+const styles = StyleSheet.create({
+    root: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+    },
+    view: {
+        width: 100,
+        height: 100,
+        backgroundColor: '#3050ff',
+        marginTop: 60,
+        marginLeft: 60,
+    },
+});
+```
+
 ##### 六种支持动画的组件
 
-Animated.Image
+- Animated.Image
 
-Animated.View
+- Animated.View
 
-Animated.ScrollView
+- Animated.ScrollView
 
-Animated.FlatList
+- Animated.FlatList
 
-Animated.Text
+- Animated.Text
 
-Animated.SectionList
+- Animated.SectionList
 
 ##### 平移动画的多种属性支持
 
-marginLeft、marginRight、marginTop、marginBottom
+- marginLeft、marginRight、marginTop、marginBottom
 
-translateX、translateY
+- translateX、translateY
 
-left、right、top、bottom
+- left、right、top、bottom
 
 ##### Animated.decay 衰减动画函数
 
-velocity：初始速度
+三大动画函数：
 
-deceleration：衰减系数
+- Animated.decay() 衰减动画函数
+- Animated.spring() 弹性动画函数
+- Animated.timing() 时间动画函数（95%场景）
+
+衰减动画函数：
+
+- velocity：初始速度
+
+- deceleration：衰减系数，越小动画衰减越快
+
+```typescript
+Animated.decay(marginLeft, {
+    velocity: 1,
+    deceleration: 0.990,
+    useNativeDriver: false,
+}).start();
+```
 
 ##### Animated.spring 弹性动画函数
 
-toValue：目标值
+- toValue：目标值
 
-弹性模型：三组配置：bounciness	tension	|	speed	friction	|	stiffness	damping	mass
+- 弹性模型：三组配置：bounciness	speed	|	tension	friction	|	stiffness	damping	mass
 
-bounciness（弹性）：控制弹性，越大越弹，默认值18
+- bounciness（弹性）：控制弹性，越大越弹，默认值18
 
-speed（速度）：控制弹的速度，默认值12
+- speed（速度）：控制弹的速度，默认值12
 
-tension（张力）：控制速度，越大速度越快，默认值40
+- tension（张力）：控制速度，越大速度越快，默认值40
 
-friction（摩擦）：控制弹性与过冲，越小越弹，默认值17
+- friction（摩擦）：控制弹性与过冲，越小越弹，默认值17
 
-stiffness（刚度）：弹簧刚度系数，越大越弹，默认为100
+- stiffness（刚度）：弹簧刚度系数，越大越弹，默认为100
 
-damping（阻尼）：弹簧运动因摩擦力而收到阻尼，越小越弹，默认值为10
+- damping（阻尼）：弹簧运动因摩擦力而收到阻尼，越小越弹，默认值为10
 
-mass（质量）：附着在弹簧末端的物体的质量，越大惯性越大，动画越难停下，越小惯性越小，动画很快停下，默认值1
+- mass（质量）：附着在弹簧末端的物体的质量，越大惯性越大，动画越难停下，越小惯性越小，动画很快停下，默认值1
 
 其他弹性参数：
 
-velocity（速度）：附着在弹簧上物体的初始速度，默认值0
+- velocity（速度）：附着在弹簧上物体的初始速度，默认值0
 
-overshootClamping（过冲）：弹簧是否应夹紧而不应弹跳，默认为false
+- overshootClamping（过冲）：弹簧是否应夹紧而不应弹跳，默认为false
 
-restDisplacementThreshold（恢复位移阈值）：从静止状态开始的位移阈值，低于该阈值，弹簧应被视为静止状态，默认为0.001
+- restDisplacementThreshold（恢复位移阈值）：从静止状态开始的位移阈值，低于该阈值，弹簧应被视为静止状态，默认为0.001
 
-restspeedthread（弹簧静止速度），单位为像素/秒，默认为0.001
+- restspeedthread（弹簧静止速度），单位为像素/秒，默认为0.001
 
-delay（延迟）：延迟后启动动画，默认为0
+- delay（延迟）：延迟后启动动画，默认为0
+
+```typescript
+Animated.spring(marginLeft, {
+    toValue: 200,
+    useNativeDriver: false,
+    // 第一组配置
+    bounciness: 25,
+    speed: 10,
+    // 第二组配置
+    // tension: 40,
+    // friction: 7,
+    // 第三组配置
+    // stiffness: 100,
+    // damping: 10,
+    // mass: 1,
+}).start();
+```
 
 ##### Animated.timing 时间动画函数
 
 easing：时间动画函数
 
 - 四种内置动画：
-  - back	回拉
+  - back	回拉，值代表回拉幅度
   - bounce	弹跳
   - ease	平缓
   - elastic	弹性
@@ -1459,39 +1595,300 @@ easing：时间动画函数
 - 所有组合函数效果
   - https://easings.net/
 
+```typescript
+Animated.timing(marginLeft, {
+    toValue: 300,
+    duration: 500,
+    // easing: Easing.back(3),
+    // easing: Easing.ease,
+    // easing: Easing.bounce,
+    // easing: Easing.elastic(3),
+
+    // easing: Easing.linear,
+    // easing: Easing.quad,
+    // easing: Easing.cubic,
+
+    // easing: Easing.bezier(0.7, 0.2, 0.42, 0.82),
+    // easing: Easing.circle,
+    // easing: Easing.sin,
+    // easing: Easing.exp,
+
+    // easing: Easing.in(Easing.bounce),
+    // easing: Easing.out(Easing.exp),
+    easing: Easing.inOut(Easing.elastic(3)),
+    useNativeDriver: false,
+}).start();
+```
+
 ##### Animated.ValueXY 矢量动画
 
 矢量属性：ValueXY
 
-##### 四种组合动画
+```typescript
+const vector = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
 
-Animated.parallel()	并发
+Animated.timing(vector, {
+    toValue: { x: 300, y: 400 },
+    duration: 500,
+    useNativeDriver: false,
+}).start();
 
-Animated.sequence()	序列
+<Animated.View
+    style={[
+        styles.view,
+        {marginLeft: vector.x, marginTop: vector.y}
+    ]}
+/>
+```
 
-Animated.stagger()	有序/交错
+##### 四种组合动画（实际项目用的多）
 
-Animated.delay()	延迟
+- Animated.parallel()	并发
+
+- Animated.sequence()	序列
+
+- Animated.stagger()	有序/交错
+
+- Animated.delay()	延迟
+
+```typescript
+const moveX = Animated.timing(marginLeft, {
+    toValue: 200,
+    duration: 500,
+    useNativeDriver: false,
+});
+const moveY = Animated.timing(marginTop, {
+    toValue: 300,
+    duration: 500,
+    useNativeDriver: false,
+});
+const scaleAnim = Animated.timing(scale, {
+    toValue: 1.5,
+    duration: 500,
+    useNativeDriver: false,
+});
+
+// Animated.parallel([moveX, moveY, scaleAnim]).start();
+// Animated.sequence([moveX, moveY, scaleAnim]).start();
+// Animated.stagger(1500, [moveX, moveY, scaleAnim]).start();
+Animated.sequence([
+    moveX,
+    Animated.delay(1000),
+    moveY,
+    Animated.delay(500),
+    scaleAnim,
+]).start();
+
+<Animated.View
+    style={[
+        styles.view,
+        {
+            transform: [
+                {scale: scale},
+                {translateX: marginLeft},
+                {translateY: marginTop}
+            ],
+        }
+    ]}
+/>
+```
 
 ##### 跟随动画延迟难题
 
-传统写法及问题所在
+- 传统写法及问题所在
 
-跟随动画零延迟的实现
+- 跟随动画零延迟的实现
+
+```typescript
+import React, { useState, useRef } from 'react';
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Animated
+} from 'react-native';
+
+const colors = ['red', 'green', 'blue', 'yellow', 'orange'];
+
+export default () => {
+
+    // const [scrollY, setScrollY] = useState(0);
+    const scrollY = useRef(new Animated.Value(0)).current;
+
+    const viewList = () => {
+        const array = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        ];
+        return (
+            <>
+            {array.map((item, index) => (
+                <View key={item} style={{
+                    width: 60,
+                    height: 100,
+                    backgroundColor: colors[index % 5],
+                }} />
+            ))}
+            </>
+        );
+    }
+    return (
+        <View style={styles.root}>
+            <View style={styles.leftLayout}>
+                <Animated.View
+                    style={{
+                        width: 60,
+                        transform: [
+                            // {translateY: -scrollY}
+                            {translateY: Animated.multiply(-1, scrollY)}
+                        ]
+                    }}
+                >
+                    {viewList()}
+                </Animated.View>
+            </View>
+
+            <View style={styles.rightLayout}>
+                <Animated.ScrollView
+                    showsVerticalScrollIndicator={false}
+                    // onScroll={(event) => {
+                    //     setScrollY(event.nativeEvent.contentOffset.y);
+                    // }}
+                    onScroll={Animated.event(
+                        [
+                            {
+                              nativeEvent: {
+                                contentOffset: { y: scrollY }
+                              }
+                            }
+                        ],
+                        { useNativeDriver: true }
+                    )}
+                >
+                    {viewList()}
+                </Animated.ScrollView>
+            </View>
+        </View>
+    );
+}
+```
 
 ##### 自定义 Modal 背景动画
 
-slide动画，自定义渐变
+- slide动画，自定义渐变
 
-fade动画，自定义平移
+- fade动画，自定义平移
+
+```typescript
+// fade动画，自定义平移
+const {  height: WINDOW_HEIGHT} = Dimensions.get('window');
+export default () => {
+    const [visible, setVisible] = useState(false);
+    const marginTop = useRef(new Animated.Value(WINDOW_HEIGHT)).current;
+    const showModal = () => {
+        setVisible(true);
+        Animated.timing(marginTop, {
+            toValue: 0,
+            duration: 500,
+            useNativeDriver: false,
+        }).start();
+    }
+    const hideModal = () => {
+        Animated.timing(marginTop, {
+            toValue: WINDOW_HEIGHT,
+            duration: 500,
+            useNativeDriver: false,
+        }).start(() => {
+            setVisible(false);
+        });
+    }
+    return (
+        <View style={styles.root}>
+            <Button title='按钮' onPress={() => showModal()} />
+            <Modal
+                visible={visible}
+                onRequestClose={() => hideModal()}
+                transparent={true}
+                statusBarTranslucent={true}
+                animationType='fade'
+            >
+                <View style={styles.container}>
+                    <Animated.View
+                        style={[
+                            styles.contentView,
+                            {
+                                marginTop: marginTop,
+                            }
+                        ]}
+                    >
+                        <SectionList
+                            style={styles.sectionList}
+                            contentContainerStyle={styles.containerStyle}
+                            sections={SectionData}
+                            renderItem={renderItem}
+                            keyExtractor={(item, index) => `${item}-${index}`}
+                            showsVerticalScrollIndicator={false}
+                            ListHeaderComponent={ListHeader}
+                            ListFooterComponent={ListFooter}
+                            renderSectionHeader={renderSectionHeader}
+                            ItemSeparatorComponent={() => 
+                                <View style={styles.separator} />
+                            }
+                            stickySectionHeadersEnabled={true}
+                        />
+                    </Animated.View>
+                </View>
+            </Modal>
+        </View>
+    );
+}
+```
 
 ##### LayoutAnimation 超级简单又强大的布局动画
 
-Android 手动启动布局动画
+- Android 手动启动布局动画
 
-布局动画的应用场景和优势
+- 布局动画的应用场景和优势
 
-学习几个演示案例
+- 学习几个演示案例
+
+```typescript
+// index.js
+if (Platform.OS === 'android') {
+    if (UIManager.setLayoutAnimationEnabledExperimental) {
+        console.log('enable ...');
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+}
+
+const [showView, setShowView] = useState(false);
+const [showRight, setShowRight] = useState(false);
+LayoutAnimation.configureNext(
+    // LayoutAnimation.Presets.linear
+    // LayoutAnimation.Presets.spring
+    LayoutAnimation.Presets.easeInEaseOut,
+    () => {
+        console.log('动画结束');
+    },
+    () => {
+        console.log('动画异常');
+    }
+);
+// 在值改变前调用LayoutAnimation
+setShowView(true);
+
+LayoutAnimation.configureNext(
+    LayoutAnimation.Presets.spring
+);
+setShowRight(true);
+
+LayoutAnimation.linear();
+LayoutAnimation.spring();
+// LayoutAnimation.easeInEaseOut();
+setShowRight(true);
+
+{/* {showView && <View style={styles.view} />} */}
+```
 
 
 
