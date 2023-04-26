@@ -1712,8 +1712,6 @@ f4('hello');
 
 
 
-
-
 ### Context上下文
 
 ##### Context 上下文介绍和演示
@@ -2382,7 +2380,7 @@ export default () => {
 
 ##### 桥接原生介绍
 
-为什么需要桥接原生
+为什么需要桥接原生?
 
 - 实现react层JS实现不了的需求
   - 复杂、高性能组件：复杂表格、视频播放等
@@ -2398,31 +2396,397 @@ export default () => {
     - @ReactMethod
 - JS层调用原生方法
 
+```js
+// DemoPackage
+public class DemoPackage implements ReactPackage {
+    @NonNull
+    @Override
+    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext context) {
+      	// 注册Module
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new AppModule(context));
+        return modules;
+    }
+
+    @NonNull
+    @Override
+    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext context) {
+        List<ViewManager> viewManagers = new ArrayList<>();
+        viewManagers.add(new InfoViewManager());
+        viewManagers.add(new InfoViewGroupManager());
+        return viewManagers;
+    }
+}
+// AppModule
+public class AppModule extends ReactContextBaseJavaModule {
+
+    public AppModule(@Nullable ReactApplicationContext reactContext) {
+        super(reactContext);
+    }
+
+  	// 返回原生模块注册的名称供JS使用
+    @NonNull
+    @Override
+    public String getName() {
+        return "App";
+    }
+
+  	// 桥接原生常量
+    @Override
+    public Map<String, Object> getConstants() {
+        Map map = new HashMap<String, Object>();
+        map.put("versionName", BuildConfig.VERSION_NAME);
+        map.put("versionCode", BuildConfig.VERSION_CODE);
+        return map;
+    }
+
+    @ReactMethod
+    public void openGallery() {
+        if (getCurrentActivity() == null) {
+            return;
+        }
+        DeviceUtil.openGallery(getCurrentActivity());
+    }
+
+    @ReactMethod
+    public void getVersionName(Promise promise) {
+        String versionName = BuildConfig.VERSION_NAME;
+        if (versionName == null) {
+            promise.reject(new Throwable("获取版本失败"));
+        } else {
+            promise.resolve(versionName);
+        }
+    }
+}
+// MainApplication
+private final ReactNativeHost mReactNativeHost =
+    new ReactNativeHost(this) {
+      @Override
+      public boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
+      }
+
+      @Override
+      protected List<ReactPackage> getPackages() {
+        @SuppressWarnings("UnnecessaryLocalVariable")
+        List<ReactPackage> packages = new PackageList(this).getPackages();
+        // Packages that cannot be autolinked yet can be added manually here, for example:
+        // packages.add(new MyReactNativePackage());
+          packages.add(new DemoPackage());
+        return packages;
+      }
+
+      @Override
+      protected String getJSMainModuleName() {
+        return "index";
+      }
+    };
+// NativePage.tsx
+import {
+  NativeModules,
+} from 'react-native';
+const { App } = NativeModules;
+App?.openGallery();
+App?.getVersionName().then((data: string) => {
+    console.log(`versionName=${data}`);
+})
+const { versionName, versionCode } = App;
+console.log(`versionName=${versionName}, versionCode=${versionCode}`);
+```
+
 ##### 桥接原生实现JS层获取原生常量
 
 - 编写并注册原生常量方法
 - JS层获取原生常量（同步获取）
 
+代码合并在上面
+
 ##### 桥接原生原子组件 实现原生组件
 
-- 实现一个原生自定义组件View
+1. 实现一个原生自定义组件View
+
+```java
+public class InfoView extends LinearLayout implements View.OnClickListener {
+
+    // ...
+    @Override
+    public void onClick(View v) {
+        // ...
+        WritableMap params = Arguments.createMap();
+        params.putString("shape", this.shape);
+        ReactContext context = (ReactContext)getContext();
+        context.getJSModule(RCTEventEmitter.class)
+                .receiveEvent(getId(), "onShapeChange", params);
+    }
+}
+
+public class InfoViewManager extends SimpleViewManager<InfoView> {
+  	// JS层使用
+    @NonNull
+    @Override
+    public String getName() {
+        return "NativeInfoView";
+    }
+
+    @NonNull
+    @Override
+    protected InfoView createViewInstance(@NonNull ThemedReactContext context) {
+        return new InfoView(context);
+    }
+
+  	// JS使用avatar属性
+    @ReactProp(name = "avatar")
+    public void setAvatar(InfoView view, String url) {
+        view.setAvatar(url);
+    }
+
+    @ReactProp(name = "name")
+    public void setName(InfoView view, String name) {
+        view.setName(name);
+    }
+
+    @ReactProp(name = "desc")
+    public void setDesc(InfoView view, String desc) {
+        view.setDesc(desc);
+    }
+
+    @Nullable
+    @Override
+    public Map getExportedCustomBubblingEventTypeConstants() {
+        return MapBuilder.builder()
+                .put("onShapeChange",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onShapeChange")
+                        )
+                ).build();
+    }
+
+    @Nullable
+    @Override
+    public Map<String, Integer> getCommandsMap() {
+        return MapBuilder.of("setShape", SET_SHAPE_CODE);
+    }
+
+    @Override
+    public void receiveCommand(
+            @NonNull InfoView view,
+            String commandId,
+            @Nullable ReadableArray args) {
+        int command = Integer.parseInt(commandId);
+        if (command == SET_SHAPE_CODE) {
+            if (args != null && args.size() > 0) {
+                String shape = args.getString(0);
+                view.setShape(shape);
+            }
+        } else {
+            // TODO
+            super.receiveCommand(view, commandId, args);
+        }
+    }
+
+    public static final int SET_SHAPE_CODE = 100;
+}
+```
 
 ##### 桥接原生原子组件 JS层调用原生组件
 
-- 创建ViewManager，实现 SimpleViewManager，用于接管原生自定义组件的属性和行为，并把ViewManager注册到ReactPackage中
-- 在JS层导入原生组件，并封装导出JS模块
+2. 创建ViewManager，实现 SimpleViewManager，用于接管原生自定义组件的属性和行为，并把ViewManager注册到ReactPackage中
+
+3. 在JS层导入原生组件，并封装导出JS模块
+
+```js
+// NativeInfoView.tsx
+import React, { useRef, useEffect } from 'react';
+import {
+  StyleSheet,
+  View,
+  requireNativeComponent,
+  ViewProps,
+  findNodeHandle,
+  UIManager
+} from 'react-native';
+
+import { avatarUri } from '../constants/Uri';
+
+type NativeInfoViewType = ViewProps | {
+    // 这部分是自定义的属性
+    avatar: string;
+    name: string;
+    desc: string;
+    onShapeChange: (e: any) => void;
+};
+
+const NativeInfoView = requireNativeComponent<NativeInfoViewType>('NativeInfoView');
+
+export default () => {
+
+    const ref  = useRef(null);
+
+    useEffect(() => {
+        setTimeout(() => {
+            sendCommand('setShape', ['round']);
+        }, 3000);
+    }, []);
+
+    const sendCommand = (command: string, params: any[]) => {
+        const viewId = findNodeHandle(ref.current);
+        // @ts-ignore
+        const commands = UIManager.NativeInfoView.Commands[command].toString();
+        UIManager.dispatchViewManagerCommand(viewId, commands, params);
+    }
+
+    return (
+        <NativeInfoView
+            ref={ref}
+            style={styles.infoView}
+            avatar={avatarUri}
+            name="尼古拉斯·段坤"
+            desc="各位产品经理大家好，我是个人开发者张三，我学习RN两年半了，我喜欢安卓、RN、Flutter，Thank you!。"
+            onShapeChange={(e: any) => {
+                console.log(e.nativeEvent.shape);
+            }}
+        />
+    );
+}
+
+const styles = StyleSheet.create({
+    infoView: {
+        width: '100%',
+        height: '100%',
+    },
+})
+```
 
 ##### 桥接原生原子组件 封装原生组件属性
 
-ViewManager 使用 @ReactProp 定义组件属性
+4. ViewManager 使用 @ReactProp 定义组件属性
+
+代码见上面InfoViewManager
 
 ##### 桥接原生原子组件 原生事件回调
 
-原生组件回调JS层方法
+5. 原生组件回调JS层方法
+
+```java
+public class InfoView extends LinearLayout implements View.OnClickListener {
+
+    // ...
+    @Override
+    public void onClick(View v) {
+        // ...
+        WritableMap params = Arguments.createMap();
+        params.putString("shape", this.shape);
+        ReactContext context = (ReactContext)getContext();
+        context.getJSModule(RCTEventEmitter.class)
+                .receiveEvent(getId(), "onShapeChange", params);
+    }
+}
+
+public class InfoViewManager extends SimpleViewManager<InfoView> {
+
+    @Nullable
+    @Override
+    public Map getExportedCustomBubblingEventTypeConstants() {
+      	// 将onShapeChange事件通过
+        return MapBuilder.builder()
+                .put("onShapeChange",
+                        MapBuilder.of(
+                                "phasedRegistrationNames",
+                                MapBuilder.of("bubbled", "onShapeChange")
+                        )
+                ).build();
+    }
+}
+
+// NativeInfoView.tsx
+export default () => {
+    return (
+        <NativeInfoView
+            ref={ref}
+            style={styles.infoView}
+            avatar={avatarUri}
+            name="尼古拉斯·段坤"
+            desc="各位产品经理大家好，我是个人开发者张三，我学习RN两年半了，我喜欢安卓、RN、Flutter，Thank you!。"
+            onShapeChange={(e: any) => {
+                console.log(e.nativeEvent.shape);
+            }}
+        />
+    );
+}
+```
 
 ##### 桥接原生原子组件 原生组件公开api给JS调用
 
-公开原生组件方法给JS层调用
+6. 公开原生组件方法给JS层调用
+
+```typescript
+import React, { useRef, useEffect } from 'react';
+import {
+  StyleSheet,
+  View,
+  requireNativeComponent,
+  ViewProps,
+  findNodeHandle,
+  UIManager
+} from 'react-native';
+const NativeInfoView = requireNativeComponent<NativeInfoViewType>('NativeInfoView');
+
+export default () => {
+    useEffect(() => {
+    		setTimeout(() => {
+        		sendCommand('setShape', ['round']);
+    		}	, 3000);
+		}, []);
+    const sendCommand = (command: string, params: any[]) => {
+        const viewId = findNodeHandle(ref.current);
+        // @ts-ignore
+        const commands = UIManager.NativeInfoView.Commands[command].toString();
+        UIManager.dispatchViewManagerCommand(viewId, commands, params);
+    }
+
+    return (
+        <NativeInfoView
+            ref={ref}
+            style={styles.infoView}
+            avatar={avatarUri}
+            name="尼古拉斯·段坤"
+            desc="各位产品经理大家好，我是个人开发者张三，我学习RN两年半了，我喜欢安卓、RN、Flutter，Thank you!。"
+            onShapeChange={(e: any) => {
+                console.log(e.nativeEvent.shape);
+            }}
+        />
+    );
+}
+// InfoViewManager
+public class InfoViewManager extends SimpleViewManager<InfoView> {
+    // 注册支持哪些事件
+  	@Nullable
+    @Override
+    public Map<String, Integer> getCommandsMap() {
+        return MapBuilder.of("setShape", SET_SHAPE_CODE);
+    }
+  
+  	// 处理事件
+    @Override
+    public void receiveCommand(
+            @NonNull InfoView view,
+            String commandId,
+            @Nullable ReadableArray args) {
+        int command = Integer.parseInt(commandId);
+        if (command == SET_SHAPE_CODE) {
+            if (args != null && args.size() > 0) {
+                String shape = args.getString(0);
+                view.setShape(shape);
+            }
+        } else {
+            // TODO
+            super.receiveCommand(view, commandId, args);
+        }
+    }
+    public static final int SET_SHAPE_CODE = 100;
+}
+```
 
 ##### 桥接原生容器组件
 
@@ -2430,6 +2794,121 @@ ViewManager 使用 @ReactProp 定义组件属性
 - 创建 ViewGroupManager，注册行为和 ViewManager 一致
 - 在 JS 层导入原生组件，并封装导出 JS 模块
 - 属性、方法回调、api调用和ViewManager一致
+
+```typescript
+// InfoViewGroup.java
+public class InfoViewGroup extends LinearLayout {
+    public InfoViewGroup(Context context) {
+        super(context);
+    }
+}
+// InfoViewGroupManager.java
+public class InfoViewGroupManager extends ViewGroupManager<InfoViewGroup> {
+    @NonNull
+    @Override
+    public String getName() {
+        return "NativeInfoViewGroup";
+    }
+
+    @NonNull
+    @Override
+    protected InfoViewGroup createViewInstance(@NonNull ThemedReactContext context) {
+        return new InfoViewGroup(context);
+    }
+}
+// DemoPackage.java
+public class DemoPackage implements ReactPackage {
+    @NonNull
+    @Override
+    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext context) {
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new AppModule(context));
+        return modules;
+    }
+
+    @NonNull
+    @Override
+    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext context) {
+        List<ViewManager> viewManagers = new ArrayList<>();
+        viewManagers.add(new InfoViewManager());
+        viewManagers.add(new InfoViewGroupManager());
+        return viewManagers;
+    }
+}
+// MainApplication.java
+private final ReactNativeHost mReactNativeHost =
+    new ReactNativeHost(this) {
+      @Override
+      public boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
+      }
+
+      @Override
+      protected List<ReactPackage> getPackages() {
+        @SuppressWarnings("UnnecessaryLocalVariable")
+        List<ReactPackage> packages = new PackageList(this).getPackages();
+        // Packages that cannot be autolinked yet can be added manually here, for example:
+        // packages.add(new MyReactNativePackage());
+          packages.add(new DemoPackage());
+        return packages;
+      }
+
+      @Override
+      protected String getJSMainModuleName() {
+        return "index";
+      }
+    };
+
+// NativeInfoViewGroup.tsx
+import React from 'react';
+import {
+  StyleSheet,
+  requireNativeComponent,
+  ViewProps,
+} from 'react-native';
+
+type NativeInfoViewGroupType = ViewProps | {
+    // 这部分是自定义的属性
+};
+
+const NativeInfoViewGroup = requireNativeComponent<NativeInfoViewGroupType>('NativeInfoViewGroup');
+
+export default (props: any) => {
+
+    const { children } = props;
+
+    return (
+        <NativeInfoViewGroup
+            style={styles.infoView}
+        >
+            {children}
+        </NativeInfoViewGroup>
+    );
+}
+
+const styles = StyleSheet.create({
+    infoView: {
+        width: '100%',
+        flexDirection: 'row',
+    },
+})
+
+// NativePage.tsx
+<NativeInfoViewGroup>
+    <View style={styles.content}>
+        <Image
+            style={styles.avatarImg}
+            source={{ uri: avatarUri }}
+        />
+        <View style={styles.nameLayout}>
+            <Text style={styles.nameTxt}>尼古拉斯·段坤</Text>
+            <Text style={styles.descTxt}>
+                各位产品经理大家好，我是个人开发者张三，我学习RN两年半了，我喜欢安卓、RN、Flutter，Thank you!。
+            </Text>
+        </View>
+    </View>
+</NativeInfoViewGroup>
+```
 
 
 
