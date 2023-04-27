@@ -871,6 +871,36 @@ ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
 
 滚动到底：scrollToEnd()
 
+```js
+<FlatList
+    ref={flatListRef}
+    style={styles.flatlist}
+    data={data}
+    renderItem={renderItem}
+    keyExtractor={(_, index) => `item-${index}`}
+    contentContainerStyle={styles.containerStyle}
+    showsVerticalScrollIndicator={false}
+    onScroll={(event) => {
+        console.log(event.nativeEvent.contentOffset.y);
+    }}
+    keyboardDismissMode='on-drag'
+    keyboardShouldPersistTaps='handled'
+    ListHeaderComponent={ListHeader}
+    ListFooterComponent={ListFooter}
+    ListEmptyComponent={ListEmpty}
+    ItemSeparatorComponent={
+        <View style={styles.separator} />
+    }
+    initialNumToRender={15}
+    inverted={false}
+    // numColumns={1}
+    // onViewableItemsChanged={(info) => {
+    //     const { viewableItems } = info;
+    //     console.log(viewableItems);
+    // }}
+/>
+```
+
 ##### SectionList 多类型分组列表
 
 基础使用：sections、renderItem、keyExtractor
@@ -889,11 +919,69 @@ ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
 
 滚动api：scrollToLocation()
 
+```js
+useEffect(() => {
+    setTimeout(() => {
+        sectionListRef.current.scrollToLocation({
+            sectionIndex: 1,
+            itemIndex: 4,
+            viewPosition: 0,
+            animated: true,
+        });
+    }, 2000);
+}, []);
+<SectionList
+    ref={sectionListRef}
+    style={styles.sectionList}
+    sections={SectionData}
+    renderItem={renderItem}
+    keyExtractor={(item, index) => `${item}-${index}`}
+    contentContainerStyle={styles.containerStyle}
+    showsVerticalScrollIndicator={false}
+    onScroll={(event) => {
+        // console.log(event.nativeEvent.contentOffset.y);
+    }}
+    keyboardDismissMode='on-drag'
+    keyboardShouldPersistTaps='handled'
+    ListHeaderComponent={ListHeader}
+    ListFooterComponent={ListFooter}
+    renderSectionHeader={renderSectionHeader}
+    ItemSeparatorComponent={() => 
+        <View style={styles.separator} />
+    }
+    stickySectionHeadersEnabled={true}
+/>
+```
+
 ##### RefreshControl 下拉刷新
 
 下拉刷新：refreshing、onRefresh
 
 上拉加载：onEndReached、onEndReachedThreshold
+
+```js
+const [refreshing, setRefreshing] = useState(false);
+<SectionList
+    refreshControl={
+        <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => {
+                console.log('onRefresh ...');
+                setRefreshing(true);
+                // do request new data
+                setTimeout(() => {
+                    setRefreshing(false);
+                }, 1000);
+            }}
+        />
+    }
+    onEndReached={() => {
+        console.log('onEndReached ...');
+        // do request next page data
+    }}
+    onEndReachedThreshold={0.2}
+/>
+```
 
 ##### Modal 自定义弹窗
 
@@ -913,6 +1001,21 @@ ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
 
 背景动画：伏笔
 
+```js
+const [visible, setVisible] = useState(false);
+<Modal
+    visible={visible}
+    onRequestClose={() => hideModal()}
+    transparent={true}
+    statusBarTranslucent={true}
+    animationType='slide'
+    onShow={() => console.log('onShow ...')}
+    onDismiss={() => console.log('onDismiss ...')}
+>
+    <View ... />
+</Modal>
+```
+
 ##### StatusBar 适配状态栏
 
 内容深浅模式：barStyle
@@ -927,6 +1030,16 @@ ScrollView属性：内容容器、滚动条、滚动监听、键盘模式等
 
 api：setBackgroundColor()、setBarStyle()、setHidden()、setTranslucent()
 
+```js
+<StatusBar
+    barStyle='light-content'
+    backgroundColor='transparent'
+    animated={true}
+    translucent={true}
+    hidden={false}
+/>
+```
+
 ##### Switch 开关切换
 
 指定开关：value
@@ -936,6 +1049,19 @@ api：setBackgroundColor()、setBarStyle()、setHidden()、setTranslucent()
 背景颜色：trackColor
 
 前景颜色：thumbColor
+
+```js
+const [switchValue, setSwitchValue] = useState(true);
+<Switch
+    value={switchValue}
+    onValueChange={(value) => {
+        setSwitchValue(value);
+    }}
+    disabled={false}
+    trackColor={{ true: 'red', false: '#808080' }}
+    thumbColor={switchValue ? '#2030ff' : '#303030'}
+/>
+```
 
 
 
