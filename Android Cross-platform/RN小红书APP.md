@@ -1896,25 +1896,34 @@ setShowRight(true);
 
 ##### 初始化项目和页面框架
 
-新建并初始化工程：新建、安装、编译、运行
+- 新建并初始化工程：新建、安装、编译、运行
 
-完成基础项目配置：名称、图标
+- 完成基础项目配置：名称、图标
 
-完成基础页面框架：删除demo代码，重写主页标题栏
+- 完成基础页面框架：删除demo代码，重写主页标题栏
+
+```shell
+npm react-native init AccountManage
+npm i
+node -v # 升级到18
+npm run android
+```
 
 ##### 自定义封装添加账号弹窗
 
-首页增加添加按钮，调起弹窗
+- 首页增加添加按钮，调起弹窗
 
-自定义添加账号弹窗、封装事件、ref转发
+- 自定义添加账号弹窗、封装事件、ref转发
 
-实现弹窗ui
+- 实现弹窗ui
+- KeyboardAvoidingView
 
 ##### 使用 UUID和AsyncStorage 保存账号数据
 
 生成唯一id
 
 - react-native-get-random-values
+- uuid
 
 AsyncStorage：数据存储
 
@@ -1926,6 +1935,12 @@ AsyncStorage：数据存储
 
 - 读取数据：AsyncStorage.getItem()
 
+```shell
+npm i react-native-get-random-values
+npm i uuid
+npm i @react-native-async-storage/async-storage
+```
+
 ##### 绘制账号列表 ui
 
 ##### 账号列表实现展开收起功能
@@ -1934,11 +1949,11 @@ AsyncStorage：数据存储
 
 ##### 实现账号列表细节交互
 
-点击列表行，跳转账号详情并支持修改
+- 点击列表行，跳转账号详情并支持修改
 
-增加长按删除交互
+- 增加长按删除交互
 
-标题栏增加密码显示开关
+- 标题栏增加密码显示开关
 
 ##### 项目打包发布
 
