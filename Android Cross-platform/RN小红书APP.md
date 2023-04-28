@@ -753,6 +753,25 @@ style 和 imageStyle
 
 ref 和 imageRef
 
+```js
+<ImageBackground
+    style={styles.viewStyle}
+    imageStyle={styles.imgStyle}
+    source={bg_card}
+>
+    <Image style={styles.icon_logo} source={icon_bank} />
+    <Text style={styles.txtBank}>
+        {`招商银行\n`}
+        <Text style={styles.cardTypeTxt}>
+            {`储蓄卡\n\n`}
+        </Text>
+        <Text style={styles.cardNoTxt}>
+        ●●●●   ●●●●   ●●●●   3068
+        </Text>
+    </Text>
+</ImageBackground>
+```
+
 ##### TextInput唯一且强大的输入组件
 
 字体样式：和Text一致
@@ -785,6 +804,39 @@ ref 和 imageRef
 
 安全模式：secureTextEntry
 
+```js
+<TextInput
+    ref={inputRef}
+    style={styles.input}
+    // autoFocus={true}
+    blurOnSubmit={true}
+    caretHidden={false}
+    // defaultValue="默认内容"
+    editable={true}
+    keyboardType='number-pad'
+    returnKeyType='search'
+    // maxLength={11}
+    // multiline={true}
+    // numberOfLines={2}
+    onFocus={() => {
+        
+    }}
+    onBlur={() => {
+
+    }}
+    onChange={(event) => {
+        console.log(event.nativeEvent);
+    }}
+    onChangeText={(text) => {
+        console.log(text);
+    }}
+    // selection={{start: 0, end: 3}}
+    selectionColor='red'
+    selectTextOnFocus={true}
+    secureTextEntry={true}
+/>
+```
+
 ##### TouchableOpacity最好用的点击组件
 
 透明度渐变阈值：activeOpacity
@@ -792,6 +844,28 @@ ref 和 imageRef
 点击事件：onPress、onLongPress、delayLongPress
 
 点击事件起止：onPressIn、onPressOut
+
+```js
+<TouchableOpacity
+    style={styles.button}
+    activeOpacity={0.5}// x ~ 1不透明度变化范围
+    onPress={() => {
+        console.log('onPress ...');
+    }}
+    onLongPress={() => {
+        console.log('onLongPress ...');
+    }}
+    delayLongPress={1000}
+    onPressIn={() => {
+        console.log('onPressIn ...');
+    }}
+    onPressOut={() => {
+        console.log('onPressOut ...');
+    }}
+>
+    <Text style={styles.txt}>按钮</Text>
+</TouchableOpacity>
+```
 
 ##### TouchableHighlight使用略显麻烦的点击组件
 
@@ -801,19 +875,61 @@ ref 和 imageRef
 
 使用陷阱：必须复写onPress
 
+```js
+<TouchableHighlight
+    style={styles.button}
+    activeOpacity={0.8}
+    onPress={() => {
+        console.log('onPress ...');
+    }}
+    underlayColor="#00bcd4"
+>
+    <Text style={styles.txt}>按钮</Text>
+</TouchableHighlight>
+```
+
 ##### TouchbaleWithoutFeedback几乎不用的点击组件
 
-只支持一个子节点，且自身不支持样式
+- 官方文档：除非你有一个很好的理由，否则不要用这个组件。所有能够响应触屏操作的元素在触屏后都应该有一个视觉上的反馈。
+
+- 只支持一个子节点，且自身不支持样式
+
+```js
+<TouchableWithoutFeedback>
+    <View style={styles.button2}>
+        <Text style={styles.txt}>按钮</Text>
+    </View>
+</TouchableWithoutFeedback>
+```
 
 ##### Button 使用简单但样式固定
 
-title：设置按钮显示文字
-
-color ：设置按钮颜色
+- title：设置按钮显示文字，color ：设置按钮颜色
+- disabled：设置按钮不可点击
+- onPress：设置按钮点击事件
 
 应用场景：对按钮的UI没有要求
 
+```js
+<Button
+    title='按 钮'
+    color={"green"}
+    onPress={onPress}
+/>
+```
+
 ##### 强大的 Pressable
+
+- 点击类事件和其他点击组件一致
+- 带状态样式与带状态子节点
+
+```js
+<Pressable style={state => {
+    return [styles.button, state.pressed && styles.buttonPressed]
+}}>
+    {state => <Text style={state.pressed ? styles.txtPressed : styles.txt}>按 钮</Text>}
+</Pressable>
+```
 
 ##### ScrollView 基础滚动组件
 
@@ -842,6 +958,38 @@ color ：设置按钮颜色
 吸顶元素：stickyHeaderIndices
 
 api：scrollTo()、scrollToEnd()
+
+```js
+<ScrollView
+    ref={scrollViewRef}
+    style={styles.root}
+    contentContainerStyle={styles.containerStyle}
+    keyboardDismissMode='on-drag'
+    keyboardShouldPersistTaps='handled'
+    onMomentumScrollBegin={() => {
+        // console.log('onMomentumScrollBegin ...')
+    }}
+    onMomentumScrollEnd={() => {
+        // console.log('onMomentumScrollEnd ...')
+    }}
+    onScroll={(event) => {
+        console.log(event.nativeEvent.contentOffset.y);
+    }}
+    scrollEventThrottle={16}
+    overScrollMode='never'
+    scrollEnabled={true}
+    contentOffset={{ y: 100 }}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={[1]}
+>
+    <TextInput style={styles.input} />
+    <Button title='按钮' onPress={() => {
+        // scrollViewRef.current.scrollTo({y: 500, animated: true});
+        scrollViewRef.current.scrollToEnd({animated: true});
+    }} />
+    {buildListView()}
+</ScrollView>
+```
 
 ##### FlatList 高性能列表组件
 
