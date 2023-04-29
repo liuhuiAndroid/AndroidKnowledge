@@ -3606,65 +3606,117 @@ const styles = StyleSheet.create({
 
 ##### 实战仿写小红书App 项目初始化和资源准备
 
-初始化工程与安装
+- 初始化工程与安装
 
-完成基础项目配置：名称、图标、应用id
+  ```shell
+  npx react-native init RedBook
+  cd RedBook
+  npm i
+  Android sync
+  adb devices
+  npm run android
+  ```
 
-核对设计稿，准备资源图片，导入图片
+- 完成基础项目配置：名称、图标、应用id
+
+- 核对设计稿，准备资源图片，导入图片
 
 ##### 实战仿写小红书App 导入并配置TypeScript和AsyncStorage
 
-项目配置TypeScript
+- 项目配置TypeScript
 
-```shell
-# 安装TypeScript
-npm install --save-dev typescript
-# 生成tsconfig.json
-tsc --init
-# 安装类型申明
-npm i --save-dev @types/react @types/react-native
-```
+  ```shell
+  # 安装TypeScript
+  npm install --save-dev typescript
+  # 生成tsconfig.json
+  tsc --init
+  # 安装类型申明
+  npm i --save-dev @types/react @types/react-native
+  ```
 
-AsyncStorage：数据存储
+- AsyncStorage：数据存储
 
-```shell
-# 集成async-storage
-npm i @react-native-async-storage/async-storage
-# 保存数据：AsyncStorage.setItem()
-# 读取数据：AsyncStorage.getItem()
-```
+  ```shell
+  # 集成async-storage
+  npm i @react-native-async-storage/async-storage
+  # 保存数据：AsyncStorage.setItem()
+  # 读取数据：AsyncStorage.getItem()
+  ```
 
+  ```typescript
+  // utils/Storage.ts
+  import AsyncStorage from "@react-native-async-storage/async-storage";
+  
+  export const save = async (key: string, value: string) => {
+      try {
+          return await AsyncStorage.setItem(key, value);
+      } catch (e) {
+          console.error(e);
+      }
+  }
+  
+  export const load = async (key: string) => {
+      try {
+          return await AsyncStorage.getItem(key);
+      } catch (e) {
+          console.error(e);
+          return null;
+      }
+  }
+  
+  export const remove = async (key: string) => {
+      try {
+          return await AsyncStorage.removeItem(key);
+      } catch (e) {
+          console.error(e);
+      }
+  }
+  
+  export const clear = async () => {
+      try {
+          AsyncStorage.clear();
+      } catch (e) {
+          console.error(e);
+      }
+  }
+  ```
 
+  
 
 ### 项目实战仿写小红书App【路由管理和欢迎登陆页面】
 
 ##### 实战仿写小红书 App 路由管理安装和介绍
 
-集成react-navigation
+- 集成react-navigation
 
-```shell
-npm i @react-navigation/bottom-tabs
-npm i @react-navigation/native
-npm i @react-navigation/stack
-npm i react-native-gesture-handler
-npm i react-native-safe-area-context
-npm i react-native-screens
-```
+  ```shell
+  npm i @react-navigation/bottom-tabs
+  npm i @react-navigation/native
+  npm i @react-navigation/stack
+  npm i react-native-gesture-handler
+  npm i react-native-safe-area-context
+  npm i react-native-screens
+  ```
 
 ##### 实战仿写小红书 App 构建导航栈并测试核心 Api
 
-构建导航栈
+- 构建导航栈
 
-- 在App.tsx根结点构建导航栈
-- 配置导航栈属性
+  - 在App.tsx根结点构建导航栈
+
+  - 配置导航栈属性
+
 
 ##### 实战仿写小红书 App 实现欢迎页面和快捷登陆页面
 
-欢迎页面和登陆页面
+- 欢迎页面和登陆页面
 
-- 开发欢迎页面，并设置3秒倒计时
-- 开发登陆页面，并设置3秒倒计时
-- 页面连续跳转
+  - 开发欢迎页面，并设置3秒倒计时
+
+  - 开发登陆页面，并设置3秒倒计时
+
+  - 页面连续跳转
+
 
 ##### 实战仿写小红书 App 实现账号密码登陆页面
 
@@ -3678,11 +3730,11 @@ npm i react-native-screens
 
 ##### nodejs服务介绍及使用方法
 
-为什么使用本地nodejs服务模拟数据？
+- 为什么使用本地nodejs服务模拟数据？
 
-初识egg.js：初始化、controller、静态资源
+- 初识egg.js：初始化、controller、静态资源
 
-本地nodejs服务使用方法
+- 本地nodejs服务使用方法
 
 ```shell
 npm install
@@ -3700,25 +3752,26 @@ request.ts
 
 ##### 封装接口配置
 
-增加apis接口配置文件
+- 增加apis接口配置文件
 
-使用简化接口配置名发起请求
+- 使用简化接口配置名发起请求
 
 ##### 拦截接口响应
 
-拦截接口响应（错误码）
+- 拦截接口响应（错误码）
 
 ##### 使用Mobx和缓存实现完整登陆流程
 
 - 集成MobX库，介绍基础用法
 
-```shell
-npm i mobx mobx-react
-```
+  ```shell
+  npm i mobx mobx-react
+  // 使用 flow
+  ```
 
 - 编写UserStore，使用状态管理类隔离ui和数据
 
-  ESM单例导出  
+  ESM单例导出
 
 - 本地缓存登录信息，下次自动登录
 
