@@ -184,3 +184,293 @@ fn main() {
   println!("a = {}, b = {}", a, b);
 }
 ```
+
+
+
+### Rust流程控制
+
+##### if_else选择结构
+
+```rust
+fn main() {
+  let n = 5;
+  
+  if n > 0 {
+		println!("{} is positive", n);
+	} else if n < 0 {
+    println!("{} is negative", n);
+  } else {
+    println!("{} is zero", n);
+  }
+  let m = if n < 0 {
+    2.0
+  } else {
+    3.0
+  };
+}
+```
+
+##### 使用loop循环
+
+```rust
+fn main() {
+  let mut sum = 0;
+  let mut n = 1;
+  loop {
+    sum += n;
+    n += 1;
+    if n > 100 {
+      break
+    }
+  }
+  println!("1+2+...+100 = {}", sum);
+  
+  let mut counter = 0;
+  let result = loop {
+    counter += 1;
+    if counter == 10 {
+      break counter * 2;
+    }
+  };
+  println!("result = {}", result);
+}
+```
+
+##### 使用while循环
+
+```rust
+fn main() {
+  let mut n = 1;
+  while n < 101 {
+    if n % 15 == 0 {
+      println!("fizzbuzz");
+    } else if if n % 3 == 0 {
+      println!("fizz");
+    } else if if n % 3 == 0 {
+      println!("buzz");
+    } else {
+      println!("{}", n);
+    }
+    n += 1;
+  }
+}
+```
+
+##### 使用for_range进行迭代
+
+```rust
+fn main() {
+  for i in 0..5 {
+    println!("{}", i);
+  }
+  for i in 0..=5 {
+    println!("{}", i)
+  }
+  println!(" --- ")
+  let mut muarray = [1, 2, 3];
+  for i in myarray.iter() {
+    println!("{}", i);
+  }
+  for i in myarray.iter_mut() {
+    *i *= 2;
+  }
+  for i in myarray.iter() {
+    println!("{}", i);
+  }
+}
+```
+
+##### Rust中的match
+
+```rust
+enum Alphabet {
+  A,
+  B
+}
+fn main() {
+  let letter = Alphabet::A;
+  match letter {
+    Alphabet::A => {
+      println!("It is A");
+    }
+    Alphabet::B => {
+      println!("It is B");
+    }
+  }
+}
+```
+
+##### if_let语法糖
+
+if let 是 Rust 中的一个语法糖，它主要简化了match操作。如果我们仅仅想当匹配发生时做某些操作，那么就可以使用 if let 替代 match。
+
+```rust
+enum Alphabet {
+  A,
+  B
+}
+fn main() {
+  let letter = Alphabet::A;
+  if let Alphabet::A = letter {
+    println!("It is A");
+  }
+}
+```
+
+##### while_let语法糖
+
+```rust
+enum Alphabet {
+  A,
+  B
+}
+fn main() {
+  let mut letter = Alphabet::A;
+  while let Alphabet::A = letter {
+    println!("It is A");
+    letter = Alphabet::B;
+  }
+}
+```
+
+##### 函数与方法
+
+```rust
+#[derive(Debug)]
+fn fibonacci(n: u64) -> u64 {
+  if n < 2 {
+    n
+  } else {
+    fibonacci(n - 1) + fibonacci(n - 2)
+  }
+}
+
+struct Point {
+  x: u64,
+  y: u64,
+}
+
+impl Point {
+  fn new(x: u64, y: u64) -> Point {
+    Point { x, y }
+  }
+  fn get_x(&self) -> u64 {
+    self.x
+  }
+  fn set_x(&mut self, x: u64) {
+    self.x = x
+  }
+}
+
+fn main() {
+  println!("{:?}", fibonacci(10));
+  let p = Point::new(10, 20);
+  println("{:?}", p);
+  println("{:?}", p.get_x());
+  p.set_x(30);
+  println("{:?}", p);
+}
+```
+
+##### 函数与闭包
+
+```rust
+use std::thread;
+fn main() {
+  let myclosures = |n: u32| -> u32 { n * 3 };
+  println!("{}", myclosures(1))
+  
+  let hello_message = "Hello World.";
+  thread::spawn(move || {
+    peintln!("{}", hello_message);
+  }).join();
+}
+```
+
+##### 高阶函数
+
+- 把函数作为参数传递
+- 把函数作为返回值
+
+```rust
+type Method = fn(u32, u32) -> u32;
+fn calc(method: Method, a: u32, b: u32) -> u32 {
+  method(a, b)
+}
+fn calc2(method: &str) -> Method {
+  match method {
+    "add" => add,
+    "sub" => sub,
+    _ => unimplemented!(),
+  }
+}
+fn add(a: u32, b: u32) -> u32 {
+  a + b
+}
+fn sub(a: u32, b: u32) -> u32 {
+  a - b
+}
+fn main() {
+  println!("{}", calc(add, 10, 20));
+  println!("{}", calc(sub, 10, 20));
+  println!("{}", calc2("sub")(10, 20));
+}
+```
+
+##### 发散函数
+
+发散函数永远不会被返回，他们的返回值被标记为｜，这是一个空类型
+
+```rust
+fn foo() -> ! {
+  panic!("This call never returns.");
+}
+fn main() {
+  let a = if true {
+    10
+  } else {
+    foo()
+  };
+  println!("{}", a);
+}
+```
+
+##### 实践:猜数字游戏
+
+```rust
+// Corgo.toml
+rand = "*"
+
+// main.rs
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
+
+fn main() {
+  println!("Guess the number!");
+  // 获取随机整数
+  let secret_number = rand::thread_rng().gen_range(1..101);
+  loop {
+    println!("Please input your guess.");
+    let mut guess = String::new();
+    io::stdin()
+    	.read_line(&mut guess)
+    	.unwrap()
+    	.expect("Failed to read line");
+    let guess: u32 = match guess.trim().parse() {
+      Ok(num) => num,
+      Err(_) => continue,
+    };
+    println!("You guessed: {}", guess);
+    if guess > secret_number {
+      println!("Too big.");
+    } else if guess < secret_number {
+      println!("Too small.");
+    } else {
+      println!("You win.");
+      break;
+    }
+  }
+}
+```
+
