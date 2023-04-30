@@ -3809,6 +3809,7 @@ request.ts
   npm uninstall mobx
   npm uninstall mobx-react
   npm i mobx@5.15.4 mobx-react@6.1.8
+  npm i mobx-react@6.1.8 --legacy-peer-deps
   
   npm i @babel/plugin-proposal-decorators
   # babel 添加插件
@@ -3846,6 +3847,10 @@ request.ts
 ##### 自定义频道编辑弹窗
 
 ##### 实现频道编辑数据修改
+
+- 本地定义频道数据，并在store提供存取功能
+- 使用横向ScrollView实现频道列表
+- 使用自定义Modal实现频道编辑弹窗
 
 ##### Toast和Loading小工具
 
@@ -3890,6 +3895,10 @@ request.ts
 ### 项目实战仿写小红书App【实现消息页面及气泡展示】
 
 ##### 实现消息列表头部
+
+- 使用FlatList实现消息列表
+- 封装空页面组件，在多个页面中应用
+- 使用元素定位、和自定义Modal实现气泡弹窗
 
 ##### 实现消息列表展示
 
