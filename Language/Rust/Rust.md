@@ -474,3 +474,104 @@ fn main() {
 }
 ```
 
+
+
+### Rust中使用模块组织代码
+
+##### Rust中的模块化编程
+
+- Package
+- Crate
+- Module
+
+##### 使用pub改变可见性
+
+```rust
+mod mod1 {
+  pub const MESSAGE: &str = "Hello World.";
+  pub(create) enum CreateEnum {
+    Item = 4
+  }
+}
+fn main() {
+  println!("{}", mod1::MESSAGE);
+  println!("{}", mod1::CreateEnum::Item as u32);
+}
+```
+
+##### 结构体的可见性
+
+```rust
+mod mod1 {
+  pub struct Person {
+    pub name: String,
+    nickname: String,
+  }
+  impl Person {
+    pub fn new(name: &str, nickname: &str) -> Self {
+      Person {
+        name: String::from(name),
+        nickname: String::from(nickname),
+      }
+    }
+    pub fn say_nick_name(&self){
+      println!("{}", self.nickname);
+    }
+  }
+}
+
+fn main() {
+  let p = mod1::Person::new("jack", "baby");
+  println!("{}", p.name);
+  p.say_nick_name();
+}
+```
+
+##### 使用use绑定模块成员
+
+```rust
+use std::fs as stdfs
+fn main() {
+  let data = stdfs::read("src/main.rs").unwrap();
+  println!("{}", String::from_utf8(data).unwrap());
+}
+```
+
+##### 使用super与self简化模块路径
+
+```rust
+fn function(){
+	println!("function");
+}
+
+mod mod1 {
+  pub fn function(){
+		super::function();
+	}
+  pub mod mod2 {
+  	pub fn function(){
+			println!("mod1::mod2::function");
+		}
+    pub fn call() {
+      self::function();
+    }
+  }
+}
+fn main() {
+  mod1::function();
+  mod1::mod2::function();
+}
+```
+
+##### 项目目录层次结构
+
+```rust
+// mod1/mod.rs
+pub const MESSAGE: &str = "Hello World";
+// main.rs
+mod mod1;
+fn main() {
+	println!("{}", mod1::function());
+}
+```
+
