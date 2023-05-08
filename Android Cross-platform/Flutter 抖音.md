@@ -342,6 +342,7 @@ Navigator 2.0
      Future<Object?> push({required String name, dynamic arguments}) async {
        _boolResultCompleter = Completer<Object?>();
        _pages.add(_createPage(RouteSettings(name: name, arguments: arguments)));
+       // 刷新
        notifyListeners();
        return _boolResultCompleter.future;
      }
@@ -383,17 +384,35 @@ Navigator 2.0
    }
    ```
 
-##### 实战--项目功能分析
+3. 使用router
+
+   ```dart
+   MCRouter router = MCRouter();
+   var ack = await router.push(name: MCRouter.secondPage, arguments: 'Hello from mainPage');
+   ```
 
 ### No.8 实战--Android原生项目进行改造
 
-介绍当前已有的 Android 项目
+##### Android原生项目改造
 
-原生项目开发流程
+- 介绍当前已有的 Android 项目
+- 原生项目开发流程
+- 结合实战项目分析 Flutter 的覆盖面
+- 核心模块 Flutter 化
 
-结合实战项目分析 Flutter 的覆盖面
+##### 原生项目现状分析
 
-核心模块 Flutter 化
+##### 原生开发流程解析
+
+##### Flutter 覆盖面分析
+
+##### 当Android遇到Flutter
+
+```kotlin
+    private val friendFragment by lazy {
+        FlutterFragment.withNewEngine().initialRoute("main/friend").build<FlutterFragment>()
+    }
+```
 
 ### No.9 实战--Flutter视频播放器封装及播放列表开发
 
