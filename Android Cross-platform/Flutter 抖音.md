@@ -427,8 +427,8 @@ Navigator 2.0
 
 ##### Flutter 常用跨端播放器介绍及选择
 
-- video_player
-- video_player_plus
+- video_player：官方播放器
+- video_player_plus：官方播放器扩展
 - Chewie
 - FijkPlayer
 
@@ -436,23 +436,43 @@ Navigator 2.0
 
 ##### ijkPlayer的集成与使用
 
-##### 播放器封装及自定义插件（一）
+https://pub.dev/packages/fijkplayer
 
-##### 播放器封装及自定义插件（二）
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  fijkplayer: ^0.10.1
+```
 
-##### 播放器封装及自定义插件（三）
+##### 播放器封装及自定义插件
 
-##### 基于Player插件的视频列表开发（一）
+1. new Flutter Plugin
 
-##### 基于Player插件的视频列表开发（二）
+2. 主工程依赖插件工程
 
-##### Flutter视频播放器--本章总结
+   ```yaml
+   dependencies:
+     player:
+       path: player
+   ```
+
+3. 编写插件工程
+
+4. 使用AbsorbPointer拦截事件
+
+##### 基于Player插件的视频列表开发
 
 
 
-### 网络请求及数据解析框架——视频下载
+### No10.网络请求及数据解析框架——视频下载
 
 ##### 视频下载--本章导学
+
+- Flutter 中 Http 请求的几种方式
+- Http 请求中的 IO 操作
+- Json 数据解析
+- Json 解析代码自动生成
 
 ##### 几种http请求的实现方式
 
@@ -466,17 +486,78 @@ Navigator 2.0
 - Cookie管理
 - 文件上传/下载
 
+https://pub.dev/packages/dio
+
+```yaml
+dependencies:
+  dio: ^4.0.6
+```
+
 ##### Json 数据解析
 
 - dart：convert 官方内置解析库
+- Json 转化成 Map
+- Json 转化成对象
 
 ##### Json转换成对象
 
+```dart
+import 'dart:convert';
+import 'package:mc/video_page/video_model.dart';
+
+class VideoController {
+  // 本地mock数据，实际上是模拟网络数据
+  static const _serverData = """{
+    "title": "示例视频",
+    "url": "https://sample-videos.com/video123/flv/240/big_buck_bunny_240p_10mb.flv",
+    "playCount": 88
+}""";
+  late VideoModel model;
+  void init() {
+    model = fetchVideoData();
+  }
+  // 缺点：
+  // 1、需要针对json的每个字段创建get方法，一旦字段多了会非常繁琐
+  // 2、需要保证map的字段和json的字段完全一致， 容易出错
+  // 从服务端拉取视频Json字符串类型表示的视频数据
+  VideoModel fetchVideoData() {
+    return VideoModel.fromJson(jsonDecode(_serverData));
+  }
+}
+```
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+part 'video_model.g.dart';
+
+@JsonSerializable()
+class VideoModel {
+  String title = '';
+  String url = '';
+  int playCount = 0;
+
+  VideoModel(this.title, this.url, this.playCount);
+
+  factory VideoModel.fromJson(Map<String, dynamic> json) => _$VideoModelFromJson(json);
+
+  Map<String, dynamic> toJson(VideoModel model) => _$VideoModelToJson(model);
+}
+```
+
 ##### 数据解析自动化框架
 
-##### 视频下载
+https://pub.dev/packages/json_serializable
 
+```
+dependencies:
+  json_serializable: ^6.2.0
+  json_annotation: ^4.5.0
+  build_runner: ^2.1.11
+```
 
+````shell
+flutter pub run build_runner build
+````
 
 ### 第11章 实战--数据持久化与缓存结构设计——数据缓存
 
