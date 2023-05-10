@@ -463,8 +463,6 @@ dependencies:
 
 ##### 基于Player插件的视频列表开发
 
-
-
 ### No10.网络请求及数据解析框架——视频下载
 
 ##### 视频下载--本章导学
@@ -561,9 +559,23 @@ flutter pub run build_runner build
 
 ### 第11章 实战--数据持久化与缓存结构设计——数据缓存
 
-##### 数据持久化与缓存结构设计--本章导学
+##### 数据持久化与缓存结构设计
+
+- 三级缓存基本原理
+- 三级缓存基本结构和设计方案
+- 为视频播放器增加本地视频缓存
+- 播放器列表数据源改造
 
 ##### Flutter数据持久化
+
+shared_perferences 插件
+
+https://pub.dev/packages/shared_preferences
+
+```yaml
+dependencies:
+  shared_preferences: ^2.0.15
+```
 
 ##### 三级缓存原理
 
@@ -571,13 +583,106 @@ flutter pub run build_runner build
 
 ##### 三级缓存实现
 
+- 第三级：模拟从服务端获取数据
+- 第二级：存入本地磁盘
+- 第一级：读取到内存
+
+```dart
+import 'dart:convert';
+
+import 'package:mc/video_page/server_data.dart';
+import 'package:mc/video_page/video_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class VideoController {
+  VideoModel? model;
+
+  Future<void> init() async {
+    // 首先判断一级缓存——即内存中是否有数据
+    print('MOOC- init video controller');
+    if (model == null) {
+      print('MOOC- model is null');
+      // 如果没有，则从二级/三级缓存查找
+      model = await fetchVideoData();
+    }
+  }
+
+  // 从服务端拉取视频Json字符串类型表示的视频数据
+  Future<VideoModel> fetchVideoData() async {
+    var sp = await SharedPreferences.getInstance();
+    var modelStr = sp.getString("videoModel");
+    if (modelStr != null && modelStr.isNotEmpty) {
+      // 二级缓存中找到数据，直接使用
+      print('MOOC- 2/use sp data');
+      return VideoModel.fromJson(jsonDecode(modelStr));
+    } else {
+      // 二级缓存未找到数据，走三级缓存
+      var model = jsonDecode(ServerData.fetchDataFromServer());
+      var sp = await SharedPreferences.getInstance();
+      sp.setString('videoModel', ServerData.fetchDataFromServer());
+      print('MOOC- 3/fetch data from server');
+      return VideoModel.fromJson(model);
+    }
+  }
+}
+```
+
 ##### 播放器缓存管理
+
+- 为视频Url增加前缀
+- 设置播放器缓存路径并打开缓存开关
 
 ##### 视频列表源数据改造
 
-##### 数据持久化与缓存结构设计--本章总结
+### No.12实战--动画特效与评论列表开发——互动模块
 
+##### 互动模块
 
+- 地毯式解析点赞动画特效流程
+- 完成点赞基本功能的开发
+- 分阶段拆解动画时间点
+- Flutter动画初探
+- 多种特效组合管理
+- 评论列表底部弹窗
+
+##### 点赞动画解析
+
+- 绘制红心icon
+- 红心逐渐出现
+- 旋转红心
+- 红心放大
+- 红心逐渐消失
+- 多红心管理
+
+##### 绘制点赞动画
+
+- 不影响底层Widget手势事件
+- 脱离具体点赞场景
+- 独立、通用Widget
+
+##### 计算点赞坐标
+
+##### Flutter动画指南
+
+Animation 的几种状态
+
+- forward：动画开始播放，动画进度逐渐变大
+- reverse：动画反向播放，动画进度逐渐变小
+- dismissed：动画结束且进度为0，对应reverse结束
+- completed：动画结束且进度为1，对应forward结束
+
+认识 AnimationController
+
+- 管理动画的启动、暂停、倒放等等
+- 监听播放进度
+- 可以设置播放进度的上限和下限
+- 派生自Animation，本身也是一种动画
+
+##### 点赞特效开发
+
+##### 点赞特效优化
+
+##### 评论列表弹窗
 
 ### 第14章 实战--相机模块开发——上传视频
 
@@ -609,17 +714,20 @@ flutter pub run build_runner build
 
 ##### 本章总结
 
+### 第15章 实战--Flutter 项目打包发布
 
+##### Flutter项目打包
 
-### 第15章 实战--Flutter 项目打包发布6 节
-
-##### Flutter项目打包--本章导学
+- Flutter 的不同打包方式
+- Flutter 开发包的构建
+- 对安装包进行签名
+- Android 打包发布
 
 ##### Flutter 3种打包方式
 
-- Debug
-- Release
-- Profile
+- Debug：JIT编译，适用于开发阶段
+- Release：AOT编译，适用于发布阶段
+- Profile：AOT编译，适用于性能监控
 
 ##### Flutter 构建配置
 
@@ -627,13 +735,9 @@ flutter pub run build_runner build
 
 ##### Flutter 构建安装包
 
-##### Flutter项目打包--本章总结
+### 第16章 Flutter多端适配
 
-
-
-### 第16章 Flutter多段适配
-
-##### Flutter多端适配--本章导学
+##### Flutter多端适配
 
 - 依赖关系分析
 - Flutter module 搬迁到 Web 工程
@@ -643,17 +747,24 @@ flutter pub run build_runner build
 
 ##### Web端代码移植
 
+```shell
+flutter run -d chrome
+pub get
+```
+
+判断Web端依赖video_player
+
 ##### 视频插件多端适配
 
 ##### Web视频自动播放
-
-##### Flutter多端适配--本章总结
-
-
 
 ### 第17章 课程总结
 
 ##### 课程总结
 
-
-
+- Flutter 技术概览及 Dart 语法特效
+- Flutter/Native 混合开发基础技术
+- Flutter 编译原理及调试优化
+- 框架搭建及页面导航
+- 原生项目改造
+- 模块拆分及各个子模块的独立开发
