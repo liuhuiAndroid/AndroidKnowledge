@@ -698,9 +698,24 @@ Animation 的几种状态
 
 ##### Flutter页面的跳转与关闭
 
+- 在Native中添加Flutter页面容器
+
+- 展示Flutter页面
+
+- 退出Flutter页面并移除容器
+
+  通过MessageChannel通知Android移除Fragment
+
 ##### 相机插件使用步骤及注意事项
 
+- 添加Camera依赖
+- 获取设备可用相机列表
+- 创建并初始化CameraController
+- 预览视频帧流
+
 ##### Flutter 相机开发
+
+https://pub.dev/packages/camera
 
 ##### 多摄像头切换
 
@@ -711,8 +726,6 @@ Animation 的几种状态
 ##### 拍照功能开发
 
 ##### 录制视频
-
-##### 本章总结
 
 ### 第15章 实战--Flutter 项目打包发布
 
