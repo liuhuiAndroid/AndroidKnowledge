@@ -249,7 +249,7 @@ Flutter Performance
 
    ```groovy
    setBinding(new Binding([gradle: this]))
-   evaluate(new File(settingDir, 'flutter_module/.android/include_flutter.groovy'))
+   evaluate(new File(settingsDir, 'flutter_module/.android/include_flutter.groovy'))
    ```
 
 3. build.gradle
@@ -846,3 +846,9 @@ pub get
 - 框架搭建及页面导航
 - 原生项目改造
 - 模块拆分及各个子模块的独立开发
+
+
+
+### TODO
+
+1. Navigator 2.0 学习

@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    // https://blog.csdn.net/qq_40616261/article/details/126679944
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "TikTok"
+include ':app'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(settingsDir, 'tiktok_flutter_module/.android/include_flutter.groovy'))
+include ':tiktok_flutter_module'
