@@ -852,3 +852,4 @@ pub get
 ### TODO
 
 1. Navigator 2.0 学习
+2. image_gallery_saver 不支持 Kotlin 1.5.20

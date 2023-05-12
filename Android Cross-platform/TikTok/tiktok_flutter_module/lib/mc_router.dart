@@ -1,29 +1,34 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:tiktok_flutter_module/main.dart';
-import 'package:tiktok_flutter_module/second_page.dart';
+import 'package:tiktok_flutter_module/page/camera_page/camera_page.dart';
+import 'package:tiktok_flutter_module/page/mine_page/mine_page.dart';
+
+import 'gen/assets.gen.dart';
+import 'page/player_page/player_page.dart';
+import 'widget/photo_picker.dart';
 
 class MCRouter extends RouterDelegate<List<RouteSettings>>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<List<RouteSettings>> {
-  static const String mainPage = '/main';
-  static const String secondPage = '/second';
+  static const String minePage = '/mine';
+  static const String photoPicker = '/photo_picker';
+  static const String playerPage = '/player';
+  static const String cameraPage = '/camera';
 
   static const String key = 'key';
   static const String value = 'value';
+
+  static const String key_url = 'url';
+  static const String key_height = 'height';
+  static const String key_width = 'width';
 
   final List<Page> _pages = [];
 
   late Completer<Object?> _boolResultCompleter;
 
-  MCRouter() {
-    _pages.add(_createPage(const RouteSettings(name: mainPage, arguments: [])));
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-        key: navigatorKey, pages: List.of(_pages), onPopPage: _onPopPage);
+    return Navigator(key: navigatorKey, pages: _pages, onPopPage: _onPopPage);
   }
 
   @override
@@ -47,6 +52,7 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
 
   bool _onPopPage(Route route, dynamic result) {
     if (!route.didPop(result)) return false;
+
     if (_canPop()) {
       _pages.removeLast();
       return true;
@@ -76,12 +82,31 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
 
   MaterialPage _createPage(RouteSettings routeSettings) {
     Widget page;
+
+    var args = routeSettings.arguments;
+
     switch (routeSettings.name) {
-      case mainPage:
-        page = const MyHomePage(title: 'My Home Page');
+      case minePage:
+        page = MinePage();
         break;
-      case secondPage:
-        page = SecondPage(params: routeSettings.arguments?.toString() ?? '');
+      case photoPicker:
+        String? url;
+        String height = '';
+        String width = '';
+
+        if (args is Map<String, String>) {
+          url = args[MCRouter.key_url];
+          height = args[MCRouter.key_height] ?? height;
+          width = args[MCRouter.key_width] ?? width;
+        }
+
+        page = PhotoPickerPage(url ?? Assets.image.defaultPhoto.keyName);
+        break;
+      case playerPage:
+        page = PlayerPage(routeSettings.arguments?.toString() ?? '');
+        break;
+      case cameraPage:
+        page = CameraPage();
         break;
       default:
         page = const Scaffold();
@@ -100,12 +125,8 @@ class MCRouter extends RouterDelegate<List<RouteSettings>>
         return AlertDialog(
           content: const Text('确认退出吗'),
           actions: [
-            TextButton(
-                onPressed: () => Navigator.pop(context, true),
-                child: const Text('取消')),
-            TextButton(
-                onPressed: () => Navigator.pop(context, false),
-                child: const Text('确定'))
+            TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('取消')),
+            TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('确定'))
           ],
         );
       },
