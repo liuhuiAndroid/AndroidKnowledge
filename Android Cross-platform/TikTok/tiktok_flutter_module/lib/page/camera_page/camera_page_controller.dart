@@ -8,28 +8,29 @@ class CameraPageController extends GetxController {
 
   late List<CameraDescription> _cameras;
 
-  var _cameraControllerObs = Rx<CameraController?>(null);
+  final _cameraControllerObs = Rx<CameraController?>(null);
 
   CameraController? get cameraController => _cameraControllerObs.value;
 
-  var _cameraIndex = 0.obs;
+  final _cameraIndex = 0.obs;
 
   int get cameraIndex => _cameraIndex.value;
 
   set cameraIndex(int index) => _cameraIndex.value = index;
 
-  var _flash = false.obs;
+  final _flash = false.obs;
 
   bool get flash => _flash.value;
 
   set flash(bool enable) => _flash.value = enable;
 
-  var _recording = false.obs;
+  final _recording = false.obs;
 
   bool get recording => _recording.value;
 
   set recording(bool recording) => _recording.value = recording;
 
+  /// 关闭相机
   void onCloseTap() {
     ChannelUtil.closeCamera();
   }
@@ -57,7 +58,6 @@ class CameraPageController extends GetxController {
     // 3、等待cameraController初始化
     _cameraController?.initialize().then((_) {
       print('MOOC: _initCameraController, refresh controller: $cameraIndex');
-
       _cameraControllerObs.value = _cameraController;
     }).catchError((Object e) {
       if (e is CameraException) {
@@ -73,6 +73,7 @@ class CameraPageController extends GetxController {
     });
   }
 
+  /// 录制视频
   Future<void> takePhotoAndUpload() async {
     if (recording) {
       recording = false;

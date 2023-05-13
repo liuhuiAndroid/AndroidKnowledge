@@ -38,4 +38,8 @@ class MainActivity : AppCompatActivity() {
     fun hideBottomButton(hide: Boolean) {
 
     }
+
+    fun closeCamera() {
+
+    }
 }

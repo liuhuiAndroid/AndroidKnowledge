@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+// flutter pub run build_runner build
 part 'video_model.g.dart';
 
 @JsonSerializable()

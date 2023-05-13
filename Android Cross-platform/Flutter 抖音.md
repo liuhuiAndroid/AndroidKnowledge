@@ -777,6 +777,7 @@ dependencies:
 - 获取设备可用相机列表
 - 创建并初始化CameraController
 - 预览视频帧流
+- 使用Controller拍摄照片
 
 ##### Flutter 相机开发
 
@@ -791,6 +792,15 @@ https://pub.dev/packages/camera
 ##### 拍照功能开发
 
 ##### 录制视频
+
+##### 总结
+
+- 拍照页面元素拆解
+- Native 调起 Flutter 页面
+- Flutter 页面返回 Native 页面
+- Flutter 相机开发
+- 摄像头的基本控制
+- 通过 GetX 刷新相机 UI
 
 ### 第15章 实战--Flutter 项目打包发布
 
@@ -846,8 +856,6 @@ pub get
 - 框架搭建及页面导航
 - 原生项目改造
 - 模块拆分及各个子模块的独立开发
-
-
 
 ### TODO
 

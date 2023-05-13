@@ -58,13 +58,9 @@ class _PlayerPageState extends State<PlayerPage> {
     Uri uri = Uri.parse(url);
     String name = uri.pathSegments.last;
     print('MOOC-save video: $url');
-
     var dir = await getExternalStorageDirectory();
-
     String savePath = "${dir?.path}/$name";
-
     print('MOOC-savePath: $savePath');
-
     // 开启下载，将url下载到的视频保存到savePath当中
     var result = await Dio().download(url, savePath, onReceiveProgress: (count, total) {
       var progress = '${(count / total * 100).toInt()}%';

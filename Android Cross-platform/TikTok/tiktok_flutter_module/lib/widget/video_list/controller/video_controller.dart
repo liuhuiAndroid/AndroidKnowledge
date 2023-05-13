@@ -10,6 +10,7 @@ abstract class VideoController {
 
   /// 针对不同的类型视频，采用不同的key存储
   String get spKey;
+
   /// 返回不同类型的视频内容
   String get videoData;
 
@@ -25,9 +26,17 @@ abstract class VideoController {
     }
   }
 
+
   // 缺点：
   // 1、需要针对json的每个字段创建get方法，一旦字段多了会非常繁琐
   // 2、需要保证map的字段和json的字段完全一致， 容易出错
+  static const _serverData = """
+  """;
+  Map<String, dynamic> _videoData = {};
+  void initTest(){
+    _videoData = jsonDecode(_serverData);
+  }
+  String get title => _videoData['title'];
 
   // 从服务端拉取视频Json字符串类型表示的视频数据
   Future<List<VideoModel>> fetchVideoData() async {
@@ -36,11 +45,9 @@ abstract class VideoController {
     if (modelStr != null && modelStr.isNotEmpty) {
       // 二级缓存中找到数据，直接使用
       print('MOOC- 2/use sp data');
-
       var list = jsonDecode(modelStr) as List<dynamic>;
       // jsonDecode获取到的是“List<Map>”，需要转换成List<VideoModel>
       // List<Map> => List<VideoModel>
-
       return list.map((e) => VideoModel.fromJson(e)).toList();
     } else {
       // 二级缓存未找到数据，走三级缓存
@@ -48,7 +55,6 @@ abstract class VideoController {
       var sp = await SharedPreferences.getInstance();
       sp.setString(spKey, videoData);
       print('MOOC- 3/fetch data from server');
-
       return list.map((e) => VideoModel.fromJson(e)).toList();
     }
   }
