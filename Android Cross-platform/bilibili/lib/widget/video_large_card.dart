@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/model/video_model.dart';
 import 'package:bilibili/navigator/hi_navigator.dart';
 import 'package:bilibili/provider/theme_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/format_util.dart';
 import 'package:hi_base/view_util.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +23,8 @@ class VideoLargeCard extends StatelessWidget {
             .onJumpTo(RouteStatus.detail, args: {"videoMo": videoModel});
       },
       child: Container(
-        margin: EdgeInsets.only(left: 15, right: 15, bottom: 5),
-        padding: EdgeInsets.only(bottom: 6),
+        margin: const EdgeInsets.only(left: 15, right: 15, bottom: 5),
+        padding: const EdgeInsets.only(bottom: 6),
         height: 106,
         decoration: BoxDecoration(border: borderLine(context)),
         child: Row(children: [
@@ -47,14 +47,14 @@ class VideoLargeCard extends StatelessWidget {
               bottom: 5,
               right: 5,
               child: Container(
-                padding: EdgeInsets.all(2),
+                padding: const EdgeInsets.all(2),
                 decoration: BoxDecoration(
                   color: Colors.black38,
                   borderRadius: BorderRadius.circular(2),
                 ),
                 child: Text(
                   durationTransform(videoModel.duration),
-                  style: TextStyle(color: Colors.white, fontSize: 10),
+                  style: const TextStyle(color: Colors.white, fontSize: 10),
                 ),
               ))
         ],
@@ -66,7 +66,7 @@ class VideoLargeCard extends StatelessWidget {
     var textColor = themeProvider.isDark() ? Colors.grey : Colors.black87;
     return Expanded(
         child: Container(
-      padding: EdgeInsets.only(top: 5, left: 8, bottom: 5),
+      padding: const EdgeInsets.only(top: 5, left: 8, bottom: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +97,7 @@ class VideoLargeCard extends StatelessWidget {
                 ...smallIconText(Icons.list_alt, videoModel.reply)
               ],
             ),
-            Icon(
+            const Icon(
               Icons.more_vert_sharp,
               color: Colors.grey,
               size: 15,
@@ -113,11 +113,11 @@ class VideoLargeCard extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(1),
+          padding: const EdgeInsets.all(1),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2),
               border: Border.all(color: Colors.grey)),
-          child: Text(
+          child: const Text(
             'UP',
             style: TextStyle(
                 color: Colors.grey, fontSize: 8, fontWeight: FontWeight.bold),
@@ -126,7 +126,7 @@ class VideoLargeCard extends StatelessWidget {
         hiSpace(width: 8),
         Text(
           owner.name,
-          style: TextStyle(fontSize: 11, color: Colors.grey),
+          style: const TextStyle(fontSize: 11, color: Colors.grey),
         )
       ],
     );

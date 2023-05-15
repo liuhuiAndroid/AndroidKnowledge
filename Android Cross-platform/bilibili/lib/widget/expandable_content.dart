@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/model/video_model.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/view_util.dart';
 
 ///可展开的widget
@@ -9,26 +9,28 @@ class ExpandableContent extends StatefulWidget {
   const ExpandableContent({Key? key, required this.mo}) : super(key: key);
 
   @override
-  _ExpandableContentState createState() => _ExpandableContentState();
+  State<StatefulWidget> createState() => _ExpandableContentState();
 }
 
 class _ExpandableContentState extends State<ExpandableContent>
     with SingleTickerProviderStateMixin {
+  // 补间动画
   static final Animatable<double> _easeInTween =
       CurveTween(curve: Curves.easeIn);
+  // 默认不展开
   bool _expand = false;
 
-  //用来管理Animation
+  // 用来管理 Animation 的 Controller
   late AnimationController _controller;
 
-  //生成动画高度的值
+  // 生成动画高度的值
   late Animation<double> _heightFactor;
 
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 200), vsync: this);
     _heightFactor = _controller.drive(_easeInTween);
     _controller.addListener(() {
       //监听动画值的变化
@@ -45,11 +47,11 @@ class _ExpandableContentState extends State<ExpandableContent>
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
       child: Column(
         children: [
           _buildTitle(),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(bottom: 8),
           ),
           _buildInfo(),
@@ -73,7 +75,7 @@ class _ExpandableContentState extends State<ExpandableContent>
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           )),
-          Padding(padding: EdgeInsets.only(left: 15)),
+          const Padding(padding: EdgeInsets.only(left: 15)),
           Icon(
             _expand
                 ? Icons.keyboard_arrow_up_sharp
@@ -100,14 +102,14 @@ class _ExpandableContentState extends State<ExpandableContent>
   }
 
   _buildInfo() {
-    var style = TextStyle(fontSize: 12, color: Colors.grey);
+    var style = const TextStyle(fontSize: 12, color: Colors.grey);
     var dateStr = widget.mo.createTime.length > 10
         ? widget.mo.createTime.substring(5, 10)
         : widget.mo.createTime;
     return Row(
       children: [
         ...smallIconText(Icons.ondemand_video, widget.mo.view),
-        Padding(padding: EdgeInsets.only(left: 10)),
+        const Padding(padding: EdgeInsets.only(left: 10)),
         ...smallIconText(Icons.list_alt, widget.mo.reply),
         Text('    $dateStr', style: style)
       ],
@@ -117,21 +119,21 @@ class _ExpandableContentState extends State<ExpandableContent>
   _buildDes() {
     var child = _expand
         ? Text(widget.mo.desc,
-            style: TextStyle(fontSize: 12, color: Colors.grey))
+            style: const TextStyle(fontSize: 12, color: Colors.grey))
         : null;
-    //构建动画的通用widget
+    // 构建动画的通用widget
     return AnimatedBuilder(
       animation: _controller.view,
       child: child,
       builder: (BuildContext context, Widget? child) {
         return Align(
           heightFactor: _heightFactor.value,
-          //fix 从布局之上的位置开始展开
+          // fix 从布局之上的位置开始展开
           alignment: Alignment.topCenter,
           child: Container(
-            //会撑满宽度后，让内容对其
+            // 会撑满宽度后，让内容对其
             alignment: Alignment.topLeft,
-            padding: EdgeInsets.only(top: 8),
+            padding: const EdgeInsets.only(top: 8),
             child: child,
           ),
         );

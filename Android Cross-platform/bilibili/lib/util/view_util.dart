@@ -50,7 +50,7 @@ void changeStatusBar(
 }
 
 ///border线
-borderLine(BuildContext context, {bottom: true, top: false}) {
+borderLine(BuildContext context, {bottom = true, top = false}) {
   var themeProvider = context.watch<ThemeProvider>();
   var lineColor = themeProvider.isDark() ? Colors.grey : Colors.grey[200];
   BorderSide borderSide = BorderSide(width: 0.5, color: lineColor!);

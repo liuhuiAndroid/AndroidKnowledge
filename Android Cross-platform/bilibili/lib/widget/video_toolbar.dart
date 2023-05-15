@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/model/video_detail_mo.dart';
 import 'package:bilibili/model/video_model.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/color.dart';
 import 'package:hi_base/format_util.dart';
 import 'package:hi_base/view_util.dart';
@@ -31,8 +31,8 @@ class VideoToolBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 15, bottom: 10),
-      margin: EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.only(top: 15, bottom: 10),
+      margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(border: borderLine(context)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -56,10 +56,10 @@ class VideoToolBar extends StatelessWidget {
     if (text is int) {
       //显示格式化
       text = countFormat(text);
-    } else if (text == null) {
-      text = '';
+    } else {
+      text ??= '';
     }
-    tint = tint == null ? false : tint;
+    tint = tint;
     return InkWell(
       onTap: onClick,
       child: Column(
@@ -70,7 +70,7 @@ class VideoToolBar extends StatelessWidget {
             size: 20,
           ),
           hiSpace(height: 5),
-          Text(text, style: TextStyle(color: Colors.grey, fontSize: 12))
+          Text(text, style: const TextStyle(color: Colors.grey, fontSize: 12))
         ],
       ),
     );

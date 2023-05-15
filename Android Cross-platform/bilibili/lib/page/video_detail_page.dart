@@ -114,7 +114,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
       shadowColor: _themeProvider.isDark() ? HiColor.dark_bg : Colors.grey[100],
       child: Container(
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 20),
         height: 39,
         color: _themeProvider.isDark() ? HiColor.dark_bg : Colors.white,
         child: Row(
@@ -138,7 +138,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
 
   _buildDetailList() {
     return ListView(
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       children: [...buildContents(), ..._buildVideoList()],
     );
   }

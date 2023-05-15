@@ -10,25 +10,21 @@ class VideoDetailMo {
   VideoDetailMo.fromJson(Map<String, dynamic> json) {
     isFavorite = json['isFavorite'];
     isLike = json['isLike'];
-    videoInfo = new VideoModel.fromJson(json['videoInfo']);
+    videoInfo = VideoModel.fromJson(json['videoInfo']);
     if (json['videoList'] != null) {
-      videoList = new List<VideoModel>.empty(growable: true);
+      videoList = List<VideoModel>.empty(growable: true);
       json['videoList'].forEach((v) {
-        videoList.add(new VideoModel.fromJson(v));
+        videoList.add(VideoModel.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['isFavorite'] = this.isFavorite;
-    data['isLike'] = this.isLike;
-    if (this.videoInfo != null) {
-      data['videoInfo'] = this.videoInfo.toJson();
-    }
-    if (this.videoList != null) {
-      data['videoList'] = this.videoList.map((v) => v.toJson()).toList();
-    }
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['isFavorite'] = isFavorite;
+    data['isLike'] = isLike;
+    data['videoInfo'] = videoInfo.toJson();
+    data['videoList'] = videoList.map((v) => v.toJson()).toList();
     return data;
   }
 }
@@ -45,10 +41,10 @@ class Owner {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['face'] = this.face;
-    data['fans'] = this.fans;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['face'] = face;
+    data['fans'] = fans;
     return data;
   }
 }

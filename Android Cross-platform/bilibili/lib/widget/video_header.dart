@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/model/video_model.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/color.dart';
 import 'package:hi_base/format_util.dart';
 
@@ -12,7 +12,7 @@ class VideoHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 15, right: 15, left: 15),
+      padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,19 +27,19 @@ class VideoHeader extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 8),
+                padding: const EdgeInsets.only(left: 8),
                 child: Column(
                   children: [
                     Text(
                       owner.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 13,
                           color: primary,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       '${countFormat(owner.fans)}粉丝',
-                      style: TextStyle(fontSize: 10, color: Colors.grey),
+                      style: const TextStyle(fontSize: 10, color: Colors.grey),
                     )
                   ],
                 ),
@@ -53,7 +53,7 @@ class VideoHeader extends StatelessWidget {
             color: primary,
             height: 24,
             minWidth: 50,
-            child: Text(
+            child: const Text(
               '+ 关注',
               style: TextStyle(color: Colors.white, fontSize: 13),
             ),

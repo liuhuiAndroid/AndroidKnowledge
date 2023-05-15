@@ -3,6 +3,7 @@ import 'package:bilibili/widget/hi_tab.dart';
 import 'package:flutter/material.dart' hide NavigationBar;
 
 import '../util/view_util.dart';
+import '../widget/navigation_bar.dart';
 import 'ranking_tab_page.dart';
 
 class RankingPage extends StatefulWidget {
