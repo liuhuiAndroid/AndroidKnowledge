@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/http/dao/ranking_dao.dart';
 import 'package:bilibili/widget/hi_tab.dart';
-import 'package:bilibili/widget/navigation_bar.dart';
+import 'package:flutter/material.dart' hide NavigationBar;
 
 import '../util/view_util.dart';
 import 'ranking_tab_page.dart';
@@ -37,23 +36,20 @@ class _RankingPageState extends State<RankingPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
-          // _buildNavigationBar(),
-          _buildTabView()
-        ],
+        children: [_buildNavigationBar(), _buildTabView()],
       ),
     );
   }
 
-  // _buildNavigationBar() {
-  //   return NavigationBar(
-  //     child: Container(
-  //       decoration: bottomBoxShadow(context),
-  //       alignment: Alignment.center,
-  //       child: _tabBar(),
-  //     ),
-  //   );
-  // }
+  _buildNavigationBar() {
+    return NavigationBar(
+      child: Container(
+        decoration: bottomBoxShadow(context),
+        alignment: Alignment.center,
+        child: _tabBar(),
+      ),
+    );
+  }
 
   _tabBar() {
     return HiTab(

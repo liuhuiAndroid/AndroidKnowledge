@@ -15,6 +15,7 @@ class HiNet {
   HiErrorInterceptor? _hiErrorInterceptor;
   static HiNet? _instance;
 
+  /// 单例
   static HiNet getInstance() {
     if (_instance == null) {
       _instance = HiNet._();

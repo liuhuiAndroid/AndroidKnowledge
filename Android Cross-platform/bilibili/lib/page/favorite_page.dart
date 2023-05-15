@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/core/hi_base_tab_state.dart';
 import 'package:bilibili/http/dao/favorite_dao.dart';
 import 'package:bilibili/model/ranking_mo.dart';
@@ -7,6 +6,7 @@ import 'package:bilibili/navigator/hi_navigator.dart';
 import 'package:bilibili/page/video_detail_page.dart';
 import 'package:bilibili/widget/navigation_bar.dart';
 import 'package:bilibili/widget/video_large_card.dart';
+import 'package:flutter/material.dart' hide NavigationBar;
 
 import '../util/view_util.dart';
 
@@ -40,22 +40,19 @@ class _FavoritePageState
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        // _buildNavigationBar(),
-        Expanded(child: super.build(context))
-      ],
+      children: [_buildNavigationBar(), Expanded(child: super.build(context))],
     );
   }
 
-  // _buildNavigationBar() {
-  //   return NavigationBar(
-  //     child: Container(
-  //       decoration: bottomBoxShadow(context),
-  //       alignment: Alignment.center,
-  //       child: Text('收藏', style: TextStyle(fontSize: 16)),
-  //     ),
-  //   );
-  // }
+  _buildNavigationBar() {
+    return NavigationBar(
+      child: Container(
+        decoration: bottomBoxShadow(context),
+        alignment: Alignment.center,
+        child: Text('收藏', style: TextStyle(fontSize: 16)),
+      ),
+    );
+  }
 
   @override
   get contentChild => ListView.builder(

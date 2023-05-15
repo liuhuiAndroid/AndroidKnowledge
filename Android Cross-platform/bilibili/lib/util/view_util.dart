@@ -1,20 +1,20 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:bilibili/navigator/hi_navigator.dart';
 import 'package:bilibili/page/profile_page.dart';
 import 'package:bilibili/page/video_detail_page.dart';
 import 'package:bilibili/provider/theme_provider.dart';
 import 'package:bilibili/widget/navigation_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hi_base/color.dart';
 import 'package:provider/provider.dart';
 
 ///修改状态栏
 void changeStatusBar(
-    {color: Colors.white,
-      StatusStyle statusStyle: StatusStyle.DARK_CONTENT,
-      BuildContext? context}) {
+    {color = Colors.white,
+    StatusStyle statusStyle: StatusStyle.DARK_CONTENT,
+    BuildContext? context}) {
   if (context != null) {
     //fix Tried to listen to a value exposed with provider, from outside of the widget tree.
     var themeProvider = Provider.of<ThemeProvider>(context, listen: false);
@@ -32,7 +32,7 @@ void changeStatusBar(
     statusStyle = StatusStyle.LIGHT_CONTENT;
   }
   //沉浸式状态栏样式
-  var brightness;
+  Brightness brightness;
   if (Platform.isIOS) {
     brightness = statusStyle == StatusStyle.LIGHT_CONTENT
         ? Brightness.dark
@@ -68,9 +68,9 @@ BoxDecoration? bottomBoxShadow(BuildContext context) {
   return BoxDecoration(color: Colors.white, boxShadow: [
     BoxShadow(
         color: Colors.grey[100]!,
-        offset: Offset(0, 5), //xy轴偏移
+        offset: const Offset(0, 5), //xy轴偏移
         blurRadius: 5.0, //阴影模糊程度
         spreadRadius: 1 //阴影扩散程度
-    )
+        )
   ]);
 }

@@ -13,9 +13,10 @@ dependencies:
     sdk: flutter
   hi_base:
     path: ../hi_base
-  chewie: ^1.2.0
-  video_player: ^2.1.4
-  orientation: ^1.2.0
+  chewie: ^1.5.0
+  video_player: ^2.6.1
+  #  orientation 为了解决全屏问题
+  orientation: ^1.3.0
 
 dev_dependencies:
   flutter_test:

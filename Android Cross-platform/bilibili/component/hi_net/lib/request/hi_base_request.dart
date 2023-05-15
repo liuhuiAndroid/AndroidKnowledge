@@ -5,6 +5,7 @@ abstract class HiBaseRequest {
   // curl -X GET "http://api.devio.org/uapi/test/test?requestPrams=11" -H "accept: */*"
   // curl -X GET "https://api.devio.org/uapi/test/test/1
   var pathParams;
+  // http 和 https 动态切换，默认启用 https
   var useHttps = true;
 
   String authority() {

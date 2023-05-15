@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:bilibili/barrage/barrage_input.dart';
 import 'package:bilibili/http/dao/favorite_dao.dart';
 import 'package:bilibili/http/dao/like_dao.dart';
@@ -18,6 +17,7 @@ import 'package:bilibili/widget/navigation_bar.dart';
 import 'package:bilibili/widget/video_header.dart';
 import 'package:bilibili/widget/video_large_card.dart';
 import 'package:bilibili/widget/video_toolbar.dart';
+import 'package:flutter/material.dart' hide NavigationBar;
 import 'package:flutter_overlay/flutter_overlay.dart';
 import 'package:hi_barrage/hi_barrage.dart';
 import 'package:hi_base/color.dart';
@@ -30,10 +30,10 @@ import '../util/view_util.dart';
 class VideoDetailPage extends StatefulWidget {
   final VideoModel videoModel;
 
-  const VideoDetailPage(this.videoModel);
+  const VideoDetailPage(this.videoModel, {super.key});
 
   @override
-  _VideoDetailPageState createState() => _VideoDetailPageState();
+  State<StatefulWidget> createState() => _VideoDetailPageState();
 }
 
 class _VideoDetailPageState extends State<VideoDetailPage>
@@ -43,7 +43,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
   VideoDetailMo? videoDetailMo;
   VideoModel? videoModel;
   List<VideoModel> videoList = [];
-  var _barrageKey = GlobalKey<HiBarrageState>();
+  final _barrageKey = GlobalKey<HiBarrageState>();
   bool _inoutShowing = false;
   late ThemeProvider _themeProvider;
 
@@ -74,23 +74,18 @@ class _VideoDetailPageState extends State<VideoDetailPage>
           child: videoModel?.url != null
               ? Column(
                   children: [
-                    // //iOS 黑色状态栏
-                    // NavigationBar(
-                    //   color: Colors.black,
-                    //   statusStyle: StatusStyle.LIGHT_CONTENT,
-                    //   height: Platform.isAndroid ? 0 : 46,
-                    // ),
+                    //iOS 黑色状态栏
+                    NavigationBar(
+                      color: Colors.black,
+                      statusStyle: StatusStyle.LIGHT_CONTENT,
+                      height: Platform.isAndroid ? 0 : 46,
+                    ),
                     _buildVideoView(),
                     _buildTabNavigation(),
                     Flexible(
                         child: TabBarView(
                       controller: _controller,
-                      children: [
-                        _buildDetailList(),
-                        Container(
-                          child: Text('敬请期待...'),
-                        )
-                      ],
+                      children: [_buildDetailList(), const Text('敬请期待...')],
                     ))
                   ],
                 )
@@ -212,8 +207,8 @@ class _VideoDetailPageState extends State<VideoDetailPage>
   ///收藏
   void _onFavorite() async {
     try {
-      var result =
-          await FavoriteDao.favorite(videoModel!.vid, !videoDetailMo!.isFavorite);
+      var result = await FavoriteDao.favorite(
+          videoModel!.vid, !videoDetailMo!.isFavorite);
       print(result);
       videoDetailMo!.isFavorite = !videoDetailMo!.isFavorite;
       if (videoDetailMo!.isFavorite) {

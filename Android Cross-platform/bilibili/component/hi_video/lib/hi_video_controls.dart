@@ -14,6 +14,7 @@ import 'package:video_player/video_player.dart';
 
 ///自定义播放器UI
 ///支持空安全的皮肤，for chewie: > ^1.2.0
+///基于源码修改
 class MaterialControls extends StatefulWidget {
   //初始化时是否展示loading
   final bool showLoadingOnInitialize;
@@ -98,11 +99,14 @@ class _MaterialControlsState extends State<MaterialControls>
           absorbing: notifier.hideStuff,
           child: Stack(
             children: [
+              // 播放器弹幕
               widget.barrageUI ?? Container(),
               if (_latestValue.isBuffering)
                 const Expanded(
                   child: Center(
-                    child: CircularProgressIndicator(color: primary,),
+                    child: CircularProgressIndicator(
+                      color: primary,
+                    ),
                   ),
                 )
               else
@@ -121,6 +125,7 @@ class _MaterialControlsState extends State<MaterialControls>
                   _buildBottomBar(context),
                 ],
               ),
+              // 播放器浮层
               _overlayUI()
             ],
           ),
@@ -355,7 +360,7 @@ class _MaterialControlsState extends State<MaterialControls>
 
   void _onExpandCollapse() {
     Size size = chewieController.videoPlayerController.value.size;
-    if (size == null || size.width == 0.0) {
+    if (size.width == 0.0) {
       print('_onExpandCollapse:videoPlayerController.value.size is null.');
       return;
     }

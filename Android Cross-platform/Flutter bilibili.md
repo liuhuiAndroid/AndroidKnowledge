@@ -1,3 +1,21 @@
+### 第1章
+
+快捷键
+
+```
+快速创建 Widget：stf stl 
+自动生成构造函数：option + 回车
+添加父组件、变成子组件、删除子组件：option + 回车
+```
+
+自动补全插件：Flutter Snippets
+
+
+
+### 第3章 Flutter网络和数据存储框架搭建
+
+
+
 
 
 ### 第6章 大首页模块开发
@@ -25,3 +43,32 @@ JSON 转 Dart：https://www.devio.org/io/tools/json-to-dart/
 ##### 6-10 上拉加载更多与分页功能实现
 
 ##### 6-11 基于Lottie实现全局加载组件封装
+
+
+
+### 第7章 Flutter视频播放器组件封装
+
+##### Flutter主流视频播放器
+
+chewie pub 地址：https://pub.dev/packages/chewie
+
+chewie Github 地址：https://github.com/fluttercommunity/chewie
+
+| 播放器            | 类型                         | 说明                                                         | 特点                               |
+| ----------------- | ---------------------------- | ------------------------------------------------------------ | ---------------------------------- |
+| video_player      | 官方播放器                   | 支持Android、iOS和web的Flutter官方播放器；基于：ExoPlayer(Android)、 AVPlayer(iOS)、video_player_web(web) | 迭代更新及时、兼容性好、使用较复杂 |
+| chewie            | 基于video_player封装的播放器 | 基于video_player的播放器插件                                 | 简洁易用、功能强大                 |
+| better_player     | 基于video_player封装的播放器 | 基于video_player 与 Chewie的另一款视频播放器                 | 解决了一些特定场景下使用问题       |
+| flutter_ijkplayer | 基于ijkplayer等方案的播放器  | 开发维护人员较少、大多是个人项目                             | 兼容性和迭代风险高                 |
+
+##### Flutter主流视频播放器分析
+
+##### Flutter视频播放器组件封装
+
+##### 播放器源码分析与自定义播放器UI
+
+##### 全屏播放与沉浸式播放功能实现
+
+##### 利用应用生命周期变化进行体验优化
+
+##### 封装HiTab组件实现Tab切换功能复用

@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hi_base/view_util.dart';
 
@@ -34,16 +33,16 @@ appBar(String title, String rightTitle, VoidCallback rightButtonClick, {key}) {
 ///视频详情页appBar
 videoAppBar() {
   return Container(
-    padding: EdgeInsets.only(right: 8),
+    padding: const EdgeInsets.only(right: 8),
     decoration: BoxDecoration(gradient: blackLinearGradient(fromTop: true)),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        BackButton(
+        const BackButton(
           color: Colors.white,
         ),
         Row(
-          children: [
+          children: const [
             Icon(Icons.live_tv_rounded, color: Colors.white, size: 20),
             Padding(
               padding: EdgeInsets.only(left: 12),
