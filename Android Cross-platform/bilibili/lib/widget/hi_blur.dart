@@ -9,7 +9,7 @@ class HiBlur extends StatelessWidget {
   //模糊值
   final double sigma;
 
-  const HiBlur({Key? key, this.sigma = 10,this.child}) : super(key: key);
+  const HiBlur({Key? key, this.sigma = 10, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

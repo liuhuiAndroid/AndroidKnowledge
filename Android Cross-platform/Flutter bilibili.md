@@ -103,3 +103,18 @@ chewie Github 地址：https://github.com/fluttercommunity/chewie
 
 
 
+### 第10章 个人中心模块开发
+
+##### 个人中心模块接口系分与数据加载
+
+##### 基于NestedScrollView与SliverAppBar实现复杂场景下的嵌套滚动
+
+##### 高斯模糊与视差滚动效果实现
+
+##### 高效的组件HiFlexibleHeader封装
+
+##### 个人中心用户资产模块实现
+
+##### 自定义动态布局实现职场进阶模块
+
+##### 增值服务模块实现

@@ -22,37 +22,37 @@ class ProfileMo {
     coin = json['coin'];
     browsing = json['browsing'];
     if (json['bannerList'] != null) {
-      bannerList = new List<BannerMo>.empty(growable: true);
+      bannerList = List<BannerMo>.empty(growable: true);
       json['bannerList'].forEach((v) {
-        bannerList.add(new BannerMo.fromJson(v));
+        bannerList.add(BannerMo.fromJson(v));
       });
     }
     if (json['courseList'] != null) {
-      courseList = new List<Course>.empty(growable: true);
+      courseList = List<Course>.empty(growable: true);
       json['courseList'].forEach((v) {
-        courseList.add(new Course.fromJson(v));
+        courseList.add(Course.fromJson(v));
       });
     }
     if (json['benefitList'] != null) {
-      benefitList = new List<Benefit>.empty(growable: true);
+      benefitList = List<Benefit>.empty(growable: true);
       json['benefitList'].forEach((v) {
-        benefitList.add(new Benefit.fromJson(v));
+        benefitList.add(Benefit.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['face'] = this.face;
-    data['fans'] = this.fans;
-    data['favorite'] = this.favorite;
-    data['like'] = this.like;
-    data['coin'] = this.coin;
-    data['browsing'] = this.browsing;
-    data['bannerList'] = this.bannerList.map((v) => v.toJson()).toList();
-    data['courseList'] = this.courseList.map((v) => v.toJson()).toList();
-    data['benefitList'] = this.benefitList.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['face'] = face;
+    data['fans'] = fans;
+    data['favorite'] = favorite;
+    data['like'] = like;
+    data['coin'] = coin;
+    data['browsing'] = browsing;
+    data['bannerList'] = bannerList.map((v) => v.toJson()).toList();
+    data['courseList'] = courseList.map((v) => v.toJson()).toList();
+    data['benefitList'] = benefitList.map((v) => v.toJson()).toList();
     return data;
   }
 }
@@ -71,11 +71,11 @@ class Course {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['cover'] = this.cover;
-    data['url'] = this.url;
-    data['group'] = this.group;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['cover'] = cover;
+    data['url'] = url;
+    data['group'] = group;
     return data;
   }
 }
@@ -90,9 +90,9 @@ class Benefit {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['url'] = this.url;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['url'] = url;
     return data;
   }
 }

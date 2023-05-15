@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/http/dao/profile_dao.dart';
 import 'package:bilibili/model/profile_mo.dart';
 import 'package:bilibili/util/toast.dart';
@@ -8,19 +7,22 @@ import 'package:bilibili/widget/dark_mode_item.dart';
 import 'package:bilibili/widget/hi_banner.dart';
 import 'package:bilibili/widget/hi_blur.dart';
 import 'package:bilibili/widget/hi_flexible_header.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/view_util.dart';
 import 'package:hi_net/core/hi_error.dart';
 
 ///我的
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  State<StatefulWidget> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage>
     with AutomaticKeepAliveClientMixin {
   ProfileMo? _profileMo;
-  ScrollController _controller = ScrollController();
+  final ScrollController _controller = ScrollController();
 
   @override
   void initState() {
@@ -38,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage>
           return <Widget>[_buildAppBar()];
         },
         body: ListView(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           children: [..._buildContentList()],
         ),
       ),
@@ -64,7 +66,9 @@ class _ProfilePageState extends State<ProfilePage>
   _buildHead() {
     if (_profileMo == null) return Container();
     return HiFlexibleHeader(
-        name: _profileMo!.name, face: _profileMo!.face, controller: _controller);
+        name: _profileMo!.name,
+        face: _profileMo!.face,
+        controller: _controller);
   }
 
   @override
@@ -76,17 +80,17 @@ class _ProfilePageState extends State<ProfilePage>
       expandedHeight: 160,
       //标题栏是否固定
       pinned: true,
-      //定义股东空间
+      //定义滚动空间
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
-        titlePadding: EdgeInsets.only(left: 0),
+        titlePadding: const EdgeInsets.only(left: 0),
         title: _buildHead(),
         background: Stack(
           children: [
             Positioned.fill(
                 child: cachedImage(
                     'https://www.devio.org/img/beauty_camera/beauty_camera4.jpg')),
-            Positioned.fill(child: HiBlur(sigma: 20)),
+            const Positioned.fill(child: HiBlur(sigma: 20)),
             Positioned(bottom: 0, left: 0, right: 0, child: _buildProfileTab())
           ],
         ),
@@ -108,14 +112,14 @@ class _ProfilePageState extends State<ProfilePage>
 
   _buildBanner() {
     return HiBanner(_profileMo!.bannerList,
-        bannerHeight: 120, padding: EdgeInsets.only(left: 10, right: 10));
+        bannerHeight: 120, padding: const EdgeInsets.only(left: 10, right: 10));
   }
 
   _buildProfileTab() {
     if (_profileMo == null) return Container();
     return Container(
-      padding: EdgeInsets.only(top: 5, bottom: 5),
-      decoration: BoxDecoration(color: Colors.white54),
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      decoration: const BoxDecoration(color: Colors.white54),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -132,7 +136,8 @@ class _ProfilePageState extends State<ProfilePage>
   _buildIconText(String text, int count) {
     return Column(
       children: [
-        Text('$count', style: TextStyle(fontSize: 15, color: Colors.black87)),
+        Text('$count',
+            style: const TextStyle(fontSize: 15, color: Colors.black87)),
         Text(text, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
       ],
     );

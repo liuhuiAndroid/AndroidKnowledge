@@ -16,7 +16,7 @@ class HiFlexibleHeader extends StatefulWidget {
       : super(key: key);
 
   @override
-  _HiFlexibleHeaderState createState() => _HiFlexibleHeaderState();
+  State<StatefulWidget> createState() => _HiFlexibleHeaderState();
 }
 
 class _HiFlexibleHeaderState extends State<HiFlexibleHeader> {
@@ -31,13 +31,14 @@ class _HiFlexibleHeaderState extends State<HiFlexibleHeader> {
   void initState() {
     super.initState();
     widget.controller.addListener(() {
+      // 获取列表实时位移
       var offset = widget.controller.offset;
       print('offset:$offset');
-      //算出padding变化系数0-1
+      // 算出padding变化系数0-1
       var dyOffset = (MAX_OFFSET - offset) / MAX_OFFSET;
-      //根据dyOffset算出具体的变化的padding值
+      // 根据dyOffset算出具体的变化的padding值
       var dy = dyOffset * (MAX_BOTTOM - MIN_BOTTOM);
-      //临界值保护
+      // 临界值保护
       if (dy > (MAX_BOTTOM - MIN_BOTTOM)) {
         dy = MAX_BOTTOM - MIN_BOTTOM;
       } else if (dy < 0) {
@@ -65,7 +66,7 @@ class _HiFlexibleHeaderState extends State<HiFlexibleHeader> {
           hiSpace(width: 8),
           Text(
             widget.name,
-            style: TextStyle(fontSize: 11),
+            style: const TextStyle(fontSize: 11),
           )
         ],
       ),
