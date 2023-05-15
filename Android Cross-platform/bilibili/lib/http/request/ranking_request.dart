@@ -1,6 +1,7 @@
 import 'package:hi_net/request/hi_base_request.dart';
 
 import 'base_request.dart';
+
 class RankingRequest extends BaseRequest {
   @override
   HttpMethod httpMethod() {

@@ -7,8 +7,10 @@ import '../widget/navigation_bar.dart';
 import 'ranking_tab_page.dart';
 
 class RankingPage extends StatefulWidget {
+  const RankingPage({super.key});
+
   @override
-  _RankingPageState createState() => _RankingPageState();
+  State<StatefulWidget> createState() => _RankingPageState();
 }
 
 class _RankingPageState extends State<RankingPage>

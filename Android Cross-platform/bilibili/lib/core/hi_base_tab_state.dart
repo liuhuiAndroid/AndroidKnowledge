@@ -1,8 +1,8 @@
+import 'package:bilibili/util/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:hi_base/color.dart';
-import 'package:bilibili/util/toast.dart';
-import 'package:hi_net/core/hi_error.dart';
 import 'package:hi_base/hi_state.dart';
+import 'package:hi_net/core/hi_error.dart';
 
 ///通用底层带分页和刷新的页面框架
 ///M为Dao返回数据模型，L为列表数据模型，T为具体widget
@@ -74,14 +74,14 @@ abstract class HiBaseTabState<M, L, T extends StatefulWidget> extends HiState<T>
         if (loadMore) {
           //合成一个新数组
           dataList = [...dataList, ...parseList(result)];
-          if (parseList(result).length != 0) {
+          if (parseList(result).isNotEmpty) {
             pageIndex++;
           }
         } else {
           dataList = parseList(result);
         }
       });
-      Future.delayed(Duration(milliseconds: 1000), () {
+      Future.delayed(const Duration(milliseconds: 1000), () {
         loading = false;
       });
     } on NeedAuth catch (e) {

@@ -49,7 +49,7 @@ class _FavoritePageState
       child: Container(
         decoration: bottomBoxShadow(context),
         alignment: Alignment.center,
-        child: Text('收藏', style: TextStyle(fontSize: 16)),
+        child: const Text('收藏', style: TextStyle(fontSize: 16)),
       ),
     );
   }

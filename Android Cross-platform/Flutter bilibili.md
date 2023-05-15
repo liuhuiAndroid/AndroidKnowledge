@@ -91,3 +91,15 @@ chewie Github 地址：https://github.com/fluttercommunity/chewie
 
 
 
+### 第9章 排行榜模块开发
+
+排行榜页面框架搭建
+
+通用底层带分页和刷新的页面框架HiBaseTabState封装
+
+排行榜模块接口系分与Dao层封装
+
+基于HiBaseTabState实现页面快速搭建
+
+
+
