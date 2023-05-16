@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hi_base/color.dart';
 
 ///登录输入框，自定义widget
@@ -53,11 +52,11 @@ class _LoginInputState extends State<LoginInput> {
         Row(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 15),
               width: 100,
               child: Text(
                 widget.title,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
               ),
             ),
             _input()
@@ -65,7 +64,7 @@ class _LoginInputState extends State<LoginInput> {
         ),
         Padding(
           padding: EdgeInsets.only(left: !widget.lineStretch ? 15 : 0),
-          child: Divider(
+          child: const Divider(
             height: 1,
             thickness: 0.5,
           ),
@@ -83,13 +82,13 @@ class _LoginInputState extends State<LoginInput> {
       keyboardType: widget.keyboardType,
       autofocus: !widget.obscureText,
       cursorColor: primary,
-      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
       //输入框的样式
       decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(left: 20, right: 20),
+          contentPadding: const EdgeInsets.only(left: 20, right: 20),
           border: InputBorder.none,
           hintText: widget.hint,
-          hintStyle: TextStyle(fontSize: 15, color: Colors.grey)),
+          hintStyle: const TextStyle(fontSize: 15, color: Colors.grey)),
     ));
   }
 }

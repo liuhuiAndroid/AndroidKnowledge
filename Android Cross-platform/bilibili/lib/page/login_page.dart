@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/http/dao/login_dao.dart';
 import 'package:bilibili/navigator/hi_navigator.dart';
 import 'package:bilibili/util/toast.dart';
@@ -6,6 +5,7 @@ import 'package:bilibili/widget/appbar.dart';
 import 'package:bilibili/widget/login_button.dart';
 import 'package:bilibili/widget/login_effect.dart';
 import 'package:bilibili/widget/login_input.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/string_util.dart';
 import 'package:hi_net/core/hi_error.dart';
 
@@ -28,42 +28,40 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: appBar('密码登录', '注册', () {
         HiNavigator.getInstance().onJumpTo(RouteStatus.registration);
-      }, key: Key('registration')),
-      body: Container(
-        child: ListView(
-          children: [
-            LoginEffect(protect: protect),
-            LoginInput(
-              '用户名',
-              '请输入用户',
-              onChanged: (text) {
-                userName = text;
-                checkInput();
-              },
-            ),
-            LoginInput(
-              '密码',
-              '请输入密码',
-              obscureText: true,
-              onChanged: (text) {
-                password = text;
-                checkInput();
-              },
-              focusChanged: (focus) {
-                this.setState(() {
-                  protect = focus;
-                });
-              },
-            ),
-            Padding(
-                padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-                child: LoginButton(
-                  '登录',
-                  enable: loginEnable,
-                  onPressed: send,
-                ))
-          ],
-        ),
+      }, key: const Key('registration')),
+      body: ListView(
+        children: [
+          LoginEffect(protect: protect),
+          LoginInput(
+            '用户名',
+            '请输入用户',
+            onChanged: (text) {
+              userName = text;
+              checkInput();
+            },
+          ),
+          LoginInput(
+            '密码',
+            '请输入密码',
+            obscureText: true,
+            onChanged: (text) {
+              password = text;
+              checkInput();
+            },
+            focusChanged: (focus) {
+              setState(() {
+                protect = focus;
+              });
+            },
+          ),
+          Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: LoginButton(
+                '登录',
+                enable: loginEnable,
+                onPressed: send,
+              ))
+        ],
       ),
     );
   }

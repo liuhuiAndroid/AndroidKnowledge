@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
+///捕获异常
 class HiDefend {
   run(Widget app) {
     //框架异常
@@ -15,6 +16,7 @@ class HiDefend {
         FlutterError.dumpErrorToConsole(details);
       }
     };
+    //捕获异常
     runZonedGuarded(() {
       runApp(app);
     }, (e, s) => _reportError(e, s));

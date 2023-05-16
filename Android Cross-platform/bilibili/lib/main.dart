@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:bilibili/http/dao/login_dao.dart';
 import 'package:bilibili/navigator/bottom_navigator.dart';
 import 'package:bilibili/navigator/hi_navigator.dart';
@@ -12,6 +11,7 @@ import 'package:bilibili/page/video_detail_page.dart';
 import 'package:bilibili/provider/theme_provider.dart';
 import 'package:bilibili/util/hi_defend.dart';
 import 'package:bilibili/util/toast.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_cache/hi_cache.dart';
 import 'package:hi_net/core/hi_error.dart';
 import 'package:hi_net/hi_net.dart';
@@ -21,16 +21,18 @@ import 'model/video_model.dart';
 import 'provider/hi_provider.dart';
 
 void main() {
-  HiDefend().run(BiliApp());
+  HiDefend().run(const BiliApp());
 }
 
 class BiliApp extends StatefulWidget {
+  const BiliApp({super.key});
+
   @override
-  _BiliAppState createState() => _BiliAppState();
+  State<StatefulWidget> createState() => _BiliAppState();
 }
 
 class _BiliAppState extends State<BiliApp> {
-  BiliRouteDelegate _routeDelegate = BiliRouteDelegate();
+  final BiliRouteDelegate _routeDelegate = BiliRouteDelegate();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class _BiliAppState extends State<BiliApp> {
           //定义route
           var widget = snapshot.connectionState == ConnectionState.done
               ? Router(routerDelegate: _routeDelegate)
-              : Scaffold(
+              : const Scaffold(
                   body: Center(child: CircularProgressIndicator()),
                 );
 

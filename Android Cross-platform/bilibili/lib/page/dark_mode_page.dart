@@ -1,12 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/provider/theme_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/color.dart';
 import 'package:provider/provider.dart';
 
 ///夜间模式页面
 class DarkModePage extends StatefulWidget {
+  const DarkModePage({super.key});
+
   @override
-  _DarkModePageState createState() => _DarkModePageState();
+  State<StatefulWidget> createState() => _DarkModePageState();
 }
 
 class _DarkModePageState extends State<DarkModePage> {
@@ -21,22 +23,23 @@ class _DarkModePageState extends State<DarkModePage> {
   void initState() {
     super.initState();
     var themeMode = context.read<ThemeProvider>().getThemeMode();
-    _ITEMS.forEach((element) {
+    for (var element in _ITEMS) {
       if (element['mode'] == themeMode) {
         _currentTheme = element;
       }
-    });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('夜间模式')),
+      appBar: AppBar(title: const Text('夜间模式')),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
             return _item(index);
           },
-          separatorBuilder: (BuildContext context, int index) => Divider(),
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
           itemCount: _ITEMS.length),
     );
   }
@@ -49,14 +52,14 @@ class _DarkModePageState extends State<DarkModePage> {
       },
       child: Container(
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         height: 50,
         child: Row(
           children: [
             Expanded(child: Text(theme['name'] as String)),
             Opacity(
                 opacity: _currentTheme == theme ? 1 : 0,
-                child: Icon(Icons.done, color: primary))
+                child: const Icon(Icons.done, color: primary))
           ],
         ),
       ),

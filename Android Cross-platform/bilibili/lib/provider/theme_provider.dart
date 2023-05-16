@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:bilibili/util/hi_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:hi_cache/hi_cache.dart';
 import 'package:hi_base/color.dart';
-import 'package:bilibili/util/hi_constants.dart';
+import 'package:hi_cache/hi_cache.dart';
 
 extension ThemeModeExtension on ThemeMode {
   String get value => <String>['System', 'Light', 'Dark'][index];
@@ -11,13 +10,15 @@ extension ThemeModeExtension on ThemeMode {
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode? _themeMode;
-  var _platformBrightness = SchedulerBinding.instance?.window.platformBrightness;
+  var _platformBrightness =
+      SchedulerBinding.instance?.window.platformBrightness;
 
   ///系统Dark Mode发生变化
   void darModeChange() {
     if (_platformBrightness !=
         SchedulerBinding.instance?.window.platformBrightness) {
-      _platformBrightness = SchedulerBinding.instance?.window.platformBrightness;
+      _platformBrightness =
+          SchedulerBinding.instance?.window.platformBrightness;
       notifyListeners();
     }
   }

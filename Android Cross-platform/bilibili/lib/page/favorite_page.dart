@@ -54,9 +54,10 @@ class _FavoritePageState
     );
   }
 
+  ///列表优化
   @override
   get contentChild => ListView.builder(
-        padding: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10),
         itemCount: dataList.length,
         controller: scrollController,
         physics: const AlwaysScrollableScrollPhysics(),

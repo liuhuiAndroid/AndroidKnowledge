@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/provider/theme_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:hi_base/color.dart';
 import 'package:provider/provider.dart';
 
@@ -46,9 +46,9 @@ class _NavigationBarState extends State<NavigationBar> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: top + widget.height,
-      child: widget.child,
       padding: EdgeInsets.only(top: top),
       decoration: BoxDecoration(color: _color),
+      child: widget.child,
     );
   }
 
