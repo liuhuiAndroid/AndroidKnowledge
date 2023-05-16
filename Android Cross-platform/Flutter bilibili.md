@@ -118,3 +118,70 @@ chewie Github 地址：https://github.com/fluttercommunity/chewie
 ##### 自定义动态布局实现职场进阶模块
 
 ##### 增值服务模块实现
+
+
+
+### 第11章 视频弹幕架构开发
+
+##### 基于web_socket_channel实现弹幕通信
+
+##### 弹幕组件hi_barrage封装
+
+##### 自定义弹幕展示效果
+
+##### 基于Animation实现视频弹幕动效
+
+##### 基于HiOverlay实现弹幕输入界面
+
+##### 发送弹幕功能实现
+
+
+
+### 第12章 实现Dark Mode主题模式
+
+##### 基于ThemeData实现自定义主题
+
+##### 基于provider实现主题状态管理
+
+##### 代码优化实现Dark Mode适配
+
+##### 系统Dark Mode变化监听与适配
+
+##### Flutter的夜间模式实现
+
+
+
+### 第13章 Flutter稳定性与性能优化
+
+##### Flutter异常捕获与Crash日志收集
+
+##### 稳定性保障之Flutter测试之道
+
+##### Flutter集成测试
+
+##### Flutter性能优化实战
+
+##### Flutter包大小优化
+
+
+
+### 第14章 Flutter组件化改造与提效
+
+##### hi-net模块解耦与重构
+
+##### hi-net组件化改造
+
+##### hi-barrage弹幕模块组件化改造
+
+##### hi_base基础模块组件化
+
+
+
+### 第15章 Flutter项目集成打包
+
+##### 集成与打包Android应用
+
+##### 集成与打包iOS应用
+
+
+

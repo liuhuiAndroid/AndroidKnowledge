@@ -30,6 +30,7 @@ class HiSocket implements ISocket {
 
   @override
   ISocket open(String vid) {
+    // 初始化Channel，建立链接
     _channel = IOWebSocketChannel.connect(_URL + vid,
         headers: headers, pingInterval: Duration(seconds: _intervalSeconds));
     _channel?.stream.handleError((error) {
@@ -66,6 +67,6 @@ abstract class ISocket {
   ///关闭连接
   void close();
 
-  ///接受弹幕
+  ///接收弹幕
   ISocket listen(ValueChanged<List<BarrageModel>> callBack);
 }

@@ -6,6 +6,8 @@ class BarrageItem extends StatelessWidget {
   final String id;
   final double top;
   final Widget child;
+
+  /// 弹幕播放完成
   final ValueChanged onComplete;
   final Duration duration;
 

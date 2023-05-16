@@ -19,7 +19,7 @@ class BarrageInput extends StatelessWidget {
           Expanded(
               child: GestureDetector(
             onTap: () {
-              if (onTabClose != null) onTabClose();
+              onTabClose();
               Navigator.of(context).pop();
             },
             child: Container(
@@ -45,7 +45,7 @@ class BarrageInput extends StatelessWidget {
   _buildInput(TextEditingController editingController, BuildContext context) {
     return Expanded(
         child: Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       decoration: BoxDecoration(
           color: Colors.grey[200], borderRadius: BorderRadius.circular(20)),
       child: TextField(
@@ -55,7 +55,7 @@ class BarrageInput extends StatelessWidget {
           _send(value, context);
         },
         cursorColor: primary,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
             isDense: true,
             contentPadding:
                 EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
@@ -69,7 +69,7 @@ class BarrageInput extends StatelessWidget {
   ///发送消息
   void _send(String text, BuildContext context) {
     if (text.isNotEmpty) {
-      if (onTabClose != null) onTabClose();
+      onTabClose();
       Navigator.pop(context, text);
     }
   }
@@ -81,8 +81,8 @@ class BarrageInput extends StatelessWidget {
         _send(text, context);
       },
       child: Container(
-        padding: EdgeInsets.all(10),
-        child: Icon(Icons.send_rounded, color: Colors.grey),
+        padding: const EdgeInsets.all(10),
+        child: const Icon(Icons.send_rounded, color: Colors.grey),
       ),
     );
   }

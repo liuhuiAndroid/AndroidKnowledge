@@ -44,7 +44,7 @@ class _VideoDetailPageState extends State<VideoDetailPage>
   VideoModel? videoModel;
   List<VideoModel> videoList = [];
   final _barrageKey = GlobalKey<HiBarrageState>();
-  bool _inoutShowing = false;
+  bool _inputShowing = false;
   late ThemeProvider _themeProvider;
 
   @override
@@ -237,15 +237,16 @@ class _VideoDetailPageState extends State<VideoDetailPage>
 
   _buildBarrageBtn() {
     return BarrageSwitch(
-        inoutShowing: _inoutShowing,
+        inoutShowing: _inputShowing,
         onShowInput: () {
           setState(() {
-            _inoutShowing = true;
+            _inputShowing = true;
           });
+          // 弹起输入框
           HiOverlay.show(context, child: BarrageInput(
             onTabClose: () {
               setState(() {
-                _inoutShowing = false;
+                _inputShowing = false;
               });
             },
           )).then((value) {

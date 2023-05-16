@@ -7,7 +7,11 @@ class BarrageModel {
   late int priority;
   late int type;
 
-  BarrageModel({required this.content,required this.vid,required this.priority,required this.type});
+  BarrageModel(
+      {required this.content,
+      required this.vid,
+      required this.priority,
+      required this.type});
 
   BarrageModel.fromJson(Map<String, dynamic> json) {
     content = json['content'];

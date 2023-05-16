@@ -13,10 +13,17 @@ enum BarrageStatus { play, pause }
 
 ///弹幕组件
 class HiBarrage extends StatefulWidget {
+  /// 弹幕显示函数
   final int lineCount;
   final String vid;
+
+  /// 弹幕速度
   final int speed;
+
+  /// 弹幕离顶部距离
   final double top;
+
+  /// 弹幕是否自动播放
   final bool autoPlay;
   final Map<String, dynamic> headers;
 
@@ -38,9 +45,12 @@ class HiBarrageState extends State<HiBarrage> implements IBarrage {
   late HiSocket _hiSocket;
   late double _height;
   late double _width;
-  List<BarrageItem> _barrageItemList = []; //弹幕widget集合
-  List<BarrageModel> _barrageModelList = []; //弹幕模型
-  int _barrageIndex = 0; //第几条弹幕
+  // 弹幕widget集合
+  List<BarrageItem> _barrageItemList = [];
+  // 弹幕数据模型集合
+  List<BarrageModel> _barrageModelList = [];
+  // 第几条弹幕
+  int _barrageIndex = 0;
   Random _random = Random();
   BarrageStatus? _barrageStatus;
   Timer? _timer;
@@ -63,6 +73,7 @@ class HiBarrageState extends State<HiBarrage> implements IBarrage {
 
   @override
   Widget build(BuildContext context) {
+    // 获取屏幕宽度
     _width = MediaQuery.of(context).size.width;
     _height = _width / 16 * 9;
     return SizedBox(
@@ -70,14 +81,14 @@ class HiBarrageState extends State<HiBarrage> implements IBarrage {
       height: _height,
       child: Stack(
         children: [
-          //防止Stack的child为空
+          // 防止Stack的child为空
           Container()
         ]..addAll(_barrageItemList),
       ),
     );
   }
 
-  ///处理消息，instant=true 马上发送
+  /// 处理消息，instant=true 马上发送
   void _handleMessage(List<BarrageModel> modelList, {bool instant = false}) {
     if (instant) {
       _barrageModelList.insertAll(0, modelList);
