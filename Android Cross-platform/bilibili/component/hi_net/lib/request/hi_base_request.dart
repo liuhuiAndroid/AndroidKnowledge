@@ -1,6 +1,7 @@
 enum HttpMethod { GET, POST, DELETE }
 
-///基础请求
+/// api地址：https://api.devio.org/uapi/swagger-ui.html
+/// 基础请求
 abstract class HiBaseRequest {
   // curl -X GET "http://api.devio.org/uapi/test/test?requestPrams=11" -H "accept: */*"
   // curl -X GET "https://api.devio.org/uapi/test/test/1
@@ -8,14 +9,17 @@ abstract class HiBaseRequest {
   // http 和 https 动态切换，默认启用 https
   var useHttps = true;
 
+  /// 设置域名
   String authority() {
     return "api.devio.org";
   }
 
+  /// 设置请求方法
   HttpMethod httpMethod();
 
   String path();
 
+  /// 生成具体的url
   String url() {
     Uri uri;
     var pathStr = path();

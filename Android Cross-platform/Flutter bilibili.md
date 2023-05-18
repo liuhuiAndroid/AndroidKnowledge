@@ -3,18 +3,14 @@
 快捷键
 
 ```
-快速创建 Widget：stf stl 
+快速创建 Widget：stf:StatefulWidget		stl:StatelessWidget
 自动生成构造函数：option + 回车
 添加父组件、变成子组件、删除子组件：option + 回车
 ```
 
 自动补全插件：Flutter Snippets
 
-
-
 ### 第3章 Flutter网络和数据存储框架搭建
-
-
 
 
 
