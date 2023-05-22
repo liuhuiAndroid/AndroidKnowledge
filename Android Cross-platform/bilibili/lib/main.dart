@@ -65,6 +65,7 @@ class _BiliAppState extends State<BiliApp> {
 
 class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<BiliRoutePath> {
+  @override
   final GlobalKey<NavigatorState> navigatorKey;
 
   //为Navigator设置一个key，必要的时候可以通过navigatorKey.currentState来获取到NavigatorState对象
@@ -74,7 +75,7 @@ class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
         RouteJumpListener(onJumpTo: (RouteStatus routeStatus, {Map? args}) {
       _routeStatus = routeStatus;
       if (routeStatus == RouteStatus.detail) {
-        this.videoModel = args!['videoMo'];
+        videoModel = args!['videoMo'];
       }
       notifyListeners();
     }));
@@ -108,15 +109,15 @@ class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
       pages.clear();
       page = pageWrap(BottomNavigator());
     } else if (routeStatus == RouteStatus.darkMode) {
-      page = pageWrap(DarkModePage());
+      page = pageWrap(const DarkModePage());
     } else if (routeStatus == RouteStatus.detail) {
       page = pageWrap(VideoDetailPage(videoModel!));
     } else if (routeStatus == RouteStatus.registration) {
-      page = pageWrap(RegistrationPage());
+      page = pageWrap(const RegistrationPage());
     } else if (routeStatus == RouteStatus.notice) {
       page = pageWrap(NoticePage());
     } else if (routeStatus == RouteStatus.login) {
-      page = pageWrap(LoginPage());
+      page = pageWrap(const LoginPage());
     }
     //重新创建一个数组，否则pages因引用没有改变路由不会生效
     tempPages = [...tempPages, page];
@@ -130,6 +131,7 @@ class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
       child: Navigator(
         key: navigatorKey,
         pages: pages,
+        // 返回上一页回调 onPopPage
         onPopPage: (route, result) {
           if (route.settings is MaterialPage) {
             //登录页未登录返回拦截
@@ -140,7 +142,7 @@ class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
               }
             }
           }
-          //执行返回操作
+          // 执行返回操作，控制是否可以返回
           if (!route.didPop(result)) {
             return false;
           }
@@ -165,7 +167,7 @@ class BiliRouteDelegate extends RouterDelegate<BiliRoutePath>
   bool get hasLogin => LoginDao.getBoardingPass() != null;
 
   @override
-  Future<void> setNewRoutePath(BiliRoutePath path) async {}
+  Future<void> setNewRoutePath(BiliRoutePath configuration) async {}
 }
 
 ///定义路由数据，path

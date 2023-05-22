@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key, this.onJumpTo}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<StatefulWidget> createState() => _HomePageState();
 }
 
 class _HomePageState extends HiState<HomePage>

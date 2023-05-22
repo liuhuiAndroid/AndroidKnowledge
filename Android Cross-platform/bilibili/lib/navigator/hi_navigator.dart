@@ -1,13 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:bilibili/navigator/bottom_navigator.dart';
 import 'package:bilibili/page/dark_mode_page.dart';
 import 'package:bilibili/page/login_page.dart';
 import 'package:bilibili/page/notice_page.dart';
 import 'package:bilibili/page/registration_page.dart';
 import 'package:bilibili/page/video_detail_page.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-typedef RouteChangeListener(RouteStatusInfo current, RouteStatusInfo? pre);
+typedef RouteChangeListener = Function(
+    RouteStatusInfo current, RouteStatusInfo? pre);
 
 ///创建页面
 pageWrap(Widget child) {
@@ -69,7 +70,7 @@ class HiNavigator extends _RouteJumpListener {
   static HiNavigator? _instance;
 
   RouteJumpListener? _routeJump;
-  List<RouteChangeListener> _listeners = [];
+  final List<RouteChangeListener> _listeners = [];
   RouteStatusInfo? _current;
 
   //首页底部tab
@@ -140,9 +141,9 @@ class HiNavigator extends _RouteJumpListener {
     }
     print('hi_navigator:current:${current.page}');
     print('hi_navigator:pre:${_current?.page}');
-    _listeners.forEach((listener) {
+    for (var listener in _listeners) {
       listener(current, _current);
-    });
+    }
     _current = current;
   }
 }
