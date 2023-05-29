@@ -42,26 +42,73 @@
 
 ### 第3章 实战-Al工具箱，包括项目搭建
 
-3-1 -基础概念
+##### 3-1 -基础概念
 
-3-3 -技术选型 & 技术背景
+Token：计算基本单元
 
-3-4 技术选型-框架与工具
+Model：模型选型
 
-3-5 AI 助理需求梳理与技术方案梳理
+Prompt：用户指令
 
-3-6 初始化 Next.js 项目并配置基础开发依赖
+Token 换算：英文：0.75 word = 1 token；中文：1汉字 = 2 token
 
-3-7 OpenAI API 转发与 Proxy 配置
+Token 限制：输入内容与输出内容的总计 token 数
 
-3-8 聊天功能开发，实现基础对话功能
+##### 3-3 -技术选型 & 技术背景
 
-3-9 实现聊天信息本地持久化
+Cloudflare worker
 
-3-11 -实现多轮对话能力
+Cloudflare Page
 
-3-12 -支持流式响应
+Vercel
 
-3-13 -支持流式响应
+.xyz Domain：https://www.name.com/zh-cn/
 
-3-14 -前端解码流数据
+Nextjs Application（Edge function）
+
+##### 3-4 技术选型-框架与工具
+
+1. 基础
+   1. React & Hook
+   2. Typescript
+   3. Localstorage
+2. 框架/库
+   1. 框架：Next.js
+   2. UI：Mantine UI
+   3. 样式：Tailwind
+3. API
+   1. Vercel Edge function
+   2. Cloudflare Proxy
+4. 部署
+   1. Github
+   2. Vercel
+
+##### 3-5 AI 助理需求梳理与技术方案梳理
+
+##### 3-6 初始化 Next.js 项目并配置基础开发依赖
+
+```shell
+npx create-next-app ai_assistant
+npm i @mantine/core @mantine/hooks @mantine/next @mantine/notifications @tabler/icons-react axios clsx -S
+```
+
+##### 3-7 OpenAI API 转发与 Proxy 配置
+
+Open AI 官方文档：https://platform.openai.com/docs/api-reference
+
+接口：
+
+1. POST https://api.openai.com/v1/completions
+2. POST https://api.openai.com/v1/chat/completions
+
+##### 3-8 聊天功能开发，实现基础对话功能
+
+##### 3-9 实现聊天信息本地持久化
+
+##### 3-11 -实现多轮对话能力
+
+##### 3-12 -支持流式响应
+
+##### 3-13 -支持流式响应
+
+##### 3-14 -前端解码流数据
