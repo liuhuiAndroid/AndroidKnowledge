@@ -1,14 +1,23 @@
 ### 第1章 课程 简介 及 GPT 简述
 
-1-1 导学
+##### 1-1 导学
 
-1-2 GPT发展时间线
+- OpenAI 发布 ChatGPT、GPT@3.5、GPT@4
+- 国内厂商跟进发布文心一言、通义千问等大语言模型产品
+- 基于大语言模型的衍生产品遍地开花
 
-1-3 GPT案例介绍
+正确姿势：
 
-1-4 AI 能力回顾
+- 工作代码：AI Copilot 辅助
+- ChatGPT 文本辅助
 
-1-5 AI 的局限性
+##### 1-2 GPT发展时间线
+
+##### 1-3 GPT案例介绍
+
+##### 1-4 AI 能力回顾
+
+##### 1-5 AI 的局限性
 
 ### 第2章 风靡全球 的 ChatGPT 的前世今生以及背后的原理
 
@@ -42,7 +51,7 @@
 
 ### 第3章 实战-Al工具箱，包括项目搭建
 
-##### 3-1 -基础概念
+##### 3-1 基础概念
 
 Token：计算基本单元
 
@@ -54,17 +63,19 @@ Token 换算：英文：0.75 word = 1 token；中文：1汉字 = 2 token
 
 Token 限制：输入内容与输出内容的总计 token 数
 
-##### 3-3 -技术选型 & 技术背景
+##### 3-3 技术选型 & 技术背景
 
-Cloudflare worker
+- Cloudflare Workers：脚本转发请求
 
-Cloudflare Page
+  官网：https://developers.cloudflare.com/workers/
 
-Vercel
+- Cloudflare Page：应用直接部署在可以访问API的位置
 
-.xyz Domain：https://www.name.com/zh-cn/
+- Vercel：应用直接部署在可以访问API的位置；Vercel Edge function
 
-Nextjs Application（Edge function）
+- .xyz Domain：https://www.name.com/zh-cn/ 购买域名
+
+- Nextjs Application（Edge function）
 
 ##### 3-4 技术选型-框架与工具
 
@@ -74,8 +85,8 @@ Nextjs Application（Edge function）
    3. Localstorage
 2. 框架/库
    1. 框架：Next.js
-   2. UI：Mantine UI
-   3. 样式：Tailwind
+   2. UI：Mantine UI：https://github.com/mantinedev/ui.mantine.dev
+   3. 样式：Tailwind：https://github.com/tailwindlabs/tailwindcss
 3. API
    1. Vercel Edge function
    2. Cloudflare Proxy
