@@ -60,6 +60,12 @@
 
 4-3 如何在Windows电脑上搭建Flutter开发环境？
 
+```shell
+# 检查运行环境
+flutter doctor
+open -a Simulator
+```
+
 4-4 如何在macOS电脑上搭建Flutter开发环境？
 
 4-5 Flutter开发环境搭建常见问题和解决方案分析
@@ -111,15 +117,13 @@ dependencies:
 	http: <latest version>
 ```
 
-```dart
-import 'package:http/http.dart' as http;
-```
-
 ##### 6-3 Flutter神兵利器：网络操作get请求快速入门
 
 ```shell
 flutter create flutter_network
 as flutter_network
+cd flutter_network
+flutter run
 ```
 
 ##### 6-4 Flutter数据交互大揭秘：post请求与数据解析实践
