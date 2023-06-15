@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/.sonarlint
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/app/release
+/im/build
+/local-swtich.gradle
