@@ -146,3 +146,99 @@ flutter pub add path_provider
 ```
 
 ##### 6-10 本章总结
+
+ElevatedButton
+
+
+
+### 第7章 组件化开发登录SDK-轻松掌握界面搭建，布局widget，自定义组件，接口鉴权
+
+##### 7-1 本章介绍
+
+##### 7-2 Flutter组件化开发：优雅的架构设计与实践
+
+```shell
+# 主工程
+flutter create chatgpt_flutter
+# 登录SDK
+flutter create --template=package login_sdk
+flutter pub add url_launcher
+```
+
+```yaml
+# 组件化配置
+login_sdk:
+	path: '../login_sdk'
+```
+
+##### 7-3 Flutter页面布局：基于Scaffold和Stack搭建界面的技巧
+
+##### 7-4 主流APP登录页设计：账号密码输入组件实现指南
+
+##### 7-5 登录按钮与禁用功能实现技巧
+
+##### 7-6 Flutter开发技巧：巧用extension提高效率避免嵌套地狱
+
+##### 7-7 Flutter登录功能交互优化：H5注册页跳转处理
+
+##### 7-8 登录模块接口使用指南
+
+##### 7-9 Flutter登录SDK实践：接口鉴权与登录态处理指南（一）
+
+##### 7-10 Flutter登录SDK实践：接口鉴权与登录态处理指南（二）
+
+##### 7-11 Flutter导航框架设计：如何实现主流App的导航框架？
+
+##### 7-12 Flutter登录服务实现：基于登录SDK的功能开发
+
+##### 7-13 本章总结
+
+
+
+### 第8章 聊天对话框组件封装-手把手教你如何开发并发布高质量Flutter库
+
+##### 8-1 本章介绍
+
+##### 8-2 Flutter包和插件从入门到实战开发详解
+
+##### 8-3 聊天对话框组件chat_message需求分析
+
+##### 8-4 借助组件化的开发思路搭建Flutter package工程与调试
+
+```shell
+flutter create --template=package chat_message
+cd chat_message
+flutter create example
+flutter pub get
+flutter pub add bubble
+```
+
+##### 8-5 消息数据模型设计与实现
+
+##### 8-6 Flutter开发不可忽视的技能Steam与StreamBuilder原理大揭秘
+
+##### 8-7 对话框列表频繁刷新的效率问题分析与解决
+
+##### 8-8 基于StreamBuilder实现局部刷新的对话框列表（一）
+
+##### 8-9 基于StreamBuilder实现局部刷新的对话框列表（二）
+
+##### 8-10 从样式到交互全面解析聊天消息气泡组件的开发
+
+##### 8-11 微信聊天时间展示逻辑剖析与方案实现
+
+##### 8-12 仿微信聊天时间展示功能实现
+
+##### 8-13 下拉加载更多聊天记录功能实现与难点分析
+
+##### 8-14 如何提升消息气泡组件的扩展性？13:05
+
+##### 8-15 chat_message组件调优与发布到pub市场
+
+##### 8-16 本章总结
+
+
+
+
+
+flutter build apk
