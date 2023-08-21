@@ -12,7 +12,9 @@ kite
 
 ##### 深入Go底层原理，重写Redis中间件实战
 
-https://go.dev/dl/
+https://go.dev/dl/ 
+
+代理：https://goproxy.cn/
 
 go version
 
@@ -26,3 +28,13 @@ go module init github.xxx
 
 go run main.go
 
+快捷键：delete line \ back \ forward \ declaration
+
+File Watcher 和 goimports 的配置
+
+
+
+```
+$ go get -u github.com/gin-gonic/gin
+$ go get -u go.uber.org/zap
+```
