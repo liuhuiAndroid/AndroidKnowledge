@@ -12,6 +12,149 @@
 
 #### 第8章 备份恢复类问题
 
+逻辑备份和物理备份；全量备份、增量备份和差异备份
+
+常用的备份工具：
+
+1. mysqldump：最常用的逻辑备份工具，支持全量备份及条件备份
+
+   优点：
+
+   - 备份结果为可读的SQL文件，可用于跨版本跨平台恢复数据
+   - 备份文件的尺寸小于物理备份，便于长时间存储
+   - MySQL发行版自带工具，无需安装第三方软件
+
+   缺点：
+
+   - 只能单线程执行备份恢复任务，备份恢复速度较慢
+   - 为完成一致性备份需要对备份表加锁，容易造成阻塞
+   - 会对 Innodb Buffer Pool 造成污染
+
+   ```shell
+   mysqldump --help
+   # 备份 stock 数据库
+   mysqldump -uroot -p --databases stock > stock.sql
+   # 备份 stock 数据库中 stock 表
+   mysqldump -uroot -p stock stock > stock.sql
+   # 备份记录备份二进制信息
+   mysqldump -uroot -p --master-data=2 --all-databases > all.sql
+   # 恢复
+   mysql -uroot -p stock < stock.sql
+   # 有条件备份
+   mysqldump -uroot -p --where "count>20" stock stock > stock_20.sql
+   ```
+
+2. mysqlpump：多线程逻辑备份工具，mysqldump的增强版本
+
+   优点：
+
+   - 语法同 mysqldump 高度兼容，学习成本低
+   - 支持基于库和表的并行备份，可以提高逻辑备份的性能
+   - 支持使用 ZLIB 和 Lz4 算法对备份进行压缩
+
+   缺点：
+
+   - 基于表进行并行备份，对于大表来说性能较差
+   - 5.7.11 之前版本不支持一致性并行备份
+   - 对会 Innodb Buffer Pool 造成污染
+
+   ```shell
+   mysqlpump --help
+   mysqlpump --compress-output=zlib --setgtid-purged=off --databases stock > stock.zlib
+   ls -lh stock.zlib
+   # 解压缩
+   zlib_decompress stock.zlib stock.sql
+   # 备份数据库账号
+   mysqlpump --users --exclude-databases=sys,mysql,percona,stock --set-gtid-purged=off -uroot -p
+   ```
+
+3. xtrabackup：Innodb在线物理备份工具，支持多线程和增量备份
+
+   优点：
+
+   1. 支持 Innodb 存储引擎的在线热备份，对 Innodb 缓冲没有影响
+   2. 支持并行对数据库的全备和增量备份
+   3. 备份和恢复效率比逻辑备份高
+
+   缺点：
+
+   1. 做单表恢复时比较复杂
+   2. 完整的数据文件拷贝，故备份文件比逻辑备份大
+   3. 对跨平台和数据库版本的备份恢复支持度不如逻辑备份
+
+   ```shell
+   # percona 官网下载安装
+   rpm -ivh percona-xtrabackup.rpm
+   xtrabackup --help
+   innobackupex --help
+   mkdir -p /home/db_backup
+   # 备份
+   innobackupex --user=root --password=123456 /home/db_backup
+   # 恢复
+   innobackupex --apply-log /home/db_backup/xxx
+   innobackupex --move-back /home/db_backup/xxx
+   chown mysql:mysql -R data/
+   chown mysql:mysql -R undo_log/
+   /etc/init.d/mysqld start
+   ps -ef
+   ```
+
+4. 增量备份和恢复
+
+   1. 逻辑备份 + 二进制日志
+
+      ```shell
+      # 全备
+      mkdir /home/db_backup
+      mysqldump -uroot -p --master-data=2 --sigle-transaction --routines --triggers --events --set-gtid-purged=off stock > stock.sql
+      # 增量备份
+      scp stock.sql root@192.168.1.1:/root
+      scp mysql-bin.000001 root@192.168.1.1:/root
+      scp mysql-bin.000002 root@192.168.1.1:/root
+      # 全备恢复
+      mysql -uroot -p stock < stock.sql
+      # 二进制恢复
+      more stock.sql # 取出二进制日志点 MASTER_LOG_FILE 和 MASTER_LOG_POS
+      mysqlbinlog --start-position=337 --database=stock mysql-bin.000002 > stock_diff.sql
+      mysql -uroot -p stock < stock_diff.sql
+      ```
+
+   2. 使用 xtrabackup 工具
+
+      ```shell
+      # 全备
+      innobackupex --user=root --password=123456 /home/backups
+      # 增量备份
+      innobackupex --user=root --password=123456 --incremental /home/db_incremental_backups --incremental-basedir=/home/backups/xxx
+      # 增量恢复
+      innobackupex --apply-log --redo-only 全备目录
+      innobackupex --apply-log --redo-only 全备目录 --incremental-dir=第1...n次增量目录
+      innobackupex --apply-log 全备目录
+      /etc/init.d/mysqld stop
+      cd mysql
+      rm -rf data_old/ undo_old/
+      mv data data_old
+      mv undo_log/ undo_old
+      mkdir data undo_log
+      cd /home/db_backup
+      innobackupex --move-back /home/db_backup/全备目录
+      chown mysql:mysql -R data/
+      chown mysql:mysql -R undo_log/
+      /etc/init.d/mysqld start
+      ps -ef
+      ```
+
+   如何备份二进制日志？
+
+   1. 使用 cp 命令进行离线备份
+
+   2. 使用 mysqlbinlog 命令在线实时备份
+
+      ```shell
+      # 用户需要具有 replication slave 权限
+      mysqlbinlog --raw --read-from-remote-server --stop-never --host 备份机IP --port 3306 -u repl -p xxx 起始二进制日志文件名
+      ```
+
 #### 第9章 管理及监控类问题
 
 - 性能类指标：
