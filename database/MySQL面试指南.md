@@ -2,7 +2,138 @@
 
 #### 第3章 用户管理类问题
 
+- 对用户授权指定的权限
+
+  - 用户名@可访问控制列表
+    - % 代表可以从所有外部主机访问
+    - 192.168.1.% 表示可以从 192.168.1 网段访问
+    - localhost:DB 服务器本地访问
+  - 使用 CREATE USER 命令建立用户
+  - 常用的用户权限：
+    - Admin
+      - Create User：建立新的用户的权限
+      - Grant option：为其他用户授权的权限
+      - Super：管理服务器的权限
+    - DDL
+      - Create：新建数据库、表的权限
+      - Alter：修改表结构的权限
+      - Drop：删除数据库和表的权限
+      - Index：建立和删除索引的权限
+    - DML
+      - Select：查询表中数据的权限
+      - Insert：向表中插入数据的权限
+      - Update：更新表中数据的权限
+      - Delete：删除表中数据的权限
+      - Execute：执行存储过程的权限
+  - 如何为用户授权
+    - 遵循最小权限要求
+    - 使用 Grant 命令对用户授权
+
+  ```mysql
+  # 定义 MySQL 数据库账号
+  create user 
+  # 为用户授权
+  grant select,insert,update,delete on db.tb to user@ip;
+  revoke delete on db.tb from user@ip;
+  ```
+
+- MySQL如何保证用户账号安全
+
+  - 数据库用户管理流程规范
+    - 最小权限原则
+    - 密码强度策略
+    - 密码过期原则
+    - 限制历史密码重用原则
+  - 密码管理策略
+
+  ```shell
+  # 定义 MySQL 数据库账号
+  create user test@'localhost' identified by '123456' password history 1;
+  select * from mysql.user where user='test';
+  # 设置密码过期
+  alter user test@'localhost' password expire;
+  # 重新设置密码
+  alter user user() identified by '12345678';
+  ```
+
+- 在不同实例间迁移数据库用户
+
+  - 数据库版本一致 -> 备份恢复
+
+  - 数据库版本不一致 -> 导出授权语句
+
+    ```sql
+    pt-show-grants u=root,p=123456,h=localhost
+    ```
+
 #### 第4章 服务器配置类问题
+
+- 使用SQL Mode改变SQL处理行为
+
+  - SQL Mode 作用：
+    - 配置 MySQL 处理 SQL 的方式
+    - set [session/global/persist] sql_mode= 'xxx'
+    - my.cnf    [mysqld] sql_mode=xxx
+  - 常用的 SQL Mode
+    - ONLY_FULL_GROUP_BY
+    - ANSI_QUOTES：禁止用双引号来引用字符串
+    - REAL_AS_FLOAT：Real 做为 float 的同义词
+    - PIPES_AS_CONCAT：将 || 视为字符串的连接操作符而非或运算符
+    - STRICT_TRANS_TABLES / STRICT_ALL_TABLES：严格模式
+    - ERROR_FOR_DIVISION_BY_ZERO：不允许0做为除数
+    - NO_AUTO_CREATE_USER：在用户不存在时不允许grant语句自动建立用户
+    - NO_ZERO_IN_DATE / NO_ZERO_DATA：日期数据不能含0
+    - NO_ENGINE_SUBSTITUTION：当指定的存储引擎不可用时报错
+
+  ```sql
+  # 查看 SQL Mode
+  show variables like 'sql_mode';
+  # 设置 SQL Mode
+  set session sql_mode= 'NO_ENGINE_SUBSTITUTION,ONLY_FULL_GROUP_BY';
+  ```
+
+- 对比配置文件同MySQL运行配置参数
+
+  - 使用 set 命令配置动态参数
+  - 使用 pt-config-diff 工具比较配置文件
+
+  ```sql
+  set [session | @@session] system_var_name = expr
+  set [global | @@global] system_var_name = expr
+  set [persist | @@persist] system_var_name = expr
+  
+  show variables like 'wait_timeout';
+  set global wait_timeout=300;
+  show global variables like 'wait_timeout';
+  set session wait_timeout=300;
+  show variables like 'wait_timeout';
+  
+  show variables like 'max_connect%';
+  # 配置存在：mysqld-auto.cnf，不会重启丢失；MySQL8.0；否则得同时修改 mysqld.cnf才不会重启覆盖
+  set persist max_connect=1000;
+  
+  # 比较配置文件
+  pt-config-diff u=root,p=xxx,h=xxx /etc/my.cnf
+  ```
+
+- 影响MySQL性能的关键参数
+
+  - 服务器配置参数
+    - max_connections：设置MySQL允许访问的最大连接数
+    - interactive_timeout：设置交互连接的timeout时间
+    - wait_time：设置非交互连接的timeout时间
+    - max_allowed_packet：控制MySQL可以接收的数据包大小
+    - sync_binlog：表示每写多少次缓冲会向磁盘同步一次binlog
+    - sort_buffer_size：设置每个会话使用的排序缓冲区的大小
+    - join_buffer_size：设置每个会话所使用的连接缓冲的大小
+    - read_buffer_size：指定了当对MYISAM进行表扫描时所分配的读缓冲池的大小
+    - read_rnd_buffer_size：设置控制索引缓冲区的大小
+    - binlog_cache_size：设置每个会话用于缓存未提交的事务缓存大小
+  - 存储引擎参数
+    - innodb_flush_log_at_trx_commit：1-每次事务提交都会刷新事务日志到磁盘中
+    - innodb_buffer_pool_size：设置innodb缓冲池的大小，应为系统可用内存的75%
+    - innodb_buffer_pool_instances：innodb缓冲池的实例个数
+    - innodb_file_per_table：设置每个表独立使用一个表空间文件
 
 #### 第5章 在日志类问题
 
