@@ -184,6 +184,147 @@
 
 #### 第5章 在日志类问题
 
+MySQL常用的日志类型
+
+1. 错误日志 error_log
+
+   记录 MySQL 在启动、运行或停止时出现的问题
+
+   1. 分析排除 MySQL 运行错误
+   2. 记录未授权的访问
+
+   ```mysql
+   log_error = $mysql/sql_log/mysql-error.log
+   # 错误日志级别
+   log_error_verbosity = [1,2,3]
+   # 定义如何把错误信息写入到日志中
+   log_error_services= [日志服务组件;日志服务组件]
+   
+   select @@log_error;
+   select @@log_error_verbosity;
+   select @@log_error_services;
+   select @@log_timestamps;
+   set persist log_timestamps='SYSTEM';
+   show variables like 'log_error_verbosity';
+   show variables like 'log_error_services';
+   install component 'file://component_log_sink_json'
+   # 输出 json 格式日志数据
+   set persist log_error_services='log_sink_json';
+   ```
+
+2. 常规日志 general_log
+
+   记录所有发向 MySQL 的请求
+
+   1. 分析客户端发送到 MySQL 的实际请求
+
+   ```mysql
+   general_log = [ON|OFF]
+   general_log_file = $mysql/sql_log/general.log
+   log_output = [FILE|TABLE|NONE]
+   
+   use mysql;
+   show create table general_log;
+   
+   CREATE TABLE `general_log` (
+     `event_time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+     `user_host` mediumtext NOT NULL,
+     `thread_id` bigint unsigned NOT NULL,
+     `server_id` int unsigned NOT NULL,
+     `command_type` varchar(64) NOT NULL,
+     `argument` mediumblob NOT NULL
+   ) ENGINE=CSV DEFAULT CHARSET=utf8mb3 COMMENT='General log'
+   
+   select @@general_log;
+   select @@general_log_file;
+   set persist general_log_file='/home/mysql/sql_log/general.log'
+   select @@log_output;
+   # 启动general_log
+   set global general_log=on;
+   tail -f /home/mysql/sql_log/general.log
+   set global general_log=off;
+   set global log_output='table';
+   set global general_log=on;
+   select * from general_log;
+   truncate table general_log;
+   ```
+
+3. 慢查询日志 show_query_log
+
+   记录符合条件的查询
+
+   1. 将执行成功并符合条件的查询记录到日志中
+   2. 找到需要优化的SQL
+
+   ```mysql
+   slow_query_log = [ON|OFF]
+   show_query_log_file = $mysql/sql_log/slow_log.log
+   long_query_time = xx秒，六位小数
+   log_queries_not_using_indexes = [ON|OFF]
+   log_slow_admin_statements = [ON|OFF]
+   log_slow_slave_statements = [ON|OFF]
+   
+   use mysql;
+   show variables like 'long_query_time';
+   set global long_query_time = 0.001;
+   show variables like 'long_query_time'; # 需关闭
+   set global long_query_time = 0;
+   show variables like 'slow_query_log%';
+   set global slow_query_log = on;
+   set global slow_query_log_file = '/var/lib/mysql/sql_log/slow_log.log';
+   ```
+
+4. 二进制日志 binary_log【重要】
+
+   记录全部有效的数据修改日志
+
+   1. 记录所有对数据库中数据的修改
+   2. 基于时间点的备份和恢复
+   3. 主从复制
+
+   ```mysql
+   # 配置文件中的静态配置，默认不启用
+   log_bin [=base_name]
+   log_bin = /home/mysql/sql_log/mysql-bin
+   grep log_bin /etc/my.cnf
+   show variables like 'log_bin%';
+   
+   binlog_format = [ROW|STATEMENT|MIXED]
+   binlog_row_image = [FULL|MINIMAL|NOBLOB]
+   show variables like 'binlog_format%';
+   show variables like 'binlog_row_image%';
+   flush logs;
+   mysqlbinlog --no-defaults -vv --base64-output=DECODE-ROWS mysql-bin.000003
+   set global binlog_row_image = minimal;
+   show variables like 'binlog_row_image%';
+   set session binlog_row_image=minimal;
+   
+   # 查看实际提交的SQL
+   binlog_rows_query_log_events = [ON|OFF]
+   flush logs;
+   show variables like 'binlog_rows_query_log_events%';
+   set binlog_rows_query_log_events=on;
+   
+   log_slave_updates = [ON|OFF]
+   sync_binlog = [1|0]
+   # 自动清理过期的二进制日志
+   expire_logs_days = days
+   # 手动清理二进制日志
+   PURGE BINARY LOGS TO 'mysql-bin.010'
+   PURGE BINARY LOGS BEFORE '2008-01-01 22:22:22';
+   ```
+
+5. 中继日志 relay_log
+
+   用于主从复制，临时存储从主库同步的二进制日志
+
+   1. 临时记录从主服务器同步的二进制日志
+
+   ```mysql
+   relay_log=filename
+   relay_log_purge = [ON|OFF]
+   ```
+
 #### 第6章 存储引擎类问题
 
 #### 第7章 MySQL架构类问题
