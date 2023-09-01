@@ -327,6 +327,184 @@ MySQL常用的日志类型
 
 #### 第6章 存储引擎类问题
 
+MySQL常用的存储引擎
+
+1. MYISAM
+
+   MySQL 5.6 之前的默认存储引擎，最常用的非事务型存储引擎
+
+   1. 非事务型存储引擎
+   2. 以堆表方式存储
+   3. 使用表级锁
+   4. 支持 Btree 索引，空间索引，全文索引
+
+   ```mysql
+   create table myIsam(id int,c1 varchar(10)) engine=myisam;
+   check table myIsam;
+   repair table myIsam;
+   # 压缩
+   myisampack --myisampack
+   myisampack -b -f myIsam
+   ```
+
+   MyISAM 使用场景
+
+   1. 读操作远远大于写操作的场景
+   2. 不需要使用事务的场景
+
+2. CSV
+
+   以CSV格式存储的非事务型存储引擎
+
+   1. 非事务型存储引擎
+   2. 数据以CSV格式存储
+   3. 所有列都不能为NULL
+   4. 不支持索引
+
+   ```mysql
+   create table mycsv(id int not null,c1 varchar(20) not null,c2 varchar(20) not null) engine=csv;
+   show create table mycsv;
+   insert into mycsv values(1,'aa','bb'),(2,'cc','dd');
+   select * from mycsv;
+   create index idx_id on mycsv(id);
+   ```
+
+   CSV 使用场景
+
+   1. 做为数据交换的中间表使用
+
+3. Archive
+
+   只允许查询和新增数据而不允许修改的非事务型存储引擎；用于归档数据
+
+   1. 非事务型存储引擎
+   2. 表数据使用zlib压缩
+   3. 只支持 Insert 和 Select
+   4. 只允许在自增 ID 上建立索引
+
+   ```mysql
+   create table myarchive(id int auto_increment,c1 varchar(20),c2 char(20),key(id)) engine=archive;
+   show create table myarchive;
+   insert into myarchive(c1,c2) values('aa','bb'),('cc','dd');
+   select * from myarchive;
+   delete from myarchive where id=1;
+   ```
+
+   Archive 使用场景
+
+   1. 日志和数据采集类应用
+   2. 数据归档存储
+
+4. Memory
+
+   是一种易失性非事务型存储引擎
+
+   1. 非事务型存储引擎
+   2. 数据保存在内存中
+   3. 所有字段长度固定
+   4. 支持 Btree 和 Hash 索引
+
+   Memory 使用场景
+
+   1. 用于缓存字典映射表
+   2. 缓存周期性分析数据
+
+5. Innodb
+
+   最常用的事务型存储引擎
+
+   1. 事务型存储引擎支持ACID
+   2. 数据按主键聚集存储
+   3. 支持行级锁及MVCC
+   4. 支持 Btree 和自适应 Hash 索引
+   5. 支持全文和空间索引
+
+   Innodb 使用场景
+
+   1. 大多数 OLTP 场景
+
+   Innodb 问题
+
+   1. Innodb无法在线修改表结构的情况
+
+      1. Innodb不支持在线修改表结构的场景
+
+         1. 加全文索引
+         2. 加空间索引
+         3. 删除主键
+         4. 增加自增列
+         5. 修改列类型
+         6. 改表字符集
+
+      2. 在线 DDL 存在的问题
+
+         1. 有部分语句不支持在线DDL
+         2. 长时间的DDL操作会引起严重的主从延迟
+         3. 无法对DDL操作进行资源限制
+
+      3. 如何更安全的在线修改表结构 DDL
+
+         1. 使用 pt-online-schema-change [OPTION] DSN
+
+         ```mysql
+         pt-online-schema-change --help | more
+         alter table stock add column modified_time timestamp
+         pt-online-schema-change --alter "add column modified_time timestamp" --execute D=stock,t=stock,u=dba,p=123456
+         ```
+
+   2. Innodb如何实现事务处理
+
+      什么是事务？事务实现的方式？
+
+      1. 原子性A
+
+         回滚日志 Undo Log：用于记录数据修改前的状态
+
+      2. 一致性C
+
+         重作日志 Redo Log：用于记录数据修改后的状态
+
+      3. 隔离性I
+
+         锁：用于资源隔离，分为共享锁和排他锁
+
+      4. 持久性D
+
+         重作日志 Redo Log + 回滚日志 Undo Log
+
+   3. MySQL的多版本并发控制(MVCC)，Innodb 读是否会阻塞写
+
+      读写应该相互阻塞吗？读操作不会被写操作阻塞，使用Undo Log
+
+      1. 查询需要对资源加共享锁
+      2. 数据修改需要对资源加排他锁
+
+      ```mysql
+      begin;
+      select * from stock.stock where id=1;
+      select * from stock.stock where id=1;
+      
+      begin;
+      update stock.stock set count=10 where id=1;
+      update stock.stock set count=30 where id=1;
+      ```
+
+6. NDB
+
+   MySQL 集群所使用的内存型事务存储引擎
+
+   1. 事务型存储引擎
+   2. 数据存储在内存中
+   3. 支持行级锁
+   4. 支持高可用集群
+   5. 支持Ttree索引
+
+   NDB 使用场景
+
+   1. 需要数据完全同步的高可用场景
+
+- 
+
 #### 第7章 MySQL架构类问题
 
 #### 第8章 备份恢复类问题
