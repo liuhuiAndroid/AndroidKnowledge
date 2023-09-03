@@ -503,9 +503,274 @@ MySQL常用的存储引擎
 
    1. 需要数据完全同步的高可用场景
 
-- 
-
 #### 第7章 MySQL架构类问题
+
+1. MySQL 的主从复制是如何工作的
+
+   1. MySQL 主从复制的实现原理
+
+      1. Master 数据修改记录到 Binary Log
+      2. Slave 启动 Io_Thread 从指定位置开始读取 Master Binary Log，写入 Relay log
+      3. 异步复制/半同步复制
+
+   2. MySQL 主从复制的配置步骤
+
+      1. 在 Master 服务器上的操作
+
+         1. 必须开启binlog，可以开启gtid；需要重启
+         2. 建立同步所用的数据库账号
+         3. 使用 master_data 参数备份数据库
+         4. 把备份文件传输到 Slave 服务器
+
+         ```mysql
+         mysql 
+         select @@version;
+         show variables like 'log_bin%';
+         show variables like 'gtid_mode%';
+         
+         vi /etc/my.cnf
+         default_authentication_plugin='mysql_native_password'
+         giid_mode=on
+         enforce-gtid-consistency
+         log-slave-updates=on
+         master_info_repository=TABLE
+         relay_log_info_repository=TABLE
+         
+         create user repl@'192.168.1.%' identified by '123456';
+         grant replication slave on *.* to repl@'192.168.1.%';
+         mysqldump --single-transaction -uroot -p --routines --triggers --events --master-data=2 --all-databases > master.sql
+         scp master.sql root@192.168.1.92:/root
+         
+         # 启动半同步复制
+         show plugins;
+         install plugin rpl_semi_sync_master soname 'semisync_master.so';
+         show variables like 'rpl%';
+         set persist rpl_semi_sync_master_timeout=500;
+         set persist rpl_semi_sync_master_enabled=on;
+         show gloabl status like 'rpl%';
+         ```
+
+      2. 在 Slave 服务器上的操作
+
+         1. 可以开启binlog，可以开启gtid；需要重启
+         2. 恢复 Master 上的备份数据库
+         3. 使用 Change master 配置链路
+         4. 使用 start slave 启动复制
+
+         ```mysql
+         mysql 
+         select @@version;
+         show variables like 'log_bin%';
+         show variables like 'gtid_mode%';
+         vi /etc/my.cnf
+         
+         mysql -uroot -p < master.sql
+         change master to master_host='192.168.1.91', master_log_file='mysql-bin.000001', master_log_pos=710;
+         show slave status;
+         start slave user='repl' password='123456';
+         
+         # 启动半同步复制
+         show plugins;
+         install plugin rpl_semi_sync_slave soname 'semisync_slave.so';
+         show variables like 'rpl%';
+         set persist rpl_semi_sync_slave_enabled=on;
+         stop slave io_thread;
+         start slave io_thread user='repl' password='123456';
+         show slave status;
+         show gloabl status like 'rpl%';
+         ```
+
+2. 比较基于GTID方式的复制和基于日志点的复制
+
+   1. 什么是基于日志点的复制
+
+      1. 传统的主从复制的方式
+      2. Slave 请求 Master 的增量日志依赖于日志偏移量
+      3. 配置链路时需指定 master_log_file 和 master_log_pos 参数
+
+   2. 什么是基于GTID的复制
+
+      1. GTID = source_id:transaction_id
+      2. Slave 增量同步 Master 的数据依赖于其未同步的事务ID
+      3. 配置复制链路时，Slave 可以根据已经同步的事务ID继续自动同步
+
+   3. 这两种复制方式各自的特点
+
+      1. 基于日志的复制兼容性更好
+      2. 基于日志的复制支持MMM和MHA；基于GTID的复制仅支持MHA架构
+      3. 基于日志的复制主备切换后很难找到新的同步点；基于GTID的复制，可以很方便的找到未完成同步的事务ID
+      4. 基于日志的复制可以方便的跳过复制错误；基于GTID的复制只能通过置入空事务的方式跳过错误
+
+   4. 这两种复制方式如何选择
+
+      1. 需要兼容老版本MySQL及MariaDB
+
+         基于日志点的复制
+
+      2. 需要使用MMM架构
+
+         基于日志点的复制
+
+      3. 其他各种情况
+
+         优先选择基于GTID的复制
+
+3. 比较MMM和MHA两种高可用架构的优缺点
+
+   1. MMM和MHA两种架构的作用
+
+      1. 对主从复制集群中的 MASTER 的健康进行监控
+      2. 当 MASTER 宕机后把 VIP 迁移到新的 MASTER
+      3. 重新配置集群中其他 Slave 对新的 MASTER 同步
+
+   2. MMM架构的优缺点及适用场景
+
+      1. MMM架构的故障转移步骤
+
+         1. Slave 服务器上的操作
+            1. 完成原主上已复制日志的恢复
+            2. 使用Change Master 命令配置新主
+         2. 主备服务器上的操作
+            1. 设置 read_only=off
+            2. 迁移写VIP到新主服务器
+
+      2. 需要的资源
+
+         1. 主DB       数量2；从DB 数量0-N
+         2. IP地址     数量2N + 1，为未MySQL服务器的数量
+         3. 监控用户 数量1，用于监控数据库状态的 MySQL 用户
+         4. 代理用户 数量1，用于 MMM 的 agent 端用于改变 read_only 状态
+         5. 复制用户 数量1，用于配置 MySQL 复制的 MySQL 用户
+
+      3. 配置步骤
+
+         1. 配置主主复制的集群架构
+         2. 安装CentOS 的YUM 扩展源及依赖包
+         3. 安装所需的Perl支持包
+         4. 安装MMM工具包
+
+      4. 优点
+
+         1. 提供了读写VIP的配置，使读写请求都可以达到高可用
+         2. 工具包相对完善，不需要额外开发脚本
+         3. 完成故障转移后，可以持续对MySQL集群进行高可用监控
+
+      5. 缺点
+
+         1. 故障切换简单粗暴易丢事务
+
+            解决方法：主备使用5.7以后对半同步复制
+
+         2. 不支持GTID的复制方式
+
+      6. MMM架构的适用场景
+
+         1. 使用基于日志点的主从复制方式
+         2. 使用主主复制的架构
+         3. 需要考虑高可用的场景
+
+   3. MHA架构的优缺点及适用场景
+
+      1. MHA架构的故障转移步骤
+
+         1. 选举具有最新更新的 Slave
+         2. 尝试从宕机的master保存二进制日志
+         3. 应用差异的中继日志到其他 Slave
+         4. 应用从 Master 保存的二进制日志
+         5. 提升选择的 Slave 为新的 Master
+         6. 配置其他 Slave 向新的 Master 同步
+
+      2. 需要的资源
+
+         1. 主DB       数量1；从DB 数量2-N
+         2. IP地址     数量N+2，N为未MySQL服务器的数量
+         3. 监控用户 数量1，用于监控数据库状态的 MySQL 用户
+         4. 复制用户 数量1，用于配置 MySQL 复制的 MySQL 用户
+
+      3. 配置步骤
+
+         1. 配置一主多从的复制架构
+         2. 安装CentOS 的YUM 扩展源及依赖包
+         3. 配置集群内各主机的SSH免认证
+         4. 在各节点安装mha_node软件
+         5. 在管理节点安装mha_manager
+         6. 配置并启动MHA管理进程
+
+      4. 优点
+
+         1. 支持GTID的复制方式和基于日志点的复制方式
+         2. 可从多个Slave中选举最合适的新Master
+         3. 会尝试从旧Master 尽可能多的保存未同步事务
+
+      5. 缺点
+
+         1. 未必能获取到旧主未同步的日志
+
+            解决方法：主备使用5.7以后的半同步复制
+
+         2. 需要自行开发写VIP转移脚本
+
+         3. 只监控Master而没有对Slave实现高可用的办法
+
+      6. MHA架构的适用场景
+
+         1. 使用基于GTID的复制方式
+         2. 使用一主多从的复制架构
+         3. 希望更少的数据丢失的场景
+
+4. 如何减小主从复制的延迟
+
+   1. 主从复制延迟产生的原因
+      1. Master执行大事务
+   2. 几种减小主从延迟的处理方法
+      1. 大事务：数万行的数据更新以及对大表的DDL操作
+         1. 化大事务为小事务，分批更新数据
+         2. 使用pt-online-schema-change工具进行DDL操作
+      2. 网络延迟
+         1. 减小单次事务处理的数据量以减少产生的日志文件的大小
+         2. 减少主上所同步的Slave的数量
+      3. 由主上多线程写入从上单线程恢复引起的延迟
+         1. 使用MySQL5.7之后的多线程复制
+         2. 使用MGR复制架构
+
+5. 对MGR集群的认识
+
+   1. 什么是MGR复制？
+      1. MySQL Group Replication
+      2. 是官方推出的一种基于Paxos协议的复制
+      3. 是一种不同于异步复制的多Master复制集群
+      4. MGR的两种模式：单主模式、多主模式
+   2. 如何使用MGR复制？
+      1. MGR复制架构的配置步骤
+         1. 安装group_replication插件
+         2. 在第一个实例上建立复制用户
+         3. 配置第一个组实例
+         4. 把其他实例加入组
+   3. 当前MGR的优缺点
+      1. 优点
+         1. Group Replication组内成员间基本无延迟
+         2. 可以支持多些操作，读写服务高可用
+         3. 数据强一致，可以保证不丢失事务
+      2. 缺点
+         1. 只支持InnoDB存储引擎的表，并且每个表上必须有一个主键
+         2. 单主模式下很难确认下一个Primary
+         3. 只能用在gtid模式的复制形式下，且日志格式必须为row
+   4. MGR适用场景
+      1. 对主从延迟十分敏感的应用场景
+      2. 希望可以对读写提供高可用的场景
+      3. 希望可以保证数据强一致的场景
+
+6. 如何解决数据库读/写负载大的问题
+
+   1. 如何解决读负载大的问题
+
+      1. 对原DB增加Slave服务器
+      2. 进行读写分离，把读分担到Slave
+      3. 增加数据库中间层，进行负载均衡
+
+   2. 如何解决写负载大的问题
+
+      分库分表
 
 #### 第8章 备份恢复类问题
 
