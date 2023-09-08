@@ -72,3 +72,19 @@ git reset --hard c146cb0
 git commit -m "revert to version 2.3.0"
 git push -u origin master -f    强制提交
 
+#### 如何将多个本地 commit 合并
+
+[参考：git如何使用SourceTree合并多次本地提交记录](https://www.jb51.net/program/286044a27.htm)
+
+1. 选择上一次的远程推送 -> 右键 -> 交互式变基xxx的子提交
+
+2. 选择：用以前的提交来squash
+
+   在软件开发中，"squash" 是一个版本控制的术语，通常用于合并和整理提交历史记录。具体来说，"用以前的提交来squash" 意味着将多个先前的提交（也称为"commit"）合并为一个单一的提交，以减少提交历史中的混乱和冗余。
+
+3. 选择：编辑信息，并提交
+
+4. 推送
+
+#### SourceTree 修改 commit 信息
+
