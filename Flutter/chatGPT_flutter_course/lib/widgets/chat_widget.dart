@@ -15,6 +15,7 @@ class ChatWidget extends StatelessWidget {
   final String msg;
   final int chatIndex;
   final bool shouldAnimate;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,10 +69,10 @@ class ChatWidget extends StatelessWidget {
                 ),
                 chatIndex == 0
                     ? const SizedBox.shrink()
-                    : Row(
+                    : const Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
+                        children: [
                           Icon(
                             Icons.thumb_up_alt_outlined,
                             color: Colors.white,
